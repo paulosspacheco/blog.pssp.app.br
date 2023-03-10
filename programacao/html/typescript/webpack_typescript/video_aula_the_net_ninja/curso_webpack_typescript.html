@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Pr&aacute;tica da Video aula Webpack &amp; TypeScript &lt;a href&equals;&quot;curso&lowbar;webpack&lowbar;typescript&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;&crarr;&lt;&sol;a&gt;&lt;a href&equals;&quot;curso&lowbar;webpack&lowbar;typescript&period;pdf&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para visualizar o PDF deste documento em nova aba&period;&quot;&gt;&wp;&lt;&sol;a&gt;</title>
+        <style>
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="span-idtopospanprática-da-video-aula-webpack--typescript-"><span id="topo"><span>Prática da Video aula Webpack &amp; TypeScript <a href="curso_webpack_typescript.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >↵</a><a href="curso_webpack_typescript.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a></h1>
+<ol start="0">
+<li>
+<p><a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9hOkGbwzgYFmaxB0WiduYJC">Play Lista da Video aula Webpack &amp; TypeScript</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=sOUhEJeJ-kI&amp;list=PL4cUxeGkcC9hOkGbwzgYFmaxB0WiduYJC&amp;index=2">Aula 01 - Setup - Introduction</a>:</p>
+<ol>
+<li>Código ShellScript</li>
+</ol>
+<pre><code class="language-shellscript"><code><div>
+   # Instala a linguagem typescript globalmente se não tiver instalado.
+   sudo npm -g install typescript
+
+   # para saber se foi instalado checar a versão
+   tsc -v 
+</div></code></code></pre>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=lXWDkPCzeE4">Aula 02 - Setup - Webpack Installation</a>:</p>
+<ol>
+<li>
+<p>Código shellscript</p>
+<pre><code class="language-shellscript"><code><div>    # Criar pasta para o projeto:
+        mkdir ./webpack-typescript
+
+    # Move-se para a pasta ./webpack-typescript
+        cd ./webpack-typescript
+
+    # Cria o arquivo tsconfig.json na pasta ./webpack-typescript
+        tsc --init
+
+    # Entre no editor de texto sua preferência e edit o arquivo tsconfig.json:
+        xed ./tsconfig.json
+
+    # Troque as propriedades:
+        # &quot;target&quot; : &quot;es6&quot; - Trocar a propriedade &quot;target&quot; de &quot;es5&quot; para &quot;es6&quot;.
+        # &quot;module&quot; : &quot;es2015&quot; - Trocar a propriedade &quot;module&quot; de &quot;commonjs&quot; para &quot;es2015&quot;
+
+        # Salve as alterações;
+        # Saia do editor de texto.
+
+    # Cria o arquivo package.json
+        #  - O comando abaixo cria o arquivo package.json para salvar as configurações do projeto tais como dependências, nome do projeto, nome dos script de execução do projeto,  versão do projeto, descrição do projeto, autor, e licença; 
+
+    npm init -y # O parâmetro -y diz para confirmar tudo.
+
+    # Instalar pacotes: webpack, webpack-cli e ts-loader com a opção -D (-D é equivalente a --save-dev = Salve em:  devDependencies&quot;: {} do arquivo package.json)
+
+        #   1 - Cria a pasta node_modules para os modulos locais do projeto e cria;
+
+        #   2 - Cria o arquivo package-lock.json usado para bloqueio dos pacotes quando precisar;
+    npm install webpack webpack-cli ts-loader -D
+
+    # Instalar typescript na pasta local para que seja uma dependência de desenvolvimento:
+    npm install typescript -D
+
+    # Criar a pasta ./src para salvarmos os fontes do projeto.
+    mkdir ./src
+
+    # Criar pasta ./public para salvar os arquivos de saida do webpack.
+        # Nesta pasta conterá os arquivo .css, .html, .js após a execução de webpack.
+        # Esta é a pasta que deve ser publicada no servidor web.
+    mkdir ./public
+    
+    # Criar o arquivo index.html
+    touch ./public/index.html
+
+</div></code></code></pre>
+</li>
+<li>
+<p>Com editor de sua preferência adicione o código abaixo no arquivo ./public/index.html:</p>
+<ol>
+<li>
+<p>Código html</p>
+<pre><code class="language-html"><div>
+    <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">&quot;ltr&quot;</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;pt-br&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;content-type&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;text/html; charset=utf-8&quot;</span> /&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Exemplo de webpack &amp; typescript<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;createDate&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;20/05/2021&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;createDateUpdate&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;20/05/2021&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;description&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;Exemplo prático de um pacote gerador pelo webpack&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;keywords&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;webpack, typescript, javascript&quot;</span> /&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css&quot;</span>
+                <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Formulário teste webpack<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;endpoint&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;get&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;nome&quot;</span>&gt;</span>Nome:? <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;nome&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;idade&quot;</span>&gt;</span>Idade:? <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;idade&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;email&quot;</span>&gt;</span>Email:? <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Enviar formulário?<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Criar o arquivo ./src/index.ts:</p>
+<ol>
+<li>
+<p>Código shellscript</p>
+<pre><code class="language-shellscript"><code><div>     # Cria o arquivo ./src/index.ts
+     touch ./src/index.ts
+</div></code></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=rI37HS-Vj8A">Aula 03 - Webpack &amp; TypeScript Setup - Webpack Config File</a></p>
+<ol>
+<li>
+<p>Criar o arquivo javascript: <a href="webpack-config.js"><strong>webpack-config.js</strong></a>:</p>
+<ol>
+<li>
+<p>Código shellscript</p>
+<pre><code class="language-ShellScript"><code><div>
+   touch ./webpack-config.js
+
+</div></code></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>No arquivo <a href="https://springbootdev.com/2018/03/06/generate-webpack-config-js-with-webpack-cli/"><strong>webpack-config.js</strong></a> adicione o código javascript abaixo para customizar  a compilação do webpack segundo nossa necessidade:</p>
+<ol>
+<li>
+<p>Os parâmetros que o webpack espera são objetos do nodejs passado pelo objeto <strong>module.exports</strong>.</p>
+<ol>
+<li>
+<p>Código javascript</p>
+<pre><code class="language-JavaScript"><div>    <span class="hljs-comment">/** 
+      * path é uma biblioteca NodeJs padrão que está globalmente disponível quando você instala o NodeJs.
+      * A linhas a baixo importa o módulo path que tem informações sobre a localização das pastas do projeto.
+      * [Veja mais sobre o módulo path...:](https://nodejs.org/api/path.html).
+      */</span> 
+    <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);
+
+    <span class="hljs-comment">/**
+     * O objeto module.exports é um objeto de nodejs usado para exportar objetos, 
+     * funções, variáveis e constantes do módulo onde ele for declarado.
+     * [Vaja mais sobre module.exports](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/export)
+     * [Veja mais sobre configuração do arquivo webpack-config.js](https://webpack.js.org/configuration/)
+     * Em module é a opções que determina como os diferentes tipos de módulos em um projeto serão tratados.
+     * [Veja mais sobre module...](https://webpack.js.org/configuration/module/)
+     */</span>
+    <span class="hljs-built_in">module</span>.exports = {
+        <span class="hljs-comment">/**
+          * Propriedade entry é usada para informa o nome do arquivo principal 
+          * de entrada do pacote webpack e pode ter mais um entrada para o mesmo projeto.
+          * O arquivo de entrada deve importar todos os arquivos de recursos dependentes do projeto. 
+          */</span>
+        <span class="hljs-attr">entry</span> : <span class="hljs-string">&#x27;./src/index.ts&#x27;</span>,
+        <span class="hljs-comment">/** 
+          * A propriedade output é um objeto com as seguintes informações:
+            * filename = Nome do arquivo do pacote a ser gerado.
+            * path = Nome absolute da pasta onde o pacote será gerado. Obs: Em caso 
+            * de omissão do mesmo o webpack criar a pasta ./dist.
+          */</span>
+        <span class="hljs-attr">output</span> : {
+            <span class="hljs-comment">/**
+              * Nome do arquivo para o pacote a ser gerado na pasta ./public 
+              */</span>
+            <span class="hljs-attr">filename</span> : <span class="hljs-string">&#x27;bundle.js&#x27;</span>,
+
+            <span class="hljs-comment">/** 
+              * Caminho absoluto da pasta em que será gerado o pacote que no nosso 
+              * caso é a pasta ./public.
+              * [Veja mais sobre path.resolve ...)(https://nodejs.org/api/path).html#path_path_resolve_paths 
+              */</span>
+            <span class="hljs-attr">path</span>: path.resolve(__dirname,<span class="hljs-string">&#x27;public&#x27;</span>),
+            <span class="hljs-comment">/**
+              * __dirname : - Esta é uma variável global NodeJs que fornece o caminho 
+              * do arquivo atualmente em execução. Nesse caso, ele fornece o caminho 
+              * do webpack.config.js . ( webpack.config.js é o arquivo atualmente em execução)
+              * 
+            */</span>
+        },
+
+        <span class="hljs-comment">/**
+         * resolve:{}
+         * Essas opções mudam a forma como os módulos são resolvidos. webpack fornece 
+         * padrões razoáveis, mas é possível alterar a resolução em detalhes. Dê uma 
+         * olhada em Resolução do Módulo para obter mais explicações sobre como o 
+         * resolvedor funciona. 
+         * veja mais: https://webpack.js.org/configuration/resolve/                
+         * 
+         * resolve.extensions
+         * [string] = [&#x27;.ts&#x27;, &#x27;.tsx&#x27;,&#x27;js&#x27;, &#x27;.wasm&#x27;]
+         * Tente resolver essas extensões em ordem. Se vários arquivos compartilham o 
+         * mesmo nome, mas têm extensões diferentes, o webpack resolverá aquele com a 
+         * extensão listada primeiro na matriz e ignorará o resto.
+         */</span>
+        <span class="hljs-attr">resolve</span>: {
+          <span class="hljs-attr">extensions</span>: [<span class="hljs-string">&#x27;.ts&#x27;</span>, <span class="hljs-string">&#x27;.tsx&#x27;</span>, <span class="hljs-string">&#x27;.js&#x27;</span>]
+        },
+        <span class="hljs-comment">/**
+          * O objeto module é usado para definir as regras usada na compilação ele
+          * contém o conjunto de plug-ins ou módulos usados ​​pelo webpack. 
+          */</span>
+        <span class="hljs-attr">module</span>: {
+          <span class="hljs-comment">// O array rules são usado para passagem de regras na transpilação dos módulos:</span>
+          <span class="hljs-attr">rules</span>: [
+            <span class="hljs-comment">// rules for modules (configure loaders, parser options, etc.)</span>
+            { 
+
+              <span class="hljs-comment">/**
+               * A expressão na lista de test: informa ao webpack que pegue todos os arquivos 
+               * com extensão é ts e o $ indica fim da expressão.
+               */</span>
+              <span class="hljs-attr">test</span> : <span class="hljs-regexp">/.tsx?$/</span>,
+
+              <span class="hljs-comment">/** 
+               * O comando ts-loader receber arquivos \.ts (TypeScript) e gera saída arquivos .js (javascript).
+               * 
+               */</span>
+              use : <span class="hljs-string">&#x27;ts-loader&#x27;</span>, <span class="hljs-comment">//loader ou use faz o mesmo efeito .</span>
+
+              <span class="hljs-comment">/**
+               * A propriedade include informa a pasta no qual devemos pegar os arquivo \.ts
+              */</span>
+              <span class="hljs-attr">include</span> : [path.resolve(__dirname,<span class="hljs-string">&#x27;src&#x27;</span>)] 
+            }
+          ]
+        },
+
+    }
+
+</div></code></pre>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Com editor de sua preferência adicionar no arquivo ./src/index.ts o seguinte código:</p>
+<ol>
+<li>
+<p>Código javascript</p>
+<pre><code class="language-javascript"><div>
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Alo mundo&#x27;</span>);
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Com editor de texto de sua preferência adicione o propriedade <strong>&quot;build&quot; : &quot;webpack&quot;</strong> no objecto <strong>scripts{}</strong> do arquivo package.json</p>
+<ol>
+<li>
+<p>Código json.</p>
+<pre><code class="language-json"><div>    {
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;webpack-typescript&quot;</span>,
+      <span class="hljs-attr">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,
+      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      
+      <span class="hljs-attr">&quot;scripts&quot;</span>: {                    
+
+        <span class="hljs-attr">&quot;build&quot;</span> : <span class="hljs-string">&quot;webpack&quot;</span>,
+
+        <span class="hljs-attr">&quot;test&quot;</span>: <span class="hljs-string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+      },
+      <span class="hljs-attr">&quot;keywords&quot;</span>: [],
+      <span class="hljs-attr">&quot;author&quot;</span>: <span class="hljs-string">&quot;Paulo Pacheco&quot;</span>,
+      <span class="hljs-attr">&quot;license&quot;</span>: <span class="hljs-string">&quot;ISC&quot;</span>,
+      <span class="hljs-attr">&quot;devDependencies&quot;</span>: {
+        <span class="hljs-attr">&quot;ts-loader&quot;</span>: <span class="hljs-string">&quot;^9.2.1&quot;</span>,
+        <span class="hljs-attr">&quot;typescript&quot;</span>: <span class="hljs-string">&quot;^4.2.4&quot;</span>,
+        <span class="hljs-attr">&quot;webpack&quot;</span>: <span class="hljs-string">&quot;^5.37.1&quot;</span>,
+        <span class="hljs-attr">&quot;webpack-cli&quot;</span>: <span class="hljs-string">&quot;^4.7.0&quot;</span>
+      }
+    }            
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Para gerar o pacote na pasta ./public entrar na pasta raiz do projeto <strong>./webpack-typescript</strong> e execute o seguinte comando:</p>
+<ol>
+<li>
+<p>Código ShellScript.</p>
+<pre><code class="language-ShellScript"><code><div>   
+   npm run build
+
+</div></code></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>..</p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=8AtOBFTunWY">Aula 04 - Webpack &amp; TypeScript Setup - Webpack Dev Server</a></p>
+<ol>
+<li>
+<p>Instalar o servidor de desenvolvimento local com a opção -D = --save-dev.</p>
+<ol>
+<li>
+<p>Código shellscript</p>
+<pre><code class="language-shellscript"><code><div>
+   npm install webpack-dev-server -D
+
+</div></code></code></pre>
+</li>
+<li>
+<p>Com editor de texto de sua preferência adicione o propriedade <strong>&quot;dev&quot;: &quot;webpack serve --mode development --env development --hot --port 3000&quot;</strong> no objecto <strong>scripts{}</strong> do arquivo package.json</p>
+<ol>
+<li>
+<p>Código json.</p>
+<pre><code class="language-json"><div>   {
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;webpack-typescript&quot;</span>,
+      <span class="hljs-attr">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,
+      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-attr">&quot;scripts&quot;</span>: {
+        <span class="hljs-attr">&quot;test&quot;</span>: <span class="hljs-string">&quot;karma start&quot;</span>,
+
+        <span class="hljs-attr">&quot;dev&quot;</span>: <span class="hljs-string">&quot;webpack serve --mode development --env development --hot --port 3000&quot;</span>,    
+
+        <span class="hljs-attr">&quot;build&quot;</span>: <span class="hljs-string">&quot;webpack&quot;</span>,
+      },
+      <span class="hljs-attr">&quot;author&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-attr">&quot;license&quot;</span>: <span class="hljs-string">&quot;ISC&quot;</span>,
+      <span class="hljs-attr">&quot;devDependencies&quot;</span>: {
+        <span class="hljs-attr">&quot;@types/jasmine&quot;</span>: <span class="hljs-string">&quot;^3.7.4&quot;</span>,
+        <span class="hljs-attr">&quot;jasmine-core&quot;</span>: <span class="hljs-string">&quot;^3.7.1&quot;</span>,
+        <span class="hljs-attr">&quot;karma&quot;</span>: <span class="hljs-string">&quot;^6.3.2&quot;</span>,
+        <span class="hljs-attr">&quot;karma-chrome-launcher&quot;</span>: <span class="hljs-string">&quot;^3.1.0&quot;</span>,
+        <span class="hljs-attr">&quot;karma-jasmine&quot;</span>: <span class="hljs-string">&quot;^4.0.1&quot;</span>,
+        <span class="hljs-attr">&quot;karma-webpack&quot;</span>: <span class="hljs-string">&quot;^5.0.0&quot;</span>,
+        <span class="hljs-attr">&quot;ts-loader&quot;</span>: <span class="hljs-string">&quot;^9.2.2&quot;</span>,
+        <span class="hljs-attr">&quot;typescript&quot;</span>: <span class="hljs-string">&quot;^4.2.4&quot;</span>,
+        <span class="hljs-attr">&quot;webpack&quot;</span>: <span class="hljs-string">&quot;^5.37.1&quot;</span>,
+        <span class="hljs-attr">&quot;webpack-cli&quot;</span>: <span class="hljs-string">&quot;^4.7.0&quot;</span>,
+        <span class="hljs-attr">&quot;webpack-dev-server&quot;</span>: <span class="hljs-string">&quot;^3.11.2&quot;</span>
+      }
+   }
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Adicionar o script <strong>&lt;script src='bundle.js'&gt; &lt;/script&gt;</strong> no arquivo <strong>./public/index.html</strong> logo após a tag &lt;/form&gt;.</p>
+<ol>
+<li>
+<p>Código html</p>
+<pre><code class="language-html"><div>
+   <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">dir</span>=<span class="hljs-string">&quot;ltr&quot;</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;pt-br&quot;</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;content-type&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;text/html; charset=utf-8&quot;</span> /&gt;</span>
+
+           <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span>
+
+           <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Exemplo de webpack &amp; typescript<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+
+           <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;createDate&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;20/05/2021&quot;</span> /&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;createDateUpdate&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;20/05/2021&quot;</span> /&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;description&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;Exemplo prático de um pacote gerador pelo webpack&quot;</span> /&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;keywords&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;webpack, typescript, javascript&quot;</span> /&gt;</span>
+
+           <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css&quot;</span>
+               <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> /&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Formulário teste webpack<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+           <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;endpoint&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;get&quot;</span>&gt;</span>
+               <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+               <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;nome&quot;</span>&gt;</span>Nome:? <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;nome&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+               <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;idade&quot;</span>&gt;</span>Idade:? <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;idade&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+               <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+               <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+               <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;email&quot;</span>&gt;</span>Email:? <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">required</span>&gt;</span>
+               <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+               <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+               <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Enviar formulário?<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+               <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+
+           <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+           <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&#x27;bundle.js&#x27;</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+  
+</div></code></pre>
+</li>
+<li>
+<p>Para testar execute o comando:</p>
+<ol>
+<li>
+<p>Código shellScript</p>
+<pre><code class="language-ShellScript"><code><div>
+   npm run dev
+
+</div></code></code></pre>
+</li>
+<li>
+<p>...</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Para que o <strong>webpack-dev-server</strong> compile automáticamente toda vês que se faz um alteração nos códigos, é necessário adiciona no objeto <strong>output:{}</strong> do arquivo <strong>webpack.config.js</strong> a propriedade <strong>publicPath : 'public'</strong>.</p>
+<ol>
+<li>
+<p>Código javascript</p>
+<pre><code class="language-javascript"><div>   <span class="hljs-comment">/** 
+    * path é uma biblioteca NodeJs padrão que está globalmente disponível quando você instala o NodeJs.
+     * A linhas a baixo importa o módulo path que tem informações sobre a localização das pastas do projeto.
+     * [Veja mais sobre o módulo path...:](https://nodejs.org/api/path.html).
+     */</span> 
+   <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);
+
+   <span class="hljs-comment">/**
+   * O objeto module.exports é um objeto de nodejs usado para exportar objetos, 
+   * funções, variáveis e constantes do módulo onde ele for declarado.
+   * [Vaja mais sobre module.exports](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/export)
+   * [Veja mais sobre configuração do arquivo webpack-config.js](https://webpack.js.org/configuration/)
+   * Em module é a opções que determina como os diferentes tipos de módulos em um projeto serão tratados.
+   * [Veja mais sobre module...](https://webpack.js.org/configuration/module/)
+   */</span>
+   <span class="hljs-built_in">module</span>.exports = {
+       <span class="hljs-comment">/**
+        * Propriedade entry é usada para informa o nome do arquivo principal 
+         * de entrada do pacote webpack e pode ter mais um entrada para o mesmo projeto.
+         * O arquivo de entrada deve importar todos os arquivos de recursos dependentes do projeto. 
+         */</span>
+       <span class="hljs-attr">entry</span> : <span class="hljs-string">&#x27;./src/index.ts&#x27;</span>,
+       <span class="hljs-comment">/** 
+        * A propriedade output é um objeto com as seguintes informações:
+           * filename = Nome do arquivo do pacote a ser gerado.
+           * path = Nome absolute da pasta onde o pacote será gerado. Obs: Em caso 
+           * de omissão do mesmo o webpack criar a pasta ./dist.
+         */</span>
+       <span class="hljs-attr">output</span> : {
+           <span class="hljs-comment">/**
+            * Informa ao webpack-dev-server para compilar para a pasta ./public toda vez que
+            * um código for alterado.
+           */</span>
+           <span class="hljs-attr">publicPath</span> : <span class="hljs-string">&#x27;public&#x27;</span>,
+
+           <span class="hljs-comment">/**
+            * Nome do arquivo para o pacote a ser gerado na pasta ./public 
+             */</span>
+           <span class="hljs-attr">filename</span> : <span class="hljs-string">&#x27;bundle.js&#x27;</span>,
+
+           <span class="hljs-comment">/** 
+            * Caminho absoluto da pasta em que será gerado o pacote que no nosso 
+             * caso é a pasta ./public.
+             * [Veja mais sobre path.resolve ...)(https://nodejs.org/api/path).html#path_path_resolve_paths 
+             */</span>
+           <span class="hljs-attr">path</span>: path.resolve(__dirname,<span class="hljs-string">&#x27;public&#x27;</span>),
+           <span class="hljs-comment">/**
+            * __dirname : - Esta é uma variável global NodeJs que fornece o caminho 
+             * do arquivo atualmente em execução. Nesse caso, ele fornece o caminho 
+             * do webpack.config.js . ( webpack.config.js é o arquivo atualmente em execução)
+             * 
+           */</span>
+       },
+
+       <span class="hljs-comment">/**
+       * resolve:{}
+       * Essas opções mudam a forma como os módulos são resolvidos. webpack fornece 
+       * padrões razoáveis, mas é possível alterar a resolução em detalhes. Dê uma 
+       * olhada em Resolução do Módulo para obter mais explicações sobre como o 
+       * resolvedor funciona. 
+       * veja mais: https://webpack.js.org/configuration/resolve/                
+       * 
+       * resolve.extensions
+       * [string] = [&#x27;.ts&#x27;, &#x27;.tsx&#x27;,&#x27;js&#x27;, &#x27;.wasm&#x27;]
+       * Tente resolver essas extensões em ordem. Se vários arquivos compartilham o 
+       * mesmo nome, mas têm extensões diferentes, o webpack resolverá aquele com a 
+       * extensão listada primeiro na matriz e ignorará o resto.
+       */</span>
+       <span class="hljs-attr">resolve</span>: {
+         <span class="hljs-attr">extensions</span>: [<span class="hljs-string">&#x27;.ts&#x27;</span>, <span class="hljs-string">&#x27;.tsx&#x27;</span>, <span class="hljs-string">&#x27;.js&#x27;</span>]
+       },
+       <span class="hljs-comment">/**
+        * O objeto module é usado para definir as regras usada na compilação ele
+         * contém o conjunto de plug-ins ou módulos usados ​​pelo webpack. 
+         */</span>
+       <span class="hljs-attr">module</span>: {
+         <span class="hljs-comment">// O array rules são usado para passagem de regras na transpilação dos módulos:</span>
+         <span class="hljs-attr">rules</span>: [
+           <span class="hljs-comment">// rules for modules (configure loaders, parser options, etc.)</span>
+           { 
+
+             <span class="hljs-comment">/**
+             * A expressão na lista de test: informa ao webpack que pegue todos os arquivos 
+             * com extensão é ts e o $ indica fim da expressão.
+             */</span>
+             <span class="hljs-attr">test</span> : <span class="hljs-regexp">/.tsx?$/</span>,
+
+             <span class="hljs-comment">/** 
+             * O comando ts-loader receber arquivos \.ts (TypeScript) e gera saída arquivos .js (javascript).
+             * 
+             */</span>
+             use : <span class="hljs-string">&#x27;ts-loader&#x27;</span>, <span class="hljs-comment">//loader ou use faz o mesmo efeito .</span>
+
+             <span class="hljs-comment">/**
+             * A propriedade include informa a pasta no qual devemos pegar os arquivo \.ts
+             */</span>
+             <span class="hljs-attr">include</span> : [path.resolve(__dirname,<span class="hljs-string">&#x27;src&#x27;</span>)] 
+           }
+         ]
+       },
+
+   }
+
+</div></code></pre>
+</li>
+<li>
+<p>...</p>
+</li>
+</ol>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=5L5R4kpfYxw&amp;list=PL4cUxeGkcC9hOkGbwzgYFmaxB0WiduYJC&amp;index=5">Aula 5 - Webpack &amp; TypeScript Setup - Using ES6 Modules</a></p>
+<ol>
+<li>
+<p>Criar arquivo forms.ts para lidar com envio dos formulários do projeto.</p>
+<ol>
+<li>
+<p>Código shellscript para criar o arquivo ./src/forms.ts</p>
+<pre><code class="language-ShellScript"><code><div>
+    touch ./src/forms.ts
+
+</div></code></code></pre>
+</li>
+<li>
+<p>Execute o editor de textos de sua preferência e adicione o código abaixo em ./src/forms.ts.</p>
+<ol>
+<li>
+<p>Código TypeScript</p>
+<pre><code class="language-TypeScript"><div>   <span class="hljs-comment">/**
+    * Vaja a Documentação de [HTMLFormElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement) para mais informações.
+    * 
+    */</span>
+   <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> formData = <span class="hljs-function">(<span class="hljs-params">form:HTMLFormElement</span>) =&gt;</span> {
+      <span class="hljs-keyword">const</span> inputs = form.querySelectAll(<span class="hljs-string">&#x27;input&#x27;</span>);
+      <span class="hljs-keyword">let</span> values : {[prop:<span class="hljs-built_in">string</span>]:<span class="hljs-built_in">string</span>} = {};
+
+      inputs.forEach(<span class="hljs-function"><span class="hljs-params">input</span> =&gt;</span> {
+         values[input.id] = input.value;
+      });
+      <span class="hljs-keyword">return</span> values;
+   };
+
+</div></code></pre>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Execute o editor de textos de sua preferência e adicione o código abaixo em ./src/index.ts..</p>
+<ol>
+<li>
+<p>Código TypeScript</p>
+<pre><code class="language-TypeScript"><div>
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Alo mundo&#x27;</span>);
+
+   <span class="hljs-keyword">import</span> {formData} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./forms&#x27;</span>;
+
+   <span class="hljs-keyword">const</span> form = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;form&#x27;</span>)!;
+
+   form.addEventListener(
+      <span class="hljs-string">&#x27;submit&#x27;</span>,<span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {  e.preventDefault();
+                        <span class="hljs-keyword">const</span> data = formData(form);
+                        <span class="hljs-built_in">console</span>.log(data);
+                     }
+   );
+
+</div></code></pre>
+<ol>
+<li>OBS: O código acima não funciona.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>...</p>
+</li>
+</ol>
+
+    </body>
+    </html>

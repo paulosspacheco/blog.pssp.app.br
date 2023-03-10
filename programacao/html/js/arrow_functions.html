@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Modelo de documento markdown &lt;a href&equals;&quot;arrow&lowbar;functions&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;&crarr;&lt;&sol;a&gt;&lt;a href&equals;&quot;arrow&lowbar;functions&period;pdf&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para visualizar o PDF deste documento em nova aba&period;&quot;&gt;&wp;&lt;&sol;a&gt;</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="span-idtopospanmodelo-de-documento-markdown-"><span id="topo"><span>Modelo de documento markdown <a href="arrow_functions.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >↵</a><a href="arrow_functions.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a></h1>
+<h2 id="1-index"><strong>1. INDEX</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li>
+<p><a href="#id_objetivo">Objetivo da função seta</a></p>
+</li>
+<li>
+<p><a href="#id_pre_requisitos">Pre-requisitos.</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#id_sintaxe">Sintaxe da function seta (arrow function)</a></p>
+</li>
+<li>
+<p><a href="#id_diferen%C3%A7a_arrow_function">Diferença entre arrow function (=&gt;) e function() em javascript</a></p>
+</li>
+<li>
+<p><a href="#id_referencias">Referências</a></p>
+</li>
+<li>
+<p><a href="#id_historico">Histórico</a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li>
+<p><strong>Objetivo</strong></p>
+<ol>
+<li>
+<p><span id="id_objetivo"><span><strong>Objetivo da função seta:</strong></p>
+<ol>
+<li>A arrow function tem por finalidade tornar a sintaxe mais fácil de ser lida e expressa, é útil quando usado como função anônima para interagir com coleções, porque  ela usa o <strong>this</strong> da coleção e não seu próprio <strong>this</strong>.</li>
+<li>Uma expressão arrow function possui uma sintaxe mais curta quando comparada a uma expressão de função (function expression) e não tem seu próprio <strong>this</strong>, <strong>arguments</strong>, <strong>super</strong> ou <strong>new.target</strong>. Estas expressões de funções são melhor aplicadas para funções que <strong>não sejam métodos</strong>, e elas não podem ser usadas como construtoras (<strong>constructors</strong>)</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos</strong>:</p>
+<ol>
+<li>
+<p>Conhecimento da <a href="https://developer.mozilla.org/pt-BR/docs/Glossario/HTML">linguagem html</a>.</p>
+</li>
+<li>
+<p>Conhecimento de <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Function">funções javascript</a>.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_sintaxe></span><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions#syntax"><strong>Sintaxe da função seta (arrow function)</strong></a>:</p>
+<ol>
+<li>
+<p><strong>Sintaxe básica</strong>:</p>
+<ol>
+<li>
+<p>Um parâmetro com a expressão simples, o retorno não é necessário:</p>
+<ol>
+<li>param =&gt; expression
+<ol>
+<li><strong>param</strong>
+<ol>
+<li>O nome de um argumento.</li>
+<li>Nenhum argumento precisa ser indicado com ().</li>
+<li>Para apenas um argumento, os parênteses não são necessários. (como  foo =&gt; 1)</li>
+</ol>
+</li>
+<li><strong>statements</strong> or expression
+<ol>
+<li>Várias instruções precisam ser colocadas entre colchetes.</li>
+<li>Uma única expressão não requer colchetes.</li>
+<li>A expressão também é o valor de retorno implícito da função.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Vários parâmetros requerem parênteses. Com a expressão simples, o retorno não é necessário:</p>
+<ol>
+<li>([param[, param]]) =&gt; { statements}</li>
+<li>(param1, paramN) =&gt; expression</li>
+</ol>
+</li>
+<li>
+<p>As instruções multilinhas requerem colchetes e retorno:</p>
+<ol>
+<li>
+<p>Código javascript:</p>
+<pre><code class="language-javascript"><div>
+  param =&gt; {  <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>;  
+            <span class="hljs-keyword">return</span> a + param;
+           }
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Vários parâmetros requerem parênteses. As instruções multilinhas requerem colchetes e retorno:</p>
+<ol>
+<li>
+<p>Código javascript:</p>
+<pre><code class="language-javascript"><div>
+  (param1, paramN) =&gt; { <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>;
+                        <span class="hljs-keyword">return</span> a + param1 + paramN;
+                      }
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Sintaxe avançada</strong>:</p>
+<ol>
+<li>
+<p>Para retornar uma expressão literal de objeto, são necessários parênteses em torno da expressão:</p>
+<ol>
+<li>
+<p>Código javascript:</p>
+<pre><code class="language-javascript"><div>
+   params =&gt; ({<span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;a&quot;</span>}) <span class="hljs-comment">// returning the object {foo: &quot;a&quot;}</span>
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">Rest parameters</a> are supported:</p>
+<ol>
+<li>
+<p>Código javascript:</p>
+<pre><code class="language-javascript"><div>
+   (a, b, ...r) =&gt; expression
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters">Default parameters</a> are supported:</p>
+<ol>
+<li>
+<p>Código javascript:</p>
+<pre><code class="language-javascript"><div>
+   (a=<span class="hljs-number">400</span>, b=<span class="hljs-number">20</span>, c) =&gt; expression
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">Destructuring</a>  within params supported:</p>
+<ol>
+<li>
+<p>Código javascript:</p>
+<pre><code class="language-javascript"><div>
+   ([a, b] = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>]) =&gt; a + b;  <span class="hljs-comment">// result is 30</span>
+   <span class="hljs-function">(<span class="hljs-params">{ a, b } = { a: <span class="hljs-number">10</span>, b: <span class="hljs-number">20</span> }</span>) =&gt;</span> a + b; <span class="hljs-comment">// result is 30</span>
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions#fun%C3%A7%C3%B5es_mais_curtas">Exemplo javascript</a> para contar o tamanho de cada string de um array:</p>
+<ol>
+<li>
+<p>Código javascript:</p>
+<pre><code class="language-javascript"><div>
+   <span class="hljs-keyword">const</span> materials = [<span class="hljs-string">&#x27;Hydrogen&#x27;</span>,<span class="hljs-string">&#x27;Helium&#x27;</span>,<span class="hljs-string">&#x27;Lithium&#x27;</span>,<span class="hljs-string">&#x27;Beryllium&#x27;</span>];
+  
+   <span class="hljs-comment">/**
+    *  Array.prototype.map()
+    *  Cria uma nova matriz com os resultados da chamada de uma
+    *  função fornecida em cada elemento desta matriz.
+    *  EXEMPLO DE USO:
+   */</span>
+   result = materials.map(<span class="hljs-function"><span class="hljs-params">material</span> =&gt;</span> material.length);
+   <span class="hljs-built_in">console</span>.log(result);
+   <span class="hljs-comment">// expected output: Array [8, 6, 7, 9]</span>
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>A lista de parâmetros para uma função sem parâmetros deve ser escrita com um par de parênteses.</p>
+<ol>
+<li>
+<p>Código javascript:</p>
+<pre><code class="language-javascript"><div>
+      () =&gt; { statements }
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Diferenças e limitações das arrow functions :</p>
+<ol>
+<li>Não tem vínculos próprios com <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this">this</a> ou <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super">super</a> não deve ser usado como <a href="https://developer.mozilla.org/en-US/docs/Glossary/Method">methods</a>.</li>
+<li>Não tem <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments">arguments</a>, nem <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target">new.targe</a>t palavras-chave.</li>
+<li>Não é adequado para <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call">call</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">apply</a> e <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">bind</a> métodos, que geralmente dependem de estabelecer um <a href="https://developer.mozilla.org/en-US/docs/Glossary/Scope">scope</a>.</li>
+<li>Não pode ser usado como <a href="https://developer.mozilla.org/en-US/docs/Glossary/Constructor">constructors</a>.</li>
+<li>Não pode usar <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield">yield</a>, dentro de seu corpo.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_diferença_arrow_function></span><strong>Diferença entre arrow function (=&gt;) e function() em javascript</strong></p>
+<ol>
+<li>
+<p>Arrow-Function incluída na es6 não é apenas uma <a href="https://pt.wikipedia.org/wiki/A%C3%A7%C3%BAcar_sint%C3%A1tico">sugar syntax</a> de function, as duas sintaxes tem suas peculiaridades. Abaixo citarei algumas delas e quais as vantagens em usar as Arrow functions.</p>
+<ol>
+<li>O que é arrow function?
+<ol>
+<li>Arrow function é uma função no javascript, porem ela traz algumas diferenças quando comparada com funções normais, vejamos abaixo:
+<ol>
+<li><strong>Lexical this</strong>
+<ol>
+<li>
+<p>Ele captura o valor de <strong>this</strong> do contexto vinculado, ou seja do escopo em que ele se encontra, por exemplo:</p>
+<ol>
+<li>Código JavaScript</li>
+</ol>
+<pre><code class="language-javascript"><div>
+<span class="hljs-number">1</span>   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Mensagem</span>(<span class="hljs-params"></span>) </span>{
+<span class="hljs-number">2</span>   
+<span class="hljs-number">3</span>   <span class="hljs-built_in">this</span>.mensagem = <span class="hljs-string">&#x27;Passou&#x27;</span>;
+<span class="hljs-number">4</span>   
+<span class="hljs-number">5</span>   <span class="hljs-comment">// Traditional function</span>
+<span class="hljs-number">6</span>   <span class="hljs-built_in">this</span>.logado = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<span class="hljs-number">7</span>         <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<span class="hljs-comment">//setTimeout=Executa um bloco específico uma vez depois de um determinado tempo</span>
+<span class="hljs-number">8</span>         <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.mensagem);         
+<span class="hljs-number">9</span>         },<span class="hljs-number">30</span>);
+<span class="hljs-number">10</span>   };
+<span class="hljs-number">11</span>   }
+<span class="hljs-number">12</span>
+<span class="hljs-number">13</span>   <span class="hljs-keyword">var</span> msg = <span class="hljs-keyword">new</span> Mensagem(); 
+<span class="hljs-number">14</span>   msg.logado(); <span class="hljs-comment">// undefined</span>
+
+
+</div></code></pre>
+</li>
+<li>
+<p>A função <em>Mensagem</em> ao ser instanciada, retornara um objeto com 2 propriedades, <em>mensagem</em> e <em>logado</em>. Que não logou a <em>mensagem</em> desejada porque o <strong>this</strong> na linha 8 trata-se da função anônima <em>logado</em>. Para funcionar como esperado, basta trocar a função na linha 7 por uma <strong>arrow function</strong>.</p>
+<ol>
+<li>Código JavaScript</li>
+</ol>
+<pre><code class="language-javascript"><div>
+<span class="hljs-number">1</span>   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Mensagem</span>(<span class="hljs-params"></span>) </span>{
+<span class="hljs-number">2</span>   
+<span class="hljs-number">3</span>   <span class="hljs-built_in">this</span>.mensagem = <span class="hljs-string">&#x27;Passou&#x27;</span>;
+<span class="hljs-number">4</span>   
+<span class="hljs-number">5</span>   <span class="hljs-comment">// Traditional function</span>
+<span class="hljs-number">6</span>   <span class="hljs-built_in">this</span>.logado = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<span class="hljs-number">7</span>         <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {  <span class="hljs-comment">//setTimeout=Executa um bloco específico uma vez depois de um determinado tempo</span>
+<span class="hljs-number">8</span>         <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.mensagem);         
+<span class="hljs-number">9</span>         },<span class="hljs-number">30</span>);
+<span class="hljs-number">10</span>   };
+<span class="hljs-number">11</span>   }
+<span class="hljs-number">12</span>
+<span class="hljs-number">13</span>   <span class="hljs-keyword">var</span> msg = <span class="hljs-keyword">new</span> Mensagem(); 
+<span class="hljs-number">14</span>   msg.logado(); <span class="hljs-comment">// &quot;Passou&quot;</span>
+
+</div></code></pre>
+</li>
+<li>
+<p>Neste caso funciona como esperado porque o <strong>this</strong> dentro da arrow function é uma referência do <strong>this</strong> da função acima no caso a função <em>Mensagem</em> assim o <strong>this</strong> dentro da função <em>logado</em> será o mesmo que o da função <em>Mensagem</em>.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>.</li>
+</ol>
+</li>
+<li>
+<p>...</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
+<ol>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions#descri%C3%A7%C3%A3o">Arrow functions descrição</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow functions examples</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions#syntax">Arrow functions syntax</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions#sintaxe_avan%C3%A7ada">Arrow functions sintaxe avançada</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions#fun%C3%A7%C3%B5es_mais_curtas">Arrow functions usada em coleções</a></p>
+</li>
+<li>
+<p><a href="https://medium.com/frontend-quest/arrow-functions-vs-functions-9048ec12b5c6">Arrow functions vs Functions</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions#syntax">Arrow functions - https://developer.mozilla.org/</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow function expressions</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#comparing_traditional_functions_to_arrow_functions">comparing traditional functions to arrow functions</a></p>
+</li>
+<li>
+<p><a href="https://pt.wikipedia.org/wiki/A%C3%A7%C3%BAcar_sint%C3%A1tico">Syntactic Sugar</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<ol>
+<li>
+<p>15/02/2021 <!--TODO: HISTÓRICO --></p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criado a versão 0.0.1 deste documento;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever objetivo de arrow function</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever a diferença entre arrow function e funções normais.</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever o tópico sintaxe de arrow function;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Conferir os links do documento</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Inserir os botões de retorno para o topo.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+<li>
+<p>16/02/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Fazer revisão do texto do documento para saber se os textos estão claros.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+<script>function goBack() { window.history.back()}</script>
+
+    </body>
+    </html>

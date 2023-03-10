@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>instalar.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="span-id%22topo%22spancomo-instalar-typescript-no-vscodea-href%22instalarhtml%22-target%22blank%22-title%22pressione-aqui-para-expandir-este-documento-em-nova-aba%22-%E2%86%B5aa-href%22instalarpdf%22-target%22blank%22-title%22pressione-aqui-para-visualizar-o-pdf-deste-documento-em-nova-aba%22%E2%84%98a"><span id="topo"><span>Como instalar typescript no vscode<a href="instalar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >↵</a><a href="instalar.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a></h1>
+ <!-- <details>
+   <summary><b>1. INDEX </b></summary> -->
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+<li><a href="#id_beneficios">benefícios.</a></li>
+</ol>
+</li>
+<li>
+<p><strong>Instalar</strong></p>
+<ol>
+<li><a href="#id_Instalar_npm">Instalar o pacote NPM</a></li>
+<li><a href="#id_Instalar_typescript">Instalar o compilador TypeScript.</a></li>
+<li><a href="#id_Instalar_npx">Instalação do pacote npx</a></li>
+<li><a href="#id_webpack">Instalação do pacote webpack</a></li>
+<li><a href="#id_tsc_init">Instalar a ferramenta tsc-init</a></li>
+<li><a href="#id_Eslint">Instalar a ferramenta Eslint</a></li>
+<li><a href="#id_TypeDoc">Instalar a ferramenta TypeDoc</a></li>
+<li><a href="#id_Instalar_extensoes">Instalar extensões vscode.</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments">Instalar extensão better-comments</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=oleg-shilo.codemap">Instalar extensão codeMap = Visualizar classes</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=steoates.autoimport">Auto Import</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_configurar"><strong>Configurar o compilador TypeScript</strong></a></p>
+<ol>
+<li><a href="#id_tsconfig_json">Arquivo tsconfig.json</a></li>
+<li><a href="#id_versoes_diferentes">Compilador versus serviço de linguagem</a></li>
+<li><a href="#id_compilar_com_vscode">Como configurar compilador tsc (typescript) para executar e depurar com vscode?</a>
+<ol>
+<li><a href="#id_cfg_tsconfig_json">Configuração do arquivo tsconfig.json</a>;</li>
+<li><a href="#id_cfg_tasks">Configuração do arquivo tasks.json</a></li>
+<li><a href="#id_teclasDeAtalhoVscode">Teclas de atalho do vscode</a>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#id_exemplos"><strong>Exemplos.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_referencias"><strong>Referências.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+</li>
+</ol>
+ <!-- </details>   -->
+<hr>
+<h2 id="2-conte%C3%BAdo"><strong>2. CONTEÚDO</strong></h2>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li>
+<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+<ol>
+<li>
+<p>Este documento descreve como instalar e configurar typescript no vscode.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
+<ol>
+<li>
+<p>VsCode precisa estar instalado e configurado o básico.</p>
+</li>
+<li>
+<p>Familiaridade com ide vscode.</p>
+</li>
+<li>
+<p>Nodejs precisa estar instalado e configurado.</p>
+</li>
+<li>
+<p>Conhecimento da linguagem typescript.</p>
+</li>
+<li>
+<p>Conhecimento da linguagem javascript.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
+<ol>
+<li>
+<p>Typescript permite criar código javascript isento de erros de sintaxe.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Instalar</strong></p>
+<ol>
+<li>
+<p><span id=id_Instalar_npm></span><strong>Instalar gerenciador de pacotes npm</strong></p>
+<ol>
+<li>
+<p>O programa <a href="https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/"><strong>npm</strong></a> é um gerenciador de pacotes do nodejs.</p>
+<pre class="hljs"><code><div>
+  sudo apt install npm
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Instalar_typescript></span><strong>Instalar o compilador TypeScript</strong></p>
+<ol>
+<li>
+<p>O Visual Studio Code inclui suporte à linguagem TypeScript, mas não inclui o compilador TypeScript <strong>tsc</strong>,. Você precisará instalar o compilador TypeScript globalmente ou em seu espaço de trabalho para transpilar o código-fonte do TypeScript para JavaScript ( <strong>tsc HelloWorld.ts</strong>).</p>
+<ol>
+<li>
+<p>A maneira mais fácil de instalar typescript é através <a href="https://www.npmjs.com/"><strong>npm</strong></a>(Node.js Package Manager).</p>
+</li>
+<li>
+<p>Se você tiver o <a href="https://www.npmjs.com/"><strong>npm</strong></a> instalado, poderá instalar o TypeScript globalmente  (<strong>opção -g</strong>) em seu computador:</p>
+<ol>
+<li>
+<p>ShellScript</p>
+<pre class="hljs"><code><div>   <span class="hljs-comment">#!/bin/sh</span>
+   // instalação global
+   sudo npm install -g typescript
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Instalar_npx></span><strong>Instalação do pacote</strong> <a href="https://www.npmjs.com/package/npx"><strong>npx</strong></a></p>
+<ol>
+<li>
+<p>O programa <a href="https://www.npmjs.com/package/npx">npx</a> executa programas da pasta local <strong>node_modules/.bin</strong> ou central, instalando todos os pacotes necessários para que o programa funcione.</p>
+</li>
+<li>
+<p>O npx é um package runner do NPM. Ele executa as bibliotecas que podem ser baixadas do site npmjs. Essas bibliotecas ficam em um banco de dados chamado NPM Registry, que também podem ser baixadas via CLI com npm ou yarn e com npx. <a href="https://blog.rocketseat.com.br/conhecendo-o-npx-executor-de-pacote-do-npm/">Veja mais...</a>.</p>
+</li>
+<li>
+<p>Código ShellScript</p>
+<pre class="hljs"><code><div>
+   <span class="hljs-comment">#!/bin/sh</span>
+   sudo npm install -g npx
+
+</div></code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_webpack></span><strong>Instalação do pacote</strong> <a href="https://webpack.js.org/guides/getting-started/"><strong>webpack</strong></a>.</p>
+<ol>
+<li>
+<p>webpack é usado para compilar módulos JavaScript. Depois de instalado , você pode interagir com o webpack a partir de sua <a href="https://webpack.js.org/api/cli/">CLI</a> ou <a href="https://webpack.js.org/api/node/">API</a>.</p>
+</li>
+<li>
+<p>Código ShellScript para instalação global:</p>
+<pre class="hljs"><code><div>   sudo npm install -g webpack
+</div></code></pre>
+</li>
+<li>
+<p>Código ShellScript para instalação local por projeto:</p>
+<pre class="hljs"><code><div>   <span class="hljs-comment">#!/bin/sh   </span>
+   mkdir webpack-demo // cria pasta <span class="hljs-keyword">do</span> novo projeto
+   <span class="hljs-built_in">cd</span> webpack-demo    // move-se para a pasta no novo projeto
+   npm init           // Cria o arquivo package.json <span class="hljs-keyword">do</span> projeto.
+   npm install webpack webpack-cli --save-dev
+</div></code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_tsc_init></span>
+<strong>Instalar a ferramenta tsc-init</strong>.</p>
+<ol>
+<li>
+<p>O programa <a href="https://www.npmjs.com/package/tsc-init"><strong>tsc-init</strong></a> é uma ferramenta para inicializar TypeScript e <a href="https://en.wikipedia.org/wiki/Webpack">Webpack</a> em seu projeto. Veja <a href="https://webpack.js.org/guides/getting-started/">webpack getting-started</a>.</p>
+</li>
+<li>
+<p>Código ShellScript para instalação global:</p>
+<pre class="hljs"><code><div>   npm install tsc-init -g
+</div></code></pre>
+</li>
+<li>
+<p>Código ShellScript para instalação local por projeto:</p>
+<pre class="hljs"><code><div>   npm install tsc-init
+</div></code></pre>
+</li>
+<li>
+<p>O programa <strong>tsc-init</strong> executa os seguintes comandos na pasta raiz do projeto:</p>
+<ol>
+<li>
+<p>Execute <a href="https://docs.npmjs.com/cli/v6/commands/npm-init">npm init</a> para criar o arquivo package.json;</p>
+</li>
+<li>
+<p>Execute <a href="https://www.npmjs.com/package/tsc-init">tsc --init</a> para criar um arquivo tsconfig.json;</p>
+</li>
+<li>
+<p>Adicionar <a href="https://webpack.js.org/">webpack</a>, <a href="https://github.com/TypeStrong/ts-loader">ts-loader</a> e TypeScript como dependências de desenvolvimento;</p>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=sU3W2ZTt-8I">Webpack - Curso rápido para iniciante</a></li>
+</ol>
+</li>
+<li>
+<p>Adicione <a href="http://karma-runner.github.io/6.1/intro/how-it-works.html">Karma</a>, <a href="https://www.npmjs.com/package/karma-jasmine">karma-jasmine</a>, <a href="https://www.npmjs.com/package/karma-webpack">Karma-webpack</a> como dependências de desenvolvimento;</p>
+</li>
+<li>
+<p>Crie um arquivo <a href="https://webpack.js.org/configuration/">webpack.config.js</a> para incluir <a href="https://github.com/TypeStrong/ts-loader">ts-loader</a>;</p>
+</li>
+<li>
+<p>Crie um arquivo <a href="http://karma-runner.github.io/6.1/config/configuration-file.html">karma.conf.js</a>;</p>
+</li>
+<li>
+<p>Crie um arquivo <a href="https://git-scm.com/docs/gitignore">.gitignore</a>;</p>
+</li>
+<li>
+<p>Execute <a href="https://git-scm.com/docs/git-init">git init</a>;</p>
+</li>
+<li>
+<p>Adicione scripts <a href="https://docs.npmjs.com/cli/v7/commands/npm">npm</a> para construir e agrupar;</p>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Eslint></span><strong>Instalar a ferramenta</strong> <a href="https://eslint.org/docs/user-guide/getting-started"><strong>ESlint</strong></a>:</p>
+<ol>
+<li>
+<p>O ESLint é uma ferramenta para identificar e relatar os padrões encontrados no código ECMAScript/JavaScript, com o objetivo de tornar o código mais consistente e evitar bugs.</p>
+</li>
+<li>
+<p>Código ShellScript para instalação local:</p>
+<pre class="hljs"><code><div>
+      npm install --save-dev eslint 
+      npm install --save-dev @typescript-eslint/parser
+      npm install --save-dev @typescript-eslint/eslint-plugin
+
+</div></code></pre>
+</li>
+<li>
+<p>Veja como usar ESLint com TypeScript...</p>
+<ol>
+<li><a href="https://eslint.org/docs/user-guide/configuring/">Configurando ESLint</a></li>
+<li><a href="https://eslint.org/docs/user-guide/command-line-interface">Familiarize-se com as opções de linha de comando.</a></li>
+<li><a href="https://eslint.org/docs/user-guide/integrations">Integração do ESLint com editores de textos.</a></li>
+<li><a href="https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/#:~:text=ESLint%20is%20a%20JavaScript%20linter%20that%20enables%20you%20to%20enforce,of%20TSLint%2C%20the%20TypeScript%20equivalent.">Como usar ESLint com TypeScript</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_TypeDoc></span><strong>Instalar a ferramenta TypeDoc</strong></p>
+<ol>
+<li>
+<p>O programa <a href="https://typedoc.org/guides/installation/">TypeDoc</a> converte comentários do código-fonte TypeScript em documentação HTML renderizada ou um modelo JSON.</p>
+</li>
+<li>
+<p>Código ShellScript:</p>
+<pre class="hljs"><code><div>   # Install
+   npm install typedoc
+
+   # Execute typedoc on your project
+   npx typedoc src/index.ts
+
+   # Use os argumentos --out ou --json para definir o formato e o destino de sua documentação.
+   typedoc --out docs src/index.ts
+</div></code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p>.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[[🔙🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Instalar_extensoes></span><strong>Extensões do vscode</strong>.</p>
+<ol>
+<li>
+<p>A extensão <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">ESLint</a> usa a biblioteca <strong>ESLint</strong> instalada na pasta da área de trabalho aberta. Se a pasta não fornecer um, a extensão procurará uma versão de instalação global. Se você não instalou o ESLint local ou globalmente, faça-o executando <strong>npm install eslint</strong> na pasta do espaço de trabalho para uma instalação local ou <strong>npm install -g eslint</strong> global.</p>
+</li>
+<li>
+<p>A extensão <a href="https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode">Visual Studio IntelliCode</a> fornece recursos de desenvolvimento assistido por AI para desenvolvedores Python, TypeScript / JavaScript e Java no Visual Studio Code, com insights baseados na compreensão do contexto do código combinado com o aprendizado de máquina.</p>
+</li>
+<li>
+<p>A extensão <a href="https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets">JavaScript (ES6) code snippets</a> contém trechos de código para JavaScript na sintaxe ES6 para o editor de código Vs (suporta JavaScript e TypeScript).</p>
+</li>
+<li>
+<p>A extensão <a href="https://marketplace.visualstudio.com/items?itemName=pmneo.tsimporter">TypeScript Importer</a> procura automaticamente por definições de TypeScript em arquivos de espaço de trabalho e fornece todos os símbolos conhecidos como itens de preenchimento para permitir o preenchimento de código.</p>
+</li>
+<li>
+<p>A extensão <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.typescript-javascript-grammar">Latest TypeScript and Javascript Grammar</a> é o ramo de desenvolvimento da colorização VSCode JS/TS. Projeto gitHub: <a href="https://github.com/Microsoft/TypeScript-TmLanguage/issues">https://github.com/Microsoft/TypeScript-TmLanguage/issues</a>.</p>
+</li>
+<li>
+<p>A extensão <a href="https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype">Paste JSON as Code</a> Copy JSON, paste as Go, TypeScript, C#, C++ and more.</p>
+</li>
+<li>
+<p>A extensão <a href="https://marketplace.visualstudio.com/items?itemName=kingsimba.tsdoc-comment">TSDoc Comment</a> é uma extensão para converter comentários simples no estilo C/C++ em comentários no estilo TSDoc</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_configurar></span><strong>Configurar o compilador TypeScript:</strong></p>
+<ol>
+<li>
+<p><span id=id_tsconfig_json></span>Arquivo <a href="https://www.staging-typescript.org/tsconfig"><strong>tsconfig.json</strong></a> na raiz do projeto é usado para customizar o comportamento padrão do compilador <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html"><strong>tsc</strong></a>:</p>
+<ol>
+<li>Ter um arquivo <a href="https://www.staging-typescript.org/tsconfig">TSConfig</a> em uma pasta indica que esta pasta é a raiz de um projeto TypeScript ou JavaScript. O arquivo <a href="https://www.staging-typescript.org/tsconfig">TSConfig</a> pode ser um <em>tsconfig.json</em> ou um <em>jsconfig.json</em>, os dois possuem o mesmo comportamento e as mesmas variáveis de configuração.
+<ol>
+<li>
+<p>Arquivo <a href="https://www.staging-typescript.org/tsconfig"><strong>tsconfig.json</strong></a> criado pelo comando ShellScript <a href="https://www.npmjs.com/package/tsc-init"><strong>tsc --init</strong></a>:</p>
+<pre class="hljs"><code><div>   {
+      <span class="hljs-attr">"compilerOptions"</span>  : 
+      {
+         <span class="hljs-attr">"target"</span>: <span class="hljs-string">"es6"</span>, 
+         <span class="hljs-attr">"module"</span>: <span class="hljs-string">"commonjs"</span>,
+         <span class="hljs-attr">"strict"</span>: <span class="hljs-literal">true</span>,
+         <span class="hljs-attr">"esModuleInterop"</span>: <span class="hljs-literal">true</span>,   
+         <span class="hljs-attr">"skipLibCheck"</span>: <span class="hljs-literal">true</span>, 
+         <span class="hljs-attr">"forceConsistentCasingInFileNames"</span>: <span class="hljs-literal">true</span>,
+         <span class="hljs-attr">"outDir"</span>: <span class="hljs-string">"out"</span>,
+         <span class="hljs-attr">"sourceMap"</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">//Permite compilar e depurar com vscode</span>
+      }
+   }     
+</div></code></pre>
+</li>
+<li>
+<p>Opções:</p>
+<ol>
+<li>
+<p>A propriedade <a href="https://www.staging-typescript.org/tsconfig#target"><strong>&quot;target&quot;: &quot;es6&quot;</strong></a> informa ao <strong>tsc</strong> a sintaxe javascript a ser gerada. Obs: Se sua aplicação depende de browser mais antigo informe a sintaxe apropriada.</p>
+</li>
+<li>
+<p>A propriedade <a href="https://www.staging-typescript.org/tsconfig#module"><strong>&quot;module&quot;: &quot;commonjs&quot;</strong></a> define o <a href="https://www.staging-typescript.org/docs/handbook/modules.html">sistema de módulo</a> para o programa. Consulte a página de referência dos módulos para obter mais informações. Muito provavelmente você deseja &quot;CommonJS&quot; para projetos de nó.</p>
+<ol>
+<li>Os módulos podem ser:
+<ol>
+<li>[ &quot;CommonJS&quot;, &quot;AMD&quot;, &quot;System&quot;, &quot;UMD&quot;, &quot;ES6&quot;, &quot;ES2015&quot;, &quot;ES2020&quot;, &quot;ESNext&quot;, &quot;None&quot; ]</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>A propriedade <a href="https://www.staging-typescript.org/tsconfig#strict"><strong>&quot;strict&quot;: true</strong></a> ative todas as opções de verificação de tipo restrita.</p>
+</li>
+<li>
+<p>A propriedade <a href="https://www.staging-typescript.org/tsconfig#esModuleInterop"><strong>&quot;esModuleInterop&quot;: true</strong></a> permite a interoperabilidade de emissão entre o módulo <strong>CommonJS</strong> e o módulos <strong>ES</strong> por meio da criação de objetos de <strong>namespace</strong> para todas as importações. Implica <strong>'allowSyntheticDefaultImports'</strong>.</p>
+</li>
+<li>
+<p>A propriedade <a href="https://www.staging-typescript.org/tsconfig#skipLibCheck"><strong>&quot;skipLibCheck&quot;: true</strong></a>, ignora a verificação de tipo de arquivos de declaração.</p>
+</li>
+<li>
+<p>A propriedade <a href="https://www.staging-typescript.org/tsconfig#forceConsistentCasingInFileNames"><strong>&quot;forceConsistentCasingInFileNames&quot;: true</strong></a> proibi referências com capitalização inconsistente para o mesmo arquivo.</p>
+</li>
+<li>
+<p>A propriedade <a href="https://www.staging-typescript.org/tsconfig#outDir"><strong>&quot;outDir&quot;: &quot;out&quot;</strong></a> informa a pasta de saída dos arquivos .js.</p>
+</li>
+<li>
+<p>A propriedade <a href="https://www.typescriptlang.org/tsconfig#sourceMap"><strong>&quot;sourceMap&quot;: true</strong></a> permite a geração de arquivos <strong>sourcemap</strong>. Esses arquivos permitem que os depuradores e outras ferramentas exibam o <strong>código-fonte TypeScript original</strong> ao trabalhar realmente com os arquivos JavaScript emitidos.</p>
+<ol>
+<li>Arquivos de mapa de origem são emitidos como .js.map(ou .jsx.map) arquivos próximos ao .js arquivo de saída correspondente.</li>
+<li>Agora, ao criar um .ts arquivo como parte do projeto, ofereceremos experiências de edição e validação de sintaxe ricas</li>
+<li><strong>ATENÇÃO: Após incluir essa propriedade no arquivo tsconfig.json o Vscode passa a compilar e depurar um arquivo com extensão .ts.</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Por padrão, o TypeScript inclui todos os <a href="https://www.staging-typescript.org/tsconfig#Project_Files_0"><em>*.ts</em></a> arquivos na pasta e subpastas atuais se as propriedades <a href="https://www.staging-typescript.org/tsconfig#outDir">outDir</a>, <a href="https://www.staging-typescript.org/tsconfig#outFile">outfile</a>, <a href="https://www.staging-typescript.org/tsconfig#files">files</a>, <a href="https://www.staging-typescript.org/tsconfig#extends">extends</a>, <a href="https://www.staging-typescript.org/tsconfig#include">include</a>, <a href="https://www.staging-typescript.org/docs/handbook/project-references.html">references</a> e  <a href="https://www.staging-typescript.org/tsconfig#exclude">exclude</a>,   não forem incluídas no arquivo <a href="https://www.staging-typescript.org/tsconfig"><strong>tsconfig.json</strong></a>.</p>
+</li>
+<li>
+<p>A forma mais prática para criar o arquivo <a href="https://www.staging-typescript.org/tsconfig"><strong>tsconfig.json</strong></a> é executar o código abaixo:</p>
+<ol>
+<li>
+<p>Código ShellScript</p>
+<pre class="hljs"><code><div>
+   tsc --init
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Agora, para construir a partir do terminal, você pode simplesmente digitar <strong>tsc</strong> e o compilador TypeScript saberá olhar <a href="https://www.staging-typescript.org/tsconfig"><strong>tsconfig.json</strong></a> para as configurações do seu projeto e opções do compilador e irá compilar o programa informado na propriedade <a href="https://docs.npmjs.com/cli/v7/configuring-npm/package-json">main</a> do arquivo <a href="https://docs.npmjs.com/cli/v7/configuring-npm/package-json">package.js</a>.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_versoes_diferentes></span></span><strong>Compilador versus serviço de linguagem:</strong></p>
+<ol>
+<li>É importante ter em mente que o <em>serviço de linguagem TypeScript</em> do VS Code é separado do <em>compilador TypeScript instalado</em>. Você pode ver a versão TypeScript do VS Code na barra de status ao abrir um arquivo TypeScript.</li>
+<li>Caso a versão do serviço de linguagem do vscode seja diferente da versão do comando &quot;tsc --version&quot; é necessário corrigir a diferença.
+<ol>
+<li>O link <a href="https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-newer-typescript-versions">&quot;Usando versões mais recentes do TypeScript&quot;</a> encina como igualar as versões.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_compilar_com_vscode></span> <strong>Como configurar compilador tsc (typescript) para executar e depurar com vscode</strong>?.</p>
+<ol>
+<li>
+<p><span id=id_cfg_tsconfig_json></span><strong>Configuração do arquivo tsconfig.json</strong>:</p>
+<ol>
+<li>Para permitir que o vscode (Visual Studio Code) compile e depure um arquivo <strong>.ts</strong> é necessário adicionar as propriedade <strong>&quot;outDir&quot;</strong> e <strong>&quot;sourceMap&quot;</strong> em <strong>&quot;compilerOptions&quot;</strong> do arquivo <strong>tsconfig.json</strong> conforme o código abaixo:
+<ol>
+<li>
+<p>Código json</p>
+<pre class="hljs"><code><div>   {
+      <span class="hljs-attr">"compilerOptions"</span>  : 
+      {
+         <span class="hljs-attr">"outDir"</span>: <span class="hljs-string">"out"</span>,  <span class="hljs-comment">//Código compilado fica nesta pasta.</span>
+         <span class="hljs-attr">"sourceMap"</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">//Permite compilar e depurar com vscode</span>
+      }
+   }
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_cfg_tasks></span> <a href="https://code.visualstudio.com/docs/editor/tasks"><strong>Configuração do arquivo tasks.json</strong></a></p>
+<ol>
+<li>O vscode pode ser configurado para que ferramentas externas possam se executadas dentro do vscode e seus resultados são analisados pelo vscode.</li>
+<li>As tarefas específicas da área de trabalho ou pasta são configuradas a partir do arquivo <em>tasks.json</em> na pasta <em>.vscode</em> para uma área de trabalho.</li>
+<li>As extensões também podem contribuir com tarefas usando um <a href="https://code.visualstudio.com/api/extension-guides/task-provider"><em>Provedor de Tarefas</em></a> , e essas tarefas contribuídas podem adicionar configurações específicas do espaço de trabalho definidas no arquivo <em>tasks.json</em>.</li>
+<li>Enquanto que o <em>tasks.json</em> permite que o usuário defina manualmente uma tarefa para uma pasta ou área de trabalho específica o <a href="https://code.visualstudio.com/api/extension-guides/task-provider">Provedor de Tarefas</a> pode detectar detalhes sobre uma área de trabalho e então criar automaticamente uma Tarefa de Código VS correspondente.</li>
+<li><strong>Observação</strong>:
+<ol>
+<li>o suporte a tarefas está disponível apenas ao trabalhar em uma pasta do espaço de trabalho. Não está disponível ao editar arquivos individuais.</li>
+</ol>
+</li>
+<li>As tarefas podem ser executadas a partir da opção <em>/terminal/Run Task</em> ou <em>/terminal/Run Build Task</em>. Obs: Tecla de atalho <em>Crtl + shift + B</em>.
+<ol>
+<li>Exemplo de como compilar um projeto typescript:
+<ol>
+<li>Selecione a arquivo principal do projeto (ex: index.ts);</li>
+<li>Selecione a opção <em>/terminal/Run Task</em></li>
+<li>Selecione a opção <strong>build tsc -pasta/config.json</strong> se o arquivo <em>tasks.json</em> não tiver configurado para executar um programa em particular.</li>
+</ol>
+</li>
+<li>Exemplo de como executar o programa gerado pela opção anterior:
+<ol>
+<li>Selecione a opção <strong>/Run/Start Debugging</strong> ou pressione na tecla f9.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://code.visualstudio.com/docs/typescript/typescript-compiling#_transpile-typescript-into-javascript">Transpile TypeScript para JavaScript</a> usando vscode.</p>
+<ol>
+<li>O VS Code se integra com o tsc nosso executor de tarefas integrado . Podemos usar isso para transpilar .ts arquivos em .js arquivos. Outro benefício de usar as tarefas do VS Code é que você obtém a detecção integrada de erros e avisos exibida no painel Problemas . Vamos transpilar um programa simples do TypeScript Hello World.
+<ol>
+<li>
+<p>Etapa 1: Criar um arquivo TS simples</p>
+<ol>
+<li>
+<p>Abra o VS Code em uma pasta vazia e crie um helloworld.ts arquivo, coloque o seguinte código nesse arquivo:</p>
+<pre class="hljs"><code><div>
+   <span class="hljs-keyword">let</span> message: <span class="hljs-built_in">string</span> = <span class="hljs-string">'Hello World'</span>;
+   <span class="hljs-built_in">console</span>.log(message);
+
+</div></code></pre>
+</li>
+<li>
+<p>Para testar se você tem o compilador TypeScript tsc instalado corretamente e um programa Hello World em funcionamento, abra um terminal e digite tsc helloworld.ts. Você pode usar o Terminal Integrado ( Ctrl + ` ) diretamente no VS Code.</p>
+</li>
+<li>
+<p>Agora você deve ver o helloworld.js arquivo JavaScript transpilado , que pode ser executado se o Node.js estiver instalado, digitando:</p>
+</li>
+</ol>
+<pre class="hljs"><code><div>
+     node helloworld.js
+
+</div></code></pre>
+</li>
+<li>
+<p>Etapa 2: Execute o build # do TypeScript</p>
+<ol>
+<li>
+<p>Execute Executar Tarefa de Compilação ( <strong>Ctrl + Shift + B</strong> ) no menu Terminal global . Se você criou um tsconfig.json arquivo na seção anterior, ele deve apresentar o seguinte seletor:</p>
+<ol>
+<li><img src="./img/typescript-build.png" alt=". Figura: "></li>
+</ol>
+</li>
+<li>
+<p>Selecione a entrada <strong>tsc: build</strong> . Isso produzirá um arquivo HelloWorld.jse HelloWorld.js.map na área de trabalho.</p>
+</li>
+<li>
+<p>Se você selecionou <strong>tsc: watch</strong>, o compilador TypeScript observará as alterações em seus arquivos TypeScript e executará o transpilador em cada alteração.</p>
+</li>
+<li>
+<p>Nos bastidores, executamos o compilador TypeScript como uma tarefa. O comando que usamos é:tsc -p .</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Etapa 3: Tornar o TypeScript Build o padrão:</p>
+<ol>
+<li>
+<p>Você também pode definir a tarefa de construção do TypeScript como a tarefa de construção padrão para que seja executada diretamente ao acionar Executar Tarefa de Construção ( Ctrl + Shift + B ).</p>
+</li>
+<li>
+<p>Para fazer isso, selecione <strong>Configure Default Build Task (Ctrl + Shift + P)</strong> no menu global Terminal . Isso mostra um seletor com as tarefas de construção disponíveis. Selecione TypeScript tsc : build , que gera o seguinte tasks.json arquivo em uma .vscode pasta:</p>
+<pre class="hljs"><code><div>
+   {
+      // See https://go.microsoft.com/fwlink/?LinkId=733558
+      // for the documentation about the tasks.json format
+      &quot;version&quot;: &quot;2.0.0&quot;,
+      &quot;tasks&quot;: [
+         {
+            &quot;type&quot;: &quot;typescript&quot;,
+            &quot;tsconfig&quot;: &quot;tsconfig.json&quot;,
+            &quot;problemMatcher&quot;: [
+               &quot;$tsc&quot;
+            ],
+            &quot;group&quot;: {
+               &quot;kind&quot;: &quot;build&quot;,
+               &quot;isDefault&quot;: true
+            }
+         }
+      ]
+   }
+   
+
+</div></code></pre>
+</li>
+<li>
+<p>Observe que a tarefa tem um <strong>objeto JSON &quot;group&quot;</strong> que define a tarefa  <strong>&quot;kind&quot;: &quot;build&quot;</strong> e torna o padrão na propriedade  <strong>&quot;isDefault&quot;: true</strong>. Agora, ao selecionar o comando Executar Tarefa de Compilação ou pressionar ( Ctrl + Shift + B ), você não será solicitado a selecionar uma tarefa e sua compilação será iniciada.</p>
+</li>
+<li>
+<p><strong>ATENÇÃO:</strong></p>
+<ol>
+<li>Toda vez que alterar o arquivo .ts é necessário pressionar as teclas ( Ctrl + Shift + B ) para compilar o arquivo .ts e transformar e .js.</li>
+<li>Após compilar o arquivo as opções de execução e debug do vscode podem ser usadas sem problema.</li>
+<li>O <a href="https://code.visualstudio.com/docs/nodejs/nodejs-tutorial#_debugging-your-node-application">Node.js tutorial in Visual Studio Code</a> encina como debugar os programas.</li>
+</ol>
+</li>
+<li>
+<p>Mais detalhes pode ser visto em: <a href="https://code.visualstudio.com/docs/typescript/typescript-compiling">https://code.visualstudio.com/docs/typescript/typescript-compiling</a>.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_teclasDeAtalhoVscode></span> <strong>Teclas de atalho do vscode</strong></p>
+<ol>
+<li>...</li>
+<li>...</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_exemplos></span><strong>Exemplos.</strong></p>
+<ol>
+<li>
+<p>Exemplo 01 - Usa o terminal de comandos para compilar.</p>
+<ol>
+<li>Crie um arquivo de nome helloworld.ts e adicione o seguinte código TypeScript:
+<ol>
+<li>
+<p>Código typescript:</p>
+<pre class="hljs"><code><div>
+   <span class="hljs-keyword">let</span> message: <span class="hljs-built_in">string</span> = <span class="hljs-string">'Hello World'</span>;
+   <span class="hljs-built_in">console</span>.log(message);
+
+</div></code></pre>
+</li>
+<li>
+<p>Olhe o código TypeScript acima e observe a palavra <strong>let</strong> e <strong>string</strong> são da linguagem TypeScript e não pertence ao javascript.</p>
+</li>
+<li>
+<p>Para compilar o arquivo <strong>helloworld.ts</strong> selecione o <a href="https://code.visualstudio.com/docs/editor/integrated-terminal">terminal integrado ( Ctrl + ` )</a>  do vscode e execute o código abaixo:</p>
+<ol>
+<li>Código ShellScript:</li>
+</ol>
+<pre class="hljs"><code><div> 
+   //Obs: tsc é o compilador  typescript
+   tsc helloworld.ts
+
+</div></code></pre>
+<ol>
+<li>O comando acima irá compilar e gerar o arquivo <strong>helloworld.js</strong>.</li>
+<li>Para executar o arquivo JavaScript <strong>helloworld.js</strong>, selecione o <a href="https://code.visualstudio.com/docs/editor/integrated-terminal">terminal integrado ( Ctrl + ` )</a>  do vscode e execute o código abaixo:
+<ol>
+<li>
+<p>Código ShellScript:</p>
+<pre class="hljs"><code><div>
+   // node é o interpretador javascript 
+   node helloworld.js
+
+</div></code></pre>
+</li>
+<li>
+<p>Se você abrir <strong>helloworld.js</strong>, verá que não é muito diferente de <strong>helloworld.ts</strong>. A informação de tipo foi removida e <strong>let</strong> agora é <strong>var</strong>..</p>
+<ol>
+<li>
+<p>Código javascript:</p>
+<pre class="hljs"><code><div>
+   <span class="hljs-keyword">var</span> message = <span class="hljs-string">'Hello World'</span>;
+   <span class="hljs-built_in">console</span>.log(message);
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>...</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
+<ol>
+<li>
+<p><a href="https://code.visualstudio.com/docs/typescript/typescript-tutorial">Tutorial do TypeScript no Visual Studio Code</a></p>
+</li>
+<li>
+<p><a href="https://code.visualstudio.com/docs/typescript/typescript-compiling">Compilando TypeScript</a></p>
+</li>
+<li>
+<p><a href="https://eslint.org/docs/user-guide/getting-started">ESlint</a></p>
+</li>
+<li>
+<p><a href="https://eslint.org/docs/user-guide/configuring/">Configurando ESLint</a></p>
+</li>
+<li>
+<p><a href="https://eslint.org/docs/user-guide/command-line-interface">Familiarize-se com as opções de linha de comando.</a></p>
+</li>
+<li>
+<p><a href="https://eslint.org/docs/user-guide/integrations">Integração do ESLint com editores de textos.</a></p>
+</li>
+<li>
+<p><a href="https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/#:~:text=ESLint%20is%20a%20JavaScript%20linter%20that%20enables%20you%20to%20enforce,of%20TSLint%2C%20the%20TypeScript%20equivalent.">Como usar ESLint com TypeScript</a></p>
+</li>
+<li>
+<p>A Microsoft criou o padrão de documentação <a href="https://tsdoc.org/">TSDoc</a> - para a  linguagem typescript com objetivo de que vários aplicativos possam gerar documentos do código em que a tag de um atrapalhe a tag de outro. É parecido com jsDoc.</p>
+</li>
+<li>
+<p>O projeto <a href="https://api-extractor.com/pages/tsdoc/doc_comment_syntax/">api-extractor.com</a> é um gerador de site typescript que espera a sintaxe <strong>TSDoc</strong> nos comentários do projeto. Reconhece também a linguagem markdown.</p>
+</li>
+<li>
+<p>O projeto <a href="https://jsdoc.app/index.html">jsdoc.app</a> é um gerador de documentos baseados nos comentários do código javascript e usa sintaxe <strong>jsdoc</strong> na qual o tsdoc foi estendido. O vídeo <a href="https://www.youtube.com/watch?v=8lXOckWqd2M">jsdoc</a> descreve com muita clareza o uso do jsdoc.</p>
+</li>
+<li>
+<p>O projeto <a href="http://docstrap.github.io/docstrap/themes/cosmo/index.html">docstrap.github.io</a> gera site baseado nos comentários dos arquivos javascript e espera a sintaxe do jsdoc. Para instalar siga os passos descritos <a href="http://docstrap.github.io/docstrap/themes/cosmo/index.html">aqui</a>.</p>
+</li>
+<li>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-node-js-modules-with-npm-and-package-json-pt">Como usar os módulos do Node.js com o npm e o package.json</a></p>
+</li>
+<li>
+<p><a href="https://developer.okta.com/blog/2018/11/15/node-express-typescript">Use TypeScript para construir uma API de nó com Express</a></p>
+</li>
+<li>
+<p><a href="https://auth0.com/blog/node-js-and-typescript-tutorial-build-a-crud-api/">Node.js and TypeScript Tutorial: Build a CRUD API</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<ol>
+<li>
+<p>19/02/2021 <!--TODO: HISTÓRICO --></p>
+<ul>
+<li>
+<p><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0">Criar este documento baseado no modelo02.md ;</label></p>
+</li>
+<li>
+<p><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">Escrever tópico Objetivos;</label></p>
+</li>
+<li>
+<p><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2">Escrever tópico Pre-requisitos</label></p>
+</li>
+<li>
+<p><input type="checkbox" id="checkbox3" checked="true"><label for="checkbox3">Escrever tópico Benefícios</label></p>
+</li>
+<li>
+<p><input type="checkbox" id="checkbox4" checked="true"><label for="checkbox4">Escrever tópico Instalar o compilador TypeScript</label></p>
+</li>
+<li>
+<p><input type="checkbox" id="checkbox5" checked="true"><label for="checkbox5">Configurar o compilador TypeScript</label></p>
+<ul>
+<li><input type="checkbox" id="checkbox6" checked="true"><label for="checkbox6">Arquivo tsconfig.json</label></li>
+<li><input type="checkbox" id="checkbox7" checked="true"><label for="checkbox7">Compilador versus serviço de linguagem</label></li>
+<li><input type="checkbox" id="checkbox8" checked="true"><label for="checkbox8">Como configurar compilador tsc (typescript) para executar e depurar com vscode?</label></li>
+</ul>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+<li>
+<p>22/02/2021</p>
+<ul>
+<li><input type="checkbox" id="checkbox9" checked="true"><label for="checkbox9">Instalar extensões vscode.</label></li>
+<li><input type="checkbox" id="checkbox10" checked="true"><label for="checkbox10">Escrever tópico Referências</label></li>
+<li><input type="checkbox" id="checkbox11" checked="true"><label for="checkbox11">Atualizar o histórico deste documento.</label></li>
+<li><input type="checkbox" id="checkbox12" checked="true"><label for="checkbox12">Adiciona no index as tags: </label><details> <summary></li>
+<li><input type="checkbox" id="checkbox13" checked="true"><label for="checkbox13">Adicionar a extensões Gramática TypeScript e Javascript mais recente.</label></li>
+<li><input type="checkbox" id="checkbox14" checked="true"><label for="checkbox14">TypeScript Importer</label></li>
+</ul>
+</li>
+<li>
+<p>04/03/2021</p>
+<ul>
+<li><input type="checkbox" id="checkbox15" checked="true"><label for="checkbox15">No tópico instalar com npm:</label>
+<ul>
+<li><input type="checkbox" id="checkbox16" checked="true"><label for="checkbox16">Documentar instalação do pacote npx.</label></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>27/04/2021</p>
+<ul>
+<li><input type="checkbox" id="checkbox17" checked="true"><label for="checkbox17">Atualizar o index adicionando todos os programas instalados por este documento:</label></li>
+</ul>
+</li>
+<li>
+<p>28/04/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
+<ul>
+<li>
+<p><input type="checkbox" id="checkbox18"><label for="checkbox18">Ler no dia seguinte este documento para checar os erros de português.</label></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+ <script>  function goBack() {    window.history.back()}</script>
+
+</body>
+</html>

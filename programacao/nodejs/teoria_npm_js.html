@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&midast;&midast;Teoria sobre o Framework npm&midast;&midast; &lt;a href&equals;&quot;teoria&lowbar;npm&lowbar;js&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;&crarr;&lt;&sol;a&gt;&lt;a href&equals;&quot;teoria&lowbar;npm&lowbar;js&period;pdf&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para visualizar o PDF deste documento em nova aba&period;&quot;&gt;&wp;&lt;&sol;a&gt;</title>
+        <style>
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="teoria-sobre-o-framework-npm-"><strong>Teoria sobre o Framework npm</strong> <a href="teoria_npm_js.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">↵</a><a href="teoria_npm_js.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a></h1>
+<h2 id="index">INDEX</h2>
+<ol>
+<li>Objetivo do pacote npm</li>
+<li>Arquivo package.json do Node.js</li>
+<li>Como compartilhar seu software no repositório npm</li>
+<li>Referências</li>
+<li>Histórico</li>
+</ol>
+<h2 id="conteúdo">CONTEÚDO</h2>
+<ol>
+<li>
+<p><strong>Objetivo do pacote npm</strong></p>
+<ol>
+<li>Gerenciador de pacotes de software
+<ol>
+<li>O nome npm (Node Package Manager) deriva de quando o npm foi criado pela primeira vez como um gerenciador de pacotes para Node.js.</li>
+<li>Todos os pacotes npm são definidos em arquivos chamados package.json.</li>
+<li>O conteúdo de package.json deve ser escrito em JSON .</li>
+<li>Pelo menos dois campos devem estar presentes no arquivo de definição: nome e versão .</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Arquivo package.json do Node.js</strong></p>
+<ol>
+<li>
+<p>O nome npm (Node Package Manager) deriva de quando o npm foi criado pela primeira vez como um gerenciador de pacotes para Node.js.</p>
+<ol>
+<li>Todos os pacotes npm são definidos em arquivos chamados package.json .</li>
+<li>O conteúdo de package.json deve ser escrito em JSON .</li>
+<li>Pelo menos dois campos devem estar presentes no arquivo de definição: nome e versão .
+<ol>
+<li>
+<p>Exemplo:</p>
+<pre><code class="language-json"><div>    {
+      <span class="hljs-attr">&quot;name&quot;</span> : <span class="hljs-string">&quot;Nome do pacote&quot;</span>,
+      <span class="hljs-attr">&quot;version&quot;</span> : <span class="hljs-string">&quot;1.2.3&quot;</span>,
+      <span class="hljs-attr">&quot;description&quot;</span> : <span class="hljs-string">&quot;Do que se trata o pacote&quot;</span>,
+      <span class="hljs-attr">&quot;main&quot;</span> : <span class="hljs-string">&quot;main.js&quot;</span>,
+      <span class="hljs-attr">&quot;keywords&quot;</span> : [<span class="hljs-string">&quot;nome do pacote&quot;</span>, <span class="hljs-string">&quot;nodejs&quot;</span>, <span class="hljs-string">&quot;npm&quot;</span>],
+      <span class="hljs-attr">&quot;author&quot;</span> : <span class="hljs-string">&quot;Paulo Pacheco&quot;</span>,
+      <span class="hljs-attr">&quot;licence&quot;</span> : <span class="hljs-string">&quot;ISC&quot;</span> <span class="hljs-comment">// Internet Systems Consortium</span>
+    }
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>O arquivo package.json é um elemento-chave em muitas aplicações do ecossistema Node.js e ele é criado com o comando:</p>
+<ol>
+<li>
+<pre>$ npm init</pre>
+<ol>
+<li>O comando npm init fará as perguntas a seguir:
+<ol>
+<li>name? - Nome do pacote</li>
+<li>version? - Versão do pacote = x.y.z onde:
+<ol>
+<li>x = versão principal e só muda se houver mudanças radicais ou a versão atual é incompatível com as anteriores.</li>
+<li>y = Mudanças pequenas que não quebram a compatibilidade com as versões anteriores.</li>
+<li>z = Não quebra compatibilidade e muda quando um bug foi corrigido.</li>
+</ol>
+</li>
+<li>Description? - Do que se trata o pacote</li>
+<li>Entry point? - Onde a primeira instrução será executada. Aqui vamos deixar como src/index.js, mais para frente vamos criar essa pasta e esse arquivo.</li>
+<li>Test command? - Tem relação com testes, vamos deixar vazio por hora</li>
+<li>Github repository? - Repositório do github</li>
+<li>Keywords? - Palavras chaves que vão facilitar na hora de achar nossa biblioteca</li>
+<li>License? - Licença da biblioteca</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Gerenciando Dependências</p>
+<ol>
+<li>O npm pode gerenciar dependências.</li>
+<li>O npm pode (em uma linha de comando) instalar todas as dependências de um projeto.</li>
+<li>Dependências também são definidas em package.json .</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Como compartilhar seu software no repositório npm</strong></p>
+<ol>
+<li>Se desejar compartilhar seu próprio software no registro npm , você pode fazer login em: <a href="https://www.npmjs.com">https://www.npmjs.com</a></li>
+</ol>
+</li>
+<li>
+<p><strong>REFERÊNCIAS</strong></p>
+<ol>
+<li><a href="https://www.w3schools.com/whatis/whatis_npm.asp">O que é npm?</a></li>
+<li><a href="https://www.alura.com.br/artigos/criando-e-publicando-uma-biblioteca-javascript-no-npm?gclid=CjwKCAiAsOmABhAwEiwAEBR0ZnMRHSUHOtuv2onQvSaVFvRxeiH2NjgbecqxgdbREcNmJEsyzjs0kRoCQWMQAvD_BwE">Criando e publicando uma biblioteca Javascript no NPM</a></li>
+<li><a href="https://www.luiztools.com.br/post/o-guia-completo-do-package-json-do-node-js/">O guia completo do package.json do Node.js</a></li>
+<li>.</li>
+</ol>
+</li>
+<li>
+<p><strong>HISTÓRICO</strong></p>
+<ol>
+<li>
+<p>03/02/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar este documento.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever objetivos do npm</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Comecei a escrever o guia completo do package.json do Node.js</li>
+</ul>
+</li>
+<li>
+<p>04/02/2021 <!--FIXME: em: 04/02/2021--></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Reorganizar o layout deste documento para que tenha INDEX E CONTEÚDO.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever documento: guia completo do package.json do Node.js</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever exemplo de como instalar npm</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+
+    </body>
+    </html>

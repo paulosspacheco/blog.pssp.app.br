@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>EXEMPLOS DE USO DO NODEJS</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="exemplos-de-uso-do-nodejs">EXEMPLOS DE USO DO NODEJS</h1>
+<h2 id="objetivo">OBJETIVO</h2>
+<ol>
+<li>Este documento descreve tudo de que preciso saber para trabalhar com nodejs.</li>
+<li>..</li>
+</ol>
+<h2 id="índices">ÍNDICES</h2>
+<ol>
+<li><a href="#id-configuracao">Como instalar e configurar node js no vscode</a>.</li>
+<li><a href="#id-rest">O que significa é sigla REST no estudo da web</a>.</li>
+<li><a href="#id_express">Como usar o framework express do node.js</a>.</li>
+</ol>
+<h2 id="conteúdos">CONTEÚDOS</h2>
+<ol>
+<li>Como instalar e configurar node js no vscode. <span id="id-configuracao"><span>
+<ol>
+<li>Toda a documentação de como instalar nodejs e suas extensões estão registradas no arquivo <a href="../configuracao.html">../configuracao.html</a>.</li>
+</ol>
+</li>
+<li>O que significa é sigla <a href="https://pt.wikipedia.org/wiki/REST">REST</a> no estudo da web. <span id="id-rest"><span>
+<ol>
+<li>É uma <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">tese de doutorado</a> de <a href="https://pt.wikipedia.org/wiki/Roy_Fielding">Roy Fielding</a> que descreve um modelo a ser utilizado para se projetar arquiteturas de software distribuído, baseadas em comunicação do protocolo http.</li>
+<li>Toda requisição precisa ter um identificado único chamado de URI (Uniform Resource Identifier).
+<ol>
+<li>Exemplos:
+<ol>
+<li><a href="http://servicorest.com.br/clientes/GET/id">http://servicorest.com.br/clientes/GET/id</a>; (Obter os dados de um recurso.)</li>
+<li><a href="http://servicorest.com.br/clientes/POST">http://servicorest.com.br/clientes/POST</a> ; (Criar um novo recurso.)</li>
+<li><a href="http://servicorest.com.br/clientes/PUT/id">http://servicorest.com.br/clientes/PUT/id</a>; (Substituir os dados de um determinado recurso)</li>
+<li><a href="http://servicorest.com.br/clientes/PATCH/id">http://servicorest.com.br/clientes/PATCH/id</a>; (Atualizar parcialmente um determinado recurso)</li>
+<li><a href="http://servicorest.com.br/clientes/DELETE/id">http://servicorest.com.br/clientes/DELETE/id</a>; (Excluir um determinado recurso)</li>
+<li><a href="http://servicorest.com.br/clientes/HEAD">http://servicorest.com.br/clientes/HEAD</a>; (Similar ao GET, mas utilizado apenas para se obter os cabeçalhos de resposta, sem os dados em si)</li>
+<li><a href="http://servicorest.com.br/clientes/OPTIONS">http://servicorest.com.br/clientes/OPTIONS</a>; (Obter quais manipulações podem ser realizadas em um determinado recurso)</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Representações dos <a href="https://pt.wikipedia.org/wiki/REST#Recursos">recursos</a>:
+<ol>
+<li>Um recurso pode ser representado de diversas maneiras, utilizando-se formatos específicos, tais como XML, JSON, HTML, CSV, dentre outros. Exemplo de representação de um recurso no formato XML.
+<ol>
+<li><a href="#id-xml-json">Exemplos de uma requisição GET com identificador</a>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Como usar o framework express do node.js.<span id=id_express></span>
+<ol>
+<li>Exemplos baseado na aula 07 e 10 do Curso de Node.js - Exibindo HTML.
+<ol>
+<li><a href="./test_express.js">Exemplo de rota da pasta raiz</a>.</li>
+<li><a href="./test_express.js">Exemplo de rota sem parâmetros</a>.</li>
+<li><a href="./test_express.js">Exemplo de rotas com parâmetros enviados pelo usuário</a>.</li>
+<li><a href="./test_express.js">Exemplo de uso da variável de ambiente __dirname e do método express().sendFile()</a>.</li>
+</ol>
+</li>
+<li>Exemplos baseado na aula do &quot;Curso de Node.js - Instalando o Mysql #11&quot;
+<ol>
+<li>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>.</li>
+</ol>
+<h2 id="anexos">ANEXOS</h2>
+<p><span id=id-xml-json> </span></p>
+<h3 id="exemplo-de-recurso-xml-para-localizar-um-cliente-usando-a-requisição-get">Exemplo de recurso XML para localizar um cliente usando a requisição GET</h3>
+<pre><code class="language-xml"><div>
+    <span class="hljs-tag">&lt;<span class="hljs-name">clientes</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">nome</span>&gt;</span>Paulo Pacheco<span class="hljs-tag">&lt;/<span class="hljs-name">nome</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">rua</span>&gt;</span>Rua Francisco oliveira de Souza<span class="hljs-tag">&lt;/<span class="hljs-name">rua</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">numero</span>&gt;</span>15<span class="hljs-tag">&lt;/<span class="hljs-name">numero</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">bairro</span>&gt;</span>Icarai<span class="hljs-tag">&lt;/<span class="hljs-name">bairro</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">municipio</span>&gt;</span>Caucaia<span class="hljs-tag">&lt;/<span class="hljs-name">municipio</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">estado</span>&gt;</span>Ceara<span class="hljs-tag">&lt;/<span class="hljs-name">estado</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">clientes</span>&gt;</span>
+
+
+```json
+    
+   {
+   &quot;id&quot;: 1,
+   &quot;nome&quot;: &quot;Paulo Pacheco&quot;,
+   &quot;rua&quot; : &quot;Rua Francisco oliveira de Souza&quot;,
+   &quot;numero&quot;: 15,
+   &quot;bairro&quot; : &quot;Icarai&quot;,
+   &quot;municipio&quot;: &quot;caucaia&quot;,
+   &quot;estado&quot;: &quot;ceara&quot;
+   }[Como usar o framework express do node.js](#id_express)
+
+</div></code></pre>
+<h2 id="históricos">HISTÓRICOS</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar documento <a href="http://index.html">index.md</a> para registrar tudo que preciso saber para trabalhar com nodejs.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Fazer <a href="./test_express.js">exemplo de uso</a> do framework express baseado no vídeo <a href="https://www.youtube.com/watch?v=UkwLcuzJRDQ&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=10">Curso de Node.js - Exibindo HTML #10</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Fazer exemplo de uso do framework express baseado no vídeo <a href="https://www.youtube.com/watch?v=HmmYkLyVy-c&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=11">Curso de Node.js - Instalando o Mysql #11</a>.</li>
+<li>[ ]</li>
+</ul>
+
+    </body>
+    </html>

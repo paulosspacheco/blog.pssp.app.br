@@ -1,0 +1,87 @@
+<!-- 
+    Dados globais devem ser incluídos em <body>  da seguinte forma
+
+    <span w3-include-html="./footer.inc"> </span>    
+    <script>
+        includeHTML();
+    </script>    
+
+    Exemplo de footer.inc:
+    <pre class="pre1">
+        Data da criação:     <span id ="createDate">??????</span>
+        Data da atualização: <span id = "createDateUpdate">??????</span>
+        Autor: <span id ="author">??????</span>
+        Email: <span id ="e_mail">??????</span>
+        Local: <span id ="local">??????</span>
+    </pre> 
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>Sobre</title>
+
+    <!-- <title>Este arquivo é usado para editar o arquivo footer.inc </title> -->
+
+    <meta name="createDate" content="12/11/2020">
+    <meta name="createDateUpdate" content="14/11/2020">
+    <meta name="description" content="Este arquivo eé usado para testar o código footer.inc">
+    <meta name="keywords" content="css,html,javascript">
+
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        rel="stylesheet">
+    <link type="text/css" href="../css/defaulttheme.css" rel="stylesheet">
+
+    <script defer="defer" type="application/x-javascript" src="./generic.js"></script>
+    <script defer="defer" type="application/x-javascript" src="./Tgeneric.js"></script>
+
+</head>
+
+<body onmouseover="generic.display()"> 
+
+
+    <!-- Menu de opções -->
+    <div class="topnav" id="myTopnav">
+        <script type="application/x-javascript" src="../menu/index.js"> </script>
+    </div>
+
+    <!--<div w3-include-html="./js/title.inc"> </div>-->     
+    <div w3-include-html="./title.inc"> </div>
+
+
+    <!--  Metas Author, e_mail e local -->
+    <meta name="author" content="Paulo Sérgio da Silva Pacheco">
+    <meta name="e_mail" content="paulosspacheco@yahoo.com.br">
+    <meta name="local" content="Icaraí - Caucaia - Ceará - Brasil">
+
+    <div class="footer">
+        <!-- inicio <div class="footer"> -->
+        <table style="width: 100%;">
+            <tbody>
+                <tr>
+                    <td style="text-align: right;">Criado em:</td>  <td><span id="createDate">??????</span></td>
+                    <td style="text-align: right;">Autor:</td>      <td><span id="author">??????</span></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;">Atualizado em:</td><td>  <span id="createDateUpdate">??????</span></td>
+                    <td style="text-align: right;">E-mail: </td>  <td><span id="e_mail">??????</span> <br> </td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                    <td><br></td>
+                    <td style="text-align: right;">Local:</td>
+                    <td> <span id="local">??????</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div> <!-- fim <div class="footer"> -->
+
+      
+<!-- RODAPÉ DA PÁGINA  -->
+        <!--<script> includeHTML();</script>  -->
+        <script> includeHTML();</script>             
+</body>
+
+</html>

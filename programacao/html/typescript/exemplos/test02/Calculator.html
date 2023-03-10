@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Exemplo de Calculadora com TypeScript &lt;a href&equals;&quot;Calculator&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;&crarr;&lt;&sol;a&gt;&lt;a href&equals;&quot;Calculator&period;pdf&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para visualizar o PDF deste documento em nova aba&period;&quot;&gt;&wp;&lt;&sol;a&gt;</title>
+        <style>
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="span-idtopospanexemplo-de-calculadora-com-typescript-"><span id="topo"><span>Exemplo de Calculadora com TypeScript <a href="Calculator.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >↵</a><a href="Calculator.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a></h1>
+<h2 id="1-index"><strong>1. INDEX</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+<li><a href="#id_beneficios">benefícios.</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_Descricao"><strong>Descrição.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_exemplos"><strong>Exemplos.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_Conteudo01"><strong>Conteúdo01</strong></a></p>
+</li>
+<li>
+<p><a href="#id_referencias"><strong>Referências.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li>
+<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+<ol>
+<li>
+<p>Este documento tem como objetivo descrever todos os comandos typescript necessários para criar uma calculadora.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
+<ol>
+<li>
+<p>Programas instalados:</p>
+<ol>
+<li>nodejs;</li>
+<li>Vscode;</li>
+<li>Compilador typescript.</li>
+<li>tsc-init</li>
+</ol>
+</li>
+<li></li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
+<ol>
+<li>
+<p>Aprender os comandos da linguagem typescript.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Descricao></span><strong>Descrição</strong></p>
+<ol>
+<li>
+<p>Escreve em detalhe o conteúdo deste conteúdo.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_exemplos></span><strong>Exemplos.</strong></p>
+<ol>
+<li>
+<p>Calculadora:</p>
+<ol>
+<li>Código typescript</li>
+</ol>
+<pre><code class="language-typescript"><div>
+   <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Calculator {
+   <span class="hljs-keyword">private</span> current = <span class="hljs-number">0</span>;
+   <span class="hljs-keyword">private</span> memory = <span class="hljs-number">0</span>;
+   <span class="hljs-keyword">private</span> operator: <span class="hljs-built_in">string</span>;
+   <span class="hljs-keyword">protected</span> processDigit(digit: <span class="hljs-built_in">string</span>, currentValue: <span class="hljs-built_in">number</span>) {
+         <span class="hljs-keyword">if</span> (digit &gt;= <span class="hljs-string">&quot;0&quot;</span> &amp;&amp; digit &lt;= <span class="hljs-string">&quot;9&quot;</span>) {
+         <span class="hljs-keyword">return</span> currentValue * <span class="hljs-number">10</span> + (digit.charCodeAt(<span class="hljs-number">0</span>) - <span class="hljs-string">&quot;0&quot;</span>.charCodeAt(<span class="hljs-number">0</span>));
+         }
+   }
+   <span class="hljs-keyword">protected</span> processOperator(operator: <span class="hljs-built_in">string</span>) {
+         <span class="hljs-keyword">if</span> ([<span class="hljs-string">&quot;+&quot;</span>, <span class="hljs-string">&quot;-&quot;</span>, <span class="hljs-string">&quot;*&quot;</span>, <span class="hljs-string">&quot;/&quot;</span>].indexOf(operator) &gt;= <span class="hljs-number">0</span>) {
+         <span class="hljs-keyword">return</span> operator;
+         }
+   }
+   <span class="hljs-keyword">protected</span> evaluateOperator(
+         operator: <span class="hljs-built_in">string</span>,
+         left: <span class="hljs-built_in">number</span>,
+         right: <span class="hljs-built_in">number</span>
+   ): <span class="hljs-built_in">number</span> {
+         <span class="hljs-keyword">switch</span> (<span class="hljs-built_in">this</span>.operator) {
+         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span>:
+            <span class="hljs-keyword">return</span> left + right;
+         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span>:
+            <span class="hljs-keyword">return</span> left - right;
+         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span>:
+            <span class="hljs-keyword">return</span> left * right;
+         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span>:
+            <span class="hljs-keyword">return</span> left / right;
+         }
+   }
+   <span class="hljs-keyword">private</span> evaluate() {
+         <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.operator) {
+         <span class="hljs-built_in">this</span>.memory = <span class="hljs-built_in">this</span>.evaluateOperator(
+            <span class="hljs-built_in">this</span>.operator,
+            <span class="hljs-built_in">this</span>.memory,
+            <span class="hljs-built_in">this</span>.current
+         );
+         } <span class="hljs-keyword">else</span> {
+         <span class="hljs-built_in">this</span>.memory = <span class="hljs-built_in">this</span>.current;
+         }
+         <span class="hljs-built_in">this</span>.current = <span class="hljs-number">0</span>;
+   }
+   <span class="hljs-keyword">public</span> handleChar(char: <span class="hljs-built_in">string</span>) {
+         <span class="hljs-keyword">if</span> (char === <span class="hljs-string">&quot;=&quot;</span>) {
+         <span class="hljs-built_in">this</span>.evaluate();
+         <span class="hljs-keyword">return</span>;
+         } <span class="hljs-keyword">else</span> {
+         <span class="hljs-keyword">let</span> value = <span class="hljs-built_in">this</span>.processDigit(char, <span class="hljs-built_in">this</span>.current);
+         <span class="hljs-keyword">if</span> (value !== <span class="hljs-literal">undefined</span>) {
+            <span class="hljs-built_in">this</span>.current = value;
+            <span class="hljs-keyword">return</span>;
+         } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">let</span> value = <span class="hljs-built_in">this</span>.processOperator(char);
+            <span class="hljs-keyword">if</span> (value !== <span class="hljs-literal">undefined</span>) {
+            <span class="hljs-built_in">this</span>.evaluate();
+            <span class="hljs-built_in">this</span>.operator = value;
+            <span class="hljs-keyword">return</span>;
+            }
+         }
+         }
+         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Unsupported input: &#x27;<span class="hljs-subst">${char}</span>&#x27;`</span>);
+   }
+   <span class="hljs-keyword">public</span> getResult() {
+         <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.memory;
+   }
+   }
+   <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params">c: Calculator, input: <span class="hljs-built_in">string</span></span>) </span>{
+   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; input.length; i++) {
+         c.handleChar(input[i]);
+   }
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`result of &#x27;<span class="hljs-subst">${input}</span>&#x27; is &#x27;<span class="hljs-subst">${c.getResult()}</span>&#x27;`</span>);
+   }
+
+
+</div></code></pre>
+</li>
+<li>
+<p>item 02.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Conteudo01></span><strong>Conteúdo01</strong></p>
+<ol>
+<li>
+<p>item 01.</p>
+</li>
+<li>
+<p>item 02.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
+<ol>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<ol>
+<li>
+<p>dd/mm/2021 <!--TODO: HISTÓRICO --></p>
+<ul>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ul>
+</li>
+<li>
+<p>dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Criar este documento baseado no <a href="http://Calculator.html">Calculator.md</a> ;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Objetivos;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Pre-requisitos</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Benefícios</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Descrição</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Conteúdo 02</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Referências</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Atualizar o histórico deste documento.</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Ler no dia seguinte este documento para checar os erros de português.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+ <script>    function goBack() {    window.history.back()}</script>
+
+    </body>
+    </html>

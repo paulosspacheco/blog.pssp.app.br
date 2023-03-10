@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;JAVASCRIPT - Fun&ccedil;&otilde;es ass&iacute;ncronas&lt;a href&equals;&quot;function&lowbar;async&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;&crarr;&lt;&sol;a&gt;&lt;a href&equals;&quot;function&lowbar;async&period;pdf&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para visualizar o PDF deste documento em nova aba&period;&quot;&gt;&wp;&lt;&sol;a&gt;</title>
+        <style>
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="span-idtopospanjavascript---funções-assíncronas"><span id="topo"><span>JAVASCRIPT - Funções assíncronas<a href="function_async.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >↵</a><a href="function_async.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a></h1>
+<h2 id="1-index"><strong>1. INDEX</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+<li><a href="#id_beneficios">benefícios.</a></li>
+<li><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/async_function">Expressão da função async</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_Descricao"><strong>Descrição.</strong></a></p>
+</li>
+<li>
+<p><strong>Exemplos</strong></p>
+<ol>
+<li><a href="#id_exemplos">Promise</a></li>
+<li><a href="#id_Async_await">Exemplos de uso das palavras reservadas Async/await</a></li>
+<li><a href="#id_Promessa_retorno">Promessa de retorno</a></li>
+<li><a href="#id_Expressao_assincrona">Expressão de função assíncrona</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_referencias"><strong>Referências.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+<hr>
+<ol>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise">Introdução</a></p>
+<ol>
+<li>
+<p><span id="id_objetivo"><span>Objetivo:</p>
+<ol>
+<li>
+<p>Promise é um objeto usado para processamento assíncrono. Um Promise (de &quot;promessa&quot;) representa um valor que pode estar disponível agora, no futuro ou nunca.</p>
+</li>
+<li>
+<p>As promessas nos fornecem uma maneira mais fácil de lidar com a assincronia em nosso código de maneira sequencial.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span>Pre-requisitos:</p>
+<ol>
+<li>
+<p>Conhecimento da <a href="https://developer.mozilla.org/pt-BR/docs/Glossario/HTML">linguagem html.</a>.</p>
+</li>
+<li>
+<p>Conhecimento de <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Function">funções javascript.</a>.</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Glossario/Callback_function">Callback function.</a></p>
+<ol>
+<li><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Usando_promises">Usando_promises.</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span>Benefícios:</p>
+<ol>
+<li>
+<p>A nova adição com ES2017 (ES8), adicionou na linguagem javascript as funções <strong>Async/await</strong> com objetivo de nos ajudar a escrever código de aparência completamente síncrona, enquanto realizamos tarefas assíncronas nos bastidores.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Descricao></span><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise#descri%C3%A7%C3%A3o"><strong>Descrição</strong></a></p>
+<ol>
+<li>
+<p>Uma <strong>Promise</strong> representa um proxy para um valor que não é necessariamente conhecido quando a promessa é criada. Isso permite a associação de métodos de tratamento para eventos da ação assíncrona num caso eventual de sucesso ou de falha. Isto permite que métodos assíncronos retornem valores como métodos síncronos: ao invés do valor final, o método assíncrono retorna uma promessa ao valor em algum momento no futuro.</p>
+<ol>
+<li>Um <strong>Promise</strong> está em um destes estados:
+<ol>
+<li><strong>pending</strong> (pendente): Estado inicial, que não foi realizada nem rejeitada.</li>
+<li><strong>fulfilled</strong> (realizada): sucesso na operação.</li>
+<li><strong>rejected</strong> (rejeitado):  falha na operação.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Uma promessa pendente pode se tornar realizada com um valor ou rejeitada por um motivo (erro). Quando um desses estados ocorre, o <strong>método then</strong> do <strong>Promise</strong> é chamado, e ele chama o método de tratamento associado ao estado (rejected ou resolved). Se a promessa foi realizada ou rejeitada quando o método de tratamento correspondente for associado, o método será chamado, deste forma não há uma condição de competição entre uma operação assíncrona e seus manipuladores que estão sendo associados.</p>
+</li>
+<li>
+<p>Como os métodos <strong>Promise.prototype.then</strong> e <strong>Promise.prototype.catch</strong>  retornam promises, eles podem ser encadeados — uma operação chamada composição.</p>
+<ol>
+<li><img src="file:////media/paulosspacheco/hd-60gb/nodejs/blog.pssp.app.br/programacao/html/js/img/promises.png" alt="Diagrama de Promise"></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_exemplos></span><strong>Exemplos.</strong></p>
+<ol>
+<li>
+<p><strong>Promise</strong>:</p>
+<ol>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise#criando_uma_promise">Criando uma Promise</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise#carregando_uma_imagem_com_xhr">Carregando uma imagem com XHR</a></p>
+<ol>
+<li><a href="https://github.com/mdn/js-examples/blob/master/promises-test/index.html">Código fonte carregar imagens usando Promise</a></li>
+<li><a href="https://mdn.github.io/js-examples/promises-test/">Código fonte sendo executado</a>.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_Async_await"></span><strong>Exemplos de uso das palavras reservadas Async/await</strong>.</p>
+<ol>
+<li>
+<p><strong>Exemplo de funções assíncronas</strong>.</p>
+<ol>
+<li>
+<p>No exemplo a seguir, primeiro declaramos uma função que retorna uma promessa que resolve para um valor após 2 segundos. Em seguida, declaramos um assíncrono função e aguardam para que a promessa seja resolvida antes de registrar a mensagem no console:</p>
+<ol>
+<li>
+<p>Código JavaScript</p>
+<pre><code class="language-javascript"><div>      <span class="hljs-comment">/**
+         * test_function_async_1.js
+         * 
+      */</span>
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">palha</span>ç<span class="hljs-title">o_assustador</span>(<span class="hljs-params"></span>) </span>{
+         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(
+                        <span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> {<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> { resolve(<span class="hljs-string">&#x27;🤡&#x27;</span>);}, <span class="hljs-number">2000</span>);});
+      }
+
+      <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">msg</span>(<span class="hljs-params"></span>) </span>{
+         <span class="hljs-keyword">const</span> msg = <span class="hljs-keyword">await</span> palhaço_assustador();
+         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Message:&#x27;</span>, msg);
+      }
+
+      msg(); <span class="hljs-comment">// Message: 🤡 &lt;-- after 2 sec    </span>
+
+</div></code></pre>
+<ol>
+<li>Nota: <strong>await</strong> é um novo operador usado para esperar por uma promessa para resolver ou rejeitar. Só pode ser usado dentro de uma função assíncrona..</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>O poder das funções assíncronas se torna mais evidente quando há várias etapas envolvidas:</p>
+<ol>
+<li>
+<p>Código JavaScript</p>
+<pre><code class="language-javascript"><div>
+   <span class="hljs-comment">/**
+    * Exemplo de function assíncrona
+      * test_function_async_2.js
+      * O poder das funções assíncronas se torna mais evidente quando 
+      * há várias etapas envolvidas.
+      */</span>            
+   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">who</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(
+         <span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> {<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {resolve(<span class="hljs-string">&#x27;🤡&#x27;</span>);}, <span class="hljs-number">200</span>);});
+   }
+
+   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">what</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(
+         <span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> {<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {resolve(<span class="hljs-string">&#x27;espiona&#x27;</span>);}, <span class="hljs-number">300</span>);});
+   }
+
+   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">where</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(
+         <span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> {<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {resolve(<span class="hljs-string">&#x27;nas sombras&#x27;</span>);}, <span class="hljs-number">500</span>)});
+   }
+
+   <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">msg</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> a = <span class="hljs-keyword">await</span> who();
+      <span class="hljs-keyword">const</span> b = <span class="hljs-keyword">await</span> what();
+      <span class="hljs-keyword">const</span> c = <span class="hljs-keyword">await</span> where();
+
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${ a }</span> <span class="hljs-subst">${ b }</span> <span class="hljs-subst">${ c }</span>`</span>);
+   }
+
+   msg(); <span class="hljs-comment">// 🤡 espiona nas sombras &lt;- após 1 segundo</span>
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Uma palavra de cautela, no entanto, no exemplo acima, cada etapa é realizada sequencialmente, com cada etapa adicional aguardando a etapa anterior para ser resolvida ou rejeitada antes de continuar. Se você quiser que as etapas ocorram em paralelo, você pode simplesmente usar <em>Promise.all</em> esperar que todas as promessas tenham sido cumpridas:</p>
+<ol>
+<li>
+<p>Código JavaScript:</p>
+<pre><code class="language-javascript"><div>
+   <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">msg</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> [a, b, c] = <span class="hljs-keyword">await</span> <span class="hljs-built_in">Promise</span>.all([who(), what(), where()]);
+
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${ a }</span> <span class="hljs-subst">${ b }</span> <span class="hljs-subst">${ c }</span>`</span>);
+   }
+
+   msg(); <span class="hljs-comment">// 🤡 espiona nas sombras &lt;- após 500ms</span>
+
+</div></code></pre>
+</li>
+<li>
+<p><em>Promise.all</em> retorna uma matriz com os valores resolvidos assim que todas as promessas passadas forem resolvidas.</p>
+</li>
+<li>
+<p>Acima, também usamos uma boa desestruturação de array para tornar nosso código sucinto.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_Promessa_retorno"></span><strong>Promessa de retorno</strong>.</p>
+<ol>
+<li>
+<p>As funções assíncronas sempre retornam uma promessa, portanto, o seguinte pode não produzir o resultado que você deseja:</p>
+<ol>
+<li>Código JavaScript:</li>
+</ol>
+<pre><code class="language-javascript"><div>
+   <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hello</span>(<span class="hljs-params"></span>) </span>{
+   <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Hello Alligator!&#x27;</span>;
+   }
+
+   <span class="hljs-keyword">const</span> b = hello();
+
+   <span class="hljs-built_in">console</span>.log(b); <span class="hljs-comment">// [object Promise] { ... }</span>
+
+</div></code></pre>
+</li>
+<li>
+<p>Como o que é retornado acima é uma promessa, é necessário usar o método <strong>b.then</strong> para imprimir o resultado da função <strong>hello()</strong> e não a promessa.</p>
+<ol>
+<li>Código JavaScript.</li>
+</ol>
+<pre><code class="language-javascript"><div>
+      <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hello</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Hello Alligator!&#x27;</span>;
+      }
+
+      <span class="hljs-keyword">const</span> b = hello();
+
+      b.then(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(x)); <span class="hljs-comment">// Hello Alligator!</span>
+
+</div></code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_Expressao_assincrona"></span><strong>Expressão de função assíncrona</strong></p>
+<ol>
+<li>
+<p>O exemplo abaixo é a função assíncrona do nosso primeiro exemplo, mas definida como uma expressão de função:</p>
+<ol>
+<li>Código JavaScript:</li>
+</ol>
+<pre><code class="language-javascript"><div>
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">palha</span>ç<span class="hljs-title">o_assustador</span>(<span class="hljs-params"></span>) </span>{
+         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(
+                     <span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> {<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> { resolve(<span class="hljs-string">&#x27;🤡&#x27;</span>);}, <span class="hljs-number">2000</span>);});
+      }
+      <span class="hljs-keyword">const</span> msg = <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{  
+                        <span class="hljs-keyword">const</span> msg = <span class="hljs-keyword">await</span> palhaço_assustador();
+                        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Message:&#x27;</span>, msg);
+                     }
+
+      <span class="hljs-built_in">console</span>.log(msg().then);              
+
+</div></code></pre>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions"><strong>Arrow function - async</strong></a> assíncrona</p>
+<ol>
+<li>
+<p>Aqui está o mesmo exemplo mais uma vez, mas desta vez definido como uma função de seta:</p>
+<ol>
+<li>Código JavaScript:</li>
+</ol>
+<pre><code class="language-javascript"><div>
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">palha</span>ç<span class="hljs-title">o_assustador</span>(<span class="hljs-params"></span>) </span>{
+         <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(
+                     <span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> {<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> { resolve(<span class="hljs-string">&#x27;🤡&#x27;</span>);}, <span class="hljs-number">2000</span>);});
+      }
+      <span class="hljs-keyword">const</span> msg = <span class="hljs-keyword">async</span> () =&gt; {  
+                        <span class="hljs-keyword">const</span> msg = <span class="hljs-keyword">await</span> palhaço_assustador();
+                        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Message:&#x27;</span>, msg);
+                     }
+
+      <span class="hljs-built_in">console</span>.log(msg().then);              
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
+<ol>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/async_function">Expressão da função async</a></p>
+</li>
+<li>
+<p><a href="https://www.digitalocean.com/community/tutorials/js-async-functions#:~:text=await%20is%20a%20new%20operator,used%20inside%20an%20async%20function.">Exploring Async/Await Functions in JavaScript</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Glossario/HTML">HTML</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Function">Function javascript</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Glossario/Callback_function">Função Callback</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Usando_promises">Usando promises</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise#descri%C3%A7%C3%A3o">Descrição de Promise</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise#criando_uma_promise">Criando uma Promise</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise#carregando_uma_imagem_com_xhr">Carregando uma imagem com XHR</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow functions</a></p>
+</li>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<ol>
+<li>
+<p>16/02/2021 <!--TODO: HISTÓRICO --></p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar este documento baseado no function_async.md ;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Objetivos;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Pre-requisitos;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Benefícios;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Descrição;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Exemplos;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Referências</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+<li>
+<p>17/02/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Ler este documento para checar os erros de português.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+<script>function goBack() { window.history.back()}</script>
+
+    </body>
+    </html>

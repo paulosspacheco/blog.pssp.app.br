@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;&lsqb;Um servidor de protocolo de &aacute;rea de trabalho remota de c&oacute;digo aberto Xrdp&rsqb;&lpar;http&colon;&sol;&sol;xrdp&period;org&sol;&rpar; &lt;a href&equals;&quot;teoria&lowbar;xrdp&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;&crarr;&lt;&sol;a&gt;&lt;a href&equals;&quot;teoria&lowbar;xrdp&period;pdf&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para visualizar o PDF deste documento em nova aba&period;&quot;&gt;&wp;&lt;&sol;a&gt;</title>
+        <style>
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="span-idtopospanum-servidor-de-protocolo-de-área-de-trabalho-remota-de-código-aberto-xrdp-"><span id="topo"><span><a href="http://xrdp.org/">Um servidor de protocolo de área de trabalho remota de código aberto Xrdp</a> <a href="teoria_xrdp.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >↵</a><a href="teoria_xrdp.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a></h1>
+<h2 id="1-index"><strong>1. INDEX</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Objetivo</strong><span id="topo_Objetivo"><span></p>
+<ol>
+<li>
+<p><a href="#id_objetivo">Objetivo do xrdp</a>.</p>
+</li>
+<li>
+<p><a href="#id_pre_requisitos">Pre-requisitos para usar xrdp</a>.</p>
+</li>
+<li>
+<p><a href="#id_beneficios">Benefícios adquirido com este documento</a>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#id_xdrp">Programa xrdp e suas dependências</a></p>
+<ol>
+<li><a href="https://www.systutorials.com/docs/linux/man/5-xrdp.ini/">Manual xrdp.ini</a></li>
+<li><a href="https://serverspace.io/support/help/how-to-configure-xrdp-server-on-ubuntu-18-04/">How to configure xRDP server on Ubuntu 18.04</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_referencias">Referências</a></p>
+</li>
+<li>
+<p><a href="#id_historico">Histórico</a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Objetivo</strong></p>
+<ol>
+<li>
+<p><span id="id_objetivo"><span>Objetivo principal do xrp.</p>
+<ol>
+<li>O xrdp fornece um login gráfico para máquinas remotas usando RDP (Microsoft Remote Desktop Protocol). O xrdp aceita conexões de vários clientes RDP: FreeRDP, rdesktop, NeutrinoRDP e Microsoft Remote Desktop Client (para Windows, macOS, iOS e Android).</li>
+<li>O xrdp oferece suporte não apenas para gráficos remotos, mas também:
+<ol>
+<li>transferência bidirecional da área de transferência (texto, bitmap, arquivo);</li>
+<li>redirecionamento de áudio;</li>
+<li>redirecionamento de unidade (montar unidades de clientes locais na máquina remota).</li>
+</ol>
+</li>
+<li>O transporte RDP é criptografado usando o <a href="https://pt.wikipedia.org/wiki/Transport_Layer_Security">protocolo TLS</a> por padrão.</li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span>Pre-requisitos para usar xrdp.</p>
+<ol>
+<li>Familiaridade com o sistema operacional linux.</li>
+<li>Familiaridade com cliente rdp d windows.</li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span>Benefícios adquirido com este documento:</p>
+<ol>
+<li>Este documento registra tudo que for necessário para conectar-se com uma máquina linux estando em máquinas Windows ou não.</li>
+</ol>
+</li>
+<li>
+<p><a href="#topo_Objetivo" title="Retorna ao topo">🔝</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_xdrp"></span><strong>Programa xrdp e suas dependências</strong></p>
+<ol>
+<li>xrdp:
+<ol>
+<li>
+<p>Xrdp é o principal servidor que aceita conexões de clientes RDP. Xrdp contém as camadas RDP, segurança, MCS, ISO e TCP, um gerenciador de janelas simples e alguns controles. É um servidor de processo único multiencadeado. É neste processo que se mantém a gestão central das sessões. O gerenciamento central inclui o acompanhamento de uma sessão e a administração de pop-ups para os usuários. O Xrdp é controlado pelo arquivo de configuração /etc/xrdp/xrdp.ini.</p>
+</li>
+<li>
+<p>O RDP tem 3 níveis de segurança entre o servidor RDP e o cliente RDP. Baixo, médio e alto. O baixo é de 40 bits, os dados do cliente para o servidor são criptografados, o médio é a criptografia de 40 bits nos dois sentidos e o alto é a criptografia de 128 bits nos dois sentidos. Xrdp atualmente suporta todos os 3 níveis de criptografia por meio do arquivo /etc/xrdp/xrdp.ini. A troca de chaves RSA é usada com clientes e servidores randoms para estabelecer as chaves RC4 antes da conexão do cliente.</p>
+</li>
+<li>
+<p>Os módulos são carregados em tempo de execução para fornecer a funcionalidade real. Muitos módulos diferentes podem ser criados para apresentar um dos muitos desktops diferentes ao usuário. Os módulos são carregáveis ​​para economizar memória e suportar módulos GPL e não GPL.</p>
+</li>
+<li>
+<p>Multi threaded para fornecer o desempenho ideal do usuário. Um cliente não pode atrasar todos eles. Um processo multithread também é necessário para o sombreamento de sessão com qualquer módulo. O módulo não precisa considerar o sombreamento, o servidor xrdp faz isso. Por exemplo, você pode sombrear um VNC, RDP ou uma sessão de módulo customizado, todos com a mesma ferramenta de sombreamento.</p>
+</li>
+<li>
+<p>Construir no gerenciador de janelas para enviar pop-ups para qualquer usuário executando qualquer módulo. Também pode ser o usuário para fornecer avisos ou erros de conexão.</p>
+</li>
+</ol>
+</li>
+<li>..</li>
+<li><a href="#topo_pessoais" title="Retorna ao topo">🔝</a></li>
+</ol>
+</li>
+<li>
+<p><span id="id_como_executar_client_xrdp"></span><strong>Cliente xrdesktop teste.</strong></p>
+<ol>
+<li>
+<pre>$ rdesktop localhost:3389 </pre>
+<ol>
+<li>Mensagens de erro :
+<ol>
+<li>
+<pre>
+<p>Auto selecting keyboard map 'pt-br' from locale
+Connection established using plain RDP.</p>
+<p>Clipboard(error): xclip_handle_SelectionNotify(),
+unable to find a textual target to satisfy RDP
+clipboard text request Core(error): tcp_send(),
+send() failed: Pipe quebrado.</p>
+<p>Disconnected due to network error, exiting...
+disconnect: Unknown reason.
+</pre></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#topo_pessoais" title="Retorna ao topo">🔝</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
+<ol>
+<li><a href="https://www.systutorials.com/docs/linux/man/5-xrdp.ini/">Manual do xrdp.ini</a></li>
+<li><a href="https://github.com/neutrinolabs/xrdp/blob/devel/install.txt">xrdp/install.txt</a></li>
+<li><a href="https://github.com/neutrinolabs">xrdp é mantido por neutrino labs</a></li>
+<li><a href="https://c-nergy.be/blog/?p=9285">XRDP - Habilitando Recurso de Redirecionamento de Unidades e Área de Transferência</a></li>
+<li><a href="https://www.youtube.com/watch?v=fOkQJ2a69PI">Video - installing Xrdp Server (Remote Desktop RDP ) On Ubuntu 20.04 LTS (Focal Fossa) Desktop</a></li>
+<li><a href="https://askubuntu.com/questions/135483/how-to-configure-xrdp-to-start-cinnamon-as-default-desktop-session">Como configurar o XRDP para iniciar o cinnamon como sessão de desktop padrão</a></li>
+<li><a href="https://github.com/neutrinolabs/xrdp/releases">Notas de versão para xrdp v0.9.15 (2020/12/28)</a></li>
+<li><a href="/etc/xrdp/xrdp.ini">xrdp.ini (5) - Man Pages Linux</a></li>
+<li><a href="https://serverspace.io/support/help/how-to-configure-xrdp-server-on-ubuntu-18-04/">Como configurar o servidor xRDP no Ubuntu 18.04</a>.</li>
+</ol>
+</li>
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<ol>
+<li>
+<p>04/02/2021 <!--TODO: HISTÓRICO --></p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criado este documento;</p>
+</li>
+<li>
+<p><a href="#topo" title="Retorna ao topo">🔝</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>x/xx/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> O xrdp não funcionou no linux mint, por isso fatal estudar porque não funciona;</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Antes de tentar fazer funcionar novamente o xrdp, devo primeiro configurar a máquina para que um desktop vnc gráfico funcione primeiro;
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="https://linuxhint.com/installing_vnc_server_linux_mint/">installing_vnc_server_linux_mint</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> <a href="https://www.vivaolinux.com.br/dica/Acesso-remoto-grafico-servidor-e-cliente-pelo-Gnome">cesso-remoto-grafico-servidor-e-cliente-pelo-Gnome</a></li>
+</ul>
+</li>
+<li><a href="#topo" title="Retorna ao topo">🔝</a></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+    </body>
+    </html>

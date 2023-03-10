@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "programacao/nodejs/loopback/getting-started/",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build - programacao/nodejs/loopback/getting-started",
+			"detail": "lb-tsc"
+		}
+	]
+}

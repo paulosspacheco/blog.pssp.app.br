@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Teoria do empacotador de m&oacute;dulos javascript webpack &lt;a href&equals;&quot;teoria&lowbar;webpack&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;&crarr;&lt;&sol;a&gt;&lt;a href&equals;&quot;teoria&lowbar;webpack&period;pdf&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para visualizar o PDF deste documento em nova aba&period;&quot;&gt;&wp;&lt;&sol;a&gt;</title>
+        <style>
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="span-idtopospanteoria-do-empacotador-de-módulos-javascript-webpack-"><span id="topo"><span>Teoria do empacotador de módulos javascript webpack <a href="teoria_webpack.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >↵</a><a href="teoria_webpack.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a></h1>
+<h2 id="1-index"><strong>1. INDEX</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+<li><a href="#id_beneficios">Benefícios.</a></li>
+<li><a href="#id_descricao">Descrição</a></li>
+<li><a href="#id_webpack_typescript">Como usar webpack com a linguagem typescript</a>
+<ol>
+<li>Vídeos
+<ol>
+<li><a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9hOkGbwzgYFmaxB0WiduYJC">Webpack &amp; TypeScript</a>;</li>
+<li>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="https://www.youtube.com/watch?v=ILnWJ8lQ9L4">Vídeo Aula de como usar webpack com typescript</a></li>
+</ol>
+</li>
+<li>
+<p><strong>Instalação e configuração local</strong></p>
+<ol>
+<li>
+<p><a href="#id_Instalar_webpack">Instalar a versão mais recente do webpack</a>.</p>
+</li>
+<li>
+<p><a href="#id_html_webpack_plugin">Instalar plugins html-webpack-plugin</a></p>
+</li>
+<li>
+<p><a href="#id_webpack-cli">Instalar a versão mais recente do webpack-cli</a>.</p>
+<ol>
+<li><a href="#id_webpack_cli_init">Instalar webpack-cli init</a></li>
+<li><a href="#id_webpack-cli_generators">Instalar webpack-cli generators</a></li>
+<li><a href="#id_nanoid">Instalar nanoid</a>.</li>
+</ol>
+</li>
+<li>
+<p>Configuração do webpack.</p>
+<ol>
+<li><a href="#id_configurar_webpack_padrao">Configuração padrão</a>.</li>
+<li><a href="#id_configurar_webpack_personalizada">Configuração personalizada</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_webpack-dev-server">Instalar a versão mais recente do webpack-dev-server</a>.</p>
+</li>
+<li>
+<p>.</p>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://github.com/ruanyf/webpack-demos"><strong>Exemplos.</strong></a></p>
+<ol>
+<li>
+<p><a href="#id_Exemplo_basico">Exemplo básico</a></p>
+</li>
+<li>
+<p><a href="#id_exemplos_javascript">Exemplo de webpack com a linguagem javascript</a></p>
+</li>
+<li>
+<p><a href="#id_exemplos_typescript">Exemplo de webpack com a linguagem typescript</a>.</p>
+</li>
+<li>
+<p><a href="../html/typescript/webpack_typescript/video_aula_the_net_ninja/curso_webpack_typescript.html">Exemplo completo de uso do TipeScript e uma vídeo aula no youtube.com</a></p>
+</li>
+<li>
+<p>Exemplo do manual <a href="https://webpack.js.org/">webpack</a>:</p>
+<ol>
+<li><a href="https://webpack.js.org/guides/getting-started/#basic-setup">getting-started/#basic-setup</a>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#id_referencias"><strong>Referências.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li>
+<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+<ol>
+<li>
+<p>O <a href="https://webpack.js.org/concepts/">webpack</a> é um compactador javascript e empacotador de módulo estático para aplicativos JavaScript. Quando o <a href="https://webpack.js.org/concepts/">webpack</a> processa seu aplicativo ele cria uma versão de distribuição na pasta ./dist e copia para ela todos os arquivos .js compactado e todas as dependências tais como arquivos .html, .css e as imagens do projeto. <a href="https://www.youtube.com/watch?v=sU3W2ZTt-8I">Veja mais no vídeo...</a> ou <a href="https://devheroes.io/webpack-2-para-iniciantes-o-que-e-porque-usar-e-como-iniciar/">Veja mais no site...</a>.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
+<ol>
+<li>
+<p>Assistir o vídeo <a href="https://www.youtube.com/watch?v=sU3W2ZTt-8I">Webpack - Curso rápido para iniciantes</a></p>
+</li>
+<li>
+<p>Ultima versão do programa <a href="instalar.html">nodejs</a> de preferência a versão LTS. Veja as versões do nodejs <a href="https://nodejs.org/en/blog/release/">aqui...</a>;</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
+<ol>
+<li>
+<p>Gerar uma pasta pronta para publicação na web.</p>
+</li>
+<li>
+<p>Compactar todo código javascript e html e css.</p>
+</li>
+<li>
+<p>Remove todo código não usado no projeto atual.</p>
+</li>
+<li>
+<p>Gerar versão compatível com browser antigos usando o babel.</p>
+</li>
+<li>
+<p>...</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_descricao"></span><strong>Descrição:</strong></p>
+<ol>
+<li>
+<p>O <a href="https://webpack.js.org/concepts/">webpack</a> é um empacotador de módulo estático para aplicativos JavaScript modernos. Quando o <a href="https://webpack.js.org/concepts/">webpack</a> processa um projeto, ele constrói internamente um gráfico de dependência que mapeia todos os módulos de que o projeto precisa e gera um ou mais pacotes na pasta <strong>./dist</strong>. Para mais informações sobre o conceito do webpack veja <a href="https://webpack.js.org/concepts/">aqui...</a> e para acessar a documentação oficial completa clique <a href="https://webpack.js.org/guides/">aqui...</a>.</p>
+</li>
+<li>
+<p>O webpack deve ser executado usando o comando <strong><a href="../html/typescript/instalar.html#id_Instalar_npx">npx</a></strong>  para que ele execute a versão local do projeto do webpack.</p>
+<ol>
+<li>
+<p>Código ShellScript:</p>
+<pre><code class="language-ShellScript"><code><div>   npx webpack
+</div></code></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>A configuração padrão do webpack não exige que você use um arquivo de configuração, no entanto, ele assumirá que o <a href="https://webpack.js.org/concepts/entry-points/">ponto de entrada</a> do projeto seja o arquivo <strong>./src/index.js</strong> e arquivo de saída seja <strong>./dist/main.js</strong>. O arquivo de saída será reduzido e otimizado para produção na pasta <strong>./dist</strong>.</p>
+</li>
+<li>
+<p>Caso deseje mudar o comportamento padrão é possível criando o arquivo <a href="https://webpack.js.org/configuration/#use-different-configuration-file"><strong>webpack.config.js</strong></a> na pasta do arquivo <a href="https://nodejs.org/en/knowledge/getting-started/npm/what-is-the-file-package-json/#:~:text=All%20npm%20packages%20contain%20a,as%20handle%20the%20project's%20dependencies."><strong>package.js</strong></a> porque ele espera que exista o arquivo <strong>./index.html</strong> na pasta do arquivo <strong>package.json</strong>. Veja <a href="https://webpack.js.org/configuration/">mais...</a></p>
+<ol>
+<li>As propriedades do arquivo webpack.config.js que pode ser personalizadas são:
+<ol>
+<li>
+<p><a href="https://webpack.js.org/concepts/#entry">Entry</a></p>
+<ol>
+<li>Um ponto de entrada indica qual módulo webpack deve usar para começar a construir seu gráfico de dependência interna.
+<ol>
+<li>
+<p>Exemplo de arquivo <strong>webpack.config.js</strong>:</p>
+<pre><code class="language-JavaScript"><div> 
+   <span class="hljs-built_in">module</span>.exports = {
+      <span class="hljs-attr">entry</span>: <span class="hljs-string">&#x27;./foo.js&#x27;</span>,
+      },
+   };
+   
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/concepts/#output">Output</a></p>
+<ol>
+<li>A propriedade <a href="https://webpack.js.org/configuration/output/">output</a> informa ao webpack onde gerar os pacotes que ele cria e como nomear esses arquivos. O padrão é <strong>./dist/main.js</strong>.
+<ol>
+<li>
+<p>Exemplo de arquivo <strong>webpack.config.js</strong>:</p>
+<pre><code class="language-JavaScript"><div>   <span class="hljs-comment">/** 
+   * path é uma biblioteca NodeJs padrão que está globalmente disponível quando você instala o NodeJs.
+   * A linhas a baixo importa o módulo path que tem informações sobre a localização das pastas do projeto.
+   * [Veja mais sobre o módulo path...:](https://nodejs.org/api/path.html).
+   */</span>                         
+   <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);
+
+   <span class="hljs-comment">/**
+    * O objeto module.exports é um objeto de nodejs usado para exportar objetos, 
+    * funções, variáveis e constantes do módulo onde ele for declarado.
+    * [Vaja mais sobre module.exports](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/export)
+    * [Veja mais sobre configuração do arquivo webpack-config.js](https://webpack.js.org/configuration/)
+    */</span> 
+   <span class="hljs-built_in">module</span>.exports = {
+      <span class="hljs-comment">/**
+       * Propriedade entry é usada para informa o nome do arquivo principal 
+       * de entrada do pacote webpack e pode ter mais um entrada para o mesmo projeto.
+       * O arquivo de entrada deve importar todos os arquivos de recursos dependentes do projeto. 
+       */</span>                              
+      <span class="hljs-attr">entry</span>: <span class="hljs-string">&#x27;./src/file.js&#x27;</span>,
+
+      <span class="hljs-comment">/**
+       * O objeto module é usado para definir as regras usada na compilação ele
+       * contém o conjunto de plug-ins ou módulos usados ​​pelo webpack. 
+       */</span>
+      <span class="hljs-attr">output</span>: {
+         <span class="hljs-attr">path</span>: path.resolve(__dirname, <span class="hljs-string">&#x27;dist&#x27;</span>),
+         <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;my-first-webpack.bundle.js&#x27;</span>,
+      },
+   };
+   
+</div></code></pre>
+</li>
+<li>
+<p>Essa configuração criará a pasta ./dist na pasta do pacote package.json e o arquivo './src/file.js' e suas dependências será compactado no arquivo './dist/my-first-webpack.bundle.js'..</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/loaders/">Loaders</a></p>
+<ol>
+<li>Por padrão o webpack só entende arquivos JavaScript, para que ele possa entender outros tipos de arquivos devemos usar os Loaders que são módulos que podem ser instalados separadamente possibilitando que o webpack converta esses arquivos em módulos válidos e os adicione ao gráfico de dependência. Os Loaders também são utilizados para converter JavaScript de uma versão para outra. Para incluirmos os Loaders criamos uma nova seção module no arquivo de configuração, nessa seção podemos definir uma ou mais <a href="https://webpack.js.org/configuration/module/#modulerules">rules</a>:
+<ol>
+<li>
+<p>Código javascript do arquivo <strong>webpack.config.js</strong></p>
+<pre><code class="language-JavaScript"><div>   
+   <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>) 
+   <span class="hljs-keyword">const</span> config = {
+      <span class="hljs-attr">output</span>: {
+         <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;my-first-webpack.bundle.js&#x27;</span>
+      },
+      <span class="hljs-comment">/**
+       * O objeto module é usado para definir as regras usada na compilação ele
+       * contém o conjunto de plug-ins ou módulos usados ​​pelo webpack. 
+       */</span>
+      <span class="hljs-attr">modules</span>: {
+         <span class="hljs-comment">// O array rules são usado para passagem de regras na transpilação dos módulos:</span>
+         <span class="hljs-attr">rules</span>: [
+            
+             <span class="hljs-comment">// rules for modules (configure loaders, parser options, etc.)</span>
+            {<span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>, use: <span class="hljs-string">&#x27;raw-loader&#x27;</span>}
+
+         ]
+      }
+   }
+
+</div></code></pre>
+<ol>
+<li>Essa <a href="https://webpack.js.org/configuration/module/#rule">regra</a> (rules) diz ao compilador do webpack para quando for encontrado um arquivo ‘.css’ dentro de uma declaração <a href="https://nodejs.org/en/knowledge/getting-started/what-is-require/"><strong>require</strong></a> ou <a href="https://nodejs.org/api/esm.html#esm_import_specifiers"><strong>import</strong></a>, deve se usar o <a href="https://www.npmjs.com/package/css-loader">css-loader</a> para transformá-lo antes de adicioná-lo ao pacote.
+<ol>
+<li>Na instrução <a href="https://webpack.js.org/configuration/module/#rule"><strong>rules : []</strong></a> temos duas propriedades obrigatórias quais sejam:
+<ol>
+<li><a href="https://webpack.js.org/configuration/module/#ruletest"><strong>test</strong></a> : Usa-se a expressão regular para encontrar todos os arquivo <strong>'.css'</strong> da pasta.</li>
+<li><a href="https://webpack.js.org/configuration/module/#ruleuse"><strong>use</strong></a> :  Usar o pacote css-loader para carregá-los.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/plugins/">Plugins</a></p>
+<ol>
+<li>Os <a href="https://webpack.js.org/plugins/">plugins</a> servem para executar uma variedade de tarefas como otimização de pacotes, gerenciamento de assets e injeção de variáveis de ambiente. Plugins são definidos em duas partes no arquivo de configuração, no topo do arquivo para plugins externos e na seção plugins dentro da seção module:
+<ol>
+<li>
+<p>Código javascript do arquivo <strong>webpack.config.js</strong></p>
+<pre><code class="language-JavaScript"><div>   <span class="hljs-comment">// instalado via npm site: https://webpack.js.org/plugins/html-webpack-plugin/</span>
+   <span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;html-webpack-plugin&#x27;</span>); 
+   <span class="hljs-comment">//plugins internos</span>
+   <span class="hljs-keyword">const</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;webpack&#x27;</span>); 
+   <span class="hljs-keyword">const</span> config = {
+      <span class="hljs-attr">module</span>: {
+         <span class="hljs-attr">rules</span>: [
+            {<span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>, use: <span class="hljs-string">&#x27;css-loader&#x27;</span>}
+         ]
+      },
+      <span class="hljs-attr">plugins</span>: [
+         <span class="hljs-keyword">new</span> HtmlWebpackPlugin({<span class="hljs-attr">template</span>: <span class="hljs-string">&#x27;./src/index.html&#x27;</span>})
+      ]
+   };
+   <span class="hljs-built_in">module</span>.exports = config;
+</div></code></pre>
+<ol>
+<li>No código acima, o plugin <a href="https://webpack.js.org/plugins/html-webpack-plugin/">html-webpack</a> gera um arquivo html e faz a injeção automática do pacote gerado. O webpack possui diversos plugins internos, <a href="https://webpack.js.org/plugins/">confira a lista</a>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/guides/production/#specify-the-mode">Mode</a></p>
+<ol>
+<li>No atributo mode é definido o mode de execução do webpack como &lt;production&gt;, &lt;development&gt; ou &lt;none&gt;. De acordo com a opção definida o webpack ativa otimizações específicas. O ambiente padrão é produção:
+<ol>
+<li>
+<p>Código javascript do arquivo <strong>webpack.config.js</strong></p>
+<pre><code class="language-JavaScript"><div>   <span class="hljs-built_in">module</span>.exports = {
+      <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;production&#x27;</span>
+   }
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/concepts/#browser-compatibility">Browser Compatibility</a></p>
+<ol>
+<li>webpack é compatível com todos os navegadores compatíveis com ES5 (IE8 e versões anteriores não são compatíveis). webpack precisa <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a> para <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/import">import()</a> e <a href="https://webpack.js.org/api/module-methods/#:~:text=require.ensure,-warning&amp;text=Split%20out%20the%20given%20dependencies,way%20to%20dynamically%20load%20dependencies.">require.ensure()</a> . Se quiser oferecer suporte a navegadores mais antigos, você precisará carregar um <a href="https://developer.mozilla.org/en-US/docs/Glossary/Polyfill">polyfill</a> antes de usar essas expressões.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>O webpack só entende arquivos JavaScript e JSON.</p>
+<ol>
+<li>
+<p>Os <a href="https://webpack.js.org/loaders/">carregadores (loaders)</a> permitem que o webpack processe outros tipos de arquivos e os converta em módulos válidos que possam ser consumidos pelo projeto e adicionados ao gráfico de dependência do projeto.</p>
+</li>
+<li>
+<p>Os carregadores podem transformar arquivos de uma linguagem diferente (como <a href="../html/typescript/index.html">TypeScript</a> ) em JavaScript ou carregar imagens embutidas como URLs de dados. Veja <a href="https://webpack.js.org/concepts/loaders/">conceitos dos carregadores...</a> .</p>
+</li>
+<li>
+<p><a href="https://webpack.js.org/concepts/loaders/#using-loaders">Usando carregadores</a>:</p>
+<ol>
+<li>Existem três maneiras de usar carregadores em seu aplicativo:
+<ol>
+<li>
+<p><a href="https://webpack.js.org/concepts/loaders/#configuration"><strong>Configuração</strong></a> (recomendado): O ideal é usar o arquivo de configuração <a href="https://webpack.js.org/concepts/configuration/#simple-configuration">webpack.config.js</a> para customizar webpack porque é mais flexível pelo fato de ser um código javascript e usa a variável global <a href="https://stackabuse.com/how-to-use-module-exports-in-node-js/">module.exports</a> para exportar o que for necessário quando a configuração é diferente do padrão webpack.</p>
+<ol>
+<li>
+<p>Código JavaScript - exemplo de <a href="https://webpack.js.org/concepts/configuration/#simple-configuration">configuração simples</a>:</p>
+<pre><code class="language-JavaScript"><div>
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+   <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;development&#x27;</span>,
+   <span class="hljs-attr">entry</span>: <span class="hljs-string">&#x27;./foo.js&#x27;</span>,
+   <span class="hljs-attr">output</span>: {
+      <span class="hljs-attr">path</span>: path.resolve(__dirname, <span class="hljs-string">&#x27;dist&#x27;</span>),
+      <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;foo.bundle.js&#x27;</span>,
+   },
+};
+   
+</div></code></pre>
+</li>
+<li>
+<p>Código JavaScript - exemplo de configuração com <a href="https://webpack.js.org/configuration/configuration-types/#exporting-multiple-configurations">múltiplos configurações</a>:</p>
+<pre><code class="language-JavaScript"><div>
+   <span class="hljs-built_in">module</span>.exports = [
+      {
+         <span class="hljs-attr">output</span>: {
+            <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;./dist-amd.js&#x27;</span>,
+            <span class="hljs-attr">libraryTarget</span>: <span class="hljs-string">&#x27;amd&#x27;</span>,
+         },
+         <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;amd&#x27;</span>,
+         <span class="hljs-attr">entry</span>: <span class="hljs-string">&#x27;./app.js&#x27;</span>,
+         <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;production&#x27;</span>,
+      },
+      {
+         <span class="hljs-attr">output</span>: {
+            <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;./dist-commonjs.js&#x27;</span>,
+            <span class="hljs-attr">libraryTarget</span>: <span class="hljs-string">&#x27;commonjs&#x27;</span>,
+         },
+         <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;commonjs&#x27;</span>,
+         <span class="hljs-attr">entry</span>: <span class="hljs-string">&#x27;./app.js&#x27;</span>,
+         <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;production&#x27;</span>,
+      },
+   ];
+   
+</div></code></pre>
+</li>
+<li>
+<p>Código JavaScript - exemplo de configuração <a href="https://webpack.js.org/configuration/configuration-types/#parallelism">paralelismo</a>:</p>
+<pre><code class="language-JavaScript"><div>
+   <span class="hljs-built_in">module</span>.exports = [
+   {
+      <span class="hljs-comment">//config-1</span>
+   },
+   {
+      <span class="hljs-comment">//config-2</span>
+   },
+   ];
+   <span class="hljs-built_in">module</span>.exports.parallelism = <span class="hljs-number">1</span>;
+ 
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/loaders/expose-loader/#inline"><strong>Inline</strong></a> : especifique-os explicitamente em cada instrução do comando <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/import"><strong>import</strong></a>.</p>
+<ol>
+<li>
+<p>Código JavaScript exemplo:</p>
+<pre><code class="language-JavaScript"><div>
+<span class="hljs-comment">// Adds the `jquery` to the global object under the names `$` and `jQuery`</span>
+<span class="hljs-keyword">import</span> $ <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;expose-loader?exposes=$,jQuery!jquery&quot;</span>;
+
+<span class="hljs-comment">// Adds the `lodash/concat` to the global object under the name `_.concat`</span>
+<span class="hljs-keyword">import</span> { concat } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;expose-loader?exposes=_.concat!lodash/concat&quot;</span>;
+
+<span class="hljs-comment">// Adds the `map` and `reduce` method from `underscore` to the global object under the name `_.map` and `_.reduce`&#x27;</span>
+<span class="hljs-keyword">import</span> {<span class="hljs-string">&#x27;map,
+         reduce,
+} from &quot;expose-loader?exposes=_.map|map,_.reduce|reduce!underscore&quot;;
+
+</span></div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/api/cli/"><strong>webpack-cli</strong></a> : especifique-os em um comando shellscript.</p>
+<ol>
+<li>
+<p>Código ShellScript exemplo:</p>
+<pre><code class="language-ShellScript"><code><div>  
+webpack --module-bind pug-loader --module-bind 'css=style-loader!css-loader'
+</div></code></code></pre>
+<ol>
+<li>Nota: O comando acima usa <a href="https://www.npmjs.com/package/pug-loader"><strong>pug-loader</strong></a> para arquivos <a href="https://www.filesuffix.com/pt/extension/jade"><strong>.jade</strong></a> ou <a href="https://www.filesuffix.com/pt/extension/pug"><strong>.pug</strong></a> e <a href="https://webpack.js.org/loaders/style-loader/"><strong>style-loader</strong></a> e <a href="https://webpack.js.org/loaders/css-loader/"><strong>css-loader</strong></a> para arquivos <strong>.css</strong>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Os <a href="https://webpack.js.org/concepts/#plugins">plug-ins</a> podem ser aproveitados para realizar uma ampla gama de tarefas, como otimização de pacote, gerenciamento de ativos e injeção de variáveis ​​de ambiente etc... Veja <a href="https://webpack.js.org/concepts/#plugins">mais...</a> .</p>
+</li>
+<li>
+<p>Quando estamos criando um projeto é necessário customizarmos o arquivo de configuração <strong>webpack.config.js</strong> para o <a href="https://webpack.js.org/guides/development/">modo desenvolvimento</a>. Veja o tópico <a href="https://webpack.js.org/guides/development/#using-webpack-dev-server">usando webpack-dev-server</a>.</p>
+</li>
+<li>
+<p>O aplicativo <a href="https://www.npmjs.com/package/webpack-cli">webpack-cli</a> fornece um conjunto flexível de comandos para que os desenvolvedores aumentem a velocidade ao configurar um projeto webpack personalizado. A partir do webpack v4, o webpack não espera um arquivo de configuração, mas frequentemente os desenvolvedores desejam criar uma configuração do webpack mais personalizada com base em seus casos de uso e necessidades. O webpack-cli atende a essas necessidades, fornecendo um conjunto de ferramentas para melhorar a configuração do webpack personalizado.</p>
+<ol>
+<li>Veja o <a href="https://webpack.js.org/guides/installation/">guia de instalação</a> para saber como instalar.</li>
+<li>Para conhecer os comandos do programa <a href="https://www.npmjs.com/package/webpack-cli">webpack-cli</a> veja o <a href="https://webpack.js.org/api/cli/">documento Interface da Linha de comando</a>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_webpack_typescript></span>
+<a href="https://webpack.js.org/configuration/configuration-languages/#typescript">Como usar webpack com a linguagem typescript</a>.</p>
+<ol>
+<li>
+<p>A forma mais prática de criar ambiente de desenvolvimento typescript é executar a sequencia abaixo. Dica: a ultima linha executa o comando <strong>npx tsc-init</strong>. O programa <strong>tsc-init</strong> instala o webpack e cria uma configuração básica. <a href="https://webpack.js.org/guides/typescript/">Veja mais...</a></p>
+<ol>
+<li>
+<p>Código ShellScript</p>
+<pre><code class="language-shellscript"><code><div>
+   # Instala a linguagem typescript globalmente se não tiver instalado.
+   sudo npm -g install typescript
+
+   # para saber se foi instalado checar a versão
+   tsc -v 
+
+   # Instala pacote tsc-init globalmente
+   npm install -g install tsc-init  
+
+   # Cria arquivo package.json
+   npm init
+
+   
+
+   # Instala e configura tudo que é necessário na pasta local.
+   npx tsc-init 
+
+</div></code></code></pre>
+</li>
+<li>
+<p>O comando <a href="https://www.npmjs.com/package/tsc-init"><strong>npx tsc-init</strong></a> instala os seguinte pacotes:</p>
+<ol>
+<li>
+<p>&quot;webpack&quot;: &quot;^5.37.0&quot;,</p>
+<ol>
+<li>O webpack é um compactador javascript e empacotador de módulo estático para aplicativos JavaScript. <a href="https://webpack.js.org/configuration/configuration-languages/">Veja mais...</a></li>
+</ol>
+</li>
+<li>
+<p>&quot;webpack-dev-server&quot;: &quot;^3.11.2&quot;</p>
+<ol>
+<li>O webpack-dev-server fornece um servidor web simples e a capacidade de recarregar ao vivo para evitar que a cada alteração do código original o programador tenha que publicar para ver se funcionou as alterações.</li>
+</ol>
+</li>
+<li>
+<p>&quot;@types/jasmine&quot;: &quot;^3.7.2&quot;,</p>
+<ol>
+<li><a href="http://jasmine.github.io">Este pacote contém definições de tipo para Jasmine</a>.</li>
+</ol>
+</li>
+<li>
+<p>&quot;jasmine-core&quot;: &quot;^3.7.1&quot;,</p>
+<ol>
+<li><a href="https://www.npmjs.com/package/jasmine-core">Jasmine</a> é uma estrutura de desenvolvimento orientada por comportamento para testar o código JavaScript independente de navegadores.</li>
+</ol>
+</li>
+<li>
+<p>&quot;karma&quot;: &quot;^6.3.2&quot;,</p>
+<ol>
+<li><a href="https://karma-runner.github.io/latest/index.html">Karma</a> é um test runner feito para o AngularJs. O principal objetivo do Karma é automatizar os testes em diversos navegadores web com um único comando.</li>
+</ol>
+</li>
+<li>
+<p>&quot;karma-chrome-launcher&quot;: &quot;^3.1.0&quot;,</p>
+<ol>
+<li>Pacote karma para o navegador chrome. <a href="https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai">Veja mais...</a></li>
+</ol>
+</li>
+<li>
+<p>&quot;karma-jasmine&quot;: &quot;^4.0.1&quot;,</p>
+<ol>
+<li>Adaptador para a estrutura de teste Jasmine. <a href="https://www.npmjs.com/package/karma-jasmine">Veja mais...</a></li>
+</ol>
+</li>
+<li>
+<p>&quot;karma-webpack&quot;: &quot;^5.0.0&quot;,</p>
+<ol>
+<li>Use o webpack para pré-processar arquivos no karma. <a href="https://www.npmjs.com/package/karma-webpack">Veja mais...</a></li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/concepts/loaders/#:~:text=Loaders%20are%20transformations%20that%20are,source%20code%20of%20a%20module.&amp;text=Loaders%20can%20transform%20files%20from,directly%20from%20your%20JavaScript%20modules!">&quot;ts-loader&quot;: &quot;^9.1.2&quot;</a>,
+2. Este é o carregador TypeScript para webpack. <a href="https://www.npmjs.com/package/ts-loader">Veja mais...</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Para que o projeto seja editado e executado no vscode adicione no registro <strong>&quot;compileOptions&quot;</strong> do arquivo <strong>tsconfig.json</strong> as propriedades <strong>outDir</strong> (diretório de saida para arquivos <strong>.js</strong>) e a propriedade <a href="https://www.typescriptlang.org/tsconfig#sourceMap"><strong>sourceMap</strong></a> (Permite compilar e depurar com vscode  ):</p>
+<ol>
+<li>Código json do arquivo <strong>tsconfig.json</strong>:</li>
+</ol>
+<pre><code class="language-json"><div>   {
+      <span class="hljs-attr">&quot;compilerOptions&quot;</span>  : 
+      {
+         <span class="hljs-attr">&quot;outDir&quot;</span>: <span class="hljs-string">&quot;./src/js&quot;</span>, <span class="hljs-comment">//Pasta de saída dos arquivos .js</span>
+         <span class="hljs-attr">&quot;sourceMap&quot;</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">//Permite compilar e depurar com vscode  </span>
+                            <span class="hljs-comment">//Gera o arquivo &#x27;.map&#x27; correspondente  </span>
+      }
+   }
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Instalação e configuração local</strong></p>
+<ol>
+<li>
+<p><span id=id_Instalar_webpack></span><strong>Instalar versão mais recente do</strong> <a href="https://webpack.js.org/guides/installation/"><strong>webpack</strong></a>:</p>
+<ol>
+<li>
+<p>Criar a pasta e o arquivo de configuração <strong>package.json</strong> do projeto.</p>
+<ol>
+<li>
+<p>Código ShellScript:</p>
+<pre><code class="language-Sh"><div>   mkdir webpack-demo
+   npm init -y
+</div></code></pre>
+<ol>
+<li>
+<p>O comando npm init -y criou o arquivo de configuração <strong>package.json</strong>.</p>
+<pre><code class="language-json"><div>   {
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;webpack-demo&quot;</span>,
+      <span class="hljs-attr">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,
+      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-attr">&quot;main&quot;</span>: <span class="hljs-string">&quot;index.js&quot;</span>,
+      <span class="hljs-attr">&quot;scripts&quot;</span>: {
+         <span class="hljs-attr">&quot;test&quot;</span>: <span class="hljs-string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+      },
+      <span class="hljs-attr">&quot;author&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-attr">&quot;license&quot;</span>: <span class="hljs-string">&quot;ISC&quot;</span>
+   }
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Instalar <a href="https://webpack.js.org/">webpack</a> na pasta criada no passo 1:</p>
+<ol>
+<li>
+<p>Código ShellScript para instalação:</p>
+<pre><code class="language-sh"><div>   npm install --save-dev webpack
+</div></code></pre>
+<ol>
+<li>
+<p>O comando <strong>npm install --save-dev webpack</strong> adicionou no arquivo <strong>package.json</strong> a chaves: <em>&quot;devDependencies&quot;: {&quot;webpack&quot;: &quot;^5.36.1&quot;}</em></p>
+<pre><code class="language-json"><div>   {
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;webpack-demo&quot;</span>,
+      <span class="hljs-attr">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,
+      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-attr">&quot;main&quot;</span>: <span class="hljs-string">&quot;index.js&quot;</span>,
+      <span class="hljs-attr">&quot;scripts&quot;</span>: {
+         <span class="hljs-attr">&quot;test&quot;</span>: <span class="hljs-string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+      },
+      <span class="hljs-attr">&quot;author&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-attr">&quot;license&quot;</span>: <span class="hljs-string">&quot;ISC&quot;</span>,
+      <span class="hljs-attr">&quot;devDependencies&quot;</span>: {
+         <span class="hljs-attr">&quot;webpack&quot;</span>: <span class="hljs-string">&quot;^5.36.1&quot;</span>
+      }
+   }
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><scan id="id_html_webpack_plugin"></scan> Instalar plugins html-webpack-plugin;</p>
+<ol>
+<li>
+<p>O plugins <a href="https://www.npmjs.com/package/html-webpack-plugin"><strong>&quot;html-webpack-plugin&quot;</strong></a> para webpack simplifica a criação de arquivos HTML para servir seus pacotes webpack. Isso é especialmente útil para pacotes webpack que incluem um hash no nome do arquivo, que muda a cada compilação. Você pode deixar o plugin gerar um arquivo HTML para você, fornecer seu próprio modelo usando lodash modelos ou usar seu próprio carregador.</p>
+</li>
+<li>
+<p>Código shellscript</p>
+<pre><code class="language-sh"><div>
+   <span class="hljs-comment"># Instala plugin a ser usado por alterWebpackConfig()</span>
+   npm install npm install --save-dev html-webpack-plugin
+
+</div></code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_webpack-cli></span><strong>Instalar a versão mais recente do</strong> <a href="https://webpack.js.org/api/cli/#commands">webpack-cli</a></p>
+<ol>
+<li>
+<p>Para a versão 4 ou posterior do webpack é preciso instalar o aplicativo <a href="https://webpack.js.org/api/cli/#commands"><strong>webpack-cli</strong></a> para executar o webpack partir da linha de comando.</p>
+<ol>
+<li>
+<p>Código ShellScript para instalação:</p>
+<pre><code class="language-ShellScript"><code><div>   npm install --save-dev webpack-cli
+</div></code></code></pre>
+<ol>
+<li>
+<p>O comando <strong>npm install --save-dev webpack-cli</strong> adicionou no arquivo <strong>package.json</strong> a chaves: <em>&quot;webpack-cli&quot;: &quot;^4.6.0&quot;,</em></p>
+<pre><code class="language-json"><div>   {
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;webpack-demo&quot;</span>,
+      <span class="hljs-attr">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,
+      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-attr">&quot;main&quot;</span>: <span class="hljs-string">&quot;index.js&quot;</span>,
+      <span class="hljs-attr">&quot;scripts&quot;</span>: {
+         <span class="hljs-attr">&quot;test&quot;</span>: <span class="hljs-string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+      },
+      <span class="hljs-attr">&quot;author&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-attr">&quot;license&quot;</span>: <span class="hljs-string">&quot;ISC&quot;</span>,
+      <span class="hljs-attr">&quot;devDependencies&quot;</span>: {
+         <span class="hljs-attr">&quot;webpack&quot;</span>: <span class="hljs-string">&quot;^5.36.1&quot;</span>,
+         <span class="hljs-attr">&quot;webpack-cli&quot;</span>: <span class="hljs-string">&quot;^4.6.0&quot;</span>
+      }
+   }
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+<li>
+<p><span id=id_webpack_cli_init></span><strong>Instalar webpack-cli init</strong></p>
+<ol>
+<li>
+<p>Este pacote contém a lógica para criar uma nova configuração do webpack. Veja <a href="https://www.npmjs.com/package/@webpack-cli/init">mais...</a></p>
+<ol>
+<li>
+<p>Código ShellScript</p>
+<pre><code class="language-ShellScript"><code><div>   npm i -D webpack-cli @webpack-cli/init
+</div></code></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_webpack-cli_generators></span><strong>Instalar</strong> <a href="https://www.npmjs.com/package/@webpack-cli/generators"><strong>webpack-cli generators</strong></a></p>
+<ol>
+<li>
+<p>Este pacote contém todos os <a href="https://yeoman.io/">geradores yeoman</a> relacionados ao webpack-cli..</p>
+</li>
+<li>
+<p>Veja dica do site <a href="https://medium.com/code-prestige/dando-o-pontap%C3%A9-inicial-em-projetos-de-software-com-o-yeoman-2f079cb14cf3">medium.com</a> para entender do que se trata.</p>
+</li>
+<li>
+<p>Código ShellScript</p>
+<pre><code class="language-ShellScript"><code><div>   npm i -D webpack-cli @webpack-cli/generators
+</div></code></code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/configuration/"><strong>Configuração</strong></a> <strong>do webpack</strong>:</p>
+<ol>
+<li>
+<p><span id=id_configurar_webpack_padrao></span>
+<strong>Configuração padrão</strong>:</p>
+<ol>
+<li>
+<p>O webpack não exige que você use um arquivo de configuração. No entanto, ele assumirá que o ponto de entrada de seu projeto seja <strong>src/index.js</strong> e produzirá o resultado <strong>dist/main.js</strong> reduzido e otimizado para produção.</p>
+</li>
+<li>
+<p>Para testar se seu projeto está funcionando execute a linha de comando abaixo:</p>
+<ol>
+<li>
+<p>Código ShellScript</p>
+<pre><code class="language-ShellScript"><code><div>   ./node_modules/.bin/webpack
+</div></code></code></pre>
+</li>
+<li>
+<p>Este comando produzirá a seguinte mensagem:</p>
+<ol>
+<li>asset main.js 25 bytes [compared for emit] [minimized] (name: main):</li>
+<li>./src/index.js 25 bytes [built] [code generated]</li>
+<li>AVISO na configuração
+A opção 'mode' não foi definida, o webpack irá retornar para 'production' para este valor.
+Defina a opção 'mode' como 'development' ou 'production' para habilitar os padrões para cada ambiente.
+Você também pode defini-lo como 'none' para desativar qualquer comportamento padrão. Saiba mais: <a href="https://webpack.js.org/configuration/mode/">https://webpack.js.org/configuration/mode/</a></li>
+</ol>
+</li>
+<li>
+<p>Se a opção 'mode' não for definido, webpack define 'mode' para 'production' como o valor padrão.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_configurar_webpack_personalizada></span> <strong>Configuração Personalizada</strong>.</p>
+<ol>
+<li>
+<p>Quando você precisar alterar a configuração padrão você pode criar o arquivo <strong>webpack.config.js</strong>  na pasta raiz e o webpack irá usá-lo automaticamente para satisfazer sua preferência.</p>
+</li>
+<li>
+<p>Caso seja necessário o nome do arquivo de configuração diferente de <strong>webpack.config.js</strong> é possível informar no arquivo <strong>package.json</strong> na propriedade <strong>script{}</strong> como no exemplo abaixo:</p>
+<ol>
+<li>
+<p>Código json:</p>
+<pre><code class="language-json"><div>   <span class="hljs-string">&quot;scripts&quot;</span>: {
+      <span class="hljs-attr">&quot;build&quot;</span>: <span class="hljs-string">&quot;webpack --config production.config.js&quot;</span>
+   }
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>A maneira mais prática para criar o arquivo de configuração <strong>webpack.config.js</strong> personalizada é executar o comando abaixo:</p>
+<ol>
+<li>
+<p>Código ShellScript:</p>
+<pre><code class="language-ShellScript"><code><div>   npx webpack-cli init
+</div></code></code></pre>
+<ol>
+<li>Este comando faz as seguintes tarefas:
+<ol>
+<li>Cria o arquivo <strong>webpack.config.js</strong></li>
+<li>Criar um arquivo ./index.html</li>
+<li>Cria a pasta ./src</li>
+<li>Cria um arquivo /.src/index.js</li>
+<li>..</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+<p>2.<span id=id_nanoid></span>
+<strong>Instalar <a href="https://github.com/ai/nanoid">nanoid</a></strong></p>
+<ol>
+<li>
+<p>Um gerador de ID de string minúsculo, seguro, compatível com URL e exclusivo para JavaScript.</p>
+</li>
+<li>
+<p>Obs: Se não instalar <a href="https://github.com/ai/nanoid">nanoid</a> o comando <strong>npx webpack init</strong> gerar um erro.</p>
+</li>
+<li>
+<p>Código ShellScript</p>
+<pre><code class="language-ShellScript"><code><div>   npm install --save-dev nanoid
+   npm install --save-dev @types/nanoid
+</div></code></code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_webpack-dev-server></span>
+<strong>Instalar a versão mais recente do</strong> <a href="https://webpack.js.org/guides/development/#using-webpack-dev-server"><strong>webpack-dev-server</strong></a>:</p>
+<ol>
+<li>
+<p>O <a href="https://webpack.js.org/guides/development/#using-webpack-dev-server">webpack-dev-server</a> fornece um servidor web simples e a capacidade de recarregar ao vivo para evitar que a cada alteração do código original o programador tenha que publicar para ver se funcionou as alterações.</p>
+</li>
+<li>
+<p>Código ShellScript para instalação:</p>
+<pre><code class="language-ShellScript"><code><div>   npm install --save-dev webpack-dev-server
+</div></code></code></pre>
+<ol>
+<li>
+<p>O comando <strong>npm install --save-dev webpack-dev-server</strong> adicionou no arquivo <strong>package.json</strong> a chaves: <em>&quot;webpack-dev-server&quot;: &quot;^3.11.2&quot;</em></p>
+<pre><code class="language-json"><div>   {
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;webpack-demo&quot;</span>,
+      <span class="hljs-attr">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,
+      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-attr">&quot;main&quot;</span>: <span class="hljs-string">&quot;index.js&quot;</span>,
+      <span class="hljs-attr">&quot;scripts&quot;</span>: {
+         <span class="hljs-attr">&quot;test&quot;</span>: <span class="hljs-string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+      },
+
+      <span class="hljs-attr">&quot;author&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-attr">&quot;license&quot;</span>: <span class="hljs-string">&quot;ISC&quot;</span>,
+      <span class="hljs-attr">&quot;devDependencies&quot;</span>: {
+         <span class="hljs-attr">&quot;webpack&quot;</span>: <span class="hljs-string">&quot;^5.36.1&quot;</span>,
+         <span class="hljs-attr">&quot;webpack-cli&quot;</span>: <span class="hljs-string">&quot;^4.6.0&quot;</span>,
+         <span class="hljs-attr">&quot;webpack-dev-server&quot;</span>: <span class="hljs-string">&quot;^3.11.2&quot;</span>
+      }
+   }
+
+</div></code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p>..</p>
+</li>
+</ol>
+</li>
+<li>
+<p>item 02.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_exemplos></span><strong>Exemplos.</strong></p>
+<ol>
+<li>
+<p>webpack Getting Started.</p>
+<ol>
+<li><span id=id_Exemplo_basico></span> <a href="https://webpack.js.org/guides/getting-started/#basic-setup">Basic Setup</a>.
+<ol>
+<li>
+<p>Primeiro, vamos criar um diretório, inicializar o npm, instalar o webpack localmente e instalar o webpack-cli(a ferramenta usada para executar o webpack na linha de comando):</p>
+<ol>
+<li>
+<p>Código ShellScript</p>
+<pre><code class="language-ShellScript"><code><div>   mkdir basic_setup
+   cd basic_setup
+   npm init -y
+   npm install webpack webpack-cli lodash --save-dev
+</div></code></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Segundo vamos criar o arquivo <strong>./index.html</strong>, a pasta <strong>./src</strong> e o arquivo <strong>./src/index.js</strong>.</p>
+</li>
+<li>
+<p>Adicionar código abaixo no arquivo ./src/index.js</p>
+<ol>
+<li>
+<p>Código javascript do arquivo <strong>./src/index.js</strong> :</p>
+<pre><code class="language-JavaScript"><div>   <span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lodash&#x27;</span>;
+   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">component</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&#x27;div&#x27;</span>);
+      <span class="hljs-comment">/**
+      Lodash (https://lodash.com/), atualmente incluído por meio de um script,
+      é necessário para que esta linha funcione porque tem a function &quot;_.join()&quot;.
+
+      Lodash é uma biblioteca de utilitários JavaScript 
+      moderna que oferece modularidade, desempenho e extras.
+      
+      */</span>                       
+      element.innerHTML = _.join([<span class="hljs-string">&#x27;Alo&#x27;</span>, <span class="hljs-string">&#x27;Mundo&#x27;</span>], <span class="hljs-string">&#x27; &#x27;</span>);
+      <span class="hljs-keyword">return</span> element;
+   }
+
+   <span class="hljs-built_in">document</span>.body.appendChild(component());
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Adicionar código abaixo no arquivo ./index.html</p>
+<ol>
+<li>
+<p>Código html do arquivo <strong>./index.html</strong>:</p>
+<pre><code class="language-html"><div>   <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Getting Started<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-comment">&lt;!--  
+      Lodash (https://lodash.com/) é uma biblioteca de utilitários JavaScript 
+      moderna que oferece modularidade, desempenho e extras.
+      --&gt;</span>
+      <span class="hljs-comment">&lt;!-- &lt;script src=&quot;https://unpkg.com/lodash@4.17.20&quot;&gt;&lt;/script&gt; --&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./src/index.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Agora é preciso ajustar o arquivo <strong>package.json</strong> adicionando a propriedade <strong>&quot;private&quot; : true</strong> e removendo a propriedade <strong>&quot;main&quot;: &quot;index.js&quot;</strong>. Isso evita uma publicação acidental do seu código.</p>
+<ol>
+<li>
+<p>Código json do arquivo <strong>./package.json</strong>:</p>
+<pre><code class="language-json"><div>   
+   {
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;basic_setup&quot;</span>,
+      <span class="hljs-attr">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,
+      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,                        
+      <span class="hljs-attr">&quot;private&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">&quot;scripts&quot;</span>: {
+         <span class="hljs-attr">&quot;test&quot;</span>: <span class="hljs-string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+         <span class="hljs-string">&quot;build&quot;</span> : <span class="hljs-string">&quot;webpack --mode=&#x27;production&#x27;&quot;</span>,
+
+      },
+      <span class="hljs-attr">&quot;keywords&quot;</span>: [],
+      <span class="hljs-attr">&quot;author&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-attr">&quot;license&quot;</span>: <span class="hljs-string">&quot;ISC&quot;</span>,
+      <span class="hljs-attr">&quot;devDependencies&quot;</span>: {
+         <span class="hljs-attr">&quot;webpack&quot;</span>: <span class="hljs-string">&quot;^5.36.2&quot;</span>,
+         <span class="hljs-attr">&quot;webpack-cli&quot;</span>: <span class="hljs-string">&quot;^4.6.0&quot;</span>
+      }
+   }
+  
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Ultimo passo é preciso seguir os seguintes passos:</p>
+<ol>
+<li>
+<p>Executar comando <strong><a href="../html/typescript/instalar.html#id_Instalar_npx">npx</a> webpack</strong> que tomará nosso script ./src/index.js como ponto de entrada e gerará ./dist/main.js como saída. O npx executa o binário webpack (./node_modules/.bin/webpack) do pacote webpack que instalamos no início:</p>
+<ol>
+<li>
+<p>Código ShellScript</p>
+<pre><code class="language-ShellScript"><code><div>   /**
+     O comando abaixo criar a pasta ./dist e
+     compacta o código javascript ./src/index.js 
+     para a pasta ./dist
+   */
+   npx webpack
+</div></code></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Mova o arquivo index.html para a pasta ./dist;</p>
+</li>
+<li>
+<p>No arquivo <strong>./dist/index.html</strong> troque a linha <strong>&lt;script src=&quot;./src/index.js&quot;&gt; &lt;/script&gt;</strong> para <strong>&lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;</strong>.</p>
+<pre><code class="language-html"><div>   <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Getting Started<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-comment">&lt;!--  
+      Lodash é uma biblioteca de utilitários JavaScript 
+      moderna que oferece modularidade, desempenho e extras.
+      --&gt;</span>
+      <span class="hljs-comment">&lt;!-- &lt;script src=&quot;https://unpkg.com/lodash@4.17.20&quot;&gt;&lt;/script&gt; --&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- &lt;script src=&quot;./src/index.js&quot;&gt; --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;main.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+</li>
+<li>
+<p>Para testar execute o arquivo <strong>./dist/index.html</strong> no browser.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_exemplos_javascript></span><strong>Exemplo de webpack com a linguagem javascript</strong></p>
+<ol>
+<li>
+<p>Criar o projeto na pasta selecionada:</p>
+<ol>
+<li>
+<p>Código ShellScript</p>
+<pre><code class="language-ShellScript"><code><div>   npm init -y
+
+   npm install --save-dev @babel/core @babel/cli
+   npm install --save-dev @babel/plugin-transform-block-scoping
+
+   npm install --save-dev webpack webpack-cli
+   npm i -D webpack-cli @webpack-cli/generators                  
+   npm install --save-dev webpack-dev-server                  
+
+   npm install --save-dev nanoid
+   npm install --save-dev @types/nanoid
+   npm install --save lodash
+   
+   // Veja nota ...2.1 abaixo para detalhes do comando a seguir.
+   npx webpack-cli init      
+</div></code></code></pre>
+</li>
+<li>
+<p>Notas:</p>
+<ol>
+<li>O comando <strong>npx webpack-cli init</strong> acima informa que existe um conflito. Motivo: O arquivo <strong>package.json</strong> foi criado no primeiro comando. Diga <strong>não</strong> para que mantenha o <strong>package.json</strong> atual.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Após criar o projeto siga os passos abaixo para construção do exemplo 01:</p>
+<ol>
+<li>
+<p>Selecionar o arquivo <strong>./src/index.js</strong> e edite o seguinte código:</p>
+<ol>
+<li>
+<p>Código javascript:</p>
+<pre><code class="language-JavaScript"><div>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">component</span>(<span class="hljs-params"></span>) </span>{
+   <span class="hljs-keyword">const</span> element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&#x27;div&#x27;</span>);
+
+   <span class="hljs-comment">// Lodash, currently included via a script, is required for this line to work</span>
+   element.innerHTML = _.join([<span class="hljs-string">&#x27;Hello&#x27;</span>, <span class="hljs-string">&#x27;webpack&#x27;</span>],<span class="hljs-string">&#x27; &#x27;</span>);
+
+   <span class="hljs-keyword">return</span> element;
+}
+
+<span class="hljs-built_in">document</span>.body.appendChild(component());
+   
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Selecionar o arquivo <strong>./index.html</strong> e edite o seguinte código:</p>
+<ol>
+<li>
+<p>Código html:</p>
+<pre><code class="language-html"><div><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span> /&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Getting Started<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://unpkg.com/lodash@4.17.20&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./src/index.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+  
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Também precisamos ajustar nosso <strong>package.json</strong> arquivo para ter certeza de marcar nosso pacote como private, bem como remover a entrada <strong>main</strong>. Isso evita uma publicação acidental do seu código.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_exemplos_typescript></span><a href="https://webpack.js.org/configuration/configuration-languages/"><strong>Exemplo de webpack com a linguagem typescript</strong></a>:</p>
+<ol>
+<li>
+<p>Criar o projeto na pasta selecionada:</p>
+<ol>
+<li>Código ShellScript
+<ol>
+<li><a href="../html/typescript/webpack_typescript/modelo01/my-tsc-init-ver-0.2.0.sh">Shellscript para criar projetos typescript/my-tsc-init-ver-0.2.0.sh</a></li>
+<li><a href="../html/typescript/webpack_typescript/modelo01/my-tsc-init.html">Veja mais...</a></li>
+</ol>
+</li>
+<li>.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
+<ol>
+<li>
+<p><a href="https://webpack.js.org/guides/installation/">Guia de instalação oficial</a></p>
+</li>
+<li>
+<p><a href="https://ankiweb.net/shared/info/877182321">Enhance main window</a></p>
+</li>
+<li>
+<p><a href="https://webpack.js.org/concepts/">webpack</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=sU3W2ZTt-8I">Vídeo para iniciante sobre webpack</a></p>
+</li>
+<li>
+<p><a href="https://devheroes.io/webpack-2-para-iniciantes-o-que-e-porque-usar-e-como-iniciar/">webpack-2-para-iniciantes-o-que-e-porque-usar-e-como-iniciar</a>.</p>
+</li>
+<li>
+<p><a href="https://postcss.org/">postcss aumentar a legibilidade do código css</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ai/nanoid">nanoid</a></p>
+</li>
+<li>
+<p><a href="https://webpack.js.org/configuration/mode/">configuration/mode</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=RZQMAuHE_hw">O que é babel js</a></p>
+</li>
+<li>
+<p><a href="https://medium.com/@angustweets/hallelujah-in-praise-of-babel-977020010fad">Letra da música do programa babel js</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=40abpedBKK8">Música do programa bebel js</a></p>
+</li>
+<li>
+<p><a href="https://webpack.js.org/concepts/">Conceitos do webpack</a></p>
+</li>
+<li>
+<p><a href="https://springbootdev.com/2018/03/06/generate-webpack-config-js-with-webpack-cli/">Generate Webpack Configuration file (webpack.config.js) using webpack-cli</a></p>
+</li>
+<li>
+<p><a href="https://webpack.js.org/configuration/dev-server/">dev-server-configuration</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9hOkGbwzgYFmaxB0WiduYJC">Webpack &amp; TypeScript</a></p>
+</li>
+<li>
+<p><a href="https://www.npmjs.com/package/html-webpack-plugin">html-webpack-plugin</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=LMCtGvLJT6c">Babel e Webpack que roda em seus Projetos JavaScript?</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=PcWOAYbTc9Y&amp;t=5s">webpack // Dicionário do Programador</a></p>
+</li>
+<li>
+<p><a href="https://github.com/webpack-contrib/html-loader">html-loader</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jantimon/html-webpack-plugin/blob/main/docs/template-option.html">html-webpack-plugin</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jaketrent/html-webpack-template">html-webpack-template</a></p>
+</li>
+<li>
+<p><a href="link">#</a></p>
+</li>
+<li>
+<p>[#](link</p>
+</li>
+<li>
+<p>[#](link</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<ol>
+<li>
+<p>27/04/2021 <!--TODO: HISTÓRICO --></p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar este documento baseado no <a href="http://modelo02.html">modelo02.md</a> ;</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+<li>
+<p>28/04/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Objetivos;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Pre-requisitos</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Benefícios</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+<li>
+<p>29/04/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar tópico instalar a versão mais recente do webpack.</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar tópico Instalar a versão mais recente do webpack-cli.</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar tópico Instalar a versão mais recente do webpack-dev-server.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+<li>
+<p>30/04/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico configuração do webpack.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Exemplos - falta executar javascript dentro do arquivo ./index.html</li>
+</ul>
+</li>
+<li>
+<p>05/05/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Exemplo básico de uso do webpack.</li>
+</ul>
+</li>
+<li>
+<p>06/05/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico descrição do webpack parte 01.</li>
+</ul>
+</li>
+<li>
+<p>08/05 a 11/05/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico descrição do webpack.</li>
+</ul>
+</li>
+<li>
+<p>27/05/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar documento: Como usar webpack com a linguagem typescript.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Referências</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Atualizar o histórico deste documento.</li>
+<li>[ ]</li>
+</ul>
+</li>
+<li>
+<p>15/06/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Depois de tanta luta para entender webpack, achei o projeto webpack-demo com 15 exemplo. Meu erro foi achar que ele pudesse pegar meu projeto atual e transformar em site de distribuição na web. O objetivo do webpack é empacotar javascript apenas.</li>
+</ul>
+</li>
+<li>
+<p>xx/06/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
+</li>
+</ol>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Testar este documento depois que eu esquecer dele.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+ <script>    function goBack() {    window.history.back()}</script>
+
+    </body>
+    </html>

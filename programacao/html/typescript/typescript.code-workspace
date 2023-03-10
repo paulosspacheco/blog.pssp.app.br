@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"KHTML",
+			"Visao",
+			"apiconnect",
+			"codigo",
+			"convencao",
+			"datasource",
+			"dockerignore",
+			"helloworld",
+			"openapi",
+			"outdir",
+			"referer",
+			"transpilado",
+			"transpilador",
+			"transpiled",
+			"versoes"
+		]
+	}
+}
