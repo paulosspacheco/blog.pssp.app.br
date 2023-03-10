@@ -161,8 +161,8 @@ class TMenuBar extends THelpCtx {
 
 function getPathRaiz() {
   //return 'file:///home/paulosspacheco/Documentos/blogger/blog.pssp.app.br/';
-  //return '/blog.pssp.app.br/';
-  return '/';
+  return '/blog.pssp.app.br/';
+  //return '/';
 }
 
 function createMenuBar() {
