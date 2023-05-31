@@ -28,7 +28,6 @@
       12. Documentar como funciona o **git Issues** (Registro de problemas)
       13. [Free Pascal Git](https://wiki.freepascal.org/FPC_git#rm_.28removing_files.29)
 
-
    4. [**Referências globais.**](#id_referencias)
 
    5. [**Histórico.**](#id_historico)
@@ -438,10 +437,11 @@
       4. [Git e GitHub - Instalação, Configuração e Primeiros Passos](https://balta.io/blog/git-github-primeiros-passos#requisitos)
       5. [Voltando um commit do GIT](http://www.basef.com.br/index.php/Voltando_um_commit_do_GIT)
       6. [Aprenda GitLab](https://gitlab.com/itms3/learn-gitlab/-/learn_gitlab)
-      7. [ COMO USAR O GIT E O GITLAB NA PRÁTICA](https://www.youtube.com/watch?v=un8CDE8qOR8&t=38s)
+      7. [COMO USAR O GIT E O GITLAB NA PRÁTICA](https://www.youtube.com/watch?v=un8CDE8qOR8&t=38s)
       8. [Markdown com sabor do GitLab](https://docs.gitlab.com/ee/user/markdown.html)
+      9. [Clonar e usar um repositório do GitHub no Visual Studio Code](https://learn.microsoft.com/pt-br/azure/developer/javascript/how-to/with-visual-studio-code/clone-github-repository?tabs=create-repo-command-palette%2Cinitialize-repo-activity-bar%2Ccreate-branch-command-palette%2Ccommit-changes-command-palette%2Cpush-command-palette)
 
-      9. <text onclick="goBack()">[🔙]</text>
+      10. <text onclick="goBack()">[🔙]</text>
 
    5. <span id="id_historico"><span>**HISTÓRICO**
 

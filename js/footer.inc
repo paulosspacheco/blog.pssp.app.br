@@ -9,6 +9,7 @@
   <body>
     <div class="footer">
       <!-- inicio <div class="footer"> -->
+      <p>Versão: 0.200.0</p>
       <table style="width: 100%;">
         <tbody>
           <tr>
