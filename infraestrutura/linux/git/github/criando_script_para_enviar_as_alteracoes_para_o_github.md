@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line -->
 #### Criando script para enviar as alterações para o github <a href="criando_script_para_enviar_as_alteracoes_para_o_github.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Crie um arquivo de nome ~/meuProjeto/**pushmain.sh** e cole os comandos a baixo, em seguida de permissão de execução para o arquivo **pushmain.sh**:

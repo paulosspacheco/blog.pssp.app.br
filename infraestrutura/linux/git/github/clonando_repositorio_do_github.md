@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line -->
 #### Clonando repositório do github
 
 1. **Eureca!!!** a forma mais prática que encontrei para usar o github e vscode foi:
