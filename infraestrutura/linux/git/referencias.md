@@ -15,4 +15,5 @@
 13. [Configurando arquivos ignorados para todos os repositórios em seu computador](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files).
 14. [Clonar um repositório](https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository)
 15. [Git Status: Inspecting a repository](https://www.atlassian.com/git/tutorials/inspecting-a-repository#:~:text=The%20git%20status%20command%20displays,regarding%20the%20committed%20project%20history.)
-16. [Como colocar seu projeto no ar com o Github Pages?](https://www.alura.com.br/artigos/como-colocar-projeto-no-ar-com-github-pages?gclid=CjwKCAjwge2iBhBBEiwAfXDBR5-xJ4w77lyDLzvBzBC7oJwsUkzGfjpIZWV2AzXjSfAPuQAx-RfiNBoClEsQAvD_BwE)
+16. [Sobre o git hub pages](https://docs.github.com/pt/pages/getting-started-with-github-pages/about-github-pages)
+17. [Como colocar seu projeto no ar com o Github Pages?](https://www.alura.com.br/artigos/como-colocar-projeto-no-ar-com-github-pages?gclid=CjwKCAjwge2iBhBBEiwAfXDBR5-xJ4w77lyDLzvBzBC7oJwsUkzGfjpIZWV2AzXjSfAPuQAx-RfiNBoClEsQAvD_BwE)
