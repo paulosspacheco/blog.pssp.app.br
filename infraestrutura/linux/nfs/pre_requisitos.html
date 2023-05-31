@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pre-requisitos para instalar o servi&ccedil;o NFS</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h4 id="pre-requisitos-para-instalar-o-serviço-nfs">Pre-requisitos para instalar o serviço NFS</h4>
+<ol>
+<li>
+<p>Linux Debian ou distribuições derivadas.</p>
+</li>
+<li>
+<p>Para servidores que suportam conexões NFSv2 ou NFSv3, o serviço rpcbind deve estar em execução. Para verificar se rpcbind está ativo, use o seguinte comando:</p>
+<pre><code class="hljs language-sh">   <span class="hljs-comment"># Checa o status do serviço </span>
+   systemctl status rpcbind
+
+</code></pre>
+</li>
+<li>
+<p>Caso a máquina que está no servidor esteja por traz de um firewall atente-se para configurar a porta do serviço NFS.</p>
+</li>
+</ol>
+
+        
+        
+    </body>
+    </html>

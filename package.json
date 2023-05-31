@@ -1,0 +1,23 @@
+{
+  "name": "blog.pssp.app.br",
+  "version": "0.1.0",
+  "description": "Documentação de tudo que estudei deste o ano de 2023.",
+  "main": "index.html",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paulo Pacheco",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "help": "^3.0.2",
+    "mariadb": "^2.5.2",
+    "sequelize": "^6.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.20.0"
+  }
+}

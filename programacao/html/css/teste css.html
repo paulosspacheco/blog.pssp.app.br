@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-br">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Minhas anotações que fiz ao estudar programação da linguagem css</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../../../css/responsivo01.css" title="Estilo principal" type="text/css"
+      rel="stylesheet">
+    <script type="application/x-javascript" src="../../../../js/generic.js"></script>
+    <meta name="author" content="paulosspacheco">
+    <meta name="description" content="Um código html é composto de 3 linguagens quais sejam: HTML, css e javascript">
+    <meta name="keywords" content="flatpak,linux,aplicativo">
+    <style>
+    /*ul,*/
+    #myUL {
+      list-style-type: none;
+    }
+
+    #myUL {
+      margin: 0;
+      padding: 0;
+    }
+
+    .caret {
+      cursor: pointer;
+      -webkit-user-select: none;
+      /* Safari 3.1+ */
+      -moz-user-select: none;
+      /* Firefox 2+ */
+      -ms-user-select: none;
+      /* IE 10+ */
+      user-select: none;
+    }
+
+    .caret::before {
+      content: "\25B6";
+      color: black;
+      display: inline-block;
+      margin-right: 6px;
+    }
+
+    .caret-down::before {
+      -ms-transform: rotate(90deg);
+      /* IE 9 */
+      -webkit-transform: rotate(90deg);
+      /* Safari */
+
+      transform: rotate(90deg);
+    }
+
+    .nested {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+  </style>
+  </head>
+  <body>
+    <h2>Tree View</h2>
+    <p>A tree view represents a hierarchical view of information, where each
+      item can have a number of subitems.</p>
+    <p>Click on the arrow(s) to open or close the tree branches.</p>
+    
+    
+    <ul id="myUL">
+      <li><span class="caret">Beverages</span>
+        <ul class="nested">
+          <li>Water</li>
+          <li>Coffee</li>
+          <li><span class="caret">Tea</span>
+            <ul class="nested">
+              <li>Black Tea</li>
+              <li>White Tea</li>
+              <li><span class="caret">Green Tea</span>
+                <ul class="nested">
+                  <li>Sencha</li>
+                  <li>Gyokuro</li>
+                  <li>Matcha</li>
+                  <li>Pi Lo Chun</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    
+    <!-- Lista enumerada-->
+    <ol>
+      
+      
+      <li><span class="caret">Beverages</span>
+        <ol class="nested">
+          <li>Water</li>
+          <li>Coffee</li>
+          <li><span class="caret">Tea</span>
+            <ol class="nested">
+              <li>Black Tea</li>
+              <li>White Tea</li>
+              <li><span class="caret">Green Tea</span>
+                <ol class="nested">
+                  <li>Sencha</li>
+                  <li>Gyokuro</li>
+                  <li>Matcha</li>
+                  <li>Pi Lo Chun</li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <script type="text/javascript">
+    var toggler = document.getElementsByClassName("caret");    var i;
+    for (i = 0; i < toggler.length; i++) {
+      toggler[i].addEventListener("click", function () {        this.parentElement.querySelector(".nested").classList.toggle("active");
+        this.classList.toggle("caret-down");      });
+
+    }  </script>
+  </body>
+</html>

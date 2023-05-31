@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Framework LoopBack 4&period;0 &lt;a href&equals;&quot;loopback&period;4&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;&crarr;&lt;&sol;a&gt;&lt;a href&equals;&quot;loopback&period;4&period;pdf&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para visualizar o PDF deste documento em nova aba&period;&quot;&gt;&wp;&lt;&sol;a&gt;</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="span-idtopospanframework-loopback-40-"><span id="topo"><span>Framework LoopBack 4.0 <a href="loopback.4.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a><a href="loopback.4.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a></h1>
+<h2 id="1-index"><strong>1. INDEX</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+<li><a href="#id_beneficios">benefícios.</a></li>
+</ol>
+</li>
+<li>
+<p><strong>Descrição.</strong></p>
+<ol>
+<li><a href="#id_Visao_geral">Visão geral</a></li>
+<li><a href="#id_convencao">Convenções de nomes de classes, arquivos e variáveis lb4</a></li>
+<li><a href="#id_lb4">lb4 - Aplicativo de linha de comando</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_instalar">Instalar</a></p>
+</li>
+<li>
+<p><a href="#id_exemplos"><strong>Exemplos.</strong></a></p>
+<ol>
+<li><a href="#id_getting_started_1">Criar um novo projeto de nome getting-started</a></li>
+<li><a href="#id_getting_started_2">Iniciando o projeto getting-started</a></li>
+<li><a href="#id_getting_started_3">Adicionando o controlador <strong>hello</strong></a></li>
+<li>Adicionar o modelo</li>
+<li><a href="#id_getting_started_4">Adicionando a entidade &lt;entity&gt;  <strong>Clientes</strong> ao projeto getting-started</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_Conteudo01"><strong>Conteúdo01</strong></a></p>
+</li>
+<li>
+<p><a href="#id_referencias"><strong>Referências.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li>
+<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+<ol>
+<li>
+<p>LoopBack 4.0 é um framework <a href="../../nodejs/index.html">Node.js</a> escrito na linguagem TypeScript, altamente extensível e de código aberto baseado no Express. Ele permite que você crie rapidamente APIs e micros serviços compostos de sistemas de back-end, como bancos de dados e serviços SOAP ou REST.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
+<ol>
+<li>
+<p><a href="/programacao/nodejs/index.html">nodejs</a> - Um tempo de execução de JavaScript que nos permite executar javascript fora de um navegador. Também nos permite executar Javascript no lado do servidor.</p>
+</li>
+<li>
+<p><a href="https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/">npm</a> - Significa <strong>Node Package Manager</strong> e é uma ferramenta que nos permite instalar e gerenciar pacotes de nodejs como dependências.</p>
+</li>
+<li>
+<p><a href="https://www.educative.io/edpresso/what-is-npx">npx</a> - <strong>NPX</strong> é um executor de pacote <strong>NPM</strong> que torna realmente fácil instalar qualquer tipo de executável de nodejs que normalmente teria sido instalado usando NPM.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
+<ol>
+<li>
+<p>Defina seus schemas e endpoints da API usando o padrão <a href="https://www.openapis.org/">OpenAPI</a>.</p>
+</li>
+<li>
+<p>Integra com bancos de dados, serviços web e outras plataformas usando <a href="https://loopback.io/doc/en/lb4/Connectors-reference.html">conectores</a>.</p>
+<ol>
+<li>Os conectores são uma espécie de api para acessar as seguintes tecnologias:
+<ol>
+<li>Conectores de acesso a memória;</li>
+<li><a href="https://loopback.io/doc/en/lb4/Database-connectors.html">Conectores de acesso a banco de dados</a>;
+<ol>
+<li><a href="https://loopback.io/doc/en/lb4/MySQL-connector.html">mysql/mariadb</a>;</li>
+<li><a href="https://loopback.io/doc/en/lb4/OpenAPI-connector.html">Open api</a></li>
+</ol>
+</li>
+<li>Conectores API <a href="https://loopback.io/doc/en/lb4/REST-connector.html">rest</a> ou <a href="https://loopback.io/doc/en/lb4/SOAP-connector.html">soap</a>.</li>
+<li>Vários outros conectores construídos pela comunidade.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Use seus endpoints e schema como “source of truth” sem a necessidade de geração de código.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Descrição</strong></p>
+<ol>
+<li>
+<p><span id=id_Visao_geral></span><strong>Visão geral.</strong></p>
+<ol>
+<li>
+<p>O loopback possue o <strong>cliente lb4</strong> que cria a parte braçal do código loopback 4, porém para saber a sequência de quais opções devo executar primeiro, é necessário conhecer o documento abaixo:</p>
+<ol>
+<li><a href="https://loopback.io/doc/en/lb4/Defining-the-API-using-code-first-approach.html">Definindo a API usando abordagem de código primeiro</a>.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_convencao></span><a href="https://loopback.io/doc/en/lb4/Command-line-interface.html#naming-convention">Convenções de nomes de classes, arquivos e variáveis lb4</a></p>
+<ol>
+<li>
+<p>Nome da <a href="https://www.typescriptlang.org/docs/handbook/classes.html#classes">classe</a>: PascalCase.</p>
+<ol>
+<li><strong>PascalCase</strong> é uma convenção de nomenclatura em que a primeira letra de cada palavra em uma palavra composta é maiúscula. <a href="https://techterms.com/definition/pascalcase">Veja mais...</a>
+<ol>
+<li>
+<p>Exemplo:</p>
+<pre><code class="language-typescript"><div>   <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> CadastroDeClientes <span class="hljs-keyword">extends</span> Entity {}
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>O nome do arquivo: kebab-case.</p>
+<ol>
+<li><strong>kebab-case</strong> - é uma convenção de nomenclatura de variável de programação onde um desenvolvedor substitui os espaços entre as palavras por um travessão e todas as letras devem ser minusculas ou maiúsculas. <a href="https://www.theserverside.com/definition/Kebab-case#:~:text=Kebab%20case%20%2D%2D%20or%20kebab,between%20words%20with%20a%20dash.&amp;text=The%20term%20comes%20from%20the,together%20on%20a%20shish%20kebab.">Veja mais...</a>
+<ol>
+<li>Exemplo:
+<ol>
+<li>cadastro-de-clientes.ts</li>
+<li>CADASTRO-DE-CLIENTES.TS</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Nota: O programa <a href="https://loopback.io/doc/en/lb4/Command-line-interface.html#naming-convention">lb4 convencionou o nome de arquivos</a> da seguinte forma:
+<ol>
+<li>
+<table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Caso</th>
+<th>Nome da Classe</th>
+<th>Nome do arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MyModel</td>
+<td>A entrada permanece a mesma</td>
+<td>MyModel</td>
+<td>my-model.model.ts</td>
+</tr>
+<tr>
+<td>my_model</td>
+<td>Os sublinhados são removidos</td>
+<td>MyModel</td>
+<td>my-model.model.ts</td>
+</tr>
+<tr>
+<td>My-Model</td>
+<td>O nome da classe não pode conter alguns símbolos</td>
+<td>Inválido</td>
+<td>Inválido</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Nome da <a href="https://www.typescriptlang.org/pt/docs/handbook/variable-declarations.html">variável</a>: camelCase.</p>
+<ol>
+<li><strong>camelCase</strong> é uma convenção de nomenclatura na qual a primeira letra de cada palavra em uma palavra composta é maiúscula, exceto para a primeira palavra. <a href="https://techterms.com/definition/camelcase">Veja mais...</a>.
+<ol>
+<li>
+<p>Exemplo:</p>
+<pre><code class="language-typescript"><div>   <span class="hljs-keyword">var</span> nomeDoCliente = <span class="hljs-built_in">string</span>;
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_lb4></span><strong><a href="https://loopback.io/doc/en/lb4/Command-line-interface.html#upgrading-loopback-dependencies">lb4 - Aplicativo de linha de comando:</a></strong></p>
+<ol>
+<li>
+<p><strong>Usage:</strong></p>
+<ol>
+<li>lb4 app [&lt;name&gt;] [options]</li>
+</ol>
+</li>
+<li>
+<p><strong>Options:</strong></p>
+<ol>
+<li>-h, --help <em># Imprimir as opções e o uso do gerador</em></li>
+<li>--skip-cache <em># Não lembrar respostas do prompt Default:false</em></li>
+<li>--skip-install <em># Não instalar dependências automaticamente Default: false</em></li>
+<li>--force-install <em># Erro de falha na instalação de dependências Default: false</em></li>
+<li>--ask-answered <em># Show prompts for already configured options Default: false</em></li>
+<li>--applicationName  <em># Nome da classe do aplicativo</em></li>
+<li>--docker <em># Incluir Dockerfile e .dockerignore</em></li>
+<li>--repositories <em># Inclua importações de repositório e RepositoryMixin</em></li>
+<li>--services <em># Inclua importações de proxy de serviço e ServiceMixin</em></li>
+<li>--apiconnect <em># Incluir ApiConnectComponent</em></li>
+<li>--description <em># Descrição para o application</em></li>
+<li>--outdir <em># Diretório-raiz do projeto para o application</em></li>
+<li>--eslint <em># Ativar eslint</em></li>
+<li>--prettier <em># Ativar o Prettier</em></li>
+<li>--mocha <em># Ativar mocha</em></li>
+<li>--loopbackBuild <em># Use @loopback/build</em></li>
+<li>--vscode <em># Usar definições de VSCode pré-configuradas</em></li>
+<li>--private <em># Marque o projeto como privado (excluído da publicação npm)</em></li>
+<li>-c,--config <em># Nome ou valor do arquivo JSON para configurar opções</em></li>
+<li>-y,--yes <em># Ignore todos os prompts de confirmação com valor padrão ou fornecido</em></li>
+<li>--format <em># Formate o código gerado usando npm run lint:fix</em></li>
+<li>-pm, --packageManager <em># Mude o gerenciador de pacote padrão</em></li>
+</ol>
+</li>
+<li>
+<p><strong>Arguments:</strong></p>
+<ol>
+<li>name # <em>Nome do projeto para o application  Type: String Required: false</em></li>
+</ol>
+</li>
+<li>
+<p><strong>Available commands:</strong></p>
+<ol>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Application-generator.html">app</a> <em># Cria um novo aplicativo LoopBack4 usando a API REST.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Extension-generator.html">extension</a> <em># Cria uma nova extensão LoopBack4.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Controller-generator.html">controller</a> <em># Adicionar um novo controlador a um aplicativo LoopBack 4.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/DataSource-generator.html">datasource</a> <em># Adicionar uma nova fonte de dados a um aplicativo LoopBack 4.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Importing-LB3-models.html">import-lb3-models</a> <em># Importe um ou mais modelos LoopBack 3 para um aplicativo LoopBack 4.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Model-generator.html">model</a> <em># Adicionar um novo modelo a um aplicativo LoopBack 4.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Repository-generator.html">repository</a> <em># Adicionar novos repositórios para o (s) modelo (s) selecionado (s) a um aplicativo LoopBack 4.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Service-generator.html">service</a> <em># Adicionar um novo serviço remoto ou local a um aplicativo LoopBack 4.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Examples.html">example</a> <em># LoopBack 4 vem com vários projetos de exemplo.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/OpenAPI-generator.html">openapi</a> <em># Gerar controladores e modelos a partir de especificações OpenAPI.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Life-cycle-observer-generator.html">observer</a> <em># Gerar observadores de ciclo de vida para iniciar / parar o aplicativo.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Interceptor-generator.html">interceptor</a> <em># Gerar interceptores.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Discovering-models.html">discover</a> <em># Descubra modelos de bancos de dados relacionais.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Relation-generator.html">relation</a> <em># Adicione uma relação entre dois modelos em um aplicativo LoopBack 4.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Update-generator.html">update</a> <em># O lb4 update comando é executado dentro de um projeto LoopBack 4 e verifica as dependências em relação à versão atual do @loopback/cli. Por padrão, ele verifica a correspondência exata. Use a --semver opção para verificar a compatibilidade usando semver semântica.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Rest-Crud-generator.html">rest-crud</a> <em># Gerar configurações restantes para endpoints do modelo.</em></p>
+</li>
+<li>
+<p>lb4 <a href="https://loopback.io/doc/en/lb4/Copyright-generator.html"><em>copyright</em></a> <em># O lb4 copyright comando é executado dentro de um projeto Node.js package.json para adicionar ou atualizar o cabeçalho de copyright / licença para arquivos JavaScript e TypeScript com base em um package.json histórico git.<br> O comando também oferece suporte a <a href="https://github.com/lerna/lerna">lerna</a> monorepos. Ele atravessa todos os pacotes dentro do monorepo e aplica cabeçalhos de copyright/licença.</em></p>
+</li>
+<li>
+<p>install-completion</p>
+</li>
+<li>
+<p>lb4 uninstall-completion</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_instalar></span><a href="https://strongloop.com/strongblog/loopback4-cli-express-mode"><strong>Instalar loopback</strong></a></p>
+<ol>
+<li>
+<p>O LoopBack 4 CLI é uma interface de linha de comando que estrutura um projeto ou uma extensão gerando o código básico. A CLI fornece a maneira mais rápida de começar com um projeto LoopBack 4 que segue as melhores práticas.</p>
+</li>
+<li>
+<p>Instalar <strong>loopback CLI toolkit</strong>.</p>
+<ol>
+<li>
+<p>Código shellscript:</p>
+<pre><code class="language-shellscript"><code><div>   
+   sudo npm i -g @loopback/cli
+
+</div></code></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_exemplos></span><strong>Exemplos.</strong></p>
+<ol>
+<li>
+<p>Passo a passo para criar projeto usando o programa <a href="https://loopback.io/getting-started.html">lb4</a>:</p>
+<ol>
+<li>
+<p><scan id=id_getting_started_1></scan> Criar um novo projeto de nome <a href="https://loopback.io/doc/en/lb4/Getting-started.html#create-a-new-project"><strong>getting-started</strong></a>:</p>
+<ol>
+<li>
+<p>Criar projeto <strong>getting-started</strong>:</p>
+<ol>
+<li>
+<p>Código shellscript</p>
+<pre><code class="language-shellscript"><code><div>   
+   lb4 app 
+
+</div></code></code></pre>
+<ol>
+<li>Responda a pegunta do comando <strong>lb4 app</strong>:
+<ol>
+<li>
+<p>? Nome do projeto: <em>getting-started</em></p>
+</li>
+<li>
+<p>? Descrição do projeto: <em>Getting started tutorial</em></p>
+</li>
+<li>
+<p>? Diretório-raiz do projeto: <em>getting-started</em></p>
+</li>
+<li>
+<p>? Nome da classe do aplicativo: <em>StarterApplication</em></p>
+</li>
+<li>
+<p>? Select project build settings:  (Press &lt;space&gt; to select, &lt;a&gt; to toggle all, &lt;i&gt; to invert selection):</p>
+<ol>
+<li>
+<p>◉ Ativar <a href="https://loopback.io/doc/en/lb4/Service.html#generate-services-using-cli">services</a>: <em>Incluir importações de proxy de serviço e o ServiceMixin</em></p>
+</li>
+<li>
+<p>◉ Ativar <a href="https://www.npmjs.com/package/eslint">eslint</a>: <em>Incluir um linter com regras de lint pré-configuradas</em></p>
+</li>
+<li>
+<p>◉ Ativar <a href="https://www.npmjs.com/package/prettier">prettier</a>: <em>Instalar Prettier para formatar código em conformidade com as regras</em></p>
+</li>
+<li>
+<p>◯ Ativar <a href="https://www.npmjs.com/package/mocha">mocha</a>: <em>Instale o mocha para executar testes</em></p>
+</li>
+<li>
+<p>◉ Ativar <a href="https://www.npmjs.com/package/@loopback/build">loopbackBuild</a>: <em>use os auxiliares @loopback/build (por exemplo, lb-eslint)</em></p>
+</li>
+<li>
+<p>◉ Ativar <a href="https://loopback.io/doc/en/lb4/Troubleshooting.html">vscode</a>: <em>Inclua arquivos de configuração de VSCode</em></p>
+</li>
+<li>
+<p>◉ Ativar <a href="https://loopback.io/doc/en/lb4/Repository.html">repositories</a>: <em>Incluir importações de repositório e o RepositoryMixin</em></p>
+</li>
+<li>
+<p>◯ Ativar <a href="https://www.digitalocean.com/community/tutorials/como-construir-uma-aplicacao-node-js-com-o-docker-pt">docker</a>: <em>Incluir Dockerfile e .dockerignore</em></p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>(Mova para cima e para baixo para revelar mais opções)</strong></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Nota: O projeto <strong>getting-started</strong> criado pelo comando <strong>lb4 app</strong> possui arquivos e diretórios no diretório raiz do aplicativo . Dentro desse diretório, a estrutura do aplicativo LB4 padrão tem estes subdiretórios:</p>
+<ol>
+<li><strong>src</strong> - Código-fonte TypeScript e arquivos de configuração.</li>
+<li><strong>public</strong> - Ativos do lado do cliente (arquivos JavaScript, HTML e CSS) para a página inicial.</li>
+<li><strong>dist/</strong> -</li>
+<li><a href="https://loopback.io/doc/en/lb4/Loopback-application-layout.html">Veja mais...</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><scan id=id_getting_started_2></scan>Iniciando o projeto <a href="https://loopback.io/doc/en/lb4/Getting-started.html#starting-the-project"><strong>getting-started</strong></a>:</p>
+<ol>
+<li>Código shellscript</li>
+</ol>
+<pre><code class="language-shellscript"><code><div>   
+   cd getting-started
+   npm start
+
+</div></code></code></pre>
+<ol>
+<li>
+<p>Digite no browser o comando: <a href="http://localhost:3000/ping">http://localhost:3000/ping</a></p>
+<ol>
+<li>A resposta será o objeto jsom:
+<ol>
+<li>
+<p>Código jsom</p>
+<pre><code class="language-json"><div>
+   <span class="hljs-comment">/**
+   Response headers
+      access-control-allow-credentials: true 
+      access-control-allow-origin: * 
+      connection: keep-alive 
+      content-length: 779 
+      content-type: application/json 
+      date: Wed,10 Mar 2021 14:04:19 GMT 
+      keep-alive: timeout=5 
+      x-powered-by: Express
+   */</span>            
+
+   <span class="hljs-comment">/**Response body */</span>
+   {
+      <span class="hljs-attr">&quot;greeting&quot;</span>: <span class="hljs-string">&quot;Hello from LoopBack - 01&quot;</span>,
+      <span class="hljs-attr">&quot;date&quot;</span>: <span class="hljs-string">&quot;2021-03-10T14:04:19.400Z&quot;</span>,
+      <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;/ping&quot;</span>,
+      <span class="hljs-attr">&quot;headers&quot;</span>: {
+         <span class="hljs-attr">&quot;host&quot;</span>: <span class="hljs-string">&quot;localhost:3000&quot;</span>,
+         <span class="hljs-attr">&quot;connection&quot;</span>: <span class="hljs-string">&quot;keep-alive&quot;</span>,
+         <span class="hljs-attr">&quot;sec-ch-ua&quot;</span>: <span class="hljs-string">&quot;\&quot;Google Chrome\&quot;;v=\&quot;89\&quot;, \&quot;Chromium\&quot;;v=\&quot;89\&quot;, \&quot;;Not A Brand\&quot;;v=\&quot;99\&quot;&quot;</span>,
+         <span class="hljs-attr">&quot;accept&quot;</span>: <span class="hljs-string">&quot;application/json&quot;</span>,
+         <span class="hljs-attr">&quot;sec-ch-ua-mobile&quot;</span>: <span class="hljs-string">&quot;?0&quot;</span>,
+         <span class="hljs-attr">&quot;user-agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36&quot;</span>,
+         <span class="hljs-attr">&quot;sec-fetch-site&quot;</span>: <span class="hljs-string">&quot;same-origin&quot;</span>,
+         <span class="hljs-attr">&quot;sec-fetch-mode&quot;</span>: <span class="hljs-string">&quot;cors&quot;</span>,
+         <span class="hljs-attr">&quot;sec-fetch-dest&quot;</span>: <span class="hljs-string">&quot;empty&quot;</span>,
+         <span class="hljs-attr">&quot;referer&quot;</span>: <span class="hljs-string">&quot;http://localhost:3000/explorer/&quot;</span>,
+         <span class="hljs-attr">&quot;accept-encoding&quot;</span>: <span class="hljs-string">&quot;gzip, deflate, br&quot;</span>,
+         <span class="hljs-attr">&quot;accept-language&quot;</span>: <span class="hljs-string">&quot;pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,en-CA;q=0.6,de-DE;q=0.5,de;q=0.4,fr;q=0.3,es;q=0.2,zh-CN;q=0.1,zh;q=0.1,fr-CA;q=0.1,en-GB;q=0.1,ja;q=0.1,af;q=0.1&quot;</span>,
+         <span class="hljs-attr">&quot;cookie&quot;</span>: <span class="hljs-string">&quot;io=kpnuqyjQiI7YMGdNAAAG&quot;</span>
+      }
+   }                              
+  
+</div></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Finaliza a execução do programa pressiona <strong>Ctrl C</strong> no terminal onde o programa getting-started está executando.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><scan id=id_getting_started_3></scan><a href="https://loopback.io/doc/en/lb4/Getting-started.html#adding-your-own-controller">Adicionando o controlador <strong>hello</strong></a> ao projeto <a href="#id_getting_started_1"><strong>getting-started</strong></a>:</p>
+<ol>
+<li>
+<p>Agora que temos um projeto básico criado, é hora de adicionar  controladores.</p>
+<ol>
+<li>Adicionar o controlador <strong>“Hello”</strong> simples da seguinte maneira:
+<ol>
+<li>
+<p>Código shellscript</p>
+<pre><code class="language-shellscript"><code><div>
+   lb4 controller
+
+</div></code></code></pre>
+</li>
+<li>
+<p>Responda as peguntas do comando <strong>lb4 controller</strong>:</p>
+<ol>
+<li>
+<p>? Nome da classe do controlador: <em>hello</em></p>
+</li>
+<li>
+<p>? Que tipo de controlador você gostaria de gerar? (Use arrow keys ↕)</p>
+<ol>
+<li>
+<p><em>Controlador vazio</em></p>
+</li>
+<li>
+<p><em>Controlador de REST com funções de CRUD</em></p>
+</li>
+<li>
+<p>Resposta a essa pergunta:</p>
+<ol>
+<li><strong>Controlador vazio</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Mensagens após o término das respostas:</p>
+<ol>
+<li>Criou: <em>src/controllers/hello.controller.ts</em></li>
+<li>Atualizou: <em>src/controllers/index.ts</em></li>
+<li>O controlador <strong>&quot;hello&quot;</strong> foi criado em: <em>src/controllers/.</em></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Cole o seguinte código typescript no arquivo <strong>/src/controllers/hello.controller.ts</strong>:</p>
+<ol>
+<li>
+<p>Código typescript</p>
+<pre><code class="language-typescript"><div> <span class="hljs-keyword">import</span> {get} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@loopback/rest&#x27;</span>;
+
+ <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> HelloController {
+   <span class="hljs-meta">@get</span>(<span class="hljs-string">&#x27;/hello&#x27;</span>)
+   hello(): <span class="hljs-built_in">string</span> {
+      <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Hello world!&#x27;</span>;
+   }
+ }
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Para testar se o controller <strong>hello</strong> está funcionando execute o comando abaixo:</p>
+<ol>
+<li>
+<p>Código shellscript</p>
+<pre><code class="language-shellscript"><code><div>   npm start
+</div></code></code></pre>
+</li>
+<li>
+<p>Digite no browser o comando: <a href="http://localhost:3000/hello">http://localhost:3000/hello</a></p>
+<ol>
+<li>Resposta: <strong>Hello world!</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Finaliza a execução do programa pressiona <strong>Ctrl C</strong> no terminal onde o programa <strong>getting-started</strong> está executando.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><scan id=id_getting_started_4>Adicionando a entidade &lt;entity&gt;  <strong>cliente</strong> ao projeto <strong>getting-started</strong>.</p>
+<ol>
+<li>
+<p>Entidade &lt;entity&gt; é um modelo que possue a propriedade <strong>id</strong> único conforme o exemplo abaixo:</p>
+</li>
+<li>
+<p>Código ShellScript</p>
+<pre><code class="language-shellscript"><code><div>   lb4 model
+</div></code></code></pre>
+</li>
+<li>
+<p>Responda as perguntas do comando <strong>lb4 model</strong>:</p>
+<ol>
+<li>? Nome da classe Model: <em>cliente</em></li>
+<li>? Selecione a classe base do modelo <strong>Entity</strong> (<em>Entity é uma <strong>classe model</strong> com a propriedade <strong>id</strong></em>)</li>
+<li>? Permitir propriedades adicionais (formato livre)? <em>Yes</em>
+<ol>
+<li>Resposta do comando <strong>lb4 model</strong>:
+<ol>
+<li>Model Cliente será criado em: <em>src/models/cliente.model.ts</em></li>
+<li>Vamos incluir uma propriedade em Cliente</li>
+<li>Insira um nome de propriedade vazio quando estiver pronto:</li>
+</ol>
+</li>
+<li>Pergunta do comando lb4 model:
+<ol>
+<li>? Insira o nome da propriedade: <em>nomeDoCliente</em></li>
+<li>? Tipo de propriedade: <em>string</em></li>
+<li>? É necessário? <em>Yes</em></li>
+<li>Vamos incluir outra propriedade no modelo <strong>Cliente</strong>:</li>
+<li>? Insira o nome da propriedade (enter para finalizar): &lt;enter&gt;</li>
+<li>Resposta do comando <strong>lb4 model</strong>
+<ol>
+<li>Criou arquivo: <em>src/models/cliente.model.ts</em></li>
+<li>Atualizou arquivo: <em>src/models/index.ts</em></li>
+<li>O <em>Model Cliente</em> foi criado em <em>src/models</em></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Arquivo criado <strong>src/models/cliente.model.ts</strong>  com a entidade <entity>Cliente.</p>
+<ol>
+<li>
+<p>Código typescript</p>
+<pre><code class="language-typescript"><div>   <span class="hljs-keyword">import</span> {Entity, model, property} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@loopback/repository&#x27;</span>;
+
+   <span class="hljs-meta">@model</span>({settings: {strict: <span class="hljs-literal">false</span>}})
+   <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Cliente <span class="hljs-keyword">extends</span> Entity {
+      <span class="hljs-meta">@property</span>({
+         <span class="hljs-keyword">type</span>: <span class="hljs-string">&#x27;number&#x27;</span>,
+         id: <span class="hljs-literal">true</span>,
+         generated: <span class="hljs-literal">true</span>,
+      })
+      id?: <span class="hljs-built_in">number</span>;
+
+      <span class="hljs-meta">@property</span>({
+         <span class="hljs-keyword">type</span>: <span class="hljs-string">&#x27;string&#x27;</span>,
+         required: <span class="hljs-literal">true</span>,
+      })
+      nomeDoCliente: <span class="hljs-built_in">string</span>;
+
+      <span class="hljs-comment">// Define well-known properties here</span>
+
+      <span class="hljs-comment">// Indexer property to allow additional data</span>
+      <span class="hljs-comment">// eslint-disable-next-line @typescript-eslint/no-explicit-any</span>
+      [prop: <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">any</span>;
+
+      <span class="hljs-keyword">constructor</span>(<span class="hljs-params">data?: Partial&lt;Cliente&gt;</span>) {
+         <span class="hljs-built_in">super</span>(data);
+      }
+   }
+
+   <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> ClienteRelations {
+   <span class="hljs-comment">// describe navigational properties here</span>
+   }
+
+   <span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> ClienteWithRelations = Cliente &amp; ClienteRelations;
+   
+</div></code></pre>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Adicionar o controlador <strong>crud01</strong> da seguinte maneira:</p>
+<ol>
+<li>
+<p>Código shellscript</p>
+<pre><code class="language-shellscript"><code><div>
+   lb4 controller
+
+</div></code></code></pre>
+</li>
+<li>
+<p>Responda as peguntas do comando lb4 controller:</p>
+<ol>
+<li>
+<p>? Nome da classe do controlador: <em>crud01</em></p>
+</li>
+<li>
+<p>? Que tipo de controlador você gostaria de gerar? (Use arrow keys ↕)</p>
+<ol>
+<li>
+<p>Controlador vazio</p>
+</li>
+<li>
+<p>Controlador de REST com funções de CRUD</p>
+</li>
+<li>
+<p>Resposta a essa pergunta:</p>
+<ol>
+<li>Controlador de REST com funções de CRUD</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Mensagens após o término das respostas:</p>
+<ol>
+<li>Criou: src/controllers/hello.controller.ts</li>
+<li>Atualizou: src/controllers/index.ts</li>
+<li>O controlador <strong>hello</strong> foi criado em: src/controllers/.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>,</p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://loopback.io/doc/en/lb4/Getting-started.html"><strong>Referência dos passos criados acima...</strong></a>.</p>
+</li>
+<li>
+<p>.</p>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Exemplo criado por cli lb4:</p>
+<ol>
+<li>
+<p><a href="https://loopback.io/getting-started.html">getting-started (Começando)</a></p>
+</li>
+<li>
+<p><a href="https://github.com/strongloop/loopback-next/tree/master/examples/hello-world">@loopback/example-hello-world</a></p>
+</li>
+<li>
+<p><a href="https://github.com/strongloop/loopback-next/blob/master/examples/todo/README.html">@loopback/example-todo</a>.</p>
+</li>
+<li>
+<p>Creating CRUD REST APIs from a model</p>
+</li>
+<li>
+<p><a href="https://loopback.io/doc/en/lb4/Connecting-to-MySQL.html">MySQL Connector Tutorial</a></p>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Conteudo01></span><strong>Conteúdo01</strong></p>
+<ol>
+<li>
+<p>item 01.</p>
+</li>
+<li>
+<p>item 02.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
+<ol>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<ol>
+<li>
+<p>dd/mm/2021 <!--TODO: HISTÓRICO --></p>
+<ul>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ul>
+</li>
+<li>
+<p>dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Criar este documento baseado no <a href="http://loopback.4.html">loopback.4.md</a> ;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Objetivos;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Pre-requisitos</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Benefícios</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Descrição</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Conteúdo 02</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Referências</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Atualizar o histórico deste documento.</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Ler no dia seguinte este documento para checar os erros de português.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+ <script>    function goBack() {    window.history.back()}</script>
+
+    </body>
+    </html>

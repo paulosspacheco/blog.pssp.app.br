@@ -1,0 +1,27 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "lazweb",
+        "libpq",
+        "maricarai",
+        "npmrc",
+        "objfpc",
+        "objpas",
+        "paulosspacheco",
+        "pfsense",
+        "pgadmin",
+        "postgres",
+        "postgresql",
+        "psql",
+        "Servcont",
+        "Tclass",
+        "transpilador",
+        "whereis"
+    ],
+    "ignoreWords": [],
+    "import": [],
+    "language": "en,pt-BR"
+}

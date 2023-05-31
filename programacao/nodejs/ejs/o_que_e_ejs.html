@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;O que &eacute; templates ejs&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;ejs&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x2b06;&#xfe0f; &lt;&sol;a&gt;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <!-- markdownlint-disable-next-line -->
+<h1 id="o-que-é-templates-ejs--️-"><span id="topo"><span>O que é templates ejs<a href="o_que_e_ejs.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
+<ol>
+<li>
+<p><strong>INDEX</strong></p>
+<ol>
+<li><strong>Introdução</strong>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+<li><a href="#id_beneficios">benefícios.</a></li>
+</ol>
+</li>
+<li><a href="#id_Descricao"><strong>Descrição.</strong></a></li>
+<li><a href="#id_referencias"><strong>Referências.</strong></a></li>
+<li><a href="#id_historico"><strong>Histórico.</strong></a></li>
+</ol>
+</li>
+<li>
+<p><strong>CONTEÚDO</strong></p>
+<ol>
+<li><strong>Introdução</strong><!-- markdownlint-disable-next-line -->
+<ol>
+<li><span id="id_objetivo"><span><strong>Objetivo:</strong>
+<ol>
+<li>O projeto ejs (Embedded JavaScript templates) é usado para criar página html estática a partir de um modelo de extensão <em>.ejs</em>.</li>
+<li>Os modelos <em>recebem varáveis</em> para serem inseridas dentro das tags.</li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application">Veja mais...</a></li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol start="4">
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol start="2">
+<li><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong>
+<ol>
+<li>Nodejs</li>
+<li>javascript</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol start="3">
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol start="3">
+<li><span id="id_beneficios"></span><strong>Benefícios:</strong>
+<ol>
+<li>Simplificar a construção de páginas html através de modelos pre-fabricados.</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol start="2">
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol start="2">
+<li><span id=id_Descricao></span><strong>Descrição</strong>
+<ol>
+<li>
+<p>Tags do modelo:</p>
+<ol>
+<li><em>&lt;%</em> Tag 'Scriptlet', para fluxo de controle, sem saída</li>
+<li><em>&lt;%</em>_ Tag Scriptlet 'Whitespace Slurping', remove todos os espaços em branco antes dela</li>
+<li><em>&lt;%=</em> Exibe o valor no modelo (HTML com escape)</li>
+<li><em>&lt;%-</em> Exibe o valor sem escape no modelo</li>
+<li><em>&lt;%#</em> Tag de comentário, sem execução, sem saída</li>
+<li><em>&lt;%%</em> Produz um literal <em>'&lt;%'</em></li>
+<li><em>%&gt;</em>  Tag de finalização simples</li>
+<li><em>-%&gt;</em> Tag do modo de corte ('nova linha slurp'), corta após a nova linha</li>
+<li>_<em>%&gt;</em> Tag de finalização 'Whitespace Slurping', remove todos os espaços em branco após ela.</li>
+</ol>
+</li>
+<li>
+<p><strong>Include do modelo</strong></p>
+<ol>
+<li>
+<p>As inclusões são relativas ao modelo com a <em>tag include</em>. (Isso requer a opção '<em>nome do arquivo</em>'). Por exemplo, se você tiver <em>&quot;./views/users.ejs&quot;</em> e <em>&quot;./views/user/show.ejs&quot;</em>, você usaria <em>&lt;%- include('user/show'); %&gt;</em>.</p>
+</li>
+<li>
+<p>Você provavelmente vai querer usar a tag de saída bruta <em>( &lt;%-)</em> com sua inclusão para evitar o escape duplo da saída <em>HTML</em>.</p>
+<pre><code class="hljs language-html">   <span class="hljs-comment">&lt;!-- Código ejs --&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">%</span> <span class="hljs-attr">users.forEach</span>(<span class="hljs-attr">function</span>(<span class="hljs-attr">user</span>){ %&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">%-</span> <span class="hljs-attr">include</span>('<span class="hljs-attr">user</span>/<span class="hljs-attr">show</span>', {<span class="hljs-attr">user:</span> <span class="hljs-attr">user</span>}); %&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">%</span> }); %&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>O <em>EJS</em> é fornecido com uma interface de linha de comando (<em>CLI</em>) com recursos completos. As opções são semelhantes às usadas no código <em>JavaScript</em>:</p>
+<ol>
+<li>
+<p><em>cache</em> As funções compiladas são armazenadas em cache, requer filename</p>
+</li>
+<li>
+<p><em>-o / --output-file</em> FILE Grave a saída renderizada em FILE em vez de stdout.</p>
+</li>
+<li>
+<p><em>-f / --data-file</em> FILE Deve ser formatado em JSON. Use a entrada analisada de FILE como dados para renderização.</p>
+</li>
+<li>
+<p><em>-i / --data-input</em> STRING Deve ser formatado em JSON e codificado por URI. Use a entrada analisada de STRING como dados para renderização.</p>
+</li>
+<li>
+<p><em>-m / --delimiter</em> CHARACTER Use CHARACTER com colchetes angulares para abrir / fechar (o padrão é%).</p>
+</li>
+<li>
+<p><em>-p / --open-delimiter</em> CHARACTER Use CHARACTER em vez do colchete angular esquerdo para abrir.</p>
+</li>
+<li>
+<p><em>-c / --close-delimiter</em> CHARACTER Use CHARACTER em vez de colchete em ângulo reto para fechar.</p>
+</li>
+<li>
+<p><em>-s / --strict</em> Quando definido como <code>true</code>, a função gerada está em modo estrito</p>
+</li>
+<li>
+<p><em>-n / --no-with</em> Use o objeto 'locals' para vars ao invés de usar <code>with</code> (implica --strict).</p>
+</li>
+<li>
+<p><em>-l / --locals-name</em> Nome a ser usado para o objeto que armazena variáveis ​​locais quando não estiver usando <code>with</code>.</p>
+</li>
+<li>
+<p><em>-w / --rm-whitespace</em> Remova todos os espaços em branco seguros para remover, incluindo espaços em branco à esquerda e à direita.</p>
+</li>
+<li>
+<p><em>-d / --debug</em> Saída gerada do corpo da função</p>
+</li>
+<li>
+<p><em>-h / --help</em> Exibir esta mensagem de ajuda.</p>
+</li>
+<li>
+<p><em>-V/v / --version</em> Mostra a versão EJS.</p>
+</li>
+<li>
+<p>Exemplo de execução do <em>ejs</em> no prompt de comandos:</p>
+</li>
+</ol>
+<pre><code class="hljs language-sh">
+   ejs -p [ -c ] ./template_file.ejs -o ./output.html
+   ejs ./<span class="hljs-built_in">test</span>/fixtures/user.ejs name=Lerxst
+   ejs -n -l _ ./some_template.ejs -f ./data_file.json            
+
+</code></pre>
+<!-- markdownlint-disable-next-line -->
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+<!-- markdownlint-disable-next-line -->
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol start="3">
+<li><span id=id_referencias></span><strong>REFERÊNCIAS</strong>
+<ol>
+<li><a href="https://ejs.co/">ejs</a></li>
+<li><a href="https://ejs.co/#install">Manual ejs</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application">How To Use EJS to Template Your Node Application</a></li>
+<li><a href="https://www.youtube.com/watch?v=l09qRMEq_7U">Gerando HTML estáticos a partir de templates – EJS</a></li>
+<li><a href="https://github.com/mde/ejs/blob/main/docs/syntax.html">EJS Syntax Reference</a></li>
+<li><a href="https://github.com/tj/ejs">Modelos de JavaScript incorporados versão tj 1.0</a></li>
+<li><a href="https://github.com/difelice/ejs-loader">ejs-loader para webpack</a></li>
+<li><a href="https://github.com/mde/ejs">Modelos de JavaScript incorporados versão mde 2.0</a></li>
+<li>[<a href="https://www.youtube.com/watch?v=1rFbqoMGSSA">https://www.youtube.com/watch?v=1rFbqoMGSSA</a>](Curso de NodeJS - Renderizando EJS/HTML em um projeto Nodejs - #02)</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol start="10">
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol start="4">
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<ol>
+<li>
+<p>08/06/2021 <!--DONE: HISTÓRICO --></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> ;</li>
+</ul>
+</li>
+<li>
+<p>08/06/2021 <!--DONE: HISTÓRICO --></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar este documento baseado no <a href="http://modelo02.html">modelo02.md</a> ;</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Objetivos;</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Pre-requisitos</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Benefícios</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Referências</li>
+</ul>
+<!-- markdownlint-disable-next-line -->
+<ul>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ul>
+</li>
+<li>
+<p>08/06/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Descrição</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Exemplos</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Conteúdo 01</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Atualizar o histórico deste documento.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Testar este documento depois após uma semana de concluído.</li>
+</ul>
+<!-- markdownlint-disable-next-line -->
+<ul>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+<!-- markdownlint-disable-next-line -->
+<script>    function goBack() {    window.history.back()}</script>
+</li>
+<li>
+<p><strong>REFERÊNCIAS</strong></p>
+<ol>
+<li><a href="https://ejs.co/#install">ejs.co</a></li>
+</ol>
+</li>
+</ol>
+
+        
+        
+    </body>
+    </html>

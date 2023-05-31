@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Montando pasta compartilhada do servidor na m&aacute;quina cliente</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h4 id="montando-pasta-compartilhada-do-servidor-na-máquina-cliente">Montando pasta compartilhada do servidor na máquina cliente</h4>
+<ol>
+<li>Para acessar os compartilhamentos do <em>servidor nfs</em> é necessário criar pasta na máquina cliente e usar o comando <em>mount</em> da seguinte forma:.
+<ol>
+<li>
+<p>Criando pasta na máquina cliente:</p>
+<pre><code class="hljs language-sh">
+  <span class="hljs-comment"># Criar a pasta ~/LnxMint_Server_Share no cliente para compartilhada a pasta /var/nfs/share do servidor</span>
+  sudo mkdir -p ~/LnxMint_Server_Share
+
+ <span class="hljs-comment"># Criar a pasta ~/LnxMint_Server_home no cliente para compartilhada a pasta /home do servidor         </span>
+ sudo mkdir -p ~/LnxMint_Server_Home
+
+</code></pre>
+</li>
+<li>
+<p>Montando as pastas compartilhadas do servidor nas pastas criadas acima:</p>
+<pre><code class="hljs language-sh">
+   sudo mount host_ip:/var/nfs/share ~/LnxMint_Server_Share
+   <span class="hljs-comment"># Exemplo: sudo mount 192.168.15.3:/var/nfs/share ~/LnxMint_Server_Share</span>
+
+   sudo mount host_ip:/home ~/LnxMint_Server_Home
+   <span class="hljs-comment"># Exemplo: sudo mount 192.168.15.3:/home ~/LnxMint_Server_Home</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+<h5 id="nota">NOTA</h5>
+<ul>
+<li><em>Se houver arquivos e diretórios em seu ponto de montagem, eles se tornarão ocultos e você pode perde-los</em>.</li>
+</ul>
+<h5 id="referências">REFERÊNCIAS</h5>
+<ol>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04-pt#passo-5-criando-os-pontos-de-montagem-e-montando-diretorios-no-cliente">Passo 5 — Criando os pontos de montagem e montando diretórios no cliente.</a></li>
+</ol>
+
+        
+        
+    </body>
+    </html>

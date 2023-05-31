@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>LINGUAGEM DE MARCA&Ccedil;&Atilde;O DE TEXTO MARKDOWN &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;markdown&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt; &#x279a; &lt;&sol;a&gt;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="linguagem-de-marcação-de-texto-markdown---">LINGUAGEM DE MARCAÇÃO DE TEXTO MARKDOWN <a href="o_que_e_markdown.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba."> ➚ </a></h1>
+<p><span id="id_topo"> <span></p>
+<h2 id="index">INDEX</h2>
+<hr>
+<ol>
+<li>
+<p><strong><a href="#id_O_que_e_markdown">O que é linguagem de marcação de texto markdown</a></strong></p>
+</li>
+<li>
+<p><strong><a href="#id-Markdown-x-linguagem-HTML">Linguagem Markdown x linguagem HTML no documento &quot;.md&quot;</a></strong></p>
+</li>
+<li>
+<p><strong>Tag \</strong> <a href="#id-caractere-especial">Simula comportamento do texto entre aspas &quot;tag html&quot; da linguagem html em documento markdown</a></p>
+</li>
+<li>
+<p><strong>Tag # (cancela)</strong> <a href="#id-h1">Títulos - Simula comportamento das tags html &lt;h1&gt; a &lt;h6&gt;</a></p>
+</li>
+<li>
+<p><strong><a href="#id-estilos">Estilo das letras</a></strong></p>
+<ol>
+<li>
+<p><strong>Tag ** (dois asterisco)</strong> <a href="#id-negrito">Texto em negrito - Simula comportamento da tag html &lt;b&gt;&lt;\b&gt;</a></p>
+</li>
+<li>
+<p><strong>Tag _ (underline) ou *</strong> <a href="#id-it%C3%A1lico">Texto em itálico - Simula comportamento da tag html &lt;i&gt;&lt;\i&gt;</a></p>
+</li>
+<li>
+<p><a href="#id-it%C3%A1lico-negrito">É possível combinar o _itálico com o **negrito**</a></p>
+</li>
+<li>
+<p><strong>Tag ~~</strong> <a href="#id-tachado">Texto tachado - Simula comportamento da tag html &lt;s&gt;&lt;\s&gt;</a></p>
+</li>
+<li>
+<p><strong>Tag ` (crase)</strong> <a href="#id-enfatizado">texto enfatizando - Simula comportamento da tah html &lt;em&gt;&lt;\em&gt;</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong><a href="#id-listas-em-markdown">Listas em markdown</a></strong></p>
+<ol>
+<li>
+<p><strong>Tag - (traço)</strong> <a href="#id-lista-nao-enumerada">Lista não numeradas - Simula comportamento da tag html &lt;ul&gt;</a></p>
+</li>
+<li>
+<p><strong>Tag . (ponto)</strong> <a href="#id-lista-enumerada">Lista numeradas - Simula comportamento da tag html &lt;ol&gt;</a></p>
+</li>
+<li>
+<p><strong>Tag [ ]</strong> <a href="#id-lista-de-tarefas">Listas de tarefas - Simula o comportamento da tag &lt;input type=&quot;checkbox&quot;&gt;</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Tag ___</strong><a href="#id-hr">Simula comportamento da tag html &lt;hr&gt; (Desenha linha horizontal)</a></p>
+</li>
+<li>
+<p><strong>Tag &gt;</strong><a href="#id-blockquote">Citações - Simula comportamento da tag html &lt;blockquote&gt;</a></p>
+</li>
+<li>
+<p><strong>Tag [](\ &quot;&quot;)</strong> <a href="#id-link">Âncora para links - Simula a tag html &lt;a&gt;&lt;/a&gt;</a></p>
+</li>
+<li>
+<p><strong>Tag ![](\ &quot;&quot;)</strong> <a href="#id-link-img">Âncora para imagem - Simula a tag html &lt;img&gt;</a></p>
+</li>
+<li>
+<p><a href="#id-escrita-de-equa%C3%A7%C3%B5es"><strong>Escrita de equações matemáticas</strong></a></p>
+</li>
+<li>
+<p><a href="#id-tabelas"><strong>Tabelas</strong></a></p>
+<ol>
+<li>
+<p><a href="#id-tabela-simples">Tabela simples</a></p>
+</li>
+<li>
+<p><a href="#id-tabelas-links-referencias">Tabelas de links, onde os links ficam fora da tabela</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#id-emoji">Como configurar e usar emoji em textos markdown no vscode</a></p>
+</li>
+<li>
+<p><a href="#id_mermaid">Mermaid Fluxogramas e diagramas</a></p>
+<ol>
+<li>
+<p><a href="#id-fluxograma">Dica de como instalar suporte a fluxograma em documentos markdown</a></p>
+</li>
+<li>
+<p><a href="#id_Diagramas">Diagramas de relacionamento de entidades</a></p>
+<ol>
+<li><a href="#id_classDiagram">classDiagram</a></li>
+<li><a href="#id_erDiagram">erDiagram</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_pie">Gráfico de pizza</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#id-details">Tag html &lt;details&gt;</a></p>
+</li>
+<li>
+<p><strong>Tag ```</strong> <a href="#id-c%C3%B3digo">As 3 crases - Simula a tag html &lt;code&gt;</a></p>
+</li>
+<li>
+<p><a href="#id-notas-de-rodap%C3%A9">Notas de rodapé em documentos markdown</a></p>
+</li>
+<li>
+<p><a href="#id-editores-markdown">Editores markdown para linux</a></p>
+<ol>
+<li>
+<p><a href="#id-editor-vscode">Visual Studio Code</a></p>
+<ol>
+<li>Extensões vscode:
+<ol>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=davidmwhynot.markdown-higlightjs">Indispensável essa extensão: Markdown Highlight.js</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-checkbox">Markdown Checkboxes</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#id-reText">Editor ReText vem na distribuição ubuntu</a></p>
+</li>
+<li>
+<p><a href="#id-ghostwriter">Editor ghostwriter vem na distribuição ubuntu</a></p>
+</li>
+<li>
+<p><a href="#id-google-docs-gd2md-html">Google docs com a extensão GD2md-html</a></p>
+</li>
+<li>
+<p><a href="#id-dillinger">Editor web dillinger</a></p>
+</li>
+<li>
+<p><a href="#id-stackedit">Editor web stackedit</a></p>
+</li>
+<li>
+<p><a href="#id-notable">Editor natable</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#id_mkdocs">Gerador de site baseado em arquivo markdown</a></p>
+</li>
+<li></li>
+<li>
+<p><a href="#id_referencias">Referências</a></p>
+</li>
+</ol>
+<h2 id="conteúdo">CONTEÚDO</h2>
+<hr>
+<ol>
+<li>
+<p><strong><em>O que é linguagem de marcação de texto markdown.</em></strong> <span id="id_O_que_e_markdown"> <span></p>
+<ol>
+<li>
+<p>Desenvolvido em 2004 por John Gruber e Aaron Swartz para simplificar a estruturação de um texto, o Markdown é um sistema de formatação aberto que torna a escrita e a leitura mais simples. Com uma codificação mínima, além de fácil, ele é visualmente mais &quot;limpo&quot; e pode ser convertido facilmente para HTML.</p>
+</li>
+<li>
+<p>Notas:</p>
+<ol>
+<li>
+<p><a href="editores_markdown.html">Ferramentas usadas para produzir este documento</a>.</p>
+</li>
+<li>
+<p><a href="https://www.markdownguide.org/basic-syntax/">basic-syntax</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-Markdown-x-linguagem-HTML"><span> <strong><em>Linguagem Markdown x linguagem HTML no documento .md</em></strong>.</p>
+<ol>
+<li>
+<p>As <b> tags html</b> podem ser incluídas em um documento markdown.</p>
+</li>
+<li>
+<p>Tags da linguagem Markdown não serão reconhecida dentro de tags html ex: (&lt;table&gt; , &lt;div&gt;, &lt;pre&gt;).</p>
+</li>
+<li>
+<p>O código .CSS pode ser incluído na primeira linha do documento Markdown.</p>
+</li>
+<li>
+<p>Para que um códigos html ou javascript seja visualizado deve-se usar 3 crases (```) + nome da linguagem.</p>
+<ol>
+<li><a href="#id-c%C3%B3digo-exemplo">Exemplos</a>:</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong><em>Para exibir um caractere literal que de outra forma seria usado para <span id="id-caractere-especial"><span> formatar texto em um documento Markdown, adicione uma barra invertida ( \ ) na frente do caractere.</em></strong></p>
+<ol>
+<li>
+<p>Exemplo:</p>
+<ol>
+<li>O asterisco ( * ) é um tag markdown e para que ele seja visualizado em um texto o mesmo deve ser precedido do caractere ( \ ).
+<ol>
+<li>Exemplo:
+<ol>
+<li>\*</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>O &lt;div&gt; estaria invisível se não fosse o caractere \ antes de &lt; e antes &gt;.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong><em>Como criar a tag html &lt;hx&gt; onde x varia de 1 a 6 em um documento Markdown?</em></strong> <span id="id-h1"><span></p>
+<ol>
+<li>
+<p>Usar o caractere # em frente do texto da seguinte forma:</p>
+<ol>
+<li># h1</li>
+<li>## h2</li>
+<li>### h3</li>
+<li>#### h4</li>
+<li>##### h5</li>
+<li>###### h6</li>
+<li><a href="#id-exemplo-hx">Exemplo do resultado</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong><em>Estilo das letras</em></strong><span id="id-estilos"><span></p>
+<ol>
+<li>
+<p><span id="id-negrito"><span>Dois asterisco (**) no começo e dois asteriscos (**) no fim da frase muda a fonte da frase para negrito.</p>
+<ol>
+<li>
+<p>Exemplo:</p>
+<ol>
+<li>(**)Esta frase está em negrito (**)</li>
+<li><strong>Esta frase está em negrito</strong>.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-itálico"></span>As fontes itálica pode ser obtida inserindo underline ( _ ) no início e no fim da frase.</p>
+<ol>
+<li>
+<p>Exemplo:</p>
+<ol>
+<li>_Exemplo de itálico_</li>
+<li><em>Exemplo de itálico</em></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-itálico-negrito"></span>É possível combinar o _itálico com o **negrito**_</p>
+<ol>
+<li>
+<p>É possível combinar o _itálico com o **negrito**_</p>
+</li>
+<li>
+<p>É possível combinar o <em>itálico com o <strong>negrito</strong></em></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-tachado"></span>A tag ( ~~ ) no inicio e no fim da texto, muda o estilo da fonte para que desenhe uma linha horizontal no centro do texto.</p>
+<ol>
+<li>
+<p>Exemplo:</p>
+<ol>
+<li>~~Este frase sairá como uma linha horizonta no centro dela.~~</li>
+<li><s>Este frase sairá como uma linha horizontal no centro dela.</s></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-enfatizado"></span><strong><em>Para dar ênfase ao texto usar o caractere crase (`) no inicio e no final do texto.</em></strong></p>
+<ol>
+<li>
+<p>Exemplo:</p>
+<ol>
+<li>`Esta frase está com estilo ênfase`.</li>
+<li><code>Esta frase está com estilo ênfase</code>.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-listas-em-markdown"></span><strong>Listas em markdown</strong></p>
+<ol>
+<li>
+<p><span id="id-lista-nao-enumerada"></span><strong><em>Listas não ordenadas</em></strong></p>
+<ol>
+<li>
+<p>Um asterisco ( * ) cria uma lista não ordenada e tabula com a tecla tab.</p>
+<ol>
+<li>Exemplo:
+<ol>
+<li>- Grupo
+<ol>
+<li>- Linha 01.</li>
+<li>- Linha 02.</li>
+<li>- Linha 03.</li>
+<li><a href="#id-Listas-Nao-Ordenadas-exemplo-resultado">Resultado do exemplo</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-lista-enumerada"></span><strong><em>Listas ordenadas ou numerada</em></strong></p>
+<ol>
+<li>
+<p>Um ponto parágrafo ( . ) após o número, cria uma lista ordenada com valor inicial igual ao número digitado e tabula com a tecla tab.</p>
+</li>
+<li>
+<p>Atenção: No vscode quando alteramos um número da sequência a lista dos número seguintes são alterados porém não altera o espaçamento dos números seguintes. Para que agente não perca o andamento do projeto é bom instalar a extensão markdownlint.</p>
+</li>
+<li>
+<p>É possível criar <strong>listas não ordenadas</strong> dentro de <strong>listas ordenadas</strong>.</p>
+<ol>
+<li><strong>Exemplo:</strong>
+<ol>
+<li>titulo 01
+<ol>
+<li>item 01</li>
+<li>item 02
+<ul>
+<li>item 01</li>
+<li>item 02</li>
+</ul>
+</li>
+<li>item 03</li>
+</ol>
+</li>
+<li>título 02</li>
+<li>título 03</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-lista-de-tarefas"></span><strong>Listas de tarefas - Simula o comportamento da tag &lt;input type=&quot;checkbox&quot;&gt;</strong></p>
+<ol class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> item 01 [x]</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> item 02 [ ]</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> item 03 [ ]</li>
+</ol>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> item 01 [x]</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> item 02 [x]</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> item 02 [x]</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-hr"></span><strong><em>Como criar a tag html &lt;hr&gt; em documentos markdown?</em></strong></p>
+<ol>
+<li>
+<p>Três underline (___) juntos desenha uma linha horizontal.</p>
+<ol>
+<li>Exemplo:
+<ol>
+<li>___</li>
+<li><a href="#id-hr-resultado">Veja o resultado do exemplo</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-blockquote"></span><strong>_Usar o sinal (&gt;) no início da frase para indicar citação. Citações podem ser aninhadas concatenando o sinal (&gt;). Ex: &gt;&gt;&gt; _</strong></p>
+<ol>
+<li>
+<p>Veja o <a href="#id-blockquote-exemplo">exemplo de citação em anexo...</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>As tags [texto](#url &quot;hint&quot;)</strong></p>
+<ol>
+<li>
+<p><span id="id-link"></span>Simula a tag html &lt;a href=&quot;#url&quot; title=&quot;hint&quot;&gt;texto&lt;/a&gt; (âncora)</p>
+<ol>
+<li><strong>[texto]</strong> Local onde o texto visível do link é inserido.</li>
+<li><strong>(#url &quot;hint&quot;)</strong> Simula o atributo href=&quot;#url&quot; e title=&quot;hint&quot; da tag html &lt;a&gt;.</li>
+<li>Exemplo:
+<ol>
+<li>[texto visível do link](#url &quot;Esse texto é visualizado quando o mouse é posicionado em cima do link&quot;)
+<ol>
+<li><a href="#url" title="Esse texto é visualizado quando o mouse é posicionado em cima do link">texto visível do link</a></li>
+</ol>
+</li>
+<li>[A tag markdown não aceita Javascript](&quot;javascript:alert('Hello World!');&quot;)</li>
+<li>Caso queira executar javascript é preciso usar o próprio html.</li>
+<li>Exemplo:
+<ol>
+<li><a href="javascript:alert('Hello World!');">Execute JavaScript</a></li>
+</ol>
+</li>
+<li>Como enviar e-mail usando tags markdown:
+<ol>
+<li>Usar o link [Enviar e-mail](<a href="mailto:example@gitlab.com">mailto:example@gitlab.com</a> &quot;Enviará um e-mail para: <a href="mailto:example@gitlab.co">mailto:example@gitlab.co</a> &quot;)</li>
+<li>Exemplo:
+<ol>
+<li><a href="mailto:example@gitlab.com" title="Enviará um e-mail para: mailto:example@gitlab.co ">Enviar e-mail</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Link para um id dentro do documento: [Ir para o topo deste documento](#id_topo)</li>
+<li>Ex: <a href="#id_topo">Ir para o todo deste documento</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-link-img"></span><strong><em>As tags ![Texto Alternativo](#url-img &quot;hint&quot;)</em></strong></p>
+<ol>
+<li>
+<p><strong><em>Simula a tag html &lt;img src=&quot;#url&quot; alt=&quot;Texto Alternativo&quot; title=&quot;hint&quot;&gt; (âncora da imagem)</em></strong></p>
+<ol>
+<li><strong>_ ! _</strong> O sinal de exclamação indica que a sequência seguinte trata-se de uma imagem.</li>
+<li><strong>_[Texto Alternativo] _</strong> Se por alguma motivo a imagem não poder ser visualizada o texto alternativo é visualizado.</li>
+<li><strong>_(#url-img &quot;hint&quot;) _</strong> Simula o atributo src=&quot;#url-img&quot; e title=&quot;hint&quot; da tag html &lt;img&gt;.</li>
+<li>Exemplo:
+<ol>
+<li>![texto alternativo](#url-img &quot;Esse texto é visualizado quando o mouse é posicionado em cima da imagem&quot;)
+<ol>
+<li><img src="https://d33wubrfki0l68.cloudfront.net/e7ed9fe4bafe46e275c807d63591f85f9ab246ba/e2d28/assets/images/tux.png" alt="Logomarca linux" title="Logomarca do sistema operacional Linux"></li>
+<li>Nota: A imagem será visualizada na posição em que é referênciada pelo documento.
+<ol>
+<li>===============&gt;<img src="https://d33wubrfki0l68.cloudfront.net/e7ed9fe4bafe46e275c807d63591f85f9ab246ba/e2d28/assets/images/tux.png" alt="Logomarca linux" title="Logomarca do sistema operacional Linux"></li>
+<li></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-escrita-de-equações"></span><strong><em><a href="https://ajustetecnico.github.io/blog/2018/09/19/equacoes-latex/">Escrita de equações matemáticas</a>:</em></strong></p>
+<ol>
+<li>
+<p>A fórmula deve estar entre ($$).</p>
+<ol>
+<li>Exemplos: Letras = $$letra$$
+<ol>
+<li>Letra (mu):$$\mu$$
+<ol>
+<li>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span></span></span></span></span></p>
+</li>
+</ol>
+</li>
+<li>Letra sigma: $$sigma$$
+<ol>
+<li>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span></span></span></span></span></p>
+</li>
+</ol>
+</li>
+<li>O acento circunflexo desenha em sobrescrito: $$ 2^{sobrescrito}$$
+<ol>
+<li>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mn>2</mn><mrow><mi>s</mi><mi>o</mi><mi>b</mi><mi>r</mi><mi>e</mi><mi>s</mi><mi>c</mi><mi>r</mi><mi>i</mi><mi>t</mi><mi>o</mi></mrow></msup></mrow><annotation encoding="application/x-tex">2^{sobrescrito}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8991em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">so</span><span class="mord mathnormal mtight">b</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">rescr</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">o</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+</ol>
+</li>
+<li>Letra sigma ao quadrado: $$\sigma^{2}$$
+<ol>
+<li>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^{2}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+</ol>
+</li>
+<li>O ( _ ) underline desenha em subscrito: $$3_{subscrito}$$
+<ol>
+<li>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mn>3</mn><mrow><mi>s</mi><mi>u</mi><mi>b</mi><mi>s</mi><mi>c</mi><mi>r</mi><mi>i</mi><mi>t</mi><mi>o</mi></mrow></msub></mrow><annotation encoding="application/x-tex">3_{subscrito}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7944em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">b</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">scr</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">o</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+</ol>
+</li>
+<li>Letra alfa:$$\alpha$$
+<ol>
+<li>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span></span></p>
+</li>
+</ol>
+</li>
+<li>Letra beta: $$\beta$$
+<ol>
+<li>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span></span></p>
+</li>
+</ol>
+</li>
+<li>Letra epsilon: $$\epsilon$$
+<ol>
+<li>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ϵ</span></span></span></span></span></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Exemplo: Fórmulas= $$Expressão matemática$$
+<ol>
+<li>$$f(x*{i}) = \alpha*{i} + \beta*{i} x*{i} + \epsilon_{i}$$
+<ol>
+<li>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msub><mi>α</mi><mi>i</mi></msub><mo>+</mo><msub><mi>β</mi><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><msub><mi>ϵ</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">f(x_{i}) = \alpha_{i} + \beta_{i} x_{i} + \epsilon_{i}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0528em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+</ol>
+</li>
+<li>$$f(x) = ax^2 + bx + c $$
+<ol>
+<li>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">f(x) = ax^2 + bx + c
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9474em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">a</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span></span></span></span></span></p>
+</li>
+</ol>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">e = mc^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal">m</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>O site <a href="https://marketplace.visualstudio.com/items?itemName=justforfun-click.math-to-svg">math.justforfun</a> tem um serviço que retorna uma imagem de uma expressão matemática.</p>
+<ol>
+<li>Exemplo:
+<ol>
+<li>Retorna a expressão matemática passada no parâmetro:
+<ol>
+<li><a href="https://math.justforfun.click/$/">https://math.justforfun.click/$/</a></li>
+<li>{
+(2x², + , 17y⁴, =, 23,,(1)),
+( x , - , y , =, 5,,(2))
+}</li>
+</ol>
+</li>
+<li>obs:A tag markdown não executa esta api.
+<ol>
+<li>Usar o código html para que funcione.
+<ol>
+<li><img src="https://math.justforfun.click/$/
+  {
+   (2x², + , 17y⁴, =, 23,,(1)),
+  ( x , - , y   , =,  5,,(2))
+ :}"  alt="Retorna a expressão matemática passada no parâmetro" title="Retorna a expressão matemática passada no parâmetro"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="http://asciimath.org/" title="Esses símbolos podem ser usado na API: https://math.justforfun.click/$/">Símbolos matemáticos usado na API</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-tabelas"></span><strong><em>Tabelas ( &lt;table&gt; &lt;/table&gt; &lt;tr&gt;&lt;/tr&gt; &lt;td&gt;&lt;/\td&gt; )</em></strong></p>
+<ol>
+<li>
+<p><span id="id-tabela-simples"></span><strong><em>Tabela simples</em></strong></p>
+<ol>
+<li>
+<p>Para dizer para o sistema que se trata de uma tabela os seguintes caracteres são usado:</p>
+<ol>
+<li>A barra vertical (<strong>|</strong>) Representa a tag &lt; td &gt; &lt; /td &gt;.</li>
+<li>Dois pontos (<strong>:</strong>) informa ao sistema se a coluna está alinhada a esquerda, centro ou direita.</li>
+<li>O sinal de menos (<strong>-</strong>) usado junto com o dois pontos <strong>:</strong> para informa o tipo de alinhamento onde:
+<ol>
+<li>a esquerda usar a combinação (<strong>:---</strong>);</li>
+<li>a direita usar combinação <strong>---:</strong>;</li>
+<li>ao centro usar combinação <strong>:---:</strong>).</li>
+<li>Obs: O local onde o alinhamento deve ser informado é na linha abaixo do nome das colunas.
+<ol>
+<li>EXEMPLO:
+<ol>
+<li>|col 01|col 02|col 03<br>
+|:-----|:----:|-----:<br>
+|a11 | a12 | a13<br>
+|a21 | a22 | a23<br>
+|a31 | a32 | a33<br>
+<a href="#id-tabela-simples-exemplo">Veja em anexo o resultado</a>...</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-tabelas-links-referencias"></span><strong><em>Tabelas de links, onde os links ficam fora da tabela.</em></strong></p>
+<ol>
+<li>
+<p>Exemplo de tabela usando links nas células sendo que os links ficam fora da tabela</p>
+<ol>
+<li>
+<p>=================================================</p>
+</li>
+<li>
+<p>|First Header | Second Header | Third Header</p>
+</li>
+<li>
+<p>|:-------------|:---------------------|:-----------</p>
+</li>
+<li>
+<p>|[onze][11] | [12] | [13]</p>
+</li>
+<li>
+<p>|[21] | [vinde e dois][22] | [23]</p>
+</li>
+<li>
+<p>|[31] | [32] | [three trees][33]</p>
+</li>
+<li>
+<p>Matriz de links:</p>
+<ol>
+<li>[11]:<a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=11">http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=11</a></li>
+<li>[12]:<a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=12">http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=12</a></li>
+<li>[13]:<a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=13">http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=13</a></li>
+<li>[21]:<a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=21">http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=21</a></li>
+<li>[22]:<a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=22">http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=22</a></li>
+<li>[23]:<a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=23">http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=23</a></li>
+<li>[31]:<a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=31">http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=31</a></li>
+<li>[32]:<a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=32">http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=32</a></li>
+<li>[33]:<a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=33">http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=33</a></li>
+</ol>
+</li>
+<li>
+<p>Link abaixo mostra o resultado do exemplo:</p>
+<ol>
+<li><a href="#id_tabela_link_referencia">Resultado do exemplo abaixo</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-emoji"></span>Como configurar e usar emoji em textos markdown no vscode:</p>
+<ol>
+<li>
+<p>Emoje na web:</p>
+<ol>
+<li><a href="https://dev.to/pjijin/emoji-on-vscode--571l">🎸 emoji-on-vscode</a></li>
+<li><a href="https://emojipedia.org/people/">🥕 https://emojipedia.org/people/</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=devzstudio.emoji-snippets">😀 https://marketplace.visualstudio.com/items?itemName=devzstudio.emoji-snippets</a></li>
+<li>:brazil: O emoji pode ser escrito com dois pontos no começo e dois pontos no final.</li>
+<li>:smile: :+1:</li>
+<li><a href="https://www.w3schools.com/charsets/ref_emoji.asp">Referência ao código do emoji da linguagem html</a>
+<ol>
+<li>Exemplo:
+<ol>
+<li>⌚</li>
+<li>⌛</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><em>Depois de ler mais sobre o assunto do emoji cheguei a conclusão de que o código html é o mais indicado porque vai funcionar em qualquer lugar do mundo</em>.</li>
+</ol>
+</li>
+<li>
+<p>Extensão <strong>Markdown Emoji</strong></p>
+<ol>
+<li><a href="https://www.webfx.com/tools/emoji-cheat-sheet/">Lista de emoji markdown</a>
+<ol>
+<li>:persevere:</li>
+<li>:cry:</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><scan id=id_mermaid></scan><a href="https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW0NocmlzdG1hc10gLS0-fEdldCBtb25leXwgQihHbyBzaG9wcGluZylcbiAgICBCIC0tPiBDe0xldCBtZSB0aGlua31cbiAgICBDIC0tPnxPbmV8IERbTGFwdG9wXVxuICAgIEMgLS0-fFR3b3wgRVtpUGhvbmVdXG4gICAgQyAtLT58VGhyZWV8IEZbZmE6ZmEtY2FyIENhcl0iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ"><strong>Mermaid Live Editor</strong></a></p>
+<ol>
+<li>
+<p>O Mermaid permite criar diagramas usando texto e código. Isso simplifica a manutenção de diagramas complexos. É uma ferramenta de diagramação e gráficos baseada em Javascript que renderiza definições de texto inspiradas no Markdown para criar e modificar diagramas dinamicamente.</p>
+<ol>
+<li>
+<p>Links para a documentação oficial.</p>
+<ol>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=flowcharts-basic-syntax">mermaid-js</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid">Extensão markdown-mermaid</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=interaction">Exemplo de link em gráfico com mermaid</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting">Mermaid Markdown Syntax Highlightin</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram?id=entity-relationship-diagrams">Entity Relationship Diagrams</a></li>
+</ol>
+</li>
+<li>
+<p><span id="id-fluxograma"></span>Dica de como instalar suporte a fluxograma em documentos markdown:</p>
+<ol>
+<li>
+<p>Exemplos:</p>
+<ol>
+<li>
+<p><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=graph">Mermaid flowchart</a></p>
+<ol>
+<li>
+<p>Graph TD - vertical</p>
+<pre><code class="hljs language-javascript">
+graph TD
+   %% Este é um comentário sobre: Start[(Início)] --&gt; a[Elemento a]
+   Start[(Início)] --&gt; a[Elemento a]
+   a --&gt; b[Link...]
+   b --&gt; c[Elemento c]
+   b --&gt; d[Elemento d]
+   d --&gt; e((Elemento e))
+   d --&gt; f[(Elemento f)]
+   f --&gt; g&gt;Elemento g]
+   g --&gt; h[<span class="hljs-regexp">/Elemento h/</span>]
+   h --&gt; i[\Emento i\]
+   f --&gt; j[<span class="hljs-regexp">/Elemento j\]
+   f --&gt; k[\Elemento k/]
+   f --&gt; se{Elemento se}
+   se --&gt; true([Elemento true])
+   se --&gt; false([Elemento false])
+   true --&gt; continua{{Elemento continua}}
+   continua --&gt; a
+   false --&gt; pare{{Elemento pare}}
+   click b href "https:/</span><span class="hljs-regexp">/mermaid-js.github.io/m</span>ermaid/#/flowchart?id=interaction<span class="hljs-string">" "</span>Titulo <span class="hljs-keyword">do</span> link<span class="hljs-string">" _blank
+
+</span></code></pre>
+<pre><code class="hljs language-mermaid">
+graph TD
+   %% Este é um comentário sobre: Start[(Início)] --&gt; a[Elemento a]
+   Start[(Início)] --&gt; a[Elemento a]
+   a --&gt; b[Link...]
+   b --&gt; c[Elemento c]
+   b --&gt; d[Elemento d]
+   d --&gt; e((Elemento e))
+   d --&gt; f[(Elemento f)]
+   f --&gt; g&gt;Elemento g]
+   g --&gt; h[/Elemento h/]
+   h --&gt; i[\Emento i\]
+   f --&gt; j[/Elemento j\]
+   f --&gt; k[\Elemento k/]
+   f --&gt; se{Elemento se}
+   se --&gt; true([Elemento true])
+   se --&gt; false([Elemento false])
+   true --&gt; continua{{Elemento continua}}
+   continua --&gt; a
+   false --&gt; pare{{Elemento pare}}
+   click b href &quot;https://mermaid-js.github.io/mermaid/#/flowchart?id=interaction&quot; &quot;Titulo do link&quot; _blank
+
+</code></pre>
+<hr>
+</li>
+<li>
+<p>graph LR horizontal</p>
+<pre><code class="hljs language-javascript">graph LR
+A[Natal] --&gt;|Ganhe dinheiro| B(Vai fazer compras)
+B --&gt; C{Deixe-me pensar}
+C --&gt;|Um| D[Laptop]
+C --&gt;|Dois| E[Celular]
+C --&gt;|Três| F[fa:fa-car Carro]
+
+</code></pre>
+<pre><code class="hljs language-mermaid">graph LR
+A[Natal] --&gt;|Ganhe dinheiro| B(Vai fazer compras)
+B --&gt; C{Deixe-me pensar}
+C --&gt;|Um| D[Laptop]
+C --&gt;|Dois| E[Celular]
+C --&gt;|Três| F[fa:fa-car Carro]
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_Diagramas">Diagramas de relacionamento de entidades</p>
+<ol>
+<li>
+<p><scan id=id_classDiagram></scan><a href="https://mermaid-js.github.io/mermaid/#/classDiagram">Class diagramas</a>.</p>
+<ol>
+<li>
+<p>Na engenharia de software, um diagrama de classes na Unified Modeling Language (UML) é um tipo de diagrama de estrutura estática que descreve a estrutura de um sistema, mostrando as classes do sistema, seus atributos, operações (ou métodos) e os relacionamentos entre os objetos. <a href="https://pt.wikipedia.org/wiki/Diagrama_de_classes">Veja mais...</a></p>
+<ol>
+<li>Código mermaid</li>
+</ol>
+<pre><code class="hljs language-javascript">   Animal &lt;|-- Duck
+   Animal &lt;|-- Fish
+   Animal &lt;|-- Zebra
+   <span class="hljs-attr">Animal</span> : +int age
+   <span class="hljs-attr">Animal</span> : +<span class="hljs-built_in">String</span> gender
+   <span class="hljs-attr">Animal</span> : +isMammal()
+   <span class="hljs-attr">Animal</span> : +mate()
+   <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Duck</span></span>{+<span class="hljs-built_in">String</span> beakColor
+               +swim()
+               +quack()
+            }
+   <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Fish</span></span>{-int sizeInFeet
+            -canEat()
+            }
+   <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Zebra</span></span>{+bool is_wild
+               +run()
+            }
+</code></pre>
+<pre><code class="hljs language-mermaid">   classDiagram
+
+      Animal &lt;|-- Duck
+      Animal &lt;|-- Fish
+      Animal &lt;|-- Zebra
+      Animal : +int age
+      Animal : +String gender
+      Animal: +isMammal()
+      Animal: +mate()
+      class Duck{
+         +String beakColor
+         +swim()
+         +quack()
+      }
+      class Fish{
+         -int sizeInFeet
+         -canEat()
+      }
+      class Zebra{
+         +bool is_wild
+         +run()
+      }
+</code></pre>
+<pre><code class="hljs language-javascript">   classDiagram
+
+      Class01 &lt;|-- AveryLongClass : Cool
+      Class03 *-- Class04
+      Class05 o-- Class06
+      Class07 .. Class08
+      Class09 --&gt; C2 : Where am i?
+      Class09 --* C3
+      Class09 --|&gt; Class07
+      <span class="hljs-attr">Class07</span> : equals()
+      <span class="hljs-attr">Class07</span> : <span class="hljs-built_in">Object</span>[] elementData
+      <span class="hljs-attr">Class01</span> : size()
+      <span class="hljs-attr">Class01</span> : int chimp
+      <span class="hljs-attr">Class01</span> : int gorilla
+      Class08 &lt;--&gt; C2: Cool label
+
+</code></pre>
+<pre><code class="hljs language-mermaid">   classDiagram
+
+      Class01 &lt;|-- AveryLongClass : Cool
+      Class03 *-- Class04
+      Class05 o-- Class06
+      Class07 .. Class08
+      Class09 --&gt; C2 : Where am i?
+      Class09 --* C3
+      Class09 --|&gt; Class07
+      Class07 : equals()
+      Class07 : Object[] elementData
+      Class01 : size()
+      Class01 : int chimp
+      Class01 : int gorilla
+      Class08 &lt;--&gt; C2: Cool label
+
+</code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><scan id=id_erDiagram></scan> <a href="https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram?id=entity-relationship-diagrams">erDiagramas</a></p>
+<ol>
+<li>
+<p>Um modelo de entidade-relacionamento (ou modelo ER) descreve coisas inter-relacionadas de interesse em um domínio específico de conhecimento. Um modelo ER básico é composto de tipos de entidade (que classificam as coisas de interesse) e especifica relacionamentos que podem existir entre entidades (instâncias desses tipos de entidade). <a href="https://pt.wikipedia.org/wiki/Modelo_entidade_relacionamento">Veja mais...</a></p>
+<ol>
+<li>
+<p><strong>Sintaxe</strong>:</p>
+<ol>
+<li>
+<p>A sintaxe do projeto mermaid para diagramas ER é compatível com PlantUML, com uma extensão para rotular o relacionamento. Cada declaração consiste nas seguintes partes:</p>
+<ol>
+<li>
+<p><em>&lt;first-entity&gt;[&lt;relationship&gt; &lt;second-entity&gt; : &lt;relationship-label&gt;]</em></p>
+<ol>
+<li>
+<p>Onde:</p>
+<ol>
+<li>
+<p><em>first-entity</em> é o nome de uma entidade. Os nomes devem começar com um caractere alfabético e também podem conter dígitos, hifens e sublinhados.</p>
+</li>
+<li>
+<p><em>relationship</em> descreve a maneira como ambas as entidades se relacionam.</p>
+</li>
+<li>
+<p><em>second-entity</em> é o nome da outra entidade.</p>
+</li>
+<li>
+<p><em>relationship-label</em> descreve o relacionamento da perspectiva da primeira entidade.</p>
+</li>
+<li>
+<p>Nota: Apenas a <em>first-entity</em> parte de uma declaração é obrigatória. Isso torna possível mostrar uma entidade sem relacionamentos, o que pode ser útil durante a construção iterativa de diagramas. Se qualquer outra parte de uma instrução for especificada, todas as partes são obrigatórias.</p>
+</li>
+<li>
+<p>Exemplo:</p>
+<ol>
+<li>PROPERTY ||--|{ ROOM : contains</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram?id=relationship-syntax"><strong>Sintaxe de relacionamento</strong></a>.</p>
+<ol>
+<li>A <em>relationship</em> parte de cada declaração pode ser dividida em três subcomponentes:
+<ol>
+<li>a cardinalidade da primeira entidade em relação à segunda,</li>
+<li>se o relacionamento confere identidade a uma entidade 'filha'</li>
+<li>a cardinalidade da segunda entidade em relação à primeira</li>
+</ol>
+</li>
+<li>Cardinalidade é uma propriedade que descreve quantos elementos de outra entidade podem estar relacionados à entidade em questão. No exemplo acima, a PROPERTY pode ter uma ou mais ROOM instâncias associadas a ele, enquanto a ROOM só pode ser associado a uma PROPERTY. Em cada marcador de cardinalidade existem dois caracteres. O caractere externo representa um valor máximo e o caractere interno representa um valor mínimo. A tabela abaixo resume as possíveis cardinalidades:
+<ol>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Valor (esquerda)</th>
+<th style="text-align:right">Valor (direita)</th>
+<th style="text-align:center">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">|o</td>
+<td style="text-align:right">o|</td>
+<td style="text-align:center">Zero ou um</td>
+</tr>
+<tr>
+<td style="text-align:left">||</td>
+<td style="text-align:right">||</td>
+<td style="text-align:center">Exatamente um</td>
+</tr>
+<tr>
+<td style="text-align:left">}o</td>
+<td style="text-align:right">o{</td>
+<td style="text-align:center">Zero ou mais (sem limite superior)</td>
+</tr>
+<tr>
+<td style="text-align:left">}|</td>
+<td style="text-align:right">|{</td>
+<td style="text-align:center">Um ou mais (sem limite superior)</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Identificação</strong>.</p>
+<ol>
+<li>
+<p>Os relacionamentos podem ser classificados como identificadores ou não identificadores e são processados ​​com linhas sólidas ou tracejadas, respectivamente. Isso é relevante quando uma das entidades em questão não pode ter existência independente sem a outra. Por exemplo, uma empresa que faz seguro para pessoas que dirigem carros pode precisar armazenar dados em <em>NAMED-DRIVERs</em>.</p>
+<ol>
+<li>
+<p>Na modelagem disso, podemos começar observando que um <em>CAR</em> pode ser conduzido por muitas <em>PERSON</em> instâncias e uma <em>PERSON</em> pode conduzir muitos <em>CARs</em> - ambas as entidades podem existir sem a outra, portanto, esta é uma relação não identificadora que podemos especificar em Mermaid como: <em>PERSON</em> }|..|{ <em>CAR</em> : &quot;<em>driver</em>&quot;. Observe os dois pontos no meio do relacionamento que resultarão em uma linha tracejada sendo desenhada entre as duas entidades. Mas quando esse relacionamento muitos-para-muitos é resolvido em dois relacionamentos um-para-muitos, observamos que a <em>NAMED-DRIVER</em> não pode existir sem a <em>PERSON</em> e a <em>CAR-</em> os relacionamentos se tornam identificadores e seriam especificados usando hifens, que se traduzem em uma linha sólida:</p>
+<ol>
+<li>
+<p>Exemplo:</p>
+<pre><code class="hljs language-javascript">
+   erDiagram
+     CAR ||--o{ NAMED-DRIVER : allows
+     PERSON ||--o{ NAMED-DRIVER : is
+
+</code></pre>
+<pre><code class="hljs language-mermaid">
+   erDiagram
+     CAR ||--o{ NAMED-DRIVER : allows
+     PERSON ||--o{ NAMED-DRIVER : is
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram?id=attributes">Atributos</a></p>
+<ol>
+<li>
+<p>Os atributos podem ser definidos para entidades especificando o nome da entidade seguido por um bloco contendo vários <em>type name</em> pares, onde um bloco é delimitado por uma abertura { (abre chave) e um fechamento } (fecha chave).</p>
+<ol>
+<li>
+<p><a href="https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZXJEaWFncmFtXG4gICAgICAgICAgQ1VTVE9NRVIgfXwuLnx7IERFTElWRVJZLUFERFJFU1MgOiBoYXNcbiAgICAgICAgICBDVVNUT01FUiB8fC0tb3sgT1JERVIgOiBwbGFjZXNcbiAgICAgICAgICBDVVNUT01FUiB8fC0tb3sgSU5WT0lDRSA6IFwibGlhYmxlIGZvclwiXG4gICAgICAgICAgREVMSVZFUlktQUREUkVTUyB8fC0tb3sgT1JERVIgOiByZWNlaXZlc1xuICAgICAgICAgIElOVk9JQ0UgfHwtLXx7IE9SREVSIDogY292ZXJzXG4gICAgICAgICAgT1JERVIgfHwtLXx7IE9SREVSLUlURU0gOiBpbmNsdWRlc1xuICAgICAgICAgIFBST0RVQ1QtQ0FURUdPUlkgfHwtLXx7IFBST0RVQ1QgOiBjb250YWluc1xuICAgICAgICAgIFBST0RVQ1QgfHwtLW97IE9SREVSLUlURU0gOiBcIm9yZGVyZWQgaW5cIlxuICAgICAgICAgICAgIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZX0">Exemplo:</a></p>
+<pre><code class="hljs language-javascript">
+  erDiagram
+      CAR ||--o{ NAMED-DRIVER : allows
+      CAR {
+         string registrationNumber
+         string make
+         string model
+      }
+      PERSON ||--o{ NAMED-DRIVER : is
+      PERSON {
+         string firstName
+         string lastName
+         int age
+      }
+</code></pre>
+<pre><code class="hljs language-mermaid">
+   erDiagram
+       CAR ||..o{ NAMED-DRIVER : allows
+       CAR {
+          string registrationNumber
+          string make
+          string model
+       }
+       PERSON ||--o{ NAMED-DRIVER : is
+       PERSON {
+          string firstName
+          string lastName
+          int age
+       }
+       NAMED-DRIVER {
+          int id
+          string name
+          string date
+       }
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><scan id=id_pie></scan> <a href="https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoicGllIHRpdGxlIFBldHMgYWRvcHRlZCBieSB2b2x1bnRlZXJzXG4gICAgXCJEb2dzXCIgOiAzODZcbiAgICBcIkNhdHNcIiA6IDg1XG4gICAgXCJSYXRzXCIgOiAxNVxuICAgIFwicGF1bG9cIjogNTBcbiAgICAgICAgICAgICIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9">Gráfico de pizza</a></p>
+<ol>
+<li>
+<p>Exemplo de uso do gráfico de pizza.</p>
+<pre><code class="hljs language-javascript">
+   pie title Animais de estimação adotados por voluntários
+        <span class="hljs-string">"Cachorros"</span> : <span class="hljs-number">386</span>
+        <span class="hljs-string">"Gatos    "</span> : <span class="hljs-number">85</span>
+        <span class="hljs-string">"Ratos    "</span> : <span class="hljs-number">15</span>
+
+</code></pre>
+<pre><code class="hljs language-mermaid">
+   pie title Animais de estimação adotados por voluntários
+        &quot;Cachorros&quot; : 386
+        &quot;Gatos    &quot; : 85
+        &quot;Ratos    &quot; : 15
+
+</code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-details"><span>O elemento semântico html &lt;details&gt; funciona em markdown se o mesmo estiver isolado do código markdown, já que html não conhece markdown.</p>
+<ol>
+<li>
+<p><a href="#id-details-exemplo">Veja o exemplo nos anexo</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-código"><span>Tag ``` As 3 crases é usada para informar que o texto seguinte é um código javascript ou html.</p>
+<ol>
+<li>
+<p><a href="#id-c%C3%B3digo-exemplo">Veja o exemplo anexo...</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-notas-de-rodapé"><span>Notas de rodapé em documentos markdown.</p>
+<ol>
+<li>
+<p>A extensão <a href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes">markdown-footnotes</a> permite implementar notas de rodapé em documentos markdown.</p>
+<ol>
+<li><a href="#id-markdown-footnotes-exemplo">Exemplo de como usar nota de rodapé</a>.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-editores-markdown"><span>Editores markdown para linux.</p>
+<ol>
+<li>
+<p><span id="id-editor-vscode"><span>Visual Studio Code com as extensões abaixo atendeu 100% de minhas necessidades:</p>
+<ol>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one" title="Tem quase tudo que é precisa para escrever o Markdown (atalhos de teclado, sumário, visualização automática e muito mais)">Markdown All in One</a></p>
+<ol>
+<li>Ao inserir uma elemento na lista enumerada o número seguintes é calculado.</li>
+<li><strong>Atalhos do teclado da extensão markdown-all-in-one:</strong>
+<ol>
+<li><strong>Ctrl/Cmd + B</strong> - Alternar negrito</li>
+<li><strong>Ctrl/Cmd + I</strong> - Alternar itálico</li>
+<li><strong>Ctrl / Cmd + Shift + ]</strong> - Alternar título (Insere cancela (#))</li>
+<li><strong>Ctrl/Cmd + Shift + [</strong> - Alternar título (Excluir cancela (#))</li>
+<li><strong>Ctrl/Cmd + M</strong> - Alternar ambiente matemático</li>
+<li><strong>Alt+C</strong> - Marcar / Desmarcar item da lista de tarefas</li>
+<li><strong>Ctrl/Cmd + Shift + V</strong> - Alternar visualização</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>A extensão <a href="https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts">Markdown Shortcuts</a> facilita muito edição de tags markdown.</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint" title="Linting de marcação e verificação de estilo para código do Visual Studio">markdownlint</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting" title="Suporte de sintaxe Markdown para a linguagem de gráficos Mermaid">Mermaid Markdown Syntax Highlighting</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes" title="Adiciona suporte de sintaxe de nota de rodapé [^1] à visualização embutida do Markdown do VS Code">Markdown Footnotes</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks" title="Marque as linhas e pule para elas">Bookmarks</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker" title="Verificador ortográfico para código-fonte">Code Spell Checker</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese-brazilian" title="Extensão do dicionário do português brasileiro para o código VS">Brazilian Portuguese - Code Spell Checker</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=evileumas.html-to-javascript-string" title="Esta extensão converte o texto selecionado do editor em string javascript">html-to-javascript-string</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf" title="Essa extensão permite visualizar pdf no vscode">vscode pdf</a>.</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced" title="Visualização de Markdown aprimorada">markdown-preview-enhanced</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf" title="Converte markdown para pdf">markdown-pdf</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=dbankier.vscode-instant-markdown" title="Ao editar documentos markdown em vscode esta extensão atualiza instantaneamente no navegador.">Instant Markdown</a></p>
+</li>
+<li>
+<p>A extensão <a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree" title="Este link descreve tudo que é necessário fazer para configurar a extensão.">Todo Tree</a> para criar lista com todos os cometários do código que contenha as palavras: TODO: ou FIXME:</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid" title="Gera fluxogramas, diagramas e muito mais">Markdown Preview Mermaid Support</a></p>
+</li>
+<li>
+<p>A extensão <a href="%22https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes%22">markdown-footnotes</a> é usada para criar notas de rodapé em documentos markdown.</p>
+</li>
+<li>
+<p><a href="https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.html">Todos os erros que viola as regras markdown</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=jebbs.markdown-extended">markdown-extended</a></p>
+</li>
+<li>
+<p>Extensão <a href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji"><strong>Markdown Emoji</strong></a></p>
+<ol>
+<li>:persevere:</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-reText"><span>Editor <a href="http://manpages.ubuntu.com/manpages/bionic/man1/retext.1.html#:~:text=ReText%20is%20a%20simple%20editor,to%20write%20custom%20export%20extensions." title="Editor de texto para Markdown e reStructuredText">ReText</a> vem na distribuição ubuntu.</p>
+<ol>
+<li>
+<p>Instalei porém o mesmo não reconheceu o documento o_que_e_markdown.md que criei com vscode.</p>
+</li>
+<li>
+<p>O que eu percebi de positivo caso o documento não use sintaxe estendida é a exportação para pdf, html e open office.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-ghostwriter"><span>Editor <a href="https://wereturtle.github.io/ghostwriter/">ghostwriter</a> vem na distribuição ubuntu.</p>
+<ol>
+<li>
+<p>obs: Ele só exporta para html e não reconhece comentários em html embutido.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-google-docs-gd2md-html"><span>Google docs com a extensão GD2md-html.</p>
+<ol>
+<li>
+<p>O google docs usa a extensão <a href="https://gsuite.google.com/marketplace/app/docs_to_markdown/700168918607" title="para converter documentos editados no google docs para arquivo com extensão .md (.markdown)">GD2md-html</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-dillinger"><span>Editor web dillinger:</p>
+<ol>
+<li>
+<p>O <a href="https://www.markdownguide.org/tools/dillinger/" title="Dillinger é um editor Markdown online.">dillinger</a> é um editor de código markdown que funciona no browser.</p>
+</li>
+<li>
+<p>obs: Não reconhece a tag &lt;big&gt;&lt;/big&gt;.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-stackedit"><span>Editor web stackedit.</p>
+<ol>
+<li>
+<p>O <a href="https://stackedit.io/app" title="stackedit é um editor Markdown online.">stackedit</a> perde a formação do texto markdown quando o mesmo é editado em outro editor.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id-notable"><span>O Editor notable para desktop linux.</p>
+<ol>
+<li>
+<p>O <a href="https://notable.app/" title="O notable está no repositório do ubuntu">Editor notable</a> é muito bom reconheceu quase tudo que escrevi no vscode só tive dois problema:</p>
+<ol>
+<li>A sintaxe da fórmula matemática o símbolo $$ deve está unido na fórmula e não pode ter espaço em braco entre o símbolo e o inicio da fórmula.</li>
+<li>Exemplo:
+<ol>
+<li>$$ f(x) = ax^2 + bx + c $$ --errado</li>
+<li>$$f(x) = ax^2 + bx + c$$ --certo</li>
+</ol>
+</li>
+<li>O gráfico e fluxogramas não funcionaram.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_mkdocs"><span> MkDocs é um Gerador de site estático baseado em arquivo markdown.</p>
+<ol>
+<li>
+<p>MkDocs é um gerador de site estático rápido, simples e absolutamente lindo que é voltado para a documentação do projeto de construção.<br>
+Os arquivos de origem da documentação são gravados em Markdown e configurados com um único arquivo de configuração YAML. Comece lendo a introdução abaixo e, em seguida, verifique o Guia do Usuário para obter mais informações.</p>
+<ol>
+<li>
+<p><a href="https://www.mkdocs.org/user-guide/writing-your-docs/">Escrevendo seus documentos markdown para mkdocs</a>.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<hr>
+<h2 id="a-n-e-x-o-s">A N E X O S</h2>
+<hr>
+<p><span id="id-exemplo-hx"><span></p>
+<blockquote>
+<h3 id="exemplo-da-reapresentação-das-tags-hx-onde-x-varia-de-1-a-6_">Exemplo da reapresentação das tags &lt;hx&gt; onde x varia de 1 a 6_**</h3>
+<h1 id="h1">h1</h1>
+<h2 id="h2">h2</h2>
+<h3 id="h3">h3</h3>
+<h4 id="h4">h4</h4>
+<h5 id="h5">h5</h5>
+<h6 id="h6">h6</h6>
+<p><text onclick="goBack()">[🔙]</text></p>
+</blockquote>
+<p><span id="id-código-exemplo"><span></p>
+<hr>
+<blockquote>
+<h3 id="exemplo-de-como-visualizar-código-no-documento">Exemplo de como visualizar código no documento</h3>
+<blockquote>
+<p>```javascript</p>
+<pre><code class="hljs language-javascript">  &lt;script&gt;
+       <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fancyAlert</span>(<span class="hljs-params">arg</span>) </span>{
+           <span class="hljs-keyword">if</span>(arg) {
+           $.facebox({<span class="hljs-attr">div</span>:<span class="hljs-string">'#foo'</span>})
+           }
+       }
+  &lt;<span class="hljs-regexp">/script&gt;
+
+</span></code></pre>
+<p>```</p>
+<p>```html</p>
+<pre><code class="hljs language-Html&gt;">
+  &lt;html&gt;
+     &lt;head&gt;
+     &lt;/head&gt;
+     &lt;body&gt;
+         &lt;p&gt;Alo Mundo.&lt;/p&gt;
+         &lt;script&gt;
+            document.print(&quot;Alo Mundo&quot;);
+            &lt;img src=&quot;https://math.justforfun.click/$/
+                     {
+                     (2x², + , 17y⁴, =, 23,,(1)),
+                     ( x , - , y   , =,  5,,(2))
+                    :}&quot;
+                     alt=&quot;API WEB https://math.justforfun.click/$/ &quot;
+                     title=&quot;Retorna a expressão matemática passada no parâmetro&quot;&gt;
+         &lt;/script&gt;
+     &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>```</p>
+<p>```json</p>
+<pre><code class="hljs language-json">{
+  <span class="hljs-attr">"firstName"</span>: <span class="hljs-string">"John"</span>,
+  <span class="hljs-attr">"lastName"</span>: <span class="hljs-string">"Smith"</span>,
+  <span class="hljs-attr">"age"</span>: <span class="hljs-number">25</span>
+}
+</code></pre>
+<p>```</p>
+</blockquote>
+</blockquote>
+<p><text onclick="goBack()">[🔙]</text></p>
+<hr>
+<p><span id="id-blockquote-exemplo"><span></p>
+<blockquote>
+<h3 id="este-é-uma-citação">Este é uma citação</h3>
+<ul>
+<li>O sinal usado abre e fecha este código no HTML.</li>
+</ul>
+<blockquote>
+<ul>
+<li><code>O bloco pode ser aninhado se o sinal  \&gt;&gt;  for  colocar no início da linha.</code></li>
+</ul>
+</blockquote>
+<ul>
+<li>Para adicionar mais uma linha à citação, basta teclar &lt;enter&gt; que o vscode posiciona na próxima linha da citação com a tag &gt;.</li>
+<li>Isso gerará um novo parágrafo dentro do blockquote.</li>
+<li>As tags markdown negrito, itálico, enfatizado, lista numeras e lista não numeradas funcionam dentro de uma citação.</li>
+</ul>
+<ol>
+<li>Título
+<ol>
+<li>item 01</li>
+<li>item 02</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p><text onclick="goBack()">[🔙]</text></p>
+<hr>
+<p><span id="id-tabela-simples-exemplo"><span></p>
+<blockquote>
+<h3 id="exemplo-de-tabela">Exemplo de tabela</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">col 01</th>
+<th style="text-align:center">col 02</th>
+<th style="text-align:right">col 03</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">a11</td>
+<td style="text-align:center">a12</td>
+<td style="text-align:right">a13</td>
+</tr>
+<tr>
+<td style="text-align:left">a21</td>
+<td style="text-align:center">a22</td>
+<td style="text-align:right">a23</td>
+</tr>
+<tr>
+<td style="text-align:left">a31</td>
+<td style="text-align:center">a32</td>
+<td style="text-align:right">a33</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p><text onclick="goBack()">[🔙]</text></p>
+<p><span id="id_tabela_link_referencia"> <span></p>
+<hr>
+<blockquote>
+<h3 id="exemplo-de-tabela-usando-linhas-nas-células-sendo-que-os-links-ficam-fora-da-tabela">Exemplo de tabela usando linhas nas células sendo que os links ficam fora da tabela</h3>
+<p>===========================================</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">First Header</th>
+<th style="text-align:left">Second Header</th>
+<th style="text-align:left">Third Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=11">onze</a></td>
+<td style="text-align:left"><a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=12">12</a></td>
+<td style="text-align:left"><a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=13">13</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=21">21</a></td>
+<td style="text-align:left"><a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=22">vinde e dois</a></td>
+<td style="text-align:left"><a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=23">23</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=31">31</a></td>
+<td style="text-align:left"><a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=32">32</a></td>
+<td style="text-align:left"><a href="http://www.a-big-long-big-big-long-hyperlink/more-long-stuff?id=33">three trees</a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<h4 id="abaixo-temos-a-matriz-com-os-links-da-tabela-acima-a-matriz-ficará-oculta-quando-o-html-for-gerado">Abaixo temos a matriz com os links da tabela acima. (A matriz ficará oculta quando o html for gerado)</h4>
+</blockquote>
+</blockquote>
+<p><text onclick="goBack()">[🔙]</text></p>
+<p><span id="id-Listas-Nao-Ordenadas-exemplo-resultado"><span></p>
+<hr>
+<blockquote>
+<h3 id="lista-não-ordenada">Lista não ordenada</h3>
+<ul>
+<li>Titulo da lista
+<ul>
+<li>item 01</li>
+<li>item 02</li>
+<li>item 03</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><text onclick="goBack()">[🔙]</text></p>
+<hr>
+<p><span id="id-lista-ordenada-exemplo"><span></p>
+<blockquote>
+<h3 id="lista-ordenada">Lista ordenada</h3>
+<ol>
+<li>Título
+<ol>
+<li>item 01</li>
+<li>item 03</li>
+</ol>
+</li>
+</ol>
+<p><text onclick="goBack()">[🔙]</text></p>
+</blockquote>
+<p><span id="id-hr-resultado"><span></p>
+<blockquote>
+<h3 id="a-tag-___-simula-comportamento-da-tag-html-hr">A tag (___) simula comportamento da tag html &lt;hr&gt;</h3>
+</blockquote>
+<p><text onclick="goBack()">[🔙]</text></p>
+<hr>
+<h3 id="diagramas-de-relacionamento-de-entidades"><a href="https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram">Diagramas de relacionamento de entidades</a></h3>
+<hr>
+<p><span id="id-details-exemplo"><span></p>
+<h3 id="elemento-semântico-html-details">Elemento semântico html &lt;details&gt;</h3>
+<blockquote>
+<p>O elemento semântico html &lt;details&gt; funciona em markdown se o mesmo estiver isolado do código markdown, já que html não conhece markdown.</p>
+ <details>
+   <summary>Exemplo da tag html details</summary>
+     <p>Tudo que tiver dentro da tag html &lt;details&gt; e &lt;/details&gt;  só aparecerá se o mouse for clicado no botão </p>
+     <p>
+       * Este documento não será interpretado como documento markdown porque está dentro de um código html.
+     </p>
+     <ol>
+       <li>
+         item 01
+       </li>
+       <li>
+         item 0>
+ </details>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Exemplo da tag html details<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    Tudo que tiver dentro da tag html <span class="hljs-symbol">&amp;lt;</span>details<span class="hljs-symbol">&amp;gt;</span> e <span class="hljs-symbol">&amp;lt;</span>/details<span class="hljs-symbol">&amp;gt;</span> só
+    aparecerá se o mouse for clicado no botão
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    * Está linha não será interpretado como documento markdown porque está
+    dentro de um código html..
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>item 01<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>item 02<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+</code></pre>
+</blockquote>
+<p><text onclick="goBack()">[🔙]</text></p>
+<hr>
+<p><span id="id-markdown-footnotes-exemplo"><span></p>
+<h2 id="demostração-da-extensão-markdown-footnotes"><a href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes">Demostração da extensão markdown-footnotes</a></h2>
+<pre><code class="hljs language-markdown"><span class="hljs-bullet">1.  </span>Aqui está uma nota de rodapé simples, [^1]
+<span class="hljs-bullet">2.  </span>e aqui está outra mais longa.[^2]
+<span class="hljs-bullet">
+    1. </span>NOTAS DE RODAPÉS QUE SERÁ INCLUÍDO NO FINAL DO HTML.
+<span class="hljs-bullet">       1. </span>[^1]: Esta é a primeira nota de rodapé.
+<span class="hljs-bullet">       2. </span>[^2]:
+<span class="hljs-code">              Aqui está um com vários parágrafos e código.</span>
+<span class="hljs-code">              Avance parágrafos para incluí-los na nota de rodapé.</span>
+<span class="hljs-code">              Adicione quantos parágrafos desejar.</span>
+<span class="hljs-bullet">
+3.  </span>Esse texto espero não entrar na nota de rodapé número.
+</code></pre>
+<h3 id="o-código-markdown-com-notas-de-rodapé-descrito-acima">O Código markdown com <strong>notas de rodapé</strong> descrito acima</h3>
+<ol>
+<li>
+<p>Aqui está uma nota de rodapé simples, [^1].</p>
+</li>
+<li>
+<p>e aqui está outra mais longa.[^2]</p>
+<ol>
+<li>NOTAS DE RODAPÉS QUE SERÁ INCLUÍDO NO FINAL DO HTML.
+<ol>
+<li>[^1]: Esta é a primeira nota de rodapé.</li>
+<li>[^2]:
+Aqui está um com vários parágrafos e código.
+Avance parágrafos para incluí-los na nota de rodapé.
+Adicione quantos parágrafos desejar.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Esse texto espero não entrar na nota de rodapé número.</p>
+</li>
+</ol>
+<p><text onclick="goBack()">[🔙]</text></p>
+<hr>
+<h3 id="vai-para-o-incio"><a href="#id_topo" title="Vai para o topo do documento">Vai para o incio</a></h3>
+<pre>
+
+   Se esse texto aparecer preto é porque o meu tema foi aceito.
+</pre>
+<p><span id=id_referencias></span></p>
+<h2 id="referências">REFERÊNCIAS</h2>
+<ol>
+    <li>
+        <a href="https://github.com/DavidAnson/markdownlint/blob/v0.21.1/doc/Rules.md#md023---headings-must-start-at-the-beginning-of-the-line" target="_blank" title="">Mensagens de erro sintático do código markdown</a>
+    </li>
+    <li>
+        <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank" title="">Markdown: Sintaxe</a>
+    </li>
+    <li><a href="https://www.markdownguide.org/getting-started/" target="_blank"
+            title="Site com a documentação completa do markdown">O que é Markdown?</a></li>
+    <li>
+        <a href="https://www.markdownguide.org/basic-syntax/" target="_blank" title="">Sintaxe básica</a>
+    </li>
+    <li><a href="https://www.markdownguide.org/tools/" target="_blank" title="">Aplicativos e componentes que
+        suportam Markdown.</a></li>
+    <li>
+        <a href="https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-markdown#open"
+            target="_blank" title="">Guia básico de Markdown</a>
+    </li>
+    <li>
+        <a href="https://about.gitlab.com/handbook/markdown-guide/"
+            target="_blank">https://about.gitlab.com/handbook/markdown-guide/</a>
+    </li>
+    <li>
+        <a href="https://spec.commonmark.org/0.29/#why-is-a-spec-needed-"
+            title="Documento da especificação Markdown - Versão 0.29 (06/04/2019)" target="_blank">Especificação
+            CommonMark Spec</a>
+    </li>
+    <li>
+        <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank"
+            title="Clique e acesse agora!">Markdown: Syntax</a>
+    </li>
+    <li>
+        <a href="https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-markdown#open"
+            target="_blank" title="Clique e acesse agora!">Guia básico de Markdown</a>
+    </li>
+    <li>
+        <a href="https://blog.da2k.com.br/2015/02/08/aprenda-markdown" target="_blank" title="">Aprenda Markdown</a>
+    </li>
+    <li>
+        <a href="https://www.markdownguide.org/extended-syntax/" target="_blank" title="">Sintaxe Estendida</a>
+    </li>
+    <li>
+        <a href="https://dillinger.io/" target="_blank">Editor Markdown free na WEB</a>
+    </li>
+    <li>
+        <a href="https://stackedit.io/editor" target="_blank" title="Clique e acesse agora!">Editor de texto
+            markdown na web</a>
+    </li>
+    <li>
+        <a href="./markdown_readme.html" target="_blank" title="Clique e acesse agora!">./markdown readme.md</a>
+    </li>
+    <li>
+        <a href="https://github.com/DavidAnson/markdownlint/blob/v0.21.1/doc/Rules.md#md033" target="_blank"
+            title="">Todos os erros da extensão Markdownlint</a>
+    </li>
+    <li>
+        <a href="https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-markdown#open"
+            target="_blank" title="">Guia-basico-de-markdown#open</a>
+    </li>
+    <li>
+        <a href="https://markdown-guide.readthedocs.io/en/latest/basics.html" target="_blank"
+            title="">https://markdown-guide.readthedocs.io/en/latest/basics.html</a>
+    </li>
+    <li>
+        <a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker"
+            target="_blank" title="Corregedor ortográfico">code-spell-checker</a>
+    </li>
+    <li>
+        <a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese-brazilian"
+            target="_blank"
+            title="Junto com a extensão code-spell-checker corrige ortografia em arquivos markdown ">code-spell-checker-portuguese-brazilian</a>
+    </li>
+    <li>
+        <a href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes" target="_blank"
+            title="Extensão bierner.markdown-footnotes">Extensão para criar notas de rodapé</a>
+    </li>
+    <li>
+        <a href="https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts"        target="_blank" title="Essa extensão vscode facilita muito edição de tags markdown.">
+          **Markdown Shortcuts**
+        </a>
+    </li>
+    <li><a href="https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.html"
+           target="_blank"
+           title="Todos os erros que pode aparecer ao codificar markdown">
+           docs/RULES.md
+           </a
+        >
+    </li>
+    <li><a href="https://code.visualstudio.com/docs/languages/markdown" target="_blank" title="">Markdown e código do Visual Studio</a></li>
+    <li>
+        <a href="https://pandoc.org/MANUAL.html#extension-citations" target="_blank" title="">pandoc - extension-citations</a>
+    </li>
+    <li>
+        <a href="https://pandoc.org/MANUAL.html" target="_blank" title="">Pandoc - Manual do Usuário</a>
+    </li>
+    <li>
+        <a href="https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting" target="_blank" title="">mermaid-markdown-syntax-highlighting</a>
+    </li>
+    <li>
+        <a href="https://www.mkdocs.org/" target="_blank" title="">Gerador de sites mkdocs.org</a>
+    </li>
+    <li>
+        <a href="https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW0NocmlzdG1hc10gLS0-fEdldCBtb25leXwgQihHbyBzaG9wcGluZylcbiAgICBCIC0tPiBDe0xldCBtZSB0aGlua31cbiAgICBDIC0tPnxPbmV8IERbTGFwdG9wXVxuICAgIEMgLS0-fFR3b3wgRVtpUGhvbmVdXG4gICAgQyAtLT58VGhyZWV8IEZbZmE6ZmEtY2FyIENhcl1cbiIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9" target="_blank" title="">Mermaid Live Editor</a>
+    </li>
+</ol>
+<p><text onclick="goBack()">[🔙]</text></p>
+<script>  function goBack() {    window.history.back()}</script>
+<h3 id="notas-de-rodapé">NOTAS DE RODAPÉ</h3>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Teoria sobre o Framework nodejs &lt;a href&equals;&quot;teoria&lowbar;node&lowbar;js&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;  &#x2b06;&#xfe0f; &lt;&sol;a&gt;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h4 id="teoria-sobre-o-framework-nodejs---️-">Teoria sobre o Framework nodejs <a href="teoria_node_js.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h4>
+<ol>
+<li>
+<p><strong>OBJETIVOS</strong></p>
+<ol>
+<li>
+<p>O <a href="https://nodejs.org/api/documentation.html">Nodejs</a> é um interpretador javascript executado no servidor, é usado quando precisamos acessar recursos que não estão disponíveis na máquina cliente e sim na máquina servidora, exemplo: banco de dados e páginas html protegidas. Ele é um ambiente de execução da linguagem JavaScript assíncrono e orientado a eventos, o Node.js é projetado para desenvolvimento de aplicações escaláveis de rede.</p>
+</li>
+<li>
+<p>O <a href="https://nodejs.org/api/documentation.html">node.js</a> não trabalha criando tarefas do sistema operacional, por isso uma aplicação nunca trava o computador e por isso, ele é indicado para criar <a href="https://blog.tecnospeed.com.br/escalabilidade-de-software-o-que-e/">sistemas escaláveis</a>.</p>
+<ol>
+<li>O Node.js permite maior número de conexões concorrentes em relação aos servidores tradicionais que usam tarefas do sistema operacional.</li>
+</ol>
+</li>
+<li>
+<p>Site oficial: <a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
+</li>
+<li>
+<p>A documentação completa: <a href="https://nodejs.org/en/docs/">https://nodejs.org/en/docs/</a></p>
+</li>
+<li>
+<p>Opção &quot;/sobre&quot; do site oficial com exemplos: <a href="https://nodejs.org/en/about/">About Node.js®</a>.</p>
+</li>
+<li>
+<p><a href="http://www.w3big.com/pt/nodejs/default.html">Node.js tutorial</a></p>
+<ol>
+<li><a href="http://www.w3big.com/pt/nodejs/nodejs-install-setup.html">Curso node js em w3big.com</a>.</li>
+<li><a href="http://www.w3big.com/pt/nodejs/nodejs-global-object.html">Objetos globais e variáveis ​​globais</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>EXEMPLOS DE USO DO NODEJS</strong></p>
+<ol>
+<li>
+<p><a href="https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/">Como analisar argumentos de linha de comando</a></p>
+<pre><code class="hljs language-Javascript">
+  <span class="hljs-comment">/**
+  * Exemplo de uso do módulo soma para ser visualizado no console do linux
+  * Programa: calc.js
+  * Data: 29/01/2021 
+  * sintaxe esperada: p1 , sinal, p2
+  */</span>
+  <span class="hljs-keyword">var</span> myArgs = process.argv.slice(<span class="hljs-number">2</span>);
+  <span class="hljs-built_in">console</span>.log(myArgs[<span class="hljs-number">0</span>], myArgs[<span class="hljs-number">1</span>], myArgs[<span class="hljs-number">2</span>]);    
+
+  <span class="hljs-keyword">var</span> calculator = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./calculator.js'</span>);
+
+
+  <span class="hljs-keyword">switch</span> (myArgs[<span class="hljs-number">1</span>]) {
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'+'</span>:
+          <span class="hljs-built_in">console</span>.log(myArgs[<span class="hljs-number">0</span>], myArgs[<span class="hljs-number">1</span>], myArgs[<span class="hljs-number">2</span>], <span class="hljs-string">' = '</span>,calculator.soma(myArgs[<span class="hljs-number">0</span>],myArgs[<span class="hljs-number">2</span>]));    
+          <span class="hljs-keyword">break</span>;
+
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'-'</span>:
+          <span class="hljs-built_in">console</span>.log(myArgs[<span class="hljs-number">0</span>], myArgs[<span class="hljs-number">1</span>], myArgs[<span class="hljs-number">2</span>], <span class="hljs-string">' = '</span>,calculator.subtrai(myArgs[<span class="hljs-number">0</span>],myArgs[<span class="hljs-number">2</span>]));          
+          <span class="hljs-keyword">break</span>;
+
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'.'</span>:
+          <span class="hljs-built_in">console</span>.log(myArgs[<span class="hljs-number">0</span>], myArgs[<span class="hljs-number">1</span>], myArgs[<span class="hljs-number">2</span>], <span class="hljs-string">' = '</span>,calculator.multiplica(myArgs[<span class="hljs-number">0</span>],myArgs[<span class="hljs-number">2</span>]));           
+          <span class="hljs-keyword">break</span>;
+
+      <span class="hljs-keyword">case</span> <span class="hljs-string">'/'</span>:
+          <span class="hljs-built_in">console</span>.log(myArgs[<span class="hljs-number">0</span>], myArgs[<span class="hljs-number">1</span>], myArgs[<span class="hljs-number">2</span>], <span class="hljs-string">' = '</span>,calculator.dividi(myArgs[<span class="hljs-number">0</span>],myArgs[<span class="hljs-number">2</span>]));           
+          <span class="hljs-keyword">break</span>;
+
+      <span class="hljs-keyword">default</span>:
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Desculpe, isso não é algo que eu sei fazer.'</span>);
+  }
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong><a href="https://www.youtube.com/watch?v=QnTCre0HHv8">Exemplos de módulos http</a></strong></p>
+<ol>
+<li><a href="https://www.w3schools.com/nodejs/nodejs_http.asp">Exemplo de uso do módulo 'http'</a>:</li>
+</ol>
+<pre><code class="hljs language-Javascript">
+    <span class="hljs-comment">/** 
+     * Para imprimir no browser usa-se o módulo 'http'.
+     * Exemplo da uso do modulo http
+     * Data: 29/01/2021
+     * Programa: hello_world_Http.js
+     */</span>
+
+    <span class="hljs-keyword">const</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+    <span class="hljs-keyword">const</span> hostname = <span class="hljs-string">'127.0.0.1'</span>;
+    
+    <span class="hljs-keyword">const</span> port = <span class="hljs-number">8080</span>;
+    <span class="hljs-keyword">const</span> server = http.createServer(
+        <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+                        res.statusCode = <span class="hljs-number">200</span>;
+                        res.setHeader(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'text/plain'</span>);
+                        res.end(<span class="hljs-string">'Hello World'</span>);
+                        }
+    );
+    server.listen(port, 
+                    hostname, 
+                    () =&gt; {<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Server running at http://<span class="hljs-subst">${hostname}</span>:<span class="hljs-subst">${port}</span>/`</span>);}
+    );
+
+</code></pre>
+</li>
+<li>
+<p><strong><a href="https://docs.npmjs.com/creating-node-js-modules">Como criar módulos (units do pascal) no node.js</a></strong></p>
+<ol>
+<li>
+<p>Os módulos ficam em arquivos separados com extensão .js onde os programas e variáveis que serão vistos por outros arquivos devem ser declarados com a palavra reservada <a href="https://stackabuse.com/how-to-use-module-exports-in-node-js/">module.exports</a>.</p>
+</li>
+<li>
+<p>Exemplo de um módulo que soma, subtrai, multiplica e dividi:</p>
+<pre><code class="hljs language-Javascript">
+   <span class="hljs-comment">/**
+    * Exemplo de módulos em nodejs
+    * Nome do módulo calculator.js
+    * Data: 29/01/2021
+    */</span>
+    <span class="hljs-comment">/**
+      var calculator = {
+         soma    : function soma(a,b){ return a+b;  }  ,                        
+            subtrai : function subtrai(a,b){    return a-b; },
+            multiplica : function multiplica(a,b){return a*b;},
+            dividi : function dividi(a,b){return a/b; }
+        };
+        module.exports = calculator;    
+    */</span>
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">calculator</span> </span>{
+        <span class="hljs-keyword">constructor</span>() {
+        }
+        soma(a,b){ <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseInt</span>(a)+<span class="hljs-built_in">parseInt</span>(b) }
+
+        subtrai(a,b){<span class="hljs-keyword">return</span> <span class="hljs-built_in">parseInt</span>(a)-<span class="hljs-built_in">parseInt</span>(b)}
+
+        multiplica(a,b){<span class="hljs-keyword">return</span> <span class="hljs-built_in">parseInt</span>(a)*<span class="hljs-built_in">parseInt</span>(b)}
+
+        dividi(a,b){<span class="hljs-keyword">return</span> <span class="hljs-built_in">parseInt</span>(a)/<span class="hljs-built_in">parseInt</span>(b) }
+    }
+
+    <span class="hljs-keyword">let</span> sum = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">soma</span>(<span class="hljs-params">a,b</span>)</span>{ <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseInt</span>(a)+<span class="hljs-built_in">parseInt</span>(b) };
+
+    <span class="hljs-built_in">module</span>.exports = <span class="hljs-keyword">new</span> calculator();
+    <span class="hljs-built_in">module</span>.exports.sum = sum;
+
+</code></pre>
+</li>
+<li>
+<p><strong>Exemplo de execução do módulo <em>calculator</em> no console:</strong></p>
+<pre><code class="hljs language-Javascript">
+    <span class="hljs-comment">/**
+     * Exemplo de usu do módulo  soma para ser visualizado no console do linux
+    * Programa: calc.js
+    * Data: 29/01/2021 
+    * sintaxe esperada: p1 , sinal, p2
+    */</span>
+    <span class="hljs-keyword">var</span> myArgs = process.argv.slice(<span class="hljs-number">2</span>);
+    <span class="hljs-built_in">console</span>.log(myArgs[<span class="hljs-number">0</span>], myArgs[<span class="hljs-number">1</span>], myArgs[<span class="hljs-number">2</span>]);    
+
+    <span class="hljs-keyword">var</span> calculator = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./modulos/calculator.js'</span>);
+
+    <span class="hljs-keyword">switch</span> (myArgs[<span class="hljs-number">1</span>]) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">'+'</span>:
+            <span class="hljs-built_in">console</span>.log(myArgs[<span class="hljs-number">0</span>], myArgs[<span class="hljs-number">1</span>], myArgs[<span class="hljs-number">2</span>], <span class="hljs-string">' soma = '</span>,calculator.soma(myArgs[<span class="hljs-number">0</span>],myArgs[<span class="hljs-number">2</span>]));   
+            <span class="hljs-built_in">console</span>.log(myArgs[<span class="hljs-number">0</span>], myArgs[<span class="hljs-number">1</span>], myArgs[<span class="hljs-number">2</span>], <span class="hljs-string">' sum = '</span>,calculator.sum(myArgs[<span class="hljs-number">0</span>],myArgs[<span class="hljs-number">2</span>]));     
+            <span class="hljs-keyword">break</span>;
+
+        <span class="hljs-keyword">case</span> <span class="hljs-string">'-'</span>:
+            <span class="hljs-built_in">console</span>.log(myArgs[<span class="hljs-number">0</span>], myArgs[<span class="hljs-number">1</span>], myArgs[<span class="hljs-number">2</span>], <span class="hljs-string">' = '</span>,calculator.subtrai(myArgs[<span class="hljs-number">0</span>],myArgs[<span class="hljs-number">2</span>]));          
+            <span class="hljs-keyword">break</span>;
+            <span class="hljs-built_in">console</span>.log(myArgs[<span class="hljs-number">0</span>], myArgs[<span class="hljs-number">1</span>], myArgs[<span class="hljs-number">2</span>], <span class="hljs-string">' = '</span>,calculator.multiplica(myArgs[<span class="hljs-number">0</span>],myArgs[<span class="hljs-number">2</span>]));           
+            <span class="hljs-keyword">break</span>;
+
+        <span class="hljs-keyword">case</span> <span class="hljs-string">'/'</span>:
+            <span class="hljs-built_in">console</span>.log(myArgs[<span class="hljs-number">0</span>], myArgs[<span class="hljs-number">1</span>], myArgs[<span class="hljs-number">2</span>], <span class="hljs-string">' = '</span>,calculator.dividi(myArgs[<span class="hljs-number">0</span>],myArgs[<span class="hljs-number">2</span>]));           
+            <span class="hljs-keyword">break</span>;
+
+        <span class="hljs-keyword">default</span>:
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Desculpe, isso não é algo que eu sei fazer.'</span>);
+    }
+
+</code></pre>
+</li>
+<li>
+<p><strong>Executar programa <em>web_calculator.js</em> para ser visualizado no browser:</strong></p>
+<pre><code class="hljs language-Javascript">
+    <span class="hljs-comment">/**
+     * Exemplo da execução do modulo soma para ser visualizado no browser
+    * Data: 29/01/2021
+    * Módulo: web_calculator.js
+    */</span>
+
+    <span class="hljs-keyword">var</span> calculator = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./modulos/calculator.js'</span>);
+    <span class="hljs-keyword">const</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+    <span class="hljs-keyword">const</span> hostname = <span class="hljs-string">'127.0.0.1'</span>;
+    
+    <span class="hljs-keyword">const</span> port = <span class="hljs-number">8080</span>;
+    <span class="hljs-keyword">const</span> server = http.createServer(
+        <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+            res.statusCode = <span class="hljs-number">200</span>;
+            res.setHeader(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'text/html'</span>);
+            res.end(
+                <span class="hljs-string">'&lt;!DOCTYPE html&gt;'</span>+
+                <span class="hljs-string">'&lt;html&gt;'</span>+
+                    <span class="hljs-string">'&lt;head&gt;'</span>+
+                        <span class="hljs-string">'&lt;meta charset="utf-8" /&gt;'</span>+
+                        <span class="hljs-string">'&lt;title&gt;Exemplo do módulo calculator.js&lt;/title&gt;'</span>+
+                    <span class="hljs-string">'&lt;/head&gt;'</span>+
+                    <span class="hljs-string">'&lt;body&gt;'</span>+
+                
+                        <span class="hljs-string">'&lt;p&gt; Soma de 1+2 = '</span>+calculator.soma(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)+<span class="hljs-string">'&lt;/p&gt;'</span>+
+                        <span class="hljs-string">'&lt;p&gt; Sum  de 1+2 = '</span>+calculator.sum(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)+<span class="hljs-string">'&lt;/p&gt;'</span>+
+                        <span class="hljs-string">'&lt;p&gt; subtrai  de 1-2 = '</span>+calculator.subtrai(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)+<span class="hljs-string">'&lt;/p&gt;'</span>+
+                        <span class="hljs-string">'&lt;p&gt; multiplica  de 1 * 2 = '</span>+calculator.multiplica (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)+<span class="hljs-string">'&lt;/p&gt;'</span>+
+                        <span class="hljs-string">'&lt;p&gt; dividi  de 1 / 2 = '</span>+calculator.dividi (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)+<span class="hljs-string">'&lt;/p&gt;'</span>)+
+
+                    <span class="hljs-string">'&lt;/body&gt;'</span>+
+                <span class="hljs-string">'&lt;/html&gt;'</span>    
+        }
+    );
+    server.listen(port, 
+                    hostname, 
+                    () =&gt; {<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Server running at http://<span class="hljs-subst">${hostname}</span>:<span class="hljs-subst">${port}</span>/`</span>);}
+    );
+
+</code></pre>
+</li>
+<li>
+<p><strong>Executar programa  <em>calc.js</em> e <em>web_calculator.js</em> no console:</strong></p>
+<pre><code class="hljs language-sh">    
+    <span class="hljs-comment"># Seleciona a pasta /programacao/nodejs/exemplos</span>
+    <span class="hljs-built_in">cd</span> /programacao/nodejs/exemplos
+
+    <span class="hljs-comment"># Calcula a soma de 1 + 2</span>
+    nodejs  calc 3 + 2
+    3 + 2
+    3 + 2  soma =  5
+    3 + 2  sum =  5
+
+    <span class="hljs-comment"># Executa o servidor web_calculator.js </span>
+    nodejs web_calculator.js                
+    Server running at http://127.0.0.1:8080/
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Como implementar modulo em nodejs</strong></p>
+<ol>
+<li>
+<p><a href="https://nodejs.org/api/modules.html#modules_folders_as_modules">Pastas como módulos</a></p>
+</li>
+<li>
+<p><a href="https://nodejs.org/api/modules.html#modules_modules_commonjs_modules">Módulos: módulos CommonJS</a></p>
+</li>
+<li>
+<p>Como criar e usar módulos em nodejs.</p>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=bWSkUscBeZc">Vídeo aula 04</a></li>
+</ol>
+</li>
+<li>
+<p>Como acessar arquivos em nodejs.</p>
+<ol>
+<li><a href="http://www.w3big.com/pt/nodejs/nodejs-fs.html">Usar módulo fs</a></li>
+</ol>
+</li>
+<li>
+<p>Módulos úteis.</p>
+<ol>
+<li><a href="http://www.w3big.com/pt/nodejs/nodejs-path-module.html">Módulo de path do Node.js</a>.</li>
+<li>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Como usar o módulo express do nodejs</strong></p>
+<ol>
+<li>Módulo Express
+<ol>
+<li>
+<p><a href="https://www.youtube.com/watch?v=UMI7kFwmAHo&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=7">Vídeo aula sobre express</a></p>
+</li>
+<li>
+<p><a href="http://expressjs.com/en/5x/api.html">Manual express</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=pohvlFd0byI&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=6">Curso de Node.js - Introdução ao Express #06</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=UMI7kFwmAHo&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=7&amp;t=4s">Curso de Node.js - Rotas #07</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=G9b-Zi0rg3o&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=8&amp;t=5s">Curso de Node.js - Parâmetros #08</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=u3MrPxq_RyA&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=9">Curso de Node.js - Nodemon #09</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=UkwLcuzJRDQ&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=10">Curso de Node.js - Exibindo HTML #10</a>.</p>
+<ol>
+<li><a href="./test_express.html">Arquivo usado no exemplo da função sendFile()</a></li>
+</ol>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=HmmYkLyVy-c&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=11">Curso de Node.js - Instalando o Mysql #11</a></p>
+<ol>
+<li><a href="/infraestrutura/linux/banco_de_dados/mariadb/index.html">Tudo que estudei sobre o Mariadb</a>.</li>
+</ol>
+</li>
+<li>
+<p>Exemplo de uso Curso de Node.js</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">/**
+ * Exemplo de uso Curso de Node.js - Exibindo HTML #10](https://www.youtube.com/watch?v=UkwLcuzJRDQ&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=10)  do módulo express do nodejs
+* Neste exemplo é mostrado o método express().get
+* REFERÊNCIAS:
+*    [Manual express](http://expressjs.com/en/5x/api.html)
+*    [Curso de Node.js - Rotas #07 ](https://www.youtube.com/watch?v=UMI7kFwmAHo&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=7&amp;t=4s) 
+*       Método express().get() 
+*       Método express().send()
+*    [Curso de Node.js - Exibindo HTML #10](https://www.youtube.com/watch?v=UkwLcuzJRDQ&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=10) 
+*       Variável de ambiente _dirname (Retorna a pasta do workspace )
+*       Método express().sendFile()
+* 
+* NOTAS:
+*    O pacote express deve ser instalado na pasta em que o programa será executado.
+*    $ npm install express   
+*/</span>
+    
+    <span class="hljs-comment">/**Exemplo uso do módulo express
+     * 
+    */</span>
+    <span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">"express"</span>);
+    <span class="hljs-keyword">const</span> app = express();
+
+    <span class="hljs-comment">/**Exemplo de rota da pasta raiz.
+     *  Chamada a este método:http://localhost:8080
+    */</span>    
+    app.get(<span class="hljs-string">"/"</span>,
+        <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+            res.send(<span class="hljs-string">"Seja bem-vindo ao meu app!"</span>);
+        }
+    );
+
+    <span class="hljs-comment">/**Exemplo de rota sem parâmetros
+     *  Chamada a este método:http://localhost:8080/sobre
+    */</span>
+    app.get(<span class="hljs-string">"/sobre"</span>,
+        <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+            res.send(<span class="hljs-string">"Este é um exemplo de uso do módulo express do nodejs!"</span>);
+        }
+    );
+
+    <span class="hljs-comment">/**Exemplo de rotas com parâmetros enviados pelo usuário.
+     * Chamada a este método: http://localhost:8080/ola/Paulo/programador
+    */</span>
+    app.get(<span class="hljs-string">"/ola/:nome/:profissao"</span>,
+        <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+            
+            <span class="hljs-keyword">var</span> resposta =
+                <span class="hljs-string">'&lt;ol&gt;'</span> +
+                    <span class="hljs-string">'&lt;li&gt;'</span> +
+                        <span class="hljs-string">"Olá "</span> + req.params.nome + <span class="hljs-string">", tudo bem com você?"</span>+
+                    <span class="hljs-string">'&lt;/li&gt;'</span> +
+                    <span class="hljs-string">'&lt;li&gt;'</span> +
+                        <span class="hljs-string">"Sua profissão é: "</span> + req.params.profissao + <span class="hljs-string">" ? "</span>
+                    <span class="hljs-string">'&lt;/li&gt;'</span> +
+                <span class="hljs-string">'&lt;/ol&gt;'</span>
+            res.send(resposta);
+        }
+    );
+
+
+    <span class="hljs-comment">/**
+     * Exemplo de uso da variável de ambiente __dirname e do método express().sendFile(). 
+    */</span>
+    app.get(<span class="hljs-string">"/blog.pssp.app.br/exemplos/test_express"</span>,
+        <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+            <span class="hljs-comment">//res.send(__dirname)</span>
+            res.sendFile(__dirname+<span class="hljs-string">"/test_express.html"</span>);
+        }
+    );
+
+    <span class="hljs-comment">// main - obs: O app.listen(port) deve ser a última linha do programa principal.</span>
+    app.listen(<span class="hljs-number">8080</span>,
+        <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Servidor rodando na url http://localhost:8080'</span>);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Pasta raiz:'</span> + __dirname )            
+        }
+    );
+
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong><a href="https://sequelize.org/master/">Exemplo de acesso a dados usando sequelize</a></strong></p>
+<ol>
+<li>???</li>
+</ol>
+</li>
+</ol>
+<h2 id="referências">REFERÊNCIAS</h2>
+<ol>
+<li><a href="https://www.w3schools.com/nodejs/nodejs_http.asp">Node.js HTTP Module</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-web-server-in-node-js-with-the-http-module">how-to-create-a-web-server-in-node-js-with-the-http-module</a></li>
+<li><a href="https://www.w3schools.com/nodejs/nodejs_modules.asp">nodejs_modules.asp</a></li>
+<li>.</li>
+</ol>
+<h2 id="histórico">HISTÓRICO</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever objetivos</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever os exemplos de uso.
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Servidor web para imprimir alo mundo.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Como criar e usar módulos em nodejs.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Como usar o módulo express do nodejs</li>
+</ul>
+</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Estudar a opção que permite alterar o programa nodejs sem tira-lo do ar.
+<ul>
+<li>O programa nodemon reinicia o nodejs toda vês que se grava o arquivo caso o mesmo foi alterado.</li>
+<li>Não uso porque o debug não funciona.</li>
+</ul>
+</li>
+</ul>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

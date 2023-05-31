@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Como registrar biblioteca compartilhada no Linux para que o Lazarus reconhe&ccedil;a&period; &lt;a href&equals;&quot;register&lowbar;lib&lowbar;so&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;  &#x279a; &lt;&sol;a&gt;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <!-- markdownlint-disable-next-line -->
+<h4 id="como-registrar-biblioteca-compartilhada-no-linux-para-que-o-lazarus-reconheça----">Como registrar biblioteca compartilhada no Linux para que o Lazarus reconheça. <a href="register_lib_so.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h4>
+<ol>
+<li>
+<p>As bibliotecas normalmente são instaladas usando o gerenciador de pacotes de sua distribuição, porém as biblioteca que criamos ainda não tem um gerenciador de pacotes e por isso é necessário registra-las no Linux na pasta <em>/usr/lib</em> para que o <em>IDE Lazarus</em> reconheça em seus projetos.</p>
+</li>
+<li>
+<p>Além de está na pasta <em>/usr/lib</em>, precisa também que o modo de acesso seja alterado da seguinte forma:</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># O dono, o grupo e outros usuários da LibName podem executar, gravar e ler</span>
+   sudo chmod ugo+xwr LibName
+
+   <span class="hljs-comment"># O grupo e outros usuários da LibName não podem gravar</span>
+   sudo chmod go-w LibName
+
+</code></pre>
+</li>
+<li>
+<p>Para copiar a <em>LibName</em> para a pasta <em>/usr/lib</em> é necessário ter direitos de usuário <em>root</em>.</p>
+<ol>
+<li><strong>EXEMPLO</strong>:
+<ol>
+<li>
+<p>Suponha que ser queira registrar a biblioteca <em>~/exemplos/libwebview.so</em> da pasta <em>~/exemplos</em>:</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># Move-se para pasta onde a lib está </span>
+   <span class="hljs-built_in">cd</span> ~/exemplos
+
+   <span class="hljs-comment"># copia a biblioteca para a pasta /usr/lib</span>
+   sudo cp ./libwebview.so /usr/lib
+
+   <span class="hljs-comment"># Altera o modo de acesso da lib /usr/lib/libwebview.so.</span>
+      <span class="hljs-comment"># O dono, o grupo e outros usuários da LibName podem executar, gravar e ler</span>
+      sudo chmod ugo+xwr /usr/lib/libwebview.so
+
+      <span class="hljs-comment"># O grupo e outros usuários da LibName não podem gravar</span>
+      sudo chmod go-w /usr/lib/libwebview.so
+
+  
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Programa para registro automático de uma biblioteca:</p>
+<ol>
+<li>
+<p>O programa <a href="./registerlib.sh">registerlib.sh</a> recebe o <em>path/namelib.so</em> a ser registrada:</p>
+<pre><code class="hljs language-bash">  
+   <span class="hljs-comment">#!/bin/bash</span>
+   <span class="hljs-comment"># Registro de biblioteca no Linux.</span>
+   <span class="hljs-comment"># Exemplo de uso: </span>
+      <span class="hljs-comment"># $ ./registerlib.sh lib.so</span>
+
+   <span class="hljs-comment"># Variáveis globais</span>
+   result_copyToUsrLib=<span class="hljs-string">""</span>
+
+   <span class="hljs-comment"># Função copia para a pasta /usr/lib</span>
+   <span class="hljs-function"><span class="hljs-title">copyToUsrLib</span></span>() {
+      <span class="hljs-comment"># testa se o arquivo existe.</span>
+      <span class="hljs-keyword">if</span> [ -f <span class="hljs-string">"/usr/lib/<span class="hljs-variable">$LibName</span>"</span> ]; <span class="hljs-keyword">then</span>
+         <span class="hljs-built_in">read</span> -p <span class="hljs-string">'Arquivo /usr/lib/$LibName já existe. Apaga o arquivo /usr/lib/$LibName ? s/n '</span> result_copyToUsrLib
+      <span class="hljs-keyword">else</span>
+         result_copyToUsrLib=<span class="hljs-string">"s"</span>
+      <span class="hljs-keyword">fi</span>
+
+      <span class="hljs-comment"># Se $result_copyToUsrLib for diferente de s então retorna um 1 indicando um erro</span>
+      <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$result_copyToUsrLib</span> != <span class="hljs-string">"s"</span> ]; <span class="hljs-keyword">then</span>
+         <span class="hljs-built_in">return</span> 1 <span class="hljs-comment">#=false</span>
+      <span class="hljs-keyword">fi</span>
+
+      <span class="hljs-comment"># copia a biblioteca para a pasta /usr/lib</span>
+      sudo cp -p <span class="hljs-string">"<span class="hljs-variable">$LibName</span>"</span> /usr/lib
+
+      <span class="hljs-comment"># Se não houver erro então altera o modo de acesso da lib /usr/lib/libwebview.so.</span>
+      <span class="hljs-keyword">if</span> [ $? -eq 0 ]; <span class="hljs-keyword">then</span>
+         <span class="hljs-comment"># O dono, o grupo e outros usuários da LibName podem executar, gravar e ler</span>
+         sudo chmod ugo+xwr <span class="hljs-string">"/usr/lib/<span class="hljs-variable">$LibName</span>"</span>
+
+         <span class="hljs-comment"># O grupo e outros usuários da LibName não podem gravar</span>
+         sudo chmod go-w <span class="hljs-string">"/usr/lib/<span class="hljs-variable">$LibName</span>"</span>
+
+         <span class="hljs-built_in">echo</span> <span class="hljs-string">"Trocado modo de acesso do arquivo /usr/lib/<span class="hljs-variable">$LibName</span>"</span>
+      <span class="hljs-keyword">fi</span>
+   }
+
+   <span class="hljs-comment"># main</span>
+   LibName=<span class="hljs-string">"<span class="hljs-variable">$1</span>"</span>
+
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">" Lib a ser registrada: <span class="hljs-variable">$LibName</span>"</span>
+
+   <span class="hljs-comment"># Se a lib passado por "$1" não for informada então sai com erro 1 </span>
+   <span class="hljs-keyword">if</span> [ -z <span class="hljs-variable">$LibName</span> ]; <span class="hljs-keyword">then</span>
+      <span class="hljs-built_in">echo</span> <span class="hljs-string">"O parâmetro deve ser o nome completo da biblioteca a ser registrada!"</span>
+      <span class="hljs-built_in">echo</span> <span class="hljs-string">"Exemplo: /registrlib.sh ./lib.so "</span>
+      <span class="hljs-built_in">exit</span> 1
+   <span class="hljs-keyword">fi</span>
+
+   <span class="hljs-comment"># Se a lib passado por "$1" existir então faz a cópia</span>
+   <span class="hljs-keyword">if</span> [ -f <span class="hljs-string">"<span class="hljs-variable">$LibName</span>"</span> ]; <span class="hljs-keyword">then</span>
+      <span class="hljs-built_in">echo</span> Registrando arquivo <span class="hljs-string">"<span class="hljs-variable">$LibName</span>"</span>
+      copyToUsrLib
+   <span class="hljs-keyword">else</span>
+      <span class="hljs-built_in">echo</span> o arquivo <span class="hljs-string">"<span class="hljs-variable">$LibName</span> não existe."</span>
+      result_copyToUsrLib=<span class="hljs-string">"n"</span>
+   <span class="hljs-keyword">fi</span>
+
+   <span class="hljs-comment"># Retorna 0 se a lib foi registrada e 1 se fracasso;</span>
+   <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$result_copyToUsrLib</span> == <span class="hljs-string">"s"</span> ]; <span class="hljs-keyword">then</span>
+      <span class="hljs-built_in">echo</span> <span class="hljs-string">"A lib <span class="hljs-variable">$LibName</span> foi registrada"</span>    
+      <span class="hljs-built_in">exit</span> 0 
+   <span class="hljs-keyword">else</span>
+      <span class="hljs-built_in">echo</span> <span class="hljs-string">"A lib <span class="hljs-variable">$LibName</span> não foi registrada"</span>
+      <span class="hljs-built_in">exit</span> 1 
+   <span class="hljs-keyword">fi</span>
+   
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências</strong></p>
+<ol>
+<li><a href="https://packaging.ubuntu.com/pt-br/html/libraries.html#:~:text=Bibliotecas%20compartilhadas%20s%C3%A3o%20c%C3%B3digos%20compilados,de%20fun%C3%A7%C3%B5es%2C%20classes%20e%20vari%C3%A1veis.">Bibliotecas compartilhadas</a></li>
+<li><a href="https://www.netfort.gr.jp/~dancer/column/libpkg-guide/libpkg-guide.html">Debian Library Packaging guide</a></li>
+</ol>
+</li>
+</ol>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

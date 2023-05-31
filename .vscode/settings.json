@@ -1,0 +1,11 @@
+{
+    "cSpell.words": [
+        "autocrlf",
+        "fpcsrc",
+        "safecrlf"
+    ],
+    "markdown.styles": [
+        "inc/linksCSS.inc"
+    ],
+    "copyMarkdownAsHtml.langPrefix": "pt-br"
+}

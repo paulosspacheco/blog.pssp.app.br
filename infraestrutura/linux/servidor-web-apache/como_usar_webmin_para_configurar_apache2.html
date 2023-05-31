@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Como usar Webmin para configurar apache2 &lt;a href&equals;&quot;como&lowbar;usar&lowbar;webmin&lowbar;para&lowbar;configurar&lowbar;apache2&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;  &#x1fa9f; &lt;&sol;a&gt;</title>
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h4 id="como-usar-webmin-para-configurar-apache2----">Como usar Webmin para configurar apache2 <a href="como_usar_webmin_para_configurar_apache2.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h4>
+<ol>
+<li>
+<p><strong>Objetivo do webmin</strong>.</p>
+<ol>
+<li>O Webmin é uma ferramenta de administração de sistema baseada na web para servidores do tipo Unix.</li>
+</ol>
+</li>
+<li>
+<p><strong>Como instalar</strong>?</p>
+<ol>
+<li>
+<p>A maneira mais simples de obter o Webmin é usar o script <a href="https://github.com/webmin/webmin/blob/master/setup-repos.sh">setup-repos.sh</a> para configurar o repositório no Debian ou seus derivados. Isso pode ser feito executando os comandos abaixo:</p>
+<pre><code class="hljs language-sh">   <span class="hljs-comment"># Baixa o script setup-repos.sh </span>
+   curl -o setup-repos.sh https://raw.githubusercontent.com/webmin/webmin/master/setup-repos.sh
+
+   <span class="hljs-comment"># Executa o script setup_repos.sh</span>
+   sudo sh setup-repos.sh  
+   
+   <span class="hljs-comment"># Instala o webmim do repositório instalado. </span>
+   sudo apt-get install webmin
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Como executar a interface gráfica webmim</strong>?</p>
+<ol>
+<li>Digite no browser o link: <em><a href="https://localhost:10000">https://localhost:10000</a></em>;</li>
+</ol>
+</li>
+<li>
+<p><strong>Como visualizar os sites existentes no servidor apache2</strong>?</p>
+<ol>
+<li>Digite no browser o link: <em><a href="https://localhost:10000/apache/?xnavigation=1">https://localhost:10000/apache/?xnavigation=1</a></em>;</li>
+</ol>
+</li>
+<li>
+<p><strong>Como criar um novo site</strong>?</p>
+<ol>
+<li>Execute as seguintes ações:
+<ol>
+<li>Com direitos de root, crie a pasta do site dentro da pasta <em>/var/www</em>;</li>
+<li>Entrar na opção <em>Servidor Web Apache2</em>. Digite o link: <em><a href="https://localhost:10000/apache/?xnavigation=1">https://localhost:10000/apache/?xnavigation=1</a></em>;</li>
+<li>Selecionar a guia <em>Create virtual host</em>;</li>
+<li>Informar a porta que o site deve escutar;</li>
+<li>Selecionar a pasta raiz do site;
+<ol>
+<li><strong>Nota</strong>:
+<ol>
+<li>Não adianta tentar configurar o site em pasta fora da pasta <em>/var/www</em> que não vai funcionar.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Informar o nome do site no campo <em>Server Name</em>.</li>
+<li>Pressione o botão <em>Create Now</em>.</li>
+<li>Selecione o site criado, em seguida pressione no botão <em>Edit Directives</em>;</li>
+<li>Na opção edite diretivas, altere a linha que contem as palavras <em>Options None</em> para <em>Options Indexes FollowSymLinks</em></li>
+<li>Abaixo da diretiva options adicione uma linha e digite a diretiva: <em>AllowOverride None</em>;</li>
+<li>Pressione o botão <em>Save</em> e retorne a página anterior;</li>
+<li>Próximo passo é <em>associar o ip da máquina local</em> ao nome do site.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Como associar o site criado ao ip local onde o apache2 está escutando</strong>?</p>
+<ol>
+<li>Execute as seguintes ações:
+<ol>
+<li>Selecionar o link <em><a href="https://localhost:10000/net/list_hosts.cgi?xnavigation=1">https://localhost:10000/net/list_hosts.cgi?xnavigation=1</a></em>;</li>
+<li>Selecionar a guia <em>Host Addresses</em>;</li>
+<li>Pressionar o botão <em>Add a mew host Addresses</em> e digite o ip e o nome do site (<em>Server Name</em>) informado no passo 5</li>
+<li>Pressionar o botão <em>Create</em></li>
+<li>Voltar ao link anterior;</li>
+<li>Pressionar o botão <em>Apply Configuration</em>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Após criar o novo site e associar ao ip local é necessário reiniciar o servidor apache2</strong>:</p>
+<pre><code class="hljs language-sh">
+   sudo systemctl reload apache2 
+
+</code></pre>
+</li>
+</ol>
+
+        
+        
+    </body>
+    </html>

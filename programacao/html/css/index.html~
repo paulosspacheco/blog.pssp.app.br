@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-br">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+  <title>Minhas anotações que fiz ao estudar programação da linguagem css</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="../../../css/responsivo01.css" title="Estilo responsivo principal" type="text/css" rel="stylesheet">
+
+  <link href="../../../css/treeview_xhtml.css" title="Implementação de tree view usando css" type="text/css" rel="stylesheet"> 
+    
+  <script type="application/x-javascript" src="../../../js/generic.js"></script>
+
+  <meta name="author" content="paulosspacheco">
+
+  <meta name="description" content="Um código html é composto de 3 linguagens quais sejam: HTML, css e javascript">
+
+  <meta name="keywords" content="css,html,javascript">
+
+</head>
+
+<body>
+  
+  <!-- Barra do logomarca e login  -->
+  <div class="row">
+    <h3>
+      <div class="col-3"> Bogger PauloSSPacheco </div>
+    </h3>
+  </div>
+  <!-- Menu de opções -->
+  <div class="topnav" id="myTopnav"> &gt;
+
+	
+
+
+
+
+<script type="application/x-javascript" src="../../../menu/index.js"> </script>
+    
+  </div>
+  <div class="row">
+    
+    <!-- Índice: class="col-3 col-s-3 menu  -->
+    <div class="col-3 col-s-3 menu">
+      <ul>
+        <li>
+          <h3> Índice </h3>
+        </li>
+      </ul>
+      <ol>
+        
+
+        <li><b><a title="Anotações de tudo que aprendi de folha de estilo css." href="#objetivo">Objetivo</a>&nbsp;</b></li>
+        <li><a href="#O_que_e_CSS">O que é CSS</a>. </li>
+        <li><a href="#%20SintaxeCSS">Sintaxe CSS</a></li>
+        <li><a href="#AtributosGlobais">Atributos globais</a></li>
+        <li><a href="https://www.w3schools.com/css/css_howto.asp" target="_blank">Como  adicionar CSS</a></li>
+        <li><a href="https://www.w3schools.com/css/css_colors.asp" target="_blank">Cores CSS</a></li>
+        <li><a href="#SeletoresCC">Seletores CSS.</a></li>
+        <li> <a href="#SeletoresSimple" title="Selecione os elementos com base no nome, id e classe.">Seletores Simples</a></li>
+        
+        <li> <span class="rootTree"> </span>   <a href="#SeletoresSimple" title="Selecione os elementos com base no nome, id e classe.">Seletores Simples</a>
+          <ol class="children">
+            <li><a href="#SeletorElemento"> Seletor de elemento </a></li>
+            <li><a href="#SeletorID"> Seletor ID</a></li>
+            <li><a href="#SeletorClasse"> Seletor de classe</a></li>
+            <li><a href="#SeletoresAgrupamento">O seletores de agrupamento CSS:</a></li>
+            <li><a href="#SeletorUniversal"> Seletor universal (*)</a></li>
+          </ol>
+        </li>
+        <li><span class="rootTree"> </span> <a href="#SelCombinadores">Seletor combinadores</a>        
+          <ol class="children">
+            <li><a href="#SeletorDescendente">Seletor descendente (espaço)</a></li>
+            <li><a href="#SeletorFilho">Seletor Filho (&gt;)</a></li>
+            <li><a href="#SeletorIrmaoAdjacente">Seletor Irmão Adjacente (+)</a></li>
+            <li>&gt;<a href="#SeletorIrmaoGeral">Seletor irmão geral (~)</a><br>        </li>
+          </ol>
+        </li>
+
+        <li> <span class="rootTree"> </span> <a href="#SeletorPseudoClasses">Seletores pseudo-classe</a>
+          <ol class="children">
+            <li><a href="#SintaxePseudoClasse">Sintaxe da pseudo classe.</a></li>
+            <li><a href="#%20PseudoClassesAncora">Pseudo classe âncora.</a></li>
+            <li><a href="#PseudoClassesClassesCSS">Pseudo classes e classes CSS</a></li>
+          </ol>
+        </li>
+        <li><span class="rootTree"> </span> <a href="https://www.w3schools.com/howto/howto_js_treeview.asp" target="_blank">Tree View</a>
+          <ol class="children">
+            <li><a href="http://dynamicdrive.com/dynamicindex1/treeview/index.htm" target="_blank">JQuery</a></li>
+          </ol>
+        </li>
+
+        <li><a href="https://www.w3schools.com/css/css_website_layout.asp" target="_blank">CSS  Website Layout </a></li>
+        <li><a href="https://www.w3schools.com/css/css_navbar.asp" target="_blank">Barra de navegação</a></li>
+
+        <li> <span class="rootTree"> </span><a href="https://www.w3schools.com/bootstrap/bootstrap_ref_css_forms.asp" target="_blank">Formulários</a>
+          <ol class="children">
+            <li><a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_modal.asp" target="_blank">Modal</a> </li>
+            
+            <li><a href="https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_carousel2&amp;stacked=h" target="_blank">Lista de imagens</a></li>
+            <li><a href="https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_comp_nav-toggle&amp;stacked=h" target="_blank"> Tabs</a></li>
+            <li><a href="https://www.w3schools.com/howto/howto_js_vertical_tabs.asp" target="_blank">Tab vertical</a> </li>
+          </ol>
+        </li>
+        <li><a href="https://www.w3schools.com/css/css3_mediaqueries.asp" target="_blank">Consultas  de mídia CSS</a></li>
+        <li><a href="https://www.w3schools.com/cssref/pr_tab_table-layout.asp" target="_blank">Propriedade de layout de tabela CSS</a></li>
+
+        <li> <span class="rootTree"> </span><a href="https://www.w3schools.com/cssref/default.asp">Referência css</a>
+          <ol class="children">
+            <li><a href="https://www.w3schools.com/cssref/css_selectors.asp" target="_blank">Seletores</a></li>
+          </ol>
+        </li>
+
+      </ol>
+      <br>
+      <ul>
+        <ol>
+        </ol>
+      </ul>
+      <br>
+      <ol>
+      </ol>
+      <ul>
+        <li><a href="#Referencias">Referências</a>.</li>
+      </ul>
+    </div>
+        
+    <script type="application/x-javascript" src="../../../js/treeview_xhtml.js"></script>
+    
+    <!-- Conteúdo da página -->
+    <div class="col-6 col-s-9">
+      <h3>
+        <script>
+          document.write(document.title);
+        </script>
+      </h3>
+      <ol>
+
+        <li><b><a id="objetivo"> Objetivo.</a></b></li>
+          <ol>
+            <li>Objetivo deste documento é registrar minhas anotações de estudo da linguagem css.</li>
+            
+          </ol>
+        
+
+        <li><b><a id="O_que_e_CSS">O que é CSS?</a></b></li>
+        <ol>
+          <li><b>Cascading Style Sheets (CSS)</b> é um mecanismo simples para
+            adicionar estilo (por exemplo, fontes, cores, espaçamento) a
+            documentos da web e a tradução para o português : folhas de estilo
+            em cascata.</li>
+          <li>Com CSS modificamos o comportamento padrão dos tags XHTML,
+            mudando a aparência das páginas. </li>
+          <li>CSS significa C ascading S tyle S heets.</li>
+          <li>CSS descreve como os elementos HTML devem ser exibidos na tela,
+            no papel ou em outra mídia.</li>
+          <li>&nbsp;CSS economiza muito trabalho . Ele pode controlar o layout
+            de várias páginas da web de uma só vez.</li>
+          <li>Folhas de estilo externas são armazenadas em arquivos CSS </li>
+          <li><a href="https://www.w3schools.com/css/default.asp" target="_blank">Documentação
+              oficial do código css..</a>.</li>
+          <li><br>
+          </li>
+        </ol>
+        <a id=" SintaxeCSS"> </a>
+        <li><b><a id=" SintaxeCSS">Sintaxe CSS.</a></b></li>
+        <ol>
+          <li>Um conjunto de regras CSS consiste em um seletor e um bloco de
+            declaração:.</li>
+          <ol>
+            <li> <img src="https://www.w3schools.com/css/selector.gif" alt="Seletor CSS"></li>
+            <li>.</li>
+          </ol>
+          <li>O seletor aponta para o elemento HTML que você deseja estilizar.
+          </li>
+          <li>O bloco de declaração contém uma ou mais declarações separadas
+            por ponto e vírgula. </li>
+          <li>Cada declaração inclui um nome de propriedade CSS e um valor,
+            separados por dois pontos. </li>
+          <li>Várias declarações CSS são separadas por ponto-e-vírgula e os
+            blocos de declaração são cercados por chaves. </li>
+          <li><br>
+          </li>
+        </ol>
+        <li><b><a id="AtributosGlobais">Atributos globais.</a></b></li>
+        <ol>
+          <li>Atributos globais são atributos comuns a todos os elementos
+            HTML; eles podem ser usados ​​em todos os elementos, embora possam
+            não ter efeito em alguns elementos. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes" target="_blank">Veja
+              mais...&nbsp;</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes" target="_blank"><br>
+            </a></li>
+        </ol>
+        <li><b><a id="SeletoresCC">Seletores CSS.</a></b></li>
+        <ol>
+          <li>Os seletores CSS são usados ​​para "encontrar" (ou selecionar)
+            os elementos HTML que você deseja estilizar e temos 5 tipos de
+            seletores:</li>
+          <ol>
+            <li><b><a id="SeletoresSimple">Seletores Simple</a>s </b>são
+              divididos em 3 (Seleciona elementos baseado pelo nome, ID e
+              classe).</li>
+            <ol>
+              <li>O <b><a id="SeletorElemento">seletor de elemento </a>s</b>eleciona
+                elementos HTML com base no nome do elemento.</li>
+              <ol>
+                <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_syntax_element" target="_blank">Exemplo: </a></li>
+                <ol>
+                  <li> p {text-align: center; color:red;}.</li>
+                  <li>Toda a tag &lt;p&gt; &lt;/p&gt; será alinhada no centro
+                    e terá a cor do texto vermelho;</li>
+                  <li>
+                    <pre class="pre1" style="width: 504px; height: 243px;">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;style&gt;
+        p {
+            text-align: center;
+            color: red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;p&gt;Every paragraph will be affected by the style.&lt;/p&gt;
+    &lt;p id="para1"&gt;Me too!&lt;/p&gt;
+    &lt;p&gt;And me!&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;                    
+                    
+                    
+                    
+                    </pre>
+                  </li>
+                </ol>
+              </ol>
+              <li><a id="SeletorID">O <b>seletor de id</b> CSS. </a></li>
+              <ol>
+                <li>O seletor de id usa o atributo id de um elemento HTML para
+                  selecionar um elemento específico. <b>O id de um </b><b>elemento
+                    é único dentro de uma página</b>, então o seletor de id é
+                  usado para selecionar um elemento único! Para selecionar um
+                  elemento com um id específico, escreva um caractere hash <b>(#)</b>,
+                  seguido pelo id do elemento. </li>
+                <ol>
+                  <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_syntax_id" target="_blank">Exemplo 1:</a></li>
+                  <ol>
+                    <li>#id1 { text-align: center; color: red;} </li>
+                    <li>Toda tag que tiver o id = "id1" será linhada no centro
+                      e a cor do texto será vermelha.</li>
+                    <li>
+                      <pre class="pre1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;style&gt;
+        #id1 {
+            text-align: center;
+            color: red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;p id="id1"&gt;Hello World!&lt;/p&gt;
+    &lt;p&gt;This paragraph is not affected by the style.&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;                    
+                    
+                    
+                    </pre>
+                    </li>
+                  </ol>
+                </ol>
+              </ol>
+              <li><a id="SeletorClasse">O <b>seletor de classe</b> CSS. </a></li>
+              <ol>
+                <li>O seletor de classe seleciona elementos HTML com um
+                  atributo de classe específico. Para selecionar elementos com
+                  uma classe específica, escreva um ponto (.), seguido do nome
+                  da classe. </li>
+                <ol>
+                  <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_syntax_class" target="_blank">Exemplo 1:</a></li>
+                  <ol>
+                    <li>&nbsp;.center { text-align: center; color: red; } </li>
+                    <li>Toda tag que tiver&nbsp; o atributo class = "center"
+                      será alinhado no centro e a cor do texto será vermelho.</li>
+                    <li>
+                      <pre class="pre1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;style&gt;
+        .center {
+            text-align: center;
+            color: red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1 class="center"&gt;Red and center-aligned heading&lt;/h1&gt;
+    &lt;p class="center"&gt;Red and center-aligned paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;                      
+                      
+                      
+                      </pre>
+                    </li>
+                  </ol>
+                  <li> Exemplo 2:</li>
+                  <ol>
+                    <li>Neste exemplo, apenas os elementos &lt;p&gt; com class
+                      = "center" serão alinhados ao centro. </li>
+                    <li>
+                      <pre class="pre1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;style&gt;
+        p.center {
+            text-align: center;
+            color: red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1 class="center"&gt;This heading will not be affected&lt;/h1&gt;
+    &lt;p class="center"&gt;This paragraph will be red and center-aligned.&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;                      
+                      
+                      
+                      </pre>
+                    </li>
+                  </ol>
+                </ol>
+              </ol>
+              <li><a id="SeletoresAgrupamento">O <b>seletor de agrupamento</b>
+                  CSS</a>:</li>
+              <ol>
+                <ol>
+                  <br>
+                </ol>
+                <li>O seletor de agrupamento permite definir propriedades
+                  comuns de várias tags separadas por virgula..</li>
+                <ol>
+                  <ol>
+                    <br>
+                  </ol>
+                  <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grouping" target="_blank">Exemplo:</a></li>
+                  <ol>
+                    <li>
+                      <pre class="pre1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;style&gt;
+        h1,
+        h2,
+        p {
+            text-align: center;
+            color: red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;h2&gt;Smaller heading!&lt;/h2&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;            
+                      
+                      
+                      </pre>
+                    </li>
+                    <li> .</li>
+                  </ol>
+                  <li>.</li>
+                </ol>
+                <li>.</li>
+              </ol>
+              <li><a id="SeletorUniversal">O <b>seletor universal</b> CSS.</a></li>
+              <ol>
+                <li>O seletor universal (*) seleciona todos os elementos HTML
+                  na página. </li>
+                <ol>
+                  <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_syntax_universal" target="_blank">Exemplo:</a></li>
+                  <ol>
+                    <li>* { text-align: center; color: blue; }</li>
+                    <li>O * informa que todos os textos do documento serão
+                      alinhados no&nbsp; centro e terá cor azul.</li>
+                    <li>
+                      <pre class="pre1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;style&gt;
+        * {
+            text-align: center;
+            color: blue;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Hello world!&lt;/h1&gt;
+
+    &lt;p&gt;Every element on the page will be affected by the style.&lt;/p&gt;
+    &lt;p id="para1"&gt;Me too!&lt;/p&gt;
+    &lt;p&gt;And me!&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+</pre>
+                    </li>
+                  </ol>
+                </ol>
+              </ol>
+              <li>.</li>
+              <li>.</li>
+            </ol>
+            <li><b><a id="SelCombinadores">Seletores combinadores.</a></b></li>
+            <ol>
+              <li>Um seletor CSS pode conter mais de um seletor simples. <br>
+                Entre os seletores simples, podemos incluir um combinador. <br>
+                Existem quatro combinadores diferentes em CSS:</li>
+              <ol>
+                <li><b><a id="SeletorDescendente">Seletor descendente
+                      (espaço);</a></b></li>
+                <ol>
+                  <li>O seletor descendente corresponde a todos os elementos
+                    que são descendentes de um elemento especificado. <br>
+                    O exemplo a seguir seleciona todos os elementos dentro dos
+                    elemento &lt;p&gt; e dentro dos elementos &lt;div&gt; </li>
+                  <ol>
+                    <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_sel_element_element" target="_blank">Exemplo:</a></li>
+                    <ol>
+                      <li>
+                        <pre class="pre1">&lt;!DOCTYPE html	&gt;
+&lt;html	&gt;
+
+&lt;head	&gt;
+    &lt;style	&gt;
+        div p {
+            background-color: yellow;
+        }
+    &lt;/style	&gt;
+&lt;/head	&gt;
+
+&lt;body	&gt;
+
+    &lt;h2	&gt;Descendant Selector&lt;/h2	&gt;
+    &lt;p	&gt;The descendant selector matches all elements that are descendants of a specified element.&lt;/p	&gt;
+
+    &lt;div	&gt;
+        &lt;p	&gt;Paragraph 1 in the div.&lt;/p	&gt;
+        &lt;p	&gt;Paragraph 2 in the div.&lt;/p	&gt;
+        &lt;section	&gt;
+            &lt;p	&gt;Paragraph 3 in the div.&lt;/p	&gt;
+        &lt;/section	&gt;
+    &lt;/div	&gt;
+
+    &lt;p	&gt;Paragraph 4. Not in a div.&lt;/p	&gt;
+    &lt;p	&gt;Paragraph 5. Not in a div.&lt;/p	&gt;
+
+&lt;/body	&gt;
+
+&lt;/html	&gt;
+
+</pre>
+                      </li>
+                    </ol>
+                  </ol>
+                </ol>
+                <li><a id="SeletorFilho"><b>Seletor filho </b>(&gt;);</a></li>
+                <ol>
+                  <li>O seletor filho seleciona todos os elementos que são
+                    filhos de um elemento especificado. <br>
+                    O exemplo a seguir seleciona todos os elementos filhos de
+                    um elemento:</li>
+                  <ol>
+                    <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_sel_element_gt" target="_blank">Exemplo</a></li>
+                    <ol>
+                      <li>
+                        <pre class="pre1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;style&gt;
+        div&gt;p {
+            background-color: yellow;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h2&gt;Child Selector&lt;/h2&gt;
+    &lt;p&gt;The child selector (&gt;) selects all elements that are the children of a specified element.&lt;/p&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;Paragraph 1 in the div.&lt;/p&gt;
+        &lt;p&gt;Paragraph 2 in the div.&lt;/p&gt;
+        &lt;section&gt;
+            &lt;p&gt;Paragraph 3 in the div.&lt;/p&gt;
+        &lt;/section&gt; &lt;!-- not Child but Descendant --&gt;
+        &lt;p&gt;Paragraph 4 in the div.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;Paragraph 5. Not in a div.&lt;/p&gt;
+    &lt;p&gt;Paragraph 6. Not in a div.&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt; 
+</pre>
+                      </li>
+                    </ol>
+                  </ol>
+                </ol>
+                <li><a id="SeletorIrmaoAdjacente"><b>Seletor irmão adjacente</b>
+                    (+); </a></li>
+                <ol>
+                  <li>O seletor de irmãos adjacentes seleciona todos os
+                    elementos que são irmãos adjacentes de um elemento
+                    especificado.<br>
+                    Os elementos irmãos devem ter o mesmo elemento pai e
+                    "adjacente" significa "imediatamente a seguir".<br>
+                    O exemplo a seguir seleciona todos os elementos que são
+                    colocados imediatamente após os elementos div: </li>
+                  <ol>
+                    <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_sel_element_pluss" target="_blank">Exemplo:</a></li>
+                    <ol>
+                      <li>
+                        <pre class="pre1">&lt;!DOCTYPE html &gt;
+&lt;html &gt;
+&lt;head &gt;
+&lt;style &gt;
+div + p {
+  background-color: yellow;
+}
+&lt;/style &gt;
+&lt;/head &gt;
+&lt;body &gt;
+
+&lt;h2 &gt;Adjacent Sibling Selector&lt;/h2 &gt;
+&lt;p &gt;The adjacent sibling selector (+) selects all elements that are the adjacent siblings of a specified element.&lt;/p &gt;
+
+&lt;div &gt;
+  &lt;p &gt;Paragraph 1 in the div.&lt;/p &gt;
+  &lt;p &gt;Paragraph 2 in the div.&lt;/p &gt;
+&lt;/div &gt;
+
+&lt;p &gt;Paragraph 3. Not in a div.&lt;/p &gt;
+&lt;p &gt;Paragraph 4. Not in a div.&lt;/p &gt;
+
+&lt;/body &gt;
+&lt;/html &gt;
+
+
+</pre>
+                      </li>
+                    </ol>
+                  </ol>
+                </ol>
+                <li><a id="SeletorIrmaoGeral"><b>Seletor irmão geral</b> (~) </a></li>
+                <ol>
+                  <li>O seletor irmão geral
+                    
+
+
+
+
+
+
+
+
+
+
+
+<ol>
+                    </ol>
+                  </li>
+                  <li>O sele</li>
+                </ol>
+              </ol>
+              <ol>
+                <ol>
+                  <ol>
+                    <ol>
+                      <ol>
+                        <li>seleciona todos os elementos que são irmãos de um
+                          elemento especificado. O exemplo a seguir seleciona
+                          todos os elementos &lt;p&gt; que são irmãos do<a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_sel_element_tilde" target="_blank">s elementos &lt;div&gt;: </a></li>
+                        <ol>
+                          <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_sel_element_tilde" target="_blank">Exemplo:</a></li>
+                          <ol>
+                            <li>
+                              <pre class="pre1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;style&gt;
+        div~p {
+            background-color: yellow;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h2&gt;General Sibling Selector&lt;/h2&gt;
+    &lt;p&gt;The general sibling selector (~) selects all elements that are siblings of a specified element.&lt;/p&gt;
+
+    &lt;p&gt;Paragraph 1.&lt;/p&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;Paragraph 2.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;Paragraph 3.&lt;/p&gt;
+    &lt;code&gt;Some code.&lt;/code&gt;
+    &lt;p&gt;Paragraph 4.&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;                        
+                        
+                        
+                        </pre>
+                            </li>
+                          </ol>
+                        </ol>
+                      </ol>
+                    </ol>
+                  </ol>
+                </ol>
+              </ol>
+              <li>.</li>
+            </ol>
+            <li><b><a id="SeletorPseudoClasses">Seletor Pseudo classes CSS </a></b><a>Mais
+              </a><b><a><br></a></b></li>
+            <ol>
+              <li>O objetivo da pseudo classe é&nbsp; definir um estado
+                especial de um elemento.&nbsp; <a href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">Veja mais...</a></li>
+              <li><b><a>Sintaxe da pseudo classe:</a></b></li>
+              <ol>
+                <li>
+                  <pre class="pre1">selector:pseudo-class {
+  property: value;
+}
+</pre>
+                </li>
+              </ol>
+              <li><b><a id=" PseudoClassesAncora">Pseudo-classes âncora.</a></b></li>
+              <ol>
+                <li>Os links podem ser exibidos de diferentes maneiras:</li>
+                <ol>
+                  <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_link" target="_blank">Exemplo de
+                      como definir o estilo de um
+                      elemento quando o usuário passa o mouse sobre ele. <br>
+                    </a></li>
+                  <ol>
+                    <li>
+                      <pre class="pre1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;style&gt;
+        /* unvisited link */
+        a:link {
+            color: red;
+        }
+
+        /* visited link */
+        a:visited {
+            color: green;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: hotpink;
+        }
+
+        /* selected link */
+        a:active {
+            color: blue;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h2&gt;CSS Links&lt;/h2&gt;
+    &lt;p&gt;&lt;b&gt;&lt;a href="default.asp" target="_blank"&gt;This is a link&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.&lt;/p&gt;
+    &lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; a:active MUST come after a:hover in the CSS definition in order to be effective.&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+</pre>
+                    </li>
+                    <li>.</li>
+                  </ol>
+                  <li>.</li>
+                </ol>
+                <li>Estilizar links visitados e não visitados de maneira
+                  diferente.</li>
+                <ol>
+                  <li><br>
+                  </li>
+                </ol>
+                <li>Defina o estilo de um elemento quando ele receber o foco..</li>
+                <ol>
+                  <li><br>
+                  </li>
+                  <ol>
+                  </ol>
+                </ol>
+              </ol>
+              <li><b><a id="PseudoClassesClassesCSS">Pseudo classes e classes
+                    CSS </a></b></li>
+              <ol>
+                <li>As pseudo classes podem ser combinadas com classes CSS, no
+                  exemplo a seguir&nbsp; quando você passa o mouse sobre o
+                  link ele muda de cor: </li>
+                <ol>
+                  <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_pseudo-class" target="_blank">Exemplo 1:</a></li>
+                  <ol>
+                    <li>
+                      <pre class="pre1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;style&gt;
+    a.highlight:hover {
+      color: #ff0000;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;h2&gt;Pseudo-classes and CSS Classes&lt;/h2&gt;
+  &lt;p&gt;When you hover over the first link below, it will change color:&lt;/p&gt;
+
+  &lt;p&gt;&lt;a class="highlight" href="css_syntax.asp"&gt;CSS Syntax&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="default.asp"&gt;CSS Tutorial&lt;/a&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+</pre>
+                    </li>
+                    <li>.</li>
+                  </ol>
+                  <li>.</li>
+                </ol>
+                <li>O evento :houver é útil quando precisamos destacar o foco
+                  de um quadro de informação usando a tag &lt;div&gt;</li>
+                <ol>
+                  <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_pseudo-class_hover_div" target="_blank">Exemplo 01:</a></li>
+                  <ol>
+                    <li>
+                      <pre class="pre1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;style&gt;
+    div {
+      background-color: green;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    div:hover {
+      background-color: blue;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;p&gt;Mouse over the div element below to change its background color:&lt;/p&gt;
+
+  &lt;div&gt;Mouse Over Me&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+</pre>
+                    </li>
+                    <li> .</li>
+                  </ol>
+                  <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_pseudo-class_hover_tooltip" target="_blank">Exemplo 02 mostra uma ajuda quando o
+                      mouse passe em cima do texto.</a></li>
+                  <ol>
+                    <li>
+                      <pre class="pre1">&lt;!DOCTYPE html &gt;
+
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;style&gt;
+    p {
+      display: none;
+      background-color: yellow;
+      padding: 20px;
+    }
+
+    div:hover p {
+      display: block;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;div&gt;Passe o mouse sobre mim para mostrar o elemento p
+    &lt;p&gt;Exemplo do evento div:hover &lt;/p&gt;
+  &lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;                        
+                        
+                        
+                        </pre>
+                    </li>
+                  </ol>
+                </ol>
+                <li>O pseudo evento input:focus é util para destacar o curso
+                  do campo que recebe o foco.</li>
+                <ol>
+                  <li><a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_focus" target="_blank">Exemplo:.</a></li>
+                  <ol>
+                    <li>
+                      <pre class="pre1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;style&gt;
+    input:focus {
+      background-color: yellow;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;p&gt;Click inside the text fields to see a yellow background:&lt;/p&gt;
+
+  &lt;form&gt;
+    First name: &lt;input type="text" name="firstname"&gt;&lt;br&gt;
+    Last name: &lt;input type="text" name="lastname"&gt;
+  &lt;/form&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;                        
+
+
+
+</pre> .</li>
+                  </ol>
+                </ol>
+                <li><br>
+                </li>
+                <ol>
+                  <ol>
+                  </ol>
+                </ol>
+                <li><br>
+                </li>
+                <ol>
+                  <ol>
+                  </ol>
+                </ol>
+              </ol>
+              <li><br>
+              </li>
+              <li><br>
+              </li>
+            </ol>
+            <li><br>
+            </li>
+            <ol>
+              <ol>
+                <ol>
+                  <ol>
+                    <ol>
+                      <ol>
+                        <ol>
+                        </ol>
+                      </ol>
+                    </ol>
+                  </ol>
+                  <ol>
+                  </ol>
+                </ol>
+              </ol>
+            </ol>
+          </ol>
+        </ol>
+      </ol>
+      <ol>
+        <ol>
+          <ol>
+            <ol>
+            </ol>
+          </ol>
+          <ol>
+            <ol>
+              <ol>
+              </ol>
+            </ol>
+          </ol>
+        </ol>
+        <ol>
+          <ol>
+            <ol>
+              <ol>
+                <ol>
+                  <ol>
+                  </ol>
+                </ol>
+              </ol>
+              <ol>
+                <ol>
+                  <ol>
+                  </ol>
+                </ol>
+              </ol>
+            </ol>
+          </ol>
+        </ol>
+        <ol>
+          <ol>
+          </ol>
+        </ol>
+        <ol>
+        </ol>
+        <ol>
+        </ol>
+        <ol>
+        </ol>
+        <ol>
+          <ol>
+          </ol>
+        </ol>
+      </ol>
+    </div>
+    <!-- Referências: class="col-3 col-s-12 --> #90BF03&nbsp;
+    SeletorPseudoClasses Sintaxe da pseudo classe:
+    <div class="col-3 col-s-12">
+      <div class="aside">
+        <h2><a id="Referencias">Referências?</a></h2>
+      </div>
+      <div class="aside">
+        <ul>
+          &lt;
+        </ul>
+      </div>
+    </div>
+  </div>
+</body></html>

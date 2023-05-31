@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Como configurar apache2 para executar CGI e FASTCGI  &lt;a href&equals;&quot;como&lowbar;configurar&lowbar;apache2&lowbar;para&lowbar;executar&lowbar;cgi&lowbar;e&lowbar;fastcgi&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;  &#x2b06;&#xfe0f; &lt;&sol;a&gt; &lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <!-- markdownlint-disable-next-line -->
+<h4 id="como-configurar-apache2-para-executar-cgi-e-fastcgi----️--">Como configurar apache2 para executar CGI e FASTCGI  <a href="como_configurar_apache2_para_executar_cgi_e_fastcgi.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a> <span id="topo"><span></h4>
+<ol>
+<li>
+<p><strong>INDEX</strong></p>
+<ol>
+<li><a href="#id_certifiquese">Certifique-se que os arquivos <em>cgi.load</em>,...</a></li>
+<li><a href="#id_habilitar_protocologo">Para habilitar os protocolos <em>cgi</em> e <em>fcgi</em>,...</a></li>
+<li><a href="#id_criar_pastas">Criar pastas <em>cgi</em> e <em>fcgi</em>...</a></li>
+<li><a href="#id_configurar_dono_da_pasta">Configurar pasta <em>/home/cgi_bin/</em> para que o usuário <em>'www-data'</em> seja dono...</a></li>
+<li><a href="#id_configurar_grupo_da_pasta">Configurar pasta <em>/home/cgi_bin/</em> e as subpastas <em>cgi</em> e <em>fcgi</em> para que pertença ao grupo ...</a></li>
+<li><a href="#id_configurar_mode_de_acesso_da_pasta">Configurar o modo de acesso da pasta <em>/home/cgi_bin/</em>...</a></li>
+<li><strong>Criando sites</strong> <em>cgi-bin</em> e <em>fcgi-bin</em>:
+<ol>
+<li><a href="#id_criar_site_cgi-bin">Site cgi-bin para os programas acessados com o protocolo CGI...</a></li>
+<li><a href="#id_criar_site_fcgi-bin">Site fcgi-bin para os programas acessados com o protocolo FastCGI</a></li>
+</ol>
+</li>
+<li><a href="#id_referencias">Referências</a></li>
+</ol>
+</li>
+<li>
+<p><strong>CONTEÚDO</strong></p>
+   <!-- markdownlint-disable-next-line -->
+<ol>
+<li>
+<p><span id="id_certifiquese"><span>Certifique-se que os arquivos <em>cgi.load</em>, <em>cgid.load</em> e <em>cgid.conf</em> estejam na pasta <em>/etc/apache2/mods-available</em>.</p>
+<ol>
+<li><em>Nota:</em>
+<ol>
+<li>Esses arquivos acompanham a instalação do apache.
+<ol>
+<li>
+<p>Conteúdo do arquivo <em>cgi.load</em></p>
+<pre><code class="hljs language-sh">
+   LoadModule cgi_module /usr/lib/apache2/modules/mod_cgi.so
+
+</code></pre>
+</li>
+<li>
+<p>Conteúdo do arquivo <em>cgid.load</em></p>
+<pre><code class="hljs language-sh">
+   LoadModule cgid_module /usr/lib/apache2/modules/mod_cgid.so
+
+</code></pre>
+</li>
+<li>
+<p>Conteúdo do arquivo <em>cgi.conf</em></p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># Socket for cgid communication</span>
+   ScriptSock <span class="hljs-variable">${APACHE_RUN_DIR}</span>/cgisock
+
+   <span class="hljs-comment"># vim: syntax=apache ts=4 sw=4 sts=4 sr noet</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+<!-- markdownlint-disable-next-line -->
+</li>
+<li>
+<p><span id="id_habilitar_protocologo"><span>Para habilitar os protocolos <em>cgi</em> e <em>fcgi</em>, execute os seguintes comandos:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># O comando a seguir cria os links cgid.load e cgid.conf </span>
+   <span class="hljs-comment"># na pasta/etc/apache2/mods-enabled</span>
+   sudo a2enmod cgid
+
+   <span class="hljs-comment">#  Reinicia o Apache2 </span>
+   systemctl restart apache2
+
+</code></pre>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol start="3">
+<li>
+<p><span id="id_criar_pastas"><span>Criar pastas <em>cgi</em> e <em>fcgi</em> dentro da pata <em>/home/cgi_bin/</em>:</p>
+<pre><code class="hljs language-bash">   
+   sudo mkdir -p /home/cgi_bin/{cgi,fcgi}
+
+</code></pre>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+   <!-- markdownlint-disable-next-line -->
+<ol start="4">
+<li>
+<p><span id="id_configurar_dono_da_pasta"><span>Configurar pasta <em>/home/cgi_bin/</em> para que o usuário <em>'www-data'</em> seja dono dela e de suas duas subpastas <em>cgi</em> e <em>fcgi</em>:</p>
+<pre><code class="hljs language-bash">
+   sudo chown  -R www-data /home/cgi_bin/
+
+</code></pre>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+<!-- markdownlint-disable-next-line -->
+<ol start="5">
+<li>
+<p><span id="id_configurar_grupo_da_pasta"><span>Configurar pasta <em>/home/cgi_bin/</em> e as subpastas <em>cgi</em> e <em>fcgi</em> para que pertença ao grupo <em>paulosspacheco</em> com objetivo de gravar arquivos nas pastas <em>cgi</em> e <em>fcgi</em> sem ser preciso o modo root.</p>
+<pre><code class="hljs language-bash">
+   sudo chgrp -R paulosspacheco /home/cgi_bin/
+
+</code></pre>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+<!-- markdownlint-disable-next-line -->
+<ol start="6">
+<li>
+<p><span id="id_configurar_mode_de_acesso_da_pasta"><span>Configurar o modo de acesso da pasta <em>/home/cgi_bin/</em> e das suas subpastas <em>cgi</em> e <em>fcgi</em>  para que o usuário dono <em>www-data</em> e o grupo <em>paulosspacheco</em> possa executar, gravar e ler e <em>outros usuários</em> só possam executar:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Todos os arquivos da pasta e subpastas podem executar, gravar e ler </span>
+   sudo chmod -R ugo+xwr /home/cgi_bin/
+   
+   <span class="hljs-comment"># Todos os arquivos da pasta e subpastas dos outros usuários não podem ler e gravar </span>
+   sudo chmod -R o-wr /home/cgi_bin/         
+
+</code></pre>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+<!-- markdownlint-disable-next-line -->
+<ol start="7">
+<li><strong>Criando sites</strong> <em>cgi-bin</em> e <em>fcgi-bin</em>:</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li><span id="id_criar_site_cgi-bin"><span><strong>Site cgi-bin para os programas acessados com o protocolo CGI</strong>
+<ol>
+<li>
+<p>Com editor de sua preferência, crie o arquivo <em>/etc/apache2/sites-available/cgi-bin.conf</em>;</p>
+</li>
+<li>
+<p>Adicione as configurações abaixo no arquivo <em>/etc/apache2/sites-available/cgi-bin.conf</em>, em seguida salve-o:</p>
+<pre><code class="hljs language-sh">   
+   &lt;VirtualHost *:80&gt;
+   
+      DocumentRoot /home/cgi_bin/cgi
+      ServerName cgi-bin
+      
+      <span class="hljs-comment"># https://httpd.apache.org/docs/2.4/mod/mod_alias.html#scriptalias</span>
+      ScriptAlias <span class="hljs-string">"/cgi-bin/"</span> <span class="hljs-string">"/home/cgi_bin/cgi"</span>
+
+      <span class="hljs-comment"># Esta diretiva especifica um valor padrão para o parâmetro charset do </span>
+      <span class="hljs-comment"># tipo de mídia (o nome de uma codificação de caractere) </span>
+      <span class="hljs-comment"># a ser adicionado a uma resposta se e somente se o tipo de conteúdo </span>
+      <span class="hljs-comment"># da resposta for sh/plainou sh/html.</span>
+      AddDefaultCharset utf-8
+
+      <span class="hljs-comment"># Habilitas as extensões  .cgi .sh .pl para executar script</span>
+      AddHandler cgi-script .cgi .sh .pl
+
+      &lt;Directory /home/cgi_bin/cgi/&gt;
+         Options None
+         Require all granted
+         AllowOverride None
+         Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+         Require all granted
+      &lt;/Directory&gt;
+
+   &lt;/VirtualHost&gt;
+   
+</code></pre>
+</li>
+<li>
+<p>Para que o link <em><a href="http://cgi-bin/testcgi.sh">http://cgi-bin/testcgi.sh</a></em> funcione no Browser, é necessário editar o arquivo <em>/etc/hosts</em> e adicionar abaixo da linha <em>127.0.0.1 localhost</em> a linha <em>127.0.0.1 cgi-bin</em>.</p>
+<ol>
+<li>
+<p>Deve ficar assim:</p>
+<pre><code class="hljs language-sh">
+   127.0.0.1 localhost
+   127.0.0.1 cgi-bin
+
+   127.0.1.1 lnxmint-server
+   
+   <span class="hljs-comment"># The following lines are desirable for IPv6 capable hosts</span>
+   ::1     ip6-localhost ip6-loopback
+   fe00::0 ip6-localnet
+   ff00::0 ip6-mcastprefix
+   ff02::1 ip6-allnodes
+   ff02::2 ip6-allrouters
+      
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Para que o link <em><a href="http://cgi-bin/testcgi.sh">http://cgi-bin/testcgi.sh</a></em> funcione no Browser, é necessário habilitar o site <em>cgi-bin</em> com os  comandos abaixo:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># O comando a seguir cria os links cgid.load e cgid.conf </span>
+   <span class="hljs-comment"># na pasta/etc/apache2/mods-enabled</span>
+   sudo a2ensite cgi-bin.conf
+
+   <span class="hljs-comment">#  Reinicia o Apache2 </span>
+   systemctl restart apache2
+
+</code></pre>
+</li>
+<li>
+<p><strong>Para testar se o protocolo CGI está funcionando, siga os passos de um dos dois exemplos abaixo</strong></p>
+<ol>
+<li><a href="./teste_do_protocolo_cgi_usando_a_linguagem_shell_script.html">Teste do protocolo CGI usando a linguagem shell script</a>;</li>
+<li><a href="./teste_do_protocolo_cgi_usando_a_linguagem_shell_script.html">Teste do protocolo CGI usando a linguagem perl</a></li>
+<li>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+   <!-- markdownlint-disable-next-line -->
+<ol start="2">
+<li><span id="id_criar_site_fcgi-bin"><span><strong>Site fcgi-bin para os programas acessados com o protocolo FastCGI</strong>
+<ol>
+<li>
+<p>Com editor de sua preferência, crie o arquivo <em>/etc/apache2/sites-available/fcgi-bin.conf</em>;</p>
+</li>
+<li>
+<p>Adicione as configurações abaixo no arquivo <em>/etc/apache2/sites-available/fcgi-bin.conf</em>, em seguida salve-o:</p>
+<pre><code class="hljs language-sh">
+   &lt;VirtualHost *:80&gt;
+   
+      DocumentRoot /home/cgi_bin/fcgi
+      ServerName fcgi-bin
+      
+      <span class="hljs-comment"># https://httpd.apache.org/docs/2.4/mod/mod_alias.html#scriptalias</span>
+      ScriptAlias <span class="hljs-string">"/fcgi-bin/"</span> <span class="hljs-string">"/home/cgi_bin/fcgi"</span>
+   
+      <span class="hljs-comment"># Esta diretiva especifica um valor padrão para o parâmetro charset do tipo de mídia (o nome de uma codificação de caractere) </span>
+      <span class="hljs-comment"># a ser adicionado a uma resposta se e somente se o tipo de conteúdo da resposta for sh/plainou sh/html.</span>
+      AddDefaultCharset utf-8
+   
+   
+      &lt;Directory /home/cgi_bin/fcgi/&gt;
+         <span class="hljs-comment"># Habilitas as extensões  .fcgi para executar script</span>
+         AddHandler fcgid-script .fcgi 
+         Options +ExecCGI
+         <span class="hljs-comment">#Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch</span>
+
+         Require all granted
+         AllowOverride None       
+         Require all granted
+      &lt;/Directory&gt;
+
+   &lt;/VirtualHost&gt;             
+
+</code></pre>
+</li>
+<li>
+<p>Para que o link <em><a href="http://fcgi-bin/testfcgi.fcgi">http://fcgi-bin/testfcgi.fcgi</a></em> funcione no Browser, é necessário editar o arquivo <em>/etc/hosts</em> e adicionar abaixo da linha <em>127.0.0.1 localhost</em> a linha <em>127.0.0.1 fcgi-bin</em>.</p>
+<ol>
+<li>
+<p>Deve ficar assim:</p>
+<pre><code class="hljs language-sh">
+   127.0.0.1 localhost
+   127.0.0.1 fcgi-bin
+   127.0.0.1 cgi-bin
+   127.0.1.1 lnxmint-server                
+   <span class="hljs-comment"># The following lines are desirable for IPv6 capable hosts</span>
+   ::1     ip6-localhost ip6-loopback
+   fe00::0 ip6-localnet
+   ff00::0 ip6-mcastprefix
+   ff02::1 ip6-allnodes
+   ff02::2 ip6-allrouters
+      
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Para que o link <em><a href="http://fcgi-bin/testfcgi.fcgi">http://fcgi-bin/testfcgi.fcgi</a></em> funcione no Browser, é necessário habilitar o site <em>fcgi-bin</em> com os  comandos abaixo:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># O comando a seguir cria os links cgid.load e cgid.conf </span>
+   <span class="hljs-comment"># na pasta/etc/apache2/mods-enabled</span>
+   sudo a2ensite fcgi-bin.conf
+
+   <span class="hljs-comment">#  Reinicia o Apache2 </span>
+   systemctl restart apache2
+
+</code></pre>
+</li>
+<li>
+<p><strong>Para testar se o protocolo FastCGI está funcionando, siga os passos de um dos dois exemplos abaixo</strong></p>
+<ol>
+<li><a href="./teste_do_protocolo_fastcgi_usando_a_linguagem_perl.html">Teste do protocolo FastCGI usando a linguagem perl</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+</li>
+<li>
+<p><strong>REFERÊNCIAS</strong> <span id="id_referencias"><span></p>
+<ol>
+<li><a href="https://httpd.apache.org/docs/current/howto/cgi.html">Configurando o Apache para permitir CGI</a></li>
+<li><a href="https://httpd.apache.org/mod_fcgid/mod/mod_fcgid.html#upgrade">Módulo Apache mod_fcgid</a></li>
+<li><a href="https://www.youtube.com/watch?v=Iw2AapND7jI&amp;t=186s">Vídeo aula de como instalar um arquivo .sh como cgi</a></li>
+<li><a href="https://nightlies.apache.org/httpd/trunk/doxygen/modules.html">Apache Módulos</a></li>
+<li><a href="https://www.vivaolinux.com.br/dica/Habilitar-CgiShell-no-Apache2">HABILITAR CGI-SHELL NO APACHE2</a></li>
+<li><a href="https://httpd.apache.org/mod_fcgid/mod/mod_fcgid.html">Módulo Apache mod_fcgid</a></li>
+<li><a href="https://httpd.apache.org/mod_fcgid/mod/mod_fcgid.html#upgrade">Módulo Apache mod_fcgid upgrade</a></li>
+<li><a href="https://httpd.apache.org/docs/current/mod/mod_mime.html#addhandler">Diretiva mod_mime.addhandler</a></li>
+<li><a href="https://httpd.apache.org/docs/current/mod/mod_mime.html#sethandler">Directive mod_mime.sethandler</a></li>
+<li><a href="https://httpd.apache.org/docs/2.4/dso.html">Suporte a objetos compartilhados dinâmicos (DSO)</a></li>
+<li><a href="http://svn.apache.org/repos/asf/httpd/mod_fcgid/trunk/README-FCGID">Unix Build Instructions</a></li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+<!-- markdownlint-disable-next-line -->
+ <script>    function goBack() {    window.history.back()}</script>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

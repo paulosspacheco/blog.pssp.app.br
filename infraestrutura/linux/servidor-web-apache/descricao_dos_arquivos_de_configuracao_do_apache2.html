@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Descri&ccedil;&atilde;o dos arquivos de configura&ccedil;&atilde;o do apache2 &lt;a href&equals;&quot;descricao&lowbar;dos&lowbar;arquivos&lowbar;de&lowbar;configuracao&lowbar;do&lowbar;apache2&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;  &#x1fa9f; &lt;&sol;a&gt;</title>
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h4 id="descrição-dos-arquivos-de-configuração-do-apache2----">Descrição dos arquivos de configuração do apache2 <a href="descricao_dos_arquivos_de_configuracao_do_apache2.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h4>
+<ol>
+<li>
+<p><a href="https://pt.wikipedia.org/wiki/Hosts_(arquivo)"><strong>/etc/hosts</strong></a></p>
+<ol>
+<li>Usado para associar o endereço IP local ao um nome legível com objetivo de facilitar o uso no dia a dia, visto que, o IP é um só para cada máquina e os nomes dos sites podem variar, sendo que os mesmos são usados pelo apache2 para associá-los a várias pastas dentro da pasta <em>/etc/www</em>.
+<ol>
+<li>
+<p>Exemplo de arquivo <em>host</em> que contém registrado os sites: localhost, site1.local, site1.local</p>
+<pre><code class="hljs language-sh">   
+   127.0.0.1 site1.local <span class="hljs-comment"># Adicionado na configuração manual do site site1.local</span>
+   127.0.0.1 site2.local <span class="hljs-comment"># Adicionado na configuração manual do site site2.local</span>
+
+   127.0.0.1 localhost <span class="hljs-comment"># Criado na instalação do Apache2</span>
+   127.0.1.1 serverpp  <span class="hljs-comment"># Criado na instalação do Linux</span>
+
+   <span class="hljs-comment"># As linhas abaixo foram criadas na instalação do Linux</span>
+   <span class="hljs-comment"># The following lines are desirable for IPv6 capable hosts</span>
+   ::1     ip6-localhost ip6-loopback
+   fe00::0 ip6-localnet
+   ff00::0 ip6-mcastprefix
+   ff02::1 ip6-allnodes
+   ff02::2 ip6-allrouters
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>/etc/apache2/apache2.conf</strong></p>
+<ol>
+<li>Arquivo de configuração principal com os valores padrões para que o servidor funcione com um site apenas.</li>
+<li>Obs: No passado esse arquivo se chamava <em>httpd.conf</em>. <a href="https://ubuntu.com/server/docs/web-servers-apache">Veja mais...</a></li>
+</ol>
+</li>
+<li>
+<p><strong>/etc/apache2/ports.conf</strong>:</p>
+<ol>
+<li>Este arquivo de configuração armazena as diretivas que determinam as portas TCP nas quais o Apache está escutando. Aqui está o conteúdo padrão deste arquivo no Linux Mint:</li>
+</ol>
+<pre><code class="hljs language-sh">
+     <span class="hljs-comment"># Se você apenas alterar a porta ou adicionar mais portas aqui, provavelmente também</span>
+     <span class="hljs-comment"># tem que mudar a instrução VirtualHost em</span>
+     <span class="hljs-comment"># /etc/apache2/sites-enabled/000-default.conf</span>
+     
+     Listen 80
+     
+     &lt;IfModule ssl_module&gt;
+        Listen 443
+     &lt;/IfModule&gt;
+     
+     &lt;IfModule mod_gnutls.c&gt;
+        Listen 443
+     &lt;/IfModule&gt;
+     
+     <span class="hljs-comment"># vim: syntax=apache ts=4 sw=4 sts=4 sr noet</span>
+ 
+</code></pre>
+</li>
+<li>
+<p><strong>/etc/apache2/sites-available</strong></p>
+<ol>
+<li>
+<p>Pasta usada para registrar um site novo no apache2, onde cada site registrado deve está em um arquivo com nome do site e extensão .conf.</p>
+</li>
+<li>
+<p><strong>Exemplo</strong>:</p>
+<ol>
+<li>Suponha que se queira registrar o site de nome <em>site1.local</em>, na pasta <em>/var/wwww/site1.local/html</em>, então o arquivo deve criar o seguinte arquivo de nome: <em>site1.local.conf</em>.
+<ol>
+<li>
+<p>Exemplo do conteúdo do arquivo de configuração do novo site:</p>
+<pre><code class="hljs language-sh">
+   &lt;VirtualHost *:80&gt;
+      <span class="hljs-comment"># A diretiva ServerName define o esquema de solicitação, hostname e porta que</span>
+      <span class="hljs-comment"># o servidor usa para se identificar. Isso é usado ao criar</span>
+      <span class="hljs-comment"># URLs de redirecionamento. No contexto de hosts virtuais, o ServerName</span>
+      <span class="hljs-comment"># especifica qual nome de host deve aparecer no host da solicitação: cabeçalho para</span>
+      <span class="hljs-comment"># corresponde a este host virtual. Para o host virtual padrão (este arquivo) este</span>
+      <span class="hljs-comment"># valor não é decisivo, pois é usado como um host de último recurso independentemente.</span>
+      <span class="hljs-comment"># No entanto, você deve configurá-lo explicitamente para qualquer outro host virtual.</span>
+      
+      ServerName site1.local
+
+      <span class="hljs-comment"># Esta diretiva especifica um valor padrão para o parâmetro charset do tipo de mídia </span>
+      <span class="hljs-comment"># (o nome de uma codificação de caractere) a ser adicionado a uma resposta se e somente</span>
+      <span class="hljs-comment"># se o tipo de conteúdo da resposta for text/plainou text/html.</span>
+      AddDefaultCharset utf-8
+
+      <span class="hljs-comment"># Define o endereço de contato que o servidor inclui em todas as mensagens de erro que retorna ao cliente. </span>
+      <span class="hljs-comment"># Se o httpd não reconhecer o argumento fornecido como um URL, ele assumirá que é um endereço de e-mail </span>
+      <span class="hljs-comment"># e o anexará aos mailto:destinos do hiperlink. </span>
+      
+      ServerAdmin webmaster@localhost
+      
+      <span class="hljs-comment"># Diretório que forma a árvore principal do documento visível da web                  </span>
+      DocumentRoot /var/www/site1/html
+      
+      <span class="hljs-comment"># A diretiva &lt;Directory namaDir&gt; define a pasta e diretivas que se aplicam apenas ao diretório e subdiretórios e seus conteúdos.                  </span>
+      &lt;Directory /var/www/site1/html/&gt;
+         Options Indexes FollowSymLinks
+         AllowOverride None
+         Require all granted
+      &lt;/Directory&gt;
+      
+      <span class="hljs-comment"># Loglevels disponíveis: trace8, ..., trace1, debug, info, aviso, warning,</span>
+      <span class="hljs-comment"># erro, crit, alerta, emerg.</span>
+      <span class="hljs-comment"># Também é possível configurar o nível de log para determinados</span>
+      <span class="hljs-comment"># módulos, por exemplo</span>
+      <span class="hljs-comment">#LogLevel info ssl:avisar</span>
+      
+      ErrorLog <span class="hljs-variable">${APACHE_LOG_DIR}</span>/error.log
+      CustomLog <span class="hljs-variable">${APACHE_LOG_DIR}</span>/access.log combined
+      
+      <span class="hljs-comment"># Para a maioria dos arquivos de configuração de conf-available/, que são</span>
+      <span class="hljs-comment"># ativado ou desativado em nível global, é possível</span>
+      <span class="hljs-comment"># inclua uma linha para apenas um host virtual específico. Por exemplo o</span>
+      <span class="hljs-comment"># a linha a seguir habilita a configuração CGI apenas para este host</span>
+      <span class="hljs-comment"># depois de ter sido desabilitado globalmente com "a2disconf".</span>
+      <span class="hljs-comment">#Include conf-available/serve-cgi-bin.conf</span>
+         
+   &lt;/VirtualHost&gt;
+
+   <span class="hljs-comment"># vim: syntax=apache ts=4 sw=4 sts=4 sr noet             </span>
+
+</code></pre>
+</li>
+<li>
+<p>Para habilitar o novo site deve-se executar o seguinte comando:</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># Ativa o site </span>
+   sudo a2ensite site1.local.conf
+
+   <span class="hljs-comment"># Reinicia o apache2 com as novas configurações</span>
+   sudo systemctl reload apache2
+
+</code></pre>
+</li>
+<li>
+<p>Para desabilitar o novo site deve-se executar o seguinte comando:</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># Desativa o site </span>
+   sudo a2dissite site1.local.conf
+   <span class="hljs-comment"># Reinicia o apache2 com as novas configurações</span>
+   sudo systemctl reload apache2
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>/etc/apache2/sites-enabled</strong></p>
+<ol>
+<li>
+<p>Contém links simbólicos para os arquivos da pasta <em>/etc/apache2/conf-available</em> quando o comando o comando <em>a2ensite</em> é executado:</p>
+</li>
+<li>
+<p>O link simbólico da pasta <em>/etc/apache2/conf-available</em> é excluído ao executar o comando <em>a2dissite</em>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>/etc/apache2/mods-available</strong></p>
+<ol>
+<li>Contém arquivos de configuração (<em>.load</em>) para carregar módulos (<em>.dll</em> no Windows e <em>.so</em> no Linux) e arquivos de configuração dos módulos (.conf). Os arquivos <em>.load</em> dentro deste diretório contêm as <em>diretivas Apache Load</em> para carregar os <em>módulos no servidor web</em>, e os arquivos <em>.conf</em> que contêm diretivas de configuração adicionais necessárias para a operação dos módulos indicando as pastas que será usada pelo módulo.
+<ol>
+<li><strong>Exemplo</strong>:
+<ol>
+<li>Suponha que se queira habilitar a <em>lib</em> de nome <em>/usr/lib/apache2/modules/mod_exemplo.so</em>:
+<ol>
+<li>
+<p>Deve-se criar o arquivo de configuração de nome <em>/etc/apache2/mods-available/mod_exemplo.load</em> com o seguinte conteúdo:</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># define o local onde se encontra o módulo</span>
+   LoadModule auth_form_module /usr/lib/apache2/modules/mod_exemplo.so
+            
+</code></pre>
+</li>
+<li>
+<p>Para habilitar o módulo executar o comando:</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># Habilitar o módulo</span>
+   sudo a2enmod mod_exemplo.load
+
+   <span class="hljs-comment"># Recarrega as configurações do apache2</span>
+   sudo systemctl reload apache2
+               
+</code></pre>
+</li>
+<li>
+<p>Para desabilitar o módulo executar o comando:</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># Desabilita o módulo</span>
+   sudo a2dismod mod_exemplo.load
+
+   <span class="hljs-comment"># Recarrega as configurações do apache2</span>
+   sudo systemctl reload apache2
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h5 id="referências">REFERÊNCIAS</h5>
+<ol>
+<li><a href="https://httpd.apache.org/docs/current/mod/core.html#documentroot">Principais recursos do Apache HTTP Server que estão sempre disponíveis</a></li>
+<li><a href="https://httpd.apache.org/docs/2.4/bind.html">Binding to Addresses and Ports</a></li>
+</ol>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

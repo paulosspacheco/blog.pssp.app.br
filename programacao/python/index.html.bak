@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-br">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Linguagem python
+    </title>
+
+    <meta name="createDate" content="13/11/2020">
+    <meta name="createDateUpdate" content="13/11/2020">
+    <meta name="description" content="Anotações que fiz ao estudar a linguagem python">
+    <meta name="keywords" content="python,linguagem,back end">
+
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/defaulttheme.css" rel="stylesheet">
+
+    <script type="application/x-javascript" src="../../js/generic.js"></script>
+    <script type="application/x-javascript" src="../../js/tgeneric.js"></script>
+
+</head>
+
+<body onmouseover="generic.display()">
+
+    <!-- Menu de opções -->
+    <div class="topnav" id="myTopnav">
+        <script type="application/x-javascript" src="../../menu/index.js"> </script>
+    </div>
+
+    <!--<div w3-include-html="../../js/title.inc"> </div>-->
+    <div w3-include-html="../../js/title.inc"> </div>
+
+    <!-- Conteúdo da página <div class="col-12"> -->
+    <div class="col-12">
+
+        <ol>
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="objetivo"> Objetivo.</a></b>
+                <div class="children">
+                    <ol>
+                        <ol>
+                            <li>Objetivo deste documento é registrar minhas anotações de estudo da linguagem
+                                <b>python</b> usado nos servidores web, desktops e celulares através do pacote
+                                buildozer.
+                            </li>
+                            <li>..</li>
+                        </ol>
+                    </ol>
+                </div>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="Oqueenosdejs">O que é node.js</a></b>
+                <ol>
+                    <div class="childrenDefault">
+                        <ol>
+                            <li>Python é uma linguagem intepretada de código aberto e multplataforma e uso geral exceto aplicações que necessitam alta performa-se de processamento. </li>
+                            <li>..</li>
+                            <li>..</li>
+                            <li>..</li>
+                            <li>..</li>
+                            <li>..</li>
+                            <li>..</li>
+                            <li>..</li>
+                            <li>..</li>
+                            <li>..</li>                                                        
+
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div3">div 3</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 2</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div4">div 4</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 4</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div5">div 5</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 5</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div6">div 6</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 6</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div7">div 7</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 7</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div8">div 8</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 8</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div9">div 9</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 9</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div10">DIV 10</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 10</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+
+
+        </ol>
+
+
+
+    </div>
+
+
+
+    <!-- Rodapé da página -->
+    <div class="referencia">
+        <span class="rootTree"></span>
+        <b><a id="REFERENCIAS">Referências na produção deste documento</a></b>
+        <div class="childrenDefault">
+            <ol>
+                <li><a href="https://www.python.org/" target="_blank">Site oficial da linguagem python.</a></li>
+                <li><a href="https://medium.com/the-innovation/performance-comparison-rust-vs-pyo3-vs-python-6480709be8d" target="_blank">Comparação de desempenho: Rust vs PyO3 vs Python.</a></li>
+                <li><a href="https://pythonhelp.wordpress.com/2014/07/25/acessando-apis-rest-com-python/" target="_blank">ACESSANDO APIS REST COM PYTHON.</a></li>
+                <li><a href="https://docs.microsoft.com/pt-br/visualstudio/python/learn-django-in-visual-studio-step-01-project-and-solution?view=vs-2019" target="_blank"> 
+                  
+Django é um framework para desenvolvimento rápido para web, escrito em Python, que utiliza o padrão model-template-view. Foi criado originalmente como sistema para gerenciar um site jornalístico na cidade de Lawrence, no Kansas. Tornou-se um projeto de código aberto e foi publicado sob a licença BSD em 2005.
+                  
+                  </a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li>..</li>
+                
+            </ol>
+
+        </div>
+
+    </div>
+
+    <!--<script type="application/x-javascript" src="../../js/treeview_xhtml.js"></script> -->
+    <script type="application/x-javascript" src="../../js/treeview_xhtml.js"></script>
+
+    <!-- RODAPÉ DA PÁGINA  -->
+    <div class="footer">
+        <!--<div w3-include-html="../../js/footer.inc"> </div>-->
+        <div w3-include-html="../../js/footer.inc"> </div>
+    </div>
+    <!--<script> includeHTML();</script>  -->
+    <script>
+        includeHTML();
+    </script>
+</body></html>

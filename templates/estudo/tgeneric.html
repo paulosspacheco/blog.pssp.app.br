@@ -1,0 +1,138 @@
+<!--  Exemplo de uso da class tgeneric.js-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Minhas anotações que fiz ao estudar programação da linguagem css</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Paulo Sérgio da Silva Pacheco">
+
+    <meta name="description" content="Um código html é composto de 3 linguagens quais sejam: HTML, css e javascript">
+    <meta name="keywords" content="css,html,javascript">
+
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        rel="stylesheet">
+    <link type="text/css" href="../../css/defaulttheme.css" rel="stylesheet">
+
+    <script type="application/x-javascript" src="../../js/generic.js"></script>
+    <script type="application/x-javascript" src="../../js/tcounter.js"></script>
+    <script type="application/x-javascript" src="../../js/tgeneric.js"></script>
+
+    <!-- <link type="text/css" href="../../js/all.html"> -->
+
+    <script>
+        counter = new Tcounter();       
+    </script>
+
+
+</head>
+
+<body>
+
+    <h1>
+        <p>
+            "Exemplo de uso da classe Tgeneric"
+        </p>
+
+    </h1>
+    <h2>
+        <p>
+            <span id="generic.alias">???????????</span>
+            <span>O texto anterior foi escrito com Tgeneric.writeln() </span> <br>
+            <span id="generic.write">???????????</span> <br>
+            <span id="author">???????????</span> <br>
+            
+
+        </p>
+    </h2>
+
+    <script type="application/x-javascript">
+        generic.alias = 'Nome do arquivo html deste exemplo é: tgeneric.html';
+        generic.writeln("generic.alias", generic.alias)
+        generic.write("generic.write", 'Exemplo de uso do método generic.write');
+        generic.color("generic.alias", 'blue');
+
+        document.writeln('Exemplo uso do método document.writeln()');
+        document.write('Exemplo uso do método document.write()');
+    </script>
+
+    <h3>
+        <p>Exemplo de uso do método Tgeneric.displayOnOff.<br>
+            Este método esconde e mostra um elemento html que possua a propriedade "style.display"
+        </p>
+    </h3>
+    <br>
+
+    <p>Exemplo generic.displayAuthor('author')" </p>
+    <div id="author">Nome do autor:</div>
+    <button type="button" onclick="generic.displayAuthor('author')">Mostra o author</button>
+    <br>
+
+    <p>Exemplo generic.displayOnOff('minhaDiv')" </p>
+    <div id="minhaDiv">Minha Div</div>
+    <button type="button" onclick="generic.displayOnOff('minhaDiv')">Mostrar / Esconder a div</button>
+    <br>
+
+    <p>Exemplo generic.displayOnOff('myP')" </p>
+    <p id="myP">Meu paragrafo p</p>
+    <button type="button" onclick="generic.displayOnOff('myP')">Mostrar / Esconder a Meu Paragrafo</button>
+
+
+    <p id="generic.color" onclick="onclick=generic.color('generic.color','red')">
+        Click me to change my text color.
+    </p>
+
+    <ol>
+
+        <li> linha 01 </li>
+        <li> linha 02 </li>
+        <li>
+            <span class="rootTree">
+                "Como esconder e mostrar uma div"
+            </span>
+
+            <div class="children" id="SeletoresCC">
+
+                <h3>
+                    <p>Exemplo de uso do método Tgeneric.displayOnOff.<br>
+                        Este método esconde e mostra um elemento html que possua a propriedade "style.display"
+                    </p>
+                </h3>
+
+            </div>
+        </li>
+
+        <script type="application/x-javascript" src="../../js/treeview_xhtml.js"></script>
+    </ol>
+
+
+    <pre>
+            <script>
+                document.write(counter.inc()+' Grupo 01      <br>');
+                document.write(counter.inc()+'   Sub grupo 1 <br>');
+                document.write(counter.inc()+'     item 1    <br>');
+                document.write(counter.inc()+'     item 2    <br>');
+            </script>
+
+
+            <table>
+                <tr>
+                    <td> <script>document.write(counter.dec());</script></td> 
+                    <td> ' Grupo 01' </td>               
+                </tr>
+                <tr>
+                    <td> <script>document.write(counter.dec());</script></td> 
+                    <td> '  Sub Grupo 01' </td>
+                </tr>
+
+            </table>
+    </pre>
+
+
+
+</body>
+
+</html>

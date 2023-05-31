@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-br">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+       
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>
+        O Deno é um runtime para aplicações server-side usando javascript e/ou typescript
+    </title>
+    
+    <meta name="createDate" content="15/11/2020">
+    <meta name="createDateUpdate" content="15/11/2020">
+    <meta name="description" content="O Deno é um runtime para aplicações server-side usando javascript e/ou typescript, que promete mais segurança, em relação ao NodeJs, além de diversas melhorias segundo o próprio criador.">
+    <meta name="keywords" content="template,html,javascript,css">
+    
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" href="../../css/defaulttheme.css" rel="stylesheet">
+
+    <script type="application/x-javascript" src="../../js/generic.js"></script>
+    <script type="application/x-javascript" src="../../js/tgeneric.js"></script>
+
+</head>
+
+<body onmouseover="generic.display()"> 
+
+    <!-- Menu de opções -->
+    <div class="topnav" id="myTopnav">
+        <script type="application/x-javascript" src="../../menu/index.js"> </script>
+    </div>
+
+    <!--<div w3-include-html="../../js/title.inc"> </div>-->     
+    <div w3-include-html="../../js/title.inc"> </div>
+ 
+
+
+    <!-- Conteúdo da página <div class="col-12"> -->
+    <div class="col-12">
+
+        <ol>
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="objetivo"> Objetivo.</a></b>
+                <div class="children">
+                    <ol>
+                        <ol>
+                            <li>Este documento tem como objetivo registrar tudo que eu estudar sobre Deno (Runtime de javascript ).          </li>
+                            <li>..</li>
+                        </ol>
+                    </ol>
+                </div>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="OqueEDeno">O que é Runtime Deno</a></b>
+                <ol>
+                    <div class="childrenDefault">
+                        <ol>
+                            <li><b>Deno</b> é um runtime para aplicações server-side usando javascript e/ou typescript, que promete mais segurança, em relação ao NodeJs, além de diversas melhorias segundo o próprio criador.</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span> <b><a id="ExtensoesVsCode">Extensões vscode</a></b>
+                <ol>
+                    <div class="childrenDefalt">
+                        <ol>
+                <li><a href="https://github.com/denoland/vscode_deno" target="_blank">Visual Studio Code Deno extension</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div4">div 4</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 4</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div5">div 5</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 5</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div6">div 6</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 6</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div7">div 7</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 7</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div8">div 8</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 8</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div9">div 9</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 9</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+            <li>
+                <span class="rootTree"></span>
+                <b><a id="div10">DIV 10</a></b>
+                <ol>
+                    <div class="children">
+                        <ol>
+                            <li>item div 10</li>
+                            <li>..</li>
+                        </ol>
+                    </div>
+                </ol>
+            </li>
+
+
+
+        </ol>
+
+
+
+    </div>
+    
+
+
+    <!-- Rodapé da página -->
+    <div class="referencia">
+        <span class="rootTree"></span>
+        <b><a id="REFERENCIAS">Referências na produção deste documento</a></b>
+        <div class="childrenDefault">
+            <ol>
+              <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference" target="_blank" javascript="" reference=""> JavaScript/Reference - mozilla.org -</a></li>
+              <li><a href="https://www.w3schools.com/js/default.asp" target="_blank" title="Este site é muito bom para ser usado como fonte de referência já que tem muito exemplos e pouca teoria.">JavaScript tutorial - w3schools.</a></li>
+              <li><a href="https://www.youtube.com/watch?v=fVoH6rFU6zw" target="_blank">Deno (A alternativa ao Node.js !?) // Dicionário do Programador</a></li>
+              <li><a href="https://levelup.gitconnected.com/build-a-simple-rest-api-with-deno-and-express-b0b62e52c230" target="_blank">Construir uma API Simple Rest com Deno e Express</a></li>
+              <li><a href="#" target="_blank">..</a></li>
+              <li><a href="#" target="_blank">..</a></li>
+              <li><a href="#" target="_blank">..</a></li>              
+              <li><a href="#" target="_blank">..</a></li>
+							<li><a href="#" target="_blank">..</a></li>	
+              <li><a href="#" target="_blank">..</a></li>
+              <li><a href="#" target="_blank">..</a></li>
+              <li><a href="#" target="_blank">..</a></li>
+              <li><a href="#" target="_blank">..</a></li>
+              <li><a href="#" target="_blank">..</a></li>              
+            </ol>
+        </div>
+
+    </div>
+
+        <!--<script type="application/x-javascript" src="../../js/treeview_xhtml.js"></script> -->
+        <script type="application/x-javascript" src="../../js/treeview_xhtml.js"></script>        
+      
+<!-- RODAPÉ DA PÁGINA  -->
+        <div class="footer">    
+            <!--<div w3-include-html="../../js/footer.inc"> </div>-->
+            <div w3-include-html="../../js/footer.inc"> </div>
+        </div>
+        <!--<script> includeHTML();</script>  -->
+        <script> includeHTML();</script>
+</body></html>

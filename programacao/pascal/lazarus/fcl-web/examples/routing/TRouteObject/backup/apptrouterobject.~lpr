@@ -1,0 +1,58 @@
+program AppTRouterObject;
+{:< - O projeto **@name** demonstra o uso das units **fphttpapp**, **fpcgi** e **inifiles**  .
+
+  - **DESCRIÇÃO**
+    - Este projeto pode ser usado como **servidor http** porta 8080 ou
+      um aplicação **CGI** para ser registrada em um servidor web.
+
+    - **REFERÊNCIAS**
+    - [fpWeb](https://objectpascalprogramming.com/fpweb-hello)
+
+  - **NOTAS**
+    -
+
+  - **CÓDIGO FONTE**:
+    - @html(<a href="../TRouteObject/apptrouterobject.lpr">AppTRouterObject.lpr</a>)
+
+  - **HISTÓRICO**
+    - Documento criado por: paulosspacheco@@yahoo.com.br
+      - **23/03/2023** : Inicio da documentação deste código
+}
+
+
+{$DEFINE STANDALONE}
+
+{$IFDEF FPC}
+  {$mode Delphi}
+{$ENDIF}
+
+uses
+  sysutils,
+  routes,
+{$IFDEF STANDALONE}
+  fphttpapp,
+{$ENDIF}
+{$IFDEF CGI}
+  fpcgi,
+{$ENDIF}
+  inifiles;
+
+
+begin
+  With TInifile.Create(ChangeFileExt(ParamStr(0),'.ini')) do
+    try
+      {$IFDEF CGI}
+      BaseURL:=ReadString('CGI','BaseURL','');
+      {$ENDIF CGI}
+      {$IFDEF STANDALONE}
+      Application.Port:=ReadInteger('Standalone','Port',8080);
+      BaseURL:=ReadString('Standalone','BaseURL','http://localhost:'+IntToStr(Application.Port));
+      {$ENDIF STANDALONE}
+    finally
+      Free;
+    end;
+  RegisterRoutes;
+  Application.Initialize;
+  Application.Run;
+end.
+

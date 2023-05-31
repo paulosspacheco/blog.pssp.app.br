@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Instru&ccedil;&otilde;es de instala&ccedil;&atilde;o para xrdp</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS markdown -->
+    <link
+      type="text/css"
+      href="../../../css/defaultthemeMarkdown.css"
+      rel="stylesheet"
+    />
+    <!-- CSS da página /index.html -->
+    <link
+      type="text/css"
+      href="../../../css/defaulttheme.css"
+      rel="stylesheet"
+    />
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="instruções-de-instalação-para-xrdp">Instruções de instalação para xrdp</h1>
+<ul>
+<li>
+<p>Coisas que você precisa para compilar e instalar. A maioria dos sistemas os programas abaixo não são instalados por padrão.</p>
+<ul>
+<li>
+<pre>
+  sudo apt install gcc -y
+  sudo apt install make -y
+</pre>
+</li>
+<li><a href="https://pubs.opengroup.org/onlinepubs/8329799/apdxa.htm">Header files for pam</a></li>
+<li>Header files for openssll</li>
+</ul>
+</li>
+<li>
+<p>Você pode construir o sesman sem pam, há um parâmetro Makefile para isso.</p>
+</li>
+<li>
+<p>Eu também tenho um substituto ssl_calls.c para evitar a dependência do openssl envie um e-mail para mim (Jay) ou consulte <a href="http://server1.xrdp.org/xrdp/openssl">http://server1.xrdp.org/xrdp/openssl</a>. Devido à licença, não posso incluí-lo neste projeto.</p>
+<ul>
+<li><a href="http://server1.xrdp.org/xrdp/openssl/">http://server1.xrdp.org/xrdp/openssl/</a></li>
+</ul>
+</li>
+<li>
+<p>descompacte o tarball</p>
+<ul>
+<li>
+<pre>$ tar -zxvf xrdp-0.1.tar.gz </pre>
+<ul>
+<li>Obs: O comando acima irá criar uma pasta xrdp</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>mudar para a pasta xrdp e executar make em seguida make install:</p>
+<ul>
+<li>
+<pre>  
+    $ cd xrdp
+    $ ./configure
+    $ make
+    $ sudo make install</pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Isso instalará a maioria dos arquivos em /usr/local/xrdp. Alguns arquivos são instalados em /etc/xrdp. Estas são configurações arquivos.</p>
+</li>
+<li>
+<p>arquivos e localização</p>
+<ul>
+<li>/usr/local/xrdp/startwm.sh - script que inicia o gerenciador de janelas</li>
+<li>Você pode precisar editar este arquivo para executar o gerenciador de janelas.
+<ul>
+<li>/etc/sesman.ini - arquivo de configuração sesman</li>
+<li>/etc/rsakeys.ini - coisas rsa</li>
+<li>/etc/xrdp.ini - arquivo de configuração xrdp</li>
+<li>/var/run/sesman.pid</li>
+<li>/var/rub/xrdp.pid</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Sesman e xrdp devem estar rodando como root. Você deve configurá-los para iniciar quando o sistema for iniciado. Você pode usar o script xrdp_control.sh para iniciá-los.</p>
+</li>
+<li>
+<p>Para remover completamente o xrdp</p>
+<ul>
+<li>remover diretório /usr/local/xrdp</li>
+<li>remover diretório /etc/xrdp</li>
+<li>remova o arquivo /var/run/xrdp.pid</li>
+<li>remova o arquivo /var/run/sesman.pid</li>
+<li>remova quaisquer links de inicialização adicionados a /etc/init.d ou /etc/rcX.d</li>
+</ul>
+</li>
+</ul>
+<p>Escrito por: <a href="mailto:jay.sorg@gmail.com">jay.sorg@gmail.com</a></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

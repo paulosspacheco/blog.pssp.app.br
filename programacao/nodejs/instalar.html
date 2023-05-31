@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;INSTALAR E CONFIGURAR O NODEJS &lt;a href&equals;&quot;instalar&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x2b06;&#xfe0f; &lt;&sol;a&gt;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="instalar-e-configurar-o-nodejs---️-"><span id="topo"><span>INSTALAR E CONFIGURAR O NODEJS <a href="instalar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
+<ol>
+<li>
+<p>INDEX**</p>
+<p><span id="topo_Objetivo"><span></p>
+<ol>
+<li>
+<p><a href="#id_objetivo">Objetivo deste documento</a>.</p>
+</li>
+<li>
+<p><a href="#id_pre_requisitos">Pre-requisitos para compreensão deste documento</a>.</p>
+</li>
+<li>
+<p><a href="#id_beneficios">Os benefícios que este documento pode me trazer</a>.</p>
+</li>
+<li>
+<p><a href="#id_instalar_nodejs_no_linux">Como instalar nodejs no Linux</a></p>
+<ol>
+<li><a href="#id_instalar_nodejs_no_linux_1">Instalar usando a versão da distribuição linux debian ou derivados</a>.</li>
+<li><a href="#id_instalar_nodejs_no_linux_2">Instalar a versão de distribuição do site github</a>.</li>
+</ol>
+</li>
+<li>
+<p><a href="#id_extensoes">Instalar extensões vscode para nodejs</a></p>
+</li>
+<li>
+<p><a href="#id_referencias">Referências</a></p>
+</li>
+<li>
+<p><a href="#id_historico">Histórico</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p>CONTEÚDO</p>
+<ol>
+<li>
+<p><span id="id_objetivo"><span>Objetivos.</p>
+<ol>
+<li>Ensinar como instalar nodejs usado o pacote da distribuição debian;</li>
+<li>Ensinar como instalar nodejs usado o pacote da distribuição de github;</li>
+<li>Relacionar as extensões do vscode necessárias para trabalhar com nodejs;</li>
+<li><a href="#topo_Objetivo" title="Retorna ao topo">🔝</a></li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span>Pre-requisitos:</p>
+<ol>
+<li>Sistema operacional debian ou seus derivados;</li>
+<li>IDE vscode na microsoft;</li>
+<li>Familiaridade com javascript para testar os exemplos de conexão com banco de dados;</li>
+<li><a href="#topo_Objetivo" title="Retorna ao topo">🔝</a></li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span>Benefícios deste documento:</p>
+<ol>
+<li>Permitir criação de aplicativo back-end para construção de sites.</li>
+<li><a href="#topo_Objetivo" title="Retorna ao topo">🔝</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#topo_Objetivo" title="Retorna ao topo">🔝</a></p>
+</li>
+<li>
+<p><span id="id_instalar_nodejs_no_linux"></span><strong>Instalar pacote node js no Linux</strong>.</p>
+<ol>
+<li>
+<p><a href="https://nodejs.org/en/docs/meta/topics/dependencies/">Dependências do node js</a></p>
+</li>
+<li>
+<p><span id='id_instalar_nodejs_no_linux_1'></span>[<em><strong>Instalar usando a versão da distribuição linux debian ou derivados</strong></em>.]</p>
+<ol>
+<li>
+<p><a href="https://github.com/libuv/libuv">Biblioteca c libuv1</a></p>
+<pre><code class="hljs language-sh">
+   sudo apt install libuv1
+
+</code></pre>
+</li>
+<li>
+<p>Instalar o nodejs:</p>
+<pre><code class="hljs language-sh"> 
+   sudo apt install nodejs
+   <span class="hljs-comment"># obs: O pacote nodejs contém os binários node e npm.</span>
+</code></pre>
+</li>
+<li>
+<p>Instalar a documentação:</p>
+<pre><code class="hljs language-sh">
+   sudo apt install nodejs-doc 
+
+</code></pre>
+</li>
+<li>
+<p>Instalar o pacote <a href="https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/"><strong>npm</strong></a>. Nota: <strong>npm</strong> são duas coisas: em primeiro lugar, é um <a href="https://www.npmjs.com/">repositório online</a> para a publicação de projetos Node.js de código aberto; em segundo lugar, é um utilitário de linha de comando para interagir com o referido repositório que auxilia na instalação do pacote, gerenciamento de versão e gerenciamento de dependência.</p>
+<ol>
+<li>
+<p>Código shellscript</p>
+<pre><code class="hljs language-shellscript">
+   sudo apt install npm
+
+</code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Como instalar pacotes via npm:</p>
+<ol>
+<li>
+<p>Instalar pacotes no projeto atual. Dica...: <a href="https://docs.npmjs.com/cli/v7/using-npm/config">link para config npm</a></p>
+<pre><code class="hljs language-sh">
+  npm install package
+
+</code></pre>
+</li>
+<li>
+<p>Como instalar pacotes npm globalmente:</p>
+<pre><code class="hljs language-sh">   npm install -g package
+</code></pre>
+</li>
+<li>
+<p>Notas:</p>
+<ol>
+<li>Por padrão, o comando <em>npm install package</em> simplesmente instala um pacote em <em>node_modules</em>. Ao tentar instalar dependências para seu aplicativo <em>/</em> módulo, você precisa primeiro instalá-las e, em seguida, adicioná-las à seção <em>dependencies</em> de seu package.json*.</li>
+<li><em>--save-dev</em> adiciona o pacote de terceiros a seção <em>devDependencies</em> (dependências de desenvolvimento) do pacote. Ele não será instalado quando alguém executar <em>npm install package</em> diretamente para instalar seu pacote. Normalmente, ele só é instalado se alguém clonar seu repositório de origem primeiro e depois executá npm install-lo.</li>
+<li><em>--save</em> adiciona o pacote a seção <em>dependencies</em> (dependências de terceiros) do pacote. Ele será instalado junto com o pacote sempre que alguém o executar <em>npm install package</em>.</li>
+<li><em>Dependências de desenvolvimento</em> são aquelas dependências necessárias apenas para o desenvolvimento do pacote. Isso pode incluir executores de teste, compiladores, empacotadores, etc. Ambos os tipos de dependências são armazenados no <em>package.js</em> no arquivo de pacote. <em>--save</em> adiciona a dependencies, <em>--save-dev</em> adiciona a devDependencies.</li>
+<li>A documentação de instalação do npm pode ser <a href="https://docs.npmjs.com/cli/v6/commands/npm-install">consultada aqui</a>.</li>
+<li><strong>ATENÇÃO</strong>: O flag <em>--save</em> agora é a opção padrão, desde o NPM 5. Portanto, não é mais explicitamente necessário. É possível executar <em>npm install package</em> sem o <em>--save</em> para obter o mesmo resultado.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://eslint.org/">Instalar eslint</a> (ESLint analisa estaticamente seu código para encontrar problemas rapidamente)</p>
+<pre><code class="hljs language-sh">
+   npm install eslint  
+
+</code></pre>
+</li>
+<li>
+<p><a href="https://nodemon.io/">Instalar nodemon</a> (Os projetos executados com <em>nodemon</em> é recarregado toda vêz que é modificado em disco e só deve ser usado caso não se use o vscode com opção de debug).</p>
+<pre><code class="hljs language-sh">
+   sudo npm install -g nodemon
+
+</code></pre>
+</li>
+<li>
+<p><a href="https://sequelize.org/master/manual/getting-started.html">Instalar sequelize</a> (Sequelize é um Node.js ORM baseado em promessa para Postgre , MySQL , MariaDB , SQLite e Microsoft SQL Server . Ele oferece suporte a transações sólidas, relações, carregamento rápido e lento, replicação de leitura e muito mais)</p>
+<ol>
+<li>
+<p><a href="https://sequelize.org/master/class/lib/sequelize.js~Sequelize.html">Documentação da classe sequelize:</a>.</p>
+</li>
+<li>
+<p>Criar pasta do projeto de banco de dados nodejs (Obs: Não pode ser dentro de um link do linux)</p>
+<pre><code class="hljs language-sh">
+   mkdir NodeSequelize
+   <span class="hljs-built_in">cd</span> NodeSequelize
+
+   
+</code></pre>
+</li>
+<li>
+<p>Iniciar projeto nodejs na pasta NodeSequelize</p>
+<pre><code class="hljs language-sh">
+   npm init 
+   <span class="hljs-comment"># Obs: Se neste momento não solicitar os parâmetros básicos do pacote package.json algo está errado.</span>
+
+</code></pre>
+</li>
+<li>
+<p>Instalar pacote principal <em>sequelize</em> dentro da pasta <em>NodeSequelize</em>:</p>
+<pre><code class="hljs language-sh">
+   sudo npm install sequelize
+
+</code></pre>
+</li>
+<li>
+<p>Na pasta <em>NodeSequelize</em>, instalar pacote que permite <em>sequelize</em> reconheça o <a href="https://sequelize.org/master/manual/getting-started.html">banco de dados mariadb</a>:</p>
+<pre><code class="hljs language-sh">
+   sudo npm install mariadb  
+   <span class="hljs-comment"># Obs: se quiser instalar globalmente isar o paramento -g</span>
+
+</code></pre>
+</li>
+<li>
+<p>Opcionalmente pode-se instalar pacote <a href="https://levelup.gitconnected.com/creating-sequelize-associations-with-the-sequelize-cli-tool-d83caa902233">Sequelize CLI (Command Line Interface)</a> caso queira acessar o banco de dados pelo terminal do linux:</p>
+<pre><code class="hljs language-sh">
+   npm install --save-dev sequelize-cli 
+
+</code></pre>
+<ol>
+<li>Notas:
+<ol>
+<li>O flag <em>--save-dev</em> registra em <em>package.json</em> as dependência no desenvolvimento  (<em>devDependencies</em>).</li>
+<li>O comando  sequelize-cli é usado para manipular o banco de dados a partir do prompt do linux, porém não vejo necessidade de instalar porque uso o <a href="https://www.mysql.com/products/workbench/">mysql workbench</a> faz essa tarefa com mais facilidade.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://sequelize.org/master/manual/getting-started.html#testing-the-connection">Teste conexão mariadb passando um string</a></p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">/**
+ * Conectando-se a um banco de dados.
+* O exemplo abaixo é a forma mais simples para conectar-se a um 
+* banco de dados com o módulo Sequelize.
+*/</span>
+   <span class="hljs-comment">// Importando a class  Sequelize </span>
+   <span class="hljs-keyword">const</span> { Sequelize } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'sequelize'</span>);
+
+   <span class="hljs-comment">// Criar o objeto sequelize passando como parâmetro um string de conexão.</span>
+   <span class="hljs-keyword">const</span> sequelize = <span class="hljs-keyword">new</span> Sequelize(<span class="hljs-string">'mariadb://root:password@192.168.15.3:3306/mysql'</span>);
+   
+   <span class="hljs-comment">/**
+    * Testando a conexão
+   * Você pode usar a .authenticate() função para testar se a conexão está OK:
+   */</span>
+   sequelize.authenticate().then(
+      <span class="hljs-comment">//Essa função será executada se o banco de dados está conectado</span>
+      <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'A conexão foi estabelecida com sucesso.'</span>);
+      }
+   ).catch(
+      <span class="hljs-comment">//Esta função é executada se o banco de dados não for conectado.</span>
+      <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+         <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Não foi possível conectar à base de dados::'</span>, error);
+      }
+   );
+
+   <span class="hljs-comment">/**
+    * Fechando a conexão
+   * Sequelize manterá a conexão aberta por padrão e usará a mesma 
+   * conexão para todas as consultas. Se você precisar fechar a conexão, ligue 
+   * sequelize.close(). (Obs: O método sequelize.close()  é assíncrona e retorna uma Promessa).
+   * 
+   */</span>
+
+   sequelize.close().then();
+      
+</code></pre>
+</li>
+<li>
+<p><a href="https://sequelize.org/master/manual/getting-started.html#testing-the-connection">Teste conexão mariadb passando um objeto json</a></p>
+<pre><code class="hljs language-javascript">   <span class="hljs-comment">/**
+   * Exemplo de como conectar-se ao banco de dados mariadb.
+   * 
+   * O construtor Sequelize aceita várias opções de constructor. 
+   * Eles estão documentados na [Referência da API](https://sequelize.org/master/class/lib/sequelize.js~Sequelize.html#instance-constructor-constructor) .
+   * 
+   */</span>
+   <span class="hljs-keyword">const</span>
+      Sequelize = <span class="hljs-built_in">require</span>(<span class="hljs-string">'sequelize'</span>);
+
+   <span class="hljs-comment">/**
+   * Cria objeto connection para conecta-ser ao mariadb.
+   * https://sequelize.org/v5/manual/dialects.html
+   * A seguir criamos uma nova instância do Sequelize usando o seu construtor que 
+   * possui a seguinte sintaxe:
+   *    conexao = new Sequelize(database, [username=null], [password=null], [options={}])
+   *       onde :
+   *              1. database: é o nome do schema do banco de dados que vamos acessar. 
+   *                           No nosso exemplo usamos o schema mac_demo criado no MySQL;
+   *              2. username: é o nome do usuário de acesso ao MySQL, no exemplo estou 
+   *                           usando o usuário root;
+   *              3. password: é senha do usuário root. Para o exemplo estou usando a 
+   *                           senha do usuário root;
+   *              4. [options={}] = {host: '192.168.15.3',port: '3306',dialect: 'mariadb'}
+   * */</span>
+   <span class="hljs-keyword">const</span>
+      connection = <span class="hljs-keyword">new</span> Sequelize(<span class="hljs-string">'mysql'</span>, <span class="hljs-string">'root'</span>, <span class="hljs-string">'password'</span>,
+                                 { <span class="hljs-attr">host</span>: <span class="hljs-string">'192.168.15.3'</span>, <span class="hljs-attr">port</span>: <span class="hljs-string">'3306'</span>, <span class="hljs-attr">dialect</span>: <span class="hljs-string">'mariadb'</span> });
+
+   <span class="hljs-comment">/**
+   * TESTE DA CONEXÃO
+   * Conecta-se ao banco de dados mariadb com autenticação.
+   * 
+   */</span>
+      <span class="hljs-keyword">var</span> conexao = connection.authenticate().then(
+         <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'A conexão foi estabelecida com sucesso.'</span>); }
+      ).catch(
+         <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Não foi possível conectar à base de dados::'</span>, error); }
+      );
+
+
+   <span class="hljs-comment">/**
+   * Fechando a conexão
+   * 
+   * Sequelize manterá a conexão aberta por padrão e usará a mesma 
+   * conexão para todas as consultas. Se você precisar fechar a conexão, 
+   * ligue sequelize.close()(Obs: O método sequelize.close é assíncrona e retorna uma Promessa).
+   * 
+   */</span>
+
+   <span class="hljs-comment">//sequelize.close();</span>
+      
+</code></pre>
+</li>
+<li>
+<p><a href="#topo_Objetivo" title="Retorna ao topo">🔝</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id='id_instalar_nodejs_no_linux_2'></span><em><strong>Instalar a versão de distribuição do site github</strong></em>:</p>
+<ol>
+<li>
+<p><a href="https://github.com/nodesource/distributions/blob/master/README.md#debinstall">Instruções de instalação no ubuntu</a></p>
+<ol>
+<li>
+<p>Registra o repositório com a versão 15.x</p>
+<pre><code class="hljs language-sh">
+   curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash - 
+
+</code></pre>
+</li>
+<li>
+<p>Atualizar lista do repositório</p>
+<pre><code class="hljs language-sh">
+   sudo apt update 
+
+</code></pre>
+</li>
+<li>
+<p>Atualizar todos os programas da distribuição</p>
+<pre><code class="hljs language-sh">
+  sudo apt upgrade
+
+</code></pre>
+</li>
+<li>
+<p>Instalar nodejs</p>
+<pre><code class="hljs language-sh">
+   sudo apt-get install -y nodejs  
+
+</code></pre>
+</li>
+<li>
+<p>Instalar a documentação:</p>
+<pre><code class="hljs language-sh">
+   apt install nodejs-doc
+
+</code></pre>
+</li>
+<li>
+<p>Instalar o gerenciador de pacotes:</p>
+<pre><code class="hljs language-sh">
+   sudo apt install npm 
+
+</code></pre>
+</li>
+<li>
+<p><a href="https://eslint.org/">Instalar eslint</a></p>
+<pre><code class="hljs language-sh">
+   npm install eslint
+
+</code></pre>
+</li>
+<li>
+<p><a href="https://sequelize.org/">Acesso a dados com pacote sequelize.org</a></p>
+<pre><code class="hljs language-sh">
+   npm install --save sequelize
+
+</code></pre>
+</li>
+<li>
+<p><a href="https://sequelize.org/">Acesso a dados com pacote sequelize.org</a></p>
+<pre><code class="hljs language-sh">
+   npm install --save mariadb
+
+</code></pre>
+</li>
+<li>
+<p><a href="https://expressjs.com/pt-br/">Express Framework web rápido, flexível e minimalista para Node.js</a></p>
+<pre><code class="hljs language-sh">
+   npm install express --save
+
+</code></pre>
+</li>
+<li>
+<p>Framework LoopBack:</p>
+<ol>
+<li><a href="https://loopback.io/doc/en/lb4/Getting-started.html#install-loopback-4-cli">LoopBack 4 CLI</a></li>
+<li><a href="https://loopback.io/doc/en/lb4/#:~:text=LoopBack%20is%20a%20highly%20extensible,and%20SOAP%20or%20REST%20services.">LoopBack</a> é uma estrutura Node.js e TypeScript premiada , altamente extensível e de código aberto baseada no Express. Ele permite que você crie rapidamente APIs e micros serviços compostos de sistemas de back-end, como bancos de dados e serviços SOAP ou REST.</li>
+<li><a href="https://loopback.io/doc/en/lb4/Getting-started.html">Getting-started.html</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>[🔝](#topo_Objetivo Retorna ao topo)</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id='id_extensoes'></span><strong>Instalar extensões vscode para nodejs</strong>.</p>
+<ol>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=JerryHong.autofilename"><strong>AutoFileName</strong></a>:</p>
+<ol>
+<li>Ajuda a encontrar o nome completo do arquivo automaticamente.</li>
+</ol>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=leizongmin.node-module-intellisense"><strong>Node.js Modules Intellisense</strong></a>:</p>
+<ol>
+<li>Autocompletes módulos Node.js em declarações de importação.</li>
+<li>Implementa autocomplete em módulos JavaScript / TypeScript em instruções de importação.</li>
+</ol>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"><strong>Live Serve</strong></a></p>
+<ol>
+<li>Servidor web para teste de páginas html.</li>
+</ol>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify"><strong>Beautify json</strong></a></p>
+<ol>
+<li>Enfeitar JSON.</li>
+</ol>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=oliversturm.fix-json"><strong>Fix JSON</strong></a></p>
+<ol>
+<li>Corrija o conteúdo JSON usando <a href="http://jsonic.net/index.html">jsonic</a></li>
+</ol>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack" title="https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack"><strong>Node.js Extension Pack</strong></a></p>
+<ol>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">vscode-eslint</a></p>
+<ol>
+<li>A extensão usa a biblioteca ESLint instalada na pasta da área de trabalho aberta. Se a pasta não fornecer um, a extensão procurará uma versão de instalação global.</li>
+</ol>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script">npm support for VS Code</a>.</p>
+<ol>
+<li>Esta extensão oferece suporte à execução de scripts npm definidos no package.json arquivo e à validação dos módulos instalados em relação às dependências definidas no package.json.</li>
+</ol>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets">JavaScript (ES6) code snippets</a></p>
+<ol>
+<li>Esta extensão contém trechos de código para JavaScript na sintaxe ES6 para o editor de código Vs (suporta JavaScript e TypeScript).</li>
+</ol>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=jasonnutter.search-node-modules" title="Pesquise rapidamente por módulos de nó em seu projeto.">Search node_modules</a>.</p>
+<ol>
+<li>Navegue rapidamente e abra arquivos node_modules percorrendo a árvore de pastas.</li>
+</ol>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense">npm Intellisense</a>:</p>
+<ol>
+<li>Plug-in de código do Visual Studio que autocompleta módulos npm em instruções de importação.</li>
+</ol>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense">Path Intellisense</a></p>
+<ol>
+<li>Plug-in de código do Visual Studio que preenche automaticamente nomes de arquivos.</li>
+</ol>
+</li>
+<li>
+<p>Programa para reiniciar servidor nodejs se o código fonte for trocado</p>
+<ol>
+<li><a href="https://nodemon.io/">https://nodemon.io/</a></li>
+<li><a href="https://www.youtube.com/watch?v=u3MrPxq_RyA&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=9">Vídeo Aula sobre nodemon</a></li>
+</ol>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=louisyuenll.sequelize-vscode-association-snippet">Sequelize VSCode Association Snippet</a></p>
+</li>
+<li>
+<p>A extensão <a href="https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype">Paste JSON as Code</a> Copy JSON, paste as Go, TypeScript, C#, C++ and more.</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.delphi-keybindings">Delphi Keymap</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#topo_Objetivo" title="Retorna ao topo">🔝</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id='id_referencias'></span><strong>REFERÊNCIAS</strong></p>
+<ol>
+<li>
+<p><a href="https://nodejs.org/en/docs/meta/topics/dependencies/">Dependências do node js</a></p>
+</li>
+<li>
+<p><a href="https://github.com/libuv/libuv">Biblioteca c libuv1</a></p>
+</li>
+<li>
+<p><a href="https://github.com/nodesource/distributions/blob/master/README.md#debinstall">NodeSource Node.js Binary Distributions</a></p>
+</li>
+<li>
+<p><a href="https://github.com/nodesource/distributions/blob/master/README.md#debinstall">Instruções de instalação no ubuntu</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense">npm Intellisense</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=JerryHong.autofilename">AutoFileName</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=leizongmin.node-module-intellisense">Node.js Modules Intellisense</a></p>
+</li>
+<li>
+<p><a href="https://eslint.org/">Instalar eslint</a></p>
+</li>
+<li>
+<p>Instalar extensão <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">vscode-eslint</a></p>
+</li>
+<li>
+<p><a href="https://expressjs.com/en/resources/frameworks.html">Lista de framework baseado em express</a></p>
+</li>
+<li>
+<p><a href="http://www.w3big.com/pt/nodejs/nodejs-install-setup.html">nodejs-install-setup.html</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=0q0u8syrztg&amp;list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B&amp;index=16">Acesse a banco de dados sequelize</a></p>
+<ol>
+<li><a href="https://sequelize.org/">Acesso a dados com pacote sequelize.org</a></li>
+</ol>
+</li>
+<li>
+<p><a href="http://www.macoratti.net/17/01/node_sequelize1.html">node_sequelize1</a></p>
+</li>
+<li>
+<p><a href="https://loopback.io/doc/en/lb4/index.html">Framework loopback</a></p>
+<ol>
+<li><a href="https://loopback.io/doc/en/lb4/Extending-LoopBack-4.html">Extending-LoopBack-4</a></li>
+</ol>
+</li>
+<li>
+<p><a href="https://scotch.io/@gilles/get-started-with-creating-a-restful-api-endpoints-in-nodejs-and-expressjs">get-started-with-creating-a-restful-api-endpoints-in-nodejs-and-expressjs</a></p>
+</li>
+<li>
+<p><a href="#topo_Objetivo" title="Retorna ao topo">🔝</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id='id_historico'></span></span><strong>HISTÓRICO</strong></p>
+ <!--DONE: HISTÓRICO -->
+<ol>
+<li>
+<p>10/05/2023</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Trocado todo o código &lt;pre&gt;&lt;/pre&gt; por ```sh ``` e usado o tema da pasta /css;</li>
+</ul>
+</li>
+<li>
+<p>04/02/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criado este documento;</li>
+</ul>
+</li>
+<li>
+<p>06/12/2020</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> instalar nodejs</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> <a href="https://nodejs.org/en/docs/">Nodejs Docs</a></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> instalar extensões do vscode para nodejs
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> npm Intellisense</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> AutoFileName</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Node.js Modules Intellisense</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> eslint nodejs para uso na linha de comandos</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Instalar extensão <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">vscode-eslint</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>08/02/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Extensão sequelize para acessar banco de dados:
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Instalar sequelize;</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Testar acesso ao banco de dados mariadb.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>11/02/2021. <!--FIXME: Falta fazer os item abaixo: --></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Documentar a segunda forma de conectar-se ao banco de dados mariadb.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar um index no arquivo <a href="http://instalar.html">instalar.md</a>.</li>
+</ul>
+</li>
+<li>
+<p><a href="#topo_Objetivo" title="Retorna ao topo">🔝</a></p>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+        
+        
+    </body>
+    </html>

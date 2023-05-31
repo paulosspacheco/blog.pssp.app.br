@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Desfazendo commit executado anteriormente &lt;a href&equals;&quot;desfazendo&lowbar;commit&lowbar;executado&lowbar;anteriormente&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x1fa9f; &lt;&sol;a&gt;</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS markdown -->
+    <link
+      type="text/css"
+      href="../../../css/defaultthemeMarkdown.css"
+      rel="stylesheet"
+    />
+    <!-- CSS da página /index.html -->
+    <link
+      type="text/css"
+      href="../../../css/defaulttheme.css"
+      rel="stylesheet"
+    />
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h4 id="desfazendo-commit-executado-anteriormente----">Desfazendo commit executado anteriormente <a href="desfazendo_commit_executado_anteriormente.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h4>
+<p>Ao trabalhar em um projeto de equipe, é bastante comum que os desenvolvedores criem branches , adicionem arquivos e os preparem para commits quando estiverem prontos.</p>
+<p>No entanto, em alguns casos, você pode perceber que as alterações feitas não foram tão boas.</p>
+<p>Você modificou alguns arquivos, adicionou e excluiu muitas linhas de seus arquivos, mas deseja voltar .</p>
+<p>Resumindo, você deseja reverter as alterações que acabou de fazer e voltar aos arquivos que tinha.</p>
+<p>Essa técnica é chamada de <strong>“redefinir para HEAD”</strong> e é uma ferramenta bastante poderosa para os desenvolvedores usarem.</p>
+<ol>
+<li>
+<p><strong>PASSO A PASSO</strong></p>
+<ol>
+<li>
+<p>Crie um repositório no github de nome <strong>teste</strong>, em seguida clone o repositório para um pasta local de seus exemplos e execute o comando:</p>
+<pre><code class="hljs language-sh">
+  git <span class="hljs-built_in">clone</span> git@github.com:paulosspacheco/teste.git
+  
+
+</code></pre>
+</li>
+<li>
+<p>Adicione um arquivo qualquer a pasta <strong>./teste</strong>, em seguida execute o comando abaixo para adicionar as alterações ao repositório:</p>
+<pre><code class="hljs language-sh">  
+  <span class="hljs-built_in">cd</span> ./teste
+  git add .
+  git commit -m <span class="hljs-string">"Primeiro commit ao repositório teste"</span> 
+
+  <span class="hljs-comment"># git log mostra todos o head do projeto</span>
+  <span class="hljs-comment"># para sair da lista pressione CTRL+Z</span>
+  git <span class="hljs-built_in">log</span>
+
+</code></pre>
+</li>
+<li>
+<p>Para desfazer o <strong>git commit</strong> anterior execute o comando:</p>
+<pre><code class="hljs language-sh">                      
+  git reset --hard HEAD^
+
+  <span class="hljs-comment"># O comando abaixo é equivalente comando anterior "HEAD^"</span>
+  git reset --hard HEAD~1
+
+  <span class="hljs-comment"># git log mostra todos o head do projeto</span>
+  <span class="hljs-comment"># para sair da lista pressione CTRL+Z</span>
+  git <span class="hljs-built_in">log</span>
+
+</code></pre>
+</li>
+<li>
+<p>Para desfazer o <strong>git reset</strong> anterior execute o comando:</p>
+<pre><code class="hljs language-sh">                      
+  git reset --hard HEAD@{1}
+
+  <span class="hljs-comment"># git log mostra todos o head do projeto</span>
+  <span class="hljs-comment"># para sair da lista pressione CTRL+Z</span>
+  git <span class="hljs-built_in">log</span>
+
+</code></pre>
+</li>
+<li>
+<p>Para desfazer 2 <strong>git commit</strong> execute o comando:</p>
+<pre><code class="hljs language-sh">          
+  git reset --hard HEAD~2
+
+  <span class="hljs-comment"># git log mostra todos o head do projeto</span>
+  <span class="hljs-comment"># para sair da lista pressione CTRL+Z</span>
+  git <span class="hljs-built_in">log</span>
+
+</code></pre>
+</li>
+<li>
+<p>Para desfazer 2 <strong>git reset</strong> anteriores execute o comando:</p>
+<pre><code class="hljs language-sh">                      
+  git reset --hard HEAD@{2}
+
+  <span class="hljs-comment"># git log mostra todos o head do projeto</span>
+  <span class="hljs-comment"># para sair da lista pressione CTRL+Z</span>
+  git <span class="hljs-built_in">log</span>
+
+</code></pre>
+</li>
+<li>
+<p>Para retornar para a versão mais atual execute o comando:</p>
+<pre><code class="hljs language-sh">                      
+  git reset --hard HEAD
+
+  <span class="hljs-comment"># git log mostra todos o head do projeto</span>
+  <span class="hljs-comment"># para sair da lista pressione CTRL+Z</span>
+  git <span class="hljs-built_in">log</span>
+
+</code></pre>
+</li>
+<li>
+<p>,,</p>
+</li>
+</ol>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+<h5 id="referências">REFERÊNCIAS</h5>
+<ol>
+<li><a href="https://devconnected.com/how-to-git-reset-to-head/#:~:text=To%20hard%20reset%20files%20to,option%20and%20specify%20the%20HEAD.&amp;text=The%20purpose%20of%20the%20%E2%80%9Cgit,before%20HEAD%20and%20so%20on">How To Git Reset to HEAD</a>.)</li>
+<li><a href="https://git-scm.com/docs/git-log/pt_BR">git log</a></li>
+</ol>
+
+        
+        
+    </body>
+    </html>

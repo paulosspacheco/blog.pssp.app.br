@@ -1,0 +1,53 @@
+<!--  Exemplo de uso da class tgeneric.js-->
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    
+    <title>Minhas anotações que fiz ao estudar programação da linguagem css</title>
+  
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="paulosspacheco">
+    <meta name="description" content="Um código html é composto de 3 linguagens quais sejam: HTML, css e javascript">
+    <meta name="keywords" content="css,html,javascript">
+  
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+   <link type="text/css" href="../../css/defaulttheme.css" rel="stylesheet">
+
+    <script type="application/x-javascript" src="../../js/generic.js"></script>
+    <script type="application/x-javascript" src="../../js/tgeneric.js"></script>
+    
+
+</head>
+
+<body>
+  <pre>
+    <script>
+        var a = [
+        "Hydrogen",
+        "Helium",
+        "Lithium",
+        "Beryl­lium"
+      ];
+      
+     document.write('<br>');
+      var a2 = a.map(function(s){
+                                  document.write('linha <br>');
+                                  return s.length 
+                                }
+                    );
+      document.write('Tamanhos das strings em a2: '+a2+ '<br>');
+
+      var a3 = a.map( s => (s.length) );
+      
+      document.write('<br>');
+
+      document.write('Tamanhos das strings em a3: '+a3+ '<br>');
+
+
+    </script>
+       
+</pre>       
+        <script type="application/x-javascript" src="../../js/treeview_xhtml.js"></script>
+</body></html>

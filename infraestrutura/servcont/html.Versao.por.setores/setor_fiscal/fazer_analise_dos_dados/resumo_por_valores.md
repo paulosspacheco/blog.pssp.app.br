@@ -1,0 +1,4 @@
+# RESUMO POR VALORES
+
+1. PASSO A PASSO
+   1. ...

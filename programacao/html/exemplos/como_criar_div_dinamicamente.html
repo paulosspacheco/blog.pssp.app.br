@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <p>Clique no botão para criar um elemento DIV com fundo rosa e algum texto.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <script>
+    function myFunction() {
+      var x = document.createElement("DIV");
+      var t = document.createTextNode("Este é um elemento div.");
+      x.setAttribute("style", "background-color: pink;");
+      x.appendChild(t);
+      document.body.appendChild(x);
+    }
+  </script>
+
+</body>
+
+</html>

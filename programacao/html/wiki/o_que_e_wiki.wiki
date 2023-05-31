@@ -1,0 +1,12 @@
+{| class="wikitable"
+  |+ Caption
+|-
+  ! Heading 1
+  ! Heading 2
+|-
+  | A
+  | B
+|-
+  | C
+  | D
+|}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Criando reposit&oacute;rio git &lt;a href&equals;&quot;criando&lowbar;repositorio&lowbar;git&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x1fa9f; &lt;&sol;a&gt;</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS markdown -->
+    <link
+      type="text/css"
+      href="../../../css/defaultthemeMarkdown.css"
+      rel="stylesheet"
+    />
+    <!-- CSS da página /index.html -->
+    <link
+      type="text/css"
+      href="../../../css/defaulttheme.css"
+      rel="stylesheet"
+    />
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h4 id="criando-repositório-git----">Criando repositório git <a href="criando_repositorio_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h4>
+<ol>
+<li>
+<p>Use o comando <strong>git init</strong> para criar o repositório na pasta atual.</p>
+<pre><code class="hljs language-sh">   <span class="hljs-comment"># Mova-se para a pasta que deseja adicionar o git.</span>
+   <span class="hljs-built_in">cd</span> ~/meuProjeto   
+
+   <span class="hljs-comment"># Inicializa a pasta ~/meuProjeto para que aceite comandos do git onde o </span>
+   <span class="hljs-comment"># repositório é criado dentro da pasta cd ~/meuProjeto   </span>
+   git init
+    
+</code></pre>
+</li>
+<li>
+<p>Use o comando <strong>git init</strong> para criar o repositório na pasta diferente da pasta atual.</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># Mova-se para a pasta que deseja adicionar o git.</span>
+   <span class="hljs-built_in">cd</span> ~/meuProjeto 
+
+   <span class="hljs-comment"># Inicializa a pasta ~/meuProjeto para que aceite comandos do git onde o </span>
+   <span class="hljs-comment"># repositório é criado fora da pasta cd ~/meuProjeto e dentro da pasta </span>
+   <span class="hljs-comment"># ~/meuProjeto.git</span>
+   git init --separate-git-dir ~/meuProjeto.git
+
+</code></pre>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="https://githowto.com/pt-BR/create_a_project">Crie um repositório</a></li>
+<li><a href="https://rakhesh.com/coding/how-to-move-separate-the-git-folder-out-of-your-working-tree/">Como mover/separar a pasta .git da sua árvore de trabalho</a></li>
+</ol>
+</li>
+</ol>
+
+        
+        
+    </body>
+    </html>

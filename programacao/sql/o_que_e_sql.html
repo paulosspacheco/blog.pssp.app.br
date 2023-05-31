@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>O QUE &Eacute; LINGUAGEM SQL &lt;a href&equals;&quot;O&lowbar;que&lowbar;e&lowbar;sql&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;  &#x1fa9f; &lt;&sol;a&gt; &lt;span id&equals;&quot;topo&lowbar;Index&quot;&gt;&lt;span&gt;</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS markdown -->
+    <link
+      type="text/css"
+      href="../../../css/defaultthemeMarkdown.css"
+      rel="stylesheet"
+    />
+    <!-- CSS da página /index.html -->
+    <link
+      type="text/css"
+      href="../../../css/defaulttheme.css"
+      rel="stylesheet"
+    />
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h4 id="o-que-é-linguagem-sql-----">O QUE É LINGUAGEM SQL <a href="O_que_e_sql.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a> <span id="topo_Index"><span></h4>
+<h2 id="1-index"><strong>1. INDEX</strong></h2>
+<hr>
+<ol>
+<li><a href="#id_01">O que é Linguagem SQL</a></li>
+<li><a href="#id_02">Comandos SQL mais importantes</a>
+<ol>
+<li><a href="#id_02_01">RECORDS</a></li>
+<li><a href="#id_02_02">DATABASE</a></li>
+<li><a href="#id_02_03">TABLE</a></li>
+<li><a href="#id_02_04">INDEX</a></li>
+<li><a href="#id_02_05">TRANSAÇÕES</a></li>
+<li><a href="#id_02_06">VIEWS</a></li>
+</ol>
+</li>
+<li><a href="#id_referencias">REFERÊNCIAS</a></li>
+</ol>
+<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+<hr>
+<h3 id="1-o-que-é-linguagem-sql"><strong>1. O que é Linguagem SQL</strong><span id=id_01></span></h3>
+<ol>
+<li>
+<p>Structured Query Language, ou Linguagem de Consulta Estruturada ou SQL, é a linguagem de pesquisa declarativa padrão para banco de dados relacional (base de dados relacional). Muitas das características originais do SQL foram inspiradas na álgebra relacional. O SQL foi desenvolvido originalmente no início dos anos 70 nos laboratórios da IBM em San Jose, dentro do projeto System R, que tinha por objetivo demonstrar a viabilidade da implementação do modelo relacional proposto por E. F. Codd. O nome original da linguagem era SEQUEL, acrônimo para &quot;Structured English Query Language&quot; (Linguagem de Consulta Estruturada, em Inglês), vindo daí o facto de, até hoje, a sigla, em inglês, ser comumente pronunciada &quot;síquel&quot; ao invés de &quot;és-kiú-él&quot;, letra a letra. No entanto, em português, a pronúncia mais corrente é letra a letra: &quot;ésse-quê-éle&quot;. <a href="https://pt.wikipedia.org/wiki/SQL">Veja mais...</a></p>
+<ol>
+<li>Bons tutoriais que encontrei na web.:
+<ol>
+<li><a href="https://www.w3schools.com/sql/default.asp">Tutorial w3schools.com/sql</a>;</li>
+<li><a href="https://www.mysqltutorial.org/">mysqltutorial.org</a>
+<ol>
+<li><a href="https://www.mysqltutorial.org/basic-mysql-tutorial.aspx">basic-mysql-tutorial</a></li>
+<li><a href="https://www.mysqltutorial.org/introduction-to-sql-stored-procedures.aspx">introduction-to-sql-stored-procedures</a></li>
+<li><a href="https://www.mysqltutorial.org/mysql-triggers.aspx">mysql-triggers</a></li>
+<li><a href="https://www.mysqltutorial.org/mysql-views-tutorial.aspx">mysql-views-tutorial</a></li>
+<li><a href="https://www.mysqltutorial.org/mysql-index/">mysql-index</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Dicas:</p>
+<ol>
+<li>Não há diferença entre maiúsculas e minusculas como na linguagem c++.</li>
+<li>A linguagem é interpretada.</li>
+<li>Existe um padrão na linguagem sql chamado <em>ansi sql</em> ou <em>sql 92</em>, porém o mesmo não é seguido pelos fabricantes de banco de dados.</li>
+<li>O sql além de armazenar dados é possível fazer programas a serem executados ao incluir ou excluir ou alterar um registro das tabelas.</li>
+<li>O mysql não tem opção de depurar programas.</li>
+<li><a href="http://campeche.inf.furb.br/tccs/2012-II/TCC2012-2-10-VF-FabianoBender.pdf">Dicas de como depurar sql</a>.</li>
+<li><a href="https://www.devmedia.com.br/postgresql-x-mysql-qual-escolher/3923">Comparativo entre mysql x postgreSQL</a>.</li>
+<li><a href="https://www.mysqltutorial.org/mysql-uuid/">MySQL UUID Smackdown: UUID vs. INT para chave primária</a></li>
+<li><a href="https://www.mysqltutorial.org/mysqltips.aspx">Dicas de MySQL</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
+</li>
+</ol>
+<h3 id="2-comandos-sql-mais-importantes"><strong>2. Comandos SQL mais importantes</strong><span id=id_02></span></h3>
+<p><span id=id_02_01></span></p>
+<ol>
+<li>
+<p><span id=id_02_02></span><a href="https://mariadb.com/kb/pt-br/create-database/"><strong>DATABASE</strong></a></p>
+<ol>
+<li>
+<p><a href="https://www.w3schools.com/sql/sql_create_db.asp">CREATE DATABASE - cria um novo banco de dados</a></p>
+<ol>
+<li>
+<p><strong>Sintaxe</strong>:</p>
+<pre><code class="hljs language-sql">
+   <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">DATABASE</span> databasename;
+
+</code></pre>
+</li>
+<li>
+<p><strong>Exemplo</strong>:</p>
+<ol>
+<li>
+<p>A seguinte instrução SQL cria um banco de dados chamado &quot;testDB&quot;:</p>
+<pre><code class="hljs language-sql">
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">DATABASE</span> testDB;
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>NOTA</strong>:</p>
+<ol>
+<li><em>Certifique-se de ter privilégios de administrador antes de criar qualquer banco de dados. Uma vez que um banco de dados é criado, você pode verificá-lo na lista de bancos de dados com o seguinte comando SQL:</em></li>
+</ol>
+<pre><code class="hljs language-sql">
+ <span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">DATABASES</span>;
+
+</code></pre>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/sql/sql_create_db.asp">Veja mais...</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p>DROP DATABASE - A instrução <strong>DROP DATABASE</strong> é usada para eliminar um banco de dados SQL existente.</p>
+<ol>
+<li>
+<p><strong>Sintaxe</strong>:</p>
+<pre><code class="hljs language-sql">
+  <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">DATABASE</span> databasename;
+
+</code></pre>
+</li>
+<li>
+<p><strong>Exemplo</strong>:</p>
+<ol>
+<li>
+<p>A seguinte instrução SQL elimina o banco de dados existente &quot;testDB&quot;:</p>
+<pre><code class="hljs language-sql">
+  <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">DATABASE</span> testDB;
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>NOTA</strong>:</p>
+<ol>
+<li>
+<p><em>Certifique-se de ter privilégios de administrador antes de descartar qualquer banco de dados. Uma vez que um banco de dados é descartado, você pode verificá-lo na lista de bancos de dados com o seguinte comando SQL: SHOW DATABASES;</em></p>
+<pre><code class="hljs language-sql">
+    <span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">DATABASES</span>;
+
+</code></pre>
+</li>
+<li>
+<p>A instrução acima não funciona no prompt do banco de dados sqlite.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/sql/sql_drop_db.asp">Veja mais...</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://mariadb.com/kb/pt-br/alter-database/">ALTER DATABASE - modifica um banco de dados</a></p>
+<ol>
+<li>Exemplo para alterar o CHARSET e COLLATION de um banco existente:
+<ol>
+<li>
+<pre>ALTER DATABASE `sua_base`
+        CHARSET = Latin1
+        COLLATE = latin1_swedish_ci; //Não distingue letras minúsculas e maiúsculas e nem caracteres acentuados e com cedilha, ou seja, o registro que contém a palavra “Intuição” será retornado quando houver uma procura pela palavra “intúicao”.
+</pre>
+</li>
+<li>
+<pre>ALTER DATABASE `sua_base`
+        CHARSET = UTF8
+        COLLATE = utf8_general_ci; // Não há distinção entre letras maiúsculas e minúsculas. Buscando por “teste”, registros como “Teste” ou “TESTE” serão retornados.
+ </pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/sql/sql_drop_db.asp">DROP DATABASE - Apaga o Banco de dados</a>.</p>
+</li>
+<li>
+<p>A instrução DROP DATABASE é usada para eliminar um banco de dados SQL existente.</p>
+<ol>
+<li>Sintaxe:
+<ol>
+<li>
+<pre>DROP DATABASE databasename;</pre>
+</li>
+<li>
+<p>A seguinte instrução SQL elimina o banco de dados existente &quot;testDB&quot;:</p>
+<ol>
+<li>
+<pre>DROP DATABASE testDB;</pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>RECORDS</strong></p>
+<ol>
+<li>
+<p><strong>SELECT</strong> - A instrução <strong>SELECT</strong> é usada para selecionar dados de um banco de dados. Os dados retornados são armazenados em uma tabela de resultados, chamada de conjunto de resultados.</p>
+<ol>
+<li>
+<p><strong>Sintaxe</strong>:</p>
+<pre><code class="hljs language-sql">
+   <span class="hljs-keyword">SELECT</span> column1, column2, ... <span class="hljs-keyword">FROM</span> table_name; 
+
+</code></pre>
+</li>
+<li>
+<p><strong>Exemplo</strong>:</p>
+<ol>
+<li>
+<p>Para selecionar todos os campos de uma tabela:</p>
+<pre><code class="hljs language-sql">
+    <span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> table_name; 
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/sql/sql_select.asp">Veja mais...</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>UPDATE</strong> - A instrução <strong>UPDATE</strong> é usada para modificar os registros existentes em uma tabela.</p>
+<ol>
+<li>
+<p><strong>Sintaxe</strong>:</p>
+<pre><code class="hljs language-sql">
+   <span class="hljs-keyword">UPDATE</span> table_name
+         <span class="hljs-keyword">SET</span> column1 = value1, column2 = value2, ...
+         <span class="hljs-keyword">WHERE</span> condition;
+</code></pre>
+</li>
+<li>
+<p><strong>Exemplo</strong>:</p>
+<ol>
+<li>A instrução SQL a seguir atualiza o primeiro cliente (CustomerID = 1) com uma nova pessoa de contato e uma nova cidade.</li>
+</ol>
+<pre><code class="hljs language-sql">
+  <span class="hljs-keyword">UPDATE</span> Customers
+         <span class="hljs-keyword">SET</span> ContactName=<span class="hljs-string">'Alfred Schmidt'</span>, City=<span class="hljs-string">'Frankfurt'</span>
+         <span class="hljs-keyword">WHERE</span> CustomerID=<span class="hljs-number">1</span>;
+
+</code></pre>
+</li>
+<li>
+<p><em><strong>NOTA</strong></em></p>
+<ol>
+<li><em>Tenha cuidado ao atualizar registros em uma tabela! Observe a cláusula <strong>WHERE</strong> na declaração <strong>UPDATE</strong>. A cláusula <strong>WHERE</strong> especifica quais registros devem ser atualizados. Se você omitir a cláusula <strong>WHERE</strong>, todos os registros da tabela serão atualizados!</em></li>
+</ol>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/sql/sql_update.asp">Veja mais..</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p>DELETE - exclui dados de um banco de dados</p>
+<ol>
+<li>Sintaxe:
+<ol>
+<li>
+<pre>DELETE FROM table_name
+        WHERE condition;
+</pre>
+</li>
+</ol>
+</li>
+<li>A seguinte instrução SQL exclui o cliente &quot;Alfreds Futterkiste&quot; da tabela &quot;Clientes&quot;:
+<ol>
+<li>
+<pre>DELETE FROM Customers
+        WHERE CustomerName='Alfreds Futterkiste';
+</pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>INSERT INTO - insere novos dados em um banco de dados</p>
+<ol>
+<li>Sintaxe:
+<ol>
+<li>
+<pre>INSERT INTO table_name
+             (column1, column2, column3, ...)
+      VALUES (value1, value2, value3, ...);
+</pre>
+</li>
+</ol>
+</li>
+<li>Se você estiver adicionando valores para todas as colunas da tabela, não será necessário especificar os nomes das colunas na consulta SQL. No entanto, certifique-se de que a ordem dos valores esteja na mesma ordem das colunas da tabela. A sintaxe INSERT INTO seria a seguinte:
+<ol>
+<li>
+<pre>INSERT INTO table_name
+        VALUES (value1, value2, value3, ...);
+</pre>
+</li>
+</ol>
+</li>
+<li>A seguinte instrução SQL insere um novo registro na tabela &quot;Clientes&quot;:
+<ol>
+<li>
+<pre>INSERT INTO Customers
+       (CustomerName, ContactName, Address, City, PostalCode, Country)
+       VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+</pre>
+</li>
+</ol>
+</li>
+<li>A seguinte instrução SQL insere 3 registros na tabela &quot;books&quot;:
+<ol>
+<li>
+<pre>INSERT INTO books
+        (title, author_id, isbn, year_pub)
+     VALUES('The Trial', '1', '0805210407', '1995'),
+           ('The Metamorphosis', '1', '0553213695', '1995'),
+           ('America', '1', '0805210644', '1995');
+</pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
+</li>
+<li>
+<p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_02_03></span><a href="https://mariadb.com/kb/en/create-table/"><strong>TABLE</strong></a></p>
+<ol>
+<li>
+<p><a href="https://www.w3schools.com/sql/sql_create_table.asp">CREATE TABLE - cria uma nova tabela</a>.</p>
+<ol>
+<li>Sintaxe:
+<ol>
+<li>
+<pre>CREATE TABLE table_name (
+         column1 datatype,
+         column2 datatype,
+         column3 datatype,
+         ....);
+ </pre>
+</li>
+<li>O exemplo a seguir cria uma tabela chamada &quot;Persons&quot; que contém cinco colunas: PersonID, LastName, FirstName, Address e City:
+<ol>
+<li>
+<pre>CREATE TABLE Persons (
+         PersonID int,
+         LastName varchar(255),
+         FirstName varchar(255),
+         Address varchar(255),
+         City varchar(255));
+</pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/sql/sql_alter.asp">ALTER TABLE - modifica uma tabela</a></p>
+<ol>
+<li>Sintaxe para adicionar uma coluna a uma tabela:
+<ol>
+<li>
+<pre>ALTER TABLE table_name
+       ADD column_name datatype;
+</pre>
+</li>
+</ol>
+</li>
+<li>O seguinte SQL adiciona uma coluna &quot;Email&quot; à tabela &quot;Customers&quot;:
+<ol>
+<li>
+<pre>ALTER TABLE Customers
+       ADD Email varchar(255);
+</pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/sql/sql_drop_table.asp">DROP TABLE - exclui uma tabela</a></p>
+<ol>
+<li>A instrução DROP TABLE é usada para eliminar uma tabela existente em um banco de dados.
+<ol>
+<li>
+<p>Sintaxe:</p>
+<ol>
+<li>
+<pre>DROP TABLE table_name;</pre>
+</li>
+</ol>
+</li>
+<li>
+<p>A seguinte instrução SQL elimina a tabela existente &quot;Shippers&quot;:</p>
+<ol>
+<li>
+<pre>DROP TABLE Shippers; </pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_02_04></span><a href="https://mariadb.com/kb/pt-br/create-index/"><strong>INDEX</strong></a></p>
+<ol>
+<li>
+<p>Observação: a sintaxe para criar índices varia entre os diferentes bancos de dados. Portanto: Verifique a sintaxe para criar índices em seu banco de dados.</p>
+<ol>
+<li>
+<p><a href="https://www.w3schools.com/sql/sql_create_index.asp">Dicas boas sobre index</a></p>
+</li>
+<li>
+<p><a href="https://dev.mysql.com/doc/refman/8.0/en/create-index.html">Sintaxe do MySql</a>:</p>
+<ol>
+<li>
+<p>CREATE INDEX - Cria um índice em uma tabela. Valores duplicados são permitidos:</p>
+<ol>
+<li>
+<p>Sintaxe:</p>
+<ol>
+<li>
+<pre>CREATE INDEX index_name
+       ON table_name (column1, column2, ...);
+</pre>
+</li>
+</ol>
+</li>
+<li>
+<p>A instrução SQL abaixo cria um índice denominado &quot;idx_lastname&quot; na coluna &quot;LastName&quot; da tabela &quot;Pessoas&quot;:</p>
+<ol>
+<li>
+<pre>CREATE INDEX idx_lastname
+       ON Persons (LastName);
+ </pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Se quiser criar um índice em uma combinação de colunas, você pode listar os nomes das colunas entre parênteses, separados por vírgulas</p>
+<ol>
+<li>
+<pre>CREATE INDEX idx_pname
+       ON Persons (LastName, FirstName);
+</pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>CREATE UNIQUE INDEX - Cria um índice exclusivo em uma tabela. Valores duplicados não são permitidos:</p>
+<ol>
+<li>Sintaxe:
+<ol>
+<li>
+<pre>CREATE UNIQUE INDEX index_name
+        ON table_name (column1, column2, ...);
+</pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>DROP INDEX - A instrução DROP INDEX é usada para excluir um índice em uma tabela.</p>
+<ol>
+<li>Sintaxe:
+<ol>
+<li>
+<pre>ALTER TABLE table_name
+        DROP INDEX index_name;
+</pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_02_05></span><strong><a href="https://mariadb.com/kb/en/transactions/">TRANSAÇÕES</a></strong></p>
+<ol>
+<li><a href="https://mariadb.com/kb/en/start-transaction/">START TRANSACTION</a>
+<ol>
+<li>.</li>
+</ol>
+</li>
+<li><a href="https://mariadb.com/kb/en/commit/">COMMIT</a>
+<ol>
+<li>.</li>
+</ol>
+</li>
+<li><a href="https://mariadb.com/kb/en/rollback/">ROLLBACK</a>
+<ol>
+<li>.</li>
+</ol>
+</li>
+<li><a href="https://mariadb.com/kb/en/set-transaction/">SET TRANSACTION</a>
+<ol>
+<li>.</li>
+</ol>
+</li>
+<li><a href="https://mariadb.com/kb/en/lock-tables/">LOCK TABLES</a>
+<ol>
+<li>.</li>
+</ol>
+</li>
+<li><a href="https://mariadb.com/kb/en/transactions-unlock-tables/">UNLOCK TABLES</a>
+<ol>
+<li>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
+</li>
+<li>
+<p><span id=id_02_06></span> <a href="https://mariadb.com/kb/en/foreign-keys/"><strong>VIEWS</strong></a></p>
+<ol>
+<li>
+<p>Uma chave estrangeira é uma restrição que pode ser usada para impor a integridade dos dados. É composto por uma coluna (ou conjunto de colunas) em uma tabela chamada tabela filho, que faz referência a uma coluna (ou conjunto de colunas) em uma tabela chamada tabela pai. Se chaves estrangeiras são usadas, MariaDB executa algumas verificações para garantir que algumas regras de integridade sejam sempre aplicadas. Para uma explicação mais completa, consulte Bancos de dados relacionais: Chaves estrangeiras .</p>
+<ol>
+<li>As chaves estrangeiras (FOREIGN KEY) só podem ser usadas com mecanismos de armazenamento que as suportem. O InnoDB padrão e o PBXT obsoleto oferecem suporte a chaves estrangeiras.</li>
+<li>As tabelas particionadas não podem conter chaves estrangeiras e não podem ser referenciadas por uma chave estrangeira.</li>
+</ol>
+</li>
+<li>
+<p>As chaves estrangeiras são criadas com CREATE TABLE ou ALTER TABLE . A definição deve seguir esta sintaxe:</p>
+<ol>
+<li>
+<pre>[CONSTRAINT [symbol]] FOREIGN KEY
+     [index_name] (index_col_name, ...)
+     REFERENCES tbl_name (index_col_name,...)
+     [ON DELETE reference_option]
+     [ON
+<pre><code class="hljs"> reference_option:
+
+    RESTRICT | CASCADE | SET NULL | NO ACTION | SET DEFAULT&lt;/pre&gt;.
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://mariadb.com/kb/en/foreign-keys/">Exemplos</a>.</p>
+<ol>
+<li>Vamos ver um exemplo. Vamos criar uma tabela author  e uma tabela book. Ambas as tabelas têm uma chave primária chamada author_id também possui uma chave estrangeira composta por um campo chamado author_id, que se refere à author chave primária. O nome da restrição de chave estrangeira é opcional, mas vamos especificá-lo porque queremos que ele apareça em mensagens de erro: fk_book_author.
+<ol>
+<li>
+<pre>CREATE TABLE author (
+        id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100) NOT NULL
+     ) ENGINE = InnoDB;
+<pre><code class="hljs"> CREATE TABLE book (
+    id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(200) NOT NULL,
+    author_id SMALLINT UNSIGNED NOT NULL,
+
+    CONSTRAINT `fk_book_author`
+    FOREIGN KEY (author_id) REFERENCES author (id)
+       ON DELETE CASCADE
+       ON UPDATE RESTRICT
+ ) ENGINE = InnoDB;
+</code></pre>
+</li>
+</ol>
+</pre>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/sql/sql_foreignkey.asp">Dicas em www.w3schools.com</a></p>
+</li>
+<li>
+<p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="3-referências"><strong>3. REFERÊNCIAS</strong><span id=id_referencias></span></h2>
+<hr>
+<ol>
+<li><a href="https://www.w3schools.com/sql/default.asp">Tutorial w3schools.com/sql</a></li>
+<li><a href="https://pt.wikipedia.org/wiki/SQL">wikipedia.org/wiki/SQL)</a></li>
+<li><a href="https://mariadb.com/kb/en/beginner-mariadb-articles/">Artigos MariaDB para iniciantes</a>
+<ol>
+<li><a href="https://mariadb.com/kb/en/mariadb-basics/">MariaDB Basics</a></li>
+<li><a href="https://mariadb.com/kb/en/getting-data-from-mariadb/">Obtendo dados de MariaDB</a></li>
+</ol>
+</li>
+<li><a href="https://www.w3schools.com/sql/sql_foreignkey.asp">Restrição SQL FOREIGN KEY</a></li>
+<li><a href="http://www.help.market.com.br/linux/index.html?reiniciar_o_servico_do_postgre.htm">Para saber onde estão as bases de dados fisicamente</a></li>
+<li></li>
+<li><a href="#topo_Index" title="Retorna ao topo">🔝</a></li>
+</ol>
+
+        
+        
+    </body>
+    </html>

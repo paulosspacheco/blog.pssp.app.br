@@ -1,0 +1,70 @@
+<!-- 
+    Dados globais devem ser incluídos em <body>  da seguinte forma
+
+    <span w3-include-html="./footer.inc"> </span>    
+    <script>
+        includeHTML();
+    </script>    
+
+    Exemplo de footer.inc:
+    <pre class="pre1">
+        Data da criação:     <span id ="createDate">??????</span>
+        Data da atualização: <span id = "createDateUpdate">??????</span>
+        Autor: <span id ="author">??????</span>
+        Email: <span id ="e_mail">??????</span>
+        Local: <span id ="local">??????</span>
+    </pre> 
+-->
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    
+
+    <title>Este arquivo é usado para editar o arquivo footer.inc </title>
+
+    <meta name="createDate" content="12/11/2020">
+    <meta name="createDateUpdate" content="12/11/2020">
+    <meta name="description" content="Este arquivo eé usado para testar o código footer.inc">
+    <meta name="keywords" content="css,html,javascript">
+
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" href="../css/defaulttheme.css" rel="stylesheet">
+
+    <script type="application/x-javascript" src="./generic.js"></script>
+    <script type="application/x-javascript" src="./tgeneric.js"></script>
+
+</head>
+
+<body onmouseover="generic.display()">
+
+    <!--  Metas Author, e_mail e local -->
+    <meta name="author" content="Paulo Sérgio da Silva Pacheco">
+    <meta name="e_mail" content="paulosspacheco@yahoo.com.br">
+    <meta name="local" content="Icaraí - Caucaia - Ceará - Brasil">
+
+    <div class="footer"> <!-- inicio <div class="footer"> -->
+        <table style="width: 100%;">
+            <tbody>
+                <tr>
+<td>Criado em:</td>
+<td>&nbsp;<span id="createDate">??????</span></td>
+<td>Autor:</td>
+<td>&nbsp;<span id="author">??????</span></td></tr>
+<tr>
+                    <td>Atualizado em:</td>
+<td><span id="createDate"></span> <span id="createDateUpdate">??????</span></td>
+<td><span id="author"></span>
+                        E-mail: </td>
+<td><span id="e_mail">??????</span> <br><span id="local"></span>
+                    </td>
+                </tr><tr>
+<td><br></td>
+<td><br></td>
+<td>Local.:</td>
+<td>&nbsp;
+                        <span id="local">??????</span></td></tr>
+            </tbody>
+        </table>       
+    </div> <!-- fim <div class="footer"> -->
+</body></html>

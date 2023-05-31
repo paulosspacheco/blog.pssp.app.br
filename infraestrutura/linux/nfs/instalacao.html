@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Instala&ccedil;&atilde;o do Servi&ccedil;o NFS</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS markdown -->
+    <link
+      type="text/css"
+      href="../../../css/defaultthemeMarkdown.css"
+      rel="stylesheet"
+    />
+    <!-- CSS da página /index.html -->
+    <link
+      type="text/css"
+      href="../../../css/defaulttheme.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="vscode-body vscode-light">
+    <h4 id="instalação-do-serviço-nfs">Instalação do Serviço NFS</h4>
+    <ol>
+      <li>
+        <p>
+          Para instalar o servidor NFS instale o pacote
+          <em>nfs-kernel-server</em>.
+        </p>
+        <pre><code class="hljs language-sh">
+   sudo apt update
+
+   <span class="hljs-comment"># Este app deve ser instalado na máquina que vai compartilhar os arquivos.</span>
+   sudo apt install nfs-kernel-server
+
+</code></pre>
+      </li>
+      <li>
+        <p>
+          Para instalar o cliente NFS na máquina cliente instale o pacote
+          <em>nfs-common</em>.
+        </p>
+        <pre><code class="hljs language-sh">
+   sudo apt update
+
+   <span class="hljs-comment"># Este app deve ser instalado na máquina cliente</span>
+   sudo apt install nfs-common
+
+</code></pre>
+      </li>
+      <li>
+        <p>Próximo passo:</p>
+        <ol>
+          <li>
+            <a href="./criando_diretorios_compartilhamento_host.html"
+              >Criando os diretórios de compartilhamento no servidor host</a
+            >
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </body>
+</html>

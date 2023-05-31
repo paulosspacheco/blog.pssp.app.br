@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;O que &eacute; Framework Angular &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;angular&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;&crarr;&lt;&sol;a&gt;&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;angular&period;pdf&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para visualizar o PDF deste documento em nova aba&period;&quot;&gt;&wp;&lt;&sol;a&gt;</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="span-idtopospano-que-é-framework-angular-"><span id="topo"><span>O que é Framework Angular <a href="o_que_e_angular.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a><a href="o_que_e_angular.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a></h1>
+<h2 id="1-index"><strong>1. INDEX</strong></h2>
+<hr>
+<ol>
+<li>
+<p><a href="#id_resumo">Resumo do conteúdo</a></p>
+</li>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+<li><a href="#id_beneficios">Benefícios.</a></li>
+<li><a href="#id_desvantagens">Desvantagens.</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a></p>
+<ol>
+<li><a href="#id_instalar">Instalar</a></li>
+<li><a href="#id_Como_criar_novo_projeto">Como criar um novo projeto Angular</a></li>
+<li><a href="#id_como_criar_componente">Como criar um componente usando  o angular/cli</a></li>
+<li><a href="#id_como_criar_workspace_null">Como criar biblioteca com o Angular 2</a></li>
+<li><a href="#id_como_gerar_projeto_para_publicar_na_web">Como gerar projeto para publicar na web</a></li>
+<li><a href="#id_como_criar_modulos">Como criar módulos</a></li>
+<li><a href="#id_como_usar_rotas_em_angular_2">Como usar rotas em Angular 2</a>
+<ol>
+<li><a href="#id_arquivos_implementacao_rotas">Arquivos para implementação de Rotas</a></li>
+<li><a href="#id_exibindo_paginas_projeto">Exibindo as páginas do projeto</a></li>
+<li><a href="#id_rotas_filhas">Rotas filhas</a></li>
+<li><a href="#id_guardas_de_rota">Guardas de Rota (Prevenir o acesso não autorizado)</a>.</li>
+</ol>
+</li>
+<li><a href="#id_assunto08">Assunto 08</a></li>
+<li><a href="#id_assunto09">Assunto 09</a></li>
+<li><a href="#id_assunto10">Assunto 10</a></li>
+</ol>
+</li>
+<li>
+<p>Exemplos de uso do angular:</p>
+<ol>
+<li><a href="./como_criar_formulario_de_login_no_angular.html">Como criar formulário de login no angular</a></li>
+<li><a href="como_criar_formulario_de_login_no_angular.html#id_passo09">Ocultar a barra de menu quando o usuário não tiver autenticado</a></li>
+<li><a href="como_criar_formulario_de_login_no_angular.html#id_passo10">Usando guada de rotas para usuário não autenticado</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_referencias"><strong>Referências globais.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+<hr>
+<ol>
+<li>
+<p><span id="id_resumo"><span><strong>Resumo do conteúdo:</strong></p>
+<ol>
+<li>Descreve um resumo de como foi feito esse documento com as facilidade encontradas para produzi-lo e dificuldade encontrada.</li>
+</ol>
+</li>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li>
+<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+<ol>
+<li>
+<p><a href="https://angular.io/docs">Angular</a> é um framework escrito em <a href="https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html">typescript</a> criado pelo Google para criação de aplicativos clientes web onde o mesmo se comporta muito parecido com aplicativo desktop ou seja: aplicação single page (Página única).</p>
+</li>
+<li>
+<p>O Angular tem licença MIT e além do Google existe uma comunidade atuante que melhoram o produto todos os dia saindo uma nova versão a cada 6 meses.</p>
+</li>
+<li>
+<p>Outra característica que considero importante é que cada versão será compatível com a anterior.</p>
+</li>
+<li>
+<p><a href="https://angular.io/guide/architecture#introduction-to-angular-concepts">Introdução aos conceitos do framework angular 2</a>.</p>
+</li>
+<li>
+<p><a href="https://angular.io/guide/what-is-angular#what-is-angular">Veja o que é Angular?</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
+<ol>
+<li>
+<p>Programas necessários devem estar instalados:</p>
+<ol>
+<li><a href="https://nodejs.org/en/download/"><strong>nodejs</strong></a></li>
+<li><a href="https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/"><strong>npm</strong></a></li>
+<li><a href="https://code.visualstudio.com/download"><strong>vscode</strong></a></li>
+<li><a href="http://127.0.0.1:5501/programacao/html/typescript/instalar.html#id_Instalar_typescript"><strong>typescript</strong></a></li>
+</ol>
+</li>
+<li>
+<p>Conhecimento das linguagens:</p>
+<ol>
+<li><a href="../../index.html">html</a></li>
+<li><a href="../../css/index.html">css</a></li>
+<li><a href="../index.html"><strong>typescript</strong></a></li>
+<li><a href="../../js/index.html">javascript</a></li>
+<li><a href="../../../sql/index.html">sql</a></li>
+<li><a href="https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_orientada_a_objetos">Conhecimento do conceito de programação orientada a objetos</a>.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
+<ol>
+<li>
+<p>O framework Angular ajuda na criação de Single-Page Applications, com nível de produtividade e qualidade acima da média é open source e tem uma comunidade muito ativa.</p>
+</li>
+<li>
+<p>O angular por ser framework possue tudo que é preciso para construção de aplicativos web.</p>
+</li>
+<li>
+<p>Por ser escrito em typescript é estável e permite construção de aplicativos sem erros de sintaxe em tempo de execução como ocorre com javascript.</p>
+</li>
+<li>
+<p>O Angular adapta e estende o HTML tradicional para uma experiência otimizada, com conteúdo dinâmico e ligação direta dos dados, conhecida como <a href="https://www.tutorialsteacher.com/angular/two-way-data-binding">two-way data-binding (ligação de dados bidirecional)</a>, que abre a possibilidade para sincronização automática de modelos e visualizações.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_desvantagens"></span> <strong>Desvantagens.</strong></p>
+<ol>
+<li>
+<p>A desvantagens é relativa ou seja: Caso seja um programador que não tenha conhecimento de programação orientada a objetos terá dificuldade de entender porque o Angular é todo orientado a objetos.</p>
+</li>
+<li>
+<p>Para programadores que conhecem javascript vai estranhar a linguagem typescript porque a mesma permite identificar erros de sintaxe em tempo de edição do código.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
+<ol>
+<li>
+<p><span id=id_instalar></span><strong><a href="https://www.tutorialsteacher.com/angular/install-angular"><strong>Instalar o angular</strong></a></strong></p>
+<ol>
+<li>
+<p>Para instalar a versão mais recente do Node.js, vá para <a href="https://nodejs.org">https://nodejs.org</a> e baixe o instalador para sua plataforma e instale-o. Isso instalará o Node.js e o NPM em sua máquina local.</p>
+</li>
+<li>
+<p>Instalar Angular no linux</p>
+<ol>
+<li>
+<p>Código ShellScript</p>
+<pre><code class="language-sh"><div>   <span class="hljs-comment"># checar versão do node instalada.</span>
+   node -v
+
+   <span class="hljs-comment"># Checar a ultima versão no npm</span>
+   npm -v
+
+   <span class="hljs-comment"># Instalar a ultima versão do npm caso use um espaço de trabalho para cada projeto</span>
+   sudo npm install -g npm
+
+   <span class="hljs-comment"># Caso existe um espaço de trabalho para vários projetos o ideal é instalar o pacote https://pnpm.io/</span>
+   sudo npm install -g pnpm
+
+   <span class="hljs-comment"># O Angular oferece muitas bibliotecas e pacotes para o desenvolvimento de aplicativos. </span>
+   <span class="hljs-comment"># O Angular CLI também é usado para gerar, construir, executar e implantar aplicativos Angular.</span>
+   sudo npm install -g @angular/cli
+
+   <span class="hljs-comment"># Para visualizar a versão atual do angular</span>
+   ng --version
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Referências:</p>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=ICvq9YeDCh0&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=28">Angular CLI: Estrutura do projeto</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Como_criar_novo_projeto></span><strong>Como criar um novo projeto Angular</strong></p>
+<ol>
+<li>
+<p>A instalação do pacote <a href="https://angular.io/cli"><strong>@angular/cli</strong></a> adiciona no prompt do shellscript o comando <strong>ng</strong> onde mesmo possue comando <strong>new</strong> que é usado para criar um espaço de trabalho completo (todos os componentes necessários) para angular criar um novo projeto. <a href="https://angular.io/cli/new">Veja mais...</a></p>
+</li>
+<li>
+<p><strong>Passo a passo</strong>.</p>
+<ol>
+<li>
+<p>Abre o console do linux <strong>Crt+alt+T</strong> e selecione a pasta raiz de todos os projetos angular 2.</p>
+</li>
+<li>
+<p>Execute os comandos abaixo para criar e executar o novo projeto:</p>
+<pre><code class="language-sh"><div>
+   <span class="hljs-comment"># Para criar um novo projeto                  </span>
+   ng new nome-do-projeto --routing
+
+   <span class="hljs-comment"># Perguntas que o comando ng new nome-do-projeto faz:</span>
+      ? Você gostaria de adicionar o roteamento angular? Y/N
+      ? Qual formato de folha de estilo você gostaria de usar? (Use as setas)
+        ❯ CSS 
+          SCSS   [ https://sass-lang.com/documentation/syntax<span class="hljs-comment">#scss                ] </span>
+          Sass   [ https://sass-lang.com/documentation/syntax<span class="hljs-comment">#the-indented-syntax ] </span>
+          Less   [ http://lesscss.org  
+
+   <span class="hljs-comment"># Move apar a pasta do projeto criado</span>
+   <span class="hljs-built_in">cd</span> ./nome-do-projeto
+
+   <span class="hljs-comment"># Executa a aplicação criada pelo comando: .</span>
+   ng serve
+
+</div></code></pre>
+<ol>
+<li><strong>NOTAS:</strong>
+<ol>
+<li>
+<p>Em seu navegador, abra <a href="http://localhost:4200">http://localhost:4200</a> para ver o novo aplicativo em execução. Quando você usa o comando <strong>ng serve</strong> para construir um aplicativo e atendê-lo localmente, o servidor reconstrói automaticamente o aplicativo e recarrega a página quando você altera qualquer um dos arquivos de origem.</p>
+</li>
+<li>
+<p>O comando <strong>ng new nome-do-projeto</strong> cria os <a href="https://angular.io/guide/file-structure#workspace-configuration-files">arquivos de configurações</a> do espaço de trabalho. O arquivo <a href="./readme.html"><strong>readme.md</strong></a> informa tudo que precisa fazer para executar o projeto criado.</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=ICvq9YeDCh0&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=22">Vídeo aula sobre criação de novo projeto com a cli</a></p>
+</li>
+<li>
+<p>Pastas criadas pelo comando <strong>ng new nome-do-projeto</strong>:</p>
+<ol>
+<li>
+<p><strong>src/</strong></p>
+<ol>
+<li>Pasta com todos os arquivos do projeto.</li>
+</ol>
+</li>
+<li>
+<p><strong>src/app/</strong></p>
+<ol>
+<li>Pasta para os componentes do projeto.</li>
+</ol>
+</li>
+<li>
+<p><strong>src/assets/</strong></p>
+<ol>
+<li>Cada build configuração de destino pode incluir uma assets matriz que lista os arquivos ou pastas que você deseja copiar no estado em que se encontram ao construir seu projeto. Por padrão, a <strong>src/assets/</strong> pasta e <strong>src/favicon.ico</strong> são copiados. <a href="https://angular.io/guide/workspace-config#assets-configuration">Veja mais...</a>.</li>
+</ol>
+</li>
+<li>
+<p><strong>src/environments/</strong></p>
+<ol>
+<li>Pasta de um projeto que contém o arquivo de configuração base <strong>environment.ts</strong>, que fornece um ambiente padrão. Você pode adicionar padrões de substituição para ambientes adicionais, como produção e teste, em arquivos de configuração específicos de destino. <a href="https://angular.io/guide/build#configuring-application-environments">Veja mais...</a></li>
+</ol>
+</li>
+<li>
+<p><strong>node_modules/</strong></p>
+<ol>
+<li>Pasta com as dependência do Angular para o projeto.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Arquivos criadas pelo comando <strong>ng new nome-do-projeto</strong>:</p>
+<ol>
+<li>
+<p><strong>./src/app/app.component.css</strong></p>
+<ol>
+<li>Este arquivo é usado para registrar todo o código <strong>.css</strong> da aplicação. <a href="https://angular.io/guide/component-styles">Veja mais...</a></li>
+</ol>
+</li>
+<li>
+<p><strong>./src/app/app.component.html</strong></p>
+<ol>
+<li>Arquivo .html para o template principal do projeto. <a href="https://angular.io/guide/template-syntax">Veja a sintaxe do modelo...</a></li>
+<li><a href="https://angular.io/guide/architecture-components#templates-and-views">templates-and-views</a></li>
+</ol>
+</li>
+<li>
+<p><strong>./src/app/app.component.ts</strong></p>
+<ol>
+<li>Arquivo typescript de componente contém a classe com o código usado pelo template <strong>./src/app/app.component.html</strong></li>
+<li><a href="https://angular.io/guide/component-overview">Veja a documentação criando componente</a></li>
+</ol>
+</li>
+<li>
+<p><strong>./src/app/app.component.spec.ts</strong></p>
+<ol>
+<li>Este arquivo é usado para fazer teste unitário da classe.</li>
+<li>Mais informações <a href="https://angular.io/guide/testing#testing">clique aqui...</a></li>
+</ol>
+</li>
+<li>
+<p><strong>src/styles.css</strong></p>
+<ol>
+<li>Arquivos de estilo externo e global. <a href="https://angular.io/guide/component-styles#external-and-global-style-files">Veja mais...</a></li>
+</ol>
+</li>
+<li>
+<p><strong>src/index.html</strong></p>
+<ol>
+<li>..</li>
+</ol>
+</li>
+<li>
+<p>Módulo raiz usados para roteamento de componentes:</p>
+<ol>
+<li>
+<p><a href="https://angular.io/guide/router#defining-a-basic-route"><strong>./src/app/app.module.ts</strong></a></p>
+<ol>
+<li>As rotas informam ao roteador qual visualização exibir quando um usuário clica em um link ou cola uma URL na barra de endereço do navegador.</li>
+<li>Este arquivo contem a classe com decorador <a href="https://angular.io/api/core/NgModule#ngmodule">NgModule</a>.</li>
+<li>O componentes <a href="https://angular.io/guide/providers">providers</a> e <a href="https://getbootstrap.com/">bootstrap</a> são declarados somente no módulo raiz.</li>
+<li>Só tem sentido usar rotas se a aplicação tiver mais um componentes.</li>
+</ol>
+</li>
+<li>
+<p><a href="https://github.com/johnpapa/angular-tour-of-heroes/blob/master/src/app/app-routing.module.ts"><strong>./src/app/app-routing.module.ts</strong></a></p>
+<ol>
+<li>
+<p><a href="https://www.youtube.com/watch?v=8OHoAZ6j0Rg&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=51">Veja a vídeo aula sobre rotas</a></p>
+</li>
+<li>
+<p>Este arquivo é usado para declarar as rotas da aplicação. <a href="https://angular.io/guide/router#defining-a-basic-route">Veja mais...</a></p>
+</li>
+<li>
+<p>As rotas são adicionadas na matriz: <strong>const routes: <a href="https://angular.io/api/router/Route">Routes</a> = [];</strong></p>
+<ol>
+<li>
+<p>Cada rota nesta matriz é um <strong>objeto JavaScript</strong> que contém duas propriedades. A primeira propriedade <a href="https://angular.io/api/router/Route#path"><strong>path</strong></a>, define o caminho do URL para a rota. A segunda propriedade <a href="https://angular.io/api/router/Route#component"><strong>component</strong></a>, define o componente que o Angular deve usar para o caminho correspondente.</p>
+</li>
+<li>
+<p>Exemplo:</p>
+<pre><code class="language-js"><div>   <span class="hljs-keyword">const</span> routes: Routes = [
+      { <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;first-component&#x27;</span>, <span class="hljs-attr">component</span>: FirstComponent },
+      { <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;second-component&#x27;</span>, <span class="hljs-attr">component</span>: SecondComponent },
+      { <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;nome-do-component&#x27;</span>, <span class="hljs-attr">component</span>: NomeDoComponent },
+
+      ...
+
+      ];
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>O arquivo <a href="https://angular.io/guide/browser-support#polyfills"><strong>src/polyfills.ts</strong></a> é usado para importas as bibliotecas auxiliares.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências</strong></p>
+<ol>
+<li><a href="https://angular.io/cli">Angular CLI</a></li>
+<li><a href="https://www.youtube.com/watch?v=ICvq9YeDCh0&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=28">Angular CLI: Estrutura do projeto</a></li>
+<li><a href="https://www.youtube.com/watch?v=ICvq9YeDCh0&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=22">Vídeo aula sobre criação de novo projeto com a cli</a></li>
+<li><a href="https://angular.io/cli/new">CLI ng new</a></li>
+<li><a href="https://angular.io/guide/file-structure#workspace-configuration-files">arquivos de configurações</a></li>
+<li><a href="./readme.html"><strong>readme.md</strong></a></li>
+<li><a href="https://angular.io/guide/component-styles">Componentes de estilos = css</a></li>
+<li><a href="https://angular.io/guide/template-syntax">Sintaxe do modelo...</a></li>
+<li><a href="https://angular.io/guide/architecture-components#templates-and-views">templates-and-views</a></li>
+<li><a href="https://angular.io/guide/component-overview">Componentes Visão Geral</a></li>
+<li><a href="https://angular.io/guide/testing#testing">Testando componentes</a></li>
+<li><a href="https://angular.io/guide/router#defining-a-basic-route">Definindo uma rota básica</a></li>
+<li><a href="https://angular.io/api/core/NgModule#ngmodule">NgModule</a></li>
+<li><a href="https://angular.io/guide/providers">providers</a></li>
+<li><a href="https://getbootstrap.com/">bootstrap</a></li>
+<li><a href="https://www.youtube.com/watch?v=36kd3uR-hG8&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=6">Vídeo aula sobre módulos</a></li>
+<li><a href="https://www.youtube.com/watch?v=8OHoAZ6j0Rg&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=51">Veja a vídeo aula sobre rotas</a></li>
+<li><a href="https://angular.io/api/router/Route">Interface Route</a></li>
+<li><a href="https://angular.io/guide/workspace-config#assets-configuration">Configuração de ativos</a>.</li>
+<li><a href="https://angular.io/guide/build#configuring-application-environments">Configuração de ambiente do projeto</a></li>
+<li><a href="https://angular.io/guide/component-styles#external-and-global-style-files">Arquivos de estilo externo e global</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_como_criar_componente></span><strong>Como criar um componente usando  o angular/cli</strong></p>
+<ol>
+<li>
+<p><a href="https://angular.io/cli#cli-overview-and-command-reference">Visão geral da CLI e referência de comando</a></p>
+</li>
+<li>
+<p><a href="https://angular.io/guide/component-overview#creating-a-component-using-the-angular-cli">Criando um componente usando a CLI Angular</a>.</p>
+</li>
+<li>
+<p><strong>Exemplo de como criar componente no prompt do linux</strong>.</p>
+<pre><code class="language-sh"><div>   <span class="hljs-comment"># Cria componente de nome home</span>
+   ng generate component pages/home
+   
+</div></code></pre>
+</li>
+<li>
+<p>Referências:</p>
+<ol>
+<li><a href="https://angular.io/cli#cli-overview-and-command-reference">Visão geral da CLI e referência de comando</a></li>
+<li><a href="https://angular.io/guide/component-overview#creating-a-component-using-the-angular-cli">Criação de um componente usando a CLI Angular</a></li>
+<li><a href="https://angular.io/cli/generate#component">Comando <strong>ng generate component</strong></a>.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_como_criar_workspace_null></span><strong>Como criar biblioteca com o Angular 2</strong></p>
+<ol>
+<li>
+<p><a href="https://angular.io/guide/libraries#overview-of-angular-libraries">Visão geral das bibliotecas angulares</a></p>
+</li>
+<li>
+<p><a href="https://angular.io/guide/creating-libraries">Veja como criar bibliotecas</a></p>
+</li>
+<li>
+<p>O flag <strong>--create-application=false</strong> do comando <strong>ng new</strong> cria um novo projeto de aplicativo inicial na pasta <strong>'src'</strong> do novo espaço de trabalho. Quando falso, cria um espaço de trabalho vazio sem aplicativo inicial. Você pode então usar o comando generate application para que todos os aplicativos sejam criados na pasta de projetos. <a href="https://angular.io/cli/new">Veja mais...</a></p>
+</li>
+<li>
+<p><a href="https://indepth.dev/posts/1179/angular-workspace-no-application-for-you">O como e por que usar o sinalizador --create-application com o Angular CLI para criar um espaço de trabalho sem o aplicativo</a></p>
+</li>
+<li>
+<p><strong>Exemplo de como criar biblioteca com o Angular 2</strong>.</p>
+<ol>
+<li>
+<p>Como criar workspace vazio:</p>
+<pre><code class="language-sh"><div>   ng new my-workspace --create-application=<span class="hljs-literal">false</span>
+</div></code></pre>
+</li>
+<li>
+<p>Como criar uma biblioteca com angula cli:</p>
+<pre><code class="language-sh"><div>   <span class="hljs-built_in">cd</span> my-workspace
+   ng generate library my-lib
+
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Referências:</p>
+<ol>
+<li><a href="https://angular.io/guide/libraries#overview-of-angular-libraries">Visão geral das bibliotecas angulares</a></li>
+<li><a href="https://angular.io/cli/new">Como criar um espaço de trabalho angular.</a></li>
+<li><a href="https://indepth.dev/posts/1179/angular-workspace-no-application-for-you">O como e por que usar o sinalizador --create-application com o Angular CLI para criar um espaço de trabalho sem o aplicativo</a></li>
+<li><a href="https://medium.com/angular-in-depth/creating-a-library-in-angular-6-87799552e7e5">The Angular Library Series - Criando uma biblioteca com Angular CLI</a></li>
+<li><a href="https://indepth.dev/posts/1179/angular-workspace-no-application-for-you">O Projeto Biblioteca</a></li>
+<li><a href="https://searchapparchitecture.techtarget.com/definition/foo-in-software-programming">foo (em programação de software)</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_como_gerar_projeto_para_publicar_na_web></span><strong>Como gerar projeto para publicar na web</strong></p>
+<ol>
+<li>
+<p>Quando executamos o comando <strong>ng new nome-do-projeto</strong> o mesmo adiciona no objeto <strong>&quot;scripts&quot;: {}</strong> do arquivo <strong>package.json</strong>  a propriedade <strong>&quot;build&quot;: &quot;ng build&quot;,</strong>. <a href="https://angular.io/cli/build">Veja mais...</a></p>
+</li>
+<li>
+<p>Para gerar a pasta <strong>./dist/nome-do-projeto</strong> executar o seguinte comando:</p>
+<pre><code class="language-sh"><div>   <span class="hljs-comment"># Executando via comando ng</span>
+   ng build
+
+   <span class="hljs-comment"># ou usar somente a abreviação de build = b</span>
+   ng b 
+
+   <span class="hljs-comment"># ou pode ser gerado também usando o comando:</span>
+   npm run build
+</div></code></pre>
+</li>
+<li>
+<p>Referências</p>
+<ol>
+<li><a href="https://angular.io/cli/build">ng build</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_como_criar_modulos ></span><strong>Como criar módulos</strong></p>
+<ol>
+<li>
+<p>Ao criar uma aplicação com o comando <strong>ng new nome-do-projeto --routing</strong> o módulo é criado normalmente, porém quando a aplicação é muito grande precisamos modularizar e neste caso, o comando abaixo se faz necessário. <a href="https://www.youtube.com/watch?v=36kd3uR-hG8&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=6&amp;t=125s">Veja a vídeo aula para mais informações</a>.</p>
+</li>
+<li>
+<p>Criando módulo usando o angular cli.</p>
+<pre><code class="language-sh"><div>   ng g m NomeDoModulo
+</div></code></pre>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=36kd3uR-hG8&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=6&amp;t=125s">Vídeo aula sobre módulos</a></li>
+<li><a href="https://angular.io/guide/router#defining-a-basic-route">Definindo uma rota básica</a></li>
+<li><a href="https://angular.io/api/core/NgModule#ngmodule">NgModule</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_como_usar_rotas_em_angular_2></span><strong>Como usar rotas em Angular 2</strong></p>
+<ol>
+<li>
+<p><scan id="id_arquivos_implementacao_rotas"></scan><strong>Arquivos para implementação de Rotas</strong></p>
+<ol>
+<li>O comando <strong>ng new nome-do-projeto --routing</strong> cria dois arquivos, sendo um (<strong>src/app/app-routing.module.ts</strong>) para registrar as rotas para os componentes e outro (<strong>src/app/app.module.ts</strong>) para registrar os componentes do projeto:
+<ol>
+<li>
+<p>O arquivo <strong>src/app/app-routing.module.ts</strong> é usado para registrar as rotas  para os componentes que estarão acessível a partir de uma requisição do browser .</p>
+<ol>
+<li>
+<p>Código typescript criado automaticamente.</p>
+<pre><code class="language-ts"><div>   <span class="hljs-keyword">import</span> { NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+   <span class="hljs-keyword">import</span> { RouterModule, Routes } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/router&#x27;</span>;
+
+   <span class="hljs-comment">//Matriz Router criada automaticamente paras as rotas</span>
+   <span class="hljs-keyword">const</span> routes: Routes = [ ]; 
+
+   <span class="hljs-comment">/* Exemplo de rota para 3 componentes
+   const routes: Routes = [
+      { path: &#x27;first&#x27;, component: FirstComponent },
+      { path: &#x27;second&#x27;, component: SecondComponent },
+      { path: &#x27;rota&#x27;, component: NomeDoComponent },
+      ...
+   */</span>
+      ];
+
+   <span class="hljs-meta">@NgModule</span>({
+   imports: [RouterModule.forRoot(routes)],
+   <span class="hljs-built_in">exports</span>: [RouterModule]
+   })
+   <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppRoutingModule { } <span class="hljs-comment">//Classe exportada para a classe AppModule abaixo.</span>
+
+</div></code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p>O arquivo <strong>src/app/app.module.ts</strong> é usado para registrar todos os componentes (units do delphi) do projeto.</p>
+<ol>
+<li>
+<p>Código typescript criado automaticamente.</p>
+<pre><code class="language-ts"><div>   <span class="hljs-keyword">import</span> { NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+   <span class="hljs-keyword">import</span> { BrowserModule } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/platform-browser&#x27;</span>;
+
+   <span class="hljs-keyword">import</span> { AppRoutingModule } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./app-routing.module&#x27;</span>;
+   <span class="hljs-keyword">import</span> { AppComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./app.component&#x27;</span>;
+
+   <span class="hljs-meta">@NgModule</span>({
+   declarations: [
+      AppComponent
+      
+   ],
+   imports: [
+      BrowserModule,
+      AppRoutingModule
+   ],
+   providers: [],
+   bootstrap: [AppComponent]
+   })
+   <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule { }
+
+</div></code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Com a criação dos dois arquivos acima ao abrir o browser continuaremos a ver a página padrão do Angular na tela sem visualizar rotas porque nem uma rota foi criada acima.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><scan id="id_exibindo_paginas_projeto"></scan><strong>Exibindo as páginas do projeto:</strong></p>
+<ol>
+<li>
+<p><strong>Adicionar componentes ao projeto:</strong></p>
+<ol>
+<li>
+<p>Código shellscript:</p>
+<pre><code class="language-sh"><div>   <span class="hljs-comment"># Página para login do usuário</span>
+   ng generate c page/login
+
+   <span class="hljs-comment"># Página de inscrição de usuário</span>
+   ng generate c page/signup
+   
+</div></code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://angular.io/api/router"><strong>Adicionar rotas ao projeto:</strong></a></p>
+<ol>
+<li>
+<p>No arquivo <strong>app-routing-module.ts</strong> adicione as seguintes linhas:</p>
+<pre><code class="language-ts"><div>
+   <span class="hljs-comment">// Na secção de importação importe os dois componentes abaixo</span>
+   <span class="hljs-keyword">import</span> { LoginComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./pages/login/login.component&#x27;</span>;
+   <span class="hljs-keyword">import</span> { SignupComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./pages/signup/signup.component&#x27;</span>;                  
+
+   <span class="hljs-comment">//Na matriz de Routes adicione os dois objetos abaixo:</span>
+   <span class="hljs-keyword">const</span> routes: Routes = [
+   {path:<span class="hljs-string">&#x27;login&#x27;</span>, component:LoginComponent},
+   {path:<span class="hljs-string">&#x27;signup&#x27;</span>, component:SignupComponent},
+   ];
+
+</div></code></pre>
+<ol>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+</li>
+<li>
+<p>No arquivo <strong>app-module.ts</strong> adicione as seguintes linhas:</p>
+<pre><code class="language-ts"><div>   <span class="hljs-comment">// Na secção de importação importe os dois componentes abaixo</span>
+   <span class="hljs-keyword">import</span> { LoginComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./pages/login/login.component&#x27;</span>;
+   <span class="hljs-keyword">import</span> { SignupComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./pages/signup/signup.component&#x27;</span>;
+
+   <span class="hljs-comment">// Matriz declarations adicione os dois componentes importados</span>
+   declarations: [                       
+      LoginComponent,
+      SignupComponent,                        
+   ],
+
+</div></code></pre>
+<ol>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+</li>
+<li>
+<p><strong>Notas:</strong></p>
+<ol>
+<li>
+<p>Quando configuramos uma rota e navegamos até ela, o Angular recupera a URL, checa no arquivo de rotas e tenta carregar o componente na tela. Neste caso, o que acontece é que o Angular recuperou a URL <a href="http://localhost:4200/login">http://localhost:4200/login</a>, encontrou uma rota com este nome, localizou o componente que devia renderizar na tela, mas não conseguiu encontrar ONDE, na tela, ele deveria renderizar este componente. Vamos então para página <strong>app.component.html</strong>, remover todo conteúdo dela e deixar apenas as tags. Desta forma, ao navegar para URL <a href="http://localhost:4200/login">http://localhost:4200/login</a>, conseguimos ver o texto “Login Works!”, padrão dos componentes do Angular.</p>
+</li>
+<li>
+<p>É importante notar que qualquer HTML contido na página <strong>app.component.html</strong> será exibido em todas as páginas do nosso App, então, é importante que nesta página seja declarado o menu de opções e a tag <strong>&lt;router-outlet&gt;&lt;/router-outlet&gt;</strong> nele.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><sca id="id_rotas_filhas"></sca><strong>Rotas filhas</strong>:</p>
+<ol>
+<li>
+<p>Veja vídeo aula: <a href="https://www.youtube.com/watch?v=zOxKiW7hkzY&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=61">Curso Angular #60: Rotas Filhas</a></p>
+</li>
+<li>
+<p>Veja vídeo aula: <a href="https://www.youtube.com/watch?v=YE9A6NtlkmQ&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=63">Curso Angular #61: Rotas Filhas: desenvolvendo as telas</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><scan id="id_guardas_de_rota"></scan><strong>Guardas de Rota</strong> (<a href="https://angular.io/guide/router#preventing-unauthorized-access">Prevenir o acesso não autorizado</a>).</p>
+<ol>
+<li>
+<p>Para prevenir o acesso não autorizado é necessário a proteções de rota para evitar que os usuários naveguem para partes de um aplicativo sem autorização. Os seguintes protetores de rota estão disponíveis em Angular:</p>
+<ol>
+<li><a href="https://angular.io/api/router/CanActivate#canactivate">CanActivate</a>
+<ol>
+<li>Veja o vídeo: <a href="https://www.youtube.com/watch?v=vVWttMeiR6s&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=66">Curso Angular #64: Usando Guarda de Rotas: CanActivate</a></li>
+</ol>
+</li>
+<li><a href="https://angular.io/api/router/CanActivateChild#canactivatechild">CanActivateChild</a>
+<ol>
+<li>Veja a vídeo aula:<a href="https://www.youtube.com/watch?v=e7ttQtj2w6E&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=67">Curso Angular #65: Usando Guarda de Rotas: CanActivateChild</a></li>
+</ol>
+</li>
+<li><a href="https://angular.io/api/router/CanDeactivate#candeactivate">CanDeactivate</a>
+<ol>
+<li>Veja a vídeo aula: <a href="https://www.youtube.com/watch?v=I0JZcL3Bsf4&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=68">Curso Angular #66: Usando Guarda de Rotas: CanDeactivate</a></li>
+<li>Veja a vídeo aula: <a href="https://www.youtube.com/watch?v=B-a4InjV3mg&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=69">Curso Angular #67: Usando Guarda de Rotas: CanDeactivate com Interface Genérica</a></li>
+</ol>
+</li>
+<li><a href="https://angular.io/api/router/Resolve#resolve">Resolve</a>
+<ol>
+<li>Veja a vídeo aula: <a href="https://www.youtube.com/watch?v=AEUSrpsAPtw&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=70">Curso Angular #68: Guarda de Rotas: Resolve: carregando dados antes da rota ser ativada</a></li>
+</ol>
+</li>
+<li><a href="https://angular.io/api/router/CanLoad#canload">CanLoad</a>
+<ol>
+<li>Veja a vídeo aula: <a href="https://www.youtube.com/watch?v=SQViHeue6bs&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=71">Curso Angular #69: Usando Guarda de Rotas: CanLoad: como não carregar o módulo sem permissão</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Para usar protetores de rota, considere o uso <a href="https://angular.io/api/router/Route#componentless-routes">de rotas sem componentes</a>, pois isso facilita a proteção de rotas secundárias. Crie um serviço para o seu guarda:</p>
+<ol>
+<li>
+<p>Código ShellScript:</p>
+<pre><code class="language-sh"><div>   ng generate guard your-guard
+</div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>..</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Referências:</p>
+<ol>
+<li><a href="https://angular.io/api/router#angularrouter">@angular/roteador</a></li>
+<li><a href="https://balta.io/blog/angular-rotas-guardas-navegacao">angular rotas guardas navegacao</a></li>
+<li><a href="https://balta.io/blog/angular-rotas-guardas-navegacao">angular-rotas-guardas-navegacao</a></li>
+<li><a href="https://www.youtube.com/watch?v=wzdKc0AFY6k&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=51">Curso Angular 2 #49: Rotas: Introdução</a></li>
+<li><a href="https://www.youtube.com/watch?v=8OHoAZ6j0Rg&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=51">Curso Angular #50: Rotas: Configurando rotas simples</a></li>
+<li><a href="https://www.youtube.com/watch?v=zmlooouhauE&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=52">Curso Angular #51: Rotas: RouterLink: definindo rotas no template</a></li>
+<li><a href="https://www.youtube.com/watch?v=4r6uzxmEV-k&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=53">Curso Angular #52: Rotas: Aplicando CSS em rotas ativas</a></li>
+<li><a href="https://www.youtube.com/watch?v=xTkIV8YNgXw&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=54">Curso Angular #53: Rotas: Definindo e extraindo parâmetros de roteamento</a></li>
+<li>Guarda de rotas:
+<ol>
+<li><a href="https://www.youtube.com/watch?v=vVWttMeiR6s">Curso Angular #64: Usando Guarda de Rotas: CanActivate</a></li>
+<li><a href="https://www.youtube.com/watch?v=e7ttQtj2w6E&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=67">Curso Angular #65: Usando Guarda de Rotas: CanActivateChild</a></li>
+<li><a href="https://www.youtube.com/watch?v=I0JZcL3Bsf4&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=68">Curso Angular #66: Usando Guarda de Rotas: CanDeactivate</a></li>
+<li><a href="https://www.youtube.com/watch?v=B-a4InjV3mg&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=69">Curso Angular #67: Usando Guarda de Rotas: CanDeactivate com Interface Genérica</a></li>
+<li><a href="https://www.youtube.com/watch?v=AEUSrpsAPtw&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=70">Curso Angular #68: Guarda de Rotas: Resolve: carregando dados antes da rota ser ativada</a></li>
+<li><a href="https://www.youtube.com/watch?v=SQViHeue6bs&amp;list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&amp;index=71">Curso Angular #69: Usando Guarda de Rotas: CanLoad: como não carregar o módulo sem permissão</a></li>
+</ol>
+</li>
+<li>.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_assunto08></span><strong>Assunto 08</strong></p>
+<ol>
+<li>
+<p>Descrição do conteúdo.</p>
+</li>
+<li>
+<p><strong>Exemplo do assunto 08</strong>.</p>
+<ol>
+<li>
+<p>Descrição do exemplo</p>
+<pre><code class="language-ts"><div></div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_assunto09></span><strong>Assunto 09</strong></p>
+<ol>
+<li>
+<p>Descrição do conteúdo.</p>
+</li>
+<li>
+<p><strong>Exemplo do assunto 09</strong>.</p>
+</li>
+<li>
+<p>Descrição do exemplo</p>
+<pre><code class="language-ts"><div></div></code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_assunto10></span><strong>Assunto 10</strong></p>
+<ol>
+<li>
+<p>Descrição do conteúdo.</p>
+</li>
+<li>
+<p><strong>Exemplo do assunto 10</strong>.</p>
+<ol>
+<li>
+<p>Descrição do exemplo</p>
+<pre><code class="language-ts"><div></div></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_referencias></span><strong>REFERÊNCIAS GLOBAIS</strong></p>
+<ol>
+<li>
+<p><a href="https://angular.io/docs">Site oficial para produzir este documento</a></p>
+</li>
+<li>
+<p><a href="https://angular.io/api">Documentação de todas as APIs do angular 2</a></p>
+</li>
+<li>
+<p><a href="https://loiane.com/2017/08/how-to-add-bootstrap-to-an-angular-cli-project/">Como adicionar bootstrap a um projeto CLI Angular</a></p>
+</li>
+<li>
+<p><a href="https://ng-bootstrap.github.io/#/components/accordion/examples">Exemplos de bootstrap com angular 2</a></p>
+</li>
+<li>
+<p><a href="https://ng-bootstrap.github.io/#/getting-started">Projeto Angular Bootstrap com exemplos</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=vVWttMeiR6s">Curso Angular #64: Usando Guarda de Rotas: CanActivate</a></p>
+</li>
+<li>
+<p><a href="https://cli.emberjs.com/release/">ember-cli - Uma estrutura para desenvolvedores web ambiciosos.</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<ol>
+<li>
+<p>22/06/2021 <!--TODO: HISTÓRICO --></p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar este documento baseado no o_que_e_angular.md ;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Objetivos;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Pre-requisitos</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Benefícios</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico desvantagens</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+<li>
+<p>24/06/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Conteúdo estudado</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Referências</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+<li>
+<p>02/07/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever o exemplo:Como criar formulário de login no angular</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Referências</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Atualizar o histórico deste documento.</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Testar este documento depois após uma semana de concluído.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+ <script>    function goBack() {    window.history.back()}</script>
+
+    </body>
+    </html>

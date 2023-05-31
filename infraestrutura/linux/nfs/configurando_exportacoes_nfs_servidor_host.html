@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Configurando as exporta&ccedil;&otilde;es NFS no servidor host</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h4 id="configurando-as-exportações-nfs-no-servidor-host">Configurando as exportações NFS no servidor host</h4>
+<ol>
+<li>
+<p>Com editor de sua preferência, edite o arquivo <em>/etc/exports</em> para adicionar um novo compartilhamento para a pasta <em>/var/nfs/share</em>:</p>
+<pre><code class="hljs language-sh">   
+   <span class="hljs-comment"># Usando o editor xed </span>
+   sudo xed /etc/exports
+   
+
+</code></pre>
+</li>
+<li>
+<p>Adicione no fim do arquivo <em>/etc/exports</em> as seguintes linhas:</p>
+<pre><code class="hljs language-sh">    
+  <span class="hljs-comment"># Sintaxe das linhas no arquivo /etc/exports: </span>
+  <span class="hljs-comment"># patas_a_ser_compartilhada ip_cliente(share_option1,...,share_optionN)     </span>
+
+  /var/nfs/share 192.168.15.0(rw,sync,no_subtree_check)
+  /home          192.168.15.0(rw,sync,no_root_squash,no_subtree_check)
+    
+
+</code></pre>
+</li>
+<li>
+<p>Observe que nas linhas acimas adicionadas ao arquivo <em>/etc/exports</em> está usando as mesmas opções de configuração para ambos os diretórios (<em>/home</em> e <em>/var/nfs/share</em>), exceto a o parâmetro <em>no_root_squash</em>.</p>
+<ol>
+<li>Significados dos parâmetros após os IPs:
+<ol>
+<li><em>rw</em>: essa opção fornece ao computador do cliente tanto o acesso à leitura quanto gravação no volume.</li>
+<li><em>sync</em>: essa opção obriga o NFS a gravar alterações no disco antes de responder. Isso resulta em um ambiente mais estável e consistente, uma vez que a resposta reflete o estado real do volume remoto. No entanto, isso também reduz a velocidade das operações de arquivos.</li>
+<li><em>no_subtree_check</em>: essa opção impede a verificação de subárvore, que é um processo onde o host deve verificar se o arquivo está de fato disponível na árvore exportada para cada pedido. Isso pode causar muitos problemas quando um arquivo é renomeado enquanto o cliente tem ele aberto. Em quase todos os casos, é melhor desativar a verificação de subárvore.</li>
+<li><em>no_root_squash</em>: por padrão, o NFS traduz as solicitações de um usuário root remotamente como um usuário sem privilégios no servidor. Isso foi usado como medida de segurança para evitar que uma conta root no cliente utilize o sistema de arquivos do host como root. A opção <em>no_root_squash</em> desativa esse comportamento para certos compartilhamentos.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Após salvar as alterações do arquivo <em>/etc/exports</em> reinicie o servidor nfs para que os compartilhamentos fiquem disponíveis para os clientes:</p>
+<pre><code class="hljs language-sh">    
+   sudo systemctl restart nfs-kernel-server       
+
+</code></pre>
+</li>
+<li>
+<p>Próximo passo:</p>
+<ol>
+<li><a href="./montando_pasta_compartilhada_do_servidor_no_cliente.html">Montando pasta compartilhada no servidor na máquina cliente</a>;</li>
+</ol>
+</li>
+</ol>
+<h5 id="referências">REFERÊNCIAS</h5>
+<ol>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04-pt">Como configurar uma montagem NFS no Ubuntu 20.04</a></li>
+</ol>
+
+        
+        
+    </body>
+    </html>

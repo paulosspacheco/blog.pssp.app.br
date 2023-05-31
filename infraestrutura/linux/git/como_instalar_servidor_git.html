@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&ast;&ast;Configurando um servidor de Git no ubuntu&ast;&ast;</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS markdown -->
+    <link
+      type="text/css"
+      href="../../../css/defaultthemeMarkdown.css"
+      rel="stylesheet"
+    />
+    <!-- CSS da página /index.html -->
+    <link
+      type="text/css"
+      href="../../../css/defaulttheme.css"
+      rel="stylesheet"
+    />
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="configurando-um-servidor-de-git-no-ubuntu"><strong>Configurando um servidor de Git no ubuntu</strong></h1>
+<p>O Git é um sistema de versionamento largamente utilizado por profissionais de TI, principalmente por Sysadmins, desenvolvedores e devops.</p>
+<p>Basicamente, com ele podemos armazenar arquivos e controlar modificações. Isso nos possibilita restaurar versões prévias de tais arquivos, saber quando determinada alteração foi realizada, entre outros. O Git possibilita um mesmo repo ser utilizado por mais de uma pessoa. Por isso é utilizado em larga escala em times de desenvolvimento.</p>
+<p>Neste artigo explicarei como configurar um git server, de forma que esse repositório do Git poderá ser utilizado em mais de um local, como abordado no exemplo anterior.</p>
+<h2 id="instalando-e-configurando-um-git-server"><strong>Instalando e configurando um Git Server:</strong></h2>
+<p><strong>Configurações feitas no desktop:</strong></p>
+<p>Agora vamos configurar nosso desktop.</p>
+<p>1 – Crie um diretório onde manterá o repo local:</p>
+<pre><code class="hljs language-sh">    sudo mkdir ~/Git/
+</code></pre>
+<p>2 – Entre nesse diretório:</p>
+<pre><code class="hljs language-sh">    sudo <span class="hljs-built_in">cd</span> ~/Git/
+</code></pre>
+<p>3 – Agora clone o repositório remoto para o seu desktop com o comando:</p>
+<pre><code class="hljs language-sh">    sudo git <span class="hljs-built_in">clone</span> git@host-ou-ip-do-servidor:~/repos/lab.git
+</code></pre>
+<p>Obviamente, troque “host-ou-ip-do-servidor” pelo Host ou IP do servidor onde está o git server, mas isso você já sabe…</p>
+<p>4 – Se tudo der certo, terá criado um diretório chamado “lab”. Entre nele.</p>
+<p>5 – Faremos agora o primeiro commit. Primeiro, crie um arquivo em branco:</p>
+<pre><code class="hljs language-sh">    touch la_vai_meu_teste.txt
+</code></pre>
+<p>6 – Adicione esse arquivo ao Git:</p>
+<pre><code class="hljs language-sh">    git add la_vai_meu_teste.txt
+</code></pre>
+<p>7 – Comente esta inclusão:</p>
+<pre><code class="hljs language-sh">    git commit -am <span class="hljs-string">"Meu primeiro commit uhull"</span> la_vai_meu_teste.txt
+</code></pre>
+<p>8 – E por fim, suba a alteração para o git server:</p>
+<pre><code class="hljs language-sh">    git push
+</code></pre>
+<h2 id="conclusão"><strong>Conclusão:</strong></h2>
+<p>???</p>
+<h2 id="histórico">HISTÓRICO</h2>
+
+        
+        
+    </body>
+    </html>

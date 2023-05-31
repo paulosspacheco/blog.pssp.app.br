@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Teoria do empacotador de m&oacute;dulos javascript webpack &lt;a href&equals;&quot;teoria&lowbar;webpack&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x2b06;&#xfe0f; &lt;&sol;a&gt;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+/* From extension jonathanjameswatson.grammarless-markdown-all-in-one */
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+}
+@font-face{font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(fonts/KaTeX_AMS-Regular.woff2) format("woff2"),url(fonts/KaTeX_AMS-Regular.woff) format("woff"),url(fonts/KaTeX_AMS-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Caligraphic-Bold.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Bold.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Caligraphic-Regular.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Regular.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Fraktur-Bold.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Bold.woff) format("woff"),url(fonts/KaTeX_Fraktur-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Fraktur-Regular.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Regular.woff) format("woff"),url(fonts/KaTeX_Fraktur-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Main-Bold.woff2) format("woff2"),url(fonts/KaTeX_Main-Bold.woff) format("woff"),url(fonts/KaTeX_Main-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Main-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Main-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Main-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Main-Italic.woff2) format("woff2"),url(fonts/KaTeX_Main-Italic.woff) format("woff"),url(fonts/KaTeX_Main-Italic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Main-Regular.woff2) format("woff2"),url(fonts/KaTeX_Main-Regular.woff) format("woff"),url(fonts/KaTeX_Main-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Math-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Math-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Math-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Math-Italic.woff2) format("woff2"),url(fonts/KaTeX_Math-Italic.woff) format("woff"),url(fonts/KaTeX_Math-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:700;src:url(fonts/KaTeX_SansSerif-Bold.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Bold.woff) format("woff"),url(fonts/KaTeX_SansSerif-Bold.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:italic;font-weight:400;src:url(fonts/KaTeX_SansSerif-Italic.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Italic.woff) format("woff"),url(fonts/KaTeX_SansSerif-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:400;src:url(fonts/KaTeX_SansSerif-Regular.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Regular.woff) format("woff"),url(fonts/KaTeX_SansSerif-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Script;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Script-Regular.woff2) format("woff2"),url(fonts/KaTeX_Script-Regular.woff) format("woff"),url(fonts/KaTeX_Script-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size1;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size1-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size1-Regular.woff) format("woff"),url(fonts/KaTeX_Size1-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size2;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size2-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size2-Regular.woff) format("woff"),url(fonts/KaTeX_Size2-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size3;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size3-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size3-Regular.woff) format("woff"),url(fonts/KaTeX_Size3-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size4;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size4-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size4-Regular.woff) format("woff"),url(fonts/KaTeX_Size4-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Typewriter;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Typewriter-Regular.woff2) format("woff2"),url(fonts/KaTeX_Typewriter-Regular.woff) format("woff"),url(fonts/KaTeX_Typewriter-Regular.ttf) format("truetype")}.katex{text-rendering:auto;font:normal 1.21em KaTeX_Main,Times New Roman,serif;line-height:1.2;text-indent:0}.katex *{-ms-high-contrast-adjust:none!important;border-color:currentColor}.katex .katex-version:after{content:"0.15.3"}.katex .katex-mathml{clip:rect(1px,1px,1px,1px);border:0;height:1px;overflow:hidden;padding:0;position:absolute;width:1px}.katex .katex-html>.newline{display:block}.katex .base{position:relative;white-space:nowrap;width:-webkit-min-content;width:-moz-min-content;width:min-content}.katex .base,.katex .strut{display:inline-block}.katex .textbf{font-weight:700}.katex .textit{font-style:italic}.katex .textrm{font-family:KaTeX_Main}.katex .textsf{font-family:KaTeX_SansSerif}.katex .texttt{font-family:KaTeX_Typewriter}.katex .mathnormal{font-family:KaTeX_Math;font-style:italic}.katex .mathit{font-family:KaTeX_Main;font-style:italic}.katex .mathrm{font-style:normal}.katex .mathbf{font-family:KaTeX_Main;font-weight:700}.katex .boldsymbol{font-family:KaTeX_Math;font-style:italic;font-weight:700}.katex .amsrm,.katex .mathbb,.katex .textbb{font-family:KaTeX_AMS}.katex .mathcal{font-family:KaTeX_Caligraphic}.katex .mathfrak,.katex .textfrak{font-family:KaTeX_Fraktur}.katex .mathtt{font-family:KaTeX_Typewriter}.katex .mathscr,.katex .textscr{font-family:KaTeX_Script}.katex .mathsf,.katex .textsf{font-family:KaTeX_SansSerif}.katex .mathboldsf,.katex .textboldsf{font-family:KaTeX_SansSerif;font-weight:700}.katex .mathitsf,.katex .textitsf{font-family:KaTeX_SansSerif;font-style:italic}.katex .mainrm{font-family:KaTeX_Main;font-style:normal}.katex .vlist-t{border-collapse:collapse;display:inline-table;table-layout:fixed}.katex .vlist-r{display:table-row}.katex .vlist{display:table-cell;position:relative;vertical-align:bottom}.katex .vlist>span{display:block;height:0;position:relative}.katex .vlist>span>span{display:inline-block}.katex .vlist>span>.pstrut{overflow:hidden;width:0}.katex .vlist-t2{margin-right:-2px}.katex .vlist-s{display:table-cell;font-size:1px;min-width:2px;vertical-align:bottom;width:2px}.katex .vbox{align-items:baseline;display:inline-flex;flex-direction:column}.katex .hbox{width:100%}.katex .hbox,.katex .thinbox{display:inline-flex;flex-direction:row}.katex .thinbox{max-width:0;width:0}.katex .msupsub{text-align:left}.katex .mfrac>span>span{text-align:center}.katex .mfrac .frac-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline,.katex .hline,.katex .mfrac .frac-line,.katex .overline .overline-line,.katex .rule,.katex .underline .underline-line{min-height:1px}.katex .mspace{display:inline-block}.katex .clap,.katex .llap,.katex .rlap{position:relative;width:0}.katex .clap>.inner,.katex .llap>.inner,.katex .rlap>.inner{position:absolute}.katex .clap>.fix,.katex .llap>.fix,.katex .rlap>.fix{display:inline-block}.katex .llap>.inner{right:0}.katex .clap>.inner,.katex .rlap>.inner{left:0}.katex .clap>.inner>span{margin-left:-50%;margin-right:50%}.katex .rule{border:0 solid;display:inline-block;position:relative}.katex .hline,.katex .overline .overline-line,.katex .underline .underline-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline{border-bottom-style:dashed;display:inline-block;width:100%}.katex .sqrt>.root{margin-left:.27777778em;margin-right:-.55555556em}.katex .fontsize-ensurer.reset-size1.size1,.katex .sizing.reset-size1.size1{font-size:1em}.katex .fontsize-ensurer.reset-size1.size2,.katex .sizing.reset-size1.size2{font-size:1.2em}.katex .fontsize-ensurer.reset-size1.size3,.katex .sizing.reset-size1.size3{font-size:1.4em}.katex .fontsize-ensurer.reset-size1.size4,.katex .sizing.reset-size1.size4{font-size:1.6em}.katex .fontsize-ensurer.reset-size1.size5,.katex .sizing.reset-size1.size5{font-size:1.8em}.katex .fontsize-ensurer.reset-size1.size6,.katex .sizing.reset-size1.size6{font-size:2em}.katex .fontsize-ensurer.reset-size1.size7,.katex .sizing.reset-size1.size7{font-size:2.4em}.katex .fontsize-ensurer.reset-size1.size8,.katex .sizing.reset-size1.size8{font-size:2.88em}.katex .fontsize-ensurer.reset-size1.size9,.katex .sizing.reset-size1.size9{font-size:3.456em}.katex .fontsize-ensurer.reset-size1.size10,.katex .sizing.reset-size1.size10{font-size:4.148em}.katex .fontsize-ensurer.reset-size1.size11,.katex .sizing.reset-size1.size11{font-size:4.976em}.katex .fontsize-ensurer.reset-size2.size1,.katex .sizing.reset-size2.size1{font-size:.83333333em}.katex .fontsize-ensurer.reset-size2.size2,.katex .sizing.reset-size2.size2{font-size:1em}.katex .fontsize-ensurer.reset-size2.size3,.katex .sizing.reset-size2.size3{font-size:1.16666667em}.katex .fontsize-ensurer.reset-size2.size4,.katex .sizing.reset-size2.size4{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size2.size5,.katex .sizing.reset-size2.size5{font-size:1.5em}.katex .fontsize-ensurer.reset-size2.size6,.katex .sizing.reset-size2.size6{font-size:1.66666667em}.katex .fontsize-ensurer.reset-size2.size7,.katex .sizing.reset-size2.size7{font-size:2em}.katex .fontsize-ensurer.reset-size2.size8,.katex .sizing.reset-size2.size8{font-size:2.4em}.katex .fontsize-ensurer.reset-size2.size9,.katex .sizing.reset-size2.size9{font-size:2.88em}.katex .fontsize-ensurer.reset-size2.size10,.katex .sizing.reset-size2.size10{font-size:3.45666667em}.katex .fontsize-ensurer.reset-size2.size11,.katex .sizing.reset-size2.size11{font-size:4.14666667em}.katex .fontsize-ensurer.reset-size3.size1,.katex .sizing.reset-size3.size1{font-size:.71428571em}.katex .fontsize-ensurer.reset-size3.size2,.katex .sizing.reset-size3.size2{font-size:.85714286em}.katex .fontsize-ensurer.reset-size3.size3,.katex .sizing.reset-size3.size3{font-size:1em}.katex .fontsize-ensurer.reset-size3.size4,.katex .sizing.reset-size3.size4{font-size:1.14285714em}.katex .fontsize-ensurer.reset-size3.size5,.katex .sizing.reset-size3.size5{font-size:1.28571429em}.katex .fontsize-ensurer.reset-size3.size6,.katex .sizing.reset-size3.size6{font-size:1.42857143em}.katex .fontsize-ensurer.reset-size3.size7,.katex .sizing.reset-size3.size7{font-size:1.71428571em}.katex .fontsize-ensurer.reset-size3.size8,.katex .sizing.reset-size3.size8{font-size:2.05714286em}.katex .fontsize-ensurer.reset-size3.size9,.katex .sizing.reset-size3.size9{font-size:2.46857143em}.katex .fontsize-ensurer.reset-size3.size10,.katex .sizing.reset-size3.size10{font-size:2.96285714em}.katex .fontsize-ensurer.reset-size3.size11,.katex .sizing.reset-size3.size11{font-size:3.55428571em}.katex .fontsize-ensurer.reset-size4.size1,.katex .sizing.reset-size4.size1{font-size:.625em}.katex .fontsize-ensurer.reset-size4.size2,.katex .sizing.reset-size4.size2{font-size:.75em}.katex .fontsize-ensurer.reset-size4.size3,.katex .sizing.reset-size4.size3{font-size:.875em}.katex .fontsize-ensurer.reset-size4.size4,.katex .sizing.reset-size4.size4{font-size:1em}.katex .fontsize-ensurer.reset-size4.size5,.katex .sizing.reset-size4.size5{font-size:1.125em}.katex .fontsize-ensurer.reset-size4.size6,.katex .sizing.reset-size4.size6{font-size:1.25em}.katex .fontsize-ensurer.reset-size4.size7,.katex .sizing.reset-size4.size7{font-size:1.5em}.katex .fontsize-ensurer.reset-size4.size8,.katex .sizing.reset-size4.size8{font-size:1.8em}.katex .fontsize-ensurer.reset-size4.size9,.katex .sizing.reset-size4.size9{font-size:2.16em}.katex .fontsize-ensurer.reset-size4.size10,.katex .sizing.reset-size4.size10{font-size:2.5925em}.katex .fontsize-ensurer.reset-size4.size11,.katex .sizing.reset-size4.size11{font-size:3.11em}.katex .fontsize-ensurer.reset-size5.size1,.katex .sizing.reset-size5.size1{font-size:.55555556em}.katex .fontsize-ensurer.reset-size5.size2,.katex .sizing.reset-size5.size2{font-size:.66666667em}.katex .fontsize-ensurer.reset-size5.size3,.katex .sizing.reset-size5.size3{font-size:.77777778em}.katex .fontsize-ensurer.reset-size5.size4,.katex .sizing.reset-size5.size4{font-size:.88888889em}.katex .fontsize-ensurer.reset-size5.size5,.katex .sizing.reset-size5.size5{font-size:1em}.katex .fontsize-ensurer.reset-size5.size6,.katex .sizing.reset-size5.size6{font-size:1.11111111em}.katex .fontsize-ensurer.reset-size5.size7,.katex .sizing.reset-size5.size7{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size5.size8,.katex .sizing.reset-size5.size8{font-size:1.6em}.katex .fontsize-ensurer.reset-size5.size9,.katex .sizing.reset-size5.size9{font-size:1.92em}.katex .fontsize-ensurer.reset-size5.size10,.katex .sizing.reset-size5.size10{font-size:2.30444444em}.katex .fontsize-ensurer.reset-size5.size11,.katex .sizing.reset-size5.size11{font-size:2.76444444em}.katex .fontsize-ensurer.reset-size6.size1,.katex .sizing.reset-size6.size1{font-size:.5em}.katex .fontsize-ensurer.reset-size6.size2,.katex .sizing.reset-size6.size2{font-size:.6em}.katex .fontsize-ensurer.reset-size6.size3,.katex .sizing.reset-size6.size3{font-size:.7em}.katex .fontsize-ensurer.reset-size6.size4,.katex .sizing.reset-size6.size4{font-size:.8em}.katex .fontsize-ensurer.reset-size6.size5,.katex .sizing.reset-size6.size5{font-size:.9em}.katex .fontsize-ensurer.reset-size6.size6,.katex .sizing.reset-size6.size6{font-size:1em}.katex .fontsize-ensurer.reset-size6.size7,.katex .sizing.reset-size6.size7{font-size:1.2em}.katex .fontsize-ensurer.reset-size6.size8,.katex .sizing.reset-size6.size8{font-size:1.44em}.katex .fontsize-ensurer.reset-size6.size9,.katex .sizing.reset-size6.size9{font-size:1.728em}.katex .fontsize-ensurer.reset-size6.size10,.katex .sizing.reset-size6.size10{font-size:2.074em}.katex .fontsize-ensurer.reset-size6.size11,.katex .sizing.reset-size6.size11{font-size:2.488em}.katex .fontsize-ensurer.reset-size7.size1,.katex .sizing.reset-size7.size1{font-size:.41666667em}.katex .fontsize-ensurer.reset-size7.size2,.katex .sizing.reset-size7.size2{font-size:.5em}.katex .fontsize-ensurer.reset-size7.size3,.katex .sizing.reset-size7.size3{font-size:.58333333em}.katex .fontsize-ensurer.reset-size7.size4,.katex .sizing.reset-size7.size4{font-size:.66666667em}.katex .fontsize-ensurer.reset-size7.size5,.katex .sizing.reset-size7.size5{font-size:.75em}.katex .fontsize-ensurer.reset-size7.size6,.katex .sizing.reset-size7.size6{font-size:.83333333em}.katex .fontsize-ensurer.reset-size7.size7,.katex .sizing.reset-size7.size7{font-size:1em}.katex .fontsize-ensurer.reset-size7.size8,.katex .sizing.reset-size7.size8{font-size:1.2em}.katex .fontsize-ensurer.reset-size7.size9,.katex .sizing.reset-size7.size9{font-size:1.44em}.katex .fontsize-ensurer.reset-size7.size10,.katex .sizing.reset-size7.size10{font-size:1.72833333em}.katex .fontsize-ensurer.reset-size7.size11,.katex .sizing.reset-size7.size11{font-size:2.07333333em}.katex .fontsize-ensurer.reset-size8.size1,.katex .sizing.reset-size8.size1{font-size:.34722222em}.katex .fontsize-ensurer.reset-size8.size2,.katex .sizing.reset-size8.size2{font-size:.41666667em}.katex .fontsize-ensurer.reset-size8.size3,.katex .sizing.reset-size8.size3{font-size:.48611111em}.katex .fontsize-ensurer.reset-size8.size4,.katex .sizing.reset-size8.size4{font-size:.55555556em}.katex .fontsize-ensurer.reset-size8.size5,.katex .sizing.reset-size8.size5{font-size:.625em}.katex .fontsize-ensurer.reset-size8.size6,.katex .sizing.reset-size8.size6{font-size:.69444444em}.katex .fontsize-ensurer.reset-size8.size7,.katex .sizing.reset-size8.size7{font-size:.83333333em}.katex .fontsize-ensurer.reset-size8.size8,.katex .sizing.reset-size8.size8{font-size:1em}.katex .fontsize-ensurer.reset-size8.size9,.katex .sizing.reset-size8.size9{font-size:1.2em}.katex .fontsize-ensurer.reset-size8.size10,.katex .sizing.reset-size8.size10{font-size:1.44027778em}.katex .fontsize-ensurer.reset-size8.size11,.katex .sizing.reset-size8.size11{font-size:1.72777778em}.katex .fontsize-ensurer.reset-size9.size1,.katex .sizing.reset-size9.size1{font-size:.28935185em}.katex .fontsize-ensurer.reset-size9.size2,.katex .sizing.reset-size9.size2{font-size:.34722222em}.katex .fontsize-ensurer.reset-size9.size3,.katex .sizing.reset-size9.size3{font-size:.40509259em}.katex .fontsize-ensurer.reset-size9.size4,.katex .sizing.reset-size9.size4{font-size:.46296296em}.katex .fontsize-ensurer.reset-size9.size5,.katex .sizing.reset-size9.size5{font-size:.52083333em}.katex .fontsize-ensurer.reset-size9.size6,.katex .sizing.reset-size9.size6{font-size:.5787037em}.katex .fontsize-ensurer.reset-size9.size7,.katex .sizing.reset-size9.size7{font-size:.69444444em}.katex .fontsize-ensurer.reset-size9.size8,.katex .sizing.reset-size9.size8{font-size:.83333333em}.katex .fontsize-ensurer.reset-size9.size9,.katex .sizing.reset-size9.size9{font-size:1em}.katex .fontsize-ensurer.reset-size9.size10,.katex .sizing.reset-size9.size10{font-size:1.20023148em}.katex .fontsize-ensurer.reset-size9.size11,.katex .sizing.reset-size9.size11{font-size:1.43981481em}.katex .fontsize-ensurer.reset-size10.size1,.katex .sizing.reset-size10.size1{font-size:.24108004em}.katex .fontsize-ensurer.reset-size10.size2,.katex .sizing.reset-size10.size2{font-size:.28929605em}.katex .fontsize-ensurer.reset-size10.size3,.katex .sizing.reset-size10.size3{font-size:.33751205em}.katex .fontsize-ensurer.reset-size10.size4,.katex .sizing.reset-size10.size4{font-size:.38572806em}.katex .fontsize-ensurer.reset-size10.size5,.katex .sizing.reset-size10.size5{font-size:.43394407em}.katex .fontsize-ensurer.reset-size10.size6,.katex .sizing.reset-size10.size6{font-size:.48216008em}.katex .fontsize-ensurer.reset-size10.size7,.katex .sizing.reset-size10.size7{font-size:.57859209em}.katex .fontsize-ensurer.reset-size10.size8,.katex .sizing.reset-size10.size8{font-size:.69431051em}.katex .fontsize-ensurer.reset-size10.size9,.katex .sizing.reset-size10.size9{font-size:.83317261em}.katex .fontsize-ensurer.reset-size10.size10,.katex .sizing.reset-size10.size10{font-size:1em}.katex .fontsize-ensurer.reset-size10.size11,.katex .sizing.reset-size10.size11{font-size:1.19961427em}.katex .fontsize-ensurer.reset-size11.size1,.katex .sizing.reset-size11.size1{font-size:.20096463em}.katex .fontsize-ensurer.reset-size11.size2,.katex .sizing.reset-size11.size2{font-size:.24115756em}.katex .fontsize-ensurer.reset-size11.size3,.katex .sizing.reset-size11.size3{font-size:.28135048em}.katex .fontsize-ensurer.reset-size11.size4,.katex .sizing.reset-size11.size4{font-size:.32154341em}.katex .fontsize-ensurer.reset-size11.size5,.katex .sizing.reset-size11.size5{font-size:.36173633em}.katex .fontsize-ensurer.reset-size11.size6,.katex .sizing.reset-size11.size6{font-size:.40192926em}.katex .fontsize-ensurer.reset-size11.size7,.katex .sizing.reset-size11.size7{font-size:.48231511em}.katex .fontsize-ensurer.reset-size11.size8,.katex .sizing.reset-size11.size8{font-size:.57877814em}.katex .fontsize-ensurer.reset-size11.size9,.katex .sizing.reset-size11.size9{font-size:.69453376em}.katex .fontsize-ensurer.reset-size11.size10,.katex .sizing.reset-size11.size10{font-size:.83360129em}.katex .fontsize-ensurer.reset-size11.size11,.katex .sizing.reset-size11.size11{font-size:1em}.katex .delimsizing.size1{font-family:KaTeX_Size1}.katex .delimsizing.size2{font-family:KaTeX_Size2}.katex .delimsizing.size3{font-family:KaTeX_Size3}.katex .delimsizing.size4{font-family:KaTeX_Size4}.katex .delimsizing.mult .delim-size1>span{font-family:KaTeX_Size1}.katex .delimsizing.mult .delim-size4>span{font-family:KaTeX_Size4}.katex .nulldelimiter{display:inline-block;width:.12em}.katex .delimcenter,.katex .op-symbol{position:relative}.katex .op-symbol.small-op{font-family:KaTeX_Size1}.katex .op-symbol.large-op{font-family:KaTeX_Size2}.katex .accent>.vlist-t,.katex .op-limits>.vlist-t{text-align:center}.katex .accent .accent-body{position:relative}.katex .accent .accent-body:not(.accent-full){width:0}.katex .overlay{display:block}.katex .mtable .vertical-separator{display:inline-block;min-width:1px}.katex .mtable .arraycolsep{display:inline-block}.katex .mtable .col-align-c>.vlist-t{text-align:center}.katex .mtable .col-align-l>.vlist-t{text-align:left}.katex .mtable .col-align-r>.vlist-t{text-align:right}.katex .svg-align{text-align:left}.katex svg{fill:currentColor;stroke:currentColor;fill-rule:nonzero;fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;display:block;height:inherit;position:absolute;width:100%}.katex svg path{stroke:none}.katex img{border-style:none;max-height:none;max-width:none;min-height:0;min-width:0}.katex .stretchy{display:block;overflow:hidden;position:relative;width:100%}.katex .stretchy:after,.katex .stretchy:before{content:""}.katex .hide-tail{overflow:hidden;position:relative;width:100%}.katex .halfarrow-left{left:0;overflow:hidden;position:absolute;width:50.2%}.katex .halfarrow-right{overflow:hidden;position:absolute;right:0;width:50.2%}.katex .brace-left{left:0;overflow:hidden;position:absolute;width:25.1%}.katex .brace-center{left:25%;overflow:hidden;position:absolute;width:50%}.katex .brace-right{overflow:hidden;position:absolute;right:0;width:25.1%}.katex .x-arrow-pad{padding:0 .5em}.katex .cd-arrow-pad{padding:0 .55556em 0 .27778em}.katex .mover,.katex .munder,.katex .x-arrow{text-align:center}.katex .boxpad{padding:0 .3em}.katex .fbox,.katex .fcolorbox{border:.04em solid;box-sizing:border-box}.katex .cancel-pad{padding:0 .2em}.katex .cancel-lap{margin-left:-.2em;margin-right:-.2em}.katex .sout{border-bottom-style:solid;border-bottom-width:.08em}.katex .angl{border-right:.049em solid;border-top:.049em solid;box-sizing:border-box;margin-right:.03889em}.katex .anglpad{padding:0 .03889em}.katex .eqn-num:before{content:"(" counter(katexEqnNo) ")";counter-increment:katexEqnNo}.katex .mml-eqn-num:before{content:"(" counter(mmlEqnNo) ")";counter-increment:mmlEqnNo}.katex .mtr-glue{width:50%}.katex .cd-vert-arrow{display:inline-block;position:relative}.katex .cd-label-left{display:inline-block;position:absolute;right:calc(50% + .3em);text-align:left}.katex .cd-label-right{display:inline-block;left:calc(50% + .3em);position:absolute;text-align:right}.katex-display{display:block;margin:1em 0;text-align:center}.katex-display>.katex{display:block;text-align:center;white-space:nowrap}.katex-display>.katex>.katex-html{display:block;position:relative}.katex-display>.katex>.katex-html>.tag{position:absolute;right:0}.katex-display.leqno>.katex>.katex-html>.tag{left:0;right:auto}.katex-display.fleqn>.katex{padding-left:2em;text-align:left}body{counter-reset:katexEqnNo mmlEqnNo}
+
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+}
+</style>
+        <style>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+</style>
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="teoria-do-empacotador-de-módulos-javascript-webpack---️-"><span id="topo"><span>Teoria do empacotador de módulos javascript webpack <a href="teoria_webpack.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
+<h2 id="1-index"><strong>1. INDEX</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+<li><a href="#id_beneficios">Benefícios.</a></li>
+<li><a href="#id_descricao">Descrição</a></li>
+<li><a href="#id_webpack_typescript">Como usar webpack com a linguagem typescript</a>
+<ol>
+<li>Vídeos
+<ol>
+<li><a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9hOkGbwzgYFmaxB0WiduYJC">Webpack &amp; TypeScript</a>;</li>
+<li>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="https://www.youtube.com/watch?v=ILnWJ8lQ9L4">Vídeo Aula de como usar webpack com typescript</a></li>
+</ol>
+</li>
+<li>
+<p><strong>Instalação e configuração local</strong></p>
+<ol>
+<li>
+<p><a href="#id_Instalar_webpack">Instalar a versão mais recente do webpack</a>.</p>
+</li>
+<li>
+<p><a href="#id_html_webpack_plugin">Instalar plugins html-webpack-plugin</a></p>
+</li>
+<li>
+<p><a href="#id_webpack-cli">Instalar a versão mais recente do webpack-cli</a>.</p>
+<ol>
+<li><a href="#id_webpack_cli_init">Instalar webpack-cli init</a></li>
+<li><a href="#id_webpack-cli_generators">Instalar webpack-cli generators</a></li>
+<li><a href="#id_nanoid">Instalar nanoid</a>.</li>
+</ol>
+</li>
+<li>
+<p>Configuração do webpack.</p>
+<ol>
+<li><a href="#id_configurar_webpack_padrao">Configuração padrão</a>.</li>
+<li><a href="#id_configurar_webpack_personalizada">Configuração personalizada</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_webpack-dev-server">Instalar a versão mais recente do webpack-dev-server</a>.</p>
+</li>
+<li>
+<p>.</p>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://github.com/ruanyf/webpack-demos"><strong>Exemplos.</strong></a></p>
+<ol>
+<li>
+<p><a href="#id_Exemplo_basico">Exemplo básico</a></p>
+</li>
+<li>
+<p><a href="#id_exemplos_javascript">Exemplo de webpack com a linguagem javascript</a></p>
+</li>
+<li>
+<p><a href="#id_exemplos_typescript">Exemplo de webpack com a linguagem typescript</a>.</p>
+</li>
+<li>
+<p><a href="../html/typescript/webpack_typescript/video_aula_the_net_ninja/curso_webpack_typescript.html">Exemplo completo de uso do TipeScript e uma vídeo aula no youtube.com</a></p>
+</li>
+<li>
+<p>Exemplo do manual <a href="https://webpack.js.org/">webpack</a>:</p>
+<ol>
+<li><a href="https://webpack.js.org/guides/getting-started/#basic-setup">getting-started/#basic-setup</a>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="#id_referencias"><strong>Referências.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li>
+<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+<ol>
+<li>
+<p>O <a href="https://webpack.js.org/concepts/">webpack</a> é um compactador javascript e empacotador de módulo estático para aplicativos JavaScript. Quando o <a href="https://webpack.js.org/concepts/">webpack</a> processa seu aplicativo ele cria uma versão de distribuição na pasta ./dist e copia para ela todos os arquivos .js compactado e todas as dependências tais como arquivos .html, .css e as imagens do projeto. <a href="https://www.youtube.com/watch?v=sU3W2ZTt-8I">Veja mais no vídeo...</a> ou <a href="https://devheroes.io/webpack-2-para-iniciantes-o-que-e-porque-usar-e-como-iniciar/">Veja mais no site...</a>.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
+<ol>
+<li>
+<p>Assistir o vídeo <a href="https://www.youtube.com/watch?v=sU3W2ZTt-8I">Webpack - Curso rápido para iniciantes</a></p>
+</li>
+<li>
+<p>Ultima versão do programa <a href="instalar.html">nodejs</a> de preferência a versão LTS. Veja as versões do nodejs <a href="https://nodejs.org/en/blog/release/">aqui...</a>;</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
+<ol>
+<li>
+<p>Gerar uma pasta pronta para publicação na web.</p>
+</li>
+<li>
+<p>Compactar todo código javascript e html e css.</p>
+</li>
+<li>
+<p>Remove todo código não usado no projeto atual.</p>
+</li>
+<li>
+<p>Gerar versão compatível com browser antigos usando o babel.</p>
+</li>
+<li>
+<p>...</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_descricao"></span><strong>Descrição:</strong></p>
+<ol>
+<li>
+<p>O <a href="https://webpack.js.org/concepts/">webpack</a> é um empacotador de módulo estático para aplicativos JavaScript modernos. Quando o <a href="https://webpack.js.org/concepts/">webpack</a> processa um projeto, ele constrói internamente um gráfico de dependência que mapeia todos os módulos de que o projeto precisa e gera um ou mais pacotes na pasta <em>./dist</em>. Para mais informações sobre o conceito do webpack veja <a href="https://webpack.js.org/concepts/">aqui...</a> e para acessar a documentação oficial completa clique <a href="https://webpack.js.org/guides/">aqui...</a>.</p>
+</li>
+<li>
+<p>O webpack deve ser executado usando o comando <strong><a href="../html/typescript/instalar.html#id_Instalar_npx">npx</a></strong>  para que ele execute a versão local do projeto do webpack.</p>
+<ol>
+<li>
+<p>Código sh:</p>
+<pre><code class="hljs language-sh">   npx webpack
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>A configuração padrão do webpack não exige que você use um arquivo de configuração, no entanto, ele assumirá que o <a href="https://webpack.js.org/concepts/entry-points/">ponto de entrada</a> do projeto seja o arquivo <em>./src/index.js</em> e arquivo de saída seja <em>./dist/main.js</em>. O arquivo de saída será reduzido e otimizado para produção na pasta <em>./dist</em>.</p>
+</li>
+<li>
+<p>Caso deseje mudar o comportamento padrão é possível criando o arquivo <a href="https://webpack.js.org/configuration/#use-different-configuration-file">webpack.config.js</a> na pasta do arquivo <a href="https://nodejs.org/en/knowledge/getting-started/npm/what-is-the-file-package-json/#:~:text=All%20npm%20packages%20contain%20a,as%20handle%20the%20project's%20dependencies.">package.js</a> porque ele espera que exista o arquivo <em>./index.html</em> na pasta do arquivo <em>package.json</em>. Veja <a href="https://webpack.js.org/configuration/">mais...</a></p>
+<ol>
+<li>As propriedades do arquivo <em>webpack.config.js</em> que pode ser personalizadas são:
+<ol>
+<li>
+<p><a href="https://webpack.js.org/concepts/#entry">Entry</a></p>
+<ol>
+<li>Um ponto de entrada indica qual módulo webpack deve usar para começar a construir seu gráfico de dependência interna.
+<ol>
+<li>
+<p>Exemplo de arquivo <em>webpack.config.js</em>:</p>
+<pre><code class="hljs language-JavaScript"> 
+   <span class="hljs-built_in">module</span>.exports = {
+      <span class="hljs-attr">entry</span>: <span class="hljs-string">'./foo.js'</span>,
+      },
+   };
+   
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/concepts/#output">Output</a></p>
+<ol>
+<li>A propriedade <a href="https://webpack.js.org/configuration/output/">output</a> informa ao webpack onde gerar os pacotes que ele cria e como nomear esses arquivos. O padrão é <em>./dist/main.js</em>.
+<ol>
+<li>
+<p>Exemplo de arquivo <em>webpack.config.js</em>:</p>
+<pre><code class="hljs language-JavaScript">   <span class="hljs-comment">/** 
+   * path é uma biblioteca NodeJs padrão que está globalmente disponível quando você instala o NodeJs.
+   * A linhas a baixo importa o módulo path que tem informações sobre a localização das pastas do projeto.
+   * [Veja mais sobre o módulo path...:](https://nodejs.org/api/path.html).
+   */</span>                         
+   <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+
+   <span class="hljs-comment">/**
+    * O objeto module.exports é um objeto de nodejs usado para exportar objetos, 
+    * funções, variáveis e constantes do módulo onde ele for declarado.
+    * [Vaja mais sobre module.exports](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/export)
+    * [Veja mais sobre configuração do arquivo webpack-config.js](https://webpack.js.org/configuration/)
+    */</span> 
+   <span class="hljs-built_in">module</span>.exports = {
+      <span class="hljs-comment">/**
+       * Propriedade entry é usada para informa o nome do arquivo principal 
+       * de entrada do pacote webpack e pode ter mais um entrada para o mesmo projeto.
+       * O arquivo de entrada deve importar todos os arquivos de recursos dependentes do projeto. 
+       */</span>                              
+      <span class="hljs-attr">entry</span>: <span class="hljs-string">'./src/file.js'</span>,
+
+      <span class="hljs-comment">/**
+       * O objeto module é usado para definir as regras usada na compilação ele
+       * contém o conjunto de plug-ins ou módulos usados ​​pelo webpack. 
+       */</span>
+      <span class="hljs-attr">output</span>: {
+         <span class="hljs-attr">path</span>: path.resolve(__dirname, <span class="hljs-string">'dist'</span>),
+         <span class="hljs-attr">filename</span>: <span class="hljs-string">'my-first-webpack.bundle.js'</span>,
+      },
+   };
+   
+</code></pre>
+</li>
+<li>
+<p>Essa configuração criará a pasta <em>./dist</em> na pasta do pacote <em>package.json</em> e o arquivo <em>'./src/file.js'</em> e suas dependências será compactado no arquivo <em>'./dist/my-first-webpack.bundle.js'</em>.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/loaders/">Loaders</a></p>
+<ol>
+<li>Por padrão o webpack só entende arquivos JavaScript, para que ele possa entender outros tipos de arquivos devemos usar os <em>Loaders</em> que são módulos que podem ser instalados separadamente possibilitando que o <em>webpack</em> converta esses arquivos em módulos válidos e os adicione ao gráfico de dependência. Os <em>Loaders</em> também são utilizados para converter <em>JavaScript</em> de uma versão para outra. Para incluirmos os <em>Loaders</em> criamos uma nova seção <em>module</em> no arquivo de configuração, nessa seção podemos definir uma ou mais <a href="https://webpack.js.org/configuration/module/#modulerules">rules</a>:
+<ol>
+<li>
+<p>Código javascript do arquivo <em>webpack.config.js</em></p>
+<pre><code class="hljs language-JavaScript">   
+   <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>) 
+   <span class="hljs-keyword">const</span> config = {
+      <span class="hljs-attr">output</span>: {
+         <span class="hljs-attr">filename</span>: <span class="hljs-string">'my-first-webpack.bundle.js'</span>
+      },
+      <span class="hljs-comment">/**
+       * O objeto module é usado para definir as regras usada na compilação ele
+       * contém o conjunto de plug-ins ou módulos usados ​​pelo webpack. 
+       */</span>
+      <span class="hljs-attr">modules</span>: {
+         <span class="hljs-comment">// O array rules são usado para passagem de regras na transpilação dos módulos:</span>
+         <span class="hljs-attr">rules</span>: [
+            
+             <span class="hljs-comment">// rules for modules (configure loaders, parser options, etc.)</span>
+            {<span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>, <span class="hljs-attr">use</span>: <span class="hljs-string">'raw-loader'</span>}
+
+         ]
+      }
+   }
+
+</code></pre>
+<ol>
+<li>Essa <a href="https://webpack.js.org/configuration/module/#rule">regra</a> <em>rules</em> diz ao compilador do webpack para quando for encontrado um arquivo <em>‘.css’</em> dentro de uma declaração <a href="https://nodejs.org/en/knowledge/getting-started/what-is-require/">require</a> ou <a href="https://nodejs.org/api/esm.html#esm_import_specifiers">import</a>, deve se usar o <a href="https://www.npmjs.com/package/css-loader">css-loader</a> para transformá-lo antes de adicioná-lo ao pacote.
+<ol>
+<li>Na instrução <a href="https://webpack.js.org/configuration/module/#rule">rules : []</a> temos duas propriedades obrigatórias quais sejam:
+<ol>
+<li><a href="https://webpack.js.org/configuration/module/#ruletest">test</a> : Usa-se a <em>expressão regular</em> para encontrar todos os arquivo <em>'.css'</em> da pasta.</li>
+<li><a href="https://webpack.js.org/configuration/module/#ruleuse">use</a> :  Usar o pacote <em>css-loader</em> para carregá-los.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/plugins/">Plugins</a></p>
+<ol>
+<li>Os <a href="https://webpack.js.org/plugins/">plugins</a> servem para executar uma variedade de tarefas como otimização de pacotes, gerenciamento de assets e injeção de variáveis de ambiente. Plugins são definidos em duas partes no arquivo de configuração, no topo do arquivo para plugins externos e na seção plugins dentro da seção module:
+<ol>
+<li>
+<p>Código javascript do arquivo <em>webpack.config.js</em></p>
+<pre><code class="hljs language-JavaScript">   <span class="hljs-comment">// instalado via npm site: https://webpack.js.org/plugins/html-webpack-plugin/</span>
+   <span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">'html-webpack-plugin'</span>); 
+   <span class="hljs-comment">//plugins internos</span>
+   <span class="hljs-keyword">const</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">'webpack'</span>); 
+   <span class="hljs-keyword">const</span> config = {
+      <span class="hljs-attr">module</span>: {
+         <span class="hljs-attr">rules</span>: [
+            {<span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>, <span class="hljs-attr">use</span>: <span class="hljs-string">'css-loader'</span>}
+         ]
+      },
+      <span class="hljs-attr">plugins</span>: [
+         <span class="hljs-keyword">new</span> HtmlWebpackPlugin({<span class="hljs-attr">template</span>: <span class="hljs-string">'./src/index.html'</span>})
+      ]
+   };
+   <span class="hljs-built_in">module</span>.exports = config;
+</code></pre>
+<ol>
+<li>No código acima, o plugin <a href="https://webpack.js.org/plugins/html-webpack-plugin/">html-webpack</a> gera um arquivo html e faz a injeção automática do pacote gerado. O <em>webpack</em> possui diversos plugins internos, <a href="https://webpack.js.org/plugins/">confira a lista</a>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/guides/production/#specify-the-mode">Mode</a></p>
+<ol>
+<li>No atributo <em>mode</em> é definido o <em>mode</em> de execução do <em>webpack</em> como <em>&lt;production&gt;</em>, <em>&lt;development&gt;</em> ou <em>&lt;none&gt;</em>. De acordo com a opção definida o <em>webpack</em> ativa otimizações específicas. O ambiente padrão é produção:
+<ol>
+<li>
+<p>Código javascript do arquivo <em>webpack.config.js</em></p>
+<pre><code class="hljs language-JavaScript">   <span class="hljs-built_in">module</span>.exports = {
+      <span class="hljs-attr">mode</span>: <span class="hljs-string">'production'</span>
+   }
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/concepts/#browser-compatibility">Browser Compatibility</a></p>
+<ol>
+<li><em>Webpack</em> é compatível com todos os navegadores compatíveis com ES5 (IE8 e versões anteriores não são compatíveis). webpack precisa <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a> para <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/import">import()</a> e <a href="https://webpack.js.org/api/module-methods/#:~:text=require.ensure,-warning&amp;text=Split%20out%20the%20given%20dependencies,way%20to%20dynamically%20load%20dependencies.">require.ensure()</a> . Se quiser oferecer suporte a navegadores mais antigos, você precisará carregar um <a href="https://developer.mozilla.org/en-US/docs/Glossary/Polyfill">polyfill</a> antes de usar essas expressões.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>O <em>webpack</em> só entende arquivos <em>JavaScript</em> e <em>JSON</em>.</p>
+<ol>
+<li>
+<p>Os <a href="https://webpack.js.org/loaders/">carregadores (loaders)</a> permitem que o webpack processe outros tipos de arquivos e os converta em módulos válidos que possam ser consumidos pelo projeto e adicionados ao gráfico de dependência do projeto.</p>
+</li>
+<li>
+<p>Os carregadores podem transformar arquivos de uma linguagem diferente (como <a href="../html/typescript/index.html">TypeScript</a> ) em <em>JavaScript</em> ou carregar imagens embutidas como <em>URLs</em> de dados. Veja <a href="https://webpack.js.org/concepts/loaders/">conceitos dos carregadores...</a> .</p>
+</li>
+<li>
+<p><a href="https://webpack.js.org/concepts/loaders/#using-loaders">Usando carregadores</a>:</p>
+<ol>
+<li>Existem três maneiras de usar carregadores em seu aplicativo:
+<ol>
+<li>
+<p><a href="https://webpack.js.org/concepts/loaders/#configuration">Configuração</a> (recomendado): O ideal é usar o arquivo de configuração <a href="https://webpack.js.org/concepts/configuration/#simple-configuration">webpack.config.js</a> para customizar <em>webpack</em> porque é mais flexível pelo fato de ser um código <em>javascript</em> e usa a variável global <a href="https://stackabuse.com/how-to-use-module-exports-in-node-js/">module.exports</a> para exportar o que for necessário quando a configuração é diferente do padrão <em>webpack</em>.</p>
+<ol>
+<li>
+<p>Código JavaScript - exemplo de <a href="https://webpack.js.org/concepts/configuration/#simple-configuration">configuração simples</a>:</p>
+<pre><code class="hljs language-JavaScript">
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+   <span class="hljs-attr">mode</span>: <span class="hljs-string">'development'</span>,
+   <span class="hljs-attr">entry</span>: <span class="hljs-string">'./foo.js'</span>,
+   <span class="hljs-attr">output</span>: {
+      <span class="hljs-attr">path</span>: path.resolve(__dirname, <span class="hljs-string">'dist'</span>),
+      <span class="hljs-attr">filename</span>: <span class="hljs-string">'foo.bundle.js'</span>,
+   },
+};
+   
+</code></pre>
+</li>
+<li>
+<p>Código JavaScript - exemplo de configuração com <a href="https://webpack.js.org/configuration/configuration-types/#exporting-multiple-configurations">múltiplos configurações</a>:</p>
+<pre><code class="hljs language-JavaScript">
+   <span class="hljs-built_in">module</span>.exports = [
+      {
+         <span class="hljs-attr">output</span>: {
+            <span class="hljs-attr">filename</span>: <span class="hljs-string">'./dist-amd.js'</span>,
+            <span class="hljs-attr">libraryTarget</span>: <span class="hljs-string">'amd'</span>,
+         },
+         <span class="hljs-attr">name</span>: <span class="hljs-string">'amd'</span>,
+         <span class="hljs-attr">entry</span>: <span class="hljs-string">'./app.js'</span>,
+         <span class="hljs-attr">mode</span>: <span class="hljs-string">'production'</span>,
+      },
+      {
+         <span class="hljs-attr">output</span>: {
+            <span class="hljs-attr">filename</span>: <span class="hljs-string">'./dist-commonjs.js'</span>,
+            <span class="hljs-attr">libraryTarget</span>: <span class="hljs-string">'commonjs'</span>,
+         },
+         <span class="hljs-attr">name</span>: <span class="hljs-string">'commonjs'</span>,
+         <span class="hljs-attr">entry</span>: <span class="hljs-string">'./app.js'</span>,
+         <span class="hljs-attr">mode</span>: <span class="hljs-string">'production'</span>,
+      },
+   ];
+   
+</code></pre>
+</li>
+<li>
+<p>Código JavaScript - exemplo de configuração <a href="https://webpack.js.org/configuration/configuration-types/#parallelism">paralelismo</a>:</p>
+<pre><code class="hljs language-JavaScript">
+   <span class="hljs-built_in">module</span>.exports = [
+   {
+      <span class="hljs-comment">//config-1</span>
+   },
+   {
+      <span class="hljs-comment">//config-2</span>
+   },
+   ];
+   <span class="hljs-built_in">module</span>.exports.parallelism = <span class="hljs-number">1</span>;
+ 
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/loaders/expose-loader/#inline"><strong>Inline</strong></a> : especifique-os explicitamente em cada instrução do comando <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/import"><strong>import</strong></a>.</p>
+<ol>
+<li>
+<p>Código JavaScript exemplo:</p>
+<pre><code class="hljs language-JavaScript">
+<span class="hljs-comment">// Adds the `jquery` to the global object under the names `$` and `jQuery`</span>
+<span class="hljs-keyword">import</span> $ <span class="hljs-keyword">from</span> <span class="hljs-string">"expose-loader?exposes=$,jQuery!jquery"</span>;
+
+<span class="hljs-comment">// Adds the `lodash/concat` to the global object under the name `_.concat`</span>
+<span class="hljs-keyword">import</span> { concat } <span class="hljs-keyword">from</span> <span class="hljs-string">"expose-loader?exposes=_.concat!lodash/concat"</span>;
+
+<span class="hljs-comment">// Adds the `map` and `reduce` method from `underscore` to the global object under the name `_.map` and `_.reduce`'</span>
+<span class="hljs-keyword">import</span> {<span class="hljs-string">'map,
+         reduce,
+} from "expose-loader?exposes=_.map|map,_.reduce|reduce!underscore";
+
+</span></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/api/cli/"><strong>webpack-cli</strong></a> : especifique-os em um comando sh.</p>
+<ol>
+<li>
+<p>Código sh exemplo:</p>
+<pre><code class="hljs language-sh">  
+webpack --module-bind pug-loader --module-bind <span class="hljs-string">'css=style-loader!css-loader'</span>
+</code></pre>
+<ol>
+<li>Nota: O comando acima usa <a href="https://www.npmjs.com/package/pug-loader">pug-loader</a> para arquivos <a href="https://www.filesuffix.com/pt/extension/jade"><strong>.jade</strong></a> ou <a href="https://www.filesuffix.com/pt/extension/pug">.pug</a> e <a href="https://webpack.js.org/loaders/style-loader/"><strong>style-loader</strong></a> e <a href="https://webpack.js.org/loaders/css-loader/">css-loader</a> para arquivos <em>.css</em>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Os <a href="https://webpack.js.org/concepts/#plugins">plug-ins</a> podem ser aproveitados para realizar uma ampla gama de tarefas, como otimização de pacote, gerenciamento de ativos e injeção de variáveis ​​de ambiente etc... Veja <a href="https://webpack.js.org/concepts/#plugins">mais...</a> .</p>
+</li>
+<li>
+<p>Quando estamos criando um projeto é necessário customizarmos o arquivo de configuração <em>webpack.config.js</em> para o <a href="https://webpack.js.org/guides/development/">modo desenvolvimento</a>. Veja o tópico <a href="https://webpack.js.org/guides/development/#using-webpack-dev-server">usando webpack-dev-server</a>.</p>
+</li>
+<li>
+<p>O aplicativo <a href="https://www.npmjs.com/package/webpack-cli">webpack-cli</a> fornece um conjunto flexível de comandos para que os desenvolvedores aumentem a velocidade ao configurar um projeto webpack personalizado. A partir do <em>webpack v4</em>, o <em>webpack</em> não espera um arquivo de configuração, mas frequentemente os desenvolvedores desejam criar uma configuração do <em>webpack</em> mais personalizada com base em seus casos de uso e necessidades. O <em>webpack-cli</em> atende a essas necessidades, fornecendo um conjunto de ferramentas para melhorar a configuração do <em>webpack personalizado</em>.</p>
+<ol>
+<li>Veja o <a href="https://webpack.js.org/guides/installation/">guia de instalação</a> para saber como instalar.</li>
+<li>Para conhecer os comandos do programa <a href="https://www.npmjs.com/package/webpack-cli">webpack-cli</a> veja o <a href="https://webpack.js.org/api/cli/">documento Interface da Linha de comando</a>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_webpack_typescript></span>
+<a href="https://webpack.js.org/configuration/configuration-languages/#typescript">Como usar webpack com a linguagem typescript</a>.</p>
+<ol>
+<li>
+<p>A forma mais prática de criar ambiente de desenvolvimento <em>typescript</em> é executar a sequencia abaixo. Dica: a ultima linha executa o comando <em>npx tsc-init</em>. O programa <em>tsc-init</em> instala o <em>webpack</em> e cria uma configuração básica. <a href="https://webpack.js.org/guides/typescript/">Veja mais...</a></p>
+<ol>
+<li>
+<p>Código sh</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># Instala a linguagem typescript globalmente se não tiver instalado.</span>
+   sudo npm -g install typescript
+
+   <span class="hljs-comment"># para saber se foi instalado checar a versão</span>
+   tsc -v 
+
+   <span class="hljs-comment"># Instala pacote tsc-init globalmente</span>
+   npm install -g install tsc-init  
+
+   <span class="hljs-comment"># Cria arquivo package.json</span>
+   npm init
+
+   
+
+   <span class="hljs-comment"># Instala e configura tudo que é necessário na pasta local.</span>
+   npx tsc-init 
+
+</code></pre>
+</li>
+<li>
+<p>O comando <a href="https://www.npmjs.com/package/tsc-init">npx tsc-init</a> instala os seguinte pacotes:</p>
+<ol>
+<li>
+<p>&quot;webpack&quot;: &quot;^5.37.0&quot;,</p>
+<ol>
+<li>O <em>webpack</em> é um compactador <em>javascript</em> e <em>empacotador de módulo estático</em> para aplicativos <em>JavaScript</em>. <a href="https://webpack.js.org/configuration/configuration-languages/">Veja mais...</a></li>
+</ol>
+</li>
+<li>
+<p>&quot;webpack-dev-server&quot;: &quot;^3.11.2&quot;</p>
+<ol>
+<li>O <em>webpack-dev-server</em> fornece um <em>servidor web</em> simples e a capacidade de recarregar ao vivo para evitar que a cada alteração do código original o programador tenha que publicar para ver se funcionou as alterações.</li>
+</ol>
+</li>
+<li>
+<p>&quot;@types/jasmine&quot;: &quot;^3.7.2&quot;,</p>
+<ol>
+<li><a href="http://jasmine.github.io">Este pacote contém definições de tipo para Jasmine</a>.</li>
+</ol>
+</li>
+<li>
+<p>&quot;jasmine-core&quot;: &quot;^3.7.1&quot;,</p>
+<ol>
+<li><a href="https://www.npmjs.com/package/jasmine-core">Jasmine</a> é uma estrutura de desenvolvimento orientada por comportamento para testar o código <em>JavaScript</em> independente de navegadores.</li>
+</ol>
+</li>
+<li>
+<p>&quot;karma&quot;: &quot;^6.3.2&quot;,</p>
+<ol>
+<li><a href="https://karma-runner.github.io/latest/index.html">Karma</a> é um <em>test runner</em> feito para o <em>AngularJs</em>. O principal objetivo do <em>Karma</em> é automatizar os testes em diversos navegadores web com um único comando.</li>
+</ol>
+</li>
+<li>
+<p>&quot;karma-chrome-launcher&quot;: &quot;^3.1.0&quot;,</p>
+<ol>
+<li>Pacote <em>karma</em> para o navegador <em>chrome</em>. <a href="https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai">Veja mais...</a></li>
+</ol>
+</li>
+<li>
+<p>&quot;karma-jasmine&quot;: &quot;^4.0.1&quot;,</p>
+<ol>
+<li>Adaptador para a estrutura de teste <em>Jasmine</em>. <a href="https://www.npmjs.com/package/karma-jasmine">Veja mais...</a></li>
+</ol>
+</li>
+<li>
+<p>&quot;karma-webpack&quot;: &quot;^5.0.0&quot;,</p>
+<ol>
+<li>Use o <em>webpack</em> para pré-processar arquivos no <em>karma</em>. <a href="https://www.npmjs.com/package/karma-webpack">Veja mais...</a></li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/concepts/loaders/#:~:text=Loaders%20are%20transformations%20that%20are,source%20code%20of%20a%20module.&amp;text=Loaders%20can%20transform%20files%20from,directly%20from%20your%20JavaScript%20modules!">&quot;ts-loader&quot;: &quot;^9.1.2&quot;</a>,
+2. Este é o carregador <em>TypeScript</em> para <em>webpack</em>. <a href="https://www.npmjs.com/package/ts-loader">Veja mais...</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Para que o projeto seja editado e executado no <em>vscode</em> adicione no registro <em>&quot;compileOptions&quot;</em> do arquivo <em>tsconfig.json</em> as propriedades <em>outDir</em> (diretório de saída para arquivos <em>.js</em>) e a propriedade <a href="https://www.typescriptlang.org/tsconfig#sourceMap">sourceMap</a> (Permite compilar e depurar com vscode  ):</p>
+<pre><code class="hljs language-json">   <span class="hljs-comment">//tsconfig.json</span>
+   {
+      <span class="hljs-attr">"compilerOptions"</span>  : 
+      {
+         <span class="hljs-attr">"outDir"</span>: <span class="hljs-string">"./src/js"</span>, <span class="hljs-comment">//Pasta de saída dos arquivos .js</span>
+         <span class="hljs-attr">"sourceMap"</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">//Permite compilar e depurar com vscode  </span>
+                            <span class="hljs-comment">//Gera o arquivo '.map' correspondente  </span>
+      }
+   }
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Instalação e configuração local</strong></p>
+<ol>
+<li>
+<p><span id=id_Instalar_webpack></span><strong>Instalar versão mais recente do</strong> <a href="https://webpack.js.org/guides/installation/"><strong>webpack</strong></a>:</p>
+<ol>
+<li>
+<p>Criar a pasta e o arquivo de configuração <em>package.json</em> do projeto.</p>
+<pre><code class="hljs language-Sh">
+   mkdir webpack-demo
+   npm init -y
+
+</code></pre>
+<ul>
+<li>
+<p>Nota: O comando <em>npm init -y</em> criou o arquivo de configuração <em>package.json</em>.</p>
+<pre><code class="hljs language-json">   <span class="hljs-comment">//package.json</span>
+   {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"webpack-demo"</span>,
+      <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"main"</span>: <span class="hljs-string">"index.js"</span>,
+      <span class="hljs-attr">"scripts"</span>: {
+         <span class="hljs-attr">"test"</span>: <span class="hljs-string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+      },
+      <span class="hljs-attr">"author"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"license"</span>: <span class="hljs-string">"ISC"</span>
+   }
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Instalar <a href="https://webpack.js.org/">webpack</a> na pasta criada no passo 1:</p>
+<ol>
+<li>
+<p>Código <em>sh</em> para instalação:</p>
+<pre><code class="hljs language-sh">
+   npm install --save-dev webpack
+
+</code></pre>
+<ol>
+<li>
+<p>O comando <em>npm install --save-dev webpack</em> adicionou no arquivo <em>package.json</em> a chaves: <em>&quot;devDependencies&quot;: {&quot;webpack&quot;: &quot;^5.36.1&quot;}</em></p>
+<pre><code class="hljs language-json">   <span class="hljs-comment">//package.json</span>
+   {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"webpack-demo"</span>,
+      <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"main"</span>: <span class="hljs-string">"index.js"</span>,
+      <span class="hljs-attr">"scripts"</span>: {
+         <span class="hljs-attr">"test"</span>: <span class="hljs-string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+      },
+      <span class="hljs-attr">"author"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"license"</span>: <span class="hljs-string">"ISC"</span>,
+      <span class="hljs-attr">"devDependencies"</span>: {
+         <span class="hljs-attr">"webpack"</span>: <span class="hljs-string">"^5.36.1"</span>
+      }
+   }
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><scan id="id_html_webpack_plugin"></scan> <strong>Instalar plugins <em>html-webpack-plugin</em></strong>;</p>
+<ol>
+<li>
+<p>O plugins <a href="https://www.npmjs.com/package/html-webpack-plugin">&quot;html-webpack-plugin&quot;</a> para <em>webpack</em> simplifica a criação de arquivos <em>HTML</em> para servir seus pacotes <em>webpack</em>. Isso é especialmente útil para pacotes <em>webpack</em> que incluem um <em>hash</em> no nome do arquivo, que muda a cada compilação. Você pode deixar o <em>plugin gerar um arquivo HTML para você</em>, fornecer seu próprio modelo usando <em>lodash</em> modelos ou usar seu próprio carregador.</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># Instala plugin a ser usado por alterWebpackConfig()</span>
+   npm install npm install --save-dev html-webpack-plugin
+
+</code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_webpack-cli></span><strong>Instalar a versão mais recente do</strong> <a href="https://webpack.js.org/api/cli/#commands">webpack-cli</a></p>
+<ol>
+<li>
+<p>Para a versão 4 ou posterior do <em>webpack</em> é preciso instalar o aplicativo <a href="https://webpack.js.org/api/cli/#commands">webpack-cli</a> para executar o <em>webpack</em> partir da linha de comando.</p>
+<ol>
+<li>
+<p>Código sh para instalação:</p>
+<pre><code class="hljs language-sh">
+   npm install --save-dev webpack-cli
+
+</code></pre>
+<ul>
+<li>
+<p>O comando <em>npm install --save-dev webpack-cli</em> adicionou no arquivo <em>package.json</em> a chaves: <em>&quot;webpack-cli&quot;: &quot;^4.6.0&quot;,</em></p>
+<pre><code class="hljs language-json">   <span class="hljs-comment">//package.json</span>
+   {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"webpack-demo"</span>,
+      <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"main"</span>: <span class="hljs-string">"index.js"</span>,
+      <span class="hljs-attr">"scripts"</span>: {
+         <span class="hljs-attr">"test"</span>: <span class="hljs-string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+      },
+      <span class="hljs-attr">"author"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"license"</span>: <span class="hljs-string">"ISC"</span>,
+      <span class="hljs-attr">"devDependencies"</span>: {
+         <span class="hljs-attr">"webpack"</span>: <span class="hljs-string">"^5.36.1"</span>,
+         <span class="hljs-attr">"webpack-cli"</span>: <span class="hljs-string">"^4.6.0"</span>
+      }
+   }
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+<li>
+<p><span id=id_webpack_cli_init></span><strong>Instalar <em>webpack-cli init</em></strong></p>
+<ol>
+<li>
+<p>Este pacote contém a lógica para criar uma nova configuração do <em>webpack</em>. Veja <a href="https://www.npmjs.com/package/@webpack-cli/init">mais...</a></p>
+<pre><code class="hljs language-sh">
+   npm i -D webpack-cli @webpack-cli/init
+
+</code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_webpack-cli_generators></span><strong>Instalar</strong> <a href="https://www.npmjs.com/package/@webpack-cli/generators">webpack-cli generators</a></p>
+<ol>
+<li>
+<p>Este pacote contém todos os <a href="https://yeoman.io/">geradores yeoman</a> relacionados ao webpack-cli..</p>
+</li>
+<li>
+<p>Veja dica do site <a href="https://medium.com/code-prestige/dando-o-pontap%C3%A9-inicial-em-projetos-de-software-com-o-yeoman-2f079cb14cf3">medium.com</a> para entender do que se trata.</p>
+</li>
+<li>
+<p>Código sh</p>
+<pre><code class="hljs language-sh">
+   npm i -D webpack-cli @webpack-cli/generators
+   
+</code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://webpack.js.org/configuration/"><strong>Configuração</strong></a> <em>do webpack</em>:</p>
+<ol>
+<li>
+<p><span id=id_configurar_webpack_padrao></span> Configuração padrão:</p>
+<ol>
+<li>
+<p>O <em>webpack</em> não exige que você use um arquivo de configuração. No entanto, ele assumirá que o ponto de entrada de seu projeto seja <em>src/index.js</em> e produzirá o resultado <em>dist/main.js</em> reduzido e otimizado para produção.</p>
+</li>
+<li>
+<p>Para testar se seu projeto está funcionando execute a linha de comando abaixo:</p>
+<pre><code class="hljs language-sh">
+   ./node_modules/.bin/webpack
+
+</code></pre>
+</li>
+<li>
+<p>Este comando produzirá a seguinte mensagem:</p>
+<pre><code class="hljs language-sh">   asset main.js 25 bytes [compared <span class="hljs-keyword">for</span> emit] [minimized] (name: main):
+   ./src/index.js 25 bytes [built] [code generated]
+   AVISO na configuração
+      A opção <span class="hljs-string">'mode'</span> não foi definida, o webpack irá retornar para <span class="hljs-string">'production'</span> para este valor.
+      Defina a opção <span class="hljs-string">'mode'</span> como <span class="hljs-string">'development'</span> ou <span class="hljs-string">'production'</span> para habilitar os padrões para cada ambiente.
+      Você também pode defini-lo como <span class="hljs-string">'none'</span> para desativar qualquer comportamento padrão. Saiba mais: &lt;https://webpack.js.org/configuration/mode/&gt;
+</code></pre>
+</li>
+<li>
+<p>Se a opção <em>'mode'</em> não for definido, <em>webpack</em> define <em>'mode'</em> para <em>'production'</em> como o valor padrão.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_configurar_webpack_personalizada></span> <strong>Configuração Personalizada</strong>.</p>
+<ol>
+<li>
+<p>Quando você precisar alterar a configuração padrão você pode criar o arquivo <em>webpack.config.js</em>  na pasta raiz e o <em>webpack</em> irá usá-lo automaticamente para satisfazer sua preferência.</p>
+</li>
+<li>
+<p>Caso seja necessário o nome do arquivo de configuração diferente de <em>webpack.config.js</em> é possível informar no arquivo <em>package.json</em> na propriedade <em>script{}</em> como no exemplo abaixo:</p>
+<pre><code class="hljs language-json">   <span class="hljs-comment">//package.json</span>
+   <span class="hljs-string">"scripts"</span>: {
+      <span class="hljs-attr">"build"</span>: <span class="hljs-string">"webpack --config production.config.js"</span>
+   }
+
+</code></pre>
+</li>
+<li>
+<p>A maneira mais prática para criar o arquivo de configuração <em>webpack.config.js</em> personalizada é executar o comando abaixo:</p>
+<pre><code class="hljs language-sh">
+   npx webpack-cli init
+
+</code></pre>
+<ul>
+<li>Este comando faz as seguintes tarefas:
+<ol>
+<li>Cria o arquivo <em>webpack.config.js</em></li>
+<li>Criar um arquivo <em>./index.html</em></li>
+<li>Cria a pasta <em>./src</em></li>
+<li>Cria um arquivo <em>/.src/index.js</em></li>
+<li>..</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_nanoid></span> <strong>Instalar <a href="https://github.com/ai/nanoid">nanoid</a></strong></p>
+<ol>
+<li>
+<p>Um <em>gerador de ID de string minúsculo</em>, seguro, compatível com <em>URL</em> e exclusivo para <em>JavaScript</em>.</p>
+</li>
+<li>
+<p>Obs: Se não instalar <a href="https://github.com/ai/nanoid">nanoid</a> o comando <em>npx webpack init</em> gerar um erro.</p>
+<pre><code class="hljs language-sh">
+   npm install --save-dev nanoid
+   npm install --save-dev @types/nanoid
+
+</code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_webpack-dev-server></span>
+<strong>Instalar a versão mais recente do</strong> <a href="https://webpack.js.org/guides/development/#using-webpack-dev-server">webpack-dev-server</a>:</p>
+<ol>
+<li>
+<p>O <a href="https://webpack.js.org/guides/development/#using-webpack-dev-server">webpack-dev-server</a> fornece um <em>servidor web</em> simples e a capacidade de recarregar ao vivo para evitar que a cada alteração do código original o programador tenha que publicar para ver se funcionou as alterações.</p>
+<pre><code class="hljs language-sh">
+   npm install --save-dev webpack-dev-server
+
+</code></pre>
+<ul>
+<li>
+<p>O comando <em>npm install --save-dev webpack-dev-server</em> adicionou no arquivo <em>package.json</em> a chaves: <em>&quot;webpack-dev-server&quot;: &quot;^3.11.2&quot;</em></p>
+<pre><code class="hljs language-json">   <span class="hljs-comment">//package.json</span>
+   {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"webpack-demo"</span>,
+      <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"main"</span>: <span class="hljs-string">"index.js"</span>,
+      <span class="hljs-attr">"scripts"</span>: {
+         <span class="hljs-attr">"test"</span>: <span class="hljs-string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+      },
+
+      <span class="hljs-attr">"author"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"license"</span>: <span class="hljs-string">"ISC"</span>,
+      <span class="hljs-attr">"devDependencies"</span>: {
+         <span class="hljs-attr">"webpack"</span>: <span class="hljs-string">"^5.36.1"</span>,
+         <span class="hljs-attr">"webpack-cli"</span>: <span class="hljs-string">"^4.6.0"</span>,
+         <span class="hljs-attr">"webpack-dev-server"</span>: <span class="hljs-string">"^3.11.2"</span>
+      }
+   }
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_exemplos></span><strong>Exemplos.</strong></p>
+<ol>
+<li>
+<p><strong>webpack Getting Started.</strong></p>
+<ol>
+<li><span id=id_Exemplo_basico></span> <a href="https://webpack.js.org/guides/getting-started/#basic-setup">Basic Setup</a>.
+<ol>
+<li>
+<p>Primeiro, vamos criar um diretório, inicializar o <em>npm</em>, instalar o <em>webpack</em> localmente e instalar o <em>webpack-cli</em> (a ferramenta usada para executar o <em>webpack</em> na linha de comando):</p>
+<pre><code class="hljs language-sh">
+   mkdir basic_setup
+   <span class="hljs-built_in">cd</span> basic_setup
+   npm init -y
+   npm install webpack webpack-cli lodash --save-dev
+
+</code></pre>
+</li>
+<li>
+<p>Segundo vamos criar o arquivo <em>./index.html</em>, a pasta <em>./src</em> e o arquivo <em>./src/index.js</em>.</p>
+</li>
+<li>
+<p>Adicionar código abaixo no arquivo <em>./src/index.js</em></p>
+<pre><code class="hljs language-JavaScript">
+   <span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">'lodash'</span>;
+   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">component</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
+      <span class="hljs-comment">/**
+      Lodash (https://lodash.com/), atualmente incluído por meio de um script,
+      é necessário para que esta linha funcione porque tem a function "_.join()".
+
+      Lodash é uma biblioteca de utilitários JavaScript 
+      moderna que oferece modularidade, desempenho e extras.
+      
+      */</span>                       
+      element.innerHTML = _.join([<span class="hljs-string">'Alo'</span>, <span class="hljs-string">'Mundo'</span>], <span class="hljs-string">' '</span>);
+      <span class="hljs-keyword">return</span> element;
+   }
+
+   <span class="hljs-built_in">document</span>.body.appendChild(component());
+
+</code></pre>
+</li>
+<li>
+<p>Adicionar código abaixo no arquivo <em>./index.html</em></p>
+<pre><code class="hljs language-html">
+   <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Getting Started<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-comment">&lt;!--  
+      Lodash (https://lodash.com/) é uma biblioteca de utilitários JavaScript 
+      moderna que oferece modularidade, desempenho e extras.
+      --&gt;</span>
+      <span class="hljs-comment">&lt;!-- &lt;script src="https://unpkg.com/lodash@4.17.20"&gt;&lt;/script&gt; --&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./src/index.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+</code></pre>
+</li>
+<li>
+<p>Agora é preciso ajustar o arquivo <em>package.json</em> adicionando a propriedade <em>&quot;private&quot; : true</em> e removendo a propriedade <em>&quot;main&quot;: &quot;index.js&quot;</em>. Isso evita uma publicação acidental do seu código.</p>
+<pre><code class="hljs language-json">   <span class="hljs-comment">//package.json</span>
+   {
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"basic_setup"</span>,
+      <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">""</span>,                        
+      <span class="hljs-attr">"private"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"scripts"</span>: {
+         <span class="hljs-attr">"test"</span>: <span class="hljs-string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+         <span class="hljs-string">"build"</span> : <span class="hljs-string">"webpack --mode='production'"</span>,
+
+      },
+      <span class="hljs-attr">"keywords"</span>: [],
+      <span class="hljs-attr">"author"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"license"</span>: <span class="hljs-string">"ISC"</span>,
+      <span class="hljs-attr">"devDependencies"</span>: {
+         <span class="hljs-attr">"webpack"</span>: <span class="hljs-string">"^5.36.2"</span>,
+         <span class="hljs-attr">"webpack-cli"</span>: <span class="hljs-string">"^4.6.0"</span>
+      }
+   }
+   
+</code></pre>
+</li>
+<li>
+<p>Último passo é preciso seguir os seguintes passos:</p>
+<ol>
+<li>
+<p>Executar comando <a href="../html/typescript/instalar.html#id_Instalar_npx">npx</a> <em>webpack</em> que tomará nosso script <em>./src/index.js</em> como ponto de entrada e gerará <em>./dist/main.js</em> como saída. O <em>npx</em> executa o binário <em>webpack</em> (<em>./node_modules/.bin/webpack</em>) do pacote webpack que instalamos no início:</p>
+<pre><code class="hljs language-sh">
+   
+   <span class="hljs-comment"># O comando abaixo criar a pasta ./dist e</span>
+   <span class="hljs-comment"># compacta o código javascript ./src/index.js </span>
+   <span class="hljs-comment"># para a pasta ./dist                     </span>
+   npx webpack
+
+</code></pre>
+</li>
+<li>
+<p>Mova o arquivo <em>index.html</em> para a pasta <em>./dist</em>;</p>
+</li>
+<li>
+<p>No arquivo <em>./dist/index.html</em> troque a linha <em>&lt;script src=&quot;./src/index.js&quot;&gt; &lt;/script&gt;</em> para <em>&lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;</em>.</p>
+<pre><code class="hljs language-html">
+   <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Getting Started<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-comment">&lt;!--  
+      Lodash é uma biblioteca de utilitários JavaScript 
+      moderna que oferece modularidade, desempenho e extras.
+      --&gt;</span>
+      <span class="hljs-comment">&lt;!-- &lt;script src="https://unpkg.com/lodash@4.17.20"&gt;&lt;/script&gt; --&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- &lt;script src="./src/index.js"&gt; --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"main.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+</code></pre>
+</li>
+<li>
+<p>Para testar execute o arquivo <em>./dist/index.html</em> no browser.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_exemplos_javascript></span><strong>Exemplo de webpack com a linguagem javascript</strong></p>
+<ol>
+<li>
+<p>Criar o projeto na pasta selecionada:</p>
+<pre><code class="hljs language-sh">
+   npm init -y
+
+   npm install --save-dev @babel/core @babel/cli
+   npm install --save-dev @babel/plugin-transform-block-scoping
+
+   npm install --save-dev webpack webpack-cli
+   npm i -D webpack-cli @webpack-cli/generators                  
+   npm install --save-dev webpack-dev-server                  
+
+   npm install --save-dev nanoid
+   npm install --save-dev @types/nanoid
+   npm install --save lodash
+   
+   <span class="hljs-comment"># Veja nota ...2.1 abaixo para detalhes do comando a seguir.</span>
+   npx webpack-cli init  
+
+</code></pre>
+<ul>
+<li>Notas:
+<ul>
+<li>O comando <em>npx webpack-cli init</em> acima informa que existe um conflito. Motivo: O arquivo <em>package.json</em> foi criado no primeiro comando. Diga <em>não</em> para que mantenha o <em>package.json</em> atual.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Após criar o projeto, siga os passos abaixo para construção do exemplo 01:</p>
+<ol>
+<li>
+<p>Selecionar o arquivo <em>./src/index.js</em> e edite o seguinte código:</p>
+<pre><code class="hljs language-JavaScript">
+   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">component</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">const</span> element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>);
+
+      <span class="hljs-comment">// Lodash, currently included via a script, is required for this line to work</span>
+      element.innerHTML = _.join([<span class="hljs-string">'Hello'</span>, <span class="hljs-string">'webpack'</span>],<span class="hljs-string">' '</span>);
+
+      <span class="hljs-keyword">return</span> element;
+   }
+
+   <span class="hljs-built_in">document</span>.body.appendChild(component());
+   
+</code></pre>
+</li>
+<li>
+<p>Selecionar o arquivo <em>./index.html</em> e edite o seguinte código:</p>
+<pre><code class="hljs language-html">
+   <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Getting Started<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/lodash@4.17.20"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./src/index.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+   
+</code></pre>
+</li>
+<li>
+<p>Também precisamos ajustar nosso <em>package.json</em> arquivo para ter certeza de marcar nosso pacote como private, bem como remover a entrada <em>main</em>. Isso evita uma publicação acidental do seu código.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_exemplos_typescript></span><a href="https://webpack.js.org/configuration/configuration-languages/"><strong>Exemplo de webpack com a linguagem typescript</strong></a>:</p>
+<ol>
+<li>
+<p>Criar o projeto na pasta selecionada:</p>
+<ol>
+<li>Código shellScript
+<ol>
+<li><a href="../html/typescript/webpack_typescript/modelo01/my-tsc-init-ver-0.2.0.sh">sh para criar projetos typescript/my-tsc-init-ver-0.2.0.sh</a></li>
+<li><a href="../html/typescript/webpack_typescript/modelo01/my-tsc-init.html">Veja mais...</a></li>
+</ol>
+</li>
+<li>.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
+<ol>
+<li><a href="https://webpack.js.org/guides/installation/">Guia de instalação oficial</a></li>
+<li><a href="https://ankiweb.net/shared/info/877182321">Enhance main window</a></li>
+<li><a href="https://webpack.js.org/concepts/">webpack</a></li>
+<li><a href="https://www.youtube.com/watch?v=sU3W2ZTt-8I">Vídeo para iniciante sobre webpack</a></li>
+<li><a href="https://devheroes.io/webpack-2-para-iniciantes-o-que-e-porque-usar-e-como-iniciar/">webpack-2-para-iniciantes-o-que-e-porque-usar-e-como-iniciar</a>.</li>
+<li><a href="https://postcss.org/">postcss aumentar a legibilidade do código css</a></li>
+<li><a href="https://github.com/ai/nanoid">nanoid</a></li>
+<li><a href="https://webpack.js.org/configuration/mode/">configuration/mode</a></li>
+<li><a href="https://www.youtube.com/watch?v=RZQMAuHE_hw">O que é babel js</a></li>
+<li><a href="https://medium.com/@angustweets/hallelujah-in-praise-of-babel-977020010fad">Letra da música do programa babel js</a></li>
+<li><a href="https://www.youtube.com/watch?v=40abpedBKK8">Música do programa bebel js</a></li>
+<li><a href="https://webpack.js.org/concepts/">Conceitos do webpack</a></li>
+<li><a href="https://springbootdev.com/2018/03/06/generate-webpack-config-js-with-webpack-cli/">Generate Webpack Configuration file (webpack.config.js) using webpack-cli</a></li>
+<li><a href="https://webpack.js.org/configuration/dev-server/">dev-server-configuration</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9hOkGbwzgYFmaxB0WiduYJC">Webpack &amp; TypeScript</a></li>
+<li><a href="https://www.npmjs.com/package/html-webpack-plugin">html-webpack-plugin</a></li>
+<li><a href="https://www.you%3Cbodtube.com/watch?v=LMCtGvLJT6c">Babel e Webpack que roda em seus Projetos JavaScript?</a></li>
+<li><a href="https://www.youtube.com/watch?v=PcWOAYbTc9Y&amp;t=5s">webpack // Dicionário do Programador</a></li>
+<li><a href="https://github.com/webpack-contrib/html-loader">html-loader</a></li>
+<li><a href="https://github.com/jantimon/html-webpack-plugin/blob/main/docs/template-option.html">html-webpack-plugin</a></li>
+<li><a href="https://github.com/jaketrent/html-webpack-template">html-webpack-template</a></li>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+</li>
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<ol>
+<li>
+<p>11/05/2023 <!--TODO: HISTÓRICO --></p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Adaptar css para que acesse os css da pasta /css ;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Os destaques que estavam em negritos trocar para enfatizado.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+<li>
+<p>27/04/2021 <!--TODO: HISTÓRICO --></p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar este documento baseado no <a href="http://modelo02.html">modelo02.md</a> ;</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+<li>
+<p>28/04/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Objetivos;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Pre-requisitos</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Benefícios</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+<li>
+<p>29/04/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar tópico instalar a versão mais recente do webpack.</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar tópico Instalar a versão mais recente do webpack-cli.</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar tópico Instalar a versão mais recente do webpack-dev-server.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+<li>
+<p>30/04/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico configuração do webpack.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Exemplos - falta executar javascript dentro do arquivo ./index.html</li>
+</ul>
+</li>
+<li>
+<p>05/05/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Exemplo básico de uso do webpack.</li>
+</ul>
+</li>
+<li>
+<p>06/05/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico descrição do webpack parte 01.</li>
+</ul>
+</li>
+<li>
+<p>08/05 a 11/05/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico descrição do webpack.</li>
+</ul>
+</li>
+<li>
+<p>27/05/2021</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar documento: Como usar webpack com a linguagem typescript.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Referências</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Atualizar o histórico deste documento.</li>
+</ul>
+</li>
+<li>
+<p>15/06/2021</p>
+</li>
+</ol>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Depois de tanta luta para entender webpack, achei o projeto webpack-demo com 15 exemplo. Meu erro foi achar que ele pudesse pegar meu projeto atual e transformar em site de distribuição na web. O objetivo do webpack é empacotar javascript apenas.</li>
+</ul>
+<ol start="11">
+<li>xx/06/2021 <!--TODO: Falta fazer os item abaixo: --></li>
+</ol>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Testar este documento depois que eu esquecer dele.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+ <script>    function goBack() {    window.history.back()}</script>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

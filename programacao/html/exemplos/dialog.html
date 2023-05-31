@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+    <p> Clique no botão para abrir a janela de diálogo. </p>
+
+    <button onclick="myFunction()">Execute dialog</button>
+
+      <p>
+      <b> Observação: </b> O elemento de diálogo só é compatível com Chrome 37+,
+      Safari 6+ e Opera 24+.
+
+    </p>
+    <p>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog">Documento sobre a tag Dialog.</a>
+  </p>
+
+    <dialog id="myDialog" >
+      O que é markdown?
+
+      <iframe
+        src="../markdown/o_que_e_markdown.html"
+        title=""
+        width="100%"
+        height="100%"
+      ></iframe>
+      
+    </dialog>''
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myDialog");
+        if (x.open !== true) {
+          x.open = true;
+        } else x.open = false;
+      
+      }
+    </script>
+  </body>
+</html>

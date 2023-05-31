@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;O que &eacute; linguagem shellscript&lt;a href&equals;&quot;modelo02&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x1fa9f; &lt;&sol;a&gt;</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS markdown -->
+    <link
+      type="text/css"
+      href="../../../css/defaultthemeMarkdown.css"
+      rel="stylesheet"
+    />
+    <!-- CSS da página /index.html -->
+    <link
+      type="text/css"
+      href="../../../css/defaulttheme.css"
+      rel="stylesheet"
+    />
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="o-que-é-linguagem-shellscript---"><span id="topo"><span>O que é linguagem shellscript<a href="modelo02.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
+<h2 id="1-index"><strong>1. INDEX</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+<li><a href="#id_beneficios">benefícios.</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_Descricao"><strong>Descrição.</strong></a></p>
+<ol>
+<li><a href="#id_anotacoes">Anotações</a></li>
+<li><a href="#id_functions">Functions</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_exemplos"><strong>Exemplos.</strong></a></p>
+<ol>
+<li><a href="#id_functions_example">Functions</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_instalar"><strong>Conteúdo01</strong></a></p>
+</li>
+<li>
+<p><a href="#id_referencias"><strong>Referências.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+<hr>
+<ol>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li>
+<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+<ol>
+<li>
+<p>ShellScript é a linguagem usada pelo linux para automatizar processos.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
+<ol>
+<li>
+<p>Uso de um shell Unix / Linux interativo;</p>
+</li>
+<li>
+<p>Conhecimento mínimo de programação - o uso de variáveis, funções, é um conhecimento básico útil;</p>
+</li>
+<li>
+<p>Compreensão de alguns comandos Unix / Linux e competência no uso de alguns dos mais comuns . ( ls , cp , echo , etc);</p>
+</li>
+<li>
+<p>Programadores de ruby , perl , python , C , Pascal ou qualquer linguagem de programação (mesmo BASIC) que podem ler scripts de shell, mas não sentem que entendem exatamente como funcionam..</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
+<ol>
+<li>
+<p>Automatizar processos do sistema operacional linux.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Descricao></span><strong>Descrição</strong></p>
+<ol>
+<li>
+<p><scan id="id_anotacoes"></scan> Anotações de meus estudos</p>
+<ol>
+<li>
+<p>As <strong>passagem de parâmetros</strong> e o <strong>retorno das funções</strong> em shellscript é totalmente diferente de todas as linguagens que conheço. Veja abaixo a <a href="#id_functions">descrição de funções</a> e os <a href="#id_functions_example">exemplos</a> para melhor compreensão.</p>
+</li>
+<li>
+<p>O comando <strong>exit</strong> também é diferente, ao invés de sair da função, ele aborta a função (igual a <strong>halt</strong> do pascal). Veja os exemplos abaixo.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><scan id="id_functions"></scan>As funções em shellscript tem a sintaxe <a href="https://www.shellscript.sh/functions.html"><strong>numeDaFunção(){}</strong></a> e podem retorna valor ou não da seguinte maneira:</p>
+<ol>
+<li>
+<p>Use o comando <strong>exit</strong> para terminar o script e retorna ao script que o chamou  (igual ao halt do pascal);</p>
+</li>
+<li>
+<p>Use o comando <strong>return</strong> para encerrar a função e retornar o valor numérico (não aceita string) fornecido para a seção de chamada do script;</p>
+<ol>
+<li><strong>Obs:</strong> Para capturar um retorno de uma função é totalmente diferente de qualquer linguagem que eu conhecia. Usa-se as sequência de caractere <strong>$?</strong> após a execução da função.</li>
+</ol>
+</li>
+<li>
+<p>Alterar o estado de uma variável ou variáveis globais;</p>
+<ol>
+<li>Nota: A função shell não pode alterar seus parâmetros e sim parâmetros globais.</li>
+</ol>
+</li>
+<li>
+<p>Saída de eco para stdout, que será capturada pelo chamador assim que c = <code>expr $a + $b</code> for capturada.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_exemplos></span><strong>Exemplos.</strong></p>
+<ol>
+<li>
+<p><scan id="id_functions_example"></scan>Exemplos de funções:</p>
+<ol>
+<li>
+<p>Este código ShellScript mostra o uso das  função <strong>expr</strong>, <strong>return</strong> e  resultado da função em <strong>$?</strong>.</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># Script subtrai.sh</span>
+   <span class="hljs-comment">#!/bin/sh</span>
+
+   <span class="hljs-comment"># função subtrai</span>
+   <span class="hljs-function"><span class="hljs-title">subtrai</span></span>(){
+      param1=<span class="hljs-variable">$1</span>
+      param2=<span class="hljs-variable">$2</span>
+      <span class="hljs-built_in">echo</span> parâmetro 01 = <span class="hljs-variable">$param1</span>
+      <span class="hljs-built_in">echo</span> parâmetro 02 = <span class="hljs-variable">$param2</span>
+
+      <span class="hljs-built_in">echo</span> <span class="hljs-variable">$param1</span>
+      <span class="hljs-built_in">echo</span> <span class="hljs-variable">$param2</span>
+      result=`expr <span class="hljs-variable">$param1</span> - <span class="hljs-variable">$param2</span>`
+      <span class="hljs-built_in">return</span> <span class="hljs-variable">$result</span>
+   }
+
+   <span class="hljs-comment"># parte principal do programa </span>
+   subtrai 5 2
+   result=<span class="hljs-string">"$?"</span>
+   <span class="hljs-comment"># A sequencia $? contém o valor de return.</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"O valor retorna da expressão subtrai 5 2 = <span class="hljs-variable">$result</span>"</span>
+</code></pre>
+</li>
+<li>
+<p>Este código ShellScript mostra o uso das  função <strong>expr</strong>, <strong>exit</strong> e  resultado da função em <strong>$?</strong>.</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># Script soma.sh</span>
+   <span class="hljs-comment">#!/bin/sh</span>
+
+   <span class="hljs-comment"># função soma</span>
+   <span class="hljs-function"><span class="hljs-title">soma</span></span>(){
+      param1=<span class="hljs-variable">$1</span>
+      param2=<span class="hljs-variable">$2</span>
+      <span class="hljs-built_in">echo</span> parâmetro 01 = <span class="hljs-variable">$param1</span>
+      <span class="hljs-built_in">echo</span> parâmetro 02 = <span class="hljs-variable">$param2</span>
+
+      <span class="hljs-built_in">echo</span> <span class="hljs-variable">$param1</span>
+      <span class="hljs-built_in">echo</span> <span class="hljs-variable">$param2</span>
+      result=`expr <span class="hljs-variable">$param1</span> + <span class="hljs-variable">$param2</span>`
+      <span class="hljs-built_in">exit</span> <span class="hljs-variable">$result</span>
+   }
+
+   <span class="hljs-comment"># parte principal do programa </span>
+   soma 1 2
+   <span class="hljs-comment"># A sequencia $? contém o valor de exit mais nunca imprimira </span>
+   <span class="hljs-comment"># a linha abaixo aqui porque o comando exit aborta o script.</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"O valor retorna da expressão soma 1 2 = $?"</span>
+
+</code></pre>
+<pre><code class="hljs language-sh">   <span class="hljs-comment"># Script testsoma.sh</span>
+   <span class="hljs-comment">#!/bin/sh</span>
+
+   <span class="hljs-comment"># teste da chamada de função estando em outro arquivo.</span>
+   ./soma.sh
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"O valor retorna da expressão soma 1 2 = $?"</span>
+</code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p>item 02.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
+<ol>
+<li>
+<p><a href="https://www.shellscript.sh/">Manual do usuário</a></p>
+</li>
+<li>
+<p><a href="https://www.shellscript.sh/functions.html">ShellScript functions</a></p>
+</li>
+<li>
+<p><a href="https://silo.tips/download/direitos-autorais-copyright">Livro inacabado do comando sed</a></p>
+</li>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><a href="##">#</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<p>1.02/06/2021 <!--TODO: HISTÓRICO --></p>
+<ul>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ul>
+<p>2.02/06/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
+<ul class="contains-task-list">
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar este documento baseado no <a href="http://modelo02.html">modelo02.md</a> ;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Objetivos;</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Pre-requisitos</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Benefícios</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Descrição</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Exemplos</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Conteúdo 01</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Referências</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Atualizar o histórico deste documento.</p>
+</li>
+<li class="task-list-item">
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Testar este documento depois após uma semana de concluído.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+ <script>    function goBack() {    window.history.back()}</script>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

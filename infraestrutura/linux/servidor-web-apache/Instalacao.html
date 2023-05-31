@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Como instalar o Servidor Web Apache2 no Linux Debian ou seus derivados  &lt;a href&equals;&quot;Instalacao&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;  &#x1fa9f; &lt;&sol;a&gt;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <h4 id="como-instalar-o-servidor-web-apache2-no-linux-debian-ou-seus-derivados-----">Como instalar o Servidor Web Apache2 no Linux Debian ou seus derivados  <a href="Instalacao.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h4>
+<ol>
+<li>
+<p><strong>Pressione as teclas <em>CTRL+ALT+T</em> para entrar no terminal e digite:</strong></p>
+<pre><code class="hljs language-sh">  
+   sudo -i    
+
+   <span class="hljs-comment"># Atualiza o repositório     </span>
+   sudo apt update 
+
+   <span class="hljs-comment"># Atualiza todos os aplicativos instalados</span>
+   sudo apt update 
+
+   <span class="hljs-comment"># Instala o servidor Apache2 </span>
+   sudo apt install apache2 
+
+   <span class="hljs-comment"># Instala a documentação do servidor Apache2</span>
+   sudo apt install apache2-doc 
+
+   <span class="hljs-comment"># Instala o navegador web modo texto usado pelo comando `apachectl fullstatus`</span>
+   sudo apt install w3m  
+
+   <span class="hljs-comment"># instala pacote para para que os protocolos CGI e FastCGI sejam ativados</span>
+   sudo apt-get install libapache2-mod-fcgid      
+
+   <span class="hljs-comment"># Checa se está tudo certo.</span>
+   sudo apachectl configtest           
+
+</code></pre>
+</li>
+<li>
+<p><strong>Ao instalar o pacote <a href="https://httpd.apache.org/ABOUT_APACHE.html">Apache2</a>, o instalador aciona o <a href="https://en.wikipedia.org/wiki/Systemd">systemd</a> para iniciar e habilitar automaticamente o serviço <a href="https://httpd.apache.org/ABOUT_APACHE.html">apache2</a>. Você pode verificar se o serviço <a href="https://httpd.apache.org/ABOUT_APACHE.html">apache2</a> está ativo(em execução) e ativado usando os seguintes comandos:</strong></p>
+<pre><code class="hljs language-powershell">
+  <span class="hljs-comment">#  Mostra se o servidor está ativo</span>
+  sudo systemctl is<span class="hljs-literal">-active</span> apache2
+
+  <span class="hljs-comment">#  Mostra se o servidor está habilitado</span>
+  sudo systemctl is<span class="hljs-literal">-enabled</span> apache2
+
+  <span class="hljs-comment">#  Mostra o status do servidor. Obs: Crt+C para sair da tela de status.</span>
+  sudo systemctl status apache2
+
+</code></pre>
+</li>
+<li>
+<p><strong>Configurando a diretiva <em>ServerName</em>.</strong></p>
+<ol>
+<li>
+<p>Caso o comando <em>sudo apachectl configtest</em>  mostre o <em>erro AH00558</em>, então siga os passos a seguir para resolver:</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># edite o arquivo apache2.conf e adicione no final </span>
+   <span class="hljs-comment"># do arquivo apache2.conf a diretiva ` ServerName 127.0.0.1 ` </span>
+   sudo xed /etc/apache2/apache2.conf
+
+</code></pre>
+<ol>
+<li>
+<p>O final do arquivo <em>apache2.conf</em> deve ficar igual ao trecho abaixo:</p>
+<pre><code class="hljs language-sh">
+   <span class="hljs-comment"># Include the virtual host configurations:</span>
+   IncludeOptional sites-enabled/*.conf
+   
+   <span class="hljs-comment"># vim: syntax=apache ts=4 sw=4 sts=4 sr noet</span>
+   
+   <span class="hljs-comment"># A diretiva abaixo é necessário caso apareça `erro AH00558` após o comando `sudo apachectl configtest` ser executado.</span>
+   ServerName 127.0.0.1    
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Notas:</strong></p>
+<ol>
+<li>
+<p>Ao instalar o Apache ele adiciona ao arquivo <a href="https://linuxhandbook.com/etc-hosts-file/">/etc/hosts</a> a seguinte linha:</p>
+<pre><code class="hljs language-sh">   
+   127.0.0.1	localhost
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="referências">REFERÊNCIAS</h2>
+<ol>
+<li><a href="https://httpd.apache.org/ABOUT_APACHE.html">Apache2</a></li>
+<li><a href="https://pt.wikipedia.org/wiki/Servidor_Apache">Servidor Apache - Wikipedia</a></li>
+<li><a href="https://linuxhandbook.com/etc-hosts-file/"><strong>/etc/hosts</strong></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Systemd"><strong>systemd</strong></a></li>
+</ol>
+
+        
+        
+    </body>
+    </html>
