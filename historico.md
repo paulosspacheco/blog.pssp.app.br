@@ -8,7 +8,7 @@
 - [x] [Criar página Shell Script](./infraestrutura/linux/shell/index.html)
 - [x] Enviar pasta blog.pssp.app.br novamente para nuvem github. Versão: 0.200.1 . Motivo: Problema com github desktop.;
 - [x] Enviar pasta blog.pssp.app.br novamente para nuvem github. Versão: 0.201.0 . Motivo: Problema com github desktop.;
-- [x] [Criar documento de como enviar sites para o github pages.](./infraestrutura/linux/git/como_configurar_site_publicado_no_github_page.html)
+- [x] [Criar documento de como enviar sites para o github pages.](./infraestrutura/linux/git/como_hospedar_um _site_estático_no_github_page.html)
 
 </fieldset>
 
