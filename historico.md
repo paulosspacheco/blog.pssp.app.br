@@ -1,11 +1,19 @@
 <!-- markdownlint-disable-next-line -->
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
+<!-- TODO: em: 31/05/2023 -->
+<!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>15/05/2023 a 31/05/2023</b></legend>
+
+- [x] [Criar página Shell Script](./infraestrutura/linux/shell/index.html)
+- [x] Enviar pasta blog.pssp.app.br novamente para nuvem github. Versão: 0.200.1 . Motivo: Problema com github desktop.;
+
+</fieldset>
+
 <!-- TODO: em: 19/05/2023 -->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>15/05/2023 a 19/05/2023</b></legend>
 
-- [ ] [Criar página Shell Script](./infraestrutura/linux/shell/index.html)
 - [x] A tag \<pre\> do arquivo [defaultthemeant.css](css/defaultthemeant.css) deve não ter scroll vertical para que ao imprimir o documento todo seu conteúdo seja impresso.
 
 </fieldset>
