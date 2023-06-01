@@ -9,3 +9,5 @@
 6. [Passo 6 — Testando o acesso NFS](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04-pt#passo-6-testando-o-acesso-nfs)
 7. [Passo 7 — Montando os diretórios remotos do NFS durante a inicialização do sistema](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04-pt#passo-7-montando-os-diretorios-remotos-do-nfs-durante-a-inicializacao-do-sistema)
 8. [Passo 8 — Desmontando um compartilhamento NFS remoto](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04-pt#passo-8-desmontando-um-compartilhamento-nfs-remoto)
+9. [Linux NFS Mount Entry em fstab (/etc/fstab) com exemplo](https://linuxopsys.com/topics/linux-nfs-mount-entry-in-fstab-with-example)
+10. [14.2. Montando um Volume NFS](https://tldp.org/LDP/nag2/x-087-2-nfs.mountd.html)
