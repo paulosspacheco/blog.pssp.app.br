@@ -5,9 +5,7 @@
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>01/06/2023</b></legend>
 
-- [ ] [Criar documento montando pastas compartilhadas ao iniciar o computador](./infraestrutura/linux/nfs/montando_pastas_ao_iniciar_o_computador.html)
-- [ ] Pensar como uma página criada em markdown pode usar o arquivo footer.inc
-- [ ]  
+- [x] Adicionar links nos arquivos da pasta _linux/nfs_ para que possa ser visualizado em outra janela fora do frame da janela principal.
 
 </fieldset>
 
@@ -40,6 +38,9 @@
 - [x] A cor de fundo da tag \<pre\>\</pre\> deve se compatível com a cor de fundo dos theme markdown .hljs {background: #282c34;}
 - [x] Trocar o emoji janela para o emoji seta que seja compatível com o windows.
 - [x] [Criar documento de como configurar apache2 para executar FastCGI](./infraestrutura/linux/servidor-web-apache/como_configurar_apache2_para_executar_cgi_e_fastcgi.md)
+- [x] Na documentação markdown do nodejs usar os temas defaulttheme.css e defaultthemeMarkdown
+- [x] Na documentação nodejs onde o destaque estiver negrito alterar para enfatizado.
+
 
 </fieldset>
 
