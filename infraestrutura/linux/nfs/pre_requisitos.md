@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line -->
 #### Pre-requisitos para instalar o serviço NFS
 
 1. Linux Debian ou distribuições derivadas.

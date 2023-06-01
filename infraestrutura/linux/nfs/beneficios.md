@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line -->
 #### Benefícios do serviço NFS
 
 1. Alguns dos benefícios mais notáveis que o NFS pode oferecer são:

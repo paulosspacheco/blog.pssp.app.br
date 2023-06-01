@@ -1,6 +1,16 @@
 <!-- markdownlint-disable-next-line -->
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
+<!-- TODO: em: 01/06/2023 -->
+<!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>01/06/2023</b></legend>
+
+- [ ] [Criar documento montando pastas compartilhadas ao iniciar o computador](./infraestrutura/linux/nfs/montando_pastas_ao_iniciar_o_computador.html)
+- [ ] Pensar como uma página criada em markdown pode usar o arquivo footer.inc
+- [ ]  
+
+</fieldset>
+
 <!-- TODO: em: 31/05/2023 -->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>15/05/2023 a 31/05/2023</b></legend>

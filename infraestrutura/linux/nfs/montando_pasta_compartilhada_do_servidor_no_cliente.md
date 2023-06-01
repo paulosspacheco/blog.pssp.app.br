@@ -1,4 +1,5 @@
-#### Montando pasta compartilhada do servidor na máquina cliente
+<!-- markdownlint-disable-next-line -->
+#### <span id="topo"><span>Montando pasta compartilhada do servidor na máquina cliente<a href="montando_pasta_compartilhada_do_servidor_no_cliente.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Para acessar os compartilhamentos do _servidor nfs_ é necessário criar pasta na máquina cliente e usar o comando _mount_ da seguinte forma:.
    1. Criando pasta na máquina cliente:

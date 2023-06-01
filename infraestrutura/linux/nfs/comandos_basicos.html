@@ -1,69 +1,42 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>
-      Comandos b&aacute;sicos do dia a dia para manuten&ccedil;&atilde;o do
-      servi&ccedil;o NFS
-    </title>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Comandos b&aacute;sicos do dia a dia para manuten&ccedil;&atilde;o do servi&ccedil;o NFS&lt;a href&equals;&quot;comandos&lowbar;basicos&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- CSS markdown -->
-    <link
-      type="text/css"
-      href="../../../css/defaultthemeMarkdown.css"
-      rel="stylesheet"
-    />
-    <!-- CSS da página /index.html -->
-    <link
-      type="text/css"
-      href="../../../css/defaulttheme.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="vscode-body vscode-light">
-    <h4 id="comandos-básicos-do-dia-a-dia-para-manutenção-do-serviço-nfs">
-      Comandos básicos do dia a dia para manutenção do serviço NFS
-    </h4>
-    <ol>
-      <li>
-        <p>
-          Reiniciar o serviço NFS
-          <em
-            ><a
-              href="https://manpages.debian.org/testing/nfs-kernel-server/mountd.8.en.html"
-              >nfs-kernel-server</a
-            ></em
-          >:
-        </p>
-        <pre><code class="hljs language-sh">
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-light">
+        <!-- markdownlint-disable-next-line -->
+<h4 id="comandos-básicos-do-dia-a-dia-para-manutenção-do-serviço-nfs---"><span id="topo"><span>Comandos básicos do dia a dia para manutenção do serviço NFS<a href="comandos_basicos.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h4>
+<ol>
+<li>
+<p>Reiniciar o serviço NFS <em><a href="https://manpages.debian.org/testing/nfs-kernel-server/mountd.8.en.html">nfs-kernel-server</a></em>:</p>
+<pre><code class="hljs language-sh">
    <span class="hljs-comment"># systemctl restart</span>
    sudo systemctl restart nfs-kernel-server
 
 
 </code></pre>
-      </li>
-      <li>
-        <p>
-          Edição do arquivo
-          <em
-            ><a href="https://linux.die.net/man/5/exports">/etc/exports</a></em
-          >
-          para registrar as pastas a serem exportadas:
-        </p>
-        <pre><code class="hljs language-sh">
+</li>
+<li>
+<p>Edição do arquivo  <em><a href="https://linux.die.net/man/5/exports">/etc/exports</a></em> para registrar as pastas a serem exportadas:</p>
+<pre><code class="hljs language-sh">
    sudo xed /etc/exports
 
 </code></pre>
-      </li>
-      <li>
-        <p>
-          Comando
-          <em><a href="https://linux.die.net/man/8/mount/">mount</a></em> para
-          montar as pastas compartilhas do servidor no cliente:
-        </p>
-        <pre><code class="hljs language-sh">
+</li>
+<li>
+<p>Comando <em><a href="https://linux.die.net/man/8/mount/">mount</a></em> para montar as pastas compartilhas do servidor no cliente:</p>
+<pre><code class="hljs language-sh">
   <span class="hljs-comment"># Monta o compartilhamento do servidor na pasta do cliente</span>
   sudo mount IP_server_NFS:PastaCompartilhadaServidor PastaOndeSeraMontadaCliente
   <span class="hljs-comment"># Exemplo: sudo mount 192.168.15.3:/var/nfs/share /home/paulosspacheco/v/share</span>
@@ -71,48 +44,29 @@
 
 
 </code></pre>
-      </li>
-      <li>
-        <p>
-          O comando
-          <em><a href="https://linux.die.net/man/8/exportfs">exportfs</a></em> o
-          arquivo de configuração
-          <em
-            ><a href="https://linux.die.net/man/5/exports">/etc/exports</a></em
-          >
-          será lido e o kernel atualizado com as mudanças realizadas.
-        </p>
-        <pre><code class="hljs language-sh">
+</li>
+<li>
+<p>O comando <em><a href="https://linux.die.net/man/8/exportfs">exportfs</a></em> o arquivo de configuração <em><a href="https://linux.die.net/man/5/exports">/etc/exports</a></em> será lido e o kernel atualizado com as mudanças realizadas.</p>
+<pre><code class="hljs language-sh">
    sudo exportfs
 
    
 </code></pre>
-      </li>
-      <li>
-        <p>
-          O comando
-          <em><a href="https://linux.die.net/man/8/blkid">blkid</a></em> no
-          Linux mostra que tipo de conteúdo um dispositivo de bloco (discos)
-          contém e os seus atributos como nome do dispositivo, e outros
-          metadados.
-        </p>
-        <pre><code class="hljs language-sh">
+</li>
+<li>
+<p>O comando <em><a href="https://linux.die.net/man/8/blkid">blkid</a></em> no Linux mostra que tipo de conteúdo um dispositivo de bloco (discos) contém e os seus atributos como nome do dispositivo, e outros metadados.</p>
+<pre><code class="hljs language-sh">
    sudo blkid
 
 
 </code></pre>
-      </li>
-      <li>
-        <p>Alterando o modo de acesso da pasta share para que possa:</p>
-        <ol>
-          <li>
-            Suponha que se queira que o dono da pasta /var/nfs/share e o grupo
-            em que a pasta pertença, possa ler, grava e executa arquivos e
-            outros usuários não possam ler, nem grava e nem executar, então
-            execute os seguintes abaixo:
-          </li>
-        </ol>
-        <pre><code class="hljs language-sh">
+</li>
+<li>
+<p>Alterando o modo de acesso da pasta share para que possa:</p>
+<ol>
+<li>Suponha que se queira que o dono da pasta /var/nfs/share e o grupo em que a pasta pertença, possa ler, grava e executa arquivos e outros usuários não possam ler, nem grava e nem executar, então execute os seguintes abaixo:</li>
+</ol>
+<pre><code class="hljs language-sh">
    <span class="hljs-comment"># Dar acesso ao dono e ao grupo </span>
    sudo chmod -R ug+xrw /var/nfs/share  
 
@@ -120,28 +74,17 @@
    sudo chmod -R o-xrw /var/nfs/share       
 
 </code></pre>
-      </li>
-      <li>
-        <p>
-          Checando o modo de acesso da pasta <em>/var/nfs/share</em> com o
-          comando
-          <em
-            ><a href="https://man7.org/linux/man-pages/man1/ls.1.html"
-              >ls</a
-            ></em
-          >:
-        </p>
-        <pre><code class="hljs language-sh">
+</li>
+<li>
+<p>Checando o modo de acesso da pasta <em>/var/nfs/share</em> com o comando <em><a href="https://man7.org/linux/man-pages/man1/ls.1.html">ls</a></em>:</p>
+<pre><code class="hljs language-sh">
    sudo ls -l /var/nfs/share 
 
 </code></pre>
-      </li>
-      <li>
-        <p>
-          Crie o diretório <em>/var/nfs/share</em> no servidor para compartilhar
-          com os clientes:
-        </p>
-        <pre><code class="hljs language-sh">
+</li>
+<li>
+<p>Crie o diretório <em>/var/nfs/share</em> no servidor para compartilhar com os clientes:</p>
+<pre><code class="hljs language-sh">
    <span class="hljs-comment"># Criar a pasta compartilhada</span>
    sudo mkdir -p /var/nfs/share
 
@@ -149,32 +92,25 @@
    sudo ls -la /var/nfs/share
 
 </code></pre>
-      </li>
-      <li>
-        <p>
-          O comando abaixo o NFS traduzirá toda operação root no cliente para as
-          credenciais <em>nobody:nogroup</em> como uma medida de segurança.
-          Portanto, precisamos alterar a posse do diretório para que corresponda
-          a essas credenciais.
-        </p>
-        <pre><code class="hljs language-sh">
+</li>
+<li>
+<p>O comando abaixo o NFS traduzirá toda operação root no cliente para as credenciais <em>nobody:nogroup</em> como uma medida de segurança. Portanto, precisamos alterar a posse do diretório para que corresponda a essas credenciais.</p>
+<pre><code class="hljs language-sh">
    sudo chown nobody:nogroup /var/nfs/share       
 
 </code></pre>
-      </li>
-    </ol>
-    <h5 id="referências">REFERÊNCIAS</h5>
-    <ol>
-      <li>
-        <a
-          href="https://manpages.debian.org/testing/nfs-kernel-server/mountd.8.en.html"
-          >nfs-kernel-server</a
-        >
-      </li>
-      <li><a href="https://linux.die.net/man/5/exports">/etc/exports</a></li>
-      <li><a href="https://linux.die.net/man/8/mount/">mount</a></li>
-      <li><a href="https://linux.die.net/man/8/exportfs">exportfs</a></li>
-      <li><a href="https://linux.die.net/man/5/exports">/etc/exports</a></li>
-    </ol>
-  </body>
-</html>
+</li>
+</ol>
+<h5 id="referências">REFERÊNCIAS</h5>
+<ol>
+<li><a href="https://manpages.debian.org/testing/nfs-kernel-server/mountd.8.en.html">nfs-kernel-server</a></li>
+<li><a href="https://linux.die.net/man/5/exports">/etc/exports</a></li>
+<li><a href="https://linux.die.net/man/8/mount/">mount</a></li>
+<li><a href="https://linux.die.net/man/8/exportfs">exportfs</a></li>
+<li><a href="https://linux.die.net/man/5/exports">/etc/exports</a></li>
+</ol>
+
+        
+        
+    </body>
+    </html>

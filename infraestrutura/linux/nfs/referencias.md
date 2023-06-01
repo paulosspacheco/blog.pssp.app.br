@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line -->
 #### REFERÊNCIAS
 
 1. [Passo 1 — Baixando e instalando os componentes](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04-pt#passo-1-baixando-e-instalando-os-componentes)

@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line -->
 #### Instalação do Serviço NFS
 
 1. Para instalar o servidor NFS instale o pacote _nfs-kernel-server_.

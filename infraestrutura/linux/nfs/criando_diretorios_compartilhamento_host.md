@@ -1,4 +1,5 @@
-#### Criando os diretórios de compartilhamento no servidor host
+<!-- markdownlint-disable-next-line -->
+#### <span id="topo"><span>Criando os diretórios de compartilhamento no servidor host<a href="criando_diretorios_compartilhamento_host.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Crie o diretório _/var/nfs/share_ no servidor para compartilhar com os clientes:
   

@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line -->
 #### Objetivo do Serviço NFS
 
 O Network File System (NFS) é um mecanismo para armazenar arquivos em uma rede. É um sistema de arquivos distribuído que permite aos usuários acessar arquivos e diretórios localizados em computadores remotos e tratar esses arquivos e diretórios como se fossem locais.

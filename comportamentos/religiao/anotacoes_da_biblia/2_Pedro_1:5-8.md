@@ -1,4 +1,4 @@
-# Anotações da bíblia
+# Anotações da bíblia 2 Pedro 1:5-8
 
 - [**2 Pedro 1:5-8**](https://bo.net.br/pt/ntlh/2-pedro/1/)
   - 5 Por isso mesmo façam todo o possível para juntar a bondade à fé que vocês têm. À bondade juntem o conhecimento
