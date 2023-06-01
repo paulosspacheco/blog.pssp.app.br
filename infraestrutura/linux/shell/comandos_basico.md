@@ -14,6 +14,7 @@
    5. [_dd_ - Clona um dispositivo de bloco, convertendo e formatando de acordo com os operandos.](#id_dd)
    6. [_e2image_ - Clona um dispositivo de bloco cujo o formato de arquivo seja ext2, ext3 e ext4](#id_e2image)
    7. [_gparted_ - Programa usado para criar partição, pode ser usado para clonar partição de forma muito simples e visual](#id_gparted)
+   8. [_mount_ - monta um sistema de arquivos](#id_mount)
   
 4. [**Comandos de Ajuda e Documentação**](#id_cmd_ajuda_documentacao)
 5. [**Comandos de Comunicações**](#id_comandos_comunicacoes)
@@ -336,168 +337,217 @@
          2. Executa o programa _gparted_ com o comando abaixo
 
       ```bash
-      
+            
+
       ```
 
-   8. _chgrp_: Mudar o grupo de um arquivo ou diretório
+   8. <!-- markdownlint-disable-next-line -->
+      <span id='id_mount'></span> _mount_ - **Monta um sistema de arquivos** 
+      1. Exemplo de montagem de pasta compartilhada usando o protocolo samba do windows:
+         1. **Com domínio:**
+
+            ```bash
+
+                # mount -t cifs <ORIGEM> <DESTINO> -o user=<USUARIO>,password=<SENHA>,domain=<DOMINIO>
+                mount -t cifs //192.168.15.3/publico /mnt/backup/ -o user=paulosspacheco,password=1234,domain=itms
+
+            ```
+
+         2. **Sem domínio:**
+
+            ```bash
+
+                # mount -t cifs <ORIGEM> <DESTINO> -o user=<USUARIO>,password=<SENHA>
+                mount -t cifs //192.168.15.3/publico /mnt/backup/ -o user=paulosspacheco,password=1234
+
+            ```
+
+      2. **Notas:**
+         1. _mount_: Comando utilizado para realizar montagens no Linux.
+         2. _-t_: Tipo de montagem. No nosso exemplo para acessar as pastas compartilhadas no Windows, utilizamos o tipo cifs.
+         3. _origem_: O caminho de origem do compartilhamento de rede. Ex: //maquina01/publico ou //192.168.50.3/publico.
+         4. _destino_: O ponto de montagem onde será montado o compartilhamento Ex: /mnt/backup.
+         5. _-o_: Parâmetro utilizado para passar outras opções ao comando mount como por exemplo:
+            1. _user_: Nome do usuário do domínio que tem permissão de leitura e gravação na pasta de origem compartilhada.
+            2. _password_: Senha do usuário informado.
+            3. _domain_: Nome do Domínio em que a máquina de origem esta inserida.
+
+      3. **Exemplo de montagem de pasta compartilhada usando o protocolo _NFS_**:
+         1. **Usando o usuário logado na máquina local e no servidor com mesmo login e senha:**
+
+            ```bash
+
+                # sudo mount <ORIGEM> <DESTINO> 
+                # sudo mount host_ip:/var/nfs/share ~/LnxMint_Server_Share
+                sudo mount 192.168.15.3:/var/nfs/share ~/LnxMint_Server_Share
+                
+
+            ```
+
+         2. **Notas:**
+            1. _mount_: Comando utilizado para realizar montagens no Linux.
+            2. _origem_: O caminho de origem do compartilhamento de rede. Ex: 192.168.15.3:/var/nfs/share.
+            3. _destino_: O ponto de montagem onde será montado o compartilhamento Ex: ~/LnxMint_Server_Share
+
+   9. _chgrp_: Mudar o grupo de um arquivo ou diretório
 
       ```bash
       
       ```
 
-   9. _chown_: Mudar o dono ou grupo de um arquivo ou diretório, vem de change owner
+   10. _chown_: Mudar o dono ou grupo de um arquivo ou diretório, vem de change owner
 
         ```bash
         
         ```
 
-   10. _chgrp_: Mudar o grupo de um arquivo ou diretório
+   11. _chgrp_: Mudar o grupo de um arquivo ou diretório
 
        ```bash
         
        ```
 
-   11. _cmp_: Compara dois arquivos
+   12. _cmp_: Compara dois arquivos
 
        ```bash
       
        ```
 
-   12. _comm_: Seleciona ou rejeita linhas comuns a dois arquivos selecionados
+   13. _comm_: Seleciona ou rejeita linhas comuns a dois arquivos selecionados
 
         ```bash
         
         ```
 
-   13. _crypt_: Encripta ou Descripta arquivos (apenas CCWF)
+   14. _crypt_: Encripta ou Descripta arquivos (apenas CCWF)
 
         ```bash
         
         ```
 
-   14. _diff_: Compara o conteúdo de dois arquivos ASCII
+   15. _diff_: Compara o conteúdo de dois arquivos ASCII
 
         ```bash
         
         ```
 
-   15. _file_: Determina o tipo de arquivo
+   16. _file_: Determina o tipo de arquivo
 
         ```bash
         
         ```
 
-   16. _grep_: Procura um arquivo por um padrão, sendo um filtro muito útil e usado, por exemplo um cat a.txt | grep ola irá mostrar-nos apenas as linhas do arquivo a.txt que contenham a palavra “ola”
+   17. _grep_: Procura um arquivo por um padrão, sendo um filtro muito útil e usado, por exemplo um cat a.txt | grep ola irá mostrar-nos apenas as linhas do arquivo a.txt que contenham a palavra “ola”
 
         ```bash
         
         ```
 
-   17. _gzip_: Comprime ou expande arquivo
+   18. _gzip_: Comprime ou expande arquivo
 
        ```bash
 
        ```
 
-   18. _lsof_: Lista os arquivos abertos, vem de list open files
+   19. _lsof_: Lista os arquivos abertos, vem de list open files
 
        ```bash
 
        ```
 
-   19. _mkdir_: Cria uma diretório, vem de make directory”
+   20. _mkdir_: Cria uma diretório, vem de make directory”
 
        ```bash
 
        ```
 
-   20. _mv_: Move ou renomeia arquivos ou diretórios
+   21. _mv_: Move ou renomeia arquivos ou diretórios
 
        ```bash
 
        ```
 
-   21. _pwd_: Mostra-nos o caminho por inteiro da diretório em que nos encontramos em dado momento, ou seja um pathname
+   22. _pwd_: Mostra-nos o caminho por inteiro da diretório em que nos encontramos em dado momento, ou seja um pathname
 
        ```bash
 
        ```
 
-   22. _quota_: Mostra-nos o uso do disco e os limites
+   23. _quota_: Mostra-nos o uso do disco e os limites
 
        ```bash
 
        ```
 
-   23. _rm_: Apaga arquivos, vem de remove, e é semelhante ao comando del no MS-DOS, é preciso ter cuidado com o comando rm * pois apaga tudo sem confirmação por defeito
+   24. _rm_: Apaga arquivos, vem de remove, e é semelhante ao comando del no MS-DOS, é preciso ter cuidado com o comando rm * pois apaga tudo sem confirmação por defeito
 
        ```bash
 
        ```
 
-   24. _rmdir_: Apaga diretório, vem de remove directory
+   25. _rmdir_: Apaga diretório, vem de remove directory
 
        ```bash
 
        ```
 
-   25. _stat_: Mostra o estado de um arquivo, útil para saber por exemplo a hora e data do último acesso ao mesmo
+   26. _stat_: Mostra o estado de um arquivo, útil para saber por exemplo a hora e data do último acesso ao mesmo
 
        ```bash
 
        ```
 
-   26. _sync_: Faz um flush aos buffers do sistema de arquivos, sincroniza os dados no disco com a memória, ou seja escreve todos os dados presentes nos buffers da memória para o disco
+   27. _sync_: Faz um flush aos buffers do sistema de arquivos, sincroniza os dados no disco com a memória, ou seja escreve todos os dados presentes nos buffers da memória para o disco
 
        ```bash
 
        ```
 
-   27. _sort_: Ordena, une ou compara texto, podendo ser usado para extrair informações dos arquivos de texto ou mesmo para ordenar dados de outros comandos como por exemplo listar arquivos ordenados pelo nome
+   28. _sort_: Ordena, une ou compara texto, podendo ser usado para extrair informações dos arquivos de texto ou mesmo para ordenar dados de outros comandos como por exemplo listar arquivos ordenados pelo nome
 
        ```bash
 
        ```
 
-   28. _tar_: Cria ou extrai arquivos, muito usado como programa de backup ou compressão de arquivos
+   29. _tar_: Cria ou extrai arquivos, muito usado como programa de backup ou compressão de arquivos
 
        ```bash
 
        ```
 
-   29. _tee_: Copia o input para um standard output e outros arquivos
+   30. _tee_: Copia o input para um standard output e outros arquivos
 
        ```bash
 
        ```
 
-   30. _tr_: Traduz caracteres
+   31. _tr_: Traduz caracteres
 
        ```bash
 
        ```
 
-   31. _umask_: Muda as proteções de arquivos
+   32. _umask_: Muda as proteções de arquivos
 
        ```bash
 
        ```
 
-   32. _uncompress_: Restaura um arquivo comprimido
+   33. _uncompress_: Restaura um arquivo comprimido
 
        ```bash
 
        ```
 
-   33. _uniq_: Reporta ou apaga linhas repetidas num arquivo
+   34. _uniq_: Reporta ou apaga linhas repetidas num arquivo
 
-   34. _wc_: Conta linhas, palavras e mesmo caracteres num arquivo
+   35. _wc_: Conta linhas, palavras e mesmo caracteres num arquivo
 
        ```bash
 
        ```
 
-   35. **Redirecionares**
+   36. **Redirecionares**
        1. _\>>_ Transfere a saída de um comando para a entrada do comandos após ele.
 
           ```bash

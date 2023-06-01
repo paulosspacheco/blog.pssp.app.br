@@ -36,6 +36,7 @@
 <li><a href="#id_dd"><em>dd</em> - Clona um dispositivo de bloco, convertendo e formatando de acordo com os operandos.</a></li>
 <li><a href="#id_e2image"><em>e2image</em> - Clona um dispositivo de bloco cujo o formato de arquivo seja ext2, ext3 e ext4</a></li>
 <li><a href="#id_gparted"><em>gparted</em> - Programa usado para criar partição, pode ser usado para clonar partição de forma muito simples e visual</a></li>
+<li><a href="#id_mount"><em>mount</em> - monta um sistema de arquivos</a></li>
 </ol>
 </li>
 <li>
@@ -84,7 +85,7 @@
 </li>
 <li>
 <p>A estrutura do sistema de arquivos do Linux é definida por um padrão de mercado chamado Filesystem Hierarchy Standard ou FHS, criado pela comunidade Linux em 1994 e mantida pela Linux Foundation. Atualmente a FHS está na versão 3.0. As distribuições não são obrigadas a seguir este padrão, mas elas entendem a importância da localização dos arquivos e diretórios padronizados. <a href="https://www.certificacaolinux.com.br/diretorios-e-arquivos/">Veja mais...</a></p>
-<p><img src="./img/nome_das_pastas_linux.jpeg" alt="Resumo das estrutura de pastas do linux"></p>
+<p><img src="file:////home/paulosspacheco/v/paulosspacheco/Documentos/blogger/blog.pssp.app.br/infraestrutura/linux/shell/img/nome_das_pastas_linux.jpeg" alt="Resumo das estrutura de pastas do linux"></p>
 </li>
 <li>
 <p>Para compreender a expressão <em>nome do arquivo fonte</em> ou <em>nome do arquivo destino</em> é necessário seguir a sintaxe de nome de arquivo para a arquitetura linux.</p>
@@ -482,8 +483,75 @@ result_cp=<span class="hljs-string">"$?"</span>
 </ol>
 </li>
 </ol>
-<pre><code class="hljs language-bash">
+<pre><code class="hljs language-bash">      
+
 </code></pre>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_mount'></span> <em>mount</em> - <strong>Monta um sistema de arquivos</strong></p>
+<ol>
+<li>
+<p>Exemplo de montagem de pasta compartilhada usando o protocolo samba do windows:</p>
+<ol>
+<li>
+<p><strong>Com domínio:</strong></p>
+<pre><code class="hljs language-bash">
+    <span class="hljs-comment"># mount -t cifs &lt;ORIGEM&gt; &lt;DESTINO&gt; -o user=&lt;USUARIO&gt;,password=&lt;SENHA&gt;,domain=&lt;DOMINIO&gt;</span>
+    mount -t cifs //192.168.15.3/publico /mnt/backup/ -o user=paulosspacheco,password=1234,domain=itms
+
+</code></pre>
+</li>
+<li>
+<p><strong>Sem domínio:</strong></p>
+<pre><code class="hljs language-bash">
+    <span class="hljs-comment"># mount -t cifs &lt;ORIGEM&gt; &lt;DESTINO&gt; -o user=&lt;USUARIO&gt;,password=&lt;SENHA&gt;</span>
+    mount -t cifs //192.168.15.3/publico /mnt/backup/ -o user=paulosspacheco,password=1234
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Notas:</strong></p>
+<ol>
+<li><em>mount</em>: Comando utilizado para realizar montagens no Linux.</li>
+<li><em>-t</em>: Tipo de montagem. No nosso exemplo para acessar as pastas compartilhadas no Windows, utilizamos o tipo cifs.</li>
+<li><em>origem</em>: O caminho de origem do compartilhamento de rede. Ex: //maquina01/publico ou <a href="//192.168.50.3/publico">//192.168.50.3/publico</a>.</li>
+<li><em>destino</em>: O ponto de montagem onde será montado o compartilhamento Ex: /mnt/backup.</li>
+<li><em>-o</em>: Parâmetro utilizado para passar outras opções ao comando mount como por exemplo:
+<ol>
+<li><em>user</em>: Nome do usuário do domínio que tem permissão de leitura e gravação na pasta de origem compartilhada.</li>
+<li><em>password</em>: Senha do usuário informado.</li>
+<li><em>domain</em>: Nome do Domínio em que a máquina de origem esta inserida.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Exemplo de montagem de pasta compartilhada usando o protocolo <em>NFS</em></strong>:</p>
+<ol>
+<li>
+<p><strong>Usando o usuário logado na máquina local e no servidor com mesmo login e senha:</strong></p>
+<pre><code class="hljs language-bash">
+    <span class="hljs-comment"># sudo mount &lt;ORIGEM&gt; &lt;DESTINO&gt; </span>
+    <span class="hljs-comment"># sudo mount host_ip:/var/nfs/share ~/LnxMint_Server_Share</span>
+    sudo mount 192.168.15.3:/var/nfs/share ~/LnxMint_Server_Share
+    
+
+</code></pre>
+</li>
+<li>
+<p><strong>Notas:</strong></p>
+<ol>
+<li><em>mount</em>: Comando utilizado para realizar montagens no Linux.</li>
+<li><em>origem</em>: O caminho de origem do compartilhamento de rede. Ex: 192.168.15.3:/var/nfs/share.</li>
+<li><em>destino</em>: O ponto de montagem onde será montado o compartilhamento Ex: ~/LnxMint_Server_Share</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 </li>
 <li>
 <p><em>chgrp</em>: Mudar o grupo de um arquivo ou diretório</p>

@@ -6,6 +6,7 @@
 <fieldset> <legend> <b>01/06/2023</b></legend>
 
 - [x] Adicionar links nos arquivos da pasta _linux/nfs_ para que possa ser visualizado em outra janela fora do frame da janela principal.
+- [x] Criar documento do comando _mount_
 
 </fieldset>
 

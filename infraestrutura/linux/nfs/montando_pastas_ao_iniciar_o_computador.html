@@ -171,7 +171,46 @@ hue-6-2: #e6c07b
         <!-- markdownlint-disable-next-line -->
 <h4 id="montando-pastas-compartilhadas-ao-iniciar-o-computador---"><span id="topo"><span>Montando pastas compartilhadas ao iniciar o computador<a href="montando_pastas_ao_iniciar_o_computador.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h4>
 <ol>
-<li></li>
+<li>
+<p><strong>Existe três tipos de montagem diferentes quais sejam:</strong></p>
+<ol>
+<li><a href="https://linux.die.net/man/8/mount"><em>mount</em></a> – Comando usado para monta um sistema de arquivos.</li>
+<li><em>/etc/fstab</em> – Colocar o ponto de montagem para montar automaticamente ao inicializar o sistema.</li>
+<li><em>SystemD</em> – O queridinho, colocar o ponto de montagem para montar automaticamente ao inicializar o sistema de forma elegante.</li>
+</ol>
+</li>
+<li>
+<p><strong>Comando <a href="https://linux.die.net/man/8/mount"><em>Mount</em></a></strong></p>
+<ol>
+<li>
+<p>Se você está em uma rede com domínio e deseja realizar o mapeamento de uma pasta compartilhada de uma máquina ou servidor da rede, é possível realizar tal façanha utilizando o comando <em>mount</em> da seguinte forma:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># mount -t cifs &lt;ORIGEM&gt; &lt;DESTINO&gt; -o user=&lt;USUARIO&gt;,password=&lt;SENHA&gt;,domain=&lt;DOMINIO&gt;</span>
+   mount -t cifs //192.168.15.3/publico /mnt/backup/ -o user=paulosspacheco,password=1234,domain=itms
+
+</code></pre>
+</li>
+<li>
+<p>Notas:</p>
+<ol>
+<li><em>mount</em>: Comando utilizado para realizar montagens no Linux.</li>
+<li><em>-t</em>: Tipo de montagem. No nosso exemplo para acessar as pastas compartilhadas no Windows, utilizamos o tipo cifs.</li>
+<li><em>origem</em>: O caminho de origem do compartilhamento de rede. Ex: //maquina01/publico ou <a href="//192.168.50.3/publico">//192.168.50.3/publico</a>.</li>
+<li><em>destino</em>: O ponto de montagem onde será montado o compartilhamento Ex: /mnt/backup.</li>
+<li><em>-o</em>: Parâmetro utilizado para passar outras opções ao comando mount como por exemplo:
+<ol>
+<li><em>user</em>: Nome do usuário do domínio que tem permissão de leitura e gravação na pasta de origem compartilhada.</li>
+<li><em>password</em>: Senha do usuário informado.</li>
+<li><em>domain</em>: Nome do Domínio em que a máquina de origem esta inserida.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>,</p>
+</li>
 </ol>
 
         

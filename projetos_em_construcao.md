@@ -5,7 +5,7 @@
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>A fazer até 01/06/2023</b></legend>
 
-- [ ] [Criar documento montando pastas compartilhadas ao iniciar o computador](./infraestrutura/linux/nfs/montando_pastas_ao_iniciar_o_computador.html)
+- [ ] [Criar documento de como montar pastas compartilhadas ao iniciar o computador](./infraestrutura/linux/nfs/montando_pastas_ao_iniciar_o_computador.html)
 - [ ] Pensar como uma página criada em markdown pode usar o arquivo _footer.inc_
 - [ ]  
 
