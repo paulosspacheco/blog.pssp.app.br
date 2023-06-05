@@ -1,7 +1,6 @@
 <!-- markdownlint-disable-next-line -->
 #### <span id="topo"><span>Comandos básicos do dia a dia para manutenção do serviço NFS<a href="comandos_basicos.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
-
 1. Reiniciar o serviço NFS _[nfs-kernel-server](https://manpages.debian.org/testing/nfs-kernel-server/mountd.8.en.html)_:
 
    ```sh

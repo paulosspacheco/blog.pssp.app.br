@@ -2,7 +2,7 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Montando pastas compartilhadas ao iniciar o computador&lt;a href&equals;&quot;montando&lowbar;pastas&lowbar;ao&lowbar;iniciar&lowbar;o&lowbar;computador&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Como montar um dispositivo ou pasta ao iniciar o computador&lt;a href&equals;&quot;montando&lowbar;pastas&lowbar;ao&lowbar;iniciar&lowbar;o&lowbar;computador&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -16,7 +16,7 @@
     </head>
     <body class="vscode-body vscode-light">
         <!-- markdownlint-disable-next-line -->
-<h4 id="montando-pastas-compartilhadas-ao-iniciar-o-computador---"><span id="topo"><span>Montando pastas compartilhadas ao iniciar o computador<a href="montando_pastas_ao_iniciar_o_computador.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h4>
+<h4 id="como-montar-um-dispositivo-ou-pasta-ao-iniciar-o-computador---"><span id="topo"><span>Como montar um dispositivo ou pasta ao iniciar o computador<a href="montando_pastas_ao_iniciar_o_computador.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h4>
 <ol>
 <li>
 <p><strong>Existe três tipos de montagem diferentes quais sejam:</strong></p>
@@ -30,7 +30,10 @@
 <p><strong>Comando <a href="https://linux.die.net/man/8/mount"><em>Mount</em></a></strong></p>
 <ol>
 <li>
-<p>Se você está em uma rede com domínio e deseja realizar o mapeamento de uma pasta compartilhada de uma máquina ou servidor da rede, é possível realizar tal façanha utilizando o comando <em>mount</em> da seguinte forma:</p>
+<p>O comando <em>mount</em> é usado para montar pastas compartilhada de uma máquina ou de um servidor da rede</p>
+<ol>
+<li>
+<p>Se o compartilhamento for samba do windows, usa-se o comando abaixo:</p>
 <pre><code class="hljs language-bash">
    <span class="hljs-comment"># mount -t cifs &lt;ORIGEM&gt; &lt;DESTINO&gt; -o user=&lt;USUARIO&gt;,password=&lt;SENHA&gt;,domain=&lt;DOMINIO&gt;</span>
    mount -t cifs //192.168.15.3/publico /mnt/backup/ -o user=paulosspacheco,password=1234,domain=itms
@@ -38,7 +41,20 @@
 </code></pre>
 </li>
 <li>
-<p>Notas:</p>
+<p>Se o compartilhamento for NFS do linux, usa-se o comando abaixo:</p>
+<pre><code class="hljs language-bash">
+    <span class="hljs-comment"># Criar a pasta ~/LnxMint_Server_home no cliente para compartilhada a pasta /home do servidor         </span>
+    sudo mkdir -p ~/LnxMint_Server_Home
+
+    <span class="hljs-comment"># sudo mount host_ip:/home ~/LnxMint_Server_Home</span>
+    <span class="hljs-comment"># Exemplo para o ip 192.168.15.3: </span>
+    sudo mount 192.168.15.3:/home ~/LnxMint_Server_Home
+
+
+</code></pre>
+</li>
+<li>
+<p><strong>Notas:</strong></p>
 <ol>
 <li><em>mount</em>: Comando utilizado para realizar montagens no Linux.</li>
 <li><em>-t</em>: Tipo de montagem. No nosso exemplo para acessar as pastas compartilhadas no Windows, utilizamos o tipo cifs.</li>
@@ -50,6 +66,116 @@
 <li><em>password</em>: Senha do usuário informado.</li>
 <li></li>
 </ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Exemplo de script para montar uma pasta compartilhada que esteja em uma máquina VirtualBox:</p>
+<ol>
+<li>
+<p>Script <em><a href="http://exec3.sh">exec3.sh</a></em></p>
+<pre><code class="hljs language-bash">   <span class="hljs-comment">#!/bin/bash</span>
+   <span class="hljs-comment"># Arquivo: ./exec3.sh</span>
+
+   <span class="hljs-comment"># Este comando executa duas ações condicionalmente, onde a segundo só é executada se a primeira foi bem sucedida.</span>
+   <span class="hljs-comment"># %1 recebe ação 1</span>
+   <span class="hljs-comment"># %2 recebe o tempo em que deve esperar para executar a ção 2.</span>
+   <span class="hljs-comment"># %3 recebe a ação 2 e só é executado se a ção 1 for bem sucedida.</span>
+
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Executando o parâmetro 1 = <span class="hljs-variable">$1</span>"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"--------------------------------------------------------------"</span>
+
+   <span class="hljs-variable">$1</span> &amp; <span class="hljs-comment"># executa parametro e não espera.  </span>
+
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Executando o parâmetro 2 = <span class="hljs-variable">$2</span>"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"--------------------------------------------------------------"</span>
+
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Aguardando <span class="hljs-variable">$2</span> segundos esperando a execução do parâmetro <span class="hljs-variable">$1</span>.."</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"--------------------------------------------------------------"</span>
+
+   sleep <span class="hljs-string">"<span class="hljs-variable">$2</span>"</span> <span class="hljs-comment"># aguarda o tempo informado no parametro 2</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"--------------------------------------------------------------"</span>
+
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Executando o parâmetro 3 = <span class="hljs-variable">$3</span>"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"--------------------------------------------------------------"</span>
+
+   <span class="hljs-variable">$3</span> <span class="hljs-comment">#&gt; /dev/null # excuta o terceiro parâmentro</span>
+
+   st=$?
+
+   <span class="hljs-comment">#Se houver erro na execução do primeiro parâmetro então executa do terceiro parâmetro</span>
+   <span class="hljs-keyword">while</span> [ <span class="hljs-variable">$st</span> -ne 0 ]  
+   <span class="hljs-keyword">do</span>
+      <span class="hljs-built_in">echo</span> <span class="hljs-string">"Loop while Status = <span class="hljs-variable">$st</span>"</span>
+      <span class="hljs-built_in">echo</span> <span class="hljs-string">"--------------------------------------------------------------"</span>
+      sleep 5
+      <span class="hljs-variable">$3</span> <span class="hljs-comment">#s&gt; /dev/null  #excuta o terceiro parâmentro</span>
+      st=$?
+   <span class="hljs-keyword">done</span>
+
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Fim do script"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Status = <span class="hljs-variable">$st</span>"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"--------------------------------------------------------------"</span>
+
+   <span class="hljs-built_in">exit</span> <span class="hljs-variable">$st</span> <span class="hljs-comment"># retorna o numero do erro</span>
+
+
+</code></pre>
+</li>
+<li>
+<p>Script <em>mount-LnxMint_Server_Home.sh</em></p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment">#!/bin/bash</span>
+   <span class="hljs-comment"># Arquivo: ./mount-LnxMint_Server_Home.sh</span>
+
+   <span class="hljs-comment">#set -x # habilita debug</span>
+   <span class="hljs-comment">#set +x # desabilita debug</span>
+
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Executa a maquina virtual ubuntu-server-mate e monta a pasta LnxMint_Server_Home"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"********************************************************************************."</span>
+
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Compartilhando pastas &lt;LnxMint_Server_Home&gt; da máquina virtual &lt;lnxmint-server&gt;"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"*******************************************************************************"</span>
+
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Iniciando Máquina Virtual: &lt;lnxmint-server&gt;"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"*******************************************************************************"</span>
+
+   <span class="hljs-built_in">cd</span> ~/blog.pssp.app.br/infraestrutura/linux/shell/shell-scripts
+   <span class="hljs-built_in">echo</span> Monta a pasta LnxMint_Server_Home
+   sh <span class="hljs-string">"./exec3.sh"</span> \
+   <span class="hljs-string">"vboxheadless -v off --startvm lnxmint-server"</span> \
+   30 \
+   <span class="hljs-string">"sudo mount 192.168.15.3:/home /home/paulosspacheco/LnxMint_Server_Home"</span>         
+               
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"*******************************************************************************"</span>
+   resp=<span class="hljs-string">"n"</span>
+   <span class="hljs-built_in">read</span> -p <span class="hljs-string">"Tecle &lt;s&gt; para desmontar a pasta &lt;LnxMint_Server_Home&gt;"</span> resp
+   <span class="hljs-built_in">echo</span> <span class="hljs-variable">$resp</span>
+
+   <span class="hljs-keyword">while</span> [ <span class="hljs-variable">$resp</span> != <span class="hljs-string">"s"</span> ]
+   <span class="hljs-keyword">do</span>  sleep 5 
+      <span class="hljs-built_in">read</span> -p <span class="hljs-string">"Tecle &lt;s&gt; para desmontar a pasta LnxMint_Server_Home ..."</span> resp
+   <span class="hljs-keyword">done</span>
+
+   <span class="hljs-built_in">echo</span> Desmontando compartilhamentos
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"*******************************************************************************"</span>
+
+   sh ./umount.sh ~/LnxMint_Server_Home
+
+   <span class="hljs-built_in">echo</span> Desativando maquina virtual <span class="hljs-string">"ubuntu-server-mate"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"*******************************************************************************"</span>
+   vboxmanage controlvm <span class="hljs-string">"lnxmint-server"</span> poweroff
+
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Fim do script"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Status = $?"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"*******************************************************************************"</span>
+
+   <span class="hljs-built_in">exit</span> $? <span class="hljs-comment"># retorna o numero do erro</span>
+
+
+</code></pre>
 </li>
 </ol>
 </li>
@@ -108,14 +234,11 @@
 </li>
 </ol>
 </li>
-<li>
-<p>...</p>
-</li>
 </ol>
 </li>
 </ol>
 
-        
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
         
     </body>
     </html>

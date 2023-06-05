@@ -1,0 +1,31 @@
+#sudo umount  -a
+
+echo Desmontando a pasta: sudo umount /home/paulosspacheco/Documentos/blogger
+sudo umount -l "/home/paulosspacheco/Documentos/blogger"
+
+echo Desmontando a pasta: sudo umount /home/paulosspacheco/Documentos/documentos
+sudo umount -l "/home/paulosspacheco/Documentos/documentos"
+
+echo Desmontando a pasta: sudo umount /home/paulosspacheco/Downloads/downloads
+sudo umount -l "/home/paulosspacheco/Downloads/downloads"
+
+echo Desmontando a pasta: sudo umount /home/paulosspacheco/Imagens/imagens
+sudo umount -l "/home/paulosspacheco/Imagens/imagens"
+
+echo Desmontando a pasta: sudo umount /home/paulosspacheco/Modelos/modelos
+sudo umount -l "/home/paulosspacheco/Modelos/modelos"
+
+echo Desmontando a pasta: sudo umount /home/paulosspacheco/Música/musicas
+sudo umount -l "/home/paulosspacheco/Música/musicas"
+
+echo Desmontando a pasta: sudo umount /home/paulosspacheco/Público/publico 
+sudo umount -l "/home/paulosspacheco/Público/publico"
+
+echo Desmontando a pasta: sudo umount /home/paulosspacheco/Vídeos/videos
+sudo umount -l "/home/paulosspacheco/Vídeos/videos"
+
+#echo Desmontando a pasta: sudo umount /home/paulosspacheco/HD-3TB-paulosspacheco
+#sudo umount -l "/home/paulosspacheco/HD-3TB-paulosspacheco"
+
+
+

@@ -7,6 +7,7 @@
 
 - [x] Adicionar links nos arquivos da pasta _linux/nfs_ para que possa ser visualizado em outra janela fora do frame da janela principal.
 - [x] Criar documento do comando _mount_
+- [x] [Criar documento de como montar pastas compartilhadas ao iniciar o computador](./infraestrutura/linux/nfs/montando_pastas_ao_iniciar_o_computador.html)
 
 </fieldset>
 

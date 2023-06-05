@@ -397,9 +397,9 @@
 
    10. _chgrp_: Mudar o grupo de um arquivo ou diretório
 
-      ```bash
-      
-      ```
+        ```bash
+        
+        ```
 
    11. _chown_: Mudar o dono ou grupo de um arquivo ou diretório, vem de change owner
 
@@ -566,43 +566,70 @@
 
        2. ...
 
+   38. _apropos_: Localiza comandos por pesquisa de palavra-chave
+
+       ```bash
+
+       ```
+
+   39. _find_: Localiza arquivos, como por exemplo: _find . -name *.txt -print_, para pesquisa de arquivos de texto a partir da pasta atual
+       1. Sintaxe
+          1. find ./ -type d -iname 'NomeDaPasta'  
+
+                ```bash
+
+                   # find <startingdirectory> <opções> <termo de busca>
+                   find ./ -type d -iname 'shell' 
+                    
+                ```
+
+       2. Para configurar o comando _finddir_ para que faça pesquisa a partir da pasta atual:
+          1. Editar o arquivo _~/.bashrc_
+
+             ```bash
+
+               Editar o arquivo
+               xed ~/.bashrc
+
+             ```
+
+          2. No final do arquivo adicionar a linha a seguir:
+
+             ```bash
+
+                alias finddir="find './' -type d -iname"
+                     
+             ```
+
+       3. Referências
+          - [Comandos Linux: Find e Locate – Como Usar](https://www.hostinger.com.br/tutoriais/find-locate-comandos-linux#:~:text=Para%20descobrir%20seu%20diret%C3%B3rio%20atual,utilizar%20para%20procurar%20seu%20arquivo.)
+
+   40. _info_: Abre o explorador de informações
+
+       ```bash
+
+       ```
+
 4. <!-- markdownlint-disable-next-line -->
-   <span id='id_cmd_ajuda_documentacao'></span>**Comandos de Ajuda e Documentação**
-   1. _apropos_: Localiza comandos por pesquisa de palavra-chave
+   <span id='id_cmd_ajuda_documentacao'></span> **Comandos de Ajuda e Documentação**
 
-       ```bash
+   1. _man_: Manual muito completo, pesquisa informação acerca de todos os comandos que necessitemos de saber, como por exemplo man find
 
-       ```
+        ```bash
 
-   2. _find_: Localizar arquivos, como por exemplo: find . -name *.txt -print, para pesquisa de arquivos de texto do diretório atual
+        ```
 
-       ```bash
+   2. _whatis_: Descreve o que um determinado comando é/faz
 
-       ```
+        ```bash
 
-   3. _info_: Abre o explorador de informações
+        ```
 
-       ```bash
+   3. _whereis_ : Localizar a página de ajuda (man page), código fonte, ou arquivos binários, de um determinado programa
 
-       ```
+        ```bash
 
-   4. _man_: Manual muito completo, pesquisa informação acerca de todos os comandos que necessitemos de saber, como por exemplo man find
-
-       ```bash
-
-       ```
-
-   5. _whatis_: Descreve o que um determinado comando é/faz
-
-       ```bash
-
-       ```
-
-   6. _whereis_ : Localizar a página de ajuda (man page), código fonte, ou arquivos binários, de um determinado programa
-
-       ```bash
-
-       ```
+        ```
 
 5. <!-- markdownlint-disable-next-line -->
    <span id='id_comandos_comunicacoes'></span>**Comandos de Comunicações**
