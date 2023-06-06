@@ -5,8 +5,7 @@
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>A fazer até 01/06/2023</b></legend>
 
-- [ ] Como iniciar uma máquina virtualbox ao iniciar o computador com SO linux?
-- [ ] Pensar como uma página criada em markdown pode usar o arquivo _footer.inc_
+- [ ] Pensar como uma página criada em markdown pode usar o arquivo [_footer.inc_](./js/footer.inc)
 - [ ]  
 
 </fieldset>

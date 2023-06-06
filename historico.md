@@ -1,6 +1,14 @@
 <!-- markdownlint-disable-next-line -->
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
+<!--TODO: em: A fazer até 09/06/2023 -->
+<!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>A fazer até 06/06/2023</b></legend>
+
+- [x] [Como iniciar uma máquina VirtualBox ao iniciar o computador com SO linux?](./infraestrutura/linux/nfs/montando_pastas_ao_iniciar_o_computador.html)
+
+</fieldset>
+
 <!-- TODO: em: 01/06/2023 -->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>01/06/2023</b></legend>

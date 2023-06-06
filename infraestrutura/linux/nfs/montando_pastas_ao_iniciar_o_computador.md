@@ -103,7 +103,7 @@
             #set -x # habilita debug
             #set +x # desabilita debug
 
-            echo "Executa a maquina virtual ubuntu-server-mate e monta a pasta LnxMint_Server_Home"
+            echo "Executa a maquina virtual LnxMint_Server e monta a pasta LnxMint_Server_Home"
             echo "********************************************************************************."
 
             echo "Compartilhando pastas <LnxMint_Server_Home> da máquina virtual <lnxmint-server>"
@@ -134,7 +134,7 @@
 
             sh ./umount.sh ~/LnxMint_Server_Home
 
-            echo Desativando maquina virtual "ubuntu-server-mate"
+            echo Desativando maquina virtual "LnxMint_Server"
             echo "*******************************************************************************"
             vboxmanage controlvm "lnxmint-server" poweroff
 
