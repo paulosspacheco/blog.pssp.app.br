@@ -697,9 +697,11 @@
 
 7. <!-- markdownlint-disable-next-line -->
    <span id='id_exibicao_impressao_arquivos'></span>**Exibição ou Impressão de Arquivos**
-   1. _cat_: Mostra o conteúdo de um arquivo, como o comando type do MD-DOS, e é muito usado também para concatenar arquivos, como por exemplo fazendo cat a.txt b.txt > c.txt” para juntar o arquivo a.txtb.txt num único de nome c.txt
+   1. _cat_: Mostra o conteúdo de um arquivo, como o comando type do MD-DOS, e é muito usado também para concatenar arquivos, como por exemplo fazendo _cat a.txt b.txt > c.txt_ para juntar o arquivo _a.txt_ e _b.txt_ num único de nome _c.txt_
 
        ```bash
+       
+         cat a.txt b.txt > c.txt
 
        ```
 

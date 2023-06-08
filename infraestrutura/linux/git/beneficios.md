@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line -->
 #### Benefícios do controle de versões git
 
 1. Controlar as versões dos produtos de software;

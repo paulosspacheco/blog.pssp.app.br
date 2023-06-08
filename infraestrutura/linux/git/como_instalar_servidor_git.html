@@ -2,61 +2,348 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>&ast;&ast;Configurando um servidor de Git no ubuntu&ast;&ast;</title>
+        <title>Configurando um servidor de Git no Debian ou em seus derivados &lt;a href&equals;&quot;como&lowbar;instalar&lowbar;servidor&lowbar;git&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
 
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- CSS markdown -->
-    <link
-      type="text/css"
-      href="../../../css/defaultthemeMarkdown.css"
-      rel="stylesheet"
-    />
-    <!-- CSS da página /index.html -->
-    <link
-      type="text/css"
-      href="../../../css/defaulttheme.css"
-      rel="stylesheet"
-    />
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
 
     </head>
     <body class="vscode-body vscode-light">
-        <h1 id="configurando-um-servidor-de-git-no-ubuntu"><strong>Configurando um servidor de Git no ubuntu</strong></h1>
-<p>O Git é um sistema de versionamento largamente utilizado por profissionais de TI, principalmente por Sysadmins, desenvolvedores e devops.</p>
-<p>Basicamente, com ele podemos armazenar arquivos e controlar modificações. Isso nos possibilita restaurar versões prévias de tais arquivos, saber quando determinada alteração foi realizada, entre outros. O Git possibilita um mesmo repo ser utilizado por mais de uma pessoa. Por isso é utilizado em larga escala em times de desenvolvimento.</p>
-<p>Neste artigo explicarei como configurar um git server, de forma que esse repositório do Git poderá ser utilizado em mais de um local, como abordado no exemplo anterior.</p>
-<h2 id="instalando-e-configurando-um-git-server"><strong>Instalando e configurando um Git Server:</strong></h2>
-<p><strong>Configurações feitas no desktop:</strong></p>
-<p>Agora vamos configurar nosso desktop.</p>
-<p>1 – Crie um diretório onde manterá o repo local:</p>
-<pre><code class="hljs language-sh">    sudo mkdir ~/Git/
-</code></pre>
-<p>2 – Entre nesse diretório:</p>
-<pre><code class="hljs language-sh">    sudo <span class="hljs-built_in">cd</span> ~/Git/
-</code></pre>
-<p>3 – Agora clone o repositório remoto para o seu desktop com o comando:</p>
-<pre><code class="hljs language-sh">    sudo git <span class="hljs-built_in">clone</span> git@host-ou-ip-do-servidor:~/repos/lab.git
-</code></pre>
-<p>Obviamente, troque “host-ou-ip-do-servidor” pelo Host ou IP do servidor onde está o git server, mas isso você já sabe…</p>
-<p>4 – Se tudo der certo, terá criado um diretório chamado “lab”. Entre nele.</p>
-<p>5 – Faremos agora o primeiro commit. Primeiro, crie um arquivo em branco:</p>
-<pre><code class="hljs language-sh">    touch la_vai_meu_teste.txt
-</code></pre>
-<p>6 – Adicione esse arquivo ao Git:</p>
-<pre><code class="hljs language-sh">    git add la_vai_meu_teste.txt
-</code></pre>
-<p>7 – Comente esta inclusão:</p>
-<pre><code class="hljs language-sh">    git commit -am <span class="hljs-string">"Meu primeiro commit uhull"</span> la_vai_meu_teste.txt
-</code></pre>
-<p>8 – E por fim, suba a alteração para o git server:</p>
-<pre><code class="hljs language-sh">    git push
-</code></pre>
-<h2 id="conclusão"><strong>Conclusão:</strong></h2>
-<p>???</p>
-<h2 id="histórico">HISTÓRICO</h2>
+        <!-- markdownlint-disable-next-line -->
+<h3 id="configurando-um-servidor-de-git-no-debian-ou-em-seus-derivados---">Configurando um servidor de Git no Debian ou em seus derivados <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a></h3>
+<h4 id="introdução">Introdução</h4>
+<ol>
+<li>
+<p><strong>Objetivo:</strong></p>
+<ol>
+<li>O <em>git</em> é um projeto criado por , <a href="https://pt.wikipedia.org/wiki/Linus_Torvalds"><em>Linus Torvalds</em></a> cujo objetivo é criar um repositório de arquivos que possa ser mantido por várias pessoas. O <em>git</em> pode reproduzir várias versões de um projeto onde uma versão anterior possa ser gerada a qualquer momento caso seja necessário.</li>
+</ol>
+</li>
+<li>
+<p><strong>Pre-requisitos</strong></p>
+<ol>
+<li>Sistema operacional Linux</li>
+<li>Conhecimento do projeto <a href="https://ubuntu.com/server/docs/service-openssh"><em>Servidor OpenSSH</em></a> para entender como funciona as <em>chaves ssh</em> necessárias para que o servidor acesse a máquina local cliente sem necessidade de pedir senha a cada atualização.</li>
+</ol>
+</li>
+</ol>
+<h4 id="instalando-git-server-no-debian-ou-derivados">Instalando <em>Git Server</em> no Debian ou derivados</h4>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Atualiza sistema lista do apt-get</span>
+   sudo apt-get update
 
-        
+   <span class="hljs-comment"># Instala o git</span>
+   sudo apt-get install git-all
+
+</code></pre>
+<h4 id="configurações-do-repositório-no-servidor">Configurações do repositório no servidor</h4>
+<ol>
+<li>
+<p><strong>Criar um <em>usuário git</em> no servidor que será o proprietário dos repositórios a serem compartilhados com os clientes. Na prática, poderia ser qualquer usuário, mas para não ter que criar um usuário, no servidor, para cada cliente, é interessante usar o <em>usuário git</em>. Para criar esse usuário utilizamos o comando <em>useradd</em>:.</strong></p>
+<pre><code class="hljs language-bash">
+   sudo useradd --comment <span class="hljs-string">"Git user"</span> --home-dir /home/git --groups users --shell $(<span class="hljs-built_in">which</span> git-shell) git
+
+
+</code></pre>
+<ul>
+<li><strong>Notas:</strong>
+<ol>
+<li>Nesse exemplo o grupo do nosso <em>usuário git</em> é <em>users</em>. Esse grupo é o grupo padrão para a distribuição Debian. Caso seu servidor seja de outra distribuição coloque o respectivo grupo. Caso não saiba qual é esse grupo, verifique o do seu usuário e utilize-o.</li>
+<li>Nesse exemplo a opção <em>--shell</em> sendo atribuída ao utilitário <em>git-shell</em>. Fazemos isso para proibir o usuário git de se logar no nosso servidor. Ele somente consegue executar operações do programa <em>git</em>. Nada além disso. Isso garante que mesmo que um <em>hacker roube a senha</em> desse usuário ele jamais ganharia um <em>shell no servidor</em>.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Após criar o usuário, deve-se criar o diretório <em>home</em> dele, em seguida alterar o dono e grupo da pasta <em>/home/git</em> .</strong></p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Cria o diretório inicial para o usuário git</span>
+   sudo mkdir -p /home/git
+
+   <span class="hljs-comment"># Conceda permissões de diretório ao usuário git</span>
+   sudo chown -R git:users /home/git
+
+</code></pre>
+</li>
+<li>
+<p><strong>Criar uma senha para o <em>usuário git</em>. Para isso iremos utilizar o <em>comando passwd</em>. Esse comando irá lhe pedir via prompt de comandos a nova senha:</strong></p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Definir senha do usuário git</span>
+   sudo passwd git
+
+</code></pre>
+</li>
+<li>
+<p><a href="https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Configura%C3%A7%C3%A3o-Inicial-do-Git"><strong>Configurar nome e e-mail do <em>usuário git</em> globalmente</strong></a>:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment">#  Definindo nome do usuário</span>
+   git config --global user.name <span class="hljs-string">"paulosspacheco"</span>
+
+   <span class="hljs-comment">#  Definindo e-mail do usuário</span>
+   git config --global user.email <span class="hljs-string">"paulosspacheco@yahoo.com.br"</span>
+
+</code></pre>
+<ul>
+<li><strong>Nota</strong>
+<ul>
+<li>Se em algum momento desejar alterar as informações para um projeto específico, basta reescrever os comandos sem a opção <em>--global</em> dentro da pasta do projeto.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Configurando o protocolo ssh:</strong></p>
+<ol>
+<li>
+<p>O programa git, utiliza internamente alguns protocolos para se comunicar com o servidor. Sua máquina cliente quando executa, por exemplo, um <em>git clone <a href="mailto:git@github.com">git@github.com</a>:paulosspacheco/blog.pssp.app.br.git</em>, ele está utilizando o protocolo ssh para clonar um repositório remoto. O protocolo HTTP também pode ser utilizado, mas não necessariamente essa comunicação estaria criptografada, autenticada e autorizada. O próprio Github assim como nosso servidor, preferencialmente, irão utilizar o protocolo ssh;</p>
+</li>
+<li>
+<p>Instalar o <a href="https://www.vivaolinux.com.br/dica/Instalando-e-configurando-servidor-SSH-(Ubuntu)">servidor ssh</a>;</p>
+</li>
+<li>
+<p>Para tal, vamos então configurar o <em>ssh</em> do nosso servidor. O processo <em>sshd</em> é um <em>daemon</em> em nosso servidor com a responsabilidade de receber as conexões vindas das máquinas clientes e garantir que esteja m devidamente autorizadas a logar na máquina. Para configurá-lo, vamos editar o arquivo <em>/etc/ssh/sshd_config</em>. Nesse arquivo existe uma instrução chamada <em>AllowUsers</em>. Ele define quais usuários estão permitidos a se logar através do <em>ssh</em>. Iremos adicionar o usuário <em>git</em> a essa configuração:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Authentication:</span>
+   <span class="hljs-comment">#   LoginGraceTime 2m</span>
+   <span class="hljs-comment">#   PermitRootLogin yes</span>
+   <span class="hljs-comment">#   StrictModes yes</span>
+   <span class="hljs-comment">#   MaxAuthTries 6</span>
+   <span class="hljs-comment">#   MaxSessions 10</span>
+   AllowUsers root git
+
+</code></pre>
+<ol>
+<li>
+<p><strong>Notas</strong></p>
+<ol>
+<li>Ao adicionar essa configuração, deve-se reiniciar o serviço no sistema operacional para que as modificações tenham efeito. Cada distribuição adota um gerenciador de serviços. A seguir são mostrados algumas formas de se reiniciar o <em>ssh</em> através do Systemctl ou o utilitário <em>service</em>:</li>
+</ol>
+<pre><code class="hljs language-bash">
+    <span class="hljs-comment"># System D</span>
+    sudo systemctl restart sshd.service
+
+    <span class="hljs-comment"># Service</span>
+    sudo service sshd restart
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Para acessar o repositório sem necessidade de digitar senha a todo momento é necessário seguir os seguintes passos:</p>
+<ol>
+<li>
+<p>Em cada <em>máquina cliente</em> que for acessar o servidor, executar os passos abaixo:</p>
+<ol>
+<li>
+<p>Executar o programa <em>ssh-keygen</em> para criar um par de chaves (privada e publica ) para poder enviar para o servidor a chave pública gerada.</p>
+<pre><code class="hljs language-bash">    
+   <span class="hljs-comment"># Move-se para a pasta invisível ~/.ssh </span>
+   <span class="hljs-built_in">cd</span> ~/.ssh
+
+   <span class="hljs-comment"># O comando ssh-keygen criar o par de chave de 4096 bits cujo protocolo é rsa</span>
+   ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">"your_email@example.com"</span>
+   <span class="hljs-comment"># Em seguida, você vai ser solicitado a Inserir arquivo no qual salvar a chave.</span>
+   <span class="hljs-comment"># Você pode especificar um local de arquivo ou pressionar “Enter” para aceitar o local padrão do arquivo.</span>
+
+   &gt; Enter a file <span class="hljs-keyword">in</span> <span class="hljs-built_in">which</span> to save the key (/.ssh/id_rsa): [Press enter]
+
+   <span class="hljs-comment"># O próximo prompt vai solicitar uma frase secreta.</span>
+   <span class="hljs-comment"># A frase secreta vai adicionar uma camada adicional de segurança ao SSH e vai ser necessária sempre</span>
+   <span class="hljs-comment"># que a chave SSH for usada. Se alguém obtiver acesso ao computador em que as chaves privadas estão armazenadas,</span>
+   <span class="hljs-comment"># também vai poder obter acesso a qualquer sistema que use essa chave. Adicionar uma frase secreta às</span>
+   <span class="hljs-comment"># chaves vai evitar esse cenário.</span>
+
+   &gt; Enter passphrase (empty <span class="hljs-keyword">for</span> no passphrase): [Type a passphrase]
+   &gt; Enter same passphrase again: [Type passphrase again]
+
+   <span class="hljs-comment"># Pronto: Nesse ponto, vai ser gerada nova chave SSH no caminho do arquivo especificado mais atrás.</span>
+
+</code></pre>
+<ul>
+<li><strong>Natas:</strong>
+<ul>
+<li>Esse comando vai criar novo par de chaves SSH usando o e-mail como categoria.</li>
+<li>O comando <em>ssh-keygen</em> sugere que vai criar a chave na pasta <em>~/.ssh/id_rsa</em>, porém salva o arquivo na pasta corrente. Passei um tempão para entender.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Executar o programa <em>ssh-agent</em> para adicionar as chaves geradas pelo programa <em>ssh-keygen</em> em uma lista de chaves privadas. Além de manter chaves privadas, ele também controla solicitações ao assinar solicitações SSH para que elas sejam transmitidas com insegurança. ssh-agent cria um socket e então checa a conexão do ssh. Todo aquele que é capaz de se conectar a este socket também tem acesso ao ssh-agent. As permissões são definidas em um sistema Linux. Quando o agente é iniciado, ele cria um novo diretório em <em>/tmp</em> com permissões restritivas. O socket está localizado na pasta.</p>
+<ol>
+<li>
+<p>Antes de adicionar a nova chave <em>SSH</em> ao <em>ssh-agent</em>, primeiro verifique se o <em>ssh-agent</em> está sendo executado ao executar:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-built_in">eval</span> <span class="hljs-string">"<span class="hljs-variable">$(ssh-agent -s)</span>"</span>
+   &gt; Agent pid 19895
+
+
+</code></pre>
+<ul>
+<li><strong>Nota</strong>
+<ul>
+<li>Se a resposta for <em>&gt; Agent pid x</em> onde x é o número do processo, é porque está tudo ok.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>ssh-add</em> - Adiciona identidades de chave privada ao agente de autenticação OpenSSH</p>
+<pre><code class="hljs language-bash">
+  ssh-add -K ~/.ssh/id_rsa
+
+</code></pre>
+<ul>
+<li>
+<p><strong>Nota</strong></p>
+<ul>
+<li>
+<p>A nova <em>chave SSH</em> agora está registrada e pronta para uso.</p>
+</li>
+<li>
+<p>Entre as duas chaves geradas, uma tem extensão <em>.pub</em>, é esse que deve ser enviada para o servidor.</p>
+</li>
+<li>
+<p>O servidor deve adicionar a chave <em>id_rsa.pub</em> recebida do cliente no arquivo <em>/home/git/.ssh/authorized_keys</em></p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Loga-se como root</span>
+   sudo -i
+
+   <span class="hljs-comment"># Adicionar no final do arquivo /home/git/.ssh/authorized_keys o arquivo ~/Downloads/clientes_git_keys/id_ed25519.pub</span>
+   cat /home/git/.ssh/authorized_keys ~/Downloads/id_rsa.pub &gt;&gt; /home/git/.ssh/authorized_keys
+
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>No <em>máquina servidora git</em> seguir os passos abaixo, para poder acessar a máquina cliente sem pedir uma senha:</p>
+<ol>
+<li>
+<p>Cria o diretório <em>ssh</em> para o <em>usuário git</em>:</p>
+<pre><code class="hljs language-bash">
+   sudo mkdir -p /home/git/.ssh/
+
+</code></pre>
+</li>
+<li>
+<p>Altera o <em>nome do usuário</em> e do <em>grupo</em> para <em>git:users</em> na diretório <em>./ssh</em>:</p>
+<pre><code class="hljs language-bash">
+   sudo chown -R git:users /home/git/.ssh
+
+</code></pre>
+</li>
+<li>
+<p>Altere as permissões do diretório <em>/home/git/.ssh</em> para que somente o <em>usuário git</em> possa ler, gravar e executar na pasta:</p>
+<pre><code class="hljs language-bash">
+   sudo chmod 700 /home/git/.ssh
+
+</code></pre>
+</li>
+<li>
+<p>Cria o arquivo <em>authorized_keys</em> na pasta <em>/home/git/.ssh</em> para cadastrar todas as chaves púbicas das máquinas clientes com acesso aos repositórios:</p>
+<pre><code class="hljs language-bash">
+   sudo touch /home/git/.ssh/authorized_keys
+
+</code></pre>
+</li>
+<li>
+<p>Altera o <em>nome do usuário</em> e do <em>grupo</em> para <em>git:users</em> do arquivo <em>authorized_keys</em> da pasta <em>/home/git/.ssh</em>:</p>
+<pre><code class="hljs language-bash">
+   sudo chown -R git:users /home/git/.ssh/authorized_keys
+
+</code></pre>
+</li>
+<li>
+<p>Altere as permissões do arquivo <em>/home/git/.ssh/authorized_keys</em> para que somente o <em>usuário git</em> possa ler e gravar no arquivo:</p>
+<pre><code class="hljs language-bash">
+   sudo chmod 600 /home/git/.ssh/authorized_keys
+
+</code></pre>
+</li>
+<li>
+<p><strong>Notas:</strong></p>
+<ol>
+<li>
+<p>Além de criarmos o diretório <em>.ssh</em> e o arquivo <em>authorized_keys</em>, demos as devidas permissões a eles.</p>
+</li>
+<li>
+<p>Feito o passo acima podemos publicar o serviço para que nossos usuários possam contribuir nos repositórios remotos.</p>
+</li>
+<li>
+<p>Para saber os parâmetros de autenticação do git execute o comando abaixo:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Pega os parâmetro de acesso ao git</span>
+   git config --list
+
+   <span class="hljs-comment"># Resposta do comando acima:</span>
+   &gt; user.name=paulosspacheco
+   &gt; user.email=paulosspacheco@yahoo.com.br
+   &gt; core.autocrlf=input
+   &gt; core.safecrlf=warn
+
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Como registrar o cliente git no servidor git?</p>
+<ol>
+<li>
+<p>Criar pasta <em>/home/git/.ssh/clientes</em> para salvar as chaves publicas dos clientes:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Cria o diretório de clientes na pasta .ssh</span>
+   sudo mkdir -p ~/Downloads/clientes_git_keys
+
+</code></pre>
+</li>
+<li>
+<p>Solicitar a <em>chave pública ssh</em> da máquina cliente e salvar na pasta <em>/home/git/.ssh/clientes</em>, em seguida execute os passos abaixo:</p>
+<ol>
+<li>
+<p>Suponha que se tenha recebido a chave publica cujo o nome do arquivo seja <em>id_ed25519.pub</em>, então:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Loga-se como root</span>
+   sudo -i
+
+   <span class="hljs-comment"># Adiciona no final do arquivo /home/git/.ssh/authorized_keys o arquivo ~/Downloads/clientes_git_keys/id_ed25519.pub</span>
+   cat /home/git/.ssh/authorized_keys ~/Downloads/clientes_git_keys/id_ed25519.pub &gt;&gt; /home/git/.ssh/authorized_keys
+
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>...</p>
+</li>
+</ol>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
         
     </body>
     </html>

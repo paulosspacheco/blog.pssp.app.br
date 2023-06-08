@@ -1,8 +1,10 @@
+<!-- markdownlint-disable-next-line -->
 #### Como instalar cliente git no Linux Debian ou em seus derivados <a href="como_instalar_cliente_git_no_linux.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Para instalar no Linux distribuição baseada em Debian como o Ubuntu, Linux Mint, etc use o apt-get:.
 
-    ```sh
+    ```bash
+    
       # Atualiza sistema lista do apt-get
       sudo apt-get update
 
@@ -12,7 +14,7 @@
 
 2. Execute os seguintes comandos para fazer com que o git saiba seu nome e endereço de e-mail:
 
-    ```sh
+    ```bash
       # Adicione o nome do usuário ao git instalado globalmente
       git config --global user.name "Seu Nome"
 
@@ -23,7 +25,7 @@
 
 3. O git funcionando no Linux é preciso que os comandos abaixo sejam executado para indicar o término de linha nos arquivos textos:
 
-    ```sh
+    ```bash
       git config --global core.autocrlf input
       git config --global core.safecrlf warn
     ```

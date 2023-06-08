@@ -1,73 +1,282 @@
+<!-- markdownlint-disable-next-line -->
 
-# **Configurando um servidor de Git no ubuntu**
+### Configurando um servidor de Git no Debian ou em seus derivados <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a>
 
-O Git é um sistema de versionamento largamente utilizado por profissionais de TI, principalmente por Sysadmins, desenvolvedores e devops.
+#### Introdução
 
-Basicamente, com ele podemos armazenar arquivos e controlar modificações. Isso nos possibilita restaurar versões prévias de tais arquivos, saber quando determinada alteração foi realizada, entre outros. O Git possibilita um mesmo repo ser utilizado por mais de uma pessoa. Por isso é utilizado em larga escala em times de desenvolvimento.
+1. **Objetivo:**
 
-Neste artigo explicarei como configurar um git server, de forma que esse repositório do Git poderá ser utilizado em mais de um local, como abordado no exemplo anterior.
+   1. O _git_ é um projeto criado por , [_Linus Torvalds_](https://pt.wikipedia.org/wiki/Linus_Torvalds) cujo objetivo é criar um repositório de arquivos que possa ser mantido por várias pessoas. O _git_ pode reproduzir várias versões de um projeto onde uma versão anterior possa ser gerada a qualquer momento caso seja necessário.
 
+2. **Pre-requisitos**
+   1. Sistema operacional Linux
+   2. Conhecimento do projeto [_Servidor OpenSSH_](https://ubuntu.com/server/docs/service-openssh) para entender como funciona as _chaves ssh_ necessárias para que o servidor acesse a máquina local cliente sem necessidade de pedir senha a cada atualização.
 
-## **Instalando e configurando um Git Server:**
+#### Instalando _Git Server_ no Debian ou derivados
 
+```bash
 
+   # Atualiza sistema lista do apt-get
+   sudo apt-get update
 
+   # Instala o git
+   sudo apt-get install git-all
 
-
-**Configurações feitas no desktop:**
-
-Agora vamos configurar nosso desktop.
-
-1 – Crie um diretório onde manterá o repo local:
-
-```sh
-    sudo mkdir ~/Git/
 ```
 
-2 – Entre nesse diretório:
+#### Configurações do repositório no servidor
 
-```sh
-    sudo cd ~/Git/
-```
+1. **Criar um _usuário git_ no servidor que será o proprietário dos repositórios a serem compartilhados com os clientes. Na prática, poderia ser qualquer usuário, mas para não ter que criar um usuário, no servidor, para cada cliente, é interessante usar o _usuário git_. Para criar esse usuário utilizamos o comando _useradd_:.**
 
-3 – Agora clone o repositório remoto para o seu desktop com o comando:
+   ```bash
 
-```sh
-    sudo git clone git@host-ou-ip-do-servidor:~/repos/lab.git
-```
-
-Obviamente, troque “host-ou-ip-do-servidor” pelo Host ou IP do servidor onde está o git server, mas isso você já sabe…
-
-4 – Se tudo der certo, terá criado um diretório chamado “lab”. Entre nele.
-
-5 – Faremos agora o primeiro commit. Primeiro, crie um arquivo em branco:
-
-```sh
-    touch la_vai_meu_teste.txt
-```
-
-6 – Adicione esse arquivo ao Git:
-
-```sh
-    git add la_vai_meu_teste.txt
-```
-
-7 – Comente esta inclusão:
-
-```sh
-    git commit -am "Meu primeiro commit uhull" la_vai_meu_teste.txt
-```
-
-8 – E por fim, suba a alteração para o git server:
-
-```sh
-    git push
-```
-
-## **Conclusão:**
-
-???
+      sudo useradd --comment "Git user" --home-dir /home/git --groups users --shell $(which git-shell) git
 
 
-## HISTÓRICO
+   ```
 
+   - **Notas:**
+     1. Nesse exemplo o grupo do nosso _usuário git_ é _users_. Esse grupo é o grupo padrão para a distribuição Debian. Caso seu servidor seja de outra distribuição coloque o respectivo grupo. Caso não saiba qual é esse grupo, verifique o do seu usuário e utilize-o.
+     2. Nesse exemplo a opção _--shell_ sendo atribuída ao utilitário _git-shell_. Fazemos isso para proibir o usuário git de se logar no nosso servidor. Ele somente consegue executar operações do programa _git_. Nada além disso. Isso garante que mesmo que um _hacker roube a senha_ desse usuário ele jamais ganharia um _shell no servidor_.
+
+2. **Após criar o usuário, deve-se criar o diretório _home_ dele, em seguida alterar o dono e grupo da pasta _/home/git_ .**
+
+   ```bash
+
+      # Cria o diretório inicial para o usuário git
+      sudo mkdir -p /home/git
+
+      # Conceda permissões de diretório ao usuário git
+      sudo chown -R git:users /home/git
+
+   ```
+
+3. **Criar uma senha para o _usuário git_. Para isso iremos utilizar o _comando passwd_. Esse comando irá lhe pedir via prompt de comandos a nova senha:**
+
+   ```bash
+
+      # Definir senha do usuário git
+      sudo passwd git
+
+   ```
+
+4. [**Configurar nome e e-mail do _usuário git_ globalmente**](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Configura%C3%A7%C3%A3o-Inicial-do-Git):
+
+   ```bash
+
+      #  Definindo nome do usuário
+      git config --global user.name "paulosspacheco"
+
+      #  Definindo e-mail do usuário
+      git config --global user.email "paulosspacheco@yahoo.com.br"
+
+   ```
+
+   - **Nota**
+     - Se em algum momento desejar alterar as informações para um projeto específico, basta reescrever os comandos sem a opção _--global_ dentro da pasta do projeto.
+
+5. **Configurando o protocolo ssh:**
+
+   1. O programa git, utiliza internamente alguns protocolos para se comunicar com o servidor. Sua máquina cliente quando executa, por exemplo, um _git clone git@github.com:paulosspacheco/blog.pssp.app.br.git_, ele está utilizando o protocolo ssh para clonar um repositório remoto. O protocolo HTTP também pode ser utilizado, mas não necessariamente essa comunicação estaria criptografada, autenticada e autorizada. O próprio Github assim como nosso servidor, preferencialmente, irão utilizar o protocolo ssh;
+
+   2. Instalar o [servidor ssh](<https://www.vivaolinux.com.br/dica/Instalando-e-configurando-servidor-SSH-(Ubuntu)>);
+   3. Para tal, vamos então configurar o _ssh_ do nosso servidor. O processo _sshd_ é um _daemon_ em nosso servidor com a responsabilidade de receber as conexões vindas das máquinas clientes e garantir que esteja m devidamente autorizadas a logar na máquina. Para configurá-lo, vamos editar o arquivo _/etc/ssh/sshd_config_. Nesse arquivo existe uma instrução chamada _AllowUsers_. Ele define quais usuários estão permitidos a se logar através do _ssh_. Iremos adicionar o usuário _git_ a essa configuração:
+
+      ```bash
+
+         # Authentication:
+         #   LoginGraceTime 2m
+         #   PermitRootLogin yes
+         #   StrictModes yes
+         #   MaxAuthTries 6
+         #   MaxSessions 10
+         AllowUsers root git
+
+      ```
+
+      1. **Notas**
+
+         1. Ao adicionar essa configuração, deve-se reiniciar o serviço no sistema operacional para que as modificações tenham efeito. Cada distribuição adota um gerenciador de serviços. A seguir são mostrados algumas formas de se reiniciar o _ssh_ através do Systemctl ou o utilitário _service_:
+
+         ```bash
+
+             # System D
+             sudo systemctl restart sshd.service
+
+             # Service
+             sudo service sshd restart
+
+         ```
+
+   4. Para acessar o repositório sem necessidade de digitar senha a todo momento é necessário seguir os seguintes passos:
+
+      1. Em cada _máquina cliente_ que for acessar o servidor, executar os passos abaixo:
+
+         1. Executar o programa _ssh-keygen_ para criar um par de chaves (privada e publica ) para poder enviar para o servidor a chave pública gerada.
+
+            ```bash
+                
+               # Move-se para a pasta invisível ~/.ssh 
+               cd ~/.ssh
+
+               # O comando ssh-keygen criar o par de chave de 4096 bits cujo protocolo é rsa
+               ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+               # Em seguida, você vai ser solicitado a Inserir arquivo no qual salvar a chave.
+               # Você pode especificar um local de arquivo ou pressionar “Enter” para aceitar o local padrão do arquivo.
+
+               > Enter a file in which to save the key (/.ssh/id_rsa): [Press enter]
+
+               # O próximo prompt vai solicitar uma frase secreta.
+               # A frase secreta vai adicionar uma camada adicional de segurança ao SSH e vai ser necessária sempre
+               # que a chave SSH for usada. Se alguém obtiver acesso ao computador em que as chaves privadas estão armazenadas,
+               # também vai poder obter acesso a qualquer sistema que use essa chave. Adicionar uma frase secreta às
+               # chaves vai evitar esse cenário.
+
+               > Enter passphrase (empty for no passphrase): [Type a passphrase]
+               > Enter same passphrase again: [Type passphrase again]
+
+               # Pronto: Nesse ponto, vai ser gerada nova chave SSH no caminho do arquivo especificado mais atrás.
+
+            ```
+
+            - **Natas:**
+              - Esse comando vai criar novo par de chaves SSH usando o e-mail como categoria.
+              - O comando _ssh-keygen_ sugere que vai criar a chave na pasta _~/.ssh/id_rsa_, porém salva o arquivo na pasta corrente. Passei um tempão para entender.
+
+         2. Executar o programa _ssh-agent_ para adicionar as chaves geradas pelo programa _ssh-keygen_ em uma lista de chaves privadas. Além de manter chaves privadas, ele também controla solicitações ao assinar solicitações SSH para que elas sejam transmitidas com insegurança. ssh-agent cria um socket e então checa a conexão do ssh. Todo aquele que é capaz de se conectar a este socket também tem acesso ao ssh-agent. As permissões são definidas em um sistema Linux. Quando o agente é iniciado, ele cria um novo diretório em _/tmp_ com permissões restritivas. O socket está localizado na pasta.
+
+            1. Antes de adicionar a nova chave _SSH_ ao _ssh-agent_, primeiro verifique se o _ssh-agent_ está sendo executado ao executar:
+
+               ```bash
+
+                  eval "$(ssh-agent -s)"
+                  > Agent pid 19895
+
+
+               ```
+
+               - **Nota**
+                 - Se a resposta for _> Agent pid x_ onde x é o número do processo, é porque está tudo ok.
+
+            2. _ssh-add_ - Adiciona identidades de chave privada ao agente de autenticação OpenSSH
+
+               ```bash
+    
+                 ssh-add -K ~/.ssh/id_rsa
+
+               ```
+
+               - **Nota**
+
+                 - A nova _chave SSH_ agora está registrada e pronta para uso.
+                 - Entre as duas chaves geradas, uma tem extensão _.pub_, é esse que deve ser enviada para o servidor.
+                 - O servidor deve adicionar a chave _id_rsa.pub_ recebida do cliente no arquivo _/home/git/.ssh/authorized_keys_
+
+                   ```bash
+
+                      # Loga-se como root
+                      sudo -i
+
+                      # Adicionar no final do arquivo /home/git/.ssh/authorized_keys o arquivo ~/Downloads/clientes_git_keys/id_ed25519.pub
+                      cat /home/git/.ssh/authorized_keys ~/Downloads/id_rsa.pub >> /home/git/.ssh/authorized_keys
+
+
+                   ```
+
+      2. No _máquina servidora git_ seguir os passos abaixo, para poder acessar a máquina cliente sem pedir uma senha:
+
+         1. Cria o diretório _ssh_ para o _usuário git_:
+
+            ```bash
+
+               sudo mkdir -p /home/git/.ssh/
+
+            ```
+
+         2. Altera o _nome do usuário_ e do _grupo_ para _git:users_ na diretório _./ssh_:
+
+            ```bash
+
+               sudo chown -R git:users /home/git/.ssh
+
+            ```
+
+         3. Altere as permissões do diretório _/home/git/.ssh_ para que somente o _usuário git_ possa ler, gravar e executar na pasta:
+
+            ```bash
+
+               sudo chmod 700 /home/git/.ssh
+
+            ```
+
+         4. Cria o arquivo _authorized_keys_ na pasta _/home/git/.ssh_ para cadastrar todas as chaves púbicas das máquinas clientes com acesso aos repositórios:
+
+            ```bash
+
+               sudo touch /home/git/.ssh/authorized_keys
+
+            ```
+
+         5. Altera o _nome do usuário_ e do _grupo_ para _git:users_ do arquivo _authorized_keys_ da pasta _/home/git/.ssh_:
+
+            ```bash
+
+               sudo chown -R git:users /home/git/.ssh/authorized_keys
+
+            ```
+
+         6. Altere as permissões do arquivo _/home/git/.ssh/authorized_keys_ para que somente o _usuário git_ possa ler e gravar no arquivo:
+
+            ```bash
+
+               sudo chmod 600 /home/git/.ssh/authorized_keys
+
+            ```
+
+         7. **Notas:**
+
+            1. Além de criarmos o diretório _.ssh_ e o arquivo _authorized_keys_, demos as devidas permissões a eles.
+            2. Feito o passo acima podemos publicar o serviço para que nossos usuários possam contribuir nos repositórios remotos.
+            3. Para saber os parâmetros de autenticação do git execute o comando abaixo:
+
+               ```bash
+
+                  # Pega os parâmetro de acesso ao git
+                  git config --list
+
+                  # Resposta do comando acima:
+                  > user.name=paulosspacheco
+                  > user.email=paulosspacheco@yahoo.com.br
+                  > core.autocrlf=input
+                  > core.safecrlf=warn
+
+
+               ```
+
+   5. Como registrar o cliente git no servidor git?
+
+      1. Criar pasta _/home/git/.ssh/clientes_ para salvar as chaves publicas dos clientes:
+
+         ```bash
+
+            # Cria o diretório de clientes na pasta .ssh
+            sudo mkdir -p ~/Downloads/clientes_git_keys
+
+         ```
+
+      2. Solicitar a _chave pública ssh_ da máquina cliente e salvar na pasta _/home/git/.ssh/clientes_, em seguida execute os passos abaixo:
+
+         1. Suponha que se tenha recebido a chave publica cujo o nome do arquivo seja _id_ed25519.pub_, então:
+
+            ```bash
+
+               # Loga-se como root
+               sudo -i
+
+               # Adiciona no final do arquivo /home/git/.ssh/authorized_keys o arquivo ~/Downloads/clientes_git_keys/id_ed25519.pub
+               cat /home/git/.ssh/authorized_keys ~/Downloads/clientes_git_keys/id_ed25519.pub >> /home/git/.ssh/authorized_keys
+
+
+            ```
+
+6. ...

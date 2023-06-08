@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line -->
 #### Criando repositório git <a href="criando_repositorio_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Use o comando **git init** para criar o repositório na pasta atual.

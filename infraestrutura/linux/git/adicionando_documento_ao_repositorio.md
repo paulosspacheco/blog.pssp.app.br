@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line -->
 #### Adicionando documento ao repositório <a href="adicionando_documento_ao_repositorio.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Siga os comandos abaixo para adicionar todo o conteúdo da pasta corrente  \*.\*  ao repositório git:
