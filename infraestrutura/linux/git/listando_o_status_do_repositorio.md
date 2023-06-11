@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line -->
 #### Listando o status do repositório <a href="listando_o_status_do_repositorio.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Use o comando **git status** para checar o estado atual do repositório.

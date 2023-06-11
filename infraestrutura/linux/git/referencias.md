@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line -->
 #### REFERÊNCIAS
 
 1. [O que é git?](./o_que_e_git.html)
