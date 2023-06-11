@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <title>Configurando um servidor de Git no Debian ou em seus derivados &lt;a href&equals;&quot;como&lowbar;instalar&lowbar;servidor&lowbar;git&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
 
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- CSS markdown -->
@@ -12,7 +11,6 @@
         
         <!-- CSS da página /index.html -->
         <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
-
 
     </head>
     <body class="vscode-body vscode-light">
@@ -62,9 +60,9 @@
 </ul>
 </li>
 <li>
-<p><strong>Após criar o usuário, deve-se criar o diretório <em>home</em> dele, em seguida alterar o dono e grupo da pasta <em>/home/git</em> .</strong></p>
+<p><strong>Após criar o usuário, deve-se criar a pasta <em>home</em> dele, em seguida alterar o dono e grupo da pasta <em>/home/git</em> .</strong></p>
 <pre><code class="hljs language-bash">
-   <span class="hljs-comment"># Cria o diretório inicial para o usuário git</span>
+   <span class="hljs-comment"># Cria a pasta inicial para o usuário git</span>
    sudo mkdir -p /home/git
 
    <span class="hljs-comment"># Conceda permissões de diretório ao usuário git</span>
@@ -177,7 +175,7 @@
 </ul>
 </li>
 <li>
-<p>Executar o programa <em>ssh-agent</em> para adicionar as chaves geradas pelo programa <em>ssh-keygen</em> em uma lista de chaves privadas. Além de manter chaves privadas, ele também controla solicitações ao assinar solicitações SSH para que elas sejam transmitidas com insegurança. ssh-agent cria um socket e então checa a conexão do ssh. Todo aquele que é capaz de se conectar a este socket também tem acesso ao ssh-agent. As permissões são definidas em um sistema Linux. Quando o agente é iniciado, ele cria um novo diretório em <em>/tmp</em> com permissões restritivas. O socket está localizado na pasta.</p>
+<p>Executar o programa <em>ssh-add</em> para adicionar as chaves geradas pelo programa <em>ssh-keygen</em> em uma lista de chaves privadas. Além de manter chaves privadas, ele também controla solicitações ao assinar solicitações <em>SSH</em> para que elas sejam transmitidas com insegurança. O projeto <em>ssh-agent</em> através do programa <em>ssh-add</em> cria um socket e então checa a conexão do <em>ssh</em>. Todo aquele que é capaz de se conectar a este socket, também tem acesso ao <em>ssh-agent</em>. As permissões são definidas em um sistema Linux. Quando o agente é iniciado, ele cria um nova pasta em <em>/tmp</em> com permissões restritivas. O socket está localizado nesta pasta.</p>
 <ol>
 <li>
 <p>Antes de adicionar a nova chave <em>SSH</em> ao <em>ssh-agent</em>, primeiro verifique se o <em>ssh-agent</em> está sendo executado ao executar:</p>
@@ -196,9 +194,11 @@
 </ul>
 </li>
 <li>
-<p><em>ssh-add</em> - Adiciona identidades de chave privada ao agente de autenticação OpenSSH</p>
+<p><em>ssh-add</em> - Adiciona identidades de chave privada ao agente de autenticação <em>OpenSSH</em></p>
 <pre><code class="hljs language-bash">
-  ssh-add -K ~/.ssh/id_rsa
+  ssh-add ~/.ssh/id_rsa
+  &gt; Enter passphrase <span class="hljs-keyword">for</span> /home/paulosspacheco/.ssh/id_rsa:   <span class="hljs-comment"># Obs: A senha é a digitada em ssh-keygen </span>
+  &gt; Identity added: /home/paulosspacheco/.ssh/id_rsa (paulosspacheco@yahoo.com.br)
 
 </code></pre>
 <ul>
@@ -209,7 +209,7 @@
 <p>A nova <em>chave SSH</em> agora está registrada e pronta para uso.</p>
 </li>
 <li>
-<p>Entre as duas chaves geradas, uma tem extensão <em>.pub</em>, é esse que deve ser enviada para o servidor.</p>
+<p>Entre as duas chaves geradas, uma tem extensão <em>.pub</em>, é essa que deve ser enviada para o servidor.</p>
 </li>
 <li>
 <p>O servidor deve adicionar a chave <em>id_rsa.pub</em> recebida do cliente no arquivo <em>/home/git/.ssh/authorized_keys</em></p>
@@ -232,24 +232,24 @@
 </ol>
 </li>
 <li>
-<p>No <em>máquina servidora git</em> seguir os passos abaixo, para poder acessar a máquina cliente sem pedir uma senha:</p>
+<p>Na <em>máquina servidora git</em> seguir os passos abaixo, para poder acessar a máquina cliente sem pedir uma senha:</p>
 <ol>
 <li>
-<p>Cria o diretório <em>ssh</em> para o <em>usuário git</em>:</p>
+<p>Criar a pasta <em>ssh</em> para o <em>usuário git</em>:</p>
 <pre><code class="hljs language-bash">
    sudo mkdir -p /home/git/.ssh/
 
 </code></pre>
 </li>
 <li>
-<p>Altera o <em>nome do usuário</em> e do <em>grupo</em> para <em>git:users</em> na diretório <em>./ssh</em>:</p>
+<p>Alterar o <em>nome do usuário</em> e do <em>grupo</em> para <em>git:users</em> na pasta invisível <em>./ssh</em>:</p>
 <pre><code class="hljs language-bash">
    sudo chown -R git:users /home/git/.ssh
 
 </code></pre>
 </li>
 <li>
-<p>Altere as permissões do diretório <em>/home/git/.ssh</em> para que somente o <em>usuário git</em> possa ler, gravar e executar na pasta:</p>
+<p>Altere as permissões da pasta <em>/home/git/.ssh</em> para que somente o <em>usuário git</em> possa ler, gravar e executar na pasta:</p>
 <pre><code class="hljs language-bash">
    sudo chmod 700 /home/git/.ssh
 
@@ -280,13 +280,13 @@
 <p><strong>Notas:</strong></p>
 <ol>
 <li>
-<p>Além de criarmos o diretório <em>.ssh</em> e o arquivo <em>authorized_keys</em>, demos as devidas permissões a eles.</p>
+<p>Além de criarmos a pasta <em>.ssh</em> e o arquivo <em>authorized_keys</em>, demos as devidas permissões a eles.</p>
 </li>
 <li>
-<p>Feito o passo acima podemos publicar o serviço para que nossos usuários possam contribuir nos repositórios remotos.</p>
+<p>Feito os passos acima, podemos publicar o serviço para que nossos usuários possam contribuir nos repositórios remotos.</p>
 </li>
 <li>
-<p>Para saber os parâmetros de autenticação do git execute o comando abaixo:</p>
+<p>Para saber os parâmetros de autenticação do <em>git</em> execute o comando abaixo:</p>
 <pre><code class="hljs language-bash">
    <span class="hljs-comment"># Pega os parâmetro de acesso ao git</span>
    git config --list
@@ -307,12 +307,12 @@
 </ol>
 </li>
 <li>
-<p>Como registrar o cliente git no servidor git?</p>
+<p>Como registrar o <em>cliente git</em> no <em>servidor git</em>?</p>
 <ol>
 <li>
 <p>Criar pasta <em>/home/git/.ssh/clientes</em> para salvar as chaves publicas dos clientes:</p>
 <pre><code class="hljs language-bash">
-   <span class="hljs-comment"># Cria o diretório de clientes na pasta .ssh</span>
+   <span class="hljs-comment"># Cria a pasta de clientes na pasta .ssh</span>
    sudo mkdir -p ~/Downloads/clientes_git_keys
 
 </code></pre>
@@ -339,7 +339,10 @@
 </ol>
 </li>
 <li>
-<p>...</p>
+<p>Como saber o link que o <em>cliente git</em> deve usar para clonar o repositório do <em>servidor git</em>?</p>
+<ol>
+<li>?</li>
+</ol>
 </li>
 </ol>
 

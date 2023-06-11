@@ -7,6 +7,6 @@
 
 - [ ] Criar documento para instalar servidor git em máquina virtual lnxmint-server
 - [ ] Pensar como uma página criada em markdown pode usar o arquivo [_footer.inc_](./js/footer.inc)
-- [ ]  
+- [ ] Documentar de como criar aplicação web usando componente _fcl-web_
 
 </fieldset>
