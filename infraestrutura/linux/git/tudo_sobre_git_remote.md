@@ -2,15 +2,22 @@
 #### Tudo sobre git remoto <a href="listando_o_status_do_repositorio.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Para gerenciar comunicação de repositórios remotos, é necessário salvar no repositório local as referências para os repositórios remotos. Para fazer isso, existe o comando _git remote_.
-   1. Suponha que o repositório remoto tenha de a URL _https://github.com/petcomputacaoufrgs/intro-ao-git.git_ e o nome _origin_, então:
-      1. Para registrar na máquina local o repositório remoto usar o seguinte comando:
+   1. Suponha que o repositório remoto tenha a URL _https://github.com/petcomputacaoufrgs/intro-ao-git.git_ e o nome _origin_, então:
+      1. Comando para registrar na máquina local um repositório remoto:
+         1. Sintaxe: git remote add origin git@ip_server:/home/git/repostorio.git
 
-         ```bash
+            ```bash
+               # Exemplos 
 
-            git remote add origin https://github.com/petcomputacaoufrgs/intro-ao-git.git
+               # Repositório na rede local: ip=192.168.15.3
+               git remote add origin git@192.168.15.3:/home/git/teste.git
+              
+               # Repositório no github 
+               # No github a url é: git@github.com:Usuário/NomeDoRepositório.git
+               git remote add origin git@github.com:paulosspacheco/blog.pssp.app.br.git
 
 
-         ```
+            ```
 
       2. 
    2. ...

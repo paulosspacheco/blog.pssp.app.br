@@ -2,7 +2,7 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Configurando um servidor de Git no Debian ou em seus derivados &lt;a href&equals;&quot;como&lowbar;instalar&lowbar;servidor&lowbar;git&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
+        <title>Como instalar e configurar um servidor git  remoto &lt;a href&equals;&quot;como&lowbar;instalar&lowbar;servidor&lowbar;git&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -16,19 +16,39 @@
     </head>
     <body class="vscode-body vscode-light">
         <!-- markdownlint-disable-next-line -->
-<h3 id="configurando-um-servidor-de-git-no-debian-ou-em-seus-derivados---">Configurando um servidor de Git no Debian ou em seus derivados <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a></h3>
+<h3 id="como-instalar-e-configurar-um-servidor-git--remoto---">Como instalar e configurar um servidor git  remoto <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a></h3>
 <h4 id="introdução">Introdução</h4>
 <ol>
 <li>
 <p><strong>Objetivo:</strong></p>
 <ol>
-<li>O <em>git</em> é um projeto criado por , <a href="https://pt.wikipedia.org/wiki/Linus_Torvalds"><em>Linus Torvalds</em></a> cujo objetivo é criar um repositório de arquivos que possa ser mantido por várias pessoas. O <em>git</em> pode reproduzir várias versões de um projeto onde uma versão anterior possa ser gerada a qualquer momento caso seja necessário.</li>
+<li>
+<p>O <em>git</em> é um projeto criado por , <a href="https://pt.wikipedia.org/wiki/Linus_Torvalds"><em>Linus Torvalds</em></a> cujo objetivo é criar um repositório de arquivos que possa ser mantido por várias pessoas. O <em>git</em> pode reproduzir várias versões de um projeto onde uma versão anterior possa ser gerada a qualquer momento caso seja necessário.</p>
+</li>
+<li>
+<p>Basicamente, na maioria dos casos, o <em>Git</em> roda em um servidor que pode ser na <em>rede local</em> ou na <em>Web</em>. Nesse servidor mantemos um <em>repositório central</em>, o que vamos chamar de <em>Servidor Git</em>. Localmente, na sua estação de trabalho, por exemplo, é mantido um <em>repositório local</em>, ou seja, um <em>clone do repositório do Servidor Git</em>.</p>
+</li>
+<li>
+<p>Nos arquivos dentro desse <em>repositório local</em> você realiza suas modificações e, ao concluí-las, as envia para o <em>servidor git</em>. Aquilo que modificou e seus comentários sobre suas mudanças são armazenados para consulta posterior.</p>
+</li>
+<li>
+<p>Caso outras pessoas possuam um clone desse repositório, bastará rodar o comando <em>git pull</em> para obter as mudanças que você realizou e que já estarão armazenadas no <em>servidor git</em>.</p>
+<ul>
+<li><strong>Nota</strong>: Executar <em>git pull</em> antes de enviar modificações para o <em>servidor git</em>.</li>
+</ul>
+</li>
+<li>
+<p>Na imagem abaixo podemos ver um exemplo de um time que pode ser de desenvolvimento, onde todos trabalham em um repositório local e enviam e recebem mudanças do  repositório central (<em>servidor git</em>):</p>
+<ul>
+<li><img src="file:////home/paulosspacheco/v/paulosspacheco/Documentos/blogger/blog.pssp.app.br/infraestrutura/linux/git/images/image01.jpg" alt="Imagem de vários repositórios e o servidor" title="Esta imagem mostra de forma visual como funciona as cópias dos arquivos."></li>
+</ul>
+</li>
 </ol>
 </li>
 <li>
 <p><strong>Pre-requisitos</strong></p>
 <ol>
-<li>Sistema operacional Linux</li>
+<li>Sistema operacional Linux;</li>
 <li>Conhecimento do projeto <a href="https://ubuntu.com/server/docs/service-openssh"><em>Servidor OpenSSH</em></a> para entender como funciona as <em>chaves ssh</em> necessárias para que o servidor acesse a máquina local cliente sem necessidade de pedir senha a cada atualização.</li>
 </ol>
 </li>

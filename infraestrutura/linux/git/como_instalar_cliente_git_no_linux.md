@@ -1,5 +1,5 @@
 <!-- markdownlint-disable-next-line -->
-#### Como instalar cliente git no Linux Debian ou em seus derivados <a href="como_instalar_cliente_git_no_linux.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+#### Como instalar cliente git no Linux Debian ou derivados <a href="como_instalar_cliente_git_no_linux.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Para instalar no Linux distribuição baseada em Debian como o Ubuntu, Linux Mint, etc use o apt-get:.
 

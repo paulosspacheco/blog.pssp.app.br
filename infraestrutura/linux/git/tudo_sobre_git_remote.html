@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <title>Tudo sobre git remoto &lt;a href&equals;&quot;listando&lowbar;o&lowbar;status&lowbar;do&lowbar;repositorio&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
 
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- CSS markdown -->
@@ -12,6 +11,7 @@
         
         <!-- CSS da página /index.html -->
         <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
 
     </head>
     <body class="vscode-body vscode-light">
@@ -21,15 +21,26 @@
 <li>
 <p>Para gerenciar comunicação de repositórios remotos, é necessário salvar no repositório local as referências para os repositórios remotos. Para fazer isso, existe o comando <em>git remote</em>.</p>
 <ol>
-<li>Suponha que o repositório remoto tenha de a URL <em><a href="https://github.com/petcomputacaoufrgs/intro-ao-git.git">https://github.com/petcomputacaoufrgs/intro-ao-git.git</a></em> e o nome <em>origin</em>, então:
+<li>Suponha que o repositório remoto tenha a URL <em><a href="https://github.com/petcomputacaoufrgs/intro-ao-git.git">https://github.com/petcomputacaoufrgs/intro-ao-git.git</a></em> e o nome <em>origin</em>, então:
 <ol>
 <li>
-<p>Para registrar na máquina local o repositório remoto usar o seguinte comando:</p>
-<pre><code class="hljs language-bash">
-   git remote add origin https://github.com/petcomputacaoufrgs/intro-ao-git.git
+<p>Comando para registrar na máquina local um repositório remoto:</p>
+<ol>
+<li>
+<p>Sintaxe: git remote add origin git@ip_server:/home/git/repostorio.git</p>
+<pre><code class="hljs language-bash">   <span class="hljs-comment"># Exemplos </span>
+
+   <span class="hljs-comment"># Repositório na rede local: ip=192.168.15.3</span>
+   git remote add origin git@192.168.15.3:/home/git/teste.git
+  
+   <span class="hljs-comment"># Repositório no github </span>
+   <span class="hljs-comment"># No github a url é: git@github.com:Usuário/NomeDoRepositório.git</span>
+   git remote add origin git@github.com:paulosspacheco/blog.pssp.app.br.git
 
 
 </code></pre>
+</li>
+</ol>
 </li>
 <li></li>
 </ol>

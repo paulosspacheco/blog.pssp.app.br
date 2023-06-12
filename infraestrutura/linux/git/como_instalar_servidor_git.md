@@ -1,6 +1,5 @@
 <!-- markdownlint-disable-next-line -->
-
-### Configurando um servidor de Git no Debian ou em seus derivados <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a>
+### Como instalar e configurar um servidor git  remoto <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a>
 
 #### Introdução
 
@@ -8,8 +7,18 @@
 
    1. O _git_ é um projeto criado por , [_Linus Torvalds_](https://pt.wikipedia.org/wiki/Linus_Torvalds) cujo objetivo é criar um repositório de arquivos que possa ser mantido por várias pessoas. O _git_ pode reproduzir várias versões de um projeto onde uma versão anterior possa ser gerada a qualquer momento caso seja necessário.
 
+   2. Basicamente, na maioria dos casos, o _Git_ roda em um servidor que pode ser na _rede local_ ou na _Web_. Nesse servidor mantemos um _repositório central_, o que vamos chamar de _Servidor Git_. Localmente, na sua estação de trabalho, por exemplo, é mantido um _repositório local_, ou seja, um _clone do repositório do Servidor Git_.
+
+   3. Nos arquivos dentro desse _repositório local_ você realiza suas modificações e, ao concluí-las, as envia para o _servidor git_. Aquilo que modificou e seus comentários sobre suas mudanças são armazenados para consulta posterior.
+
+   4. Caso outras pessoas possuam um clone desse repositório, bastará rodar o comando _git pull_ para obter as mudanças que você realizou e que já estarão armazenadas no _servidor git_.
+      - **Nota**: Executar _git pull_ antes de enviar modificações para o _servidor git_.
+
+   5. Na imagem abaixo podemos ver um exemplo de um time que pode ser de desenvolvimento, onde todos trabalham em um repositório local e enviam e recebem mudanças do  repositório central (_servidor git_):
+      - ![Imagem de vários repositórios e o servidor](images/image01.jpg "Esta imagem mostra de forma visual como funciona as cópias dos arquivos.")
+
 2. **Pre-requisitos**
-   1. Sistema operacional Linux
+   1. Sistema operacional Linux;
    2. Conhecimento do projeto [_Servidor OpenSSH_](https://ubuntu.com/server/docs/service-openssh) para entender como funciona as _chaves ssh_ necessárias para que o servidor acesse a máquina local cliente sem necessidade de pedir senha a cada atualização.
 
 #### Instalando _Git Server_ no Debian ou derivados
