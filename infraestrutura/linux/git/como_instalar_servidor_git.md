@@ -281,5 +281,32 @@
 
             ```
 
-6. Como saber o link que o _cliente git_ deve usar para clonar o repositório do _servidor git_?
+6. Criando um repositório do zero:
+   1. A primeira coisa a se fazer é criar um repositório no servidor com a opção _--bare_ do _git_. Isso irá criar um repositório com apenas as referências dos objetos e da árvore _git_. Vamos então logar no servidor e criar um novo repositório:
+
+      ```bash
+
+         # Dentro do servidor, execute
+         cd /home/git/
+         
+         # Crie a pasta test.git
+         sudo mkdir test.git
+
+         # MOva-se para  a pasta test.git 
+         cd test.git
+
+         # Inicializar repositório simples
+         sudo git init --bare
+
+         # Dê a propriedade do git aos arquivos do repositório porque os criamos com root
+         sudo chown -R git:users /home/git/test.git
+
+      ```
+
+      - **Notas:**
+        - Url para o repositório test.git:
+          - nome: origin
+          - url: git@192.168.15.3:/home/git/test.git
+
+7. Como saber o link que o _cliente git_ deve usar para clonar o repositório do _servidor git_?
    1. ?

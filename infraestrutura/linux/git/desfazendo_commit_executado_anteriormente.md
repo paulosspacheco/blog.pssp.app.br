@@ -1,5 +1,5 @@
+<!-- markdownlint-disable-next-line -->
 #### Desfazendo commit executado anteriormente <a href="desfazendo_commit_executado_anteriormente.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
-
 
 Ao trabalhar em um projeto de equipe, é bastante comum que os desenvolvedores criem branches , adicionem arquivos e os preparem para commits quando estiverem prontos.
 

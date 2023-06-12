@@ -20,3 +20,6 @@
 17. [Como colocar seu projeto no ar com o Github Pages?](https://www.alura.com.br/artigos/como-colocar-projeto-no-ar-com-github-pages?gclid=CjwKCAjwge2iBhBBEiwAfXDBR5-xJ4w77lyDLzvBzBC7oJwsUkzGfjpIZWV2AzXjSfAPuQAx-RfiNBoClEsQAvD_BwE)
 18. [Gerenciamento de chaves SSH](https://www.ssh.com/academy/iam/ssh-key-management)
 19. [Vídeo SSH - Conceitos básicos e conexão por senha no Linux - 01](https://www.youtube.com/watch?v=e7TdtHL6b0E)
+20. [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux)
+21. [Checking for existing SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
+22. [rsa - wikipedia](https://en.wikipedia.org/wiki/RSA_(cryptosystem))

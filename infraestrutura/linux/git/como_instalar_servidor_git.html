@@ -12,6 +12,7 @@
         <!-- CSS da página /index.html -->
         <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
 
+
     </head>
     <body class="vscode-body vscode-light">
         <!-- markdownlint-disable-next-line -->
@@ -335,6 +336,43 @@
 </ol>
 </li>
 </ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Criando um repositório do zero:</p>
+<ol>
+<li>
+<p>A primeira coisa a se fazer é criar um repositório no servidor com a opção <em>--bare</em> do <em>git</em>. Isso irá criar um repositório com apenas as referências dos objetos e da árvore <em>git</em>. Vamos então logar no servidor e criar um novo repositório:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Dentro do servidor, execute</span>
+   <span class="hljs-built_in">cd</span> /home/git/
+   
+   <span class="hljs-comment"># Crie a pasta test.git</span>
+   sudo mkdir test.git
+
+   <span class="hljs-comment"># MOva-se para  a pasta test.git </span>
+   <span class="hljs-built_in">cd</span> test.git
+
+   <span class="hljs-comment"># Inicializar repositório simples</span>
+   sudo git init --bare
+
+   <span class="hljs-comment"># Dê a propriedade do git aos arquivos do repositório porque os criamos com root</span>
+   sudo chown -R git:users /home/git/test.git
+
+</code></pre>
+<ul>
+<li><strong>Notas:</strong>
+<ul>
+<li>Url para o repositório test.git:
+<ul>
+<li>nome: origin</li>
+<li>url: <a href="mailto:git@192.168.15.3">git@192.168.15.3</a>:/home/git/test.git</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ol>
 </li>

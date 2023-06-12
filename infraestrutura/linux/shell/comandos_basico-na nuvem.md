@@ -746,7 +746,8 @@
 
             ```
 
-   3. _scp_: Versão segura do rcp
+   3. [_scp_](https://linux.die.net/man/1/scp): copia arquivos entre hosts em uma rede. (Versão segura do rcp)
+      1. Ele usa _ssh_ para transferência de dados e usa a mesma autenticação e fornece a mesma segurança que _ssh_. Ao contrário do rcp (1), o scp solicitará _senhas_ ou _frases secretas_ se forem necessárias para autenticação.
 
        ```bash
 
