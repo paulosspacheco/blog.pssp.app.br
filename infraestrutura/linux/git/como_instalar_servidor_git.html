@@ -360,7 +360,7 @@
 </ol>
 </li>
 <li>
-<p>Criando um repositório do zero:</p>
+<p><strong>Criando um repositório do zero</strong>:</p>
 <ol>
 <li>
 <p>A primeira coisa a se fazer é criar um repositório no servidor com a opção <em>--bare</em> do <em>git</em>. Isso irá criar um repositório com apenas as referências dos objetos e da árvore <em>git</em>. Vamos então logar no servidor e criar um novo repositório:</p>
@@ -397,9 +397,27 @@
 </ol>
 </li>
 <li>
-<p>Como saber o link que o <em>cliente git</em> deve usar para clonar o repositório do <em>servidor git</em>?</p>
+<p><strong>Como saber o link que o <em>cliente git</em> deve usar para clonar o repositório do <em>servidor git</em>?</strong></p>
 <ol>
-<li>?</li>
+<li>
+<p>Cada projeto tem sua estrutura de arvore dentro do servidor git, por exemplo, o <em>github</em> usa a seguinte sintaxe: <em><a href="mailto:git@github.com">git@github.com</a>:Usuário/NomeDoRepositório.git</em></p>
+<pre><code class="hljs language-bash">    <span class="hljs-comment"># Exemplo de repositório do github           </span>
+    git@github.com:paulosspacheco/blog.pssp.app.br.git
+</code></pre>
+</li>
+<li>
+<p>Os exemplos deste documento usa a seguinte sintaxe: <em>git@ip_server:/home/git/repositório.git</em>:</p>
+<pre><code class="hljs language-bash">    <span class="hljs-comment"># Exemplo repositório na rede local: ip=192.168.15.3</span>
+    git@192.168.15.3:/home/git/test.git
+    
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>O que o cliente git deve fazer para clonar o repositório <em><a href="mailto:git@192.168.15.3">git@192.168.15.3</a>:/home/git/test.git</em></strong></p>
+<ol>
+<li>????</li>
 </ol>
 </li>
 </ol>

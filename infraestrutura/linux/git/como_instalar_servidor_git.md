@@ -290,7 +290,7 @@
 
             ```
 
-6. Criando um repositório do zero:
+6. **Criando um repositório do zero**:
    1. A primeira coisa a se fazer é criar um repositório no servidor com a opção _--bare_ do _git_. Isso irá criar um repositório com apenas as referências dos objetos e da árvore _git_. Vamos então logar no servidor e criar um novo repositório:
 
       ```bash
@@ -317,5 +317,21 @@
           - nome: origin
           - url: git@192.168.15.3:/home/git/test.git
 
-7. Como saber o link que o _cliente git_ deve usar para clonar o repositório do _servidor git_?
-   1. ?
+7. **Como saber o link que o _cliente git_ deve usar para clonar o repositório do _servidor git_?**
+   1. Cada projeto tem sua estrutura de arvore dentro do servidor git, por exemplo, o _github_ usa a seguinte sintaxe: _git@github.com:Usuário/NomeDoRepositório.git_
+
+      ```bash
+          # Exemplo de repositório do github           
+          git@github.com:paulosspacheco/blog.pssp.app.br.git
+      ```
+
+   2. Os exemplos deste documento usa a seguinte sintaxe: _git@ip_server:/home/git/repositório.git_:
+
+      ```bash
+          # Exemplo repositório na rede local: ip=192.168.15.3
+          git@192.168.15.3:/home/git/test.git
+          
+      ```
+
+8. **O que o cliente git deve fazer para clonar o repositório _git@192.168.15.3:/home/git/test.git_**
+   1. ????
