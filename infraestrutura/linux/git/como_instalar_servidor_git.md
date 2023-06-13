@@ -1,7 +1,7 @@
 <!-- markdownlint-disable-next-line -->
-### Como instalar e configurar um servidor git  remoto <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a>
+### COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a>
 
-#### Introdução
+#### INTRODUÇÃO
 
 1. **Objetivo:**
 
@@ -21,7 +21,7 @@
    1. Sistema operacional Linux;
    2. Conhecimento do projeto [_Servidor OpenSSH_](https://ubuntu.com/server/docs/service-openssh) para entender como funciona as _chaves ssh_ necessárias para que o servidor acesse a máquina local cliente sem necessidade de pedir senha a cada atualização.
 
-#### Instalando _Git Server_ no Debian ou derivados
+#### INSTALANDO _GIT SERVER_ NO DEBIAN OU DERIVADOS
 
 ```bash
 
@@ -38,7 +38,7 @@
 
 ```
 
-#### Configurações do repositório no servidor
+#### CONFIGURAÇÕES DO REPOSITÓRIO NO SERVIDOR
 
 1. **Criar um _usuário git_ no servidor que será o proprietário dos repositórios a serem compartilhados com os clientes. Na prática, poderia ser qualquer usuário, mas para não ter que criar um usuário, no servidor, para cada cliente, é interessante usar o _usuário git_. Para criar esse usuário utilizamos o comando _useradd_:.**
 
@@ -91,10 +91,11 @@
 
 5. **Configurando o protocolo ssh:**
 
-   1. O programa git, utiliza internamente alguns protocolos para se comunicar com o servidor. Sua máquina cliente quando executa, por exemplo, um _git clone git@github.com:paulosspacheco/blog.pssp.app.br.git_, ele está utilizando o protocolo ssh para clonar um repositório remoto. O protocolo HTTP também pode ser utilizado, mas não necessariamente essa comunicação estaria criptografada, autenticada e autorizada. O próprio Github assim como nosso servidor, preferencialmente, irão utilizar o protocolo ssh;
+   1. Quando a máquina cliente executa o comando _git clone hrl_do_repositório_, o _git_ está utilizando o protocolo _ssh_ para clonar o repositório remoto.
+      - **Nota**: O protocolo HTTP também pode ser utilizado, mas não necessariamente essa comunicação estaria criptografada, autenticada e autorizada.
+      - [Dica: Instalando e configurando servidor SSH (Ubuntu)](<https://www.vivaolinux.com.br/dica/Instalando-e-configurando-servidor-SSH-(Ubuntu)>);
 
-   2. Instalar o [servidor ssh](<https://www.vivaolinux.com.br/dica/Instalando-e-configurando-servidor-SSH-(Ubuntu)>);
-   3. Para tal, vamos então configurar o _ssh_ do nosso servidor. O processo _sshd_ é um _daemon_ em nosso servidor com a responsabilidade de receber as conexões vindas das máquinas clientes e garantir que esteja m devidamente autorizadas a logar na máquina. Para configurá-lo, vamos editar o arquivo _/etc/ssh/sshd_config_. Nesse arquivo existe uma instrução chamada _AllowUsers_. Ele define quais usuários estão permitidos a se logar através do _ssh_. Iremos adicionar o usuário _git_ a essa configuração:
+   2. Para configurar o _ssh_ do servidor, é necessário editar o arquivo _/etc/ssh/sshd_config_. Nesse arquivo, existe uma linha abaixo da linha _# Authentication_ de nome _AllowUsers_ que define quais usuários estão permitidos de se logar através do _ssh_. Para que o _usuário git_ tenha acesso ao servidor, o mesmo deve ser adicionado no final da linha _AllowUsers root_ como no exemplo abaixo.
 
       ```bash
 
@@ -108,26 +109,28 @@
 
       ```
 
-      1. **Notas**
+      - **Notas**
 
-         1. Ao adicionar essa configuração, deve-se reiniciar o serviço no sistema operacional para que as modificações tenham efeito. Cada distribuição adota um gerenciador de serviços. A seguir são mostrados algumas formas de se reiniciar o _ssh_ através do Systemctl ou o utilitário _service_:
+         - Ao adicionar essa configuração, deve-se reiniciar o serviço no sistema operacional para que as modificações tenham efeito. Cada distribuição adota um gerenciador de serviços. A seguir são mostrados algumas formas de se reiniciar o _ssh_ através do _Systemctl_ ou o utilitário _service_:
 
-         ```bash
+            ```bash
 
-             # System D
-             sudo systemctl restart sshd.service
+               # System D
+               sudo systemctl restart sshd.service
 
-             # Service
-             sudo service sshd restart
+               # Service
+               sudo service sshd restart
 
-         ```
+            ```
 
-   4. Para acessar o repositório sem necessidade de digitar senha a todo momento é necessário seguir os seguintes passos:
+         - Dica: O processo _sshd_ é um _daemon_ em nosso servidor com a responsabilidade de receber as conexões vindas das máquinas clientes e garantir que estejam devidamente autorizadas a logar na máquina
+
+   3. Para acessar o repositório sem necessidade de digitar senha a todo momento é necessário seguir os seguintes passos:
 
       1. <!-- markdownlint-disable-next-line -->
          <span id='id_ssh_client'></span> Em cada _máquina cliente_ que for acessar o servidor, executar os passos abaixo:
 
-         1. Executar o programa _ssh-keygen_ para criar um par de chaves (privada e publica ) para poder enviar para o servidor a chave pública gerada.
+         1. Executar o programa _ssh-keygen_ para criar um par de chaves (privada e pública ) para poder enviar para o servidor a chave pública gerada.
 
             ```bash
                 
@@ -155,10 +158,10 @@
             ```
 
             - **Natas:**
-              - Esse comando vai criar novo par de chaves SSH usando o e-mail como categoria.
-              - O comando _ssh-keygen_ sugere que vai criar a chave na pasta _~/.ssh/id_rsa_, porém salva o arquivo na pasta corrente. Passei um tempão para entender.
+              - Esse comando vai criar novo par de chaves _SSH_ usando o _e-mail_ como categoria.
+              - O comando _ssh-keygen_ sugere que vai criar a chave _id_rsa_ na pasta _~/.ssh_, porém salva o arquivo na pasta corrente. Passei um tempão para entender.
 
-         2. Executar o programa _ssh-add_ para adicionar as chaves geradas pelo programa _ssh-keygen_ em uma lista de chaves privadas. Além de manter chaves privadas, ele também controla solicitações ao assinar solicitações _SSH_ para que elas sejam transmitidas com insegurança. O projeto _ssh-agent_ através do programa _ssh-add_ cria um socket e então checa a conexão do _ssh_. Todo aquele que é capaz de se conectar a este socket, também tem acesso ao _ssh-agent_. As permissões são definidas em um sistema Linux. Quando o agente é iniciado, ele cria um nova pasta em _/tmp_ com permissões restritivas. O socket está localizado nesta pasta.
+         2. Executar o programa _ssh-add_ para adicionar as chaves geradas pelo programa _ssh-keygen_ em uma lista de chaves privadas. Além de manter chaves privadas, ele também controla solicitações _SSH_ para que elas sejam transmitidas com segurança.
 
             1. Antes de adicionar a nova chave _SSH_ ao _ssh-agent_, primeiro verifique se o _ssh-agent_ está sendo executado ao executar:
 
@@ -176,21 +179,25 @@
             2. _ssh-add_ - Adiciona identidades de chave privada ao agente de autenticação _OpenSSH_
 
                ```bash
-    
-                 ssh-add ~/.ssh/id_rsa
+
+                  # Mova-se para a pasta ~/.ssh              
+                 cd ~/.ssh
+
+                 # Adicionar a chave ./id_rsa ao ssh-agent
+                 ssh-add ./id_rsa
                  > Enter passphrase for /home/paulosspacheco/.ssh/id_rsa:   # Obs: A senha é informada em ssh-keygen 
                  > Identity added: /home/paulosspacheco/.ssh/id_rsa (paulosspacheco@yahoo.com.br)
 
                ```
 
-               - **Nota**
+               - **Notas**
 
                  - A nova _chave SSH_ agora está registrada e pronta para uso.
                  - A primeira vez que se usa a chave, o sistema informa que a chave está bloqueada e precisa ser desbloqueada com a senha informada no programa _ssh-keygen_, ao criar a chave.
                    - No linux mint é executado um diálogo no modo gráfico com dois campos, sendo 1 para a senha e o outro para o flag que informa que a senha deve ser permanente.
                  - Entre as duas chaves geradas, uma privada e outra pública, a chave com a extensão _.pub_, deve ser enviada para o servidor e ser adicionada ao final do arquivo _/home/git/.ssh/authorized_keys_ do servidor.
                  - Você pode enviar a chave para o servidor pelo meio que estiver configurado, podendo ser por e-mail, WhatsApp, Telegram, pasta compartilhada e etc...
-                 - Suponha que a chave _id_rsa.pub_ tenha sido salva na pasta _~/Downloads/clientes_git_keys_ então executar os seguintes comandos:
+                 - Suponha que a chave _id_rsa.pub_ tenha sido salva na pasta _~/Downloads/clientes_git_keys_ do servidor, então executar os seguintes comandos:
 
                    ```bash
 
@@ -331,7 +338,7 @@
           - url: git@192.168.15.3:/home/git/test.git
 
 7. **Como saber o link que o _cliente git_ deve usar para clonar o repositório do _servidor git_?**
-   1. Cada projeto tem sua estrutura de arvore dentro do servidor git, por exemplo, o _github_ usa a seguinte sintaxe: _git@github.com:Usuário/NomeDoRepositório.git_
+   1. Cada projeto tem sua estrutura de arvore dentro do servidor git, por exemplo, o _github_ usa a seguinte sintaxe:_git@github.com:Usuário/NomeDoRepositório.git_
 
       ```bash
           # Exemplo de repositório do github           
@@ -346,7 +353,9 @@
           
       ```
 
-8. **O que o cliente git deve fazer para clonar o repositório _git@192.168.15.3:/home/git/test.git_**
+#### COMO USAR O REPOSITÓRIO DO SERVIDOR NA MÁQUINA CLIENTE
+
+1. **O que o _cliente git_ deve fazer para clonar o repositório _git@192.168.15.3:/home/git/test.git_**
    1. Após a [_instalar o git_](./como_instalar_cliente_git_no_linux.html), executar os passos abaixo:
       1. Criar uma _chave ssh_ privada para que o servidor git permita enviar arquivos sem necessidade de senhas.
          - Esses passos foi descrito no tópico [5.4.1](#id_ssh_client) deste documento.
@@ -365,12 +374,40 @@
 
          - **Notas**:
            - O comando acima irá criar uma pasta na máquina cliente com todos os dados do repositório no servidor;
-           - 
 
-      4. Alterar arquivos, ou adicionar aquivos ou excluir arquivos em seguida executar a sequência abaixo:
+2. **O que o _cliente git_ deve fazer antes de editar os arquivos do repositório local?**
 
-         ```bash
-         
-         ```
+   ```bash
+      # Atualiza o repositório local com os dados do repositório remoto      
+      git pull 
 
-      5. .
+   ```
+
+   - O comando acima não deve ser automático, executando antes do comando _git push -u origin main_, porque a versão _main remota_ pode estar desatualizada.
+   - O comando _git pull_ deve ser executado antes das alterações do repositório local.
+
+3. **O que o _cliente git_ deve fazer após alterar os arquivos do repositório local para atualizar repositório remoto?**
+
+   ```bash
+      
+      # Associa o repositório remoto ao repositório local.          
+      git remote add origin git@192.168.15.3:/home/git/test.git 
+
+      # Renomeie o branch  atual para main
+      # O comando branch -M não precisa ser feito a todo momento, porque o git sempre envia para
+      # o ultimo ramo selecionando.
+      git branch -M main  
+
+         # Este comando pode ser executado várias vezes antes de um commit.  
+      git add .
+
+      # Use o <msg> fornecido como a mensagem de confirmação. 
+      git commit -a -m "Texto descrevendo as alterações realizadas"
+
+      # Envia as alterações locais para o repositório remoto.
+      git push -u origin main                  
+
+      # imprime o status atual do repositório
+      git status  
+   
+   ```
