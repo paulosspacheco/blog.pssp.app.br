@@ -124,7 +124,8 @@
 
    4. Para acessar o repositório sem necessidade de digitar senha a todo momento é necessário seguir os seguintes passos:
 
-      1. Em cada _máquina cliente_ que for acessar o servidor, executar os passos abaixo:
+      1. <!-- markdownlint-disable-next-line -->
+         <span id='id_ssh_client'></span> Em cada _máquina cliente_ que for acessar o servidor, executar os passos abaixo:
 
          1. Executar o programa _ssh-keygen_ para criar um par de chaves (privada e publica ) para poder enviar para o servidor a chave pública gerada.
 
@@ -134,7 +135,7 @@
                cd ~/.ssh
 
                # O comando ssh-keygen criar o par de chave de 4096 bits cujo protocolo é rsa
-               ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+               ssh-keygen -t rsa -b 4096 -C "your_email@yahoo.com.br"
                # Em seguida, você vai ser solicitado a Inserir arquivo no qual salvar a chave.
                # Você pode especificar um local de arquivo ou pressionar “Enter” para aceitar o local padrão do arquivo.
 
@@ -177,7 +178,7 @@
                ```bash
     
                  ssh-add ~/.ssh/id_rsa
-                 > Enter passphrase for /home/paulosspacheco/.ssh/id_rsa:   # Obs: A senha é a digitada em ssh-keygen 
+                 > Enter passphrase for /home/paulosspacheco/.ssh/id_rsa:   # Obs: A senha é informada em ssh-keygen 
                  > Identity added: /home/paulosspacheco/.ssh/id_rsa (paulosspacheco@yahoo.com.br)
 
                ```
@@ -185,21 +186,28 @@
                - **Nota**
 
                  - A nova _chave SSH_ agora está registrada e pronta para uso.
-                 - Entre as duas chaves geradas, uma tem extensão _.pub_, é essa que deve ser enviada para o servidor.
-                 - O servidor deve adicionar a chave _id_rsa.pub_ recebida do cliente no arquivo _/home/git/.ssh/authorized_keys_
+                 - A primeira vez que se usa a chave, o sistema informa que a chave está bloqueada e precisa ser desbloqueada com a senha informada no programa _ssh-keygen_, ao criar a chave.
+                   - No linux mint é executado um diálogo no modo gráfico com dois campos, sendo 1 para a senha e o outro para o flag que informa que a senha deve ser permanente.
+                 - Entre as duas chaves geradas, uma privada e outra pública, a chave com a extensão _.pub_, deve ser enviada para o servidor e ser adicionada ao final do arquivo _/home/git/.ssh/authorized_keys_ do servidor.
+                 - Você pode enviar a chave para o servidor pelo meio que estiver configurado, podendo ser por e-mail, WhatsApp, Telegram, pasta compartilhada e etc...
+                 - Suponha que a chave _id_rsa.pub_ tenha sido salva na pasta _~/Downloads/clientes_git_keys_ então executar os seguintes comandos:
 
                    ```bash
 
-                      # Loga-se como root
+                      # Loga-se como root no servidor
                       sudo -i
 
-                      # Adicionar no final do arquivo /home/git/.ssh/authorized_keys o arquivo ~/Downloads/clientes_git_keys/id_ed25519.pub
+                      # Adiciona a chave no final do arquivo /home/git/.ssh/authorized_keys
                       cat /home/git/.ssh/authorized_keys ~/Downloads/id_rsa.pub >> /home/git/.ssh/authorized_keys
 
 
                    ```
 
-      2. Na _máquina servidora git_ seguir os passos abaixo, para poder acessar a máquina cliente sem pedir uma senha:
+                 - O processo acima também pode ser executado com qualquer editor de texto.
+
+      2. <!-- markdownlint-disable-next-line -->
+         <span id='id_ssh_server'></span> 
+         Na _máquina servidora git_, seguir os passos abaixo, para que a máquina cliente não precise digitar senha para acessar o servidor:
 
          1. Criar a pasta _ssh_ para o _usuário git_:
 
@@ -339,4 +347,30 @@
       ```
 
 8. **O que o cliente git deve fazer para clonar o repositório _git@192.168.15.3:/home/git/test.git_**
-   1. ????
+   1. Após a [_instalar o git_](./como_instalar_cliente_git_no_linux.html), executar os passos abaixo:
+      1. Criar uma _chave ssh_ privada para que o servidor git permita enviar arquivos sem necessidade de senhas.
+         - Esses passos foi descrito no tópico [5.4.1](#id_ssh_client) deste documento.
+
+      2. A _chave ssh_ tem duas partes, sendo um arquivo com a _chave privada_ e um arquivo com a _chave pública_. É necessário registrar no servidor a chave pública da máquina cliente para que o servidor saiba que as solicitações do cliente é segura.
+         - Esses passos foi descrito no tópico [5.4.2](#id_ssh_server) deste documento
+
+      3. Clonar o repositório _git@192.168.15.3:/home/git/test.git_ na máquina cliente:
+
+         ```bash
+
+            # Clonar o repositório test
+            git clone git@192.168.15.3:/home/git/test.git
+         
+         ```
+
+         - **Notas**:
+           - O comando acima irá criar uma pasta na máquina cliente com todos os dados do repositório no servidor;
+           - 
+
+      4. Alterar arquivos, ou adicionar aquivos ou excluir arquivos em seguida executar a sequência abaixo:
+
+         ```bash
+         
+         ```
+
+      5. .
