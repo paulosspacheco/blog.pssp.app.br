@@ -30,6 +30,11 @@
 
    # Instala o git
    sudo apt-get install git-all
+    
+   # Trocar o nome padrão do branch para main
+   # Ao instalar o git o branch padrão é master, porém o github usa main,
+   # por isso meus scripts de clientes estão main e o meu servidor git deve acompanhar.
+   git config --global init.defaultBranch main
 
 ```
 
