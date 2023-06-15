@@ -15,7 +15,7 @@
         # Se você criou sua chave com um nome diferente ou se está adicionando uma 
         # chave existente com um nome diferente, substitua id_ed25519 no comando 
         # pelo nome de seu arquivo de chave privada:
-
+        # Mais informação: https://linux.die.net/man/1/ssh-add
         ssh-add ~/.ssh/id_ed25519
 
     ```
@@ -31,8 +31,9 @@
 
       2. Dependendo do seu ambiente, pode ser necessário usar um comando diferente.
          1. Por exemplo, pode ser necessário usar o acesso root executando **sudo -s -H** antes de iniciar o **ssh-agent** ou pode ser necessário usar exec **ssh-agent bash** ou **exec ssh-agent zsh** para executar o **ssh-agent**.
+      3. Após adicionar a chave no agente ssh, é necessário [registrar no servidor github](https://github.com/settings/keys).
 
-      3. **REFERÊNCIAS**:
+      4. **REFERÊNCIAS**:
          1. [Requisitos de autenticação de token para operações Git](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/).
             1. [Criação de um token de acesso pessoal](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
             2. [Novo token de acesso pessoal](https://github.com/settings/tokens/new)

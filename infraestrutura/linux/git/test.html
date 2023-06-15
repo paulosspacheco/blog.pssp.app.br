@@ -3,6 +3,150 @@
     <head>
         <meta charset="UTF-8">
         <title>COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO &lt;a href&equals;&quot;como&lowbar;instalar&lowbar;servidor&lowbar;git&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -12,13 +156,13 @@
         <!-- CSS da página /index.html -->
         <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
 
-
+</style>
     </head>
     <body class="vscode-body vscode-dark">
         <!-- markdownlint-disable-next-line -->
 <h4 id="como-instalar-e-configurar-um-servidor-git-remoto---">COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a></h4>
 <ul>
-<li><a href="#como-instalar-e-configurar-um-servidor-git-remoto---">COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO</a>
+<li><a href="#como-instalar-e-configurar-um-servidor-git-remoto---">COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO  ➚ </a>
 <ul>
 <li><a href="#introdu%C3%A7%C3%A3o">INTRODUÇÃO</a></li>
 <li><a href="#instalando-servidor-git-e-servidor-ssh-no-debian-ou-derivados">INSTALANDO SERVIDOR <em>GIT</em> E SERVIDOR <em>SSH</em> NO DEBIAN OU DERIVADOS</a></li>
@@ -27,9 +171,18 @@
 </ul>
 </li>
 </ul>
+<!-- vscode-markdown-toc -->
+<ol>
+<li><a href="#id_introducao">Introdução</a></li>
+<li><a href="#id_instalando_servidor">INSTALANDO SERVIDOR <em>GIT</em> E SERVIDOR <em>SSH</em> NO DEBIAN OU DERIVADOS</a></li>
+<li><a href="#id_configuracoes_do_repositorio_servidor">CONFIGURAÇÕES DO REPOSITÓRIO NO SERVIDOR</a></li>
+<li><a href="#id_como_usar_repositorio_servidor_maquina_cliente">COMO USAR O REPOSITÓRIO DO SERVIDOR NA MÁQUINA CLIENTE</a></li>
+</ol>
 <hr>
 <hr>
 <h5 id="introdução">INTRODUÇÃO</h5>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_introducao'></span></p>
 <ol>
 <li>
 <p><strong>Objetivo:</strong></p>
@@ -69,6 +222,8 @@
 </ol>
 <hr>
 <h5 id="instalando-servidor-git-e-servidor-ssh-no-debian-ou-derivados">INSTALANDO SERVIDOR <em>GIT</em> E SERVIDOR <em>SSH</em> NO DEBIAN OU DERIVADOS</h5>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_instalando_servidor'></span></p>
 <ol>
 <li>
 <p>Comandos para instalar aplicativo <em>git</em>:</p>
@@ -111,6 +266,8 @@
 </ol>
 <hr>
 <h5 id="configurações-do-repositório-no-servidor">CONFIGURAÇÕES DO REPOSITÓRIO NO SERVIDOR</h5>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_configuracoes_do_repositorio_servidor'></span></p>
 <ol>
 <li>
 <p><strong>Criar um <em>usuário git</em> no servidor que será o proprietário dos repositórios a serem compartilhados com os clientes. Na prática, poderia ser qualquer usuário, mas para não ter que criar um usuário, no servidor, para cada cliente, é interessante usar o <em>usuário git</em>. Para criar esse usuário utilizamos o comando <em>useradd</em>:.</strong></p>
@@ -329,7 +486,7 @@
 </ul>
 </li>
 <li>
-<p>Executar o programa <a href="https://linux.die.net/man/1/ssh-add"><em>ssh-add</em></a> para adicionar as chaves geradas pelo programa <em>ssh-keygen</em> em uma lista de chaves privadas. Além de manter chaves privadas, ele também controla solicitações <em>SSH</em> para que elas sejam transmitidas com segurança.</p>
+<p>Executar o programa <em>ssh-add</em> para adicionar as chaves geradas pelo programa <em>ssh-keygen</em> em uma lista de chaves privadas. Além de manter chaves privadas, ele também controla solicitações <em>SSH</em> para que elas sejam transmitidas com segurança.</p>
 <ol>
 <li>
 <p>Antes de adicionar a nova chave <em>SSH</em> ao <em>ssh-agent</em>, primeiro verifique se o <em>ssh-agent</em> está sendo executado ao executar o comando abaixo:</p>
@@ -348,7 +505,7 @@
 </ul>
 </li>
 <li>
-<p><a href="https://linux.die.net/man/1/ssh-add"><em>ssh-add</em></a> - Adiciona identidades de chave privada ao agente de autenticação <em>OpenSSH</em></p>
+<p><em>ssh-add</em> - Adiciona identidades de chave privada ao agente de autenticação <em>OpenSSH</em></p>
 <pre><code class="hljs language-bash">
    <span class="hljs-comment"># Mova-se para a pasta ~/.ssh              </span>
   <span class="hljs-built_in">cd</span> ~/.ssh
@@ -474,6 +631,8 @@
 <hr>
 <hr>
 <h5 id="como-usar-o-repositório-do-servidor-na-máquina-cliente">COMO USAR O REPOSITÓRIO DO SERVIDOR NA MÁQUINA CLIENTE</h5>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_como_usar_repositorio_servidor_maquina_cliente'></span></p>
 <ol>
 <li>
 <p><strong>O que o <em>cliente git</em> deve fazer para clonar o repositório <em><a href="mailto:git@192.168.15.3">git@192.168.15.3</a>:/home/git/test.git</em></strong></p>

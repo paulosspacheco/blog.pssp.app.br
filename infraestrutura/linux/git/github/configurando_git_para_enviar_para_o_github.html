@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Configurando git para enviar para o github &lt;a href&equals;&quot;configurando&lowbar;git&lowbar;para&lowbar;enviar&lowbar;para&lowbar;o&lowbar;github&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-
+  
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- CSS markdown -->
@@ -12,9 +12,8 @@
         <!-- CSS da página /index.html -->
         <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
 
-
     </head>
-    <body class="vscode-body vscode-light">
+    <body class="vscode-body vscode-dark">
         <!-- markdownlint-disable-next-line -->
 <h4 id="configurando-git-para-enviar-para-o-github----">Configurando git para enviar para o github <a href="configurando_git_para_enviar_para_o_github.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h4>
 <ol>
@@ -31,7 +30,7 @@
     <span class="hljs-comment"># Se você criou sua chave com um nome diferente ou se está adicionando uma </span>
     <span class="hljs-comment"># chave existente com um nome diferente, substitua id_ed25519 no comando </span>
     <span class="hljs-comment"># pelo nome de seu arquivo de chave privada:</span>
-
+    <span class="hljs-comment"># Mais informação: https://linux.die.net/man/1/ssh-add</span>
     ssh-add ~/.ssh/id_ed25519
 
 </code></pre>
@@ -50,6 +49,9 @@
 <ol>
 <li>Por exemplo, pode ser necessário usar o acesso root executando <strong>sudo -s -H</strong> antes de iniciar o <strong>ssh-agent</strong> ou pode ser necessário usar exec <strong>ssh-agent bash</strong> ou <strong>exec ssh-agent zsh</strong> para executar o <strong>ssh-agent</strong>.</li>
 </ol>
+</li>
+<li>
+<p>Após adicionar a chave no agente ssh, é necessário <a href="https://github.com/settings/keys">registrar no servidor github</a>.</p>
 </li>
 <li>
 <p><strong>REFERÊNCIAS</strong>:</p>

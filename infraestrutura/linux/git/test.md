@@ -1,16 +1,23 @@
 <!-- markdownlint-disable-next-line -->
 #### COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a>
-
-- [COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO](#como-instalar-e-configurar-um-servidor-git-remoto---)
+- [COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO  ➚ ](#como-instalar-e-configurar-um-servidor-git-remoto---)
   - [INTRODUÇÃO](#introdução)
   - [INSTALANDO SERVIDOR _GIT_ E SERVIDOR _SSH_ NO DEBIAN OU DERIVADOS](#instalando-servidor-git-e-servidor-ssh-no-debian-ou-derivados)
   - [CONFIGURAÇÕES DO REPOSITÓRIO NO SERVIDOR](#configurações-do-repositório-no-servidor)
   - [COMO USAR O REPOSITÓRIO DO SERVIDOR NA MÁQUINA CLIENTE](#como-usar-o-repositório-do-servidor-na-máquina-cliente)
 
+<!-- vscode-markdown-toc -->
+ 1. [Introdução](#id_introducao)
+ 2. [INSTALANDO SERVIDOR _GIT_ E SERVIDOR _SSH_ NO DEBIAN OU DERIVADOS](#id_instalando_servidor)
+ 3. [CONFIGURAÇÕES DO REPOSITÓRIO NO SERVIDOR](#id_configuracoes_do_repositorio_servidor)
+ 4. [COMO USAR O REPOSITÓRIO DO SERVIDOR NA MÁQUINA CLIENTE](#id_como_usar_repositorio_servidor_maquina_cliente)
+
 ---
 ---
 
 ##### INTRODUÇÃO
+<!-- markdownlint-disable-next-line -->
+<span id='id_introducao'></span>
 
 1. **Objetivo:**
 
@@ -35,6 +42,8 @@
 ---
 
 ##### INSTALANDO SERVIDOR _GIT_ E SERVIDOR _SSH_ NO DEBIAN OU DERIVADOS
+<!-- markdownlint-disable-next-line -->
+<span id='id_instalando_servidor'></span>
 
 1. Comandos para instalar aplicativo _git_:
 
@@ -75,6 +84,8 @@
 ---
 
 ##### CONFIGURAÇÕES DO REPOSITÓRIO NO SERVIDOR
+<!-- markdownlint-disable-next-line -->
+<span id='id_configuracoes_do_repositorio_servidor'></span>
 
 1. **Criar um _usuário git_ no servidor que será o proprietário dos repositórios a serem compartilhados com os clientes. Na prática, poderia ser qualquer usuário, mas para não ter que criar um usuário, no servidor, para cada cliente, é interessante usar o _usuário git_. Para criar esse usuário utilizamos o comando _useradd_:.**
 
@@ -276,7 +287,7 @@
               - Esse comando vai criar novo par de chaves _SSH_ usando o _e-mail_ como categoria.
               - O comando _ssh-keygen_ sugere que vai criar a chave _id_rsa_ na pasta _~/.ssh_, porém salva o arquivo na pasta corrente. Passei um tempão para entender.
 
-         2. Executar o programa [_ssh-add_](https://linux.die.net/man/1/ssh-add) para adicionar as chaves geradas pelo programa _ssh-keygen_ em uma lista de chaves privadas. Além de manter chaves privadas, ele também controla solicitações _SSH_ para que elas sejam transmitidas com segurança.
+         2. Executar o programa _ssh-add_ para adicionar as chaves geradas pelo programa _ssh-keygen_ em uma lista de chaves privadas. Além de manter chaves privadas, ele também controla solicitações _SSH_ para que elas sejam transmitidas com segurança.
 
             1. Antes de adicionar a nova chave _SSH_ ao _ssh-agent_, primeiro verifique se o _ssh-agent_ está sendo executado ao executar o comando abaixo:
 
@@ -291,7 +302,7 @@
                - **Nota**
                  - Se a resposta for _> Agent pid x_ onde x é o número do processo, é porque está tudo ok.
 
-            2. [_ssh-add_](https://linux.die.net/man/1/ssh-add) - Adiciona identidades de chave privada ao agente de autenticação _OpenSSH_
+            2. _ssh-add_ - Adiciona identidades de chave privada ao agente de autenticação _OpenSSH_
 
                ```bash
 
@@ -383,6 +394,8 @@
 ---
 
 ##### COMO USAR O REPOSITÓRIO DO SERVIDOR NA MÁQUINA CLIENTE
+<!-- markdownlint-disable-next-line -->
+<span id='id_como_usar_repositorio_servidor_maquina_cliente'></span>
 
 1. **O que o _cliente git_ deve fazer para clonar o repositório _git@192.168.15.3:/home/git/test.git_**
    1. [_instalar o git na máquina cliente_](./como_instalar_cliente_git_no_linux.html);

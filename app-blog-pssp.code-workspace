@@ -8,6 +8,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "blog.pssp.app.br"
+		"liveServer.settings.multiRootWorkspaceName": "blog.pssp.app.br",
+		"markdown.extension.toc.updateOnSave": false
 	}
 }
