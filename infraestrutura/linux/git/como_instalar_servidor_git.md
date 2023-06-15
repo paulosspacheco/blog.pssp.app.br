@@ -1,5 +1,15 @@
 <!-- markdownlint-disable-next-line -->
-### COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a>
+### COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >➚</a>
+
+---
+
+- [COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO ➚](#como-instalar-e-configurar-um-servidor-git-remoto-)
+  - [INTRODUÇÃO](#introdução)
+  - [INSTALANDO _GIT SERVER_ NO DEBIAN OU DERIVADOS](#instalando-git-server-no-debian-ou-derivados)
+  - [CONFIGURAÇÕES DO REPOSITÓRIO NO SERVIDOR](#configurações-do-repositório-no-servidor)
+  - [COMO USAR O REPOSITÓRIO DO SERVIDOR NA MÁQUINA CLIENTE](#como-usar-o-repositório-do-servidor-na-máquina-cliente)
+
+---
 
 #### INTRODUÇÃO
 
