@@ -32,8 +32,10 @@
       2. Dependendo do seu ambiente, pode ser necessário usar um comando diferente.
          1. Por exemplo, pode ser necessário usar o acesso root executando **sudo -s -H** antes de iniciar o **ssh-agent** ou pode ser necessário usar exec **ssh-agent bash** ou **exec ssh-agent zsh** para executar o **ssh-agent**.
       3. Após adicionar a chave no agente ssh, é necessário [registrar no servidor github](https://github.com/settings/keys).
+      4. Caso ocorra algum error na autenticação: [Veja esse link](https://docs.github.com/pt/authentication/troubleshooting-ssh)
+      5. Caso troque a chave ssh é necessário clonar o repositório fazer as alterações necessárias e enviar novamente para o remoto. (Passei o um dia para entender isso)
 
-      4. **REFERÊNCIAS**:
+      6. **REFERÊNCIAS**:
          1. [Requisitos de autenticação de token para operações Git](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/).
             1. [Criação de um token de acesso pessoal](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
             2. [Novo token de acesso pessoal](https://github.com/settings/tokens/new)
