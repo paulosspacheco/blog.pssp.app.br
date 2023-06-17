@@ -19,5 +19,14 @@
   },
   "devDependencies": {
     "eslint": "^7.20.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulosspacheco/blog.pssp.app.br.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/paulosspacheco/blog.pssp.app.br/issues"
+  },
+  "homepage": "https://github.com/paulosspacheco/blog.pssp.app.br#readme"
 }
