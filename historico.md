@@ -4,6 +4,14 @@
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 17/06/2023</b></legend>
 
+- [x] [Criar página de objetivo da pasta nodejs/SqLite3](./programacao/nodejs/sqlite3/objetivo.html)
+- [x] [Criar página de referências da pasta nodejs/SqLite3](./programacao/nodejs/sqlite3/referencias.html)
+
+</fieldset>
+
+<!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 17/06/2023</b></legend>
+
 - [x] Criar página de objetivo do [framework cordova](./programacao/html/cordova/objetivo.html)
 
 </fieldset>
@@ -44,7 +52,6 @@
 
 </fieldset>
 
-<!-- TODO: em: 19/05/2023 -->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>15/05/2023 a 19/05/2023</b></legend>
 
@@ -52,7 +59,6 @@
 
 </fieldset>
 
-<!-- TODO: em: 10/05/2023 -->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>10/05/2023</b></legend>
 
@@ -63,10 +69,8 @@
 - [x] Na documentação markdown do nodejs usar os temas defaulttheme.css e defaultthemeMarkdown
 - [x] Na documentação nodejs onde o destaque estiver negrito alterar para enfatizado.
 
-
 </fieldset>
 
-<!--DONE: em: 08/05/2023 a 09/05/2023 -->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>08/05/2023 a 09/05/2023</b></legend>
 
@@ -74,7 +78,6 @@
 
 </fieldset>
 
-<!--DONE: em: 07/05/2023 -->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>07/05/2023</b></legend>
 
@@ -85,7 +88,6 @@
 
 </fieldset>
 
-<!--DONE: em: 05/05/2023-->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>05/05/2023</b></legend>
 
@@ -94,7 +96,6 @@
 
 </fieldset>
 
-<!--DONE: em: 04/05/2023-->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>04/05/2023 </b></legend>
 ## Data: 04/05/2023
@@ -104,7 +105,6 @@
 
 </fieldset>
 
-<!--DONE: em: 25/04/2021-->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>25/04/2023 </b></legend>
 
@@ -116,7 +116,6 @@
 
 </fieldset>
 
-<!--DONE: em: 20/04/2021-->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>20/04/2023 </b></legend>
 
@@ -127,7 +126,6 @@
 
 </fieldset>
 
-<!--DONE: em: 03/01/2021-->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>03/01/2021 </b></legend>
 
@@ -135,7 +133,6 @@
 
 </fieldset>
 
-<!--DONE: em: 08/12/2020-->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>29/12/2020 </b></legend>
 
@@ -143,7 +140,6 @@
 
 </fieldset>
 
-<!--DONE: em: 08/12/2020-->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>08/12/2020</b></legend>
 
@@ -152,7 +148,6 @@
 
 </fieldset>
 
-<!--DONE: em: 04/12/2020-->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>04/12/2020 </b></legend>
 
@@ -164,7 +159,6 @@
 
 </fieldset>
 
-<!--DONE: em: 03/12/2020-->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>03/12/2020 </b></legend>
 
@@ -180,7 +174,6 @@
 
 </fieldset>
 
-<!--DONE: em: 02/12/2020-->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>02/12/2020 </b></legend>
 
@@ -200,7 +193,6 @@
 
 </fieldset>
 
-<!--DONE: em: 01/12/2020-->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>01/12/2020 </b></legend>
 
@@ -211,7 +203,6 @@
 
 </fieldset>
 
-<!--DONE: em: 30/11/2020-->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>30/11/2020</b></legend>
 
@@ -224,7 +215,6 @@
 
 </fieldset>
 
-<!--DONE: em: 29/11/2020-->
 <!-- markdownlint-disable-next-line -->
  <fieldset> <legend> <b>29/11/2020</b></legend>
 
