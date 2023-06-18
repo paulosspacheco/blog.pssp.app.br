@@ -15,7 +15,8 @@
     "express": "^4.17.1",
     "help": "^3.0.2",
     "mariadb": "^2.5.2",
-    "sequelize": "^6.5.0"
+    "sequelize": "^6.5.0",
+    "sqlite3": "^5.1.6"
   },
   "devDependencies": {
     "eslint": "^7.20.0"

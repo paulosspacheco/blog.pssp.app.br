@@ -1,7 +1,13 @@
 <!-- markdownlint-disable-next-line -->
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
-<!--TODO: em: A fazer até 06/06/2023 a 15/06/2023-->
+<!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 17/06/2023</b></legend>
+
+- [x] Criar página de objetivo do [framework cordova](./programacao/html/cordova/objetivo.html)
+
+</fieldset>
+
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>A fazer até 06/06/2023 a 15/06/2023</b></legend>
 
@@ -10,7 +16,6 @@
 
 </fieldset>
 
-<!--TODO: em: A fazer até 09/06/2023 -->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>A fazer até 06/06/2023</b></legend>
 
@@ -18,7 +23,6 @@
 
 </fieldset>
 
-<!-- TODO: em: 01/06/2023 -->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>01/06/2023</b></legend>
 
@@ -28,7 +32,6 @@
 
 </fieldset>
 
-<!-- TODO: em: 31/05/2023 -->
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>15/05/2023 a 31/05/2023</b></legend>
 
