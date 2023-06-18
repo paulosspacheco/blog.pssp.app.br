@@ -6,6 +6,8 @@
 
 - [x] [Criar página de objetivo da pasta nodejs/SqLite3](./programacao/nodejs/sqlite3/objetivo.html)
 - [x] [Criar página de referências da pasta nodejs/SqLite3](./programacao/nodejs/sqlite3/referencias.html)
+- [x] Revisão do texto [Cinco Dicas Para Relacionamentos Saudáveis | Momentos Cury](./comportamentos/habitos/2022/Cinco_dicas_para_relacionamentos_saudaveis.html)
+- [x] Revisão do texto [Cinco Dicas do Filme "O poder além da vida"](./comportamentos/habitos/2022/Cinco_dicas_do_filme_o_poder_alem_da_vida.html)
 
 </fieldset>
 
