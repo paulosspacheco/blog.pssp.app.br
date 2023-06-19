@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Comandos b&aacute;sico do Shell do Linux &lt;a href&equals;&quot;comandos&lowbar;basico&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-
+   
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- CSS markdown -->
@@ -12,9 +12,8 @@
         <!-- CSS da página /index.html -->
         <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
 
-
     </head>
-    <body class="vscode-body vscode-light">
+    <body class="vscode-body vscode-dark">
         <!-- markdownlint-disable-next-line -->
 <h4 id="comandos-básico-do-shell-do-linux----"><span id="topo"><span>Comandos básico do Shell do Linux <a href="comandos_basico.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h4>
 <!-- markdownlint-disable-next-line -->
@@ -30,6 +29,7 @@
 <p><a href="#id_cmd_gestao_arquivo_pastas"><strong>Comandos de Gestão de Arquivos e Pastas</strong></a></p>
 <ol>
 <li><a href="#id_ls"><em>ls</em> - Comando para listar arquivos e pastas</a></li>
+<li><a href="#id_which"><em>which</em> -  mostra o caminho completo dos comandos</a></li>
 <li><a href="#id_cd"><em>cd</em> - Comando para mover-se entre os diretórios</a></li>
 <li><a href="#id_ln"><em>ln</em> - Comando para criar links simbólico</a></li>
 <li><a href="#id_cp"><em>cp</em> - Comando para copiar arquivos ou pastas</a></li>
@@ -85,7 +85,7 @@
 </li>
 <li>
 <p>A estrutura do sistema de arquivos do Linux é definida por um padrão de mercado chamado Filesystem Hierarchy Standard ou FHS, criado pela comunidade Linux em 1994 e mantida pela Linux Foundation. Atualmente a FHS está na versão 3.0. As distribuições não são obrigadas a seguir este padrão, mas elas entendem a importância da localização dos arquivos e diretórios padronizados. <a href="https://www.certificacaolinux.com.br/diretorios-e-arquivos/">Veja mais...</a></p>
-<p><img src="file:////home/paulosspacheco/v/paulosspacheco/Documentos/blogger/blog.pssp.app.br/infraestrutura/linux/shell/img/nome_das_pastas_linux.jpeg" alt="Resumo das estrutura de pastas do linux"></p>
+<p><img src="./img/nome_das_pastas_linux.jpeg" alt="Resumo das estrutura de pastas do linux"></p>
 </li>
 <li>
 <p>Para compreender a expressão <em>nome do arquivo fonte</em> ou <em>nome do arquivo destino</em> é necessário seguir a sintaxe de nome de arquivo para a arquitetura linux.</p>
@@ -208,20 +208,43 @@
 <ol>
 <li>
 <p>Sintaxe: $ <em>ls -opções</em></p>
-<pre><code class="hljs language-bash">    <span class="hljs-comment"># EXEMPLOS</span>
+<pre><code class="hljs language-bash">      <span class="hljs-comment"># EXEMPLOS</span>
 
-    <span class="hljs-comment"># Lista nome dos arquivos, nome dos links e nome das pastas em várias colunas</span>
-    ls
+      <span class="hljs-comment"># Lista nome dos arquivos, nome dos links e nome das pastas em várias colunas</span>
+      ls
 
-    <span class="hljs-comment"># Lista o atributos, nome do dono, nome do grupo, data, hora e nome do arquivo.</span>
-    ls -l
+      <span class="hljs-comment"># Lista o atributos, nome do dono, nome do grupo, data, hora e nome do arquivo.</span>
+      ls -l
 
 </code></pre>
 </li>
 </ol>
-<!-- markdownlint-disable-next-line -->
 </li>
 <li>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_which'></span>  <a href="https://linux.die.net/man/1/which"><em>which</em> -  <strong>Mostra o nome do aquivo e local (pasta) onde o arquivo foi localizado</strong></a></p>
+<ol>
+<li>
+<p>Sintaxe: $ <em>which nome_arquivo_no_path</em></p>
+<pre><code class="hljs language-bash">      <span class="hljs-comment"># EXEMPLO</span>
+
+      <span class="hljs-comment"># Mostra o nome da pasta onde o jva está instalado.</span>
+      <span class="hljs-built_in">which</span> java
+      &gt; /usr/lib/jvm/java-1.11.0-openjdk-amd64/bin/java
+      
+</code></pre>
+<ul>
+<li><strong>Nota</strong>:
+<ul>
+<li>Só procura nas pastas registrados em <a href="/etc/environment">/etc/environment</a> ou <a href="~/.bashrc">~/.bashrc</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
 <p><span id='id_cd'></span> <strong><em>cd</em> - O comando <a href="https://man7.org/linux/man-pages/man1/cd.1p.html"><em>cd</em></a> é usado para mover-se entre os diretórios ou seja: sair de um diretório e ir para o destino passado pelo parâmetro:</strong></p>
 <ol>
 <li>
@@ -1293,38 +1316,38 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li>
 <p><em>23/05/2023 a 25/05/2023</em></p>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Catalogar os principais comandos do sistema operacional linux.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Catalogar os principais comandos do sistema operacional linux.</li>
 </ul>
 </li>
 <li>
 <p><em>22/05/2023</em></p>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Concluir documento: introdução descrevendo como o documento foi criado.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Concluir documento: introdução descrevendo como o documento foi criado.</li>
 </ul>
 </li>
 <li>
 <p><em>19/05/2023</em></p>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criado documento do comando <em>cp</em>;</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Iniciar o documento: introdução descrevendo como o documento foi criado.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criado documento do comando <em>cp</em>;</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Iniciar o documento: introdução descrevendo como o documento foi criado.</li>
 </ul>
 </li>
 <li>
 <p><em>18/05/2023</em></p>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criado documento do comando <em>ln</em> (link simbólico)</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criado documento do comando <em>ln</em> (link simbólico)</li>
 </ul>
 </li>
 <li>
 <p><em>17/03/2023</em></p>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criado documento dos comandos <em>ls</em> e <em>cd</em>;</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criado documento dos comandos <em>ls</em> e <em>cd</em>;</li>
 </ul>
 </li>
 <li>
 <p><em>15/05/2021</em></p>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criado este documento;</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criado este documento;</li>
 </ul>
 </li>
 </ul>

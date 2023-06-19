@@ -9,6 +9,9 @@
 	],
 	"settings": {
 		"liveServer.settings.multiRootWorkspaceName": "blog.pssp.app.br",
-		"markdown.extension.toc.updateOnSave": false
+		"markdown.extension.toc.updateOnSave": false,
+		"markdown.styles": [
+			"/inc/linksCSS.inc"
+		]
 	}
 }

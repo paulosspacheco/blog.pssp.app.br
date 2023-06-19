@@ -8,13 +8,14 @@
 2. [Atalho para criar um terminal de comandos](#id_Ctrl_Alt_T)
 3. [**Comandos de Gestão de Arquivos e Pastas**](#id_cmd_gestao_arquivo_pastas)
    1. [_ls_ - Comando para listar arquivos e pastas](#id_ls)
-   2. [_cd_ - Comando para mover-se entre os diretórios](#id_cd)
-   3. [_ln_ - Comando para criar links simbólico](#id_ln)
-   4. [_cp_ - Comando para copiar arquivos ou pastas](#id_cp)
-   5. [_dd_ - Clona um dispositivo de bloco, convertendo e formatando de acordo com os operandos.](#id_dd)
-   6. [_e2image_ - Clona um dispositivo de bloco cujo o formato de arquivo seja ext2, ext3 e ext4](#id_e2image)
-   7. [_gparted_ - Programa usado para criar partição, pode ser usado para clonar partição de forma muito simples e visual](#id_gparted)
-   8. [_mount_ - monta um sistema de arquivos](#id_mount)
+   2. [_which_ -  mostra o caminho completo dos comandos](#id_which)
+   3. [_cd_ - Comando para mover-se entre os diretórios](#id_cd)
+   4. [_ln_ - Comando para criar links simbólico](#id_ln)
+   5. [_cp_ - Comando para copiar arquivos ou pastas](#id_cp)
+   6. [_dd_ - Clona um dispositivo de bloco, convertendo e formatando de acordo com os operandos.](#id_dd)
+   7. [_e2image_ - Clona um dispositivo de bloco cujo o formato de arquivo seja ext2, ext3 e ext4](#id_e2image)
+   8. [_gparted_ - Programa usado para criar partição, pode ser usado para clonar partição de forma muito simples e visual](#id_gparted)
+   9. [_mount_ - monta um sistema de arquivos](#id_mount)
   
 4. [**Comandos de Ajuda e Documentação**](#id_cmd_ajuda_documentacao)
 5. [**Comandos de Comunicações**](#id_comandos_comunicacoes)
@@ -103,19 +104,35 @@
    1. <span id='id_ls'></span> **_ls_ - O comando [_ls_](https://man7.org/linux/man-pages/man1/ls.1.html) é usado para listar arquivos ou diretórios (pastas):**
       1. Sintaxe: $ _ls -opções_
 
-            ```bash
-                # EXEMPLOS
+         ```bash
+               # EXEMPLOS
 
-                # Lista nome dos arquivos, nome dos links e nome das pastas em várias colunas
-                ls
+               # Lista nome dos arquivos, nome dos links e nome das pastas em várias colunas
+               ls
 
-                # Lista o atributos, nome do dono, nome do grupo, data, hora e nome do arquivo.
-                ls -l
+               # Lista o atributos, nome do dono, nome do grupo, data, hora e nome do arquivo.
+               ls -l
 
-            ```
+         ```
 
-      <!-- markdownlint-disable-next-line -->
-   2. <span id='id_cd'></span> **_cd_ - O comando [_cd_](https://man7.org/linux/man-pages/man1/cd.1p.html) é usado para mover-se entre os diretórios ou seja: sair de um diretório e ir para o destino passado pelo parâmetro:**
+   2. <!-- markdownlint-disable-next-line -->
+      <span id='id_which'></span>  [_which_ -  **Mostra o nome do aquivo e local (pasta) onde o arquivo foi localizado**](https://linux.die.net/man/1/which)
+      1. Sintaxe: $ _which nome_arquivo_no_path_
+
+         ```bash
+               # EXEMPLO
+
+               # Mostra o nome da pasta onde o jva está instalado.
+               which java
+               > /usr/lib/jvm/java-1.11.0-openjdk-amd64/bin/java
+               
+         ```
+
+         - **Nota**:
+           - Só procura nas pastas registrados em [/etc/environment](/etc/environment) ou [~/.bashrc](~/.bashrc).
+
+   3. <!-- markdownlint-disable-next-line -->
+      <span id='id_cd'></span> **_cd_ - O comando [_cd_](https://man7.org/linux/man-pages/man1/cd.1p.html) é usado para mover-se entre os diretórios ou seja: sair de um diretório e ir para o destino passado pelo parâmetro:**
       1. Sintaxe: _$ cd NomeDaPastaDestino_
 
             ```bash
@@ -134,7 +151,7 @@
             ```
 
       <!-- markdownlint-disable-next-line -->
-   3. <span id='id_ln'></span>**_ln_ - O comando _ln -s_ cria um links simbólico para simplificar o acesso a arquivos que estão com nome da pasta muito grande ou esteja em um hd diferente.**
+   4. <span id='id_ln'></span>**_ln_ - O comando _ln -s_ cria um links simbólico para simplificar o acesso a arquivos que estão com nome da pasta muito grande ou esteja em um hd diferente.**
       1. **Sintaxe:** _ln_ _-s_ _"target file"_ _"Symbolic filename"_
 
          ```bash
