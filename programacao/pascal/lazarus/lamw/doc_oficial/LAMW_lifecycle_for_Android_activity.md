@@ -1,0 +1,43 @@
+# LAMW lifecycle for Android activity 
+
+```txt
+
+    ---------------------------------------
+    |                                     |
+    | LAMW lifecycle for Android activity |
+    | ----------------------------------- |
+    ---------------------------------------
+
+    ReCreate  ------------------------------
+    Activity  | Activity                   |
+    |-------->|  Create  OnActivityCreate()|
+    |         ------------------------------
+    |               |
+    |              \|/
+    |         OnActivityReCreate() // Only main or splash module call this, if recreate activity
+    |               |
+    |              \|/
+    | |------>OnActivityResume()
+    | |             |
+    | |            \|/  
+    | |	   When the application is visible, automatic "updatelayout" of the main form
+    | |       ----------------------
+    | |       | ....Run LAMW App   |
+    | |       ----------------------
+    | |             |
+    | |            \|/
+    | |-------OnPause()
+    |               |
+    |              \|/
+    ----------OnStop()
+                    |
+                    \|/
+            OnDestroy()
+                    |
+                    \|/
+            -------------
+            | Activity  |
+            | Shut down |
+            -------------
+
+```
