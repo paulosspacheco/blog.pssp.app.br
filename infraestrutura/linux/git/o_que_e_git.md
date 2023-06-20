@@ -408,11 +408,11 @@
             <text onclick="goBack()">[🔙]</text>
 
       10. <!-- markdownlint-disable-next-line -->
-         <span id=id_assunto10></span>**Criando script para enviar as alterações para o github**
+      <span id=id_assunto10></span>**Criando script para enviar as alterações para o github**
          1. Criar um arquivo **pushmain.sh** e cole os comandos a baixo, em seguida de permissão de execução ao arquivo **pushmain.sh**:
 
             ```bash
-            
+
                #!/bin/bash
 
                # Texto com as mudanças que estão sendo realizada neste push.
