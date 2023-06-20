@@ -1,2 +1,0 @@
-# O QUE É O FRAMEWORK LAMW
-

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Como instalar e configurar LamW&lt;a href&equals;&quot;instalar&lowbar;econfigurar&lowbar;lamw&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;&#x279a;&lt;&sol;a&gt;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+</style>
+    </head>
+    <body class="vscode-body vscode-dark">
+        <!-- markdownlint-disable-next-line -->
+<h4 id="como-instalar-e-configurar-lamw">Como instalar e configurar LamW<a href="instalar_econfigurar_lamw.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">➚</a></h4>
+<ol>
+<li>
+<p><strong>Passo  a passo para instalar os pacote no Lazarus</strong></p>
+<ol>
+<li>
+<p>Baixar o projeto LamW do repositório github.</p>
+<ol>
+<li><a href="https://github.com/jmpessoa/lazandroidmodulewizard">Click aqui para download do projeto LamW</a></li>
+<li>Descompactar para a pasta <em><a href="/lazarus/components/lazandroidmodulewizard-master">/lazarus/components/lazandroidmodulewizard-master</a></em></li>
+</ol>
+</li>
+<li>
+<p>Instalar os pacotes na seguinte ordem:</p>
+<ol>
+<li><em>tfpandroidbridge_pack.lpk</em> (na pasta &quot;..../android_bridges&quot;);</li>
+<li><em>lazandroidwizardpack.lpk</em> (na pasta &quot;&quot;..../android_wizard&quot;);</li>
+<li><em>amw_ide_tools.lpk</em> (na pasta &quot;..../ide_tools&quot;)</li>
+</ol>
+</li>
+<li>
+<p>Se estiver no sistema operacional <em>windows</em> :</p>
+<ol>
+<li>
+<p>Baixar os fontes do projeto Free Pascal</p>
+<ol>
+<li><em><a href="https://gitlab.com/freepascal.org/fpc/source/-/archive/main/source-main.zip">Click aqui para download</a></em></li>
+<li>Descompactar na pasta <em><a href="/lazarus/components/free_pascal_source_main">/lazarus/components/lazandroidmodulewizard-master</a></em></li>
+</ol>
+</li>
+<li>
+<p>Execute o Lazarus e selecione a opção  <em>&quot;/Tools/[LAMW] Android Module Wizard/Build FPC Cross Android&quot;  e repita o processo &quot;Build and install&quot;</em> uma vez para cada arquitetura relacionada abaixo.</p>
+<ol class="contains-task-list">
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Armv7a + Soft (android 32 bits &lt;&lt;-- testado!)</p>
+<ol class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Construir</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Instalar</li>
+</ol>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Aarch64 (android 64 bits &lt;&lt;-- testado!)</p>
+<ol class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Construir</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Instalar</li>
+</ol>
+</li>
+<li>
+<p><strong>Notas</strong></p>
+<ol>
+<li>Depois de <em>build</em> e <em>install</em>&quot; os <em>cross-compilers</em>, executar os passos: infrastructure;</li>
+<li>Depois de executar os passos da infraestrutura, executar os teste conforme os passos: usando o LamW</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Se estiver no sistema operacional <em>Linux</em>:</p>
+<ol>
+<li>Instalar programa <a href="https://wiki.lazarus.freepascal.org/fpcupdeluxe"><em>fpCupeDeLuxe</em></a>
+<ol>
+<li>
+<p>Na aba <em>Cross/CPU</em> selecione o processador destino:</p>
+<ol>
+<li>32 bits
+<ol>
+<li>Processador <em>Armv7a</em></li>
+<li>etc..</li>
+</ol>
+</li>
+<li>64 bits
+<ol>
+<li>Processador <em>Aarch64</em></li>
+<li>etc..</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Na aba <em>Cross/OS</em> selecione o sistema operacional destino:</p>
+<ol>
+<li>Android</li>
+<li>etc...</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Passo a passo para instalar a infraestrutura android</strong>.</p>
+<ol>
+<li>
+<p>Instalar <a href="https://developer.android.com/studio?gclid=CjwKCAjw-b-kBhB-EiwA4fvKrEsTffVft6mg-eLbZ3JJYdnWSaD5gEdVKuKZHzXlifA0Up-MEt49ehoCd8kQAvD_BwE&amp;gclsrc=aw.ds">Android Studio</a></p>
+</li>
+<li>
+<p>Instalação de Pacotes necessário para o LamW:</p>
+<ol>
+<li>
+<p>Entrar no <em>Android Studio</em> e siga os passos do link a seguir:</p>
+<ol>
+<li><a href="https://developer.android.com/studio/projects/install-ndk?hl=pt-br#specific-version">Instalar uma versão específica do NDK</a></li>
+</ol>
+</li>
+<li>
+<p>CMake</p>
+<ol>
+<li>Instalar <em>CMake</em></li>
+<li><a href="https://developer.android.com/studio/projects/install-ndk?hl=pt-br#vanilla_cmake">Configurar uma versão específica do CMak</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Mensagem ao tentar atualizar a opção:</p>
+<pre><code class="hljs language-md">
+  Warning. Minimum Target API required by "Google Play Store" = 30
+  Please, update your android sdk/platforms folder!
+  How to:
+   .open a command line terminal and go to folder "sdk/tools/bin"
+   .run the command&gt; sdkmanager --update
+   .run the command&gt; sdkmanager "build-tools;30.0.2" "platforms;android-30"
+
+</code></pre>
+</li>
+<li>
+<p>Confirmar todas as licenças instaladas:</p>
+<pre><code class="hljs language-bash">   <span class="hljs-comment"># Na pasta /android-sdk/cmdline-tools executar e confirmar com yes </span>
+   sdkmanager --licenses
+
+</code></pre>
+</li>
+<li>
+<p>????</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Passo  a passo de como usar o LamW</strong>.</p>
+<ol>
+<li>????</li>
+</ol>
+</li>
+</ol>
+
+        
+        
+    </body>
+    </html>

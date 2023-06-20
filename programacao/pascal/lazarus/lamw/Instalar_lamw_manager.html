@@ -3,62 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <title>Como instalar LAMW Manager no linux</title>
-        <style>
-/* From extension vscode.github */
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
+   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-.vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
-	display: none;
-}
-
-/* From extension bierner.markdown-checkbox */
-.contains-task-list {
-    padding-left: 0;
-}
-
-.contains-task-list li {
-    margin-left: 24px;
-}
-
-.contains-task-list .task-list-item {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
-}
-
-.contains-task-list .contains-task-list {
-    padding-left: 20px;
-} 
-</style>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
-<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-<style>
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-                font-size: 14px;
-                line-height: 1.6;
-            }
-        </style>
-        <style>
-.task-list-item {
-    list-style-type: none;
-}
-
-.task-list-item-checkbox {
-    margin-left: -20px;
-    vertical-align: middle;
-    pointer-events: none;
-}
-</style>
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
         
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
     </head>
-    <body class="vscode-body vscode-light">
+    <body class="vscode-body vscode-dark">
         <h1 id="como-instalar-lamw-manager-no-linux">Como instalar LAMW Manager no linux</h1>
 <ol>
 <li>
@@ -81,16 +36,16 @@
 </li>
 <li>
 <p>Entre na pasta do arquivo <strong>lamw_manager_setup.sh</strong> e execute seguinte comando:</p>
-<pre><code class="language-sh">  <span class="hljs-comment"># Suponha que você queira instalar na pasta ~/lamw então:</span>
+<pre><code class="hljs language-sh">  <span class="hljs-comment"># Suponha que você queira instalar na pasta ~/lamw então:</span>
 
-  $ <span class="hljs-built_in">env</span> LOCAL_ROOT_LAMW=~/lamw bash lamw_manager_setup.sh -- --update-lamw 
+  $ env LOCAL_ROOT_LAMW=~/lamw bash lamw_manager_setup.sh -- --update-lamw 
 
 </code></pre>
 <ol>
 <li>Nota:
 <ol>
 <li>Vai demorar porque esse script instala muitas dependências.</li>
-<li>Mais informações de como executar o script <a href="https://github.com/dosza/LAMWManager-linux/blob/master/lamw_manager/docs/lamw_manager_setup.md">veja aqui...</a></li>
+<li>Mais informações de como executar o script <a href="https://github.com/dosza/LAMWManager-linux/blob/master/lamw_manager/docs/lamw_manager_setup.html">veja aqui...</a></li>
 </ol>
 </li>
 </ol>
@@ -100,7 +55,7 @@
 <li>
 <p>Após a instalação, executa a opção <strong>LAMW4Linux IDE</strong> do menu a opções do Linux;</p>
 <ol>
-<li>Com o Lazarus aberto siga esse <a href="https://github.com/jmpessoa/lazandroidmodulewizard/blob/master/docs/AppHelloWorld.md">esse passo a passo...</a>;</li>
+<li>Com o Lazarus aberto siga esse <a href="https://github.com/jmpessoa/lazandroidmodulewizard/blob/master/docs/AppHelloWorld.html">esse passo a passo...</a>;</li>
 </ol>
 </li>
 <li>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>how to create new components</title>
+   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <h1 id="how-to-create-new-components">how to create new components</h1>
+<ul>
+<li>&quot;LAMW: Lazarus Android Module Wizard&quot;
+<ul>
+<li>Author: Jose Marques Pessoa : jmpessoa__hotmail_com</li>
+<li><a href="https://github.com/jmpessoa/lazandroidmodulewizard">Repositório lazandroidmodulewizard</a></li>
+<li><a href="http://forum.lazarus.freepascal.org/index.php/topic,21919.0.html">Forum lamw</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="-how-to-create-lamw-jni-bridge-component-code">:: How to Create LAMW JNI Bridge Component code::</h2>
+<ol>
+<li>
+<p>LAMW Component Model:</p>
+<ul>
+<li>
+<p>::  jControl: No GUI Control</p>
+<ul>
+<li>hint: you can use composition or inheritance model here....</li>
+</ul>
+</li>
+<li>
+<p>::  jVisualControl: GUI Control</p>
+<ul>
+<li>warning:  you MUST use inheritance model here.....</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Creating a new component:</p>
+<ul>
+<li>
+<p>2.1. Right click Java tab:</p>
+</li>
+<li>
+<p>2.1. Insert a new [wrapper] Java or Kotlin class  jControl/jVisualControl from template;</p>
+<ul>
+<li>
+<p>hint1. Alternatively, you can paste you java or kotlin code [template compatible] from clipboard!</p>
+</li>
+<li>
+<p>hint2. Alternatively, you can import a &quot;JAR&quot; file and selec a class [at the moment, only for no visual  control]!</p>
+</li>
+<li>
+<p>hint3: You can also use the demo AppTryCode3 to produce a complete [wrapper]  java class (outdated.. sorry) !</p>
+</li>
+<li>
+<p>hint4. you do not need to build the &quot;perfect&quot; component just now .... later you can add more methods, events and properties! [sections 3 e 4 bellow]</p>
+</li>
+<li>
+<p>warning/important: All &quot;imports&quot; from &quot;Controls.java&quot; template  and new &quot;imports&quot; from your java/kotlin class code
+will  be researched to try write the correct JNI methods signatures.....</p>
+</li>
+</ul>
+</li>
+<li>
+<p>2.2. Rename [and extends] the new class [and constructor], write some custom field, methods, etc...</p>
+<ul>
+<li>
+<p>[for &quot;JAR&quot; imported class this task is automated! ]</p>
+</li>
+<li>
+<p>guideline: please, preferentially init your news params names with &quot;_&quot;, ex: int_flag, String_hello ...</p>
+</li>
+<li>
+<p>java hint1: Only public methods will be translated to pascal [bridge] code.</p>
+</li>
+<li>
+<p>java hint2:  use the  mask  /<em>.</em>/   to make a public method invisible for the parse [ex.  /<em>.</em>/public myfunctio() {....} ]</p>
+</li>
+</ul>
+</li>
+<li>
+<p>2.3. In the java tab, If have only only one java or kotlin class just right click it....</p>
+<ul>
+<li>hint1: if you have some java method signature like this:</li>
+<li>public String GetCurrentHotspotSSID() throws IllegalAccessException {..........}
+<ul>
+<li>Use only this part in code generation process  [warning: save your original java code...]:</li>
+</ul>
+</li>
+<li>public String GetCurrentHotspotSSID() {........}
+<ul>
+<li>note: the same is valid for Kotlin &quot;fun&quot;</li>
+</ul>
+</li>
+<li>hint2. save your java or kotlin class source code in LAMW folder &quot;......\android_wizard\smartdesigner\java&quot; :</li>
+<li>warning:
+<ul>
+<li>the  LAMW java/kotlin to pascal converter dont support complex/generic types like  &quot;java.util.Map&lt;,&gt;&quot; ,  &quot;java.util.Set&lt;&gt;&quot; etc..
+<ul>
+<li>So, you need re-write  the method signature [by hand] for primitives data/array type....</li>
+<li>But simple java/kotlin object param [or return]  is ok [including array!!!]!</li>
+</ul>
+</li>
+<li>example:
+<ul>
+<li>public void SetImage(Bitmap _image) {  //&lt;&lt;----  OK!
+<ul>
+<li>this.setImage(_image);}</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>public Bitmap GetImage(Bitmap _image) { //&lt;&lt;---- OK! return this.getImage(); }
+<ul>
+<li>warning/important: All &quot;imports&quot; from &quot;Controls.java&quot; template  and new</li>
+<li>&quot;imports&quot; from your java/kotlin class code will  be researched to try write the correct JNI methods signatures.....</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2.4. Popup Menu: Select &quot;Write [Draft] Pascal jControl/jVisualControl Interface&quot;.</p>
+</li>
+<li>
+<p>2.5. Right click &quot;Pascal&quot;  tab  and select &quot;Register Component...&quot; from  Popup Menu;</p>
+<ul>
+<li>warning: Mac users: please, you must copy the console app &quot;lazres&quot; [lazarus/tools] to the folder &quot;.../LazAndroidWizard/ide_tools&quot;;</li>
+</ul>
+</li>
+<li>
+<p>2.6. [Dialog]:  select a 16x16 PNG icon file;</p>
+</li>
+<li>
+<p>2.7.  [Dialog]:  open a &quot;register_*.pas&quot; file (ex. &quot;register_extra.pas&quot;); **</p>
+<ul>
+<li>hint: you can select &quot;register_template.pas&quot; to write a custom register file, but, then,  you must insert it into  &quot;tfpandroidbridge_pack.lpk&quot;.</li>
+</ul>
+</li>
+<li>
+<p>2.8. Ok. You got your DRAFT JNI pascal component stuff! Please, look in the folder   &quot;..../LazAndroidWizard/android_bridges&quot; directory:</p>
+<ul>
+<li>:: *.pas           &lt;--- open and fix/complete the generated pascal code with your others events/properties/methods/variables/overload,  etc..!</li>
+<li>:: *_icon.lrs    &lt;--- new icon resource</li>
+<li>:: register_extras.pas   &lt;--- by default, the new component will be included here...</li>
+</ul>
+</li>
+<li>
+<p>2.9. [Lazarus IDE Menu]: Package -&gt; Open Package File (*.lpk) --&gt; &quot;tfpandroidbridge_pack.pas&quot; in folder &quot;....../LazAndroidWizard/android_bridges&quot;.</p>
+</li>
+<li>
+<p>2.10. [Package Wizard]: Compile ---&gt;&gt; Use ---&gt; Install.</p>
+<ul>
+<li>Warning: to compile/install/reinstall a LAMW package in  Lazarus/Laz4Android [windows],please, open a &quot;dummy&quot; pure windows project.... you MUST always close the cross compile project!</li>
+</ul>
+</li>
+<li>
+<p>2.11. Wait .... Lazarus re-building ...</p>
+</li>
+<li>
+<p>2.12. The new component  is on &quot;Android Bridges Extra&quot;  or other Lazarus component palette...</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>
+<ol start="3">
+<li>Added more methods to your component</li>
+</ol>
+<ul>
+<li>
+<p>3.1.  write new method to  your &quot;.java&quot; our &quot;.kt&quot; code</p>
+<pre><code class="hljs language-java">
+     ex.
+           <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetFoo</span><span class="hljs-params">(<span class="hljs-keyword">int</span> _foo)</span> </span>{
+                 mFoo = foo;
+           }
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">GetFoo</span><span class="hljs-params">()</span> </span>{
+                  <span class="hljs-keyword">return</span> mFoo;
+            }
+
+      or:
+        
+           <span class="hljs-function">fun <span class="hljs-title">SetFoo</span><span class="hljs-params">(_foo: Int)</span>  </span>{
+                 mFoo = _foo;
+           }
+
+            <span class="hljs-function">fun <span class="hljs-title">GetFoo</span><span class="hljs-params">()</span>: Int </span>{
+                  <span class="hljs-keyword">return</span> mFoo;
+            }
+</code></pre>
+</li>
+<li>
+<p>3.1.  In java tab write a draft java or kotlin class code to wrapper the [new] methods;</p>
+<ul>
+<li>
+<p>ex</p>
+<pre><code class="hljs language-java">
+     <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">jMyComponent</span> </span>{
+
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetFoo</span><span class="hljs-params">(<span class="hljs-keyword">int</span> _foo)</span> </span>{
+                 mFoo = _foo;
+         }
+             <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">GetFoo</span><span class="hljs-params">()</span> </span>{
+                 <span class="hljs-keyword">return</span> mFoo;
+             } 
+     }   
+</code></pre>
+</li>
+<li>
+<p>or kotlin:  append a pair &quot;()&quot; after the class name!</p>
+<pre><code class="hljs language-java">   <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">jMyComponent</span>()  </span>{
+
+         <span class="hljs-function">fun <span class="hljs-title">SetFoo</span><span class="hljs-params">(_foo: Int)</span>  </span>{
+               mFoo = _foo;
+         }
+
+          <span class="hljs-function">fun <span class="hljs-title">GetFoo</span><span class="hljs-params">()</span>: Int </span>{
+                <span class="hljs-keyword">return</span> mFoo;
+          } 
+  }
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>3.2   Right click the Java tab and select &quot;Write [draft] complementary Pascal Interface&quot;</p>
+</li>
+<li>
+<p>3.4   Copy the the pascal interface code to your component unit!!!</p>
+</li>
+</ul>
+</li>
+<li>
+<ol start="2">
+<li>Added &quot;native&quot; [events] methods to your component</li>
+</ol>
+<ul>
+<li>
+<p>4.1.  write the native method &quot;call&quot; to to  your &quot;.java&quot; or &quot;.kt&quot; code    [study some LAMW code as example!]</p>
+<ul>
+<li>
+<p>ex1:   [from jSpinner.java]</p>
+<pre><code class="hljs language-java">
+  controls.pOnSpinnerItemSelected(pascalObj,position,caption);   <span class="hljs-comment">//return void</span>
+
+</code></pre>
+</li>
+<li>
+<p>ex2: [fiction...]</p>
+<pre><code class="hljs language-java">
+  <span class="hljs-keyword">int</span>  i = controls.pOnSpinnerItemSelected(pascalObj,position,caption); <span class="hljs-comment">//Return int</span>
+
+</code></pre>
+</li>
+<li>
+<p>ex3:   [fiction...]</p>
+<pre><code class="hljs language-java">
+  <span class="hljs-keyword">int</span>[] v;
+      v = controls.pOnSpinnerItemSelected(pascalObj,position,caption);   <span class="hljs-comment">//return int[]      </span>
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; v.length; i++) {
+          <span class="hljs-comment">//Log.i("v["+i+"]", ""+v[i]);     //do some use...</span>
+      }          
+</code></pre>
+</li>
+<li>
+<p>ex4:   [fiction...]</p>
+<pre><code class="hljs language-java">
+  String[] s;
+      s = controls.pOnSpinnerItemSelected(pascalObj,position,caption);   <span class="hljs-comment">//return String[]                </span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.length; i++) {
+          <span class="hljs-comment">//Log.i("s["+i+"]", ""+s[i]);     //do some use...</span>
+      }          
+
+      note:  <span class="hljs-string">"controls"</span> is the LAWM object/<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">that</span> <span class="hljs-title">handle</span> <span class="hljs-title">native</span> <span class="hljs-title">methods</span> <span class="hljs-title">for</span> <span class="hljs-title">your</span> <span class="hljs-title">component</span>..... 
+</span></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>4.2. write the native method signature to your [component] in  &quot;*.native&quot; file  [study some LAMW code as example!]</p>
+<ul>
+<li>
+<p>ex1.  [from jSpinner.native]</p>
+<pre><code class="hljs language-java">
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">native</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pOnSpinnerItemSelected</span><span class="hljs-params">(<span class="hljs-keyword">long</span> pasobj, <span class="hljs-keyword">int</span> position, String caption)</span></span>;
+</code></pre>
+</li>
+<li>
+<p>ex2.    [fiction...]</p>
+<pre><code class="hljs language-java">
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">native</span> <span class="hljs-keyword">int</span> <span class="hljs-title">pOnSpinnerItemSelected</span><span class="hljs-params">(<span class="hljs-keyword">long</span> pasobj, <span class="hljs-keyword">int</span> position, String caption)</span></span>;
+</code></pre>
+</li>
+<li>
+<p>ex3.    [fiction...]</p>
+<pre><code class="hljs language-java">
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">native</span> <span class="hljs-keyword">int</span>[] pOnSpinnerItemSelected(<span class="hljs-keyword">long</span> pasobj, <span class="hljs-keyword">int</span> position, String caption);
+</code></pre>
+</li>
+<li>
+<p>ex4.    [fiction...]</p>
+<pre><code class="hljs language-java">
+   <span class="hljs-keyword">public</span> <span class="hljs-keyword">native</span> String[] pOnSpinnerItemSelected(<span class="hljs-keyword">long</span> pasobj, <span class="hljs-keyword">int</span> position, String caption);
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>4.3.  In &quot;java tab&quot; form write a draft/dummy class code to wrapper the natives methods using &quot;java&quot; sintaxe.....  even if you are coding a kotlin class !</p>
+<pre><code class="hljs language-java">
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">jMyComponent</span> </span>{
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">native</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pOnMyComponentItemSelected</span><span class="hljs-params">(<span class="hljs-keyword">long</span> pasobj, <span class="hljs-keyword">int</span> position, String caption)</span></span>; <span class="hljs-comment">//MyComponent</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">native</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pOnMyComponentItemRemoved</span><span class="hljs-params">(<span class="hljs-keyword">long</span> pasobj, <span class="hljs-keyword">int</span> position)</span></span>; <span class="hljs-comment">//MyComponent</span>
+
+    }                 
+</code></pre>
+<ul>
+<li>
+<p>NOTE1: the  &quot;//MyComponent&quot; signs the part of the method name that will be overshadowed in the nomination of the property.</p>
+<pre><code class="hljs language-java">
+  <span class="hljs-comment">// ex. </span>
+   FOnItemSelected   [ not FOnMyComponentItemSelected  ]
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>4.4   Right click the Java tab and select &quot;Write [draft] complementary Native Method Pascal Interface&quot;</p>
+</li>
+<li>
+<p>4.5   Copy the the pascal interface code [generated] to your pascal component unit [mycomponent.pas] and to &quot;Laz_And_Controls_Events.pas&quot;!!!</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Congratulations!!!</p>
+<ul>
+<li>Thank you!</li>
+</ul>
+</li>
+<li>
+<p>//simple java code example for simple test...:</p>
+<pre><code class="hljs language-java">
+     <span class="hljs-comment">/* jControl template example: */</span> 
+     <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">jMyHello</span> /*<span class="hljs-keyword">extends</span> ...*/ </span>{         
+
+         <span class="hljs-keyword">private</span> <span class="hljs-keyword">long</span>     pascalObj = <span class="hljs-number">0</span>;      <span class="hljs-comment">// Pascal Object</span>
+         <span class="hljs-keyword">private</span> Controls controls  = <span class="hljs-keyword">null</span>;   <span class="hljs-comment">// Control Class for events</span>
+         <span class="hljs-keyword">private</span> Context  context   = <span class="hljs-keyword">null</span>;
+
+         <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> mFlag;           <span class="hljs-comment">// &lt;&lt;----- my custom field</span>
+         <span class="hljs-keyword">private</span> String mHello;       <span class="hljs-comment">// &lt;&lt;----- my custom field </span>
+         <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] mBufArray;     <span class="hljs-comment">// &lt;&lt;----- my custom field </span>
+
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">jMyHello</span><span class="hljs-params">(Controls contrls, <span class="hljs-keyword">long</span> Self, <span class="hljs-keyword">int</span> _flag, String _hello)</span> </span>{ <span class="hljs-comment">//Add more params if needed [preferentially init your new param name with "_", ex: int _flag, String _hello]!</span>
+
+         <span class="hljs-comment">//super(contrls.activity);</span>
+
+         context   = contrls.activity;
+         pascalObj = Self;
+         controls  = contrls;
+
+         mFlag = _flag;  
+         mhello = _hello;
+         mBufArray = nul;
+
+     }
+
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">jFree</span><span class="hljs-params">()</span> </span>{
+     <span class="hljs-comment">//free local objects...</span>
+     mBufArray = nul;
+     }
+
+
+     <span class="hljs-comment">//write others [public] methods code here...... &lt;&lt;----- customs methods</span>
+
+     <span class="hljs-comment">//Warning: please, preferentially init your news params names with "_", ex: int _flag, String _hello ...</span>
+
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetFlag</span><span class="hljs-params">(<span class="hljs-keyword">int</span> _flag)</span> </span>{ <span class="hljs-comment">// &lt;&lt;----- my custom method</span>
+         mFlag =  _flag;   
+     }
+
+     <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> GetFlag { <span class="hljs-comment">// &lt;&lt;----- my custom method</span>
+         <span class="hljs-keyword">return</span> mFlag;   
+     }
+
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetHello</span><span class="hljs-params">(String _hello)</span> </span>{ <span class="hljs-comment">// &lt;&lt;----- my custom method</span>
+         mHello =  _hello;   
+     }
+
+     <span class="hljs-keyword">public</span> String getHello {<span class="hljs-comment">// &lt;&lt;----- my custom method</span>
+         <span class="hljs-keyword">return</span> mHello;   
+     }
+
+
+     <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] GetSumIntArray(<span class="hljs-keyword">int</span>[] _v1, <span class="hljs-keyword">int</span>[] _v2, <span class="hljs-keyword">int</span> _size) {<span class="hljs-comment">// &lt;&lt;----- my custom method</span>
+
+         mBufArray[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[_size];
+
+         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>, i &lt; size, i++) {
+         mBufArray[i] = _v1[i] + _v2[i];
+         }
+
+         <span class="hljs-keyword">return</span> mBufArray;
+     }
+
+
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ShowHello</span><span class="hljs-params">()</span> </span>{ <span class="hljs-comment">// &lt;&lt;----- my custom method</span>
+
+         Toast.makeText(controls.activity, mHello, Toast.LENGTH_SHORT).show();
+
+         }
+
+     }
+
+</code></pre>
+</li>
+</ul>
+
+        
+        
+    </body>
+    </html>

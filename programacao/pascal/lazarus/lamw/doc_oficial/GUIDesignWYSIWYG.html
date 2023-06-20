@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GUI Design WYSIWYG</title>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <!-- markdownlint-disable-next-line -->
+<h1 id="gui-design-wysiwyg">GUI Design WYSIWYG</h1>
+<pre><code class="hljs">  (by &quot;Ahmad Bohloolbandi&quot; a.k.a. &quot;developing&quot;)
+</code></pre>
+<p><a href="https://github.com/jmpessoa/lazandroidmodulewizard"><img src="https://i.imgur.com/eAIuo9U.png" alt="N|Solid"></a></p>
+<h2 id="how-to-design-a-gui-layout-that-shown-same-in-real-device">How to design a GUI layout that shown same in real device?</h2>
+<ul>
+<li>
+<p>For visual components onfigure these properties:</p>
+<pre><code class="hljs">  Anchor 
+  PosRelativeToParent 
+  PosRelativeToAnchor 
+  LayoutParamHeight
+  LayoutParamWhidth 
+</code></pre>
+</li>
+<li>
+<p><strong>Example</strong></p>
+<ul>
+<li>
+<p>1 -  Put a  <strong>jTextView</strong> component on LAMW Form and set properties:</p>
+<pre><code class="hljs">  PosRelativeToParent
+     rpCenterHorizontal = [True]
+     rpTop = [True]
+  Text = GUI Design WYSIWYG   
+     
+  (Because only Position Relative to Parent(form) is need to localize jTextView1)
+</code></pre>
+</li>
+<li>
+<p>2 - Put a <strong>jEditText</strong> component on LAMW Form and set properties:</p>
+<pre><code class="hljs">  Anchor = jTextView1
+  LayoutParamWidth = lpTwoThirdOfParent
+  PosRelativeToAnchor
+     raBelow = [True]
+  PosRelativeToParent
+     rpCenterHorizontal = [True]
+  Text = Ok
+
+  (Because we want it to be bellow the jTextView1)
+</code></pre>
+</li>
+<li>
+<p>3 - Put a <strong>jButton</strong> component on LAMW Form and set properties:</p>
+<pre><code class="hljs">  Anchor = jEditText1
+  LayoutParamWidth = lpTwoThirdOfParent 
+  PosRelativeToAnchor
+     raBelow = [True]
+  PosRelativeToParent
+     rpCenterHorizontal = [True]
+  Text = Sample    
+
+  (Because we want it to be bellow the jEditText1)
+</code></pre>
+</li>
+<li>
+<p>4 - Hint:</p>
+<pre><code class="hljs">   To Change width/height of a visual component you should 
+   configure LayoutParamWhidth and LayoutParamHeight!
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="others-references">Others references...</h3>
+<h5 id="tutorial-my-first-hello-word-app"><a href="https://github.com/jmpessoa/lazandroidmodulewizard/blob/master/docs/AppHelloWorld.html">Tutorial: My First &quot;Hello Word&quot; App</a></h5>
+<h5 id="multi-form-demo"><a href="https://github.com/jmpessoa/lazandroidmodulewizard/tree/master/demos/GUI/AppTest1">Multi-Form demo</a></h5>
+<h5 id="all-gui-demos"><a href="https://github.com/jmpessoa/lazandroidmodulewizard/tree/master/demos/GUI">All GUI demos</a></h5>
+
+        
+        
+    </body>
+    </html>

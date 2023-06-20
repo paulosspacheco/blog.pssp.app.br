@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tutorial&colon; How to get your &quot;signed&quot; release Apk&colon; &quot;AppLAMWProject1&quot;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- CSS markdown -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+        
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <h1 id="tutorial-how-to-get-your-signed-release-apk-applamwproject1">Tutorial: How to get your &quot;signed&quot; release Apk: &quot;AppLAMWProject1&quot;</h1>
+<ul>
+<li>
+<ol>
+<li>Edit/change the project file &quot;keytool_input.txt&quot; to more representative informations:&quot;</li>
+</ol>
+<ul>
+<li>.Your keystore password [--ks-pass pass] : 123456</li>
+<li>.Re-enter/confirm the keystore password: 123456</li>
+<li>.Your first and last name: MyFirstName MyLastName</li>
+<li>.Your Organizational unit: MyDevelopmentUnit</li>
+<li>.Your Organization name: MyCompany</li>
+<li>.Your City or Locality: MyCity</li>
+<li>.Your State or Province: MT</li>
+<li>.The two-letter country code: BR</li>
+<li>.All correct: y</li>
+<li>.Your key password for this Apk alias [--key-pass pass]: 123456</li>
+</ul>
+</li>
+<li>
+<ol start="2">
+<li>If you are using &quot;Ant&quot; then edit/change &quot;ant.properties&quot; according, too!</li>
+</ol>
+<ul>
+<li>
+<ol>
+<li>Execute the [project] command &quot;release-keystore.bat&quot; or &quot;<a href="http://release-keystore.sh">release-keystore.sh</a>&quot; or &quot;<a href="http://release-keystore-macos.sh">release-keystore-macos.sh</a>&quot; to get the &quot;applamwproject1-release.keystore&quot;</li>
+</ol>
+<ul>
+<li>warning: the file &quot;applamwproject1-release.keystore&quot; should be created only</li>
+<li>once [per application] otherwise it will fail [and NEVER delete it!]</li>
+</ul>
+</li>
+<li>
+<ol>
+<li>[Gradle]: Edit/change the values [123456] &quot;--ks-pass pass:&quot; and &quot;--key-pass pass:&quot; in project file &quot;gradle-local-apksigner.bat&quot; [or .sh]  according &quot;keytool_input.txt&quot; file</li>
+</ol>
+<ul>
+<li>
+<p>Edit/change the values [123456] &quot;--ks-pass pass:&quot; and &quot;--key-pass pass:&quot; in project file &quot;gradle-local-universal-apksigner.bat&quot; [or .sh]  according &quot;keytool_input.txt&quot; file</p>
+</li>
+<li>
+<ol>
+<li>[Gradle]: Execute the [project] command &quot;gradle-local-apksigner.bat&quot; [.sh] to get the [release] signed Apk!
+OR execute &quot;gradle-local-universal-apksigner.bat&quot; [.sh] if your are supporting multi-architecture (ex.: armeabi-v7a + arm64-v8a + ...)
+hint: look for your generated &quot;AppLAMWProject1-release.apk&quot; in [project] folder &quot;...\build\outputs\apk\release&quot;</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ol start="6">
+<li>[Ant]: Execute the [project] command &quot;ant-build-release.bat&quot; [.sh] to get the [release] signed Apk!&quot;</li>
+</ol>
+<ul>
+<li>hint: look for your generated &quot;AppLAMWProject1-release.apk&quot; in [project] folder ...\bin&quot;</li>
+</ul>
+</li>
+<li>
+<p>Success! You can now upload your nice &quot;AppLAMWProject1-release.apk&quot; to &quot;Google Play&quot; [or others stores...]!</p>
+</li>
+<li>
+<p>....  Thanks to All!</p>
+</li>
+<li>
+<p>....  Special thanks to ADiV/TR3E!</p>
+</li>
+<li>
+<p>....  by jmpessoa_hotmail_com</p>
+</li>
+</ul>
+<pre><code class="hljs language-css">
+    &lt;<span class="hljs-selector-tag">style</span>&gt;
+    <span class="hljs-comment">/*From extension vscode.github*/</span>
+
+    <span class="hljs-comment">/*---------------------------------------------------------------------*/</span>
+    <span class="hljs-selector-tag">Copyright</span> (<span class="hljs-selector-tag">c</span>) <span class="hljs-selector-tag">Microsoft</span> <span class="hljs-selector-tag">Corporation</span>. <span class="hljs-selector-tag">All</span> <span class="hljs-selector-tag">rights</span> <span class="hljs-selector-tag">reserved</span>.
+    <span class="hljs-selector-tag">Licensed</span> <span class="hljs-selector-tag">under</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">MIT</span> <span class="hljs-selector-tag">License</span>. <span class="hljs-selector-tag">See</span> <span class="hljs-selector-tag">License</span><span class="hljs-selector-class">.txt</span> <span class="hljs-selector-tag">in</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">project</span> <span class="hljs-selector-tag">root</span> <span class="hljs-selector-tag">for</span> <span class="hljs-selector-tag">license</span> <span class="hljs-selector-tag">information</span>.
+    <span class="hljs-comment">/*---------------------------------------------------------------------*/</span>
+
+
+    <span class="hljs-selector-class">.vscode-dark</span> <span class="hljs-selector-tag">img</span><span class="hljs-selector-attr">[src$=\#gh-light-mode-only]</span>,
+    <span class="hljs-selector-class">.vscode-light</span> <span class="hljs-selector-tag">img</span><span class="hljs-selector-attr">[src$=\#gh-dark-mode-only]</span> {
+        <span class="hljs-attribute">display</span>: none;   
+    }
+
+
+    <span class="hljs-comment">/* From extension bierner.markdown-checkbox */</span>
+    <span class="hljs-selector-class">.contains-task-list</span> {
+        <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>;
+    }
+
+    <span class="hljs-selector-class">.contains-task-list</span> <span class="hljs-selector-tag">li</span> {
+        <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">24px</span>;
+    }
+
+    <span class="hljs-selector-class">.contains-task-list</span> <span class="hljs-selector-class">.task-list-item</span> {
+        <span class="hljs-attribute">list-style</span>: none;
+        <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>;
+        <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">0</span>;
+    }
+
+    <span class="hljs-selector-class">.contains-task-list</span> <span class="hljs-selector-class">.contains-task-list</span> {
+        <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">20px</span>;
+    } 
+    
+
+    <span class="hljs-comment">/* From extension davidmwhynot.markdown-higlightjs */</span>
+    <span class="hljs-comment">/*
+
+    - Atom One Dark by Daniel Gamage
+    - Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+
+    base:    #282c34
+    mono-1:  #abb2bf
+    mono-2:  #818896
+    mono-3:  #5c6370
+    hue-1:   #56b6c2
+    hue-2:   #61aeee
+    hue-3:   #c678dd
+    hue-4:   #98c379
+    hue-5:   #e06c75
+    hue-5-2: #be5046
+    hue-6:   #d19a66
+    hue-6-2: #e6c07b
+
+    */</span>
+
+    <span class="hljs-selector-class">.hljs</span> {
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">overflow-x</span>: auto;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0.5em</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#abb2bf</span>;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#282c34</span>;
+    }
+
+    <span class="hljs-selector-class">.hljs-comment</span>,
+    <span class="hljs-selector-class">.hljs-quote</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#5c6370</span>;
+    <span class="hljs-attribute">font-style</span>: italic;
+    }
+
+    <span class="hljs-selector-class">.hljs-doctag</span>,
+    <span class="hljs-selector-class">.hljs-keyword</span>,
+    <span class="hljs-selector-class">.hljs-formula</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#c678dd</span>;
+    }
+
+    <span class="hljs-selector-class">.hljs-section</span>,
+    <span class="hljs-selector-class">.hljs-name</span>,
+    <span class="hljs-selector-class">.hljs-selector-tag</span>,
+    <span class="hljs-selector-class">.hljs-deletion</span>,
+    <span class="hljs-selector-class">.hljs-subst</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#e06c75</span>;
+    }
+
+    <span class="hljs-selector-class">.hljs-literal</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#56b6c2</span>;
+    }
+
+    <span class="hljs-selector-class">.hljs-string</span>,
+    <span class="hljs-selector-class">.hljs-regexp</span>,
+    <span class="hljs-selector-class">.hljs-addition</span>,
+    <span class="hljs-selector-class">.hljs-attribute</span>,
+    <span class="hljs-selector-class">.hljs-meta-string</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#98c379</span>;
+    }
+
+    <span class="hljs-selector-class">.hljs-built_in</span>,
+    <span class="hljs-selector-class">.hljs-class</span> <span class="hljs-selector-class">.hljs-title</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#e6c07b</span>;
+    }
+
+    <span class="hljs-selector-class">.hljs-attr</span>,
+    <span class="hljs-selector-class">.hljs-variable</span>,
+    <span class="hljs-selector-class">.hljs-template-variable</span>,
+    <span class="hljs-selector-class">.hljs-type</span>,
+    <span class="hljs-selector-class">.hljs-selector-class</span>,
+    <span class="hljs-selector-class">.hljs-selector-attr</span>,
+    <span class="hljs-selector-class">.hljs-selector-pseudo</span>,
+    <span class="hljs-selector-class">.hljs-number</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#d19a66</span>;
+    }
+
+    <span class="hljs-selector-class">.hljs-symbol</span>,
+    <span class="hljs-selector-class">.hljs-bullet</span>,
+    <span class="hljs-selector-class">.hljs-link</span>,
+    <span class="hljs-selector-class">.hljs-meta</span>,
+    <span class="hljs-selector-class">.hljs-selector-id</span>,
+    <span class="hljs-selector-class">.hljs-title</span> {
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#61aeee</span>;
+    }
+
+    <span class="hljs-selector-class">.hljs-emphasis</span> {
+    <span class="hljs-attribute">font-style</span>: italic;
+    }
+
+    <span class="hljs-selector-class">.hljs-strong</span> {
+    <span class="hljs-attribute">font-weight</span>: bold;
+    }
+
+    <span class="hljs-selector-class">.hljs-link</span> {
+    <span class="hljs-attribute">text-decoration</span>: underline;
+    }
+
+    &lt;/<span class="hljs-selector-tag">style</span>&gt;
+            
+            
+            &lt;<span class="hljs-selector-tag">style</span>&gt;
+    <span class="hljs-selector-class">.task-list-item</span> {
+        <span class="hljs-attribute">list-style-type</span>: none;
+    }
+
+    <span class="hljs-selector-class">.task-list-item-checkbox</span> {
+        <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">20px</span>;
+        <span class="hljs-attribute">vertical-align</span>: middle;
+        <span class="hljs-attribute">pointer-events</span>: none;
+    }
+    &lt;/<span class="hljs-selector-tag">style</span>&gt;
+&lt;<span class="hljs-selector-tag">style</span>&gt;
+
+</code></pre>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>
