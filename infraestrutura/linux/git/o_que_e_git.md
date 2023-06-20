@@ -36,7 +36,7 @@
 ## **2. CONTEÚDO**
 
 ---
-
+   <!-- markdownlint-disable-next-line -->
    1. <span id="id_resumo"><span>**Resumo do conteúdo:**
       1. O projeto github permite publicar documentos na nuvem de forma gratuita deste que o documento possa ser compartilhado com o público e o arquivo não seja maior que 50 megas.
       2. **PASSO A PASSO**:
@@ -50,29 +50,39 @@
 
    2. **Introdução**
 
-      1. <span id="id_objetivo"><span>**Objetivo:**
+      1. <!-- markdownlint-disable-next-line -->
+         <span id="id_objetivo"><span>**Objetivo:**
          1. O git é um programa criado por **Linus Torvalds** cujo objetivo de controlar as versões de múltiplos documentos, podendo ser programas de computador ou outro documento qualquer digital.
          2. O objetivo principal é poder compartilhar as alterações criadas por vários programadores e um administrador fica responsável pelo merge de todas as versões para produzir uma versão única com todas as alterações.
 
-         3. <text onclick="goBack()">[🔙]</text>
+         3. <!-- markdownlint-disable-next-line -->
+            <text onclick="goBack()">[🔙]</text>
 
-      2. <span id="id_pre_requisitos"></span>**Pre-requisitos:**
+      2. <!-- markdownlint-disable-next-line -->
+         <span id="id_pre_requisitos"></span>**Pre-requisitos:**
          1. Sistema operacional Linux ou windows com uma versão acima de 2003 instalado.
 
-         2. <text onclick="goBack()">[🔙]</text>
+         2. <!-- markdownlint-disable-next-line -->
+            <text onclick="goBack()">[🔙]</text>
 
-      3. <span id="id_beneficios"></span>**Benefícios:**
+      3. <!-- markdownlint-disable-next-line -->
+         <span id="id_beneficios"></span>**Benefícios:**
          1. Espero poder controlar as versões dos produtos que forem produzidos de hoje em diante, bem como voltar no tempo caso seja necessário.
 
-         2. <text onclick="goBack()">[🔙]</text>
+         2. <!-- markdownlint-disable-next-line -->
+            <text onclick="goBack()">[🔙]</text>
 
-      4. <span id="id_desvantagens"></span>**Desvantagens**.
+      4. <!-- markdownlint-disable-next-line -->
+         <span id="id_desvantagens"></span>**Desvantagens**.
          1. Não sei ainda....
 
-         2. <text onclick="goBack()">[🔙]</text>
+         2. <!-- markdownlint-disable-next-line -->
+           <text onclick="goBack()">[🔙]</text>
 
-   3. <span id=id_Conteudo></span>**Conteúdo estudado**
-      1. <span id=id_install></span>**Instalando git no linux e derivados do debian**
+   3. <!-- markdownlint-disable-next-line -->
+      <span id=id_Conteudo></span>**Conteúdo estudado**
+      1. <!-- markdownlint-disable-next-line -->
+         <span id=id_install></span>**Instalando git no linux e derivados do debian**
          1. Para instalar no linux distribuição baseada em Debian como o Ubuntu, Linux Mint, etc use o apt-get:.
 
                ```sh
@@ -97,9 +107,11 @@
 
                ```
 
-         4. <text onclick="goBack()">[🔙]</text>
+         4. <!-- markdownlint-disable-next-line -->
+            <text onclick="goBack()">[🔙]</text>
 
-      2. <span id=id_assunto02></span>**Criando repositório git**
+      2. <!-- markdownlint-disable-next-line -->
+         <span id=id_assunto02></span>**Criando repositório git**
          1. Use o comando **git init** para criar o repositório na pasta atual.
             1. Exemplo:
 
@@ -124,9 +136,11 @@
             1. [Crie um repositório](https://githowto.com/pt-BR/create_a_project)
             2. [Como mover/separar a pasta .git da sua árvore de trabalho](https://rakhesh.com/coding/how-to-move-separate-the-git-folder-out-of-your-working-tree/)
 
-         4. <text onclick="goBack()">[🔙]</text>
+         4. <!-- markdownlint-disable-next-line -->
+            <text onclick="goBack()">[🔙]</text>
 
-      3. <span id=id_assunto03></span>**Adicionando documento ao repositório local ou remoto se estiver configurado**
+      3. <!-- markdownlint-disable-next-line -->
+         <span id=id_assunto03></span>**Adicionando documento ao repositório local ou remoto se estiver configurado**
          1. Suponha você queira adicionar todo o conteúdo na pasta corrente  \*.\*  ao repositório então:
             1. Código sh
 
@@ -154,9 +168,11 @@
             2. [https://git-scm.com/docs/git/en](https://git-scm.com/docs/git/pt_BR)
             3. [git init](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init#:~:text=The%20git%20init%20command%20creates,run%20in%20a%20new%20project.)
 
-         3. <text onclick="goBack()">[🔙]</text>
+         3. <!-- markdownlint-disable-next-line -->
+            <text onclick="goBack()">[🔙]</text>
 
-      4. <span id=id_assunto04></span>**Listando o status do repositório**
+      4. <!-- markdownlint-disable-next-line -->
+         <span id=id_assunto04></span>**Listando o status do repositório**
          1. Use o comando **git status** para checar o estado atual do repositório.
             1. Código shell
 
@@ -172,9 +188,11 @@
          2. **Referências:**
             1. [Status do repositório](https://githowto.com/pt-BR/checking_status)
 
-         3. <text onclick="goBack()">[🔙]</text>
+         3. <!-- markdownlint-disable-next-line -->
+            <text onclick="goBack()">[🔙]</text>
 
-      5. <span id=id_assunto05></span>**Adicionando modificações ao repositório**
+      5. <!-- markdownlint-disable-next-line -->
+         <span id=id_assunto05></span>**Adicionando modificações ao repositório**
          1. Altere qualquer coisa no arquivo **index.html**, em seguida execute os comandos abaixo:
             1. Código sh
 
@@ -195,9 +213,11 @@
             1. [Adicionando modificações](https://githowto.com/pt-BR/staging_changes)
             2. [Exemplo de várias alterações e vários commits](https://githowto.com/pt-BR/changes_not_files)
 
-         3. <text onclick="goBack()">[🔙]</text>
+         3. <!-- markdownlint-disable-next-line -->
+            <text onclick="goBack()">[🔙]</text>
 
-      6. <span id=id_assunto06></span>**Ignorando arquivos no repositório git**
+      6. <!-- markdownlint-disable-next-line -->
+         <span id=id_assunto06></span>**Ignorando arquivos no repositório git**
          1. Você pode criar um arquivo [**.gitignore**](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files) no diretório raiz do seu repositório para informar ao **Git** quais arquivos e diretórios ignorar ao fazer um commit. Para compartilhar as regras de ignorar com outros usuários que clonam o repositório, envie o arquivo **.gitignore** para o seu repositório.
          2. Exemplo de arquivo **.gitignore**.
             1. .gitignore
@@ -223,9 +243,11 @@
             1. [Configurando arquivos ignorados para um único repositório](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files)
             2. [Uma coleção de **.gitignore** modelos](https://github.com/github/gitignore)
 
-         4. <text onclick="goBack()">[🔙]</text>
+         4. <!-- markdownlint-disable-next-line -->
+            <text onclick="goBack()">[🔙]</text>
 
-      7. <span id=id_assunto07></span>**Configurando git para enviar para o github**
+      7. <!-- markdownlint-disable-next-line -->
+         <span id=id_assunto07></span>**Configurando git para enviar para o github**
          1. Para [conectar-se ao github.com](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) é necessário criar um chave do protocolo SSH (Secure Shell Protocol), que fornece um canal seguro em uma rede não segura da seguinte forma:
 
                ```sh
@@ -334,9 +356,11 @@
             8. [Verificando as chaves SSH existentes](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
             9. [Configurando arquivos ignorados para todos os repositórios em seu computador](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files).
 
-         6. <text onclick="goBack()">[🔙]</text>
+         6. <!-- markdownlint-disable-next-line -->
+            <text onclick="goBack()">[🔙]</text>
 
-      8. <span id=id_assunto08></span>**Clonando repositório no  github**
+      8. <!-- markdownlint-disable-next-line -->
+         <span id=id_assunto08></span>**Clonando repositório no  github**
          1. **Eureca!!!** a forma mais prática que encontrei para usar o github e vscode foi:
             1. No vscode instalei a extensão [**GitLens — Git supercharged**](https://learn.microsoft.com/pt-br/shows/vs-code-livestreams/10-things-about-gitlens)
                1. Essa extensão habilita o vscode a reconhecer o repositório remoto.
@@ -359,96 +383,74 @@
 
             5. Execute o script [**pushmain.sh**](./pushmain.sh)
 
-            6. <text onclick="goBack()">[🔙]</text>
+            6. <!-- markdownlint-disable-next-line -->
+               <text onclick="goBack()">[🔙]</text>
 
-      9. <span id=id_assunto09></span>**Verificando o status atual do projeto.**
-          1. O git status comando exibe o estado do diretório de trabalho e da área de preparação. Ele permite que você veja quais alterações foram testadas, quais não foram e quais arquivos não estão sendo rastreados pelo Git. A saída de status não mostra nenhuma informação sobre o histórico do projeto confirmado. Para isso, você precisa usar o comando  **git log**
+      9. <!-- markdownlint-disable-next-line -->
+         <span id=id_assunto09></span>**Verificando o status atual do projeto.**
+         1. O git status comando exibe o estado do diretório de trabalho e da área de preparação. Ele permite que você veja quais alterações foram testadas, quais não foram e quais arquivos não estão sendo rastreados pelo Git. A saída de status não mostra nenhuma informação sobre o histórico do projeto confirmado. Para isso, você precisa usar o comando  **git log**
              1. Exemplo de  uso:
 
-              ```sh
+                ```sh
 
-                # Na pasta do repositório executar comando:  
-                git status
-             
-               ```
-
-          2. Exemplo do comando **status** atual do projeto..
-
-          3. **Referências:**
-             1. [Git Status: inspecionando um repositório](https://www.atlassian.com/git/tutorials/inspecting-a-repository#:~:text=The%20git%20status%20command%20displays,regarding%20the%20committed%20project%20history.)
-          4. [title](link)
-
-          5. <text onclick="goBack()">[🔙]</text>
-
-      10. <span id=id_assunto10></span>**Criando script para enviar as alterações para o github**
-          1. Criar um arquivo **pushmain.sh** e cole os comandos a baixo, em seguida de permissão de execução ao arquivo **pushmain.sh**:
-
-            ```sh
+                  # Na pasta do repositório executar comando:  
+                  git status
                
-                #!/bin/bash
-                
-                # Esse é um parâmetro passado com a descrição do commit
-                TextoCommit="$1"  
-                
-                # Associa o repositório remoto ao repositório local.          
-                   git remote add origin git@github.com:paulosspacheco/maricarai.git
-                
-                # Renomeie o branch  atual para main
-                # O comando branch -M não precisa ser feito a todo momento, porque o git sempre envia para
-                # o ultimo ramo selecionando.
-                   git branch -M main  
-                
-                # Este comando pode ser executado várias vezes antes de um commit.  
-                   git add .
-                
-                # Use o <msg> fornecido como a mensagem de confirmação. 
-                   git commit -a -m "$TextoCommit"
-                
-                # Envia as alterações locais para o repositório remoto.
-                   git push -u origin main                  
-                
-                # imprime o status atual do repositório
-                git status  
-            
-            
-            ```
+                ```
 
-      11. <span id=id_assunto11></span> **Voltando um commit do GIT**:
-          1. O comando abaixo irá desfazer o último commit, colocando todos os arquivos do commit em unstaged changes:
-             1. Exemplo de código sh:
+         2. Exemplo do comando **status** atual do projeto..
 
-             ```powershell
+         3. **Referências:**
+             1. [Git Status: inspecionando um repositório](https://www.atlassian.com/git/tutorials/inspecting-a-repository#:~:text=The%20git%20status%20command%20displays,regarding%20the%20committed%20project%20history.)
+         4. [title](link)
 
-               git reset HEAD~1
-             
-             ```
+         5. <!-- markdownlint-disable-next-line -->
+            <text onclick="goBack()">[🔙]</text>
 
-          2. REFERÊNCIAS
-             1. [Git Reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset#:~:text=To%20review%2C%20git%20reset%20is,correspond%20to%20the%20three%20trees.)
+      10. <!-- markdownlint-disable-next-line -->
+         <span id=id_assunto10></span>**Criando script para enviar as alterações para o github**
+         1. Criar um arquivo **pushmain.sh** e cole os comandos a baixo, em seguida de permissão de execução ao arquivo **pushmain.sh**:
+            1. <!-- markdownlint-disable-next-line -->
+             <span id=id_assunto11></span> **Voltando um commit do GIT**:
+              1. O comando abaixo irá desfazer o último commit, colocando todos os arquivos do commit em unstaged changes:
+                 1. Exemplo de código sh:
 
-             2. [Como desfazer o último commit usando o comando Git Reset](https://builtin.com/software-engineering-perspectives/git-reset-soft-head)
-             3. [Como git redefinir para HEAD](https://devconnected.com/how-to-git-reset-to-head/#:~:text=To%20hard%20reset%20files%20to,option%20and%20specify%20the%20HEAD.&text=The%20purpose%20of%20the%20%E2%80%9Cgit,before%20HEAD%20and%20so%20on).)
+                 ```powershell
 
-      12. <text onclick="goBack()">[🔙]</text>
+                   git reset HEAD~1
+                 
+                 ```
 
-   4. <span id=id_referencias></span>**REFERÊNCIAS GLOBAIS**
-      1. [Site oficial para produzir este documento](#1)
-      2. [Guia básico de Markdown](https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-markdown#open)
-      3. [Vídeo aula sobre o github](https://www.youtube.com/watch?v=UbJLOn1PAKw&t=5s)
-      4. [Git e GitHub - Instalação, Configuração e Primeiros Passos](https://balta.io/blog/git-github-primeiros-passos#requisitos)
-      5. [Voltando um commit do GIT](http://www.basef.com.br/index.php/Voltando_um_commit_do_GIT)
-      6. [Aprenda GitLab](https://gitlab.com/itms3/learn-gitlab/-/learn_gitlab)
-      7. [COMO USAR O GIT E O GITLAB NA PRÁTICA](https://www.youtube.com/watch?v=un8CDE8qOR8&t=38s)
-      8. [Markdown com sabor do GitLab](https://docs.gitlab.com/ee/user/markdown.html)
-      9. [Clonar e usar um repositório do GitHub no Visual Studio Code](https://learn.microsoft.com/pt-br/azure/developer/javascript/how-to/with-visual-studio-code/clone-github-repository?tabs=create-repo-command-palette%2Cinitialize-repo-activity-bar%2Ccreate-branch-command-palette%2Ccommit-changes-command-palette%2Cpush-command-palette)
+         2. REFERÊNCIAS
+            1. [Git Reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset#:~:text=To%20review%2C%20git%20reset%20is,correspond%20to%20the%20three%20trees.)
+            2. [Como desfazer o último commit usando o comando Git Reset](https://builtin.com/software-engineering-perspectives/git-reset-soft-head)
+            3. [Como git redefinir para HEAD](https://devconnected.com/how-to-git-reset-to-head/#:~:text=To%20hard%20reset%20files%20to,option%20and%20specify%20the%20HEAD.&text=The%20purpose%20of%20the%20%E2%80%9Cgit,before%20HEAD%20and%20so%20on).)
 
-      10. <text onclick="goBack()">[🔙]</text>
+         3. <!-- markdownlint-disable-next-line -->
+         <text onclick="goBack()">[🔙]</text>
 
-   5. <span id="id_historico"><span>**HISTÓRICO**
+   4. <!-- markdownlint-disable-next-line -->
+      <span id=id_referencias></span>
+      **REFERÊNCIAS GLOBAIS**
+      1. [Guia básico de Markdown](https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-markdown#open)
+      2. [Vídeo aula sobre o github](https://www.youtube.com/watch?v=UbJLOn1PAKw&t=5s)
+      3. [Git e GitHub - Instalação, Configuração e Primeiros Passos](https://balta.io/blog/git-github-primeiros-passos#requisitos)
+      4. [Voltando um commit do GIT](http://www.basef.com.br/index.php/Voltando_um_commit_do_GIT)
+      5. [Aprenda GitLab](https://gitlab.com/itms3/learn-gitlab/-/learn_gitlab)
+      6. [COMO USAR O GIT E O GITLAB NA PRÁTICA](https://www.youtube.com/watch?v=un8CDE8qOR8&t=38s)
+      7. [Markdown com sabor do GitLab](https://docs.gitlab.com/ee/user/markdown.html)
+      8. [Clonar e usar um repositório do GitHub no Visual Studio Code](https://learn.microsoft.com/pt-br/azure/developer/javascript/how-to/with-visual-studio-code/clone-github-repository?tabs=create-repo-command-palette%2Cinitialize-repo-activity-bar%2Ccreate-branch-command-palette%2Ccommit-changes-command-palette%2Cpush-command-palette)
+
+      9. <!-- markdownlint-disable-next-line -->
+         <text onclick="goBack()">[🔙]</text>
+
+   5. <!-- markdownlint-disable-next-line -->
+      <span id="id_historico"><span>**HISTÓRICO**
 
       1. dd/mm/2021 <!--TODO: HISTÓRICO -->
 
-         - <text onclick="goBack()">[🔙]</text>
+         - <!-- markdownlint-disable-next-line -->
+            <text onclick="goBack()">[🔙]</text>
 
       2. dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: -->
          - [ ] Criar este documento baseado no o_que_e_git.md ;
@@ -462,8 +464,10 @@
          - [ ] Atualizar o histórico deste documento.
          - [ ] Testar este documento depois após uma semana de concluído.
 
-         - <text onclick="goBack()">[🔙]</text>
+         - <!-- markdownlint-disable-next-line -->
+            <text onclick="goBack()">[🔙]</text>
 
 [🔝🔝](#topo "Retorna ao topo")
 
+<!-- markdownlint-disable-next-line -->
  <script>    function goBack() {    window.history.back()}</script>

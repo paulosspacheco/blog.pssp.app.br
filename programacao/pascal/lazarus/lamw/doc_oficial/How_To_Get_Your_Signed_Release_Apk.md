@@ -31,7 +31,7 @@
 - ....  Thanks to All!
 - ....  Special thanks to ADiV/TR3E!
 
-- ....  by jmpessoa_hotmail_com 
+- ....  by jmpessoa_hotmail_com
 
 ```css
 
