@@ -410,23 +410,63 @@
       10. <!-- markdownlint-disable-next-line -->
          <span id=id_assunto10></span>**Criando script para enviar as alterações para o github**
          1. Criar um arquivo **pushmain.sh** e cole os comandos a baixo, em seguida de permissão de execução ao arquivo **pushmain.sh**:
-            1. <!-- markdownlint-disable-next-line -->
-             <span id=id_assunto11></span> **Voltando um commit do GIT**:
-              1. O comando abaixo irá desfazer o último commit, colocando todos os arquivos do commit em unstaged changes:
-                 1. Exemplo de código sh:
 
-                 ```powershell
+            ```bash
+            
+               #!/bin/bash
 
-                   git reset HEAD~1
-                 
-                 ```
+               # Texto com as mudanças que estão sendo realizada neste push.
+               TextoCommit="$1"
 
-         2. REFERÊNCIAS
+               # teste se o parâmetro passado é nulo
+               if [-z $TextoCommit]; then
+               echo "Parâmetro deve ser texto diferente de nulo"
+               exit
+               fi
+
+               # Associa o repositório remoto ao repositório local.          
+               git remote add origin git@192.168.15.3:/home/git/test.git 
+
+               # Renomeie o branch  atual para main
+               # O comando branch -M não precisa ser feito a todo momento, porque o git sempre envia para
+               # o ultimo ramo selecionando.
+               git branch -M main  
+
+               # Atualiza o repositório local com os dados do repositório remoto
+               # git pull esse comando não pode ser automático porque a versão main da nuvem pode estar desatualizada.
+
+
+               # Este comando pode ser executado várias vezes antes de um commit.  
+               git add .
+
+               # Use o <msg> fornecido como a mensagem de confirmação. 
+               git commit -a -m "$TextoCommit"
+
+               # Envia as alterações locais para o repositório remoto.
+               git push -u origin main                  
+
+               # imprime o status atual do repositório
+               git status  
+
+            ```
+
+         2. <!-- markdownlint-disable-next-line -->
+          <span id=id_assunto11></span> **Voltando um commit do GIT**:
+           1. O comando abaixo irá desfazer o último commit, colocando todos os arquivos do commit em unstaged changes:
+              1. Exemplo de código sh:
+
+              ```powershell
+
+                git reset HEAD~1
+              
+              ```
+
+         3. REFERÊNCIAS
             1. [Git Reset](https://www.atlassian.com/git/tutorials/undoing-changes/git-reset#:~:text=To%20review%2C%20git%20reset%20is,correspond%20to%20the%20three%20trees.)
             2. [Como desfazer o último commit usando o comando Git Reset](https://builtin.com/software-engineering-perspectives/git-reset-soft-head)
             3. [Como git redefinir para HEAD](https://devconnected.com/how-to-git-reset-to-head/#:~:text=To%20hard%20reset%20files%20to,option%20and%20specify%20the%20HEAD.&text=The%20purpose%20of%20the%20%E2%80%9Cgit,before%20HEAD%20and%20so%20on).)
 
-         3. <!-- markdownlint-disable-next-line -->
+         4. <!-- markdownlint-disable-next-line -->
          <text onclick="goBack()">[🔙]</text>
 
    4. <!-- markdownlint-disable-next-line -->

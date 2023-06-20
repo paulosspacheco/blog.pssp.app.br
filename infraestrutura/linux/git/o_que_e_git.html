@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;O que &eacute; git&quest; &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;git&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-       
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- CSS markdown -->
@@ -604,25 +604,59 @@
 <ol>
 <li>
 <p>Criar um arquivo <strong><a href="http://pushmain.sh">pushmain.sh</a></strong> e cole os comandos a baixo, em seguida de permissão de execução ao arquivo <strong><a href="http://pushmain.sh">pushmain.sh</a></strong>:</p>
-<ol>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment">#!/bin/bash</span>
+
+   <span class="hljs-comment"># Texto com as mudanças que estão sendo realizada neste push.</span>
+   TextoCommit=<span class="hljs-string">"<span class="hljs-variable">$1</span>"</span>
+
+   <span class="hljs-comment"># teste se o parâmetro passado é nulo</span>
+   <span class="hljs-keyword">if</span> [-z <span class="hljs-variable">$TextoCommit</span>]; <span class="hljs-keyword">then</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Parâmetro deve ser texto diferente de nulo"</span>
+   <span class="hljs-built_in">exit</span>
+   <span class="hljs-keyword">fi</span>
+
+   <span class="hljs-comment"># Associa o repositório remoto ao repositório local.          </span>
+   git remote add origin git@192.168.15.3:/home/git/test.git 
+
+   <span class="hljs-comment"># Renomeie o branch  atual para main</span>
+   <span class="hljs-comment"># O comando branch -M não precisa ser feito a todo momento, porque o git sempre envia para</span>
+   <span class="hljs-comment"># o ultimo ramo selecionando.</span>
+   git branch -M main  
+
+   <span class="hljs-comment"># Atualiza o repositório local com os dados do repositório remoto</span>
+   <span class="hljs-comment"># git pull esse comando não pode ser automático porque a versão main da nuvem pode estar desatualizada.</span>
+
+
+   <span class="hljs-comment"># Este comando pode ser executado várias vezes antes de um commit.  </span>
+   git add .
+
+   <span class="hljs-comment"># Use o &lt;msg&gt; fornecido como a mensagem de confirmação. </span>
+   git commit -a -m <span class="hljs-string">"<span class="hljs-variable">$TextoCommit</span>"</span>
+
+   <span class="hljs-comment"># Envia as alterações locais para o repositório remoto.</span>
+   git push -u origin main                  
+
+   <span class="hljs-comment"># imprime o status atual do repositório</span>
+   git status  
+
+</code></pre>
+</li>
 <li>
 <!-- markdownlint-disable-next-line -->
 </li>
 </ol>
-<p><span id=id_assunto11></span> <strong>Voltando um commit do GIT</strong>:</p>
-<ol>
-<li>
-<p>O comando abaixo irá desfazer o último commit, colocando todos os arquivos do commit em unstaged changes:</p>
-<ol>
-<li>Exemplo de código sh:</li>
-</ol>
-<pre><code class="hljs language-powershell">
-  git reset HEAD~<span class="hljs-number">1</span>
+<pre><code class="hljs">&lt;span id=id_assunto11&gt;&lt;/span&gt; **Voltando um commit do GIT**:
+ 1. O comando abaixo irá desfazer o último commit, colocando todos os arquivos do commit em unstaged changes:
+    1. Exemplo de código sh:
 
+    ```powershell
+
+      git reset HEAD~1
+    
+    ```
 </code></pre>
-</li>
-</ol>
-</li>
+<ol start="3">
 <li>
 <p>REFERÊNCIAS</p>
 <ol>
