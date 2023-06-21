@@ -3,7 +3,7 @@
 
 <!--TODO: em: A fazer até 16/06/2023 -->
 <!-- markdownlint-disable-next-line -->
-<fieldset> <legend> <b>A fazer até 06/06/2023</b></legend>
+<fieldset> <legend> <b> 🚧 A fazer até 06/06/2023</b></legend>
 
 - [ ] [Converter a documentação oficial do lamw de txt para markdown e html](./programacao/pascal/lazarus/lamw/doc_oficial/index.html)
 - [ ] Documentar como instalar e configurar LamW
