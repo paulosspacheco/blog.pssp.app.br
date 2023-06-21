@@ -44,35 +44,58 @@
 
 2. **Passo a passo para instalar a infraestrutura android**.
    1. Instalar [Android Studio](https://developer.android.com/studio?gclid=CjwKCAjw-b-kBhB-EiwA4fvKrEsTffVft6mg-eLbZ3JJYdnWSaD5gEdVKuKZHzXlifA0Up-MEt49ehoCd8kQAvD_BwE&gclsrc=aw.ds)
-   2. Instalação de Pacotes necessário para o LamW:
-      1. Entrar no _Android Studio_ e siga os passos do link a seguir:
-         1. [Instalar uma versão específica do NDK](https://developer.android.com/studio/projects/install-ndk?hl=pt-br#specific-version)
 
+   2. Instalação de Pacotes necessário para o LamW:
+      1. Instalar NDK
+         1. [Downloads do NDK](https://developer.android.com/ndk/downloads?hl=pt-br)
+         2. ou entrar no _Android Studio_ e siga os passos do link a seguir:
+            1. [Downloads do NDK](https://developer.android.com/ndk/downloads?hl=pt-br)
       2. CMake
          1. Instalar _CMake_
          2. [Configurar uma versão específica do CMak](https://developer.android.com/studio/projects/install-ndk?hl=pt-br#vanilla_cmake)
 
-   3. Mensagem ao tentar atualizar a opção:
+      3. Gradle
+         1. [Instalar sdkman](https://sdkman.io/install)
+         2. Instalar gradle
 
-      ```md
+            ```bash
 
-        Warning. Minimum Target API required by "Google Play Store" = 30
-        Please, update your android sdk/platforms folder!
-        How to:
-         .open a command line terminal and go to folder "sdk/tools/bin"
-         .run the command> sdkmanager --update
-         .run the command> sdkmanager "build-tools;30.0.2" "platforms;android-30"
+              cd ./sdkman
+              sdk install gradle
+              # o lamw sugere o numerod a versão.
 
-      ```
+            ```
 
-   4. Confirmar todas as licenças instaladas:
+      4. Refências:
+         1. [HowTo - Ambiente de desenvolviment](https://forum.lazarus.freepascal.org/index.php/topic,40750.html)
+
+   3. Configurar Lazarus para registrar a infraestrutura:
+      1. Selecionar opção _/menu/tools/[LAMW] Android Project Options/Paths Settings [Jdk, Sdk, Ndk, ...]_
+         1. Preencher o formulário:
+            1. ![Paths Settings [Jdk, Sdk, Ndk, ...]](./img/form_path_lamw.jpeg)
+      2.  
+   4. Notas
+      1. Mensagem após pressionar o botão ok ao informar pasta do ndk e sdk caso não ache o ndk:
+
+         ```md
+
+            Warning. Minimum Target API required by "Google Play Store" = 30
+            Please, update your android sdk/platforms folder!
+            How to:
+               .open a command line terminal and go to folder "sdk/tools/bin"
+               .run the command> sdkmanager --update
+               .run the command> sdkmanager "build-tools;30.0.2" "platforms;android-30"
+
+            ```
+
+   5. Confirmar todas as licenças instaladas:
 
       ```bash
          # Na pasta /android-sdk/cmdline-tools executar e confirmar com yes 
          sdkmanager --licenses
-
       ```
 
-   5. ????
+   6. ..
+   7. 
 3. **Passo  a passo de como usar o LamW**.
    1. ????

@@ -4,6 +4,15 @@
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 17/06/2023</b></legend>
 
+- [x] [Atualizar oração diária número 01](./comportamentos/religiao/minhas_oracoes/oracaoo_diaria_numero_01.html)
+- [x] [Atualizar oração diária número 02](./comportamentos/religiao/minhas_oracoes/oracaoo_diaria_numero_02.html)
+- [x] [Atualizar tudo em minha vida é para honra e glória de Deus](./comportamentos/religiao/minhas_oracoes/tudo_em_minha_vida.html)
+
+</fieldset>
+
+<!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 17/06/2023</b></legend>
+
 - [x] [Criar página de objetivo da pasta nodejs/SqLite3](./programacao/nodejs/sqlite3/objetivo.html)
 - [x] [Criar página de referências da pasta nodejs/SqLite3](./programacao/nodejs/sqlite3/referencias.html)
 - [x] Revisão do texto [Cinco Dicas Para Relacionamentos Saudáveis | Momentos Cury](./comportamentos/habitos/2022/Cinco_dicas_para_relacionamentos_saudaveis.html)

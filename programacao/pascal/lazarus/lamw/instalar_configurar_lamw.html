@@ -262,9 +262,14 @@ hue-6-2: #e6c07b
 <p>Instalação de Pacotes necessário para o LamW:</p>
 <ol>
 <li>
-<p>Entrar no <em>Android Studio</em> e siga os passos do link a seguir:</p>
+<p>Instalar NDK</p>
 <ol>
-<li><a href="https://developer.android.com/studio/projects/install-ndk?hl=pt-br#specific-version">Instalar uma versão específica do NDK</a></li>
+<li><a href="https://developer.android.com/ndk/downloads?hl=pt-br">Downloads do NDK</a></li>
+<li>ou entrar no <em>Android Studio</em> e siga os passos do link a seguir:
+<ol>
+<li><a href="https://developer.android.com/ndk/downloads?hl=pt-br">Downloads do NDK</a></li>
+</ol>
+</li>
 </ol>
 </li>
 <li>
@@ -274,30 +279,73 @@ hue-6-2: #e6c07b
 <li><a href="https://developer.android.com/studio/projects/install-ndk?hl=pt-br#vanilla_cmake">Configurar uma versão específica do CMak</a></li>
 </ol>
 </li>
+<li>
+<p>Gradle</p>
+<ol>
+<li>
+<p><a href="https://sdkman.io/install">Instalar sdkman</a></p>
+</li>
+<li>
+<p>Instalar gradle</p>
+<pre><code class="hljs language-bash">
+  <span class="hljs-built_in">cd</span> ./sdkman
+  sdk install gradle
+  <span class="hljs-comment"># o lamw sugere o numerod a versão.</span>
+
+</code></pre>
+</li>
 </ol>
 </li>
 <li>
-<p>Mensagem ao tentar atualizar a opção:</p>
+<p>Refências:</p>
+<ol>
+<li><a href="https://forum.lazarus.freepascal.org/index.php/topic,40750.html">HowTo - Ambiente de desenvolviment</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Configurar Lazarus para registrar a infraestrutura:</p>
+<ol>
+<li>Selecionar opção <em>/menu/tools/[LAMW] Android Project Options/Paths Settings [Jdk, Sdk, Ndk, ...]</em>
+<ol>
+<li>Preencher o formulário:
+<ol>
+<li><img src="./img/form_path_lamw.jpeg" alt="Paths Settings [Jdk, Sdk, Ndk, ...]"></li>
+</ol>
+</li>
+</ol>
+</li>
+<li></li>
+</ol>
+</li>
+<li>
+<p>Notas</p>
+<ol>
+<li>
+<p>Mensagem após pressionar o botão ok ao informar pasta do ndk e sdk caso não ache o ndk:</p>
 <pre><code class="hljs language-md">
-  Warning. Minimum Target API required by "Google Play Store" = 30
-  Please, update your android sdk/platforms folder!
-  How to:
-   .open a command line terminal and go to folder "sdk/tools/bin"
-   .run the command&gt; sdkmanager --update
-   .run the command&gt; sdkmanager "build-tools;30.0.2" "platforms;android-30"
+   Warning. Minimum Target API required by "Google Play Store" = 30
+   Please, update your android sdk/platforms folder!
+   How to:
+<span class="hljs-code">      .open a command line terminal and go to folder "sdk/tools/bin"</span>
+<span class="hljs-code">      .run the command&gt; sdkmanager --update</span>
+<span class="hljs-code">      .run the command&gt; sdkmanager "build-tools;30.0.2" "platforms;android-30"</span>
 
 </code></pre>
+</li>
+</ol>
 </li>
 <li>
 <p>Confirmar todas as licenças instaladas:</p>
 <pre><code class="hljs language-bash">   <span class="hljs-comment"># Na pasta /android-sdk/cmdline-tools executar e confirmar com yes </span>
    sdkmanager --licenses
-
 </code></pre>
 </li>
 <li>
-<p>????</p>
+<p>..</p>
 </li>
+<li></li>
 </ol>
 </li>
 <li>
