@@ -176,7 +176,7 @@
          4. Caso o link seja copiado para uma pasta de nome diferente da pasta no qual o mesmo foi criado, esse link se torna inválido;
          5. O modo de acesso ao link criado, será: _leitura_, _gravação_ e _execução_ para o _usuário dono_, _grupo_ e _outros usuários_, porém o modo de acesso para onde ele aponta, não é alterado.
 
-   4. <!-- markdownlint-disable-next-line -->
+   5. <!-- markdownlint-disable-next-line -->
       <span id='id_cp'></span>**_cp_ - O comando [_cp_](https://linux.die.net/man/1/cp) copia um arquivo ou pasta para outra pasta ou arquivo.**      
       1. **Parâmetros**:
          1. O atributo do arquivo é levado para a cópia;
@@ -279,7 +279,7 @@
 
       5. [Vídeo aula sobre o comando cp...](https://www.youtube.com/watch?v=QZ2nyxzZXPY&t=685s)
 
-   5. <!-- markdownlint-disable-next-line -->
+   6. <!-- markdownlint-disable-next-line -->
       <span id='id_dd'></span> - **[_dd_](https://man7.org/linux/man-pages/man1/dd.1.html) :  Clona um dispositivo de bloco, convertendo e formatando de acordo com os operandos. [Veja mais...](https://www.linuxdescomplicado.com.br/2016/11/alguns-exemplos-de-que-o-comando-dd-pode-ser-considerado-umas-das-ferramentas-mais-versateis-do-linux.html)**
       1. Parâmetros:
          1. ‘if=/dev/sdax‘ : Representa o disco de origem a ser copiado;
@@ -324,7 +324,7 @@
 
          ```
 
-   6. <!-- markdownlint-disable-next-line -->
+   7. <!-- markdownlint-disable-next-line -->
       <span id='id_e2image'></span> **_[e2image](http://rpm.pbone.net/manpage_idpl_25428807_numer_8_nazwa_e2image.html)_ - Clona um dispositivo de bloco cujo o formato de arquivo seja: _ext2_, _ext3_ e _ext4_** 
       1. O objetivo do programa _e2image_ é salvar metadados críticos do sistema de arquivos _ext2/ext3/ext4_ em um arquivo de imagem do dispositivo.
       2. Para clonar uma partição não montada usa-se as opções _-ra_ e _-p_. Veja o exemplo de como clonar a partição não montada _/dev/sdb1_ para _/dev/sdb2_:
@@ -336,7 +336,7 @@
 
         ```
 
-   7. <!-- markdownlint-disable-next-line -->
+   8. <!-- markdownlint-disable-next-line -->
       <span id='id_gparted'></span> **_[gparted](https://gparted.org/display-doc.php%3Fname%3Dhelp-manual)_ - Programa usado para criar partição, pode ser usado para clonar partição de forma muito simples e visual.** 
       1. Para clonar uma partição siga os seguintes passos:
          1. Instale o programa _gparted_ com o comando abaixo:
@@ -358,7 +358,7 @@
 
       ```
 
-   8. <!-- markdownlint-disable-next-line -->
+   9. <!-- markdownlint-disable-next-line -->
       <span id='id_mount'></span> _mount_ - **Monta um sistema de arquivos** 
       1. Exemplo de montagem de pasta compartilhada usando o protocolo samba do windows:
          1. **Com domínio:**
@@ -406,171 +406,171 @@
             2. _origem_: O caminho de origem do compartilhamento de rede. Ex: 192.168.15.3:/var/nfs/share.
             3. _destino_: O ponto de montagem onde será montado o compartilhamento Ex: ~/LnxMint_Server_Share
 
-   9. [_setuid_](https://man7.org/linux/man-pages/man2/setuid.2.html) : Define a identidade do usuário
+   10. [_setuid_](https://man7.org/linux/man-pages/man2/setuid.2.html) : Define a identidade do usuário
 
         ```bash
         
         ```
 
-   10. _chgrp_: Mudar o grupo de um arquivo ou diretório
+   11. _chgrp_: Mudar o grupo de um arquivo ou diretório
 
         ```bash
         
         ```
 
-   11. _chown_: Mudar o dono ou grupo de um arquivo ou diretório, vem de change owner
+   12. _chown_: Mudar o dono ou grupo de um arquivo ou diretório, vem de change owner
 
         ```bash
         
         ```
 
-   12. _chgrp_: Mudar o grupo de um arquivo ou diretório
+   13. _chgrp_: Mudar o grupo de um arquivo ou diretório
 
        ```bash
         
        ```
 
-   13. _cmp_: Compara dois arquivos
+   14. _cmp_: Compara dois arquivos
 
        ```bash
       
        ```
 
-   14. _comm_: Seleciona ou rejeita linhas comuns a dois arquivos selecionados
+   15. _comm_: Seleciona ou rejeita linhas comuns a dois arquivos selecionados
 
         ```bash
         
         ```
 
-   15. _crypt_: Encripta ou Descripta arquivos (apenas CCWF)
+   16. _crypt_: Encripta ou Descripta arquivos (apenas CCWF)
 
         ```bash
         
         ```
 
-   16. _diff_: Compara o conteúdo de dois arquivos ASCII
+   17. _diff_: Compara o conteúdo de dois arquivos ASCII
 
         ```bash
         
         ```
 
-   17. _file_: Determina o tipo de arquivo
+   18. _file_: Determina o tipo de arquivo
 
         ```bash
         
         ```
 
-   18. _grep_: Procura um arquivo por um padrão, sendo um filtro muito útil e usado, por exemplo um cat a.txt | grep ola irá mostrar-nos apenas as linhas do arquivo a.txt que contenham a palavra “ola”
+   19. _grep_: Procura um arquivo por um padrão, sendo um filtro muito útil e usado, por exemplo um cat a.txt | grep ola irá mostrar-nos apenas as linhas do arquivo a.txt que contenham a palavra “ola”
 
         ```bash
         
         ```
 
-   19. _gzip_: Comprime ou expande arquivo
+   20. _gzip_: Comprime ou expande arquivo
 
        ```bash
 
        ```
 
-   20. _lsof_: Lista os arquivos abertos, vem de list open files
+   21. _lsof_: Lista os arquivos abertos, vem de list open files
 
        ```bash
 
        ```
 
-   21. _mkdir_: Cria uma diretório, vem de make directory”
+   22. _mkdir_: Cria uma diretório, vem de make directory”
 
        ```bash
 
        ```
 
-   22. _mv_: Move ou renomeia arquivos ou diretórios
+   23. _mv_: Move ou renomeia arquivos ou diretórios
 
        ```bash
 
        ```
 
-   23. _pwd_: Mostra-nos o caminho por inteiro da diretório em que nos encontramos em dado momento, ou seja um pathname
+   24. _pwd_: Mostra-nos o caminho por inteiro da diretório em que nos encontramos em dado momento, ou seja um pathname
 
        ```bash
 
        ```
 
-   24. _quota_: Mostra-nos o uso do disco e os limites
+   25. _quota_: Mostra-nos o uso do disco e os limites
 
        ```bash
 
        ```
 
-   25. _rm_: Apaga arquivos, vem de remove, e é semelhante ao comando del no MS-DOS, é preciso ter cuidado com o comando rm * pois apaga tudo sem confirmação por defeito
+   26. _rm_: Apaga arquivos, vem de remove, e é semelhante ao comando del no MS-DOS, é preciso ter cuidado com o comando rm * pois apaga tudo sem confirmação por defeito
 
        ```bash
 
        ```
 
-   26. _rmdir_: Apaga diretório, vem de remove directory
+   27. _rmdir_: Apaga diretório, vem de remove directory
 
        ```bash
 
        ```
 
-   27. _stat_: Mostra o estado de um arquivo, útil para saber por exemplo a hora e data do último acesso ao mesmo
+   28. _stat_: Mostra o estado de um arquivo, útil para saber por exemplo a hora e data do último acesso ao mesmo
 
        ```bash
 
        ```
 
-   28. _sync_: Faz um flush aos buffers do sistema de arquivos, sincroniza os dados no disco com a memória, ou seja escreve todos os dados presentes nos buffers da memória para o disco
+   29. _sync_: Faz um flush aos buffers do sistema de arquivos, sincroniza os dados no disco com a memória, ou seja escreve todos os dados presentes nos buffers da memória para o disco
 
        ```bash
 
        ```
 
-   29. _sort_: Ordena, une ou compara texto, podendo ser usado para extrair informações dos arquivos de texto ou mesmo para ordenar dados de outros comandos como por exemplo listar arquivos ordenados pelo nome
+   30. _sort_: Ordena, une ou compara texto, podendo ser usado para extrair informações dos arquivos de texto ou mesmo para ordenar dados de outros comandos como por exemplo listar arquivos ordenados pelo nome
 
        ```bash
 
        ```
 
-   30. _tar_: Cria ou extrai arquivos, muito usado como programa de backup ou compressão de arquivos
+   31. _tar_: Cria ou extrai arquivos, muito usado como programa de backup ou compressão de arquivos
 
        ```bash
 
        ```
 
-   31. _tee_: Copia o input para um standard output e outros arquivos
+   32. _tee_: Copia o input para um standard output e outros arquivos
 
        ```bash
 
        ```
 
-   32. _tr_: Traduz caracteres
+   33. _tr_: Traduz caracteres
 
        ```bash
 
        ```
 
-   33. _umask_: Muda as proteções de arquivos
+   34. _umask_: Muda as proteções de arquivos
 
        ```bash
 
        ```
 
-   34. _uncompress_: Restaura um arquivo comprimido
+   35. _uncompress_: Restaura um arquivo comprimido
 
        ```bash
 
        ```
 
-   35. _uniq_: Reporta ou apaga linhas repetidas num arquivo
+   36. _uniq_: Reporta ou apaga linhas repetidas num arquivo
 
-   36. _wc_: Conta linhas, palavras e mesmo caracteres num arquivo
+   37. _wc_: Conta linhas, palavras e mesmo caracteres num arquivo
 
        ```bash
 
        ```
 
-   37. **Redirecionares**
+   38. **Redirecionares**
        1. _\>>_ Transfere a saída de um comando para a entrada do comandos após ele.
 
           ```bash
@@ -583,13 +583,13 @@
 
        2. ...
 
-   38. _apropos_: Localiza comandos por pesquisa de palavra-chave
+   39. _apropos_: Localiza comandos por pesquisa de palavra-chave
 
        ```bash
 
        ```
 
-   39. _find_: Localiza arquivos, como por exemplo: _find . -name *.txt -print_, para pesquisa de arquivos de texto a partir da pasta atual
+   40. _find_: Localiza arquivos, como por exemplo: _find . -name *.txt -print_, para pesquisa de arquivos de texto a partir da pasta atual
        1. Sintaxe
           1. find ./ -type d -iname 'NomeDaPasta'  
 
@@ -621,11 +621,18 @@
        3. Referências
           - [Comandos Linux: Find e Locate – Como Usar](https://www.hostinger.com.br/tutoriais/find-locate-comandos-linux#:~:text=Para%20descobrir%20seu%20diret%C3%B3rio%20atual,utilizar%20para%20procurar%20seu%20arquivo.)
 
-   40. _info_: Abre o explorador de informações
+   41. _info_: Abre o explorador de informações
 
-       ```bash
+         ```bash
 
-       ```
+         ```
+
+   42. <!-- markdownlint-disable-next-line -->
+       <span id='id_install'></span> [_Install_](https://ss64.com/bash/install.html) : Copie arquivos e defina atributos, copie arquivos enquanto define seus modos de permissão e, se possível, seu proprietário e grupo.
+       1. Sintaxe:
+          1. install [options]... SOURCE DEST
+          2. install [options]... SOURCE... DIRECTORY
+          3. install -d [options]... DIRECTORY...
 
 4. <!-- markdownlint-disable-next-line -->
    <span id='id_cmd_ajuda_documentacao'></span> **Comandos de Ajuda e Documentação**
@@ -898,6 +905,7 @@
          2. [10 exemplos do comando rsync para backup e sincronismo de arquivos no Linux](http://www.bosontreinamentos.com.br/linux/10-exemplos-do-comando-rsync-para-backup-e-sincronismo-de-arquivos-no-linux/)
          3. [Rsync: confira como utilizar o comando do Linux](https://www.hostgator.com.br/blog/utilizar-comando-rsync-do-linux/)
          4. [Rsync: excluir diretório](https://linuxconfig.org/rsync-exclude-directory)
+         5. [Exemplos de Rsync no Linux](https://linuxconfig.org/rsync-command-examples)
 
    3. _scp_: Versão segura do rcp
 
@@ -905,7 +913,7 @@
 
        ```
 
-9. <!-- markdownlint-disable-next-line -->
+9.  <!-- markdownlint-disable-next-line -->
    <span id='id_cmd__noticias_Rede'></span>**Comandos de Notícias ou Rede**
    1. _netstat_: Mostra o estado da rede
 
