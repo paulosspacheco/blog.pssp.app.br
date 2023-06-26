@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Comandos b&aacute;sico do Shell do Linux &lt;a href&equals;&quot;comandos&lowbar;basico&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-     
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- CSS markdown -->
@@ -969,8 +969,26 @@ result_cp=<span class="hljs-string">"$?"</span>
 <p><span id='id_cmd_rsync'></span> - <em><a href="https://www.hostinger.com.br/tutoriais/comando-rsync-linux">rsync</a></em>: Sincroniza de forma rápida e flexível dados entre dois computadores. <a href="https://linux.die.net/man/1/rsync">Veja mais...</a></p>
 <ol>
 <li>
+<p><strong>Sintaxe:</strong></p>
+<ol>
+<li>
+<p>Cópia para máquina local:</p>
+<ol>
+<li><em>rsync</em> [<em>parâmetros</em>] [<em>source</em>] [<em>destination</em>]</li>
+</ol>
+</li>
+<li>
+<p>Cópia para máquina remotas:</p>
+<ol>
+<li><em>rsync</em> [<em>parâmetros</em>] [<em>source</em>] [<em>user</em>]@[<em>host</em>]:[<em>destination</em>]</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
 <p><strong>Parâmetros:</strong></p>
 <ol>
+<li><em>-a</em> : Modo de arquivamento.</li>
 <li><em>-r</em> : Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente</li>
 <li><em>-R</em> : Copia deve ter o nome original e não o nome relativo</li>
 <li><em>-z</em> : Comprime os dados dos arquivos antes de enviá-los</li>
@@ -978,30 +996,76 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li><em>-h</em> : output num formato legível para humanos.</li>
 <li><em>-a</em> : Indica que se trata de arquivo e quer dizer que deve copiar permissões, mudanças de horário e outros dados.</li>
 <li><em>-l</em> : Quando links simbólicos forem encontrados, recrie o link simbólico no destino.</li>
-<li><em>-u</em> : Não sobrescreve nenhum arquivo no destino da transferência que possua uma data posterior (mais recente) à data do arquivo correspondente, na origem.</li>
+<li><em>-i</em> : Copia links simbólicos como links simbólicos.</li>
+<li><em>-u</em> : Força o <em>rsync</em> a ignorar todos os arquivos existentes no destino e cuja hora de modificação seja mais recente que o arquivo de origem.</li>
 <li><em>-n</em> : Modo “dry run” – executa uma tentativa de copiar dados sem realmente copiar qualquer arquivo.</li>
 <li><em>-P</em> ou <em>--progress</em> : Esta opção diz ao <em>rsync</em> para imprimir informações mostrando o progresso da transferência.</li>
+<li><em>-p</em> : Preserva as permissões.</li>
+<li><em>-t</em> : Preserva datas</li>
+<li><em>-g</em> : Preserva o grupo.</li>
+<li><em>-o</em> : Preserva o dono. Precisa de root.</li>
 </ol>
 <pre><code class="hljs language-bash">
-    <span class="hljs-comment"># Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/</span>
-    <span class="hljs-comment"># -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente</span>
-    <span class="hljs-comment"># -z Comprimir os dados dos arquivos antes de enviá-los</span>
-    rsync -zrvhalu --progress ~/original/* ~/duplicate/
+   <span class="hljs-comment"># Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/</span>
+   <span class="hljs-comment"># -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente</span>
+   <span class="hljs-comment"># -z Comprimir os dados dos arquivos antes de enviá-los</span>
+   rsync -zarvhautpgio --progress ~/original/* ~/duplicate/
 
-    <span class="hljs-comment"># Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/</span>
-    <span class="hljs-comment"># -R Copia deve ter o nome original e não o nome relativo</span>
-    <span class="hljs-comment"># -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente</span>
-    <span class="hljs-comment"># -z Comprimir os dados dos arquivos antes de enviá-los</span>
-    rsync -zrRvhalu --progress ~/original/* ~/duplicate/
-
+   <span class="hljs-comment"># Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/</span>
+   <span class="hljs-comment"># -R Copia deve ter o nome original e não o nome relativo</span>
+   <span class="hljs-comment"># -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente</span>
+   <span class="hljs-comment"># -z Comprimir os dados dos arquivos antes de enviá-los</span>
+   rsync -zarRvhautpgio --progress ~/original/* ~/duplicate/
 
 </code></pre>
+</li>
+<li>
+<p><strong>Script <em>copyto</em>:</strong></p>
+<ol>
+<li>
+<p>O script copyto copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO.&quot;</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment">#!/bin/bash</span>
+   <span class="hljs-comment"># Program copyto.sh</span>
+   <span class="hljs-comment"># Exemplo de uso:</span>
+   <span class="hljs-comment">#  ./copyto.sh /PastaDestino /arquivos_de_exessão.txt</span>
+
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Script: copyto.sh"</span>
+   <span class="hljs-built_in">echo</span> .
+   origem=<span class="hljs-string">"./*"</span>
+   destino=<span class="hljs-string">"<span class="hljs-variable">$1</span>"</span>
+   except=<span class="hljs-string">"<span class="hljs-variable">$2</span>"</span>
+   <span class="hljs-keyword">if</span> [ -z destino ]; <span class="hljs-keyword">then</span>
+     <span class="hljs-built_in">echo</span> <span class="hljs-string">"O destino precisa ser informado"</span>
+     <span class="hljs-built_in">exit</span> 1
+   <span class="hljs-keyword">fi</span>  
+   <span class="hljs-built_in">echo</span> .
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Origem..: <span class="hljs-variable">$destino</span>"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Destino.: <span class="hljs-variable">$origem</span>"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Excessão: <span class="hljs-variable">$except</span>"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Nota....: Copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO."</span>
+   <span class="hljs-built_in">echo</span> .
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Cópia incremental"</span>.         
+   <span class="hljs-comment">#sudo rsync --exclude-from=$except -rRvhzu --progress $origem $destino</span>
+   sudo rsync --exclude-from=<span class="hljs-variable">$except</span> -arRvhutpgio --progress <span class="hljs-variable">$origem</span> <span class="hljs-variable">$destino</span>
+
+   result_cp=<span class="hljs-string">"$?"</span>
+   <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$result_cp</span> != 0 ]; <span class="hljs-keyword">then</span>
+     <span class="hljs-built_in">echo</span> algo errado na cópia
+     <span class="hljs-built_in">exit</span> 1;
+   <span class="hljs-keyword">fi</span>
+
+</code></pre>
+</li>
+</ol>
 </li>
 <li>
 <p><strong>Referências:</strong></p>
 <ol>
 <li><a href="https://ss64.com/bash/rsync_options.html">rsync_options</a></li>
 <li><a href="http://www.bosontreinamentos.com.br/linux/10-exemplos-do-comando-rsync-para-backup-e-sincronismo-de-arquivos-no-linux/">10 exemplos do comando rsync para backup e sincronismo de arquivos no Linux</a></li>
+<li><a href="https://www.hostgator.com.br/blog/utilizar-comando-rsync-do-linux/">Rsync: confira como utilizar o comando do Linux</a></li>
+<li><a href="https://linuxconfig.org/rsync-exclude-directory">Rsync: excluir diretório</a></li>
 </ol>
 </li>
 </ol>

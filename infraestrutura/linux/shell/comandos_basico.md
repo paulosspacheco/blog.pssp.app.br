@@ -816,37 +816,89 @@
 
    2. <!-- markdownlint-disable-next-line -->
       <span id='id_cmd_rsync'></span> - _[rsync](https://www.hostinger.com.br/tutoriais/comando-rsync-linux)_: Sincroniza de forma rápida e flexível dados entre dois computadores. [Veja mais...](https://linux.die.net/man/1/rsync)
-      1. **Parâmetros:**  
-         1. _-r_ : Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente
-         2. _-R_ : Copia deve ter o nome original e não o nome relativo
-         3. _-z_ : Comprime os dados dos arquivos antes de enviá-los
-         4. _-v_ : Mostra a versão do _rsync_ ao iniciar a cópia.
-         5. _-h_ : output num formato legível para humanos.
-         6. _-a_ : Indica que se trata de arquivo e quer dizer que deve copiar permissões, mudanças de horário e outros dados.
-         7. _-l_ : Quando links simbólicos forem encontrados, recrie o link simbólico no destino.
-         8. _-u_ : Não sobrescreve nenhum arquivo no destino da transferência que possua uma data posterior (mais recente) à data do arquivo correspondente, na origem.
-         9. _-n_ : Modo “dry run” – executa uma tentativa de copiar dados sem realmente copiar qualquer arquivo.
-         10. _-P_ ou _--progress_ : Esta opção diz ao _rsync_ para imprimir informações mostrando o progresso da transferência.
+      1. **Sintaxe:**
+         1. Cópia para máquina local:
+            1. _rsync_ [_parâmetros_] [_source_] [_destination_]
+
+         2. Cópia para máquina remotas:
+            1. _rsync_ [_parâmetros_] [_source_] [_user_]@[_host_]:[_destination_]
+
+      2. **Parâmetros:**  
+         1. _-a_ : Modo de arquivamento.
+         2. _-r_ : Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente
+         3. _-R_ : Copia deve ter o nome original e não o nome relativo
+         4. _-z_ : Comprime os dados dos arquivos antes de enviá-los
+         5. _-v_ : Mostra a versão do _rsync_ ao iniciar a cópia.
+         6. _-h_ : output num formato legível para humanos.
+         7. _-a_ : Indica que se trata de arquivo e quer dizer que deve copiar permissões, mudanças de horário e outros dados.
+         8. _-l_ : Quando links simbólicos forem encontrados, recrie o link simbólico no destino.
+         9. _-i_ : Copia links simbólicos como links simbólicos.
+         10. _-u_ : Força o _rsync_ a ignorar todos os arquivos existentes no destino e cuja hora de modificação seja mais recente que o arquivo de origem.
+         11. _-n_ : Modo “dry run” – executa uma tentativa de copiar dados sem realmente copiar qualquer arquivo.
+         12. _-P_ ou _--progress_ : Esta opção diz ao _rsync_ para imprimir informações mostrando o progresso da transferência.
+         13. _-p_ : Preserva as permissões.
+         14. _-t_ : Preserva datas
+         15. _-g_ : Preserva o grupo.
+         16. _-o_ : Preserva o dono. Precisa de root.
 
             ```bash
 
-                # Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/
-                # -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente
-                # -z Comprimir os dados dos arquivos antes de enviá-los
-                rsync -zrvhalu --progress ~/original/* ~/duplicate/
+               # Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/
+               # -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente
+               # -z Comprimir os dados dos arquivos antes de enviá-los
+               rsync -zarvhautpgio --progress ~/original/* ~/duplicate/
 
-                # Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/
-                # -R Copia deve ter o nome original e não o nome relativo
-                # -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente
-                # -z Comprimir os dados dos arquivos antes de enviá-los
-                rsync -zrRvhalu --progress ~/original/* ~/duplicate/
-
+               # Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/
+               # -R Copia deve ter o nome original e não o nome relativo
+               # -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente
+               # -z Comprimir os dados dos arquivos antes de enviá-los
+               rsync -zarRvhautpgio --progress ~/original/* ~/duplicate/
 
             ```
 
-      2. **Referências:**
+      3. **Script _copyto_:**
+         1. O script copyto copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO."
+
+            ```bash
+
+               #!/bin/bash
+               # Program copyto.sh
+               # Exemplo de uso:
+               #  ./copyto.sh /PastaDestino /arquivos_de_exessão.txt
+
+               echo "Script: copyto.sh"
+               echo .
+               origem="./*"
+               destino="$1"
+               except="$2"
+               if [ -z destino ]; then
+                 echo "O destino precisa ser informado"
+                 exit 1
+               fi  
+               echo .
+               echo "Origem..: $destino"
+               echo "Destino.: $origem"
+               echo "Excessão: $except"
+               echo "Nota....: Copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO."
+               echo .
+               echo "Cópia incremental".         
+               #sudo rsync --exclude-from=$except -rRvhzu --progress $origem $destino
+               sudo rsync --exclude-from=$except -arRvhutpgio --progress $origem $destino
+
+               result_cp="$?"
+               if [ $result_cp != 0 ]; then
+                 echo algo errado na cópia
+                 exit 1;
+               fi
+
+            ```
+
+      4. **Referências:**
          1. [rsync_options](https://ss64.com/bash/rsync_options.html)
          2. [10 exemplos do comando rsync para backup e sincronismo de arquivos no Linux](http://www.bosontreinamentos.com.br/linux/10-exemplos-do-comando-rsync-para-backup-e-sincronismo-de-arquivos-no-linux/)
+         3. [Rsync: confira como utilizar o comando do Linux](https://www.hostgator.com.br/blog/utilizar-comando-rsync-do-linux/)
+         4. [Rsync: excluir diretório](https://linuxconfig.org/rsync-exclude-directory)
+
    3. _scp_: Versão segura do rcp
 
        ```bash
@@ -981,7 +1033,7 @@
 
        ```
 
-    6. _ncdu_ : Lista em ordem decrescente quais diretórios estão usando o espaço em disco. 
+    6. _ncdu_ : Lista em ordem decrescente quais diretórios estão usando o espaço em disco.
 
        ```bash
 
@@ -1043,7 +1095,7 @@
 
          ```
 
-    15. _ps_: Lista a lista de processos em execução, útil para saber o pid de um processo para o mandar abaixo com o comando 
+    15. _ps_: Lista a lista de processos em execução, útil para saber o pid de um processo para o mandar abaixo com o comando
 
          ```bash
 
