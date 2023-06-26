@@ -826,7 +826,7 @@
          7. _-l_ : Quando links simbólicos forem encontrados, recrie o link simbólico no destino.
          8. _-u_ : Não sobrescreve nenhum arquivo no destino da transferência que possua uma data posterior (mais recente) à data do arquivo correspondente, na origem.
          9. _-n_ : Modo “dry run” – executa uma tentativa de copiar dados sem realmente copiar qualquer arquivo.
-         10. _--progress_ : Esta opção diz ao rsync para imprimir informações mostrando o progresso da transferência.
+         10. _-P_ ou _--progress_ : Esta opção diz ao _rsync_ para imprimir informações mostrando o progresso da transferência.
 
             ```bash
 
