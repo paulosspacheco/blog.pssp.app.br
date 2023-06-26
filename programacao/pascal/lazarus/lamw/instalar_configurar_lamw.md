@@ -41,6 +41,14 @@
          2. Na aba _Cross/OS_ selecione o sistema operacional destino:
             1. Android
             2. etc...
+      2. Instalar Laz4Android
+         1. [Download](https://sourceforge.net/projects/laz4android/)
+            1. Last update:2022-08-15
+            2. FPC: 3.2.2 (win32/win64/arm-android/aarch64-android/i386-android/x86_64-android/jvm-android)
+            3. Lazarus:2.2.2
+            4. Android NDK: r19c
+            5. 1.Update to Lazarus 2.2.2 source + FPC 3.2.2
+            6. I recommend using laz4android + LAMW(Lazarus Android Module Wizard) to develop android apps.
 
 2. **Passo a passo para instalar a infraestrutura android**.
    1. Instalar [Android Studio](https://developer.android.com/studio?gclid=CjwKCAjw-b-kBhB-EiwA4fvKrEsTffVft6mg-eLbZ3JJYdnWSaD5gEdVKuKZHzXlifA0Up-MEt49ehoCd8kQAvD_BwE&gclsrc=aw.ds)
@@ -66,15 +74,38 @@
 
             ```
 
-      4. Refências:
+      4. **Referências**:
          1. [HowTo - Ambiente de desenvolviment](https://forum.lazarus.freepascal.org/index.php/topic,40750.html)
 
    3. Configurar Lazarus para registrar a infraestrutura:
-      1. Selecionar opção _/menu/tools/[LAMW] Android Project Options/Paths Settings [Jdk, Sdk, Ndk, ...]_
+      1. Selecionar opção _/menu_ _/tools_ _/[LAMW] Android Project Options_ _/Paths Settings [Jdk, Sdk, Ndk, ...]_
          1. Preencher o formulário:
             1. ![Paths Settings [Jdk, Sdk, Ndk, ...]](./img/form_path_lamw.jpeg)
-      2.  
-   4. Notas
+
+         2. O arquivo [_/fpcupdeluxe/config_lazarus/LAMW.ini_](./LAMW.ini) após instalar LamW e editado os campos solicitados:
+
+            ```ini
+
+               [NewProject]
+                  PathToSmartDesigner=/home/paulosspacheco/v/fpcupdeluxe/lazarus/components/lazandroidmodulewizard-master/android_wizard/smartdesigner
+                  PathToJavaTemplates=/home/paulosspacheco/v/fpcupdeluxe/lazarus/components/lazandroidmodulewizard-master/android_wizard/smartdesigner/java
+                  PathToJavaJDK=/usr/lib/jvm/java-1.11.0-openjdk-amd64/bin/java
+                  NDKRelease=25.2.9519653
+                  NDK=6
+                  PrebuildOSYS=linux-x86_32
+                  PathToAndroidNDK=/home/paulosspacheco/v/android-sdk/ndk/25.2.9519653
+                  PathToAndroidSDK=/home/paulosspacheco/v/android-sdk
+                  PathToGradle=/home/paulosspacheco/.sdkman/candidates/gradle/6.6.1
+                  PathToAntBin=/usr/bin/ant
+                  PathToWorkspace=/home/paulosspacheco/v/paulosspacheco/LazarusProjects/lamw
+                  InstructionSet=1
+                  PackagePrefaceName=org.lamw
+
+            ```
+
+      2. ...  
+
+   4. **Notas**
       1. Mensagem após pressionar o botão ok ao informar pasta do ndk e sdk caso não ache o ndk:
 
          ```md

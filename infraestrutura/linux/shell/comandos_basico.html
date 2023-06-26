@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Comandos b&aacute;sico do Shell do Linux &lt;a href&equals;&quot;comandos&lowbar;basico&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-   
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- CSS markdown -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
         
         <!-- CSS da página /index.html -->
         <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
@@ -967,40 +967,40 @@ result_cp=<span class="hljs-string">"$?"</span>
 <!-- markdownlint-disable-next-line -->
 <p><span id='id_cmd_rsync'></span> - <em><a href="https://www.hostinger.com.br/tutoriais/comando-rsync-linux">rsync</a></em>: Sincroniza de forma rápida e flexível dados entre dois computadores. <a href="https://linux.die.net/man/1/rsync">Veja mais...</a></p>
 <ol>
-<li><strong>Parâmetros</strong>
+<li>
+<p><strong>Parâmetros:</strong></p>
 <ol>
-<li>
-<p><em>-r</em> : Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente</p>
-</li>
-<li>
-<p><em>-R</em> : Copia deve ter o nome original e não o nome relativo</p>
-</li>
-<li>
-<p><em>-z</em> : Comprime os dados dos arquivos antes de enviá-los</p>
-</li>
-<li>
-<p><em>-v</em> : Mostra a versão do <em>rsync</em> ao iniciar a cópia.</p>
-</li>
-<li>
-<p><em>-h</em> : output num formato legível para humanos.</p>
-</li>
-<li>
-<p><em>-a</em> : Indica que se trata de arquivo e quer dizer que deve copiar permissões, mudanças de horário e outros dados.</p>
+<li><em>-r</em> : Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente</li>
+<li><em>-R</em> : Copia deve ter o nome original e não o nome relativo</li>
+<li><em>-z</em> : Comprime os dados dos arquivos antes de enviá-los</li>
+<li><em>-v</em> : Mostra a versão do <em>rsync</em> ao iniciar a cópia.</li>
+<li><em>-h</em> : output num formato legível para humanos.</li>
+<li><em>-a</em> : Indica que se trata de arquivo e quer dizer que deve copiar permissões, mudanças de horário e outros dados.</li>
+<li><em>-l</em> : Quando links simbólicos forem encontrados, recrie o link simbólico no destino.</li>
+<li><em>-u</em> : Não sobrescreve nenhum arquivo no destino da transferência que possua uma data posterior (mais recente) à data do arquivo correspondente, na origem.</li>
+<li><em>-n</em> : Modo “dry run” – executa uma tentativa de copiar dados sem realmente copiar qualquer arquivo.</li>
+<li><em>--progress</em> : Esta opção diz ao rsync para imprimir informações mostrando o progresso da transferência.</li>
+</ol>
 <pre><code class="hljs language-bash">
     <span class="hljs-comment"># Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/</span>
     <span class="hljs-comment"># -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente</span>
     <span class="hljs-comment"># -z Comprimir os dados dos arquivos antes de enviá-los</span>
-    rsync -zrvha ~/original/* ~/duplicate/
+    rsync -zrvhalu --progress ~/original/* ~/duplicate/
 
     <span class="hljs-comment"># Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/</span>
     <span class="hljs-comment"># -R Copia deve ter o nome original e não o nome relativo</span>
     <span class="hljs-comment"># -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente</span>
     <span class="hljs-comment"># -z Comprimir os dados dos arquivos antes de enviá-los</span>
-    rsync -zrRvha ~/original/* ~/duplicate/
+    rsync -zrRvhalu --progress ~/original/* ~/duplicate/
 
 
 </code></pre>
 </li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="https://ss64.com/bash/rsync_options.html">rsync_options</a></li>
+<li><a href="http://www.bosontreinamentos.com.br/linux/10-exemplos-do-comando-rsync-para-backup-e-sincronismo-de-arquivos-no-linux/">10 exemplos do comando rsync para backup e sincronismo de arquivos no Linux</a></li>
 </ol>
 </li>
 </ol>
@@ -1164,11 +1164,9 @@ result_cp=<span class="hljs-string">"$?"</span>
 </li>
 <li>
 <p><em>history</em>: Lista os últimos comandos usados, muito útil para lembrar também de que comandos foram usados para fazer determinada acção no passado ou o que foi feito em dada altura</p>
-</li>
-</ol>
 <pre><code class="hljs language-bash">
 </code></pre>
-<ol start="11">
+</li>
 <li>
 <p><em>last</em>: Indica o último login de utilizadores</p>
 <pre><code class="hljs language-bash">
@@ -1306,6 +1304,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li><a href="https://www.youtube.com/watch?v=QZ2nyxzZXPY">30 comandos mais usados do Linux</a></li>
 <li><a href="https://www.devmedia.com.br/comandos-importantes-linux/23893">Comandos Importantes Linux</a></li>
 <li><a href="http://www.bosontreinamentos.com.br/linux/10-exemplos-do-comando-rsync-para-backup-e-sincronismo-de-arquivos-no-linux/">10 exemplos do comando rsync para backup e sincronismo de arquivos no Linux</a></li>
+<li><a href="https://ss64.com/bash/rsync_options.html">rsync_options</a></li>
 </ol>
 </li>
 </ol>

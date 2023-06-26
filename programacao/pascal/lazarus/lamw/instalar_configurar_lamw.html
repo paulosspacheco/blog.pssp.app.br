@@ -3,150 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Como instalar e configurar LamW&lt;a href&equals;&quot;instalar&lowbar;econfigurar&lowbar;lamw&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;&#x279a;&lt;&sol;a&gt;</title>
-        <style>
-/* From extension vscode.github */
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-
-.vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
-	display: none;
-}
-
-/* From extension bierner.markdown-checkbox */
-.contains-task-list {
-    padding-left: 0;
-}
-
-.contains-task-list li {
-    margin-left: 24px;
-}
-
-.contains-task-list .task-list-item {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
-}
-
-.contains-task-list .contains-task-list {
-    padding-left: 20px;
-} 
-/* From extension davidmwhynot.markdown-higlightjs */
-/*
-
-Atom One Dark by Daniel Gamage
-Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
-
-base:    #282c34
-mono-1:  #abb2bf
-mono-2:  #818896
-mono-3:  #5c6370
-hue-1:   #56b6c2
-hue-2:   #61aeee
-hue-3:   #c678dd
-hue-4:   #98c379
-hue-5:   #e06c75
-hue-5-2: #be5046
-hue-6:   #d19a66
-hue-6-2: #e6c07b
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #abb2bf;
-  background: #282c34;
-}
-
-.hljs-comment,
-.hljs-quote {
-  color: #5c6370;
-  font-style: italic;
-}
-
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula {
-  color: #c678dd;
-}
-
-.hljs-section,
-.hljs-name,
-.hljs-selector-tag,
-.hljs-deletion,
-.hljs-subst {
-  color: #e06c75;
-}
-
-.hljs-literal {
-  color: #56b6c2;
-}
-
-.hljs-string,
-.hljs-regexp,
-.hljs-addition,
-.hljs-attribute,
-.hljs-meta-string {
-  color: #98c379;
-}
-
-.hljs-built_in,
-.hljs-class .hljs-title {
-  color: #e6c07b;
-}
-
-.hljs-attr,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
-  color: #d19a66;
-}
-
-.hljs-symbol,
-.hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
-  color: #61aeee;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-.hljs-link {
-  text-decoration: underline;
-}
-
-</style>
-        
-        
-        <style>
-.task-list-item {
-    list-style-type: none;
-}
-
-.task-list-item-checkbox {
-    margin-left: -20px;
-    vertical-align: middle;
-    pointer-events: none;
-}
-</style>
-        <style>
-
+     
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- CSS markdown -->
@@ -155,7 +12,6 @@ hue-6-2: #e6c07b
         <!-- CSS da página /index.html -->
         <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
 
-</style>
     </head>
     <body class="vscode-body vscode-dark">
         <!-- markdownlint-disable-next-line -->
@@ -248,6 +104,20 @@ hue-6-2: #e6c07b
 </li>
 </ol>
 </li>
+<li>Instalar Laz4Android
+<ol>
+<li><a href="https://sourceforge.net/projects/laz4android/">Download</a>
+<ol>
+<li>Last update:2022-08-15</li>
+<li>FPC: 3.2.2 (win32/win64/arm-android/aarch64-android/i386-android/x86_64-android/jvm-android)</li>
+<li>Lazarus:2.2.2</li>
+<li>Android NDK: r19c</li>
+<li>1.Update to Lazarus 2.2.2 source + FPC 3.2.2</li>
+<li>I recommend using laz4android + LAMW(Lazarus Android Module Wizard) to develop android apps.</li>
+</ol>
+</li>
+</ol>
+</li>
 </ol>
 </li>
 </ol>
@@ -297,7 +167,7 @@ hue-6-2: #e6c07b
 </ol>
 </li>
 <li>
-<p>Refências:</p>
+<p><strong>Referências</strong>:</p>
 <ol>
 <li><a href="https://forum.lazarus.freepascal.org/index.php/topic,40750.html">HowTo - Ambiente de desenvolviment</a></li>
 </ol>
@@ -307,20 +177,44 @@ hue-6-2: #e6c07b
 <li>
 <p>Configurar Lazarus para registrar a infraestrutura:</p>
 <ol>
-<li>Selecionar opção <em>/menu/tools/[LAMW] Android Project Options/Paths Settings [Jdk, Sdk, Ndk, ...]</em>
+<li>
+<p>Selecionar opção <em>/menu</em> <em>/tools</em> <em>/[LAMW] Android Project Options</em> <em>/Paths Settings [Jdk, Sdk, Ndk, ...]</em></p>
 <ol>
-<li>Preencher o formulário:
+<li>
+<p>Preencher o formulário:</p>
 <ol>
 <li><img src="./img/form_path_lamw.jpeg" alt="Paths Settings [Jdk, Sdk, Ndk, ...]"></li>
 </ol>
 </li>
-</ol>
+<li>
+<p>O arquivo <a href="./LAMW.ini"><em>/fpcupdeluxe/config_lazarus/LAMW.ini</em></a> após instalar LamW e editado os campos solicitados:</p>
+<pre><code class="hljs language-ini">
+   <span class="hljs-section">[NewProject]</span>
+      PathToSmartDesigner=/home/paulosspacheco/v/fpcupdeluxe/lazarus/components/lazandroidmodulewizard-master/android_wizard/smartdesigner
+      PathToJavaTemplates=/home/paulosspacheco/v/fpcupdeluxe/lazarus/components/lazandroidmodulewizard-master/android_wizard/smartdesigner/java
+      PathToJavaJDK=/usr/lib/jvm/java-1.11.0-openjdk-amd64/bin/java
+      NDKRelease=25.2.9519653
+      NDK=6
+      PrebuildOSYS=linux-x86_32
+      PathToAndroidNDK=/home/paulosspacheco/v/android-sdk/ndk/25.2.9519653
+      PathToAndroidSDK=/home/paulosspacheco/v/android-sdk
+      PathToGradle=/home/paulosspacheco/.sdkman/candidates/gradle/6.6.1
+      PathToAntBin=/usr/bin/ant
+      PathToWorkspace=/home/paulosspacheco/v/paulosspacheco/LazarusProjects/lamw
+      InstructionSet=1
+      PackagePrefaceName=org.lamw
+
+</code></pre>
 </li>
-<li></li>
 </ol>
 </li>
 <li>
-<p>Notas</p>
+<p>...</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Notas</strong></p>
 <ol>
 <li>
 <p>Mensagem após pressionar o botão ok ao informar pasta do ndk e sdk caso não ache o ndk:</p>

@@ -816,30 +816,37 @@
 
    2. <!-- markdownlint-disable-next-line -->
       <span id='id_cmd_rsync'></span> - _[rsync](https://www.hostinger.com.br/tutoriais/comando-rsync-linux)_: Sincroniza de forma rápida e flexível dados entre dois computadores. [Veja mais...](https://linux.die.net/man/1/rsync)
-      1. **Parâmetros**  
+      1. **Parâmetros:**  
          1. _-r_ : Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente
          2. _-R_ : Copia deve ter o nome original e não o nome relativo
          3. _-z_ : Comprime os dados dos arquivos antes de enviá-los
          4. _-v_ : Mostra a versão do _rsync_ ao iniciar a cópia.
          5. _-h_ : output num formato legível para humanos.
          6. _-a_ : Indica que se trata de arquivo e quer dizer que deve copiar permissões, mudanças de horário e outros dados.
+         7. _-l_ : Quando links simbólicos forem encontrados, recrie o link simbólico no destino.
+         8. _-u_ : Não sobrescreve nenhum arquivo no destino da transferência que possua uma data posterior (mais recente) à data do arquivo correspondente, na origem.
+         9. _-n_ : Modo “dry run” – executa uma tentativa de copiar dados sem realmente copiar qualquer arquivo.
+         10. _--progress_ : Esta opção diz ao rsync para imprimir informações mostrando o progresso da transferência.
 
             ```bash
 
                 # Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/
                 # -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente
                 # -z Comprimir os dados dos arquivos antes de enviá-los
-                rsync -zrvha ~/original/* ~/duplicate/
+                rsync -zrvhalu --progress ~/original/* ~/duplicate/
 
                 # Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/
                 # -R Copia deve ter o nome original e não o nome relativo
                 # -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente
                 # -z Comprimir os dados dos arquivos antes de enviá-los
-                rsync -zrRvha ~/original/* ~/duplicate/
+                rsync -zrRvhalu --progress ~/original/* ~/duplicate/
 
 
             ```
 
+      2. **Referências:**
+         1. [rsync_options](https://ss64.com/bash/rsync_options.html)
+         2. [10 exemplos do comando rsync para backup e sincronismo de arquivos no Linux](http://www.bosontreinamentos.com.br/linux/10-exemplos-do-comando-rsync-para-backup-e-sincronismo-de-arquivos-no-linux/)
    3. _scp_: Versão segura do rcp
 
        ```bash
@@ -1008,9 +1015,9 @@
 
     10. _history_: Lista os últimos comandos usados, muito útil para lembrar também de que comandos foram usados para fazer determinada acção no passado ou o que foi feito em dada altura
 
-       ```bash
+        ```bash
 
-       ```
+        ```
 
     11. _last_: Indica o último login de utilizadores
 
@@ -1153,6 +1160,7 @@
     5. [30 comandos mais usados do Linux](https://www.youtube.com/watch?v=QZ2nyxzZXPY)
     6. [Comandos Importantes Linux](https://www.devmedia.com.br/comandos-importantes-linux/23893)
     7. [10 exemplos do comando rsync para backup e sincronismo de arquivos no Linux](http://www.bosontreinamentos.com.br/linux/10-exemplos-do-comando-rsync-para-backup-e-sincronismo-de-arquivos-no-linux/)
+    8. [rsync_options](https://ss64.com/bash/rsync_options.html)
 
 <!-- markdownlint-disable-next-line -->
 #### **HISTÓRICO** <span id='id_historico'></span>
