@@ -909,6 +909,7 @@
          3. [Rsync: confira como utilizar o comando do Linux](https://www.hostgator.com.br/blog/utilizar-comando-rsync-do-linux/)
          4. [Rsync: excluir diretório](https://linuxconfig.org/rsync-exclude-directory)
          5. [Exemplos de Rsync no Linux](https://linuxconfig.org/rsync-command-examples)
+         6. [Linux / Unix Rsync Copiar apenas arquivos e diretórios de pontos ocultos](https://www.cyberciti.biz/faq/linux-unix-appleosx-bsd-rsync-copy-hidden-dot-files/)
 
    3. _scp_: Versão segura do rcp
 
