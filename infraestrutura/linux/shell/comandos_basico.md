@@ -837,7 +837,7 @@
          4. _-z_ : Comprime os dados dos arquivos antes de enviá-los
          5. _-v_ : Mostra a versão do _rsync_ ao iniciar a cópia.
          6. _-h_ : output num formato legível para humanos.
-         7. _-a_ : Indica que se trata de arquivo e quer dizer que deve copiar permissões, mudanças de horário e outros dados.
+         7. _-a_ : --archive O modo de arquivamento é igual a -rlptgoD (sem -H,-A,-X).
          8. _-l_ : Quando links simbólicos forem encontrados, recrie o link simbólico no destino.
          9. _-i_ : Copia links simbólicos como links simbólicos.
          10. _-u_ : Força o _rsync_ a ignorar todos os arquivos existentes no destino e cuja hora de modificação seja mais recente que o arquivo de origem.
@@ -847,19 +847,18 @@
          14. _-t_ : Preserva datas
          15. _-g_ : Preserva o grupo.
          16. _-o_ : Preserva o dono. Precisa de root.
+         17. _-D_ : --devices --specials Preservar dispositivos (somente superusuário) +arquivos
 
             ```bash
 
                # Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/
-               # -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente
-               # -z Comprimir os dados dos arquivos antes de enviá-los
-               rsync -zarvhautpgio --progress ~/original/* ~/duplicate/
+               # -a = -rlptgoD                      
+               rsync -zahui --progress ~/original/* ~/duplicate/
 
                # Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/
-               # -R Copia deve ter o nome original e não o nome relativo
-               # -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente
-               # -z Comprimir os dados dos arquivos antes de enviá-los
-               rsync -zarRvhautpgio --progress ~/original/* ~/duplicate/
+               # -a = -rlptgoD
+               # -R = Copia deve ter o nome original e não o nome relativo
+               rsync -zaRhui --progress ~/original/* ~/duplicate/                    
 
             ```
 
@@ -876,6 +875,7 @@
                echo "Script: copyto.sh"
                echo .
                origem="./*"
+               #origem="./.*"
                destino="$1"
                except="$2"
                if [ -z destino ]; then
@@ -889,9 +889,7 @@
                echo "Nota....: Copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO."
                echo .
                echo "Cópia incremental".         
-               #sudo rsync --exclude-from=$except -rRvhzu --progress $origem $destino
-               sudo rsync --exclude-from=$except -arRvhutpgio --progress $origem $destino
-
+               sudo rsync --exclude-from=$except -zaRhui --progress $origem $destino
                result_cp="$?"
                if [ $result_cp != 0 ]; then
                  echo algo errado na cópia

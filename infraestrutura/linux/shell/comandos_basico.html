@@ -1007,7 +1007,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li><em>-z</em> : Comprime os dados dos arquivos antes de enviá-los</li>
 <li><em>-v</em> : Mostra a versão do <em>rsync</em> ao iniciar a cópia.</li>
 <li><em>-h</em> : output num formato legível para humanos.</li>
-<li><em>-a</em> : Indica que se trata de arquivo e quer dizer que deve copiar permissões, mudanças de horário e outros dados.</li>
+<li><em>-a</em> : --archive O modo de arquivamento é igual a -rlptgoD (sem -H,-A,-X).</li>
 <li><em>-l</em> : Quando links simbólicos forem encontrados, recrie o link simbólico no destino.</li>
 <li><em>-i</em> : Copia links simbólicos como links simbólicos.</li>
 <li><em>-u</em> : Força o <em>rsync</em> a ignorar todos os arquivos existentes no destino e cuja hora de modificação seja mais recente que o arquivo de origem.</li>
@@ -1017,18 +1017,17 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li><em>-t</em> : Preserva datas</li>
 <li><em>-g</em> : Preserva o grupo.</li>
 <li><em>-o</em> : Preserva o dono. Precisa de root.</li>
+<li><em>-D</em> : --devices --specials Preservar dispositivos (somente superusuário) +arquivos</li>
 </ol>
 <pre><code class="hljs language-bash">
    <span class="hljs-comment"># Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/</span>
-   <span class="hljs-comment"># -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente</span>
-   <span class="hljs-comment"># -z Comprimir os dados dos arquivos antes de enviá-los</span>
-   rsync -zarvhautpgio --progress ~/original/* ~/duplicate/
+   <span class="hljs-comment"># -a = -rlptgoD                      </span>
+   rsync -zahui --progress ~/original/* ~/duplicate/
 
    <span class="hljs-comment"># Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/</span>
-   <span class="hljs-comment"># -R Copia deve ter o nome original e não o nome relativo</span>
-   <span class="hljs-comment"># -r Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente</span>
-   <span class="hljs-comment"># -z Comprimir os dados dos arquivos antes de enviá-los</span>
-   rsync -zarRvhautpgio --progress ~/original/* ~/duplicate/
+   <span class="hljs-comment"># -a = -rlptgoD</span>
+   <span class="hljs-comment"># -R = Copia deve ter o nome original e não o nome relativo</span>
+   rsync -zaRhui --progress ~/original/* ~/duplicate/                    
 
 </code></pre>
 </li>
@@ -1046,6 +1045,7 @@ result_cp=<span class="hljs-string">"$?"</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Script: copyto.sh"</span>
    <span class="hljs-built_in">echo</span> .
    origem=<span class="hljs-string">"./*"</span>
+   <span class="hljs-comment">#origem="./.*"</span>
    destino=<span class="hljs-string">"<span class="hljs-variable">$1</span>"</span>
    except=<span class="hljs-string">"<span class="hljs-variable">$2</span>"</span>
    <span class="hljs-keyword">if</span> [ -z destino ]; <span class="hljs-keyword">then</span>
@@ -1059,9 +1059,7 @@ result_cp=<span class="hljs-string">"$?"</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Nota....: Copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO."</span>
    <span class="hljs-built_in">echo</span> .
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Cópia incremental"</span>.         
-   <span class="hljs-comment">#sudo rsync --exclude-from=$except -rRvhzu --progress $origem $destino</span>
-   sudo rsync --exclude-from=<span class="hljs-variable">$except</span> -arRvhutpgio --progress <span class="hljs-variable">$origem</span> <span class="hljs-variable">$destino</span>
-
+   sudo rsync --exclude-from=<span class="hljs-variable">$except</span> -zaRhui --progress <span class="hljs-variable">$origem</span> <span class="hljs-variable">$destino</span>
    result_cp=<span class="hljs-string">"$?"</span>
    <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$result_cp</span> != 0 ]; <span class="hljs-keyword">then</span>
      <span class="hljs-built_in">echo</span> algo errado na cópia
