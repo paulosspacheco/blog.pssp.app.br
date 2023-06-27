@@ -831,23 +831,23 @@
             1. _rsync_ [_parâmetros_] [_source_] [_user_]@[_host_]:[_destination_]
 
       2. **Parâmetros:**  
-         1. _-a_ : Modo de arquivamento.
+         1. _-a_ : --archive O modo de arquivamento é igual a _-rlptgoD_ (sem -H,-A,-X).
          2. _-r_ : Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente
          3. _-R_ : Copia deve ter o nome original e não o nome relativo
          4. _-z_ : Comprime os dados dos arquivos antes de enviá-los
          5. _-v_ : Mostra a versão do _rsync_ ao iniciar a cópia.
          6. _-h_ : output num formato legível para humanos.
-         7. _-a_ : --archive O modo de arquivamento é igual a -rlptgoD (sem -H,-A,-X).
-         8. _-l_ : Quando links simbólicos forem encontrados, recrie o link simbólico no destino.
-         9. _-i_ : Copia links simbólicos como links simbólicos.
-         10. _-u_ : Força o _rsync_ a ignorar todos os arquivos existentes no destino e cuja hora de modificação seja mais recente que o arquivo de origem.
-         11. _-n_ : Modo “dry run” – executa uma tentativa de copiar dados sem realmente copiar qualquer arquivo.
-         12. _-P_ ou _--progress_ : Esta opção diz ao _rsync_ para imprimir informações mostrando o progresso da transferência.
-         13. _-p_ : Preserva as permissões.
-         14. _-t_ : Preserva datas
-         15. _-g_ : Preserva o grupo.
-         16. _-o_ : Preserva o dono. Precisa de root.
-         17. _-D_ : --devices --specials Preservar dispositivos (somente superusuário) +arquivos
+         7. _-l_ : Quando links simbólicos forem encontrados, recrie o link simbólico no destino.
+         8. _-i_ : Copia links simbólicos como links simbólicos.
+         9. _-u_ : Força o _rsync_ a ignorar todos os arquivos existentes no destino e cuja hora de modificação seja mais recente que o arquivo de origem.
+         10. _-n_ : Modo “dry run” – executa uma tentativa de copiar dados sem realmente copiar qualquer arquivo.
+         11. _-P_ ou _--progress_ : Esta opção diz ao _rsync_ para imprimir informações mostrando o progresso da transferência.
+         12. _-p_ : Preserva as permissões.
+         13. _-t_ : Preserva datas
+         14. _-g_ : Preserva o grupo.
+         15. _-o_ : Preserva o dono. Precisa de root.
+         16. _-D_ : --devices --specials Preservar dispositivos (somente superusuário) +arquivos
+         17. _--delete_ : Exclui arquivos no diretório de destino se eles não existirem no diretório de origem.
 
             ```bash
 
@@ -858,12 +858,13 @@
                # Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/
                # -a = -rlptgoD
                # -R = Copia deve ter o nome original e não o nome relativo
-               rsync -zaRhui --progress ~/original/* ~/duplicate/                    
+               # --delete : Exclui arquivos no diretório de destino se eles não existirem no diretório de origem.
+               rsync -zaRhui --progress --delete ~/original/* ~/duplicate/                    
 
             ```
 
       3. **Script _copyto_:**
-         1. O script copyto copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO."
+         1. O script copyto copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO. Copia também os arquivos e pastas invisíveis.
 
             ```bash
 
@@ -874,26 +875,30 @@
 
                echo "Script: copyto.sh"
                echo .
+               origem_invisivel="./.[^.]*"
                origem="./*"
-               #origem="./.*"
                destino="$1"
                except="$2"
                if [ -z destino ]; then
-                 echo "O destino precisa ser informado"
-                 exit 1
+                  echo "O destino precisa ser informado"
+                  exit 1
                fi  
                echo .
                echo "Origem..: $destino"
                echo "Destino.: $origem"
-               echo "Excessão: $except"
+               echo "Exessão.: $except"
                echo "Nota....: Copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO."
                echo .
-               echo "Cópia incremental".         
-               sudo rsync --exclude-from=$except -zaRhui --progress $origem $destino
+               echo "Cópia incremental".        
+               
+               sudo rsync --exclude-from=$except --delete -arRvhui --progress $origem_invisivel $destino
+               sudo rsync --exclude-from=$except --delete -arRvhui --progress $origem $destino
+
                result_cp="$?"
                if [ $result_cp != 0 ]; then
-                 echo algo errado na cópia
-                 exit 1;
+                  echo .
+                  echo algo errado na cópia
+                  exit 1;
                fi
 
             ```

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Comandos b&aacute;sico do Shell do Linux &lt;a href&equals;&quot;comandos&lowbar;basico&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-
+      
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- CSS markdown -->
@@ -1001,13 +1001,12 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li>
 <p><strong>Parâmetros:</strong></p>
 <ol>
-<li><em>-a</em> : Modo de arquivamento.</li>
+<li><em>-a</em> : --archive O modo de arquivamento é igual a <em>-rlptgoD</em> (sem -H,-A,-X).</li>
 <li><em>-r</em> : Copia a pasta ~/duplicate/ para a pasta ~/original/* recursivamente</li>
 <li><em>-R</em> : Copia deve ter o nome original e não o nome relativo</li>
 <li><em>-z</em> : Comprime os dados dos arquivos antes de enviá-los</li>
 <li><em>-v</em> : Mostra a versão do <em>rsync</em> ao iniciar a cópia.</li>
 <li><em>-h</em> : output num formato legível para humanos.</li>
-<li><em>-a</em> : --archive O modo de arquivamento é igual a -rlptgoD (sem -H,-A,-X).</li>
 <li><em>-l</em> : Quando links simbólicos forem encontrados, recrie o link simbólico no destino.</li>
 <li><em>-i</em> : Copia links simbólicos como links simbólicos.</li>
 <li><em>-u</em> : Força o <em>rsync</em> a ignorar todos os arquivos existentes no destino e cuja hora de modificação seja mais recente que o arquivo de origem.</li>
@@ -1018,6 +1017,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li><em>-g</em> : Preserva o grupo.</li>
 <li><em>-o</em> : Preserva o dono. Precisa de root.</li>
 <li><em>-D</em> : --devices --specials Preservar dispositivos (somente superusuário) +arquivos</li>
+<li><em>--delete</em> : Exclui arquivos no diretório de destino se eles não existirem no diretório de origem.</li>
 </ol>
 <pre><code class="hljs language-bash">
    <span class="hljs-comment"># Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/</span>
@@ -1027,7 +1027,8 @@ result_cp=<span class="hljs-string">"$?"</span>
    <span class="hljs-comment"># Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/</span>
    <span class="hljs-comment"># -a = -rlptgoD</span>
    <span class="hljs-comment"># -R = Copia deve ter o nome original e não o nome relativo</span>
-   rsync -zaRhui --progress ~/original/* ~/duplicate/                    
+   <span class="hljs-comment"># --delete : Exclui arquivos no diretório de destino se eles não existirem no diretório de origem.</span>
+   rsync -zaRhui --progress --delete ~/original/* ~/duplicate/                    
 
 </code></pre>
 </li>
@@ -1035,7 +1036,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 <p><strong>Script <em>copyto</em>:</strong></p>
 <ol>
 <li>
-<p>O script copyto copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO.&quot;</p>
+<p>O script copyto copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO. Copia também os arquivos e pastas invisíveis.</p>
 <pre><code class="hljs language-bash">
    <span class="hljs-comment">#!/bin/bash</span>
    <span class="hljs-comment"># Program copyto.sh</span>
@@ -1044,26 +1045,30 @@ result_cp=<span class="hljs-string">"$?"</span>
 
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Script: copyto.sh"</span>
    <span class="hljs-built_in">echo</span> .
+   origem_invisivel=<span class="hljs-string">"./.[^.]*"</span>
    origem=<span class="hljs-string">"./*"</span>
-   <span class="hljs-comment">#origem="./.*"</span>
    destino=<span class="hljs-string">"<span class="hljs-variable">$1</span>"</span>
    except=<span class="hljs-string">"<span class="hljs-variable">$2</span>"</span>
    <span class="hljs-keyword">if</span> [ -z destino ]; <span class="hljs-keyword">then</span>
-     <span class="hljs-built_in">echo</span> <span class="hljs-string">"O destino precisa ser informado"</span>
-     <span class="hljs-built_in">exit</span> 1
+      <span class="hljs-built_in">echo</span> <span class="hljs-string">"O destino precisa ser informado"</span>
+      <span class="hljs-built_in">exit</span> 1
    <span class="hljs-keyword">fi</span>  
    <span class="hljs-built_in">echo</span> .
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Origem..: <span class="hljs-variable">$destino</span>"</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Destino.: <span class="hljs-variable">$origem</span>"</span>
-   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Excessão: <span class="hljs-variable">$except</span>"</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Exessão.: <span class="hljs-variable">$except</span>"</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Nota....: Copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO."</span>
    <span class="hljs-built_in">echo</span> .
-   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Cópia incremental"</span>.         
-   sudo rsync --exclude-from=<span class="hljs-variable">$except</span> -zaRhui --progress <span class="hljs-variable">$origem</span> <span class="hljs-variable">$destino</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Cópia incremental"</span>.        
+   
+   sudo rsync --exclude-from=<span class="hljs-variable">$except</span> --delete -arRvhui --progress <span class="hljs-variable">$origem_invisivel</span> <span class="hljs-variable">$destino</span>
+   sudo rsync --exclude-from=<span class="hljs-variable">$except</span> --delete -arRvhui --progress <span class="hljs-variable">$origem</span> <span class="hljs-variable">$destino</span>
+
    result_cp=<span class="hljs-string">"$?"</span>
    <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$result_cp</span> != 0 ]; <span class="hljs-keyword">then</span>
-     <span class="hljs-built_in">echo</span> algo errado na cópia
-     <span class="hljs-built_in">exit</span> 1;
+      <span class="hljs-built_in">echo</span> .
+      <span class="hljs-built_in">echo</span> algo errado na cópia
+      <span class="hljs-built_in">exit</span> 1;
    <span class="hljs-keyword">fi</span>
 
 </code></pre>
