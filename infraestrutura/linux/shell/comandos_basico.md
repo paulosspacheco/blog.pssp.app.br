@@ -282,13 +282,13 @@
    6. <!-- markdownlint-disable-next-line -->
       <span id='id_dd'></span> - **[_dd_](https://man7.org/linux/man-pages/man1/dd.1.html) :  Clona um dispositivo de bloco, convertendo e formatando de acordo com os operandos. [Veja mais...](https://www.linuxdescomplicado.com.br/2016/11/alguns-exemplos-de-que-o-comando-dd-pode-ser-considerado-umas-das-ferramentas-mais-versateis-do-linux.html)**
       1. Parâmetros:
-         1. ‘if=/dev/sdax‘ : Representa o disco de origem a ser copiado;
-         2. ‘of=/dev/sdbx‘ : Representa o disco de destino que vai receber a cópia;
-         3. _'bs=4096'_ : Representa o tamanho do bloco (número de bytes a serem lidos/gravados de cada vez).
-         4. _conv=noerror,sync_ representa o parâmetro de conversão.
+         1. ‘_if_=_/dev/sdax_‘ : Representa o disco de origem a ser copiado;
+         2. ‘_of_=_/dev/sdbx_‘ : Representa o disco de destino que vai receber a cópia;
+         3. '_bs_=4096' : Representa o tamanho do bloco (número de bytes a serem lidos/gravados de cada vez).
+         4. _conv_=_noerror_,_sync_ representa o parâmetro de conversão.
             1. A opção ‘noerror’ : permite que a ferramenta continue copiando os dados mesmo que encontre erros.
             2. E a opção ‘sync’ : permite usar operações de Entrada/Saída sincronizadas.
-         5. '_status=progress_' : Mostra em que posição está a cópia.
+         5. '_status_=_progress_' : Mostra em que posição está a cópia.
 
       2. Exemplos de backup de todo o disco rígido para uma outra unidade:
 
@@ -917,7 +917,7 @@
 
        ```
 
-9.  <!-- markdownlint-disable-next-line -->
+9. <!-- markdownlint-disable-next-line -->
    <span id='id_cmd__noticias_Rede'></span>**Comandos de Notícias ou Rede**
    1. _netstat_: Mostra o estado da rede
 

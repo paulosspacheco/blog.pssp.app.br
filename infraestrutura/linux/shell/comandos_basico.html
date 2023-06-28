@@ -426,16 +426,16 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li>
 <p>Parâmetros:</p>
 <ol>
-<li>‘if=/dev/sdax‘ : Representa o disco de origem a ser copiado;</li>
-<li>‘of=/dev/sdbx‘ : Representa o disco de destino que vai receber a cópia;</li>
-<li><em>'bs=4096'</em> : Representa o tamanho do bloco (número de bytes a serem lidos/gravados de cada vez).</li>
-<li><em>conv=noerror,sync</em> representa o parâmetro de conversão.
+<li>‘<em>if</em>=<em>/dev/sdax</em>‘ : Representa o disco de origem a ser copiado;</li>
+<li>‘<em>of</em>=<em>/dev/sdbx</em>‘ : Representa o disco de destino que vai receber a cópia;</li>
+<li>'<em>bs</em>=4096' : Representa o tamanho do bloco (número de bytes a serem lidos/gravados de cada vez).</li>
+<li><em>conv</em>=<em>noerror</em>,<em>sync</em> representa o parâmetro de conversão.
 <ol>
 <li>A opção ‘noerror’ : permite que a ferramenta continue copiando os dados mesmo que encontre erros.</li>
 <li>E a opção ‘sync’ : permite usar operações de Entrada/Saída sincronizadas.</li>
 </ol>
 </li>
-<li>'<em>status=progress</em>' : Mostra em que posição está a cópia.</li>
+<li>'<em>status</em>=<em>progress</em>' : Mostra em que posição está a cópia.</li>
 </ol>
 </li>
 <li>
@@ -1097,8 +1097,6 @@ result_cp=<span class="hljs-string">"$?"</span>
 </li>
 <li>
 <!-- markdownlint-disable-next-line -->
-</li>
-</ol>
 <p><span id='id_cmd__noticias_Rede'></span><strong>Comandos de Notícias ou Rede</strong></p>
 <ol>
 <li>
@@ -1130,6 +1128,8 @@ result_cp=<span class="hljs-string">"$?"</span>
 <p><em>ping</em>: Pingar um determinado host, ou seja, enviar pacotes icmp para um determinado host e medir tempos de resposta, entre outras coisas</p>
 <pre><code class="hljs language-bash">
 </code></pre>
+</li>
+</ol>
 </li>
 <li>
 <!-- markdownlint-disable-next-line -->
