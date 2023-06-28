@@ -284,7 +284,7 @@
       1. Parâmetros:
          1. ‘_if_=_/dev/sdax_‘ : Representa o disco de origem a ser copiado;
          2. ‘_of_=_/dev/sdbx_‘ : Representa o disco de destino que vai receber a cópia;
-         3. '_bs_=4096' : Representa o tamanho do bloco (número de bytes a serem lidos/gravados de cada vez).
+         3. '_bs_=_4096_' : Representa o tamanho do bloco (número de bytes a serem lidos/gravados de cada vez).
          4. _conv_=_noerror_,_sync_ representa o parâmetro de conversão.
             1. A opção ‘noerror’ : permite que a ferramenta continue copiando os dados mesmo que encontre erros.
             2. E a opção ‘sync’ : permite usar operações de Entrada/Saída sincronizadas.
