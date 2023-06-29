@@ -2,6 +2,13 @@
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 29/06/2023</b></legend>
+
+- [x] [Pesquisar all-emojis   👁️ 💭 💬 💭 🗨 🗯 💫 ✋ 👏 🫀 👩‍🏫 🎤 🎧 🔎 📷 🔦 📄 📰 📖 📒 💰 🧾 💹 💸 💳 💲 🪙 ✉ 📧 📩 ✒](https://www.emojiall.com/pt/all-emojis)
+
+</fieldset>
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 17/06/2023</b></legend>
 
 - [x] [Atualizar oração diária número 01](./comportamentos/religiao/minhas_oracoes/oracaoo_diaria_numero_01.html)
