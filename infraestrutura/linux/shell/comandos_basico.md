@@ -889,17 +889,16 @@
                echo "Exessão.: $except"
                echo "Nota....: Copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO."
                echo .
-               echo "Cópia incremental".        
-               
+               echo "Cópia incremental".         
                sudo rsync --exclude-from=$except --delete -arRvhui --progress $origem_invisivel $destino
                sudo rsync --exclude-from=$except --delete -arRvhui --progress $origem $destino
-
                result_cp="$?"
                if [ $result_cp != 0 ]; then
                   echo .
                   echo algo errado na cópia
                   exit 1;
                fi
+
 
             ```
 

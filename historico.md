@@ -5,6 +5,8 @@
 <fieldset> <legend> <b>Feito em 29/06/2023</b></legend>
 
 - [x] [Pesquisar all-emojis 👁️ 💭 💬 💭 🗨 🗯 💫 ✋ 👏 🫀 👩‍🏫 🎤 🎧 🔎 📷 🔦 📄 📰 📖 📒 💰 🧾 💹 💸 💳 💲 🪙 ✉ 📧 📩 ✒](https://www.emojiall.com/pt/all-emojis)
+- [x] [Criar comando copyto](./infraestrutura/linux/shell/comandos_basico.html#id_cmd_rsync)
+- [x] Alterado para versão _0.207.0_ porque foi adicionado o comando copyto.
 
 </fieldset>
 
