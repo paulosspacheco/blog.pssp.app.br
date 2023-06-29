@@ -4,7 +4,7 @@
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 29/06/2023</b></legend>
 
-- [x] [Pesquisar all-emojis   👁️ 💭 💬 💭 🗨 🗯 💫 ✋ 👏 🫀 👩‍🏫 🎤 🎧 🔎 📷 🔦 📄 📰 📖 📒 💰 🧾 💹 💸 💳 💲 🪙 ✉ 📧 📩 ✒](https://www.emojiall.com/pt/all-emojis)
+- [x] [Pesquisar all-emojis 👁️ 💭 💬 💭 🗨 🗯 💫 ✋ 👏 🫀 👩‍🏫 🎤 🎧 🔎 📷 🔦 📄 📰 📖 📒 💰 🧾 💹 💸 💳 💲 🪙 ✉ 📧 📩 ✒](https://www.emojiall.com/pt/all-emojis)
 
 </fieldset>
 
