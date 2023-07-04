@@ -539,10 +539,13 @@
        ```
 
    32. _tee_: Copia o input para um standard output e outros arquivos
+       1. O exemplo abaixo verificará a linha do arquivo file1.txt, gerar o resultado no terminal e salvar no file2.txt.
 
-       ```bash
+         ```bash
 
-       ```
+            wc -l file1.txt | tee file2.txt
+
+         ```
 
    33. _tr_: Traduz caracteres
 
@@ -567,6 +570,8 @@
    37. _wc_: Conta linhas, palavras e mesmo caracteres num arquivo
 
        ```bash
+
+          wc -l file1.txt | tee file2.txt
 
        ```
 
