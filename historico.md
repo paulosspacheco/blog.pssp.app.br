@@ -8,7 +8,6 @@
 
 </fieldset>
 
-
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 29/06/2023</b></legend>
 

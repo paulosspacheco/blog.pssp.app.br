@@ -1,0 +1,56 @@
+<!-- Criado pelo chatgpt -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pesquisa de Alunos da UFC</title>
+  <script>
+    function pesquisarAluno() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("pesquisaInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("tabelaAlunos");
+      tr = table.getElementsByTagName("tr");
+
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0]; // Coluna do nome do aluno
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Pesquisa de Alunos da UFC</h1>
+
+  <input type="text" id="pesquisaInput" onkeyup="pesquisarAluno()" placeholder="Digite o nome do aluno">
+
+  <table id="tabelaAlunos">
+    <tr>
+      <th>Nome</th>
+      <th>Matrícula</th>
+      <th>Curso</th>
+      <th>Email</th>
+    </tr>
+    <tr>
+      <td>João</td>
+      <td>12345</td>
+      <td>Engenharia</td>
+      <td>joao@email.com</td>
+    </tr>
+    <tr>
+      <td>Maria</td>
+      <td>67890</td>
+      <td>Medicina</td>
+      <td>maria@email.com</td>
+    </tr>
+    <!-- Adicione mais linhas para mais alunos -->
+  </table>
+</body>
+</html>
