@@ -1,10 +1,11 @@
 <!-- markdownlint-disable-next-line -->
 #### Projetos em construção<a href="projetos_em_construcao.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
-<!--TODO: em: A fazer até 16/06/2023 -->
+<!--TODO: em: A fazer até 31/07/2023 -->
 <!-- markdownlint-disable-next-line -->
-<fieldset> <legend> <b>A fazer até 06/06/2023</b></legend>
+<fieldset> <legend> <b>A fazer até 31/07/2023</b></legend>
 
+- [ ] Implementar pesquisa em todo conteúdo do site usando [projeto stork](https://stork-search.net/).
 - [ ] [Converter a documentação oficial do lamw de txt para markdown e html](./programacao/pascal/lazarus/lamw/doc_oficial/index.html)
 - [ ] Pensar como uma página criada em markdown pode usar o arquivo [_footer.inc_](./js/footer.inc)
 - [ ] Documentar de como criar aplicação web usando componente _fcl-web_
