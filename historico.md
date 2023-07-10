@@ -2,6 +2,18 @@
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 10/07/2023</b></legend>
+
+- [x] [Criar documento de como instalar e configurar o mecanismo de pesquisa stork](./programacao/html/js/stork/o_que_e_stork.html)
+
+</fieldset>
+
+
+
+<!-- markdownlint-disable-next-line -->
+#### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 04/07/2023</b></legend>
 
 - [x] [Adicionado exemplo do comando tee](./infraestrutura/linux/shell/comandos_basico.html) 
