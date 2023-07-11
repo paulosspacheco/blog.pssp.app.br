@@ -4,7 +4,8 @@
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 10/07/2023</b></legend>
 
-- [x] [Criar documento de como instalar e configurar o mecanismo de pesquisa stork](./programacao/html/js/stork/o_que_e_stork.html)
+<!-- - [x] [Criar documento de como instalar e configurar o mecanismo de pesquisa stork](./programacao/html/js/stork/o_que_e_stork.html)
+- [ ]  -->
 
 </fieldset>
 
