@@ -8,8 +8,6 @@
 
 </fieldset>
 
-
-
 <!-- markdownlint-disable-next-line -->
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
