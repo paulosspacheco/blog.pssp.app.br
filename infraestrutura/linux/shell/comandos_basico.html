@@ -3,14 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Comandos b&aacute;sico do Shell do Linux &lt;a href&equals;&quot;comandos&lowbar;basico&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-      
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- CSS markdown -->
         <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
         
         <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
+
+
+                
 
 
     </head>
@@ -578,7 +581,57 @@ result_cp=<span class="hljs-string">"$?"</span>
 </ol>
 </li>
 <li>
-<p><a href="https://man7.org/linux/man-pages/man2/setuid.2.html"><em>setuid</em></a> : Define a identidade do usuário</p>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_chmod'></span> <a href="https://linux.die.net/man/1/chmod"><em>chmod</em></a> altera os bits do modo de arquivo</p>
+<ol>
+<li>
+<p><strong>Sintaxe:</strong></p>
+<ol>
+<li><em>chmod</em> <em>-R</em> <em>ZZZ</em> (+ ou -) <em>YYY</em> ./
+<ol>
+<li>
+<p><em>-R</em> significa:</p>
+<ol>
+<li>Informa ao <em>chmod</em> para altera o flag de todas as subpasta dentro da pasta corrente (<em>./</em>)</li>
+</ol>
+</li>
+<li>
+<p><em>Z</em> significa: Tipo de usuários, onde:</p>
+<ol>
+<li><em>u</em> = para usuário proprietário do arquivo</li>
+<li><em>g</em> = para grupo usuários de acesso ao arquivos</li>
+<li><em>o</em> = para outros usuários não registrados no sistema</li>
+<li><em>a</em> = para todos os usuários</li>
+</ol>
+</li>
+<li>
+<p><em>Y</em> significa: tipo de operação, onde:</p>
+<ol>
+<li><em>x</em> = Execução</li>
+<li><em>r</em> = Leitura</li>
+<li><em>w</em> = Escrita</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Permite que usuários, grupo e outros executem, leem  e gravem todos arquivos da pasta.</span>
+   sudo chmod -R ugo+xrw ./ 
+
+   <span class="hljs-comment"># Não permite em todos arquivos da pasta, que usuários, grupo e outros executem e gravem os arquivos .</span>
+   sudo chmod -R ugo-xw ./ 
+                
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_chmod'></span> <a href="https://man7.org/linux/man-pages/man2/setuid.2.html"><em>setuid</em></a> : Define a identidade do usuário</p>
 <pre><code class="hljs language-bash">
 </code></pre>
 </li>

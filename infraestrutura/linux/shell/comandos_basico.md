@@ -406,139 +406,170 @@
             2. _origem_: O caminho de origem do compartilhamento de rede. Ex: 192.168.15.3:/var/nfs/share.
             3. _destino_: O ponto de montagem onde será montado o compartilhamento Ex: ~/LnxMint_Server_Share
 
-   10. [_setuid_](https://man7.org/linux/man-pages/man2/setuid.2.html) : Define a identidade do usuário
+   10. <!-- markdownlint-disable-next-line -->
+       <span id='id_chmod'></span> [_chmod_](https://linux.die.net/man/1/chmod) altera os bits do modo de arquivo
+       1. **Sintaxe:**
+          1. _chmod_ _-R_ _ZZZ_ (+ ou -) _YYY_ ./
+             1. _-R_ significa:
+                1. Informa ao _chmod_ para altera o flag de todas as subpasta dentro da pasta corrente (_./_)
+
+             2. _Z_ significa: Tipo de usuários, onde:
+                1. _u_ = para usuário proprietário do arquivo
+                2. _g_ = para grupo usuários de acesso ao arquivos
+                3. _o_ = para outros usuários não registrados no sistema
+                4. _a_ = para todos os usuários
+
+             3. _Y_ significa: tipo de operação, onde:
+                1. _x_ = Execução
+                2. _r_ = Leitura
+                3. _w_ = Escrita
+
+       2. **Exemplo:**
+
+            ```bash
+
+               # Permite que usuários, grupo e outros executem, leem  e gravem todos arquivos da pasta.
+               sudo chmod -R ugo+xrw ./ 
+
+               # Não permite em todos arquivos da pasta, que usuários, grupo e outros executem e gravem os arquivos .
+               sudo chmod -R ugo-xw ./ 
+                            
+            ```
+
+   11. <!-- markdownlint-disable-next-line -->
+       <span id='id_chmod'></span> [_setuid_](https://man7.org/linux/man-pages/man2/setuid.2.html) : Define a identidade do usuário
 
         ```bash
         
         ```
 
-   11. _chgrp_: Mudar o grupo de um arquivo ou diretório
+   12. _chgrp_: Mudar o grupo de um arquivo ou diretório
 
         ```bash
         
         ```
 
-   12. _chown_: Mudar o dono ou grupo de um arquivo ou diretório, vem de change owner
+   13. _chown_: Mudar o dono ou grupo de um arquivo ou diretório, vem de change owner
 
         ```bash
         
         ```
 
-   13. _chgrp_: Mudar o grupo de um arquivo ou diretório
+   14. _chgrp_: Mudar o grupo de um arquivo ou diretório
 
        ```bash
         
        ```
 
-   14. _cmp_: Compara dois arquivos
+   15. _cmp_: Compara dois arquivos
 
        ```bash
       
        ```
 
-   15. _comm_: Seleciona ou rejeita linhas comuns a dois arquivos selecionados
+   16. _comm_: Seleciona ou rejeita linhas comuns a dois arquivos selecionados
 
         ```bash
         
         ```
 
-   16. _crypt_: Encripta ou Descripta arquivos (apenas CCWF)
+   17. _crypt_: Encripta ou Descripta arquivos (apenas CCWF)
 
         ```bash
         
         ```
 
-   17. _diff_: Compara o conteúdo de dois arquivos ASCII
+   18. _diff_: Compara o conteúdo de dois arquivos ASCII
 
         ```bash
         
         ```
 
-   18. _file_: Determina o tipo de arquivo
+   19. _file_: Determina o tipo de arquivo
 
         ```bash
         
         ```
 
-   19. _grep_: Procura um arquivo por um padrão, sendo um filtro muito útil e usado, por exemplo um cat a.txt | grep ola irá mostrar-nos apenas as linhas do arquivo a.txt que contenham a palavra “ola”
+   20. _grep_: Procura um arquivo por um padrão, sendo um filtro muito útil e usado, por exemplo um cat a.txt | grep ola irá mostrar-nos apenas as linhas do arquivo a.txt que contenham a palavra “ola”
 
         ```bash
         
         ```
 
-   20. _gzip_: Comprime ou expande arquivo
+   21. _gzip_: Comprime ou expande arquivo
 
        ```bash
 
        ```
 
-   21. _lsof_: Lista os arquivos abertos, vem de list open files
+   22. _lsof_: Lista os arquivos abertos, vem de list open files
 
        ```bash
 
        ```
 
-   22. _mkdir_: Cria uma diretório, vem de make directory”
+   23. _mkdir_: Cria uma diretório, vem de make directory”
 
        ```bash
 
        ```
 
-   23. _mv_: Move ou renomeia arquivos ou diretórios
+   24. _mv_: Move ou renomeia arquivos ou diretórios
 
        ```bash
 
        ```
 
-   24. _pwd_: Mostra-nos o caminho por inteiro da diretório em que nos encontramos em dado momento, ou seja um pathname
+   25. _pwd_: Mostra-nos o caminho por inteiro da diretório em que nos encontramos em dado momento, ou seja um pathname
 
        ```bash
 
        ```
 
-   25. _quota_: Mostra-nos o uso do disco e os limites
+   26. _quota_: Mostra-nos o uso do disco e os limites
 
        ```bash
 
        ```
 
-   26. _rm_: Apaga arquivos, vem de remove, e é semelhante ao comando del no MS-DOS, é preciso ter cuidado com o comando rm * pois apaga tudo sem confirmação por defeito
+   27. _rm_: Apaga arquivos, vem de remove, e é semelhante ao comando del no MS-DOS, é preciso ter cuidado com o comando rm * pois apaga tudo sem confirmação por defeito
 
        ```bash
 
        ```
 
-   27. _rmdir_: Apaga diretório, vem de remove directory
+   28. _rmdir_: Apaga diretório, vem de remove directory
 
        ```bash
 
        ```
 
-   28. _stat_: Mostra o estado de um arquivo, útil para saber por exemplo a hora e data do último acesso ao mesmo
+   29. _stat_: Mostra o estado de um arquivo, útil para saber por exemplo a hora e data do último acesso ao mesmo
 
        ```bash
 
        ```
 
-   29. _sync_: Faz um flush aos buffers do sistema de arquivos, sincroniza os dados no disco com a memória, ou seja escreve todos os dados presentes nos buffers da memória para o disco
+   30. _sync_: Faz um flush aos buffers do sistema de arquivos, sincroniza os dados no disco com a memória, ou seja escreve todos os dados presentes nos buffers da memória para o disco
 
        ```bash
 
        ```
 
-   30. _sort_: Ordena, une ou compara texto, podendo ser usado para extrair informações dos arquivos de texto ou mesmo para ordenar dados de outros comandos como por exemplo listar arquivos ordenados pelo nome
+   31. _sort_: Ordena, une ou compara texto, podendo ser usado para extrair informações dos arquivos de texto ou mesmo para ordenar dados de outros comandos como por exemplo listar arquivos ordenados pelo nome
 
        ```bash
 
        ```
 
-   31. _tar_: Cria ou extrai arquivos, muito usado como programa de backup ou compressão de arquivos
+   32. _tar_: Cria ou extrai arquivos, muito usado como programa de backup ou compressão de arquivos
 
        ```bash
 
        ```
 
-   32. _tee_: Copia o input para um standard output e outros arquivos
+   33. _tee_: Copia o input para um standard output e outros arquivos
        1. O exemplo abaixo verificará a linha do arquivo file1.txt, gerar o resultado no terminal e salvar no file2.txt.
 
          ```bash
@@ -547,27 +578,27 @@
 
          ```
 
-   33. _tr_: Traduz caracteres
+   34. _tr_: Traduz caracteres
 
        ```bash
 
        ```
 
-   34. _umask_: Muda as proteções de arquivos
+   35. _umask_: Muda as proteções de arquivos
 
        ```bash
 
        ```
 
-   35. _uncompress_: Restaura um arquivo comprimido
+   36. _uncompress_: Restaura um arquivo comprimido
 
        ```bash
 
        ```
 
-   36. _uniq_: Reporta ou apaga linhas repetidas num arquivo
+   37. _uniq_: Reporta ou apaga linhas repetidas num arquivo
 
-   37. _wc_: Conta linhas, palavras e mesmo caracteres num arquivo
+   38. _wc_: Conta linhas, palavras e mesmo caracteres num arquivo
 
        ```bash
 
@@ -575,7 +606,7 @@
 
        ```
 
-   38. **Redirecionares**
+   39. **Redirecionares**
        1. _\>>_ Transfere a saída de um comando para a entrada do comandos após ele.
 
           ```bash
@@ -588,13 +619,13 @@
 
        2. ...
 
-   39. _apropos_: Localiza comandos por pesquisa de palavra-chave
+   40. _apropos_: Localiza comandos por pesquisa de palavra-chave
 
        ```bash
 
        ```
 
-   40. _find_: Localiza arquivos, como por exemplo: _find . -name *.txt -print_, para pesquisa de arquivos de texto a partir da pasta atual
+   41. _find_: Localiza arquivos, como por exemplo: _find . -name *.txt -print_, para pesquisa de arquivos de texto a partir da pasta atual
        1. Sintaxe
           1. find ./ -type d -iname 'NomeDaPasta'  
 
@@ -626,13 +657,13 @@
        3. Referências
           - [Comandos Linux: Find e Locate – Como Usar](https://www.hostinger.com.br/tutoriais/find-locate-comandos-linux#:~:text=Para%20descobrir%20seu%20diret%C3%B3rio%20atual,utilizar%20para%20procurar%20seu%20arquivo.)
 
-   41. _info_: Abre o explorador de informações
+   42. _info_: Abre o explorador de informações
 
          ```bash
 
          ```
 
-   42. <!-- markdownlint-disable-next-line -->
+   43. <!-- markdownlint-disable-next-line -->
        <span id='id_install'></span> [_Install_](https://ss64.com/bash/install.html) : Copie arquivos e defina atributos, copie arquivos enquanto define seus modos de permissão e, se possível, seu proprietário e grupo.
        1. Sintaxe:
           1. install [options]... SOURCE DEST
@@ -1237,7 +1268,7 @@
 - _23/05/2023 a 25/05/2023_
   - [ ] Catalogar os principais comandos do sistema operacional linux.
 
-- _22/05/2023_ 
+- _22/05/2023_
   - [x] Concluir documento: introdução descrevendo como o documento foi criado.
 
 - _19/05/2023_
