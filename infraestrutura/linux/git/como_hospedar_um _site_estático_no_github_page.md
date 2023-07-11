@@ -22,3 +22,6 @@
          - ![Veja a imagem do diálogo para informar o nome do domínio](images/custom_domain_buttons.jpeg)
       3. Após editar o nome do domínio válido pressione no botão _save_.
       4. Aguarde até que seja checado se o domínio é válido. Se for ele avisará quando terminar.
+
+3. **REFERÊNCIAS**
+   1. [Início rápido para o GitHub Pages](https://docs.github.com/pt/pages/quickstart)
