@@ -1,14 +1,14 @@
-# O que é pacote de pesquisa de site stork
+<!-- markdownlint-disable-next-line -->
+#### O que é pacote de pesquisa de site stork <a href="o_que_e_stork.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
-- [O que é pacote de pesquisa de site stork](#o-que-é-pacote-de-pesquisa-de-site-stork)
-  - [Objetivo](#objetivo)
-  - [PASSO 01 - Instalação do stork no sistema operacional linux](#passo-01---instalação-do-stork-no-sistema-operacional-linux)
-  - [PASSO 02 - **Configurando o seu site para hospeda o stork:**](#passo-02---configurando-o-seu-site-para-hospeda-o-stork)
-  - [PASSO 03 -  Como criar um índice de pesquisa para o stork](#passo-03----como-criar-um-índice-de-pesquisa-para-o-stork)
-  - [PASSO 04 - Como criar uma página de pesquisa usando o pacote stork instalado em https://files.stork-search.net](#passo-04---como-criar-uma-página-de-pesquisa-usando-o-pacote-stork-instalado-em-httpsfilesstork-searchnet)
-  - [PASSO 05 - Como criar uma página de pesquisa usando o pacote stork instalado no seu site](#passo-05---como-criar-uma-página-de-pesquisa-usando-o-pacote-stork-instalado-no-seu-site)
-  - [Testando o índice criado por stork](#testando-o-índice-criado-por-stork)
-  - [REFERÊNCIAS](#referências)
+- [Objetivo](#objetivo)
+- [PASSO 01 - Instalação do stork no sistema operacional linux](#passo-01---instalação-do-stork-no-sistema-operacional-linux)
+- [PASSO 02 - **Configurando o seu site para hospeda o stork:**](#passo-02---configurando-o-seu-site-para-hospeda-o-stork)
+- [PASSO 03 -  Como criar um índice de pesquisa para o stork](#passo-03----como-criar-um-índice-de-pesquisa-para-o-stork)
+- [PASSO 04 - Como criar uma página de pesquisa usando o pacote stork instalado em https://files.stork-search.net](#passo-04---como-criar-uma-página-de-pesquisa-usando-o-pacote-stork-instalado-em-httpsfilesstork-searchnet)
+- [PASSO 05 - Como criar uma página de pesquisa usando o pacote stork instalado no seu site](#passo-05---como-criar-uma-página-de-pesquisa-usando-o-pacote-stork-instalado-no-seu-site)
+- [Testando o índice criado por stork](#testando-o-índice-criado-por-stork)
+- [REFERÊNCIAS](#referências)
 
 ## Objetivo
 
