@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <title>Titulo de sua pesquisa</title>
+
+      <!-- O Stork é altamente personalizável e, se você quiser, pode escrever CSS que 
+           faça com que a saída do Stork pareça exatamente como você deseja. Como alternativa, 
+           você pode usar um dos temas pré-existentes para criar rapidamente uma aparência polida 
+           para sua interface de pesquisa. Aqui, estamos usando o tema stork.css: -->
+      <link 
+         rel="stylesheet" 
+         href="/css/stork.css" 
+      />
+
+   </head>
+
+   <body>
+      <!-- Cada interface de pesquisa deve ter um elemento de entrada e um elemento de saída . 
+           (O wrapper é usado apenas pelo tema stork.css que incluímos acima.) -->
+      <div class="stork-wrapper">
+         <input data-stork="list_stork" class="stork-input" />
+         <div data-stork="list_stork.st" class="stork-output"></div>
+      </div>
+         
+      <!-- Código javascript deve está localizado na pasta /js .
+           O código /js/stork.js depende do código /js/stork.wasm                 
+      -->
+      <script src="/js/stork.js"></script>
+
+      <!-- O código javascript precisa saber o nome da lista que le deve pesquisar -->
+      <script>
+         stork.initialize("/js/stork.wasm")
+         stork.register('list_stork', './list_stork.st' )
+      </script>
+
+
+      
+   </body>
+
+</html>
+ 

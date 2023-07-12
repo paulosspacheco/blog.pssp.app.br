@@ -1,8 +1,11 @@
+<!-- markdownlint-disable-next-line -->
 <link type="text/css" href="../../../css/defaulttheme.css" rel="stylesheet" />
 
 # Estudo da língua portuguesa
 
 ## [Criado por Márcia Fernandes](https://www.todamateria.com.br/descricao/) Professora licenciada em Letras
+<!-- markdownlint-disable-next-line -->
+<main>
 
 1. **Descrição:**
    1. Descrição é o mesmo que detalhar, mostrar ou tornar conhecidas as características de algo ou alguém, o que pode ser feito por via oral, textual ou visual.
@@ -32,6 +35,9 @@
             1. Meu nome é Paulo e estou resumindo o que a professora ensinou sobre descrição de texto por via textual.
          3. Via visual:
             1. ![Foto Descritiva](https://static.todamateria.com.br/upload/58/58/58580df987178-descricao.jpg "Está foto descreve um momento feliz")
+
+<!-- markdownlint-disable-next-line -->
+</main>
 
 ### REFERÊNCIAS
 

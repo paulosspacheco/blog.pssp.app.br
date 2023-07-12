@@ -1,7 +1,10 @@
 <!-- markdownlint-disable-next-line -->
 #### O que é pacote de pesquisa de site stork <a href="o_que_e_stork.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
-- [Objetivo](#objetivo)
+<!-- markdownlint-disable-next-line -->
+<main>
+
+- [OBJETIVO](#objetivo)
 - [PASSO 01 - Instalação do stork no sistema operacional linux](#passo-01---instalação-do-stork-no-sistema-operacional-linux)
 - [PASSO 02 - **Configurando o seu site para hospeda o stork:**](#passo-02---configurando-o-seu-site-para-hospeda-o-stork)
 - [PASSO 03 -  Como criar um índice de pesquisa para o stork](#passo-03----como-criar-um-índice-de-pesquisa-para-o-stork)
@@ -10,9 +13,11 @@
 - [Testando o índice criado por stork](#testando-o-índice-criado-por-stork)
 - [REFERÊNCIAS](#referências)
 
-## Objetivo
+## OBJETIVO
 
-1. loo
+1. O pacote de pesquisa [_stork_](https://stork-search.net/) tem como objetivo indexar um [site estático](https://en.wikipedia.org/wiki/Static_web_page) para fazer pesquisas no mesmo usando apenas as linguagens javascript e webassembler.
+2. Motivo:
+   1. O servidor web _github.io_ não permite instalar programas _cgi_, _fastcgi_ ou _módulo apache_ no _servidor web_ sem que pague mensalidade para o mesmo.
 
 ## PASSO 01 - Instalação do stork no sistema operacional linux
 
@@ -92,46 +97,78 @@
 
 1. Para criar um índice para arquivo [stork.js](/js/stork.js), é necessário instalar o pacote _stork_ descrito no [_passo 01_ acima](#passo-01---instalação-do-stork-no-sistema-operacional-linux).
 
-2. O programa de linha de comando _stork_, receberá um arquivo de configuração e criará um _arquivo de índice_. Um arquivo de índice é um _blob serializado e compactado_ que a biblioteca _Stork Javascript_ baixará e analisará. Geralmente tem a extensão de arquivo _.st_  e tem aproximadamente o tamanho de um _JPEG_.
+2. Cada arquivo da lista de arquivos as serem pesquisados, devem ter as palavras _\<main>_  _\</main>_ para marcar o trecho de código que deve ser pesquisado.
+   1. Exemplo:
 
-3. Para criar um índice de pesquisa, o projeto _Stork_ requer que se crie um _arquivo de configuração_ que declare quais documentos devem ser indexados. Este arquivo de configuração deve ter o formato de arquivo [TOML](https://toml.io/en/).
+      ```md
+
+         <!-- markdownlint-disable-next-line -->
+         <link type="text/css" href="../../../css/defaulttheme.css" rel="stylesheet" />
+
+         <!-- markdownlint-disable-next-line -->
+         <main>
+
+         # Reflexão sobre fake, fatos e opinião
+
+         >    1. Qual a diferença entre: fake x fatos x opinião?  
+         >       1. Fake news são textos que não descrevem a verdade ou descrevem verdades fora do contexto.
+         >            1. Exemplo de mentira:  
+         >                1. O Brasil foi descoberto por Portugal. (Se havia morador ele não estava perdido).
+         >            2. Exemplo de verdade fora do contexto:  
+         >               1. Uma doença enradicada em anos anteriores, pode ser anunciada no momento atual com imagens da época em que ela foi enradicada.
+         >
+         >    2. Fatos são textos que descrevem a verdade:
+         >       1. Portugal não conhecia o Brasil até o ano de 1500.
+         >    3. Opinião são textos que descrevem pontos de vista pessoal ou cultural:
+         >       1. Portugal ao chegar no Brasil e perceber que as pessoas que aqui vivia não possuía a pólvora, decidiram se apropriar.  
+         >       2. Os políticos do Brasil são desonestos.  
+
+         <!-- markdownlint-disable-next-line -->
+         </main>
+
+      ```
+
+3. O programa de linha de comando _stork_, receberá um arquivo de configuração e criará um _arquivo de índice_. Um arquivo de índice é um _blob serializado e compactado_ que a biblioteca _Stork Javascript_ baixará e analisará. Geralmente tem a extensão de arquivo _.st_  e tem aproximadamente o tamanho de um _JPEG_.
+
+4. Para criar um índice de pesquisa, o projeto _Stork_ requer que se crie um _arquivo de configuração_ que declare quais documentos devem ser indexados. Este arquivo de configuração deve ter o formato de arquivo [TOML](https://toml.io/en/).
    1. Arquivo exemplo de meta-dados que o stork espera:
 
       ```ini
-         # basic.toml
+         # index_stork.toml
          [input]
-         base_directory = "federalist"
-         url_prefix = "https://www.gutenberg.org/files/1404/1404-h/1404-h.htm#link2H_4_"
+         base_directory = ""
+         url_prefix = ""
          files = [
-            {path = "federalist-1.txt", url = "0001", title = "General Introduction"},
-            {path = "federalist-2.txt", url = "0002", title = "Concerning Dangers from Foreign Force and Influence"},
-            {path = "federalist-3.txt", url = "0003", title = "Concerning Dangers from Foreign Force and Influence 2"},
-            {path = "federalist-4.txt", url = "0004", title = "Concerning Dangers from Foreign Force and Influence 3"},
-         ]      
+            {path = "./linguas_humanas/portugues/producao_de_textos/fake_fato_opiniao.html",  url = "0001", title = "Reflexão sobre fake, fatos e opinião"},
+            {path = "./linguas_humanas/portugues/producao_de_textos/descricao_de_textos.html",  url = "0002", title = "Estudo da língua portuguesa"},
+            {path = "./programacao/html/js/stork/o_que_e_stork.html",  url = "0001", title = "O que é pacote de pesquisa de site stork"}        
+         ]
+
       ```
 
       1. **Notas:**
-         1. base_directory = diretório base que deve ser usado para resolver caminhos relativos. Esse caminho estará relacionado ao diretório de trabalho quando você executar o comando _stork build_.
-         2. url_prefix = Cada arquivo tem um URL de destino ao qual está vinculado. Se todos esses URLs de destino tiverem o mesmo prefixo, você poderá definir esse prefixo aqui para criar objetos de arquivo mais curtos.
-         3. files = A lista de arquivos juntamente com seus títulos
+         1. _base_directory_ = diretório base que deve ser usado para resolver caminhos relativos. Esse caminho estará relacionado ao diretório de trabalho quando você executar o comando _stork build_.
+         2. _url_prefix_ = ???Não compreendi do que se trata
+         3. _files_ = A lista de arquivos e suas pastas juntamente com seus títulos
          4. [Veja todos os atributos aceitos pelo arquivo _basic.toml_ ...](https://stork-search.net/docs/config-ref)
          5. [Veja como o arquivo _basic.toml_ pode ter outros formatos de declaração...](https://stork-search.net/docs/build)
 
-   2. Exemplo de como criar o índice _federalist.st_ usando o arquivo _basic.toml_ descrito acima:
+   2. Exemplo de como criar o índice _list_stork.st_ usando o arquivo _index_stork.toml_ descrito acima:
 
       ```bash
 
-         stork build --input basic.toml --output federalist.st
+         # Cria índice para stork.js         
+         stork build --input index_stork.toml --output list_stork.st
 
       ```
 
       1. **Notas**
-         1. Todos os caminhos de arquivo no arquivo de configuração, incluindo o diretório base, são relativos ao diretório de trabalho quando você executa o comando Stork . Por exemplo, se você estiver no diretório _~/project_, ao executar _$ stork build --input basic.toml --output -_, o Stork procurará os arquivos em:
-            1. ~/project/my_files/federalist-1.txt
-            2. ~/project/my_files/federalist-2.txt
-            3. ~/project/my_files/federalist-3.txt
+         1. Todos os caminhos de arquivo no arquivo de configuração, incluindo o diretório base, são relativos ao diretório de trabalho quando você executa o comando Stork . Por exemplo, se você estiver no diretório _~/project_, ao executar _stork build --input index_stork.toml --output list_stork.st, o Stork procurará os arquivos em:
+            1. ./project/my_files/federalist-1.txt
+            2. ./project/my_files/federalist-2.txt
+            3. ./project/my_files/federalist-3.txt
 
-4. **Referências:**
+5. **Referências:**
    1. [Indexação de arquivos HTML e Markdown](https://stork-search.net/docs/html)
    2. [Indexação de conteúdo não inglês](https://stork-search.net/docs/languages)
 
@@ -269,4 +306,6 @@
 
 1. [Link da versão mais recente do Stork no Github](https://github.com/jameslittle230/stork/releases/tag/v1.6.0)
 2. [Construindo uma interface de pesquisa](https://stork-search.net/docs/interface)
-3. ...
+
+<!-- markdownlint-disable-next-line -->
+</main>

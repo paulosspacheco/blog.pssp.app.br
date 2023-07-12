@@ -3,7 +3,150 @@
     <head>
         <meta charset="UTF-8">
         <title>O que &eacute; pacote de pesquisa de site stork &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;stork&period;html&quot;  target&equals;&quot;&lowbar;blank&quot;  title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;&#x279a;&lt;&sol;a&gt;</title>
-    
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- CSS markdown -->
@@ -12,14 +155,18 @@
         <!-- CSS da página /index.html -->
         <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
 
-               
 
+                
+
+</style>
     </head>
     <body class="vscode-body vscode-dark">
         <!-- markdownlint-disable-next-line -->
 <h4 id="o-que-é-pacote-de-pesquisa-de-site-stork-">O que é pacote de pesquisa de site stork <a href="o_que_e_stork.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a></h4>
+<!-- markdownlint-disable-next-line -->
+<main>
 <ul>
-<li><a href="#objetivo">Objetivo</a></li>
+<li><a href="#objetivo">OBJETIVO</a></li>
 <li><a href="#passo-01---instala%C3%A7%C3%A3o-do-stork-no-sistema-operacional-linux">PASSO 01 - Instalação do stork no sistema operacional linux</a></li>
 <li><a href="#passo-02---configurando-o-seu-site-para-hospeda-o-stork">PASSO 02 - <strong>Configurando o seu site para hospeda o stork:</strong></a></li>
 <li><a href="#passo-03----como-criar-um-%C3%ADndice-de-pesquisa-para-o-stork">PASSO 03 -  Como criar um índice de pesquisa para o stork</a></li>
@@ -28,9 +175,14 @@
 <li><a href="#testando-o-%C3%ADndice-criado-por-stork">Testando o índice criado por stork</a></li>
 <li><a href="#refer%C3%AAncias">REFERÊNCIAS</a></li>
 </ul>
-<h2 id="objetivo">Objetivo</h2>
+<h2 id="objetivo">OBJETIVO</h2>
 <ol>
-<li>loo</li>
+<li>O pacote de pesquisa <a href="https://stork-search.net/"><em>stork</em></a> tem como objetivo indexar um <a href="https://en.wikipedia.org/wiki/Static_web_page">site estático</a> para fazer pesquisas no mesmo usando apenas as linguagens javascript e webassembler.</li>
+<li>Motivo:
+<ol>
+<li>O servidor web <em><a href="http://github.io">github.io</a></em> não permite instalar programas <em>cgi</em>, <em>fastcgi</em> ou <em>módulo apache</em> no <em>servidor web</em> sem que pague mensalidade para o mesmo.</li>
+</ol>
+</li>
 </ol>
 <h2 id="passo-01---instalação-do-stork-no-sistema-operacional-linux">PASSO 01 - Instalação do stork no sistema operacional linux</h2>
 <ol>
@@ -127,6 +279,40 @@
 <p>Para criar um índice para arquivo <a href="/js/stork.js">stork.js</a>, é necessário instalar o pacote <em>stork</em> descrito no <a href="#passo-01---instala%C3%A7%C3%A3o-do-stork-no-sistema-operacional-linux"><em>passo 01</em> acima</a>.</p>
 </li>
 <li>
+<p>Cada arquivo da lista de arquivos as serem pesquisados, devem ter as palavras <em>&lt;main&gt;</em>  <em>&lt;/main&gt;</em> para marcar o trecho de código que deve ser pesquisado.</p>
+<ol>
+<li>
+<p>Exemplo:</p>
+<pre><code class="hljs language-md">
+   <span class="xml"><span class="hljs-comment">&lt;!-- markdownlint-disable-next-line --&gt;</span></span>
+   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../../css/defaulttheme.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> /&gt;</span></span>
+
+   <span class="xml"><span class="hljs-comment">&lt;!-- markdownlint-disable-next-line --&gt;</span></span>
+   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span></span>
+
+   # Reflexão sobre fake, fatos e opinião
+
+   &gt;    1. Qual a diferença entre: fake x fatos x opinião?  
+   &gt;       1. Fake news são textos que não descrevem a verdade ou descrevem verdades fora do contexto.
+   &gt;            1. Exemplo de mentira:  
+   &gt;                1. O Brasil foi descoberto por Portugal. (Se havia morador ele não estava perdido).
+   &gt;            2. Exemplo de verdade fora do contexto:  
+   &gt;               1. Uma doença enradicada em anos anteriores, pode ser anunciada no momento atual com imagens da época em que ela foi enradicada.
+   &gt;
+   &gt;    2. Fatos são textos que descrevem a verdade:
+   &gt;       1. Portugal não conhecia o Brasil até o ano de 1500.
+   &gt;    3. Opinião são textos que descrevem pontos de vista pessoal ou cultural:
+   &gt;       1. Portugal ao chegar no Brasil e perceber que as pessoas que aqui vivia não possuía a pólvora, decidiram se apropriar.  
+   &gt;       2. Os políticos do Brasil são desonestos.  
+
+   <span class="xml"><span class="hljs-comment">&lt;!-- markdownlint-disable-next-line --&gt;</span></span>
+   <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span></span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
 <p>O programa de linha de comando <em>stork</em>, receberá um arquivo de configuração e criará um <em>arquivo de índice</em>. Um arquivo de índice é um <em>blob serializado e compactado</em> que a biblioteca <em>Stork Javascript</em> baixará e analisará. Geralmente tem a extensão de arquivo <em>.st</em>  e tem aproximadamente o tamanho de um <em>JPEG</em>.</p>
 </li>
 <li>
@@ -134,23 +320,23 @@
 <ol>
 <li>
 <p>Arquivo exemplo de meta-dados que o stork espera:</p>
-<pre><code class="hljs language-ini">   <span class="hljs-comment"># basic.toml</span>
+<pre><code class="hljs language-ini">   <span class="hljs-comment"># index_stork.toml</span>
    <span class="hljs-section">[input]</span>
-   base_directory = "federalist"
-   url_prefix = "https://www.gutenberg.org/files/1404/1404-h/1404-h.htm<span class="hljs-comment">#link2H_4_"</span>
+   base_directory = ""
+   url_prefix = ""
    files = <span class="hljs-section">[
-      {path = "federalist-1.txt", url = "0001", title = "General Introduction"},
-      {path = "federalist-2.txt", url = "0002", title = "Concerning Dangers from Foreign Force and Influence"},
-      {path = "federalist-3.txt", url = "0003", title = "Concerning Dangers from Foreign Force and Influence 2"},
-      {path = "federalist-4.txt", url = "0004", title = "Concerning Dangers from Foreign Force and Influence 3"},
-   ]</span>      
+      {path = "./linguas_humanas/portugues/producao_de_textos/fake_fato_opiniao.html",  url = "0001", title = "Reflexão sobre fake, fatos e opinião"},
+      {path = "./linguas_humanas/portugues/producao_de_textos/descricao_de_textos.html",  url = "0002", title = "Estudo da língua portuguesa"},
+      {path = "./programacao/html/js/stork/o_que_e_stork.html",  url = "0001", title = "O que é pacote de pesquisa de site stork"}        
+   ]</span>
+
 </code></pre>
 <ol>
 <li><strong>Notas:</strong>
 <ol>
-<li>base_directory = diretório base que deve ser usado para resolver caminhos relativos. Esse caminho estará relacionado ao diretório de trabalho quando você executar o comando <em>stork build</em>.</li>
-<li>url_prefix = Cada arquivo tem um URL de destino ao qual está vinculado. Se todos esses URLs de destino tiverem o mesmo prefixo, você poderá definir esse prefixo aqui para criar objetos de arquivo mais curtos.</li>
-<li>files = A lista de arquivos juntamente com seus títulos</li>
+<li><em>base_directory</em> = diretório base que deve ser usado para resolver caminhos relativos. Esse caminho estará relacionado ao diretório de trabalho quando você executar o comando <em>stork build</em>.</li>
+<li><em>url_prefix</em> = ???Não compreendi do que se trata</li>
+<li><em>files</em> = A lista de arquivos e suas pastas juntamente com seus títulos</li>
 <li><a href="https://stork-search.net/docs/config-ref">Veja todos os atributos aceitos pelo arquivo <em>basic.toml</em> ...</a></li>
 <li><a href="https://stork-search.net/docs/build">Veja como o arquivo <em>basic.toml</em> pode ter outros formatos de declaração...</a></li>
 </ol>
@@ -158,19 +344,20 @@
 </ol>
 </li>
 <li>
-<p>Exemplo de como criar o índice <em><a href="http://federalist.st">federalist.st</a></em> usando o arquivo <em>basic.toml</em> descrito acima:</p>
+<p>Exemplo de como criar o índice <em>list_stork.st</em> usando o arquivo <em>index_stork.toml</em> descrito acima:</p>
 <pre><code class="hljs language-bash">
-   stork build --input basic.toml --output federalist.st
+   <span class="hljs-comment"># Cria índice para stork.js         </span>
+   stork build --input index_stork.toml --output list_stork.st
 
 </code></pre>
 <ol>
 <li><strong>Notas</strong>
 <ol>
-<li>Todos os caminhos de arquivo no arquivo de configuração, incluindo o diretório base, são relativos ao diretório de trabalho quando você executa o comando Stork . Por exemplo, se você estiver no diretório <em>~/project</em>, ao executar <em>$ stork build --input basic.toml --output -</em>, o Stork procurará os arquivos em:
+<li>Todos os caminhos de arquivo no arquivo de configuração, incluindo o diretório base, são relativos ao diretório de trabalho quando você executa o comando Stork . Por exemplo, se você estiver no diretório <em>~/project</em>, ao executar _stork build --input index_stork.toml --output list_stork.st, o Stork procurará os arquivos em:
 <ol>
-<li>~/project/my_files/federalist-1.txt</li>
-<li>~/project/my_files/federalist-2.txt</li>
-<li>~/project/my_files/federalist-3.txt</li>
+<li>./project/my_files/federalist-1.txt</li>
+<li>./project/my_files/federalist-2.txt</li>
+<li>./project/my_files/federalist-3.txt</li>
 </ol>
 </li>
 </ol>
@@ -332,10 +519,10 @@
 <ol>
 <li><a href="https://github.com/jameslittle230/stork/releases/tag/v1.6.0">Link da versão mais recente do Stork no Github</a></li>
 <li><a href="https://stork-search.net/docs/interface">Construindo uma interface de pesquisa</a></li>
-<li>...</li>
 </ol>
-
-        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+<!-- markdownlint-disable-next-line -->
+</main>
+        
         
     </body>
     </html>

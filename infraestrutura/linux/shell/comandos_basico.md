@@ -16,6 +16,7 @@
    7. [_e2image_ - Clona um dispositivo de bloco cujo o formato de arquivo seja ext2, ext3 e ext4](#id_e2image)
    8. [_gparted_ - Programa usado para criar partição, pode ser usado para clonar partição de forma muito simples e visual](#id_gparted)
    9. [_mount_ - monta um sistema de arquivos](#id_mount)
+   10. [_chmod_ - altera os bits do modo de arquivo](#id_chmod)
   
 4. [**Comandos de Ajuda e Documentação**](#id_cmd_ajuda_documentacao)
 5. [**Comandos de Comunicações**](#id_comandos_comunicacoes)

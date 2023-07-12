@@ -1,4 +1,8 @@
+<!-- markdownlint-disable-next-line -->
 <link type="text/css" href="../../../css/defaulttheme.css" rel="stylesheet" />
+
+<!-- markdownlint-disable-next-line -->
+<main>
 
 # Reflexão sobre fake, fatos e opinião
 
@@ -14,3 +18,6 @@
 >    3. Opinião são textos que descrevem pontos de vista pessoal ou cultural:
 >       1. Portugal ao chegar no Brasil e perceber que as pessoas que aqui vivia não possuía a pólvora, decidiram se apropriar.  
 >       2. Os políticos do Brasil são desonestos.  
+
+<!-- markdownlint-disable-next-line -->
+</main>
