@@ -5,6 +5,13 @@
 <main>
 
 <!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 13/07/2023</b></legend>
+
+- [x] [Criar página o que é pelican](./programacao/python/pelican/o_que_e_projeto_pelican.html)
+
+</fieldset>
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 12/07/2023</b></legend>
 
 - [x] [Criar documento de como instalar e configurar o mecanismo de pesquisa stork](./programacao/html/js/stork/o_que_e_stork.html)
@@ -13,7 +20,6 @@
 - [x] [Instalar arquivos /js/stork.js](/js/stork.js)
 - [x] [Instalar arquivos /js/stork.wasm](/js/stork.wasm)
 - [x] [Instalar arquivos /js/stork.js.map](/js/stork.js.map)
-
 
 </fieldset>
 

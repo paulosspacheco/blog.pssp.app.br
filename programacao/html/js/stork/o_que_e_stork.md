@@ -311,6 +311,8 @@
 2. [Construindo uma interface de pesquisa](https://stork-search.net/docs/interface)
 3. [https://github.com/jameslittle230/stork](https://github.com/jameslittle230/stork)
 4. [Stork Demo 1](https://codepen.io/littleguy230/pen/oNBJBmK)
+5. [Stork Turns One: Construindo uma ferramenta de busca para sites estáticos com Rust e WebAssembly](https://jameslittle.me/blog/2020/one-year-of-stork)
+6. [Log de alterações do stork](https://stork-search.net/changelog)
 
 <!-- markdownlint-disable-next-line -->
 </main>
