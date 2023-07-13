@@ -20,9 +20,10 @@
            (O wrapper é usado apenas pelo tema stork.css que incluímos acima.) -->
       <div class="stork-wrapper">
          <input data-stork="list_stork" class="stork-input" />
-         <div data-stork="list_stork.st" class="stork-output"></div>
+         <!-- <div data-stork="list_stork" class="stork-output"></div> -->
+         <div data-stork="list_stork-output" class="stork-output"></div>         
       </div>
-         
+
       <!-- Código javascript deve está localizado na pasta /js .
            O código /js/stork.js depende do código /js/stork.wasm                 
       -->
@@ -31,7 +32,7 @@
       <!-- O código javascript precisa saber o nome da lista que le deve pesquisar -->
       <script>
          stork.initialize("/js/stork.wasm")
-         stork.register('list_stork', './list_stork.st' )
+         stork.register('list_stork', 'list_stork.st' )
       </script>
 
 

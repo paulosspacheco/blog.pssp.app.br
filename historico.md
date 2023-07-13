@@ -2,9 +2,18 @@
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!-- markdownlint-disable-next-line -->
-<fieldset> <legend> <b>Feito em 10/07/2023</b></legend>
+<main>
+
+<!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 12/07/2023</b></legend>
 
 - [x] [Criar documento de como instalar e configurar o mecanismo de pesquisa stork](./programacao/html/js/stork/o_que_e_stork.html)
+- [x] [Instalar arquivo /css/stork.css](/css/stork.css)
+- [x] [Criar a página search.html](./search.html)
+- [x] [Instalar arquivos /js/stork.js](/js/stork.js)
+- [x] [Instalar arquivos /js/stork.wasm](/js/stork.wasm)
+- [x] [Instalar arquivos /js/stork.js.map](/js/stork.js.map)
+
 
 </fieldset>
 
@@ -328,3 +337,6 @@
 14. GLITCH ("falha") Algo estranho ocorre aqui em situação bem específica.
 15. REVIEW: ("revise") Revise isso pra mim, usado onde se costuma fazer peer review.
 16. WTF: ("que p0rr@ é essa?") Fizeram um besteira muito grande aqui.
+
+<!-- markdownlint-disable-next-line -->
+</main>

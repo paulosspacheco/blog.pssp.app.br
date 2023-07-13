@@ -45,23 +45,23 @@
 
 ## PASSO 02 - [**Configurando o seu site para hospeda o stork:**](https://stork-search.net/docs/self-hosting)
 
-1. Baixe [_stork.js_](https://github.com/jameslittle230/stork/releases/download/v1.6.0/stork.js) e [_stork.wasm_](https://github.com/jameslittle230/stork/releases/download/v1.6.0/stork.wasm) da versão mais recente do _Github_ e publique esses arquivos em seu _servidor web_.
+1. Baixe [_stork.js_](https://github.com/jameslittle230/stork/releases/download/v1.6.0/stork.js), [_stork.wasm_](https://github.com/jameslittle230/stork/releases/download/v1.6.0/stork.wasm) e [_stork.js.map_](https://github.com/jameslittle230/stork/releases/download/v1.6.0/stork.js.map) da [_Versão Stork - v1.6.0 Latest_](https://github.com/jameslittle230/stork/releases/tag/v1.6.0) do _Github_ e publique esses arquivos em seu _servidor web_.
 
-2. Certifique-se de servir _stork.wasm_ com o tipo _MIME_ correto e certifique-se de chamar _stork.initialize()_ com o _URL onde você está hospedando_ o arquivo _stork.wasm_.
+2. Certifique-se de servir _stork.wasm_ com o tipo _MIME_ correto e certifique-se de chamar _stork.initialize("stork.wasm")_ com o _URL onde você está hospedando_ o arquivo _stork.wasm_.
 
 3. Sirva esses arquivos de seu _servidor web_. Carregue os arquivos Javascript _stork.js_ e _WASM_ _stork.wasm_ em seu servidor ou host da Web e os _apresente publicamente_ como faria com uma folha de _estilo_ ou _imagem_.
 
 4. Certifique-se de servir o arquivo _WASM_ com o _application/wasm_ tipo [_MIME_](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) . Se você estiver colocando esses arquivos atrás do _seu CDN_, certifique-se de encaminhar o _Content-Type_ cabeçalho_ da fonte do arquivo, por meio desse CDN.
 
-5. Inicialize o _Stork_ em sua página da Web com o _URL do WASM_. A página Javascript Avançado descreve o _stork.initialize()_ método, que instrui o _Stork a carregar o WASM_. Certifique-se de chamar este método - mesmo se estiver usando a _stork.register()_ API mais simples - _antes de chamar qualquer outro método Stork_:
+5. Inicialize o _Stork_ em sua página da Web com o _URL do WASM_. A página Javascript avançado descreve o _stork.initialize()_ método, que instrui o _Stork a carregar o WASM_. Certifique-se de chamar este método - mesmo se estiver usando a _stork.register()_ API mais simples - _antes de chamar qualquer outro método Stork_:
 
    ```js
 
-      <script src="https://your-url.com/stork.js"></script>
+      <script src="/js/stork.js"></script>
 
       <script>
-         stork.initialize("https://your-url.com/stork.wasm")
-         stork.register("yourIndexName", "https://your-url.com/index-file.st")
+         stork.initialize("/js/stork.wasm")
+         stork.register("yourIndexName", "/index-file.st")
       </script>
 
    ```
@@ -92,6 +92,9 @@
          ```
 
       3. O Google Chrome oferece suporte às políticas _'wasm-unsafe-eval'_(ou, às vezes, ) em sua diretiva para permitir a execução do _WASM_. No entanto, no momento em que este livro foi escrito, o _Safari_ e o _Firefox_ exigem que você especifique a política em sua diretiva, o que torna seu _CSP_ restritivo muito menos restritivo._'wasm-eval'script-srcunsafe-evalscript-src_.
+
+7. **REFERÊNCIAS**
+   1. [Download Stork - v1.6.0 Latest](https://github.com/jameslittle230/stork/releases/tag/v1.6.0)
 
 ## PASSO 03 -  [Como criar um índice de pesquisa para o stork](https://stork-search.net/docs/build)
 
@@ -229,7 +232,7 @@
 
 ## PASSO 05 - Como criar uma página de pesquisa usando o pacote stork instalado no seu site
 
-1. Use o modelo abaixo para criar sua página de pesquisa:
+1. Use o modelo abaixo para criar sua página de pesquisa e salve o arquivo na raiz do site:
 
    ```html
 
@@ -240,9 +243,9 @@
             <title>Titulo de sua pesquisa</title>
 
             <!-- O Stork é altamente personalizável e, se você quiser, pode escrever CSS que 
-                 faça com que a saída do Stork pareça exatamente como você deseja. Como alternativa, 
-                 você pode usar um dos temas pré-existentes para criar rapidamente uma aparência polida 
-                 para sua interface de pesquisa. Aqui, estamos usando o tema stork.css: -->
+               faça com que a saída do Stork pareça exatamente como você deseja. Como alternativa, 
+               você pode usar um dos temas pré-existentes para criar rapidamente uma aparência polida 
+               para sua interface de pesquisa. Aqui, estamos usando o tema stork.css: -->
             <link 
                rel="stylesheet" 
                href="/css/stork.css" 
@@ -252,28 +255,28 @@
 
          <body>
             <!-- Cada interface de pesquisa deve ter um elemento de entrada e um elemento de saída . 
-                 (O wrapper é usado apenas pelo tema stork.css que incluímos acima.) -->
+               (O wrapper é usado apenas pelo tema stork.css que incluímos acima.) -->
             <div class="stork-wrapper">
-               <input data-stork="Nome_da_lista" class="stork-input" />
-               <div data-stork="Nome_da_lista-output" class="stork-output"></div>
+               <input data-stork="list_stork" class="stork-input" />
+               <!-- <div data-stork="list_stork" class="stork-output"></div> -->
+               <div data-stork="list_stork-output" class="stork-output"></div>         
             </div>
-               
+
             <!-- Código javascript deve está localizado na pasta /js .
-                 O código /js/stork.js depende do código /js/stork.wasm                 
+               O código /js/stork.js depende do código /js/stork.wasm                 
             -->
             <script src="/js/stork.js"></script>
 
             <!-- O código javascript precisa saber o nome da lista que le deve pesquisar -->
             <script>
-               stork.register(
-               'Nome_da_lista',
-               '/js/Nome_da_lista.st'
-               )
+               stork.initialize("/js/stork.wasm")
+               stork.register('list_stork', 'list_stork.st' )
             </script>
+            
          </body>
 
       </html>
-       
+            
 
    ```
 
@@ -306,6 +309,8 @@
 
 1. [Link da versão mais recente do Stork no Github](https://github.com/jameslittle230/stork/releases/tag/v1.6.0)
 2. [Construindo uma interface de pesquisa](https://stork-search.net/docs/interface)
+3. [https://github.com/jameslittle230/stork](https://github.com/jameslittle230/stork)
+4. [Stork Demo 1](https://codepen.io/littleguy230/pen/oNBJBmK)
 
 <!-- markdownlint-disable-next-line -->
 </main>
