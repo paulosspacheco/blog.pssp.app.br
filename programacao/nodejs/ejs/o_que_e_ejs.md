@@ -6,9 +6,12 @@
       1. [Objetivo.](#id_objetivo)
       2. [Pre-requisitos.](#id_pre_requisitos)
       3. [benefícios.](#id_beneficios)
-   2. [**Descrição.**](#id_Descricao)
-   3. [**Referências.**](#id_referencias)
-   4. [**Histórico.**](#id_historico)
+   2. [Instalar ejs](https://ejs.co/#install)
+   3. [Instalar ejs-cli](https://www.npmjs.com/package/ejs-cli)
+   4. [Descrição.](#id_Descricao)
+   5. [Exemplos](./id_Exemplos)
+   6. [Referências.](#id_referencias)
+   7. [Histórico.](#id_historico)
 
 2. **CONTEÚDO**
    1. **Introdução**
@@ -31,8 +34,8 @@
          <!-- markdownlint-disable-next-line -->
          2. <text onclick="goBack()">[🔙]</text>
 
-   <!-- markdownlint-disable-next-line -->
-   2. <span id=id_Descricao></span>**Descrição**
+   2. <!-- markdownlint-disable-next-line -->
+      <span id=id_Descricao></span>**Descrição**
       1. Tags do modelo:
          1. _<%_ Tag 'Scriptlet', para fluxo de controle, sem saída
          2. _<%__ Tag Scriptlet 'Whitespace Slurping', remove todos os espaços em branco antes dela
@@ -87,21 +90,37 @@
          <!-- markdownlint-disable-next-line -->
       5. <text onclick="goBack()">[🔙]</text>
 
-   <!-- markdownlint-disable-next-line -->
-   3. <span id=id_referencias></span>**REFERÊNCIAS**
+   3. <!-- markdownlint-disable-next-line -->
+      <span id=id_Exemplos></span>**Exemplo de código nodejs usando o Mecanismos de Modelo JavaScript EJS**
+      1. Exemplo de como criar projeto ejs, desde a criação do projeto, instalação dos pacotes ejs, express, das pastas e arquivos .ejs e como se relaciona usando includes
+         1. [server.js](./ejs-demo1/server.js)
+         2. Esse projeto foi criado baseado no documento:
+            1. [Como usar o EJS para modelar seu aplicativo de nó](https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application)
+      2. Exemplo de como criar projeto ejs, desde a criação do projeto, instalação dos pacotes ejs, express, das pastas e arquivos .ejs e como se relaciona usando includes e variáveis.
+         1. [server.js](./ejs-demo1/server.js)
+         2. Esse projeto foi criado baseado no documento:
+            1. [Como usar o EJS para modelar seu aplicativo de nó](https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application)
+
+   4. <!-- markdownlint-disable-next-line -->
+      <span id=id_referencias></span>**REFERÊNCIAS**
       1. [ejs](https://ejs.co/)
-      2. [Manual ejs](https://ejs.co/#install)
-      3. [How To Use EJS to Template Your Node Application](https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application)
-      4. [Gerando HTML estáticos a partir de templates – EJS](https://www.youtube.com/watch?v=l09qRMEq_7U)
-      5. [EJS Syntax Reference](https://github.com/mde/ejs/blob/main/docs/syntax.md)
-      6. [Modelos de JavaScript incorporados versão tj 1.0](https://github.com/tj/ejs)
-      7. [ejs-loader para webpack](https://github.com/difelice/ejs-loader)
-      8. [Modelos de JavaScript incorporados versão mde 2.0](https://github.com/mde/ejs)
-      9. [https://www.youtube.com/watch?v=1rFbqoMGSSA](Curso de NodeJS - Renderizando EJS/HTML em um projeto Nodejs - #02)
+      2. [Como usar o EJS para modelar seu aplicativo de nodejs](https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application)
+      3. [EJS Syntax Reference](https://github.com/mde/ejs/blob/main/docs/syntax.md)
+      4. [Manual ejs](https://ejs.co/#install)
+      5. [How To Use EJS to Template Your Node Application](https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application)
+      6. [Gerando HTML estáticos a partir de templates – EJS](https://www.youtube.com/watch?v=l09qRMEq_7U)
+      7. [EJS Syntax Reference](https://github.com/mde/ejs/blob/main/docs/syntax.md)
+      8. [Modelos de JavaScript incorporados versão tj 1.0](https://github.com/tj/ejs)
+      9. [ejs-loader para webpack](https://github.com/difelice/ejs-loader)
+      10. [Modelos de JavaScript incorporados versão mde 2.0](https://github.com/mde/ejs)
+      11. [Utilizando template engine EJS com Node.js](https://www.treinaweb.com.br/blog/utilizando-template-engine-ejs-com-node-js?gclid=CjwKCAjwwb6lBhBJEiwAbuVUStuMvwtsKd7fmZkS7DM2COPtHBrdkHsZnWcPVLV3AbWMJxvlPk2eSBoCx64QAvD_BwE)
+      12. [Curso de NodeJS - Renderizando EJS/HTML em um projeto Nodejs - #02](https://www.youtube.com/watch?v=1rFbqoMGSSA)
+      13. [Comparing JavaScript Templating Engines: Jade, Mustache, Dust, EJS and More](https://strongloop.com/strongblog/compare-javascript-templates-jade-mustache-dust/)
+
       <!-- markdownlint-disable-next-line -->
-      10. <text onclick="goBack()">[🔙]</text>
+      14. <text onclick="goBack()">[🔙]</text>
    <!-- markdownlint-disable-next-line -->
-   4. <span id="id_historico"><span>**HISTÓRICO**
+   5. <span id="id_historico"><span>**HISTÓRICO**
 
       1. 08/06/2021 <!--DONE: HISTÓRICO -->
          - [x] ;
@@ -127,6 +146,3 @@
    [🔝🔝](#topo "Retorna ao topo")
    <!-- markdownlint-disable-next-line -->
    <script>    function goBack() {    window.history.back()}</script>
-
-3. **REFERÊNCIAS**
-   1. [ejs.co](https://ejs.co/#install)

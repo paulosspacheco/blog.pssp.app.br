@@ -12,6 +12,7 @@
   "author": "Paulo Pacheco",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.9",
     "express": "^4.17.1",
     "help": "^3.0.2",
     "lunr": "^2.3.9",

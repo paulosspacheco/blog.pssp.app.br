@@ -1,6 +1,19 @@
 <!-- markdownlint-disable-next-line -->
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
+Criado exemplos de como usar o pacote ejs no nodejs.
+<!-- markdownlint-disable-next-line -->
+<main>
+
+<!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 13/07/2023</b></legend>
+
+- [x] [Criado exemplos de como usar o pacote ejs no nodejs sem variáveis](./programacao/nodejs/ejs/ejs-demo1/server.js)
+- [x] [Criado exemplos de como usar o pacote ejs no nodejs com variáveis](./programacao/nodejs/ejs/ejs-demo2/server.js)
+
+</fieldset>
+
+
 <!-- markdownlint-disable-next-line -->
 <main>
 
@@ -8,6 +21,7 @@
 <fieldset> <legend> <b>Feito em 13/07/2023</b></legend>
 
 - [x] [Criar página o que é pelican](./programacao/python/pelican/o_que_e_projeto_pelican.html)
+- [x] [Criar link para a página nodejs/index.html](/programacao/nodejs/index.html)
 
 </fieldset>
 

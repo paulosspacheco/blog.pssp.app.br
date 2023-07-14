@@ -2,21 +2,167 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;O que &eacute; templates ejs&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;ejs&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x2b06;&#xfe0f; &lt;&sol;a&gt;</title>
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;O que &eacute; templates ejs&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;ejs&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- CSS markdown -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
         
         <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
 
 
+                
+
+</style>
     </head>
-    <body class="vscode-body vscode-light">
+    <body class="vscode-body vscode-dark">
         <!-- markdownlint-disable-next-line -->
-<h1 id="o-que-é-templates-ejs--️-"><span id="topo"><span>O que é templates ejs<a href="o_que_e_ejs.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
+<h1 id="o-que-é-templates-ejs---"><span id="topo"><span>O que é templates ejs<a href="o_que_e_ejs.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
 <ol>
 <li>
 <p><strong>INDEX</strong></p>
@@ -28,15 +174,20 @@
 <li><a href="#id_beneficios">benefícios.</a></li>
 </ol>
 </li>
-<li><a href="#id_Descricao"><strong>Descrição.</strong></a></li>
-<li><a href="#id_referencias"><strong>Referências.</strong></a></li>
-<li><a href="#id_historico"><strong>Histórico.</strong></a></li>
+<li><a href="https://ejs.co/#install">Instalar ejs</a></li>
+<li><a href="https://www.npmjs.com/package/ejs-cli">Instalar ejs-cli</a></li>
+<li><a href="#id_Descricao">Descrição.</a></li>
+<li><a href="./id_Exemplos">Exemplos</a></li>
+<li><a href="#id_referencias">Referências.</a></li>
+<li><a href="#id_historico">Histórico.</a></li>
 </ol>
 </li>
 <li>
 <p><strong>CONTEÚDO</strong></p>
 <ol>
-<li><strong>Introdução</strong><!-- markdownlint-disable-next-line -->
+<li>
+<p><strong>Introdução</strong></p>
+<!-- markdownlint-disable-next-line -->
 <ol>
 <li><span id="id_objetivo"><span><strong>Objetivo:</strong>
 <ol>
@@ -76,10 +227,9 @@
 </li>
 </ol>
 </li>
-</ol>
+<li>
 <!-- markdownlint-disable-next-line -->
-<ol start="2">
-<li><span id=id_Descricao></span><strong>Descrição</strong>
+<p><span id=id_Descricao></span><strong>Descrição</strong></p>
 <ol>
 <li>
 <p>Tags do modelo:</p>
@@ -179,12 +329,39 @@
 </li>
 </ol>
 </li>
-</ol>
+<li>
 <!-- markdownlint-disable-next-line -->
-<ol start="3">
-<li><span id=id_referencias></span><strong>REFERÊNCIAS</strong>
+<p><span id=id_Exemplos></span><strong>Exemplo de código nodejs usando o Mecanismos de Modelo JavaScript EJS</strong></p>
+<ol>
+<li>Exemplo de como criar projeto ejs, desde a criação do projeto, instalação dos pacotes ejs, express, das pastas e arquivos .ejs e como se relaciona usando includes
+<ol>
+<li><a href="./ejs-demo1/server.js">server.js</a></li>
+<li>Esse projeto foi criado baseado no documento:
+<ol>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application">Como usar o EJS para modelar seu aplicativo de nó</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Exemplo de como criar projeto ejs, desde a criação do projeto, instalação dos pacotes ejs, express, das pastas e arquivos .ejs e como se relaciona usando includes e variáveis.
+<ol>
+<li><a href="./ejs-demo1/server.js">server.js</a></li>
+<li>Esse projeto foi criado baseado no documento:
+<ol>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application">Como usar o EJS para modelar seu aplicativo de nó</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
 <ol>
 <li><a href="https://ejs.co/">ejs</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application">Como usar o EJS para modelar seu aplicativo de nodejs</a></li>
+<li><a href="https://github.com/mde/ejs/blob/main/docs/syntax.html">EJS Syntax Reference</a></li>
 <li><a href="https://ejs.co/#install">Manual ejs</a></li>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application">How To Use EJS to Template Your Node Application</a></li>
 <li><a href="https://www.youtube.com/watch?v=l09qRMEq_7U">Gerando HTML estáticos a partir de templates – EJS</a></li>
@@ -192,33 +369,35 @@
 <li><a href="https://github.com/tj/ejs">Modelos de JavaScript incorporados versão tj 1.0</a></li>
 <li><a href="https://github.com/difelice/ejs-loader">ejs-loader para webpack</a></li>
 <li><a href="https://github.com/mde/ejs">Modelos de JavaScript incorporados versão mde 2.0</a></li>
-<li>[<a href="https://www.youtube.com/watch?v=1rFbqoMGSSA">https://www.youtube.com/watch?v=1rFbqoMGSSA</a>](Curso de NodeJS - Renderizando EJS/HTML em um projeto Nodejs - #02)</li>
+<li><a href="https://www.treinaweb.com.br/blog/utilizando-template-engine-ejs-com-node-js?gclid=CjwKCAjwwb6lBhBJEiwAbuVUStuMvwtsKd7fmZkS7DM2COPtHBrdkHsZnWcPVLV3AbWMJxvlPk2eSBoCx64QAvD_BwE">Utilizando template engine EJS com Node.js</a></li>
+<li><a href="https://www.youtube.com/watch?v=1rFbqoMGSSA">Curso de NodeJS - Renderizando EJS/HTML em um projeto Nodejs - #02</a></li>
+<li><a href="https://strongloop.com/strongblog/compare-javascript-templates-jade-mustache-dust/">Comparing JavaScript Templating Engines: Jade, Mustache, Dust, EJS and More</a></li>
 </ol>
 <!-- markdownlint-disable-next-line -->
-<ol start="10">
+<ol start="14">
 <li><text onclick="goBack()">[🔙]</text></li>
 </ol>
 </li>
 </ol>
 <!-- markdownlint-disable-next-line -->
-<ol start="4">
+<ol start="5">
 <li>
 <p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
 <ol>
 <li>
 <p>08/06/2021 <!--DONE: HISTÓRICO --></p>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> ;</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> ;</li>
 </ul>
 </li>
 <li>
 <p>08/06/2021 <!--DONE: HISTÓRICO --></p>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar este documento baseado no <a href="http://modelo02.html">modelo02.md</a> ;</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Objetivos;</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Pre-requisitos</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Benefícios</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Referências</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar este documento baseado no <a href="http://modelo02.html">modelo02.md</a> ;</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Objetivos;</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Pre-requisitos</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Benefícios</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</li>
 </ul>
 <!-- markdownlint-disable-next-line -->
 <ul>
@@ -228,11 +407,11 @@
 <li>
 <p>08/06/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Descrição</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Exemplos</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Conteúdo 01</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Atualizar o histórico deste documento.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Testar este documento depois após uma semana de concluído.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Descrição</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Exemplos</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo 01</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</li>
 </ul>
 <!-- markdownlint-disable-next-line -->
 <ul>
@@ -245,12 +424,6 @@
 <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 <!-- markdownlint-disable-next-line -->
 <script>    function goBack() {    window.history.back()}</script>
-</li>
-<li>
-<p><strong>REFERÊNCIAS</strong></p>
-<ol>
-<li><a href="https://ejs.co/#install">ejs.co</a></li>
-</ol>
 </li>
 </ol>
 
