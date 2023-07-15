@@ -3,10 +3,11 @@
 
 <!--TODO: em: A fazer até 13/07/2023 -->
 <!-- markdownlint-disable-next-line -->
-<fieldset> <legend> <b>A fazer até 10/07/2023</b></legend>
+<fieldset> <legend> <b>A fazer até 15/07/2023</b></legend>
 
 - [ ] Implementar pesquisa em todo conteúdo do site usando [projeto stork](https://stork-search.net/).
   - [x] [Criar página o que é stork](./programacao/html/js/stork/o_que_e_stork.html)
+  - [ ] Criar template com o pacote ejs  para criar o arquivo de configuração do stork pacote.
 
 - Criar página o que é [Eleventy](https://www.11ty.dev/docs/)
 

@@ -1,0 +1,78 @@
+<!-- Arquivo: views/pages/about.ejs -->
+
+<!-- Este código adiciona uma barra lateral do Bootstrap para demonstrar 
+     como as parciais podem ser estruturadas para serem reutilizadas em diferentes 
+     modelos e páginas. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Arquivo: views/partials/head.ejs -->
+
+<!-- Este código contém metadados para head do documento HTML. 
+     Também inclui estilos Bootstrap . -->
+ 
+<meta charset="UTF-8">
+<title>EJS Is Fun</title>
+
+<!-- CSS (load bootstrap from a CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  body { padding-top:50px; }
+</style>
+</head>
+
+<body class="container">
+
+  <header>
+    <!-- Arquivo: views/partials/header.ejs -->
+
+<!-- Este código contém navegação para um documento HTML e usa várias 
+     classes do Bootstrap para estilização. -->
+<em>Variant: compact</em>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">EJS Is Fun</a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/about">About</a>
+    </li>
+    
+  </ul>
+</nav>
+  </header>
+
+  <main>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="jumbotron">
+          <h1>This is great</h1>
+          <p>Welcome to templating using EJS</p>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="well">
+          <h3>Look I'm A Sidebar!</h3>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <!-- Arquivo: views/partials/footer.ejs -->
+
+<!-- Este código contém informações de direitos autorais e usa várias 
+     classes do Bootstrap para estilizar. -->
+     
+<p class="text-center text-muted">&copy; Copyright 2020 The Awesome People</p>
+
+  </footer>
+
+</body>
+
+</html>

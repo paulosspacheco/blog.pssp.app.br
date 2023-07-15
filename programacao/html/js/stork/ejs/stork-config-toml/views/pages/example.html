@@ -1,0 +1,21 @@
+ReferenceError: index.ejs:24
+    22|       <h2>Variable</h2>
+    23|       <!--  var tagline = "No programming concept is complete without a cute animal mascot."; -->
+ >> 24|       <p><%= tagline %></p>
+    25| 
+    26|       <!-- Imprimir a lista contida na matriz mascots  
+    27|           var mascots = [  { name: 'Sammy', organization: "DigitalOcean", birth_year: 2012},
+
+tagline is not defined
+    at eval (eval at compile (/usr/local/lib/node_modules/ejs-cli/node_modules/ejs/lib/ejs.js:673:12), <anonymous>:16:26)
+    at index (/usr/local/lib/node_modules/ejs-cli/node_modules/ejs/lib/ejs.js:703:17)
+    at tryHandleCache (/usr/local/lib/node_modules/ejs-cli/node_modules/ejs/lib/ejs.js:274:36)
+    at Object.exports.renderFile (/usr/local/lib/node_modules/ejs-cli/node_modules/ejs/lib/ejs.js:491:10)
+    at /usr/local/lib/node_modules/ejs-cli/lib/cli.js:155:17
+    at /usr/local/lib/node_modules/ejs-cli/node_modules/async/dist/async.js:2588:44
+    at eachOfArrayLike (/usr/local/lib/node_modules/ejs-cli/node_modules/async/dist/async.js:506:13)
+    at eachOf (/usr/local/lib/node_modules/ejs-cli/node_modules/async/dist/async.js:626:16)
+    at awaitable (/usr/local/lib/node_modules/ejs-cli/node_modules/async/dist/async.js:211:32)
+    at Object.eachLimit (/usr/local/lib/node_modules/ejs-cli/node_modules/async/dist/async.js:2691:16) {
+  path: 'index.ejs'
+}
