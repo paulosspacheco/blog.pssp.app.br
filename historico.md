@@ -6,7 +6,7 @@ Criado exemplos de como usar o pacote ejs no nodejs.
 <main>
 
 <!-- markdownlint-disable-next-line -->
-<fieldset> <legend> <b>Feito em 13/07/2023</b></legend>
+<fieldset> <legend> <b>Feito em 14/07/2023</b></legend>
 
 - [x] [Criado exemplos de como usar o pacote ejs no nodejs sem variáveis](./programacao/nodejs/ejs/ejs-demo1/server.js)
 - [x] [Criado exemplos de como usar o pacote ejs no nodejs com variáveis](./programacao/nodejs/ejs/ejs-demo2/server.js)
