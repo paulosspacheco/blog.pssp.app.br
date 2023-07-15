@@ -1,6 +1,5 @@
 <!-- markdownlint-disable-next-line -->
-# <span id="topo"><span>O que é templates ejs<a href="o_que_e_ejs.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
-
+# <span id="topo"><span>O que é templates ejs<a href="o_que_e_ejs.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>cli
 1. **INDEX**
    1. **Introdução**
       1. [Objetivo.](#id_objetivo)
@@ -9,9 +8,10 @@
    2. [Instalar ejs](https://ejs.co/#install)
    3. [Instalar ejs-cli](https://www.npmjs.com/package/ejs-cli)
    4. [Descrição.](#id_Descricao)
-   5. [Exemplos](./id_Exemplos)
-   6. [Referências.](#id_referencias)
-   7. [Histórico.](#id_historico)
+   5. [Exemplos](#id_Exemplos)
+   6. [ejs-cli recebe um arquivo .ejs e retorna uma arquivo html](#id_ejs-cli)
+   7. [Referências.](#id_referencias)
+   8. [Histórico.](#id_historico)
 
 2. **CONTEÚDO**
    1. **Introdução**
@@ -102,6 +102,66 @@
             1. [Como usar o EJS para modelar seu aplicativo de nó](https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application)
 
    4. <!-- markdownlint-disable-next-line -->
+      <span id=id_ejs-cli></span> _ejs-cli_ recebe um arquivo .ejs e retorna uma arquivo html
+      1. Parâmetros de execução:
+         1. -h, --help      show this help.                        [boolean]  [default: false]
+
+            ```bash
+
+               ejs-cli -h
+
+            ```
+
+         2. -f, --file  = forneça o caminho do arquivo de modelo ejs           [string]
+
+            ```bash
+
+             
+              
+            ```
+
+         3. -b, --base-dir = diretório base ao qual -f é relativo.  [default: "./"]
+
+            ```bash
+
+               # renderiza os arquivos *.ejs em src/ e envia os arquivos compilados para dest/
+               ejs-cli --base-dir src/ "*.ejs" --out dest/
+
+               # renderiza os arquivos *.ejs em src/ e seus subdiretórios e envia arquivos compilados para dest/
+               ejs-cli --base-dir src/ "**/*.ejs" --out dest/
+
+
+            ```
+
+         4. -e, --exclude   = nomes de arquivos/diretórios a serem excluídos [espaço separado se mais de um]
+
+            ```bash
+
+              # exclui qualquer diretório "parcial" da renderização
+              ejs-cli --base-dir src/ "**/*.ejs" --exclude "partials/" --out dest/
+
+            ```
+
+         5. -o, --out  = Gerar o arquivo _.html_ baseado no arquivo _.ejs_
+
+            ```bash
+
+              # renderiza os arquivos *.ejs no diretório de trabalho atual.
+              ejs-cli "*.ejs" --out .               
+              
+            ```
+
+         6. -O, --options  = variáveis de opção (caminho do arquivo ou string JSON).  
+
+            ```bash
+
+               # renderiza os arquivos *.ejs no diretório de trabalho atual e envia os arquivos compilados para dest/
+               ejs-cli "*.ejs" --out dest/ --options options.json
+              
+
+            ```
+
+   5. <!-- markdownlint-disable-next-line -->
       <span id=id_referencias></span>**REFERÊNCIAS**
       1. [ejs](https://ejs.co/)
       2. [Como usar o EJS para modelar seu aplicativo de nodejs](https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application)
@@ -120,7 +180,7 @@
       <!-- markdownlint-disable-next-line -->
       14. <text onclick="goBack()">[🔙]</text>
    <!-- markdownlint-disable-next-line -->
-   5. <span id="id_historico"><span>**HISTÓRICO**
+   6. <span id="id_historico"><span>**HISTÓRICO**
 
       1. 08/06/2021 <!--DONE: HISTÓRICO -->
          - [x] ;

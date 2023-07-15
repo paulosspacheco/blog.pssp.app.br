@@ -10,9 +10,9 @@ Criado exemplos de como usar o pacote ejs no nodejs.
 
 - [x] [Criado exemplos de como usar o pacote ejs no nodejs sem variáveis](./programacao/nodejs/ejs/ejs-demo1/server.js)
 - [x] [Criado exemplos de como usar o pacote ejs no nodejs com variáveis](./programacao/nodejs/ejs/ejs-demo2/server.js)
+- [x] [Criando a página _o que é ejs_](/programacao/nodejs/ejs/o_que_e_ejs.html)
 
 </fieldset>
-
 
 <!-- markdownlint-disable-next-line -->
 <main>
