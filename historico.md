@@ -4,10 +4,10 @@
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 19/07/2023</b></legend>
 
-- [x] [Criado programa com chatgpt para criar índice em arquivo usando o algorítimo arvore b+ banlanceada](./programacao/pascal/lazarus/exemplos/Algoritimo_arvora_b+_balaceada/unit1.pas)
+- [x] [Criado programa com chatgpt para criar índice em arquivo usando o algorítimo arvore b+ balanceada](./programacao/pascal/lazarus/exemplos/Algoritimo_arvora_b+_balaceada/unit1.pas)
+  - [x] [Download do projeto](./programacao/pascal/lazarus/exemplos/Algoritimo_arvora_b+_balaceada.zip)
 
 </fieldset>
-
 
 <!-- markdownlint-disable-next-line -->
 <main>
