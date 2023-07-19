@@ -1,7 +1,14 @@
 <!-- markdownlint-disable-next-line -->
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
-Criado exemplos de como usar o pacote ejs no nodejs.
+<!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 19/07/2023</b></legend>
+
+- [x] [Criado programa com chatgpt para criar índice em arquivo usando o algorítimo arvore b+ banlanceada](./programacao/pascal/lazarus/exemplos/Algoritimo_arvora_b+_balaceada/unit1.pas)
+
+</fieldset>
+
+
 <!-- markdownlint-disable-next-line -->
 <main>
 

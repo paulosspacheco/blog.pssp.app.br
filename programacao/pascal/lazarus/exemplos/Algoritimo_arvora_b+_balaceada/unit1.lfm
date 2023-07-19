@@ -1,0 +1,47 @@
+object Form1: TForm1
+  Left = 282
+  Height = 331
+  Top = 250
+  Width = 591
+  Caption = 'Form1'
+  ClientHeight = 331
+  ClientWidth = 591
+  LCLVersion = '2.3.0.0'
+  object Button1_CreateDataFile: TButton
+    Left = 8
+    Height = 25
+    Top = 8
+    Width = 187
+    Caption = 'Button1_CreateDataFile'
+    OnClick = Button1_CreateDataFileClick
+    TabOrder = 0
+  end
+  object Button2_Index_DataFile: TButton
+    Left = 11
+    Height = 25
+    Top = 40
+    Width = 184
+    Caption = 'Button2_Index_DataFile'
+    OnClick = Button2_Index_DataFileClick
+    TabOrder = 1
+  end
+  object Button3_Lista_DataFile: TButton
+    Left = 8
+    Height = 25
+    Top = 72
+    Width = 184
+    Caption = 'Button3_Lista_DataFile'
+    OnClick = Button3_Lista_DataFileClick
+    TabOrder = 2
+  end
+  object ListBox1: TListBox
+    Left = 0
+    Height = 227
+    Top = 104
+    Width = 591
+    Align = alBottom
+    ItemHeight = 0
+    TabOrder = 3
+    TopIndex = -1
+  end
+end
