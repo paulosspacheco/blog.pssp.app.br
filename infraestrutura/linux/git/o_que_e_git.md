@@ -497,8 +497,9 @@
    6. [COMO USAR O GIT E O GITLAB NA PRÁTICA](https://www.youtube.com/watch?v=un8CDE8qOR8&t=38s)
    7. [Markdown com sabor do GitLab](https://docs.gitlab.com/ee/user/markdown.html)
    8. [Clonar e usar um repositório do GitHub no Visual Studio Code](https://learn.microsoft.com/pt-br/azure/developer/javascript/how-to/with-visual-studio-code/clone-github-repository?tabs=create-repo-command-palette%2Cinitialize-repo-activity-bar%2Ccreate-branch-command-palette%2Ccommit-changes-command-palette%2Cpush-command-palette)
+   9. [10.7 Funcionamento Interno do Git - Manutenção e Recuperação de Dados](https://git-scm.com/book/pt-br/v2/Funcionamento-Interno-do-Git-Maintenance-and-Data-Recovery)
 
-   9. <!-- markdownlint-disable-next-line -->
+   10. <!-- markdownlint-disable-next-line -->
       <text onclick="goBack()">[🔙]</text>
 
 5. <!-- markdownlint-disable-next-line -->
