@@ -2,6 +2,13 @@
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 23/07/2023</b></legend>
+
+- [x] [No arquivo o_que_git adicionar comando para listar por ordem de tamanho o último commit](./infraestrutura/linux/git/o_que_e_git.html#id_assunto12)
+
+</fieldset>
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 19/07/2023</b></legend>
 
 - [x] [Criado programa com chatgpt para criar índice em arquivo usando o algorítimo arvore b+ balanceada](./programacao/pascal/lazarus/exemplos/Algoritimo_arvora_b+_balaceada/unit1.pas)

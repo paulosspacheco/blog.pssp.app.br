@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="appstrok.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AppStrok"/>
+        <TopLine Value="4"/>
+        <CursorPos X="3" Y="10"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units/u_create_index_stork.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="u_Create_index_Stork"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="61"/>
+        <CursorPos X="10" Y="76"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="template/index_stork.toml.template"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="214" Y="6"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units/unit1.pas"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="40" Y="15"/>
+        <UsageCount Value="20"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../../../v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/units/mi.rtl.files.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="6"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../../../v/paulosspacheco/Documentos/blogger/blog.pssp.app.br/index_stork.toml"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="9" Y="6"/>
+        <UsageCount Value="20"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../../../v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/units/mi.rtl.objectss.pas"/>
+        <UnitName Value="mi.rtl.Objectss"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="85"/>
+        <CursorPos X="10" Y="93"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../../../LazarusProjects/maricarai/mi.rtl/mi.rtl.pas"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../../../LazarusProjects/maricarai/mi.rtl/units/mi.rtl.files.pas"/>
+        <EditorIndex Value="3"/>
+        <FoldState Value=" TL12{l@"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../../../../LazarusProjects/maricarai/mi.rtl/units/mi.rtl.objectss.pas"/>
+        <UnitName Value="mi.rtl.Objectss"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="161"/>
+        <CursorPos Y="169"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="1">
+      <Position>
+        <Filename Value="../../../../../../../LazarusProjects/maricarai/mi.rtl/units/mi.rtl.objectss.pas"/>
+        <Caret Line="169" TopLine="153"/>
+      </Position>
+      <Position>
+        <Filename Value="../../../../../../../LazarusProjects/maricarai/mi.rtl/units/mi.rtl.objectss.pas"/>
+        <Caret Line="177" Column="6" TopLine="173"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

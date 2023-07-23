@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;O que &eacute; git&quest; &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;git&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-
+    
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!-- CSS markdown -->
         <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
         
         <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
 
 
     </head>
@@ -47,8 +47,10 @@
 <li><a href="#id_assunto09">Verificando o status atual do projeto.</a></li>
 <li><a href="#id_assunto10">Criando script para enviar as alterações para o github</a></li>
 <li><a href="#id_assunto11">Voltando um commit do GIT</a></li>
+<li><a href="#id_assunto12">Listando por ordem de tamanho o último commit</a></li>
 <li>Documentar como funciona o <strong>git Issues</strong> (Registro de problemas)</li>
 <li><a href="https://wiki.freepascal.org/FPC_git#rm_.28removing_files.29">Free Pascal Git</a></li>
+<li></li>
 </ol>
 </li>
 <li>
@@ -60,7 +62,7 @@
 </ol>
 <h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
 <hr>
-   <!-- markdownlint-disable-next-line -->
+<!-- markdownlint-disable-next-line -->
 <ol>
 <li>
 <p><span id="id_resumo"><span><strong>Resumo do conteúdo:</strong></p>
@@ -133,9 +135,9 @@
 </li>
 <li>
 <!-- markdownlint-disable-next-line -->
+<p><text onclick="goBack()">[🔙]</text></p>
 </li>
 </ol>
-<p><text onclick="goBack()">[🔙]</text></p>
 </li>
 </ol>
 </li>
@@ -155,8 +157,8 @@
 <li>
 <p>Execute os seguintes comandos para fazer com que o git saiba seu nome e endereço de e-mail:</p>
 <pre><code class="hljs language-sh">
-  git config --global user.name <span class="hljs-string">"Seu Nome"</span>
-  git config --global user.email <span class="hljs-string">"seu_email@qualquercoisa.com"</span>
+   git config --global user.name <span class="hljs-string">"Seu Nome"</span>
+   git config --global user.email <span class="hljs-string">"seu_email@qualquercoisa.com"</span>
 
 </code></pre>
 </li>
@@ -196,9 +198,9 @@
 <ol>
 <li>
 <p>Exemplo</p>
-<pre><code class="hljs language-sh">  
- <span class="hljs-built_in">cd</span> ~/meuProjeto                 
- git init --separate-git-dir ~/meuProjeto.git
+<pre><code class="hljs language-sh">   
+   <span class="hljs-built_in">cd</span> ~/meuProjeto                 
+   git init --separate-git-dir ~/meuProjeto.git
 
 </code></pre>
 </li>
@@ -397,7 +399,7 @@
 <li>
 <p>Se você estiver usando um sistema legado que não suporta o algoritmo Ed25519, use:</p>
 <pre><code class="hljs language-sh">
-  ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">"paulosspacheco"</span>
+   ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">"paulosspacheco"</span>
 
 </code></pre>
 </li>
@@ -438,7 +440,7 @@
    git remote add origin git@github.com:paulosspacheco/maricarai.git
 
    <span class="hljs-comment"># Cria um ramo para a versão     </span>
-     git branch -M main                           
+      git branch -M main                           
 
    <span class="hljs-comment"># Adiciona todos os arquivo da pasta que se quer versionar</span>
    git add .        
@@ -468,10 +470,10 @@
 <ol>
 <li>
 <p>Digite <strong>ls -al ~/.ssh</strong> para ver se as chaves SSH existentes estão presentes.</p>
-<pre><code class="hljs language-sh">     
-     $ ls -al ~/.ssh
-     <span class="hljs-comment"># Lists the files in your .ssh directory, if they exist</span>
-    
+<pre><code class="hljs language-sh">      
+      $ ls -al ~/.ssh
+      <span class="hljs-comment"># Lists the files in your .ssh directory, if they exist</span>
+      
 </code></pre>
 </li>
 <li>
@@ -490,7 +492,7 @@
 </li>
 <li>
 <p>Comando para saber se a chave ssh está associada ao github:</p>
-<pre><code class="hljs language-powershell">
+<pre><code class="hljs language-bash">
    git status
 
 </code></pre>
@@ -571,8 +573,8 @@
 <li>
 <p>Exemplo de  uso:</p>
 <pre><code class="hljs language-sh">
-  <span class="hljs-comment"># Na pasta do repositório executar comando:  </span>
-  git status
+<span class="hljs-comment"># Na pasta do repositório executar comando:  </span>
+git status
 
 </code></pre>
 </li>
@@ -598,8 +600,6 @@
 </li>
 <li>
 <!-- markdownlint-disable-next-line -->
-</li>
-</ol>
 <p><span id=id_assunto10></span><strong>Criando script para enviar as alterações para o github</strong></p>
 <ol>
 <li>
@@ -643,21 +643,6 @@
 </code></pre>
 </li>
 <li>
-<!-- markdownlint-disable-next-line -->
-</li>
-</ol>
-<pre><code class="hljs">&lt;span id=id_assunto11&gt;&lt;/span&gt; **Voltando um commit do GIT**:
- 1. O comando abaixo irá desfazer o último commit, colocando todos os arquivos do commit em unstaged changes:
-    1. Exemplo de código sh:
-
-    ```powershell
-
-      git reset HEAD~1
-    
-    ```
-</code></pre>
-<ol start="3">
-<li>
 <p>REFERÊNCIAS</p>
 <ol>
 <li><a href="https://www.atlassian.com/git/tutorials/undoing-changes/git-reset#:~:text=To%20review%2C%20git%20reset%20is,correspond%20to%20the%20three%20trees.">Git Reset</a></li>
@@ -667,9 +652,44 @@
 </li>
 <li>
 <!-- markdownlint-disable-next-line -->
+<p><text onclick="goBack()">[🔙]</text></p>
 </li>
 </ol>
-<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id=id_assunto11></span> <strong>Voltando um commit do GIT</strong>:</p>
+<ol>
+<li>
+<p>O comando abaixo irá desfazer o último commit, colocando todos os arquivos do commit em unstaged changes:</p>
+<ol>
+<li>Exemplo de código sh:</li>
+</ol>
+<pre><code class="hljs language-bash">
+   git reset HEAD~1
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id=id_assunto12></span> <strong>Listando por ordem de tamanho o último commit</strong>:</p>
+<pre><code class="hljs language-bash">
+  <span class="hljs-comment"># git ls-tree @ -l -r vai listar todos os arquivos do último commit em todos os diretórios e seus tamanhos, </span>
+  <span class="hljs-comment"># enquanto que sort -k 4 -h vai ordenar eles pelo tamanho.</span>
+  git ls-tree @ -l -r | sort -k 4 -h
+
+</code></pre>
+<ol>
+<li><strong>Notas</strong>
+<ol>
+<li><em>git ls-tree @ -l -r</em> vai listar todos os arquivos do último commit em todos os diretórios e seus tamanhos, enquanto que <em>sort -k 4 -h</em> vai ordenar eles pelo tamanho.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 </li>
 <li>
 <!-- markdownlint-disable-next-line -->

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="/home/paulosspacheco/v/FPC_3.3.1/fpc/bin/x86_64-linux/fpc.sh" Date="1679959010"/>
+  <Params Value=" -MObjFPC -Scghi -Cg -O1 -gw3 -gl -l -vewnhibq -Fi/home/paulosspacheco/Documentos/blogger/blog.pssp.app.br/programacao/pascal/lazarus/stork/lib/x86_64-linux -Fu/home/paulosspacheco/Documentos/blogger/blog.pssp.app.br/programacao/pascal/lazarus/stork/units -Fu/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/lib/x86_64-linux/units -Fu/home/paulosspacheco/v/Lazarus/lazarus-2.3.0/components/lazutils/lib/x86_64-linux -Fu/home/paulosspacheco/v/Lazarus/lazarus-2.3.0/packager/units/x86_64-linux -Fu/home/paulosspacheco/Documentos/blogger/blog.pssp.app.br/programacao/pascal/lazarus/stork/ -FU/home/paulosspacheco/Documentos/blogger/blog.pssp.app.br/programacao/pascal/lazarus/stork/lib/x86_64-linux/ -FE/home/paulosspacheco/Documentos/blogger/blog.pssp.app.br/programacao/pascal/lazarus/stork/ -o/home/paulosspacheco/Documentos/blogger/blog.pssp.app.br/programacao/pascal/lazarus/stork/appstrok appstrok.lpr"/>
+</CONFIG>

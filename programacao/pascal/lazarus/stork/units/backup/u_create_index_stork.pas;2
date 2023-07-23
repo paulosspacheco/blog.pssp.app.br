@@ -1,0 +1,22 @@
+unit u_Create_index_Stork;
+
+{$mode ObjFPC}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils
+  ,mi.rtl.Objectss
+
+  ;
+
+
+Type
+  TCreate_index_Stork = class(TObjectss)
+
+  end;
+
+implementation
+
+end.
+

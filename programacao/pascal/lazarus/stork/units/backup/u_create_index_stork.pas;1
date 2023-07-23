@@ -1,0 +1,27 @@
+unit u_Create_index_Stork;
+{:< A unit @name tem como objetivo criar o arquivo de configuração do
+    projeto stork.
+
+    -
+
+}
+{$mode ObjFPC}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils
+  ,mi.rtl.Objectss
+
+  ;
+
+
+Type
+  TCreate_index_Stork = class(TObjectss)
+
+  end;
+
+implementation
+
+end.
+
