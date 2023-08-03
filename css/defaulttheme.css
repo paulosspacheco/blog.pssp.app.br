@@ -343,6 +343,7 @@ pre {
   overflow: auto hidden;
   border: 1px solid  #333;
   color : #90BF03;
+  
   background-color:#282c34;
   max-width: 100%; 
   max-height: 100%; 
@@ -445,5 +446,4 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
 

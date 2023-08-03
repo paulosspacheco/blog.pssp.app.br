@@ -303,4 +303,25 @@ ol {
   display: block; 
 }
 
- 
+#miTable {
+  font-family: "Times New Roman", Times, serif;
+  border-collapse: collapse;
+  width: 0%;
+}
+
+#miTable td, #miTable th {
+  border: 1px solid #ddd;
+  padding:3px;
+}
+
+#miTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#miTable tr:hover {background-color: #ddd;}
+
+#miTable th {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: left;
+  background-color: Grey;
+  color: white;
+}

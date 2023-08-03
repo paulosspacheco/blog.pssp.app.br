@@ -59,28 +59,28 @@
       2. O objetivo principal é poder compartilhar as alterações criadas por vários programadores e um administrador fica responsável pelo merge de todas as versões para produzir uma versão única com todas as alterações.
 
       3. <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
+         [🔝](#)
 
    2. <!-- markdownlint-disable-next-line -->
       <span id="id_pre_requisitos"></span>**Pre-requisitos:**
       1. Sistema operacional Linux ou windows com uma versão acima de 2003 instalado.
 
       2. <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
+         [🔝](#)
 
    3. <!-- markdownlint-disable-next-line -->
       <span id="id_beneficios"></span>**Benefícios:**
       1. Espero poder controlar as versões dos produtos que forem produzidos de hoje em diante, bem como voltar no tempo caso seja necessário.
 
       2. <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
+         [🔝](#)
 
    4. <!-- markdownlint-disable-next-line -->
       <span id="id_desvantagens"></span>**Desvantagens**.
       1. Não sei ainda....
 
       2. <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
+         [🔝](#)
 
 3. <!-- markdownlint-disable-next-line -->
    <span id=id_Conteudo></span>**Conteúdo estudado**
@@ -111,7 +111,7 @@
             ```
 
       4. <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
+         [🔝](#)
 
    2. <!-- markdownlint-disable-next-line -->
       <span id=id_assunto02></span>**Criando repositório git**
@@ -140,7 +140,7 @@
          2. [Como mover/separar a pasta .git da sua árvore de trabalho](https://rakhesh.com/coding/how-to-move-separate-the-git-folder-out-of-your-working-tree/)
 
       4. <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
+         [🔝](#)
 
    3. <!-- markdownlint-disable-next-line -->
       <span id=id_assunto03></span>**Adicionando documento ao repositório local ou remoto se estiver configurado**
@@ -172,7 +172,7 @@
          3. [git init](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init#:~:text=The%20git%20init%20command%20creates,run%20in%20a%20new%20project.)
 
       3. <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
+         [🔝](#)
 
    4. <!-- markdownlint-disable-next-line -->
       <span id=id_assunto04></span>**Listando o status do repositório**
@@ -192,7 +192,7 @@
          1. [Status do repositório](https://githowto.com/pt-BR/checking_status)
 
       3. <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
+         [🔝](#)
 
    5. <!-- markdownlint-disable-next-line -->
       <span id=id_assunto05></span>**Adicionando modificações ao repositório**
@@ -217,7 +217,7 @@
          2. [Exemplo de várias alterações e vários commits](https://githowto.com/pt-BR/changes_not_files)
 
       3. <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
+         [🔝](#)
 
    6. <!-- markdownlint-disable-next-line -->
       <span id=id_assunto06></span>**Ignorando arquivos no repositório git**
@@ -247,7 +247,7 @@
          2. [Uma coleção de **.gitignore** modelos](https://github.com/github/gitignore)
 
       4. <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
+         [🔝](#)
 
    7. <!-- markdownlint-disable-next-line -->
       <span id=id_assunto07></span>**Configurando git para enviar para o github**
@@ -360,7 +360,7 @@
          9. [Configurando arquivos ignorados para todos os repositórios em seu computador](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files).
 
       6. <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
+         [🔝](#)
 
    8. <!-- markdownlint-disable-next-line -->
       <span id=id_assunto08></span>**Clonando repositório no  github**
@@ -387,7 +387,7 @@
          5. Execute o script [**pushmain.sh**](./pushmain.sh)
 
          6. <!-- markdownlint-disable-next-line -->
-            <text onclick="goBack()">[🔙]</text>
+            [🔝](#)
 
    9. <!-- markdownlint-disable-next-line -->
       <span id=id_assunto09></span>**Verificando o status atual do projeto.**
@@ -408,7 +408,7 @@
       4. [title](link)
 
       5. <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
+         [🔝](#)
 
    10. <!-- markdownlint-disable-next-line -->
        <span id=id_assunto10></span>**Criando script para enviar as alterações para o github**
@@ -459,7 +459,7 @@
           3. [Como git redefinir para HEAD](https://devconnected.com/how-to-git-reset-to-head/#:~:text=To%20hard%20reset%20files%20to,option%20and%20specify%20the%20HEAD.&text=The%20purpose%20of%20the%20%E2%80%9Cgit,before%20HEAD%20and%20so%20on).)
 
        3. <!-- markdownlint-disable-next-line -->
-          <text onclick="goBack()">[🔙]</text>
+          [🔝](#)
 
    11. <!-- markdownlint-disable-next-line -->
        <span id=id_assunto11></span> **Voltando um commit do GIT**:
@@ -500,7 +500,7 @@
    9. [10.7 Funcionamento Interno do Git - Manutenção e Recuperação de Dados](https://git-scm.com/book/pt-br/v2/Funcionamento-Interno-do-Git-Maintenance-and-Data-Recovery)
 
    10. <!-- markdownlint-disable-next-line -->
-      <text onclick="goBack()">[🔙]</text>
+      [🔝](#)
 
 5. <!-- markdownlint-disable-next-line -->
    <span id="id_historico"><span>**HISTÓRICO**
@@ -508,7 +508,7 @@
    1. dd/mm/2021 <!--TODO: HISTÓRICO -->
 
       - <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
+         [🔝](#)
 
    2. dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: -->
       - [ ] Criar este documento baseado no o_que_e_git.md ;
@@ -523,9 +523,10 @@
       - [ ] Testar este documento depois após uma semana de concluído.
 
       - <!-- markdownlint-disable-next-line -->
-         <text onclick="goBack()">[🔙]</text>
-
-[🔝🔝](#topo "Retorna ao topo")
+         [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
- <script>    function goBack() {    window.history.back()}</script>
+[🔝](#)
+
+<!-- markdownlint-disable-next-line -->
+ <!-- <script>    function goBack() {    window.history.back()}</script> -->

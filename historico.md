@@ -2,11 +2,28 @@
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!-- markdownlint-disable-next-line -->
+<main>
+
+<!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 25/07/2023</b></legend>
+
+- [x] Criado botão para ir ao topo da página na página [histórico.html](./historico.html)
+- [x] Adicionar a referência a **Github Page** na página [Como hospedar um site estático no github page](<infraestrutura/linux/git/como_hospedar_um _site_estatico_no_github_page.html>)
+
+</fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 23/07/2023</b></legend>
 
 - [x] [No arquivo o_que_git adicionar comando para listar por ordem de tamanho o último commit](./infraestrutura/linux/git/o_que_e_git.html#id_assunto12)
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 19/07/2023</b></legend>
@@ -17,7 +34,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
-<main>
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 14/07/2023</b></legend>
@@ -29,7 +46,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
-<main>
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 13/07/2023</b></legend>
@@ -38,6 +55,9 @@
 - [x] [Criar link para a página nodejs/index.html](/programacao/nodejs/index.html)
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 12/07/2023</b></legend>
@@ -52,6 +72,9 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+[🔝](#)
+
+<!-- markdownlint-disable-next-line -->
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!-- markdownlint-disable-next-line -->
@@ -60,6 +83,9 @@
 - [x] [Adicionado exemplo do comando tee](./infraestrutura/linux/shell/comandos_basico.html) 
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 29/06/2023</b></legend>
@@ -71,6 +97,9 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+[🔝](#)
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 17/06/2023</b></legend>
 
 - [x] [Atualizar oração diária número 01](./comportamentos/religiao/minhas_oracoes/oracaoo_diaria_numero_01.html)
@@ -80,14 +109,19 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+[🔝](#)
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 17/06/2023</b></legend>
 
 - [x] [Criar página de objetivo da pasta nodejs/SqLite3](./programacao/nodejs/sqlite3/objetivo.html)
 - [x] [Criar página de referências da pasta nodejs/SqLite3](./programacao/nodejs/sqlite3/referencias.html)
 - [x] Revisão do texto [Cinco Dicas Para Relacionamentos Saudáveis | Momentos Cury](./comportamentos/habitos/2022/Cinco_dicas_para_relacionamentos_saudaveis.html)
 - [x] Revisão do texto [Cinco Dicas do Filme "O poder além da vida"](./comportamentos/habitos/2022/Cinco_dicas_do_filme_o_poder_alem_da_vida.html)
-
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 17/06/2023</b></legend>
@@ -95,6 +129,9 @@
 - [x] Criar página de objetivo do [framework cordova](./programacao/html/cordova/objetivo.html)
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>A fazer até 06/06/2023 a 15/06/2023</b></legend>
@@ -105,11 +142,17 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+[🔝](#)
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>A fazer até 06/06/2023</b></legend>
 
 - [x] [Como iniciar uma máquina VirtualBox ao iniciar o computador com SO linux?](./infraestrutura/linux/nfs/montando_pastas_ao_iniciar_o_computador.html)
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>01/06/2023</b></legend>
@@ -119,6 +162,9 @@
 - [x] [Criar documento de como montar pastas compartilhadas ao iniciar o computador](./infraestrutura/linux/nfs/montando_pastas_ao_iniciar_o_computador.html)
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>15/05/2023 a 31/05/2023</b></legend>
@@ -133,11 +179,17 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+[🔝](#)
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>15/05/2023 a 19/05/2023</b></legend>
 
 - [x] A tag \<pre\> do arquivo [defaultthemeant.css](css/defaultthemeant.css) deve não ter scroll vertical para que ao imprimir o documento todo seu conteúdo seja impresso.
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>10/05/2023</b></legend>
@@ -152,11 +204,17 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+[🔝](#)
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>08/05/2023 a 09/05/2023</b></legend>
 
 - [x] [Criar documento sobre servidor e cliente NFS](./infraestrutura/linux/servidor-web-apache/../nfs/index.html).
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>07/05/2023</b></legend>
@@ -169,12 +227,18 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+[🔝](#)
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>05/05/2023</b></legend>
 
 - [x] Omitir dos menus os documentos que não estão concluídos.
 - [x] Colocar na página /index.html o menu programação e os documentos que tenho até o momento.
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>04/05/2023 </b></legend>
@@ -184,6 +248,9 @@
 - [x] [Criar documento de como configurar apache2 para executar FastCGI](./infraestrutura/linux/servidor-web-apache/como_configurar_apache2_para_executar_cgi_e_fastcgi.md)
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>25/04/2023 </b></legend>
@@ -197,6 +264,9 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+[🔝](#)
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>20/04/2023 </b></legend>
 
 - [x] Criar documento [como instalar e configurar o git no Debian ou seus derivados](./infraestrutura/linux/git/index.html)
@@ -207,11 +277,18 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+[🔝](#)
+
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>03/01/2021 </b></legend>
 
 - [x] Criar documento [hábitos que me paralisam](comportamentos/habitos/habitos_que_me_paralisam.md)
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>29/12/2020 </b></legend>
@@ -221,12 +298,18 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+[🔝](#)
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>08/12/2020</b></legend>
 
 - [x] Dar opção para visualizar em nova aba o documento embutido em um iframe.
       obs: Não precisa porque o browser tem opção de abrir um link em nova aba ou nova janela.
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>04/12/2020 </b></legend>
@@ -238,6 +321,9 @@
   - [X] Concluir a aba de Referências de markdown.
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>03/12/2020 </b></legend>
@@ -253,6 +339,9 @@
   - [x] Instalar a extensão [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree "Este link descreve tudo que é necessário fazer para configurar a extensão.") para criar lista com todos os cometários do código que contenha as palavras: TODO: ou FIXME:
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>02/12/2020 </b></legend>
@@ -274,6 +363,9 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+[🔝](#)
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>01/12/2020 </b></legend>
 
 - [x] Conclui o documento [o_que_é_markdown.md](/programacao/html/markdown/o_que_e_markdown.md)
@@ -282,6 +374,9 @@
 - [x] Instalar a extensão [bierner.markdown-footnotes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes) para seja possível criar notas de rodapé no documento.
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>30/11/2020</b></legend>
@@ -294,6 +389,9 @@
 - [x] [Documentar o uso do element semântico html \<details\>](/programacao/html/markdown/o_que_e_markdown.html)
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
  <fieldset> <legend> <b>29/11/2020</b></legend>
@@ -311,6 +409,9 @@
   - [😀 https://marketplace.visualstudio.com/items?itemName=devzstudio.emoji-snippets](https://marketplace.visualstudio.comtems?itemName=devzstudio.emoji-snippets)
   
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
  <fieldset> <legend> <b>28/11/2020</b></legend>
@@ -337,11 +438,17 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+[🔝](#)
+
+<!-- markdownlint-disable-next-line -->
  <fieldset> <legend> <b>29/04/2021</b></legend><!--FIXME: Falta fazer os item abaixo: -->
 
 1. [ ] Estudar com usar a tag \[link\]\(url\)\{:target="_blank"\} usando [kramdown](https://kramdown.gettalong.org/)
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
  <fieldset> <legend> <b>02/12/2020</b></legend>
@@ -352,6 +459,9 @@
 2. [x] Criar documento [./como_instalar_servidor_git.md](como_instalar_servidor_git.md).
 
 </fieldset>
+
+<!-- markdownlint-disable-next-line -->
+[🔝](#)
 
 ## LEGENDA
 

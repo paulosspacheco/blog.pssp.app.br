@@ -10,6 +10,7 @@
 		"markdown.extension.toc.updateOnSave": false,
 		"markdown.styles": [
 			"/inc/linksCSS.inc"
-		]
+		],
+		"liveServer.settings.port": 5501
 	}
 }

@@ -2,7 +2,7 @@
 #### Como hospedar um site estático no github page <a href="como_hospedar_um _site_estático_no_github_page.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 1. [**O que é o github pages?**](https://docs.github.com/pt/pages/getting-started-with-github-pages/about-github-pages)
-   1. O Github Pages é o serviço de hospedagem de sites estáticos do Github. Ele usa arquivos HTML, CSS e Javascript diretamente de um repositório, executa os arquivos por meio de um processo e publica um site. [Veja mais...](https://www.alura.com.br/artigos/como-colocar-projeto-no-ar-com-github-pages?gclid=Cj0KCQjw4NujBhC5ARIsAF4Iv6dbm7av5hMLVRnxwGMvOuu5SEhwwQ3yHfFQ3k0uIVfKIkCfRGQxo8QaAsSoEALw_wcB)
+   1. O [Github Pages](https://pages.github.com) é o serviço de hospedagem de sites estáticos do Github. Ele usa arquivos HTML, CSS e Javascript diretamente de um repositório, executa os arquivos por meio de um processo e publica um site. [Veja mais...](https://www.alura.com.br/artigos/como-colocar-projeto-no-ar-com-github-pages?gclid=Cj0KCQjw4NujBhC5ARIsAF4Iv6dbm7av5hMLVRnxwGMvOuu5SEhwwQ3yHfFQ3k0uIVfKIkCfRGQxo8QaAsSoEALw_wcB)
 
 2. **PASSO A PASSO**
    1. [Crie um repositório](https://docs.github.com/pt/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site) com o nome do site no github;
