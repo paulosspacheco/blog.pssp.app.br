@@ -1,27 +1,14 @@
-# `MD033` - Inline HTML
+# O  pacote mi.rtl
 
-Tags: `html`
+## Objetivo do pacote _mi.rtl_
 
-Aliases: `no-inline-html`
+- Encapsular as units do FreePascal convergindo tudo para TObjectss com propósito de evitar declaração de units secundárias bem como manter uma compatibilidade com com o passado.
 
-Parameters:
+## Como funciona o número da versão do pacote
 
-- `allowed_elements`: Allowed elements (`string[]`, default `[]`)
-
-This rule is triggered whenever raw HTML is used in a Markdown document:
-
-```markdown
-<h1>Inline HTML heading</h1>
-```
-
-To fix this, use 'pure' Markdown instead of including raw HTML:
-
-```markdown
-# Markdown heading
-```
-
-Note: To allow specific HTML elements, use the `allowed_elements` parameter.
-
-Rationale: Raw HTML is allowed in Markdown, but this rule is included for
-those who want their documents to only include "pure" Markdown, or for those
-who are rendering Markdown documents into something other than HTML.
+- O número da versão é composta de 4 números sendo xx.yy.zz.ww
+  - xx : Versão PRINCIPAL do projeto e só deve mudar nas seguintes situações:
+    - Quando troca de estado de Alpha para Beta e Final e caso no furo se faça algo que torne o passado incompatível;
+  - yy : Muda a cada vez que é criado algo novo no projeto;
+  - zz : Muda a cada correção de bugs ou otimização.
+  - ww : Número de vezes que o pacote foi construido do zero.

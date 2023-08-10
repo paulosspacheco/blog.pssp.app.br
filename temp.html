@@ -1,404 +1,186 @@
-<html>
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>O  pacote mi&period;rtl</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
-<head>
-  <meta charset="UTF-8">
-  <title>Teste do componente fptemplate</title>
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
 
-  <!--
-      <style>
-        table, td, th {
-          border: 1px solid #ddd;
-          text-align: left;
-          color:black;
-          background:WhiteSmoke; /*Ivory;*/
-          /*font-family: "Times New Roman", Times, serif;*/
-          /*font-family: Arial, Helvetica, sans-serif;*
-          /*font-family: "Lucida Console", "Courier New", monospace;*/
-          font-family: Tahoma, Verdana, sans-serif;
-        }
+.contains-task-list li {
+    margin-left: 24px;
+}
 
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
 
-        table {
-          border-collapse: collapse;
-          width: 100%;
-        }
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
 
-        th, td {
-          padding:3px;
-        }
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
 
-        p {
-          text-align: center;
-        }
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
 
-      </style>
-      -->
+*/
 
-  <style>
-    #miTable {
-      font-family: "Times New Roman", Times, serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
 
-    #miTable td,
-    #miTable th {
-      border: 1px solid #ddd;
-      padding: 3px;
-    }
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
 
-    #miTable tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
 
-    #miTable tr:hover {
-      background-color: #ddd;
-    }
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
 
-    #miTable th {
-      padding-top: 3px;
-      padding-bottom: 3px;
-      text-align: left;
-      background-color: Grey;
-      color: white;
-      text-align: right;
-    }
+.hljs-literal {
+  color: #56b6c2;
+}
 
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
 
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
 
-    pre {
-      border-radius: 5px;
-      overflow: auto hidden;
-      border: 1px solid #333;
-      color: #90BF03;
-      background-color: #282c34;
-      max-width: 100%;
-      max-height: 100%;
-      height: 200px;
-      overflow-x: auto;
-      overflow-y: auto;
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
 
-    }
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
 
-    .divLinks {
-      border-radius: 5px;
-      overflow: auto hidden;
-      border: 1px solid #333;
-      color: #90BF03;
-      background-color: #94b0c4;
-      max-width: 100%;
-      max-height: 100%;
-      height: 200px;
-      overflow-x: auto;
+.hljs-emphasis {
+  font-style: italic;
+}
 
-      overflow-y: auto;
+.hljs-strong {
+  font-weight: bold;
+}
 
-    }
+.hljs-link {
+  text-decoration: underline;
+}
 
-    thead {color:green;}    
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+            /*- CSS markdown */
+            <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+            
+            /* CSS da página /index.html */
+            <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
     
-    tbody {
-      overflow-y: scroll;
-      overflow-x: hidden;
-      height: 150px;      
-      color:blue;
-    }
+            
+</style>
+    </head>
+    <body class="vscode-body vscode-dark">
+        <h1 id="o--pacote-mirtl">O  pacote mi.rtl</h1>
+<h2 id="objetivo-do-pacote-mirtl">Objetivo do pacote <em>mi.rtl</em></h2>
+<ul>
+<li>Encapsular as units do FreePascal convergindo tudo para TObjectss com propósito de evitar declaração de units secundárias bem como manter uma compatibilidade com com o passado.</li>
+</ul>
+<h2 id="como-funciona-o-número-da-versão-do-pacote">Como funciona o número da versão do pacote</h2>
+<ul>
+<li>O número da versão é composta de 4 números sendo xx.yy.zz.ww
+<ul>
+<li>xx : Versão PRINCIPAL do projeto e só deve mudar nas seguintes situações:
+<ul>
+<li>Quando troca de estado de Alpha para Beta e Final e caso no furo se faça algo que torne o passado incompatível;</li>
+</ul>
+</li>
+<li>yy : Muda a cada vez que é criado algo novo no projeto;</li>
+<li>zz : Muda a cada correção de bugs ou otimização.</li>
+<li>ww : Número de vezes que o pacote foi construido do zero.</li>
+</ul>
+</li>
+</ul>
 
-    
-    tfoot {color:red;}
-
-  </style>
-
-</head>
-
-<body>
-  <h1> Teste do componente fptemplate </h1>
-
-
-  <h3> Meu Blog </h3>
-  <pre>
-
-
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/svr_http_listrecords.lps" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/svr_http_listRecords.exe.log" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/link68872.res" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/svr_http_listRecords.exe" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/link4715.res" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/ppas.sh" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/svr_http_listrecords.lpr" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/svr_http_listrecords.lpi" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4.html" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (cópia).html" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (outra cópia).html" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/backup/mytemplate4.html;3" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/backup/mytemplate4.html;1" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/backup/mytemplate4.html;2" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/backup/mytemplate4.html;4" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/backup/mytemplate4.html;5" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lps;3" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/httpproject1.lpi;1" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lpr;2" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/httpproject1.lps;5" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lps;5" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lpr;3" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/httpproject1.lpi;3" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lps;1" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/httpproject1.lpi;4" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/httpproject1.lps;2" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lpi;5" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lpi;1" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lps;2" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/httpproject1.lps;3" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lpr;4" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lps;4" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lpi;3" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lpi;4" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lpr;1" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lpi;2" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/httpproject1.lpi;5" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/httpproject1.lps;4" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/httpproject1.lpr;1" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/httpproject1.lpi;2" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/svr_http_listrecords.lpr;5" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/backup/httpproject1.lps;1" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/webmodule.o" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/webmodule2.ppu" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/webmodule.lfm" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/webmodule.ppu" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/svr_http_listrecords.or" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/webmodule2.s" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/httpproject1.compiled" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/httpproject1.o" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/svr_http_listrecords.compiled" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/webmodule2.o" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/svr_http_listrecords.s" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/webmodule2.lfm" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/svr_http_listrecords.o" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/lib/x86_64-linux/httpproject1.or" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/units/webmodule2.lfm" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/units/webmodule2.pas" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/units/backup/webmodule2.pas;5" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/units/backup/webmodule2.lfm;4" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/units/backup/webmodule2.pas;4" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/units/backup/webmodule2.pas;3" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/units/backup/webmodule2.pas;2" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/units/backup/webmodule2.lfm;1" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/units/backup/webmodule2.lfm;5" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/units/backup/webmodule2.lfm;3" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/units/backup/webmodule2.lfm;2" 
-Arquivo:
-  -"/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/units/backup/webmodule2.pas;1" 
-
-     <!--
-     - O template abaixo dentro de TPageProduce.FileName, informa para o evento *@name*
-       que os parâmetros BlogPsspAppBr e PsspAppBr deve ser preenchido com um link e
-       a função *FindFilesAll* deve retornar um código html com uma lista de links de
-       todos os nomes de arquivos dentro da pasta corrente e subpastas.
-     -->
-
-   </pre>
-
-
-
-  <h3> Meu Blog </h3>
-  <p> A tag abaixo deve ser preenchida com o endereço: http://www.pssp.app.br
-    onde o destino da visualização é uma nova aba do browser
-  <p>
-    <a href="http://www.pssp.app.br" target="_blank" title="Blog do Paulo Sérgio da Silva Pacheco"> http://www.pssp.app.br ➚ </a>
-
-  <p> A tag abaixo deve ser preenchida com o endereço: http://www.pssp.app.br
-    onde o destino da visualização é uma variável definida no ato da produção
-    da página</p>
-  <a href="http://www.pssp.app.br" target="_self" title="Blog do Paulo Pacheco"> http://www.pssp.app.br </a>
-
-  <h3> Lista de arquivos .html </h3>
-  <div class="divLinks">
-    <a href="/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4.html" target="_blank" title="mytemplate4.html"> /home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4.html </a> <br>
-    <a href="/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (cópia).html" target="_blank" title="mytemplate4 (cópia).html"> /home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (cópia).html </a> <br>
-    <a href="/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (outra cópia).html" target="_blank" title="mytemplate4 (outra cópia).html"> /home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (outra cópia).html </a> <br>
-    <br>
-    <a href="/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4.html" target="_blank" title="mytemplate4.html"> /home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4.html </a> <br>
-    <a href="/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (cópia).html" target="_blank" title="mytemplate4 (cópia).html"> /home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (cópia).html </a> <br>
-    <a href="/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (outra cópia).html" target="_blank" title="mytemplate4 (outra cópia).html"> /home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (outra cópia).html </a> <br>
-    <br>
-    <a href="/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4.html" target="_blank" title="mytemplate4.html"> /home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4.html </a> <br>
-    <a href="/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (cópia).html" target="_blank" title="mytemplate4 (cópia).html"> /home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (cópia).html </a> <br>
-    <a href="/home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (outra cópia).html" target="_blank" title="mytemplate4 (outra cópia).html"> /home/paulosspacheco/v/paulosspacheco/LazarusProjects/maricarai/mi.rtl/examples/svrhttp/templates/mytemplate4 (outra cópia).html </a> <br>
-    <br>
-
-  </div>
-
-  DateTime in format "MM/DD hh:mm:ss": <b>08-02 15:43:36</b>
-  <br>
-
-  <!--
-    Preenche os dados da tabela
-  -->
-
-  <div class="divLinks">
-    <Table id="miTable">
-      <thead>
-        <tr>
-          <th colspan="3">
-            <p style="text-align: center">""List of records:""</p>
-          </th>
-        </tr>
-        <th>Column1:</th>
-        <th>:Column2:</th>
-        <th>:Column3</th>
-        </tr>
-      </thead>
-
-      <tbody>
-
-        <td>1Paulo Sérgio</td>
-        <td>Marcos Pacheco</td>
-        <td>George Bruno</td>
-        </tr>
-        <tr>
-          <td>2José Carlos</td>
-          <td>Antônio</td>
-          <td>Paulo Henrique</td>
-        </tr>
-        </tr>
-        <tr>
-          <td>3Paulo Sérgio</td>
-          <td>Marcos Pacheco</td>
-          <td>George Bruno</td>
-        </tr>
-        </tr>
-        <tr>
-          <td>4José Carlos</td>
-          <td>Antônio</td>
-          <td>Paulo Henrique</td>
-        </tr>
-        </tr>
-        <tr>
-          <td>5Paulo Sérgio</td>
-          <td>Marcos Pacheco</td>
-          <td>George Bruno</td>
-        </tr>
-        </tr>
-        <tr>
-          <td>6José Carlos</td>
-          <td>Antônio</td>
-          <td>Paulo Henrique</td>
-        </tr>
-        </tr>
-        <tr>
-          <td>7Paulo Sérgio</td>
-          <td>Marcos Pacheco</td>
-          <td>George Bruno</td>
-        </tr>
-        </tr>
-        <tr>
-          <td>José Carlos</td>
-          <td>Antônio</td>
-          <td>Paulo Henrique</td>
-        </tr>
-        </tr>
-        <tr>
-          <td>8Paulo Sérgio</td>
-          <td>Marcos Pacheco</td>
-          <td>George Bruno</td>
-        </tr>
-        </tr>
-        <tr>
-          <td>9José Carlos</td>
-          <td>Antônio</td>
-          <td>Paulo Henrique</td>
-        </tr>
-        </tr>
-        <tr>
-          <td>10Paulo Sérgio</td>
-          <td>Marcos Pacheco</td>
-          <td>George Bruno</td>
-        </tr>
-
-        <tr>
-
-      </tbody>
-      <tfoot>
-        <tr>
-          <td>Sum</td>
-          <td>$180</td>
-          <td>$180</td>          
-        </tr>
-      </tfoot>
-
-    </Table>
-
-
-  </div>
-</body>
-
-</html>
+        
+        
+    </body>
+    </html>
