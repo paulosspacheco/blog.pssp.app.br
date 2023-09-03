@@ -1,5 +1,5 @@
 <!--  Metas Author, e_mail e local -->
-<html>
+<html lang="pt-BR">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=windows-1252">
     <meta name="author" content="Paulo Sérgio da Silva Pacheco">

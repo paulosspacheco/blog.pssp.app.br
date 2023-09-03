@@ -38,7 +38,7 @@ Var
 begin
   L:=TStringList.Create;
   try
-    L.Add('<HTML>');
+    L.Add('<html lang="pt-BR">');
     L.Add('<HEAD>');
     L.Add('<TITLE>'+ATitle+'</TITLE>');
     L.Add('</HEAD>');

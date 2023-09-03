@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-    <html>
+    <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <title></title>
@@ -1591,7 +1591,7 @@ procedure called &quot;func1callRequest&quot; that handles this action</p>
 <p>procedure TFPWebModule1.func1callRequest(Sender: TObject; ARequest: TRequest;
 AResponse: TResponse; var Handled: Boolean);
 begin<br>
-AResponse.Content := '<html><body>Hello World!</body></html>';</p>
+AResponse.Content := '<html lang="pt-BR"><body>Hello World!</body></html>';</p>
 <p>Handled := true;
 end;</p>
 <ol start="10">
@@ -1615,7 +1615,7 @@ ex: <a href="http://localhost/myapache/func1call?param1=paramvalue1">http://loca
 <ol>
 <li>Lets make a simple html template and save it as mytemplate1.html :</li>
 </ol>
-<html>
+<html lang="pt-BR">
 <body>
 This is a replaced template tag: {TagName1}
 </body>

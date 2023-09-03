@@ -131,7 +131,7 @@ begin
   L:=TStringList.Create;
   try
     L.AddStrings(['<!doctype html>',
-      '<html>',
+      '<html lang="pt-BR">',
       '<head>',
       '<title>Echo request</title>',
       '</head>',

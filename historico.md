@@ -5,6 +5,14 @@
 <main>
 
 <!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 17/08/2023</b></legend>
+
+- [x] Criar documento do projeto [mi.rtl](./programacao/pascal/lazarus/maricarai_doc/mi.rtl/docs/index.html)
+- [x] Criar documento do projeto [mi.ui.lcl.form](./programacao/pascal/lazarus/maricarai_doc/mi.ui.lcl.form/docs/index.html)
+
+</fieldset>
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 25/07/2023</b></legend>
 
 - [x] Criado botão para ir ao topo da página na página [histórico.html](./historico.html)

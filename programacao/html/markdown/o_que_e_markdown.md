@@ -890,7 +890,7 @@
 > >
 > > ```Html>
 > >
-> >   <html>
+> >   <html lang="pt-BR">
 > >      <head>
 > >      </head>
 > >      <body>

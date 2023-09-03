@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>This is a test of Markdown syntax</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- CSS markdown  -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+            
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
+
+</style>
+    </head>
+    <body class="vscode-body vscode-dark">
+        <h1 id="this-is-a-test-of-markdown-syntax">This is a test of Markdown syntax</h1>
+<p>Arquivo usado para testar o programa pasdoc.</p>
+<p>{ @abstract(<strong>This is a test of Markdown syntax</strong>)
+Correct lists</p>
+<ul>
+<li>list item #1.1</li>
+<li>list item #1.2</li>
+</ul>
+<p>end list</p>
+<ul>
+<li>list item #2.1</li>
+<li>list item #2.2</li>
+</ul>
+<p>end list</p>
+<ul>
+<li>list item #3</li>
+</ul>
+<p>end list</p>
+<ul>
+<li>list item #4</li>
+</ul>
+<ol>
+<li>list item #5.1</li>
+<li>list item #5.2</li>
+<li>list item #5.10</li>
+</ol>
+<p>Simple list with multiline text</p>
+<ul>
+<li>
+<p>item 6.1
+text
+text
+text</p>
+</li>
+<li>
+<p>item 6.2</p>
+<p>item text</p>
+</li>
+</ul>
+<p>end list</p>
+<p>List with nested list</p>
+<ul>
+<li>
+<p>item 7.1
+text</p>
+<ul>
+<li>item 7.1.1
+text</li>
+</ul>
+<p>text2</p>
+</li>
+</ul>
+<p>List with more nesting</p>
+<ul>
+<li>item 8.1</li>
+<li>item 8.1.1</li>
+<li>item 8.1.1.1</li>
+</ul>
+<pre><code class="hljs">text 8.1.1
+</code></pre>
+<ul>
+<li>item 8.1.2</li>
+<li>item 8.1.2.1</li>
+</ul>
+<p>text 8.1</p>
+<p>end list</p>
+<p>You can even mix markdown and PasDoc tags</p>
+<p>@unorderedList(</p>
+<ul>
+<li>list
+item #8.1</li>
+<li>list
+item #8.2
+)</li>
+</ul>
+<p>Incorrect lists</p>
+<p><em>not a list</em></p>
+<p>1not a list</p>
+<p>1 not a list</p>
+<p>1.not a list</p>
+<p>Emphasis, aka italics, with <em>asterisks</em> or <em>underscores</em>.</p>
+<p>Strong emphasis, aka bold, with <strong>asterisks</strong> or <strong>underscores</strong>.</p>
+<p>Some <strong>bold text</strong>.</p>
+<p>Some <strong><em>bold and italic text</em></strong>.</p>
+<p>Some <strong>some bold and <em>italic</em> and <em>italic</em>
+and <em>italic once again</em> text</strong>.</p>
+<p>Some <em>italic text</em>.</p>
+<p>Some <strong>bold text with some tags: My name is @name,
+some @code(begin end) and a link to me: @link(ok_markdown)</strong>.</p>
+<p>*markers could be escaped</p>
+<p><em>and also escaped at end*
+of a word</em></p>
+<p>or placed inside_word or placed_inside_word_multiple_times or at the end_</p>
+<p>Multiplications are OK: A<em>B</em>C*D and with spaces too: A * B * C * D</p>
+<p>underscore _ is used to name some deprecated thing: something_</p>
+<p>Some <code>inline code</code>, some <code>**formatting** _inside_ code</code></p>
+<p>Some preformatted code:</p>
+<pre><code class="hljs"><span class="hljs-attr">program</span> <span class="hljs-string">Foo;</span>
+  <span class="hljs-attr">Some</span> <span class="hljs-string">long code</span>
+  <span class="hljs-attr">with</span>
+  <span class="hljs-attr">syntax</span> <span class="hljs-string">highlight</span>
+</code></pre>
+<p>Some Pascal code:</p>
+<pre><code class="hljs language-pascal"><span class="hljs-keyword">program</span> Foo;
+  Some long code
+  <span class="hljs-keyword">with</span>
+  syntax highlight
+</code></pre>
+<p>Correct URLs:</p>
+<p><a href="http://example">Some one-line descr</a></p>
+<p><a href="http://example">Some multi-line
+descr</a></p>
+<p><a href="http://example">Escaped [] descr</a></p>
+<p><a href="http://example">\</a></p>
+<p><a href="http://example">a\</a></p>
+<p><a href="http://example/(foo)">Bracket URL</a></p>
+<p>Incorrect URLs:</p>
+<p>(<a href="http://example">http://example</a>)</p>
+<p>[Some descr] (<a href="http://example">http://example</a>)</p>
+<p>[Some descr](<a href="http://example">http://example</a></p>
+<p>[Bug fix: URL preceeded by block in square brackets] <a href="http://example">descr</a></p>
+<p>}
+unit ok_markdown;</p>
+<p>interface</p>
+<p>const
+// <a href="http://example">Bug fix: URL at the end of comment</a>
+foo = 1;</p>
+<p>implementation</p>
+<p>end.</p>
+
+        
+        
+    </body>
+    </html>

@@ -279,7 +279,7 @@ procedure called "func1callRequest" that handles this action
 procedure TFPWebModule1.func1callRequest(Sender: TObject; ARequest: TRequest;
   AResponse: TResponse; var Handled: Boolean);
 begin     
-  AResponse.Content := '<html><body>Hello World!</body></html>';
+  AResponse.Content := '<html lang="pt-BR"><body>Hello World!</body></html>';
 
   Handled := true;
 end;
@@ -306,7 +306,7 @@ II. Using templates:
 
 1. Lets make a simple html template and save it as mytemplate1.html :
 
-<html>
+<html lang="pt-BR">
 <body>
 This is a replaced template tag: {TagName1}
 </body>

@@ -181,7 +181,7 @@
                     res.setHeader('Content-Type', 'text/html');
                     res.end(
                         '<!DOCTYPE html>'+
-                        '<html>'+
+                        '<html lang="pt-BR">'+
                             '<head>'+
                                 '<meta charset="utf-8" />'+
                                 '<title>Exemplo do módulo calculator.js</title>'+
