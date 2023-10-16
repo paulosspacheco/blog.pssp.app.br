@@ -866,8 +866,8 @@
 768	./programacao/pascal/lazarus/img
 140	./programacao/pascal/lazarus/pas2js
 28724	./programacao/pascal/lazarus
-116	./programacao/pascal/delphi/imgs
-272	./programacao/pascal/delphi
+116	./programacao/pascal/Delphi/imgs
+272	./programacao/pascal/Delphi
 29068	./programacao/pascal
 1276	./programacao/sql
 28	./programacao/python

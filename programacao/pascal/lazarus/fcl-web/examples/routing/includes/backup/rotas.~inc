@@ -42,7 +42,7 @@ begin
     L.Add('<HEAD>');
     L.Add('<TITLE>'+ATitle+'</TITLE>');
     L.Add('</HEAD>');
-    L.Add('<BODY>');
+    L.Add('<bodY>');
     L.Add('<H1>'+ATitle+'</H1>');
     L.Add('<A HREF="#routes">Jump to routes overview</A>');
     if (Length(RouteParams)>0) then
@@ -56,7 +56,7 @@ begin
       end;
 //    DumpRequest(ARequest,L,False);
     DumpRoutes(L,ARequest.URL);
-    L.Add('</BODY>');
+    L.Add(' </body>');
     L.Add('</HTML>');
     AResponse.Content:=L.Text;
     AResponse.SendResponse;

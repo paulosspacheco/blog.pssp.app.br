@@ -13,7 +13,7 @@
     <meta name="description" content="Flatpak é uma forma de distribuir software linux, equivalente ao .deb, com a diferença de que pode ser instalado em todas as distribuições linux.">
     <meta name="keywords" content="flatpak,linux,aplicativo">
   </head>
-  <body>
+  <bodY>
     <!-- Barra do log e login  -->
     <div class="row">
       <h2>
@@ -821,5 +821,5 @@ RuntimeRepo = https://dl.flathub.org/repo/flathub.flatpakrepo
         <li>e-mail: paulosspacheco@yahoo.com.br</li>
         <li>Icaraí - Caucaia - Ceará - Brasil</li>
       </b></div>
-  </body>
+   </body>
 </html>

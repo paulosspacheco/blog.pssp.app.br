@@ -1591,7 +1591,7 @@ procedure called &quot;func1callRequest&quot; that handles this action</p>
 <p>procedure TFPWebModule1.func1callRequest(Sender: TObject; ARequest: TRequest;
 AResponse: TResponse; var Handled: Boolean);
 begin<br>
-AResponse.Content := '<html lang="pt-BR"><body>Hello World!</body></html>';</p>
+AResponse.Content := '<html lang="pt-BR"><bodY>Hello World! </body></html>';</p>
 <p>Handled := true;
 end;</p>
 <ol start="10">
@@ -1616,9 +1616,9 @@ ex: <a href="http://localhost/myapache/func1call?param1=paramvalue1">http://loca
 <li>Lets make a simple html template and save it as mytemplate1.html :</li>
 </ol>
 <html lang="pt-BR">
-<body>
+<bodY>
 This is a replaced template tag: {TagName1}
-</body>
+ </body>
 </html>
 <ol start="2">
 <li>Save it and put it somewhere your apache module can access it (ex: below the
@@ -1721,5 +1721,5 @@ from the back end apache module as much as possible.</p>
         </div>
         <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
         
-    </body>
+     </body>
     </html>

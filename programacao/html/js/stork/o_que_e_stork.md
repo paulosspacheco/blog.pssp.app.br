@@ -1,8 +1,11 @@
-<!-- markdownlint-disable-next-line -->
-#### O que é pacote de pesquisa de site stork <a href="o_que_e_stork.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!-- markdownlint-disable-next-line -->
+#### O que é pacote de pesquisa de site stork <a href="o_que_e_stork.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 <main>
+
+
+<!-- markdownlint-disable-next-line -->
+
 
 - [OBJETIVO](#objetivo)
 - [PASSO 01 - Instalação do stork no sistema operacional linux](#passo-01---instalação-do-stork-no-sistema-operacional-linux)
@@ -51,7 +54,7 @@
 
 3. Sirva esses arquivos de seu _servidor web_. Carregue os arquivos Javascript _stork.js_ e _WASM_ _stork.wasm_ em seu servidor ou host da Web e os _apresente publicamente_ como faria com uma folha de _estilo_ ou _imagem_.
 
-4. Certifique-se de servir o arquivo _WASM_ com o _application/wasm_ tipo [_MIME_](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) . Se você estiver colocando esses arquivos atrás do _seu CDN_, certifique-se de encaminhar o _Content-Type_ cabeçalho_ da fonte do arquivo, por meio desse CDN.
+4. Certifique-se de servir o arquivo _WASM_ com o _application/wasm_ tipo [_MIME_](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) . Se você estiver colocando esses arquivos atrás do seu [CDN](https://pt.wikipedia.org/wiki/Rede_de_fornecimento_de_conte%C3%BAdo), certifique-se de encaminhar o _Content-Type_ cabeçalho da fonte do arquivo, por meio desse [CDN](https://pt.wikipedia.org/wiki/Rede_de_fornecimento_de_conte%C3%BAdo).
 
 5. Inicialize o _Stork_ em sua página da Web com o _URL do WASM_. A página Javascript avançado descreve o _stork.initialize()_ método, que instrui o _Stork a carregar o WASM_. Certifique-se de chamar este método - mesmo se estiver usando a _stork.register()_ API mais simples - _antes de chamar qualquer outro método Stork_:
 
@@ -100,7 +103,7 @@
 
 1. Para criar um índice para arquivo [stork.js](/js/stork.js), é necessário instalar o pacote _stork_ descrito no [_passo 01_ acima](#passo-01---instalação-do-stork-no-sistema-operacional-linux).
 
-2. Cada arquivo da lista de arquivos as serem pesquisados, devem ter as palavras _\<main>_  _\</main>_ para marcar o trecho de código que deve ser pesquisado.
+2. Cada arquivo da lista de arquivos as serem pesquisados, devem ter as palavras _\ _  _\ _ para marcar o trecho de código que deve ser pesquisado.
    1. Exemplo:
 
       ```md
@@ -109,7 +112,7 @@
          <link type="text/css" href="../../../css/defaulttheme.css" rel="stylesheet" />
 
          <!-- markdownlint-disable-next-line -->
-         <main>
+          
 
          # Reflexão sobre fake, fatos e opinião
 
@@ -127,7 +130,7 @@
          >       2. Os políticos do Brasil são desonestos.  
 
          <!-- markdownlint-disable-next-line -->
-         </main>
+          
 
       ```
 
@@ -198,7 +201,7 @@
 
          </head>
 
-         <body>
+         <bodY>
             <!-- Cada interface de pesquisa deve ter um elemento de entrada e um elemento de saída . 
                  (O wrapper é usado apenas pelo tema basic.css que incluímos acima.) -->
             <div class="stork-wrapper">
@@ -207,7 +210,7 @@
             </div>
                
             <!-- Você pode carregar a biblioteca Javascript do Stork CDN (com suporte do AWS Cloudfront) ou auto-hospedá-la.
-               Logo antes da </body>tag de fechamento, inclua o script Stork e registre o index.-->
+               Logo antes da  </body>tag de fechamento, inclua o script Stork e registre o index.-->
             <script src="https://files.stork-search.net/releases/v1.6.0/stork.js"></script>
             <script>
                stork.register(
@@ -215,7 +218,7 @@
                'https://files.stork-search.net/releases/v1.6.0/federalist.st'
                )
             </script>
-         </body>
+          </body>
 
       </html>
        
@@ -253,7 +256,7 @@
 
          </head>
 
-         <body>
+         <bodY>
             <!-- Cada interface de pesquisa deve ter um elemento de entrada e um elemento de saída . 
                (O wrapper é usado apenas pelo tema stork.css que incluímos acima.) -->
             <div class="stork-wrapper">
@@ -273,7 +276,7 @@
                stork.register('list_stork', 'list_stork.st' )
             </script>
             
-         </body>
+          </body>
 
       </html>
             
@@ -318,4 +321,4 @@
 9. [stork-and-netlify - pelican](https://stork-search.net/docs/stork-and-netlify.)
 
 <!-- markdownlint-disable-next-line -->
-</main>
+ </main>

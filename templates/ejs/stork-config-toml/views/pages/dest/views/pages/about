@@ -46,7 +46,7 @@
 </nav>
   </header>
 
-  <main>
+   
     <div class="row">
       <div class="col-sm-8">
         <div class="jumbotron">
@@ -61,7 +61,7 @@
         </div>
       </div>
     </div>
-  </main>
+   
 
   <footer>
     <!-- Arquivo: views/partials/footer.ejs -->
@@ -73,6 +73,6 @@
 
   </footer>
 
-</body>
+ </body>
 
 </html>

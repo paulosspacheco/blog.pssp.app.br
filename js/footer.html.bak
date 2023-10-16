@@ -1,5 +1,5 @@
 <!-- 
-    Dados globais devem ser incluídos em <body>  da seguinte forma
+    Dados globais devem ser incluídos em <bodY>  da seguinte forma
 
     <span w3-include-html="./footer.inc"> </span>    
     <script>
@@ -67,4 +67,4 @@
             </tbody>
         </table>       
     </div> <!-- fim <div class="footer"> -->
-</body></html>
+ </body></html>

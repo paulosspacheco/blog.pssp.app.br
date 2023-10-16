@@ -24,7 +24,7 @@
 
 </head>
 
-<body>
+<bodY>
   
   <!-- Barra do logomarca e login  -->
   <div class="row">
@@ -1001,4 +1001,4 @@ div + p {
       </div>
     </div>
   </div>
-</body></html>
+ </body></html>

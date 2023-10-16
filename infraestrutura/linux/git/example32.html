@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>como_instalar_servidor_git</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+&lt;!DOCTYPE html&gt;
+<html dir="ltr" lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>
+COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO &lt;a href=“como_instalar_servidor_git.html” target=“_blank” title=“Pressione aqui para expandir este documento em nova aba.” &gt; ➚ &lt;/a&gt;
+</title>
+<style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+    display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+<p><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"> <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css"></p>
+<style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- CSS markdown  -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+            
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
+
+</style>
+</head>
+<body class="vscode-body vscode-dark"><main>
+<!-- markdownlint-disable-next-line -->
+<h1 id="como-instalar-e-configurar-um-servidor-git-remoto---">
+COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a>
+</h1>
+<ul>
+<li>
+<a href="#como-instalar-e-configurar-um-servidor-git-remoto---">COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO</a>
+<ul>
+<li>
+<a href="#introdu%C3%A7%C3%A3o">INTRODUÇÃO</a>
+</li>
+<li>
+<a href="#instalando-servidor-git-e-servidor-ssh-no-debian-ou-derivados">INSTALANDO SERVIDOR <em>GIT</em> E SERVIDOR <em>SSH</em> NO DEBIAN OU DERIVADOS</a>
+</li>
+<li>
+<a href="#configura%C3%A7%C3%B5es-do-reposit%C3%B3rio-no-servidor">CONFIGURAÇÕES DO REPOSITÓRIO NO SERVIDOR</a>
+</li>
+<li>
+<a href="#como-usar-o-reposit%C3%B3rio-do-servidor-na-m%C3%A1quina-cliente">COMO USAR O REPOSITÓRIO DO SERVIDOR NA MÁQUINA CLIENTE</a>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h5 id="introdução">
+INTRODUÇÃO
+</h5>
+<ol>
+<li>
+<p>
+<strong>Objetivo:</strong>
+</p>
+<ol>
+<li>
+<p>
+O <em>git</em> é um projeto criado por , <a href="https://pt.wikipedia.org/wiki/Linus_Torvalds"><em>Linus Torvalds</em></a> cujo objetivo é criar um repositório de arquivos que possa ser mantido por várias pessoas. O <em>git</em> pode reproduzir várias versões de um projeto onde uma versão anterior possa ser gerada a qualquer momento caso seja necessário.
+</p>
+</li>
+<li>
+<p>
+Basicamente, na maioria dos casos, o <em>Git</em> roda em um servidor que pode ser na <em>rede local</em> ou na <em>Web</em>. Nesse servidor mantemos um <em>repositório central</em>, o que vamos chamar de <em>Servidor Git</em>. Localmente, na sua estação de trabalho, por exemplo, é mantido um <em>repositório local</em>, ou seja, um <em>clone do repositório do Servidor Git</em>.
+</p>
+</li>
+<li>
+<p>
+Nos arquivos dentro desse <em>repositório local</em> você realiza suas modificações e, ao concluí-las, as envia para o <em>servidor git</em>. Aquilo que modificou e seus comentários sobre suas mudanças são armazenados para consulta posterior.
+</p>
+</li>
+<li>
+<p>
+Caso outras pessoas possuam um clone desse repositório, bastará rodar o comando <em>git pull</em> para obter as mudanças que você realizou e que já estarão armazenadas no <em>servidor git</em>.
+</p>
+<ul>
+<li>
+<strong>Nota</strong>: Executar <em>git pull</em> antes de enviar modificações para o <em>servidor git</em>.
+</li>
+</ul>
+</li>
+<li>
+<p>
+Na imagem abaixo podemos ver um exemplo de um time que pode ser de desenvolvimento, onde todos trabalham em um repositório local e enviam e recebem mudanças do repositório central (<em>servidor git</em>):
+</p>
+<ul>
+<li>
+<img src="images/image01.jpg" alt="Imagem de vários repositórios e o servidor" title="Esta imagem mostra de forma visual como funciona as cópias dos arquivos.">
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>
+<strong>Pre-requisitos</strong>
+</p>
+<ol>
+<li>
+Conhecimento básico de como se opera um terminal no sistema operacional Linux Debian ou derivados;
+</li>
+<li>
+Conhecimento básico do projeto <a href="https://ubuntu.com/server/docs/service-openssh"><em>Servidor OpenSSH</em></a> para entendimento de como funciona as <em>chaves ssh</em> necessárias para que o servidor acesse a máquina local cliente sem necessidade de pedir senha a cada atualização.
+</li>
+<li>
+Uma máquina linux com Debian ou derivados para instalar o servidor git;
+</li>
+<li>
+Uma máquina linux para testar o repositório criado no servidor git.
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h5 id="instalando-servidor-git-e-servidor-ssh-no-debian-ou-derivados">
+INSTALANDO SERVIDOR <em>GIT</em> E SERVIDOR <em>SSH</em> NO DEBIAN OU DERIVADOS
+</h5>
+<ol>
+<li>
+<p>
+Comandos para instalar aplicativo <em>git</em>:
+</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Atualiza sistema lista do apt-get</span>
+   sudo apt-get update
+
+   <span class="hljs-comment"># Instala o git</span>
+   sudo apt-get install git-all
+   
+   <span class="hljs-comment"># Trocar o nome padrão do branch para main</span>
+   <span class="hljs-comment"># Ao instalar o git o branch padrão é master, porém o github usa main,</span>
+   <span class="hljs-comment"># por isso meus scripts de clientes estão main e o meu servidor git deve acompanhar.</span>
+   git config --global init.defaultBranch main
+  
+</code></pre>
+</li>
+<li>
+<p>
+Comandos para instalar aplicativo <em>openssh-server</em>:
+</p>
+<pre><code class="hljs language-bash">   <span class="hljs-comment"># Instalando o servidor ssh para que o usuário git client possa acessar </span>
+   <span class="hljs-comment"># o servidor sem pedir senha </span>
+   apt-get install openssh-server
+
+</code></pre>
+<ul>
+<li>
+<strong>Notas</strong>:
+<ul>
+<li>
+<p>
+Editar o arquivo <em>/etc/ssh/sshd_config</em> com direitos de root e informe a porta que o servidor <em>ssh</em> deve escultar.
+</p>
+<pre><code class="hljs language-bash">
+  <span class="hljs-comment"># Obs: A porta 22 esta comentada, remova o comentário e informa porta que desejar.         </span>
+  sudo xed  /etc/ssh/sshd_config
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h5 id="configurações-do-repositório-no-servidor">
+CONFIGURAÇÕES DO REPOSITÓRIO NO SERVIDOR
+</h5>
+<ol>
+<li>
+<p>
+<strong>Criar um <em>usuário git</em> no servidor que será o proprietário dos repositórios a serem compartilhados com os clientes. Na prática, poderia ser qualquer usuário, mas para não ter que criar um usuário, no servidor, para cada cliente, é interessante usar o <em>usuário git</em>. Para criar esse usuário utilizamos o comando <em>useradd</em>:.</strong>
+</p>
+<pre><code class="hljs language-bash">
+   sudo useradd --comment <span class="hljs-string">"Git user"</span> --home-dir /home/git --groups users --shell $(<span class="hljs-built_in">which</span> git-shell) git
+
+
+</code></pre>
+<ul>
+<li>
+<strong>Notas:</strong>
+<ol>
+<li>
+Nesse exemplo o grupo do nosso <em>usuário git</em> é <em>users</em>. Esse grupo é o grupo padrão para a distribuição Debian. Caso seu servidor seja de outra distribuição coloque o respectivo grupo. Caso não saiba qual é esse grupo, verifique o do seu usuário e utilize-o.
+</li>
+<li>
+Nesse exemplo a opção <em>–shell</em> sendo atribuída ao utilitário <em>git-shell</em>. Fazemos isso para proibir o usuário git de se logar no nosso servidor. Ele somente consegue executar operações do programa <em>git</em>. Nada além disso. Isso garante que mesmo que um <em>hacker roube a senha</em> desse usuário ele jamais ganharia um <em>shell no servidor</em>.
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>
+<strong>Após criar o usuário, deve-se criar a pasta <em>home</em> dele, em seguida alterar o dono e grupo da pasta <em>/home/git</em> .</strong>
+</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Cria a pasta inicial para o usuário git</span>
+   sudo mkdir -p /home/git
+
+   <span class="hljs-comment"># Conceda permissões de diretório ao usuário git</span>
+   sudo chown -R git:users /home/git
+
+</code></pre>
+</li>
+<li>
+<p>
+<strong>Criar uma senha para o <em>usuário git</em>. Para isso iremos utilizar o <em>comando passwd</em>. Esse comando irá lhe pedir via prompt de comandos a nova senha:</strong>
+</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Definir senha do usuário git</span>
+   sudo passwd git
+
+</code></pre>
+</li>
+<li>
+<p>
+<a href="https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Configura%C3%A7%C3%A3o-Inicial-do-Git"><strong>Configurar nome e e-mail do <em>usuário git</em> globalmente</strong></a>:
+</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment">#  Definindo nome do usuário</span>
+   git config --global user.name <span class="hljs-string">"paulosspacheco"</span>
+
+   <span class="hljs-comment">#  Definindo e-mail do usuário</span>
+   git config --global user.email <span class="hljs-string">"paulosspacheco@yahoo.com.br"</span>
+
+</code></pre>
+<ul>
+<li>
+<strong>Nota</strong>
+<ul>
+<li>
+Se em algum momento desejar alterar as informações para um projeto específico, basta reescrever os comandos sem a opção <em>–global</em> dentro da pasta do projeto.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>
+<strong>Configurando o protocolo ssh:</strong>
+</p>
+<ol>
+<li>
+<p>
+Quando a máquina cliente executa o comando <em>git clone hrl_do_repositório</em>, o <em>git</em> está utilizando o protocolo <em>ssh</em> para clonar o repositório remoto.
+</p>
+<ul>
+<li>
+<strong>Nota</strong>: O protocolo HTTP também pode ser utilizado, mas não necessariamente essa comunicação estaria criptografada, autenticada e autorizada.
+</li>
+<li>
+<a href="https://www.vivaolinux.com.br/dica/Instalando-e-configurando-servidor-SSH-(Ubuntu)">Dica: Instalando e configurando servidor SSH (Ubuntu)</a>;
+</li>
+</ul>
+</li>
+<li>
+<p>
+Para configurar o <em>ssh</em> do servidor, é necessário editar o arquivo <em>/etc/ssh/sshd_config</em> e adicionar a linha com a diretiva <em>AllowUsers</em> se não existir. No final da linha <em>AllowUsers</em>, adicione o nome do <em>usuário root</em> e <em>usuário git</em>. Siga os passos abaixo para fazer as alterações:
+</p>
+<ol>
+<li>
+<p>
+Editar arquivo <em>/etc/ssh/sshd_config</em>:
+</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Obs: Uso o editor xed , porém você pode usar que está disponível no momento. </span>
+   sudo xed /etc/ssh/sshd_config
+
+</code></pre>
+</li>
+<li>
+<p>
+Exemplo de como deve ficar a linha <em>AllowUsers</em> do arquivo <em>/etc/ssh/sshd_config</em>:
+</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Authentication:</span>
+   <span class="hljs-comment">#   LoginGraceTime 2m</span>
+   <span class="hljs-comment">#   PermitRootLogin yes</span>
+   <span class="hljs-comment">#   StrictModes yes</span>
+   <span class="hljs-comment">#   MaxAuthTries 6</span>
+   <span class="hljs-comment">#   MaxSessions 10</span>
+   AllowUsers root git
+
+</code></pre>
+</li>
+<li>
+<p>
+Após gravar a alteração do arquivo <em>/etc/ssh/sshd_config</em> com a adição do <em>usuário git</em> e <em>usuário root</em>, deve-se reiniciar o serviço no sistema operacional para que as modificações tenham efeito.
+</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># System D</span>
+   sudo systemctl restart sshd.service
+
+   <span class="hljs-comment"># ou</span>
+
+   <span class="hljs-comment">#  Service</span>
+   sudo service sshd restart
+
+</code></pre>
+<ul>
+<li>
+Dica: O processo <em>sshd</em> é um <em>daemon</em> em nosso servidor com a responsabilidade de receber as conexões vindas das máquinas clientes e garantir que estejam devidamente autorizadas ao logar no servidor.
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>
+Para acessar o repositório sem necessidade de digitar senha a todo momento é necessário seguir os seguintes passos:
+</p>
+<ol>
+<li>
+<p>
+Na <em>máquina servidora git</em>, seguir os passos abaixo, para que a máquina cliente não precise digitar senha para acessar o servidor:
+</p>
+<ol>
+<li>
+<p>
+Criar a pasta <em>ssh</em> para o <em>usuário git</em>:
+</p>
+<pre><code class="hljs language-bash">
+   sudo mkdir -p /home/git/.ssh/
+
+</code></pre>
+</li>
+<li>
+<p>
+Alterar o <em>nome do usuário</em> e do <em>grupo</em> para <em>git:users</em> na pasta invisível <em>./ssh</em>:
+</p>
+<pre><code class="hljs language-bash">
+   sudo chown -R git:users /home/git/.ssh
+
+</code></pre>
+</li>
+<li>
+<p>
+Altere as permissões da pasta <em>/home/git/.ssh</em> para que somente o <em>usuário git</em> possa ler, gravar e executar na pasta:
+</p>
+<pre><code class="hljs language-bash">
+   sudo chmod 700 /home/git/.ssh
+
+</code></pre>
+</li>
+<li>
+<p>
+Cria o arquivo <em>authorized_keys</em> na pasta <em>/home/git/.ssh</em> para cadastrar todas as chaves púbicas das máquinas clientes com acesso aos repositórios:
+</p>
+<pre><code class="hljs language-bash">
+   sudo touch /home/git/.ssh/authorized_keys
+
+</code></pre>
+</li>
+<li>
+<p>
+Altera o <em>nome do usuário</em> e do <em>grupo</em> para <em>git:users</em> do arquivo <em>authorized_keys</em> da pasta <em>/home/git/.ssh</em>:
+</p>
+<pre><code class="hljs language-bash">
+   sudo chown -R git:users /home/git/.ssh/authorized_keys
+
+</code></pre>
+</li>
+<li>
+<p>
+Altere as permissões do arquivo <em>/home/git/.ssh/authorized_keys</em> para que somente o <em>usuário git</em> possa ler e gravar no arquivo:
+</p>
+<pre><code class="hljs language-bash">
+   sudo chmod 600 /home/git/.ssh/authorized_keys
+
+</code></pre>
+</li>
+<li>
+<p>
+<strong>Notas:</strong>
+</p>
+<ol>
+<li>
+<p>
+Além de criarmos a pasta <em>.ssh</em> e o arquivo <em>authorized_keys</em>, demos as devidas permissões a eles.
+</p>
+</li>
+<li>
+<p>
+Para saber os parâmetros de autenticação do <em>git</em> execute o comando abaixo:
+</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Pega os parâmetro de acesso ao git</span>
+   git config --list
+
+   <span class="hljs-comment"># Resposta do comando acima:</span>
+   &gt; user.name=paulosspacheco
+   &gt; user.email=paulosspacheco@yahoo.com.br
+   &gt; core.autocrlf=input
+   &gt; core.safecrlf=warn
+
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p>
+<span id="id_ssh_client"></span> Em cada <em><a href="./como_instalar_cliente_git_no_linux.html">máquina cliente</a></em> que for acessar o servidor, executar os passos abaixo:
+</p>
+<ol>
+<li>
+<p>
+Executar o programa <em>ssh-keygen</em> para criar um par de chaves (privada e pública ) para poder enviar para o servidor a chave pública gerada.
+</p>
+<pre><code class="hljs language-bash">    
+   <span class="hljs-comment"># Move-se para a pasta invisível ~/.ssh </span>
+   <span class="hljs-built_in">cd</span> ~/.ssh
+
+   <span class="hljs-comment"># O comando ssh-keygen criar o par de chave de 4096 bits cujo protocolo é rsa</span>
+   ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">"your_email@yahoo.com.br"</span>
+   <span class="hljs-comment"># Em seguida, você vai ser solicitado a Inserir arquivo no qual salvar a chave.</span>
+   <span class="hljs-comment"># Você pode especificar um local de arquivo ou pressionar “Enter” para aceitar o local padrão do arquivo.</span>
+
+   &gt; Enter a file <span class="hljs-keyword">in</span> <span class="hljs-built_in">which</span> to save the key (/.ssh/id_rsa): [Press enter]
+
+   <span class="hljs-comment"># O próximo prompt vai solicitar uma frase secreta.</span>
+   <span class="hljs-comment"># A frase secreta vai adicionar uma camada adicional de segurança ao SSH e vai ser necessária sempre</span>
+   <span class="hljs-comment"># que a chave SSH for usada. Se alguém obtiver acesso ao computador em que as chaves privadas estão armazenadas,</span>
+   <span class="hljs-comment"># também vai poder obter acesso a qualquer sistema que use essa chave. Adicionar uma frase secreta às</span>
+   <span class="hljs-comment"># chaves vai evitar esse cenário.</span>
+
+   &gt; Enter passphrase (empty <span class="hljs-keyword">for</span> no passphrase): [Type a passphrase]
+   &gt; Enter same passphrase again: [Type passphrase again]
+
+   <span class="hljs-comment"># Pronto: Nesse ponto, vai ser gerada nova chave SSH no caminho do arquivo especificado mais atrás.</span>
+
+</code></pre>
+<ul>
+<li>
+<strong>Notas:</strong>
+<ul>
+<li>
+Esse comando vai criar novo par de chaves <em>SSH</em> usando o <em>e-mail</em> como categoria.
+</li>
+<li>
+O comando <em>ssh-keygen</em> sugere que vai criar a chave <em>id_rsa</em> na pasta <em>~/.ssh</em>, porém salva o arquivo na pasta corrente. Passei um tempão para entender.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>
+Executar o programa <a href="https://linux.die.net/man/1/ssh-add"><em>ssh-add</em></a> para adicionar as chaves geradas pelo programa <em>ssh-keygen</em> em uma lista de chaves privadas. Além de manter chaves privadas, ele também controla solicitações <em>SSH</em> para que elas sejam transmitidas com segurança.
+</p>
+<ol>
+<li>
+<p>
+Antes de adicionar a nova chave <em>SSH</em> ao <em>ssh-agent</em>, primeiro verifique se o <em>ssh-agent</em> está sendo executado ao executar o comando abaixo:
+</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-built_in">eval</span> <span class="hljs-string">"<span class="hljs-variable">$(ssh-agent -s)</span>"</span>
+   &gt; Agent pid 19895
+
+
+</code></pre>
+<ul>
+<li>
+<strong>Nota</strong>
+<ul>
+<li>
+Se a resposta for <em>&gt; Agent pid x</em> onde x é o número do processo, é porque está tudo ok.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>
+<a href="https://linux.die.net/man/1/ssh-add"><em>ssh-add</em></a> - Adiciona identidades de chave privada ao agente de autenticação <em>OpenSSH</em>
+</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Mova-se para a pasta ~/.ssh              </span>
+  <span class="hljs-built_in">cd</span> ~/.ssh
+
+  <span class="hljs-comment"># Adicionar a chave ./id_rsa ao ssh-agent</span>
+  ssh-add ./id_rsa
+  &gt; Enter passphrase <span class="hljs-keyword">for</span> /home/paulosspacheco/.ssh/id_rsa:   <span class="hljs-comment"># Obs: A senha é informada em ssh-keygen </span>
+  &gt; Identity added: /home/paulosspacheco/.ssh/id_rsa (paulosspacheco@yahoo.com.br)
+
+</code></pre>
+<ul>
+<li>
+<p>
+<strong>Notas</strong>
+</p>
+<ul>
+<li>
+A nova <em>chave SSH</em> agora está registrada e pronta para uso.
+</li>
+<li>
+A primeira vez que o git usa a chave, o sistema informa que a chave está bloqueada e precisa ser desbloqueada com a senha informada no programa <em>ssh-keygen</em>, ao criar a chave.
+<ul>
+<li>
+No <em>linux mint</em> é executado um diálogo no modo gráfico com dois campos, sendo 1 para a <em>senha</em> e o outro campo para o <em>flag</em> que informa que a senha deve ser permanente.
+</li>
+</ul>
+</li>
+<li>
+Entre as duas chaves geradas, uma privada e outra pública, a chave com a extensão <em>.pub</em>, deve ser enviada para o servidor e ser adicionada ao final do arquivo <em>/home/git/.ssh/authorized_keys</em> do servidor.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p>
+<span id="id_ssh_server"></span> Após criar a chave na máquina <em>cliente git</em> a mesma deve ser registrada no <em>servidor git</em> executando os seguintes passos:
+</p>
+<ol>
+<li>
+<p>
+Você deve enviar a chave para o servidor pelo meio que estiver configurado na máquina cliente, podendo ser por <em>e-mail</em>, <em>WhatsApp</em>, <em>Telegram</em>, <em>pasta compartilhada</em> e etc…
+</p>
+<ul>
+<li>
+Suponha que a chave <em>id_rsa.pub</em> tenha sido salva na pasta <em>~/Downloads</em> do servidor, então executar os seguintes comandos:
+</li>
+</ul>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Se conecta como root    </span>
+   sudo -i
+
+   <span class="hljs-comment"># Adiciona a chave no final do arquivo /home/git/.ssh/authorized_keys</span>
+   cat /home/git/.ssh/authorized_keys /home/NomeSeuUsuário/Downloads/id_rsa.pub &gt;&gt; /home/git/.ssh/authorized_keys
+
+   <span class="hljs-comment"># Obs: Caso exista pelo menos uma chave o sistema emitirá a mensagem abaixo</span>
+   &gt; cat: /home/git/.ssh/authorized_keys: os arquivos de entrada e de saída são os mesmos
+
+</code></pre>
+<ul>
+<li>
+<strong>Notas</strong>:
+<ul>
+<li>
+O comando acima ao adicionar a segunda chave, mostra um aviso informando que o arquivo de entrada e de saída são os mesmos, porém adiciona normalmente no final do arquivo a chave do arquivo <em>id_rsa.pub</em>.
+</li>
+<li>
+O processo acima também pode ser executado com qualquer editor de texto.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>
+<strong>Antes de publicar o repositório para os clientes é necessário cria-lo usando a opção –bare do git</strong>:
+</p>
+<ol>
+<li>
+<p>
+O nome do repositório depende da necessidade de cada projeto, por exemplo: O <em>github</em>, usa uma conta de usuário e dentro de cada conta, usa o nome do repositório; porém este documento foi projetado pensando em apenas um usuário de nome git, por isso os comandos abaixo são para criar o repositório <em>test.git</em> dentro da pasta do <em>usuário git</em>:
+</p>
+<pre><code class="hljs language-bash">   
+   <span class="hljs-comment"># Crie a pasta test.git</span>
+   sudo mkdir /home/git/test.git
+
+   <span class="hljs-comment"># Mova-se para  a pasta test.git </span>
+   <span class="hljs-built_in">cd</span> /home/git/test.git
+
+   <span class="hljs-comment"># Inicializar repositório simples</span>
+   sudo git init --bare
+
+   <span class="hljs-comment"># Trocar o nome do usuário e do grupo dono da pasta</span>
+   sudo chown -R git:users /home/git/test.git
+
+</code></pre>
+<ul>
+<li>
+<strong>Notas:</strong>
+<ul>
+<li>
+Url para o repositório <em>test.git</em>:
+<ul>
+<li>
+nome: origin
+</li>
+<li>
+url: <a href="mailto:git@192.168.15.3">git@192.168.15.3</a>:/home/git/test.git
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>
+<strong>Como saber o link que o <em>cliente git</em> deve usar para clonar o repositório do <em>servidor git</em>?</strong>
+</p>
+<ol>
+<li>
+<p>
+Cada projeto tem sua estrutura de arvore dentro do servidor git, por exemplo, o <em>github</em> usa a seguinte sintaxe:<em><a href="mailto:git@github.com">git@github.com</a>:Usuário/NomeDoRepositório.git</em>
+</p>
+<pre><code class="hljs language-bash">
+    <span class="hljs-comment"># Exemplo de repositório do github           </span>
+    git@github.com:paulosspacheco/blog.pssp.app.br.git
+
+</code></pre>
+</li>
+<li>
+<p>
+Os exemplos deste documento usa a seguinte sintaxe: <em>git@ip_server:/home/git/repositório.git</em>:
+</p>
+<pre><code class="hljs language-bash">    <span class="hljs-comment"># Exemplo repositório na rede local: ip=192.168.15.3</span>
+    git@192.168.15.3:/home/git/test.git
+    
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>
+<strong>Depois de executar todas as tarefas acima a URL <em><a href="mailto:git@192.168.15.3">git@192.168.15.3</a>:/home/git/test.git</em> pode ser publicada para os clientes.</strong>
+</p>
+</li>
+</ol>
+<hr>
+<hr>
+<h5 id="como-usar-o-repositório-do-servidor-na-máquina-cliente">
+COMO USAR O REPOSITÓRIO DO SERVIDOR NA MÁQUINA CLIENTE
+</h5>
+<ol>
+<li>
+<p>
+<strong>O que o <em>cliente git</em> deve fazer para clonar o repositório <em><a href="mailto:git@192.168.15.3">git@192.168.15.3</a>:/home/git/test.git</em></strong>
+</p>
+<ol>
+<li>
+<p>
+<a href="./como_instalar_cliente_git_no_linux.html"><em>instalar o git na máquina cliente</em></a>;
+</p>
+</li>
+<li>
+<p>
+Criar uma <em>chave ssh</em> privada para que o servidor git permita enviar arquivos sem necessidade de senhas.
+</p>
+<ul>
+<li>
+Esses passos foi descrito no tópico <a href="#id_ssh_client">5.3.2</a> deste documento.
+</li>
+</ul>
+</li>
+<li>
+<p>
+A <em>chave ssh</em> tem duas partes, sendo um arquivo com a <em>chave privada</em> e um arquivo com a <em>chave pública</em>. É necessário registrar no servidor a chave pública da máquina cliente para que o servidor saiba que as solicitações do cliente é segura.
+</p>
+<ul>
+<li>
+Esses passos foi descrito no tópico <a href="#id_ssh_server">5.3.3</a> deste documento
+</li>
+</ul>
+</li>
+<li>
+<p>
+Clonar o repositório <em><a href="mailto:git@192.168.15.3">git@192.168.15.3</a>:/home/git/test.git</em> na máquina cliente:
+</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Clonar o repositório test</span>
+   git <span class="hljs-built_in">clone</span> git@192.168.15.3:/home/git/test.git
+
+</code></pre>
+<ul>
+<li>
+<strong>Notas</strong>:
+<ul>
+<li>
+O comando acima irá criar uma pasta na máquina cliente com todos os dados do repositório no servidor;
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>
+<strong>O que o <em>cliente git</em> deve fazer antes de editar os arquivos do repositório local?</strong>
+</p>
+<pre><code class="hljs language-bash">   <span class="hljs-comment"># Atualiza o repositório local com os dados do repositório remoto      </span>
+   git pull 
+
+</code></pre>
+<ul>
+<li>
+O comando acima não deve ser automático, executando antes do comando <em>git push -u origin main</em>, porque a versão <em>main remota</em> pode estar desatualizada.
+</li>
+<li>
+O comando <em>git pull</em> deve ser executado antes das alterações do repositório local.
+</li>
+</ul>
+</li>
+<li>
+<p>
+<strong>O que o <em>cliente git</em> deve fazer após alterar os arquivos do repositório local para atualizar repositório remoto?</strong>
+</p>
+<pre><code class="hljs language-bash">   
+   <span class="hljs-comment"># Associa o repositório remoto ao repositório local.          </span>
+   git remote add origin git@192.168.15.3:/home/git/test.git 
+
+   <span class="hljs-comment"># Renomeie o branch  atual para main</span>
+   <span class="hljs-comment"># O comando branch -M não precisa ser feito a todo momento, porque o git sempre envia para</span>
+   <span class="hljs-comment"># o ultimo ramo selecionando.</span>
+   git branch -M main  
+
+      <span class="hljs-comment"># Este comando pode ser executado várias vezes antes de um commit.  </span>
+   git add .
+
+   <span class="hljs-comment"># Use o &lt;msg&gt; fornecido como a mensagem de confirmação. </span>
+   git commit -a -m <span class="hljs-string">"Texto descrevendo as alterações realizadas"</span>
+
+   <span class="hljs-comment"># Envia as alterações locais para o repositório remoto.</span>
+   git push -u origin main                  
+
+   <span class="hljs-comment"># imprime o status atual do repositório</span>
+   git status  
+
+</code></pre>
+</li>
+</ol>
+<pre><code>    &lt;script async src=&quot;https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js&quot;&gt;&lt;/script&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</body>
+</html>

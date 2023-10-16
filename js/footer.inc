@@ -6,7 +6,7 @@
     <meta name="e_mail" content="paulosspacheco@yahoo.com.br">
     <meta name="local" content="Icaraí - Caucaia - Ceará - Brasil">
   </head>
-  <body>
+  <bodY>
     <div class="footer">
       <!-- inicio <div class="footer"> -->
       <p>Versão: 0.208.0</p>
@@ -37,5 +37,5 @@
       </table>
     </div>
     <!-- fim <div class="footer"> -->
-  </body>
+   </body>
 </html>

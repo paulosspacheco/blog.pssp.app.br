@@ -386,7 +386,7 @@
          8. [Sequelize VSCode Association Snippet](https://marketplace.visualstudio.com/items?itemName=louisyuenll.sequelize-vscode-association-snippet)
 
          9. A extensão [Paste JSON as Code](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype) Copy JSON, paste as Go, TypeScript, C#, C++ and more.
-         10. [Delphi Keymap](https://marketplace.visualstudio.com/items?itemName=alefragnani.delphi-keybindings)
+         10. [Delphi Keymap](https://marketplace.visualstudio.com/items?itemName=alefragnani.Delphi-keybindings)
 
       7. [🔝](#topo_Objetivo "Retorna ao topo")
 

@@ -16,7 +16,7 @@
       
   </head>
 
-  <body>
+  <bodY>
     <div class="row">
       <h2>
         <div class="col-3"> Bogger PauloSSPacheco </div>
@@ -92,5 +92,5 @@
 
       <div class="topnav" id="myTopnav">
       </div>
-  </body>
+   </body>
 </html>

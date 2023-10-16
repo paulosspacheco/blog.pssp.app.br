@@ -20,7 +20,7 @@
                         '<meta charset="utf-8" />'+
                         '<title>Exemplo do módulo calculator.js</title>'+
                     '</head>'+
-                    '<body>'+
+                    '<bodY>'+
                 
                         '<p> Soma de 1+2 = '+calculator.soma(1,2)+'</p>'+
                         '<p> Sum  de 1+2 = '+calculator.sum(1,2)+'</p>'+
@@ -28,7 +28,7 @@
                         '<p> multiplica  de 1 * 2 = '+calculator.multiplica (1,2)+'</p>'+
                         '<p> dividi  de 1 / 2 = '+calculator.dividi (1,2)+'</p>')+
 
-                    '</body>'+
+                    ' </body>'+
                 '</html>'    
         }
     );

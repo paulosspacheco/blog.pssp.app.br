@@ -1,5 +1,7 @@
 <!-- markdownlint-disable-next-line -->
 #### Configurando git para enviar para o github <a href="configurando_git_para_enviar_para_o_github.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<!-- markdownlint-disable-next-line -->
+<main>
 
 1. Para [conectar-se ao github.com](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) é necessário criar um chave do protocolo SSH (Secure Shell Protocol), que fornece um canal seguro em uma rede não segura da seguinte forma:
 
@@ -111,3 +113,6 @@
 7. [VsCode - [Extensão GitLens], Histórico do GITHUB, no vscode, commit, Linha do código editado (#201)](https://www.youtube.com/watch?v=MbgR1rIDuy4)
 8. [Verificando as chaves SSH existentes](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
 9. [Configurando arquivos ignorados para todos os repositórios em seu computador](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files).
+
+<!-- markdownlint-disable-next-line -->
+<main>

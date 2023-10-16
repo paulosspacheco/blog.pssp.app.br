@@ -376,7 +376,7 @@ blockquote {
 </style>
 
 </head>
-<body>
+<bodY>
 <h1 id="documenta%C3%A7%C3%A3o-do-servidor-01">DOCUMENTAÇÃO DO SERVIDOR 01</h1>
 <ol>
 <li><strong>Host virtualização - VMWARE</strong>
@@ -568,5 +568,5 @@ blockquote {
 </li>
 </ol>
 
-</body>
+ </body>
 </html>

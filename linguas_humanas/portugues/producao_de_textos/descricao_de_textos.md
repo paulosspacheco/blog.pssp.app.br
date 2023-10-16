@@ -5,7 +5,7 @@
 
 ## [Criado por Márcia Fernandes](https://www.todamateria.com.br/descricao/) Professora licenciada em Letras
 <!-- markdownlint-disable-next-line -->
-<main>
+ 
 
 1. **Descrição:**
    1. Descrição é o mesmo que detalhar, mostrar ou tornar conhecidas as características de algo ou alguém, o que pode ser feito por via oral, textual ou visual.
@@ -37,7 +37,7 @@
             1. ![Foto Descritiva](https://static.todamateria.com.br/upload/58/58/58580df987178-descricao.jpg "Está foto descreve um momento feliz")
 
 <!-- markdownlint-disable-next-line -->
-</main>
+ 
 
 ### REFERÊNCIAS
 

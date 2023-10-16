@@ -190,7 +190,7 @@
 
                1. [Compilando o RTL](https://www.freepascal.org/docs-html/prog/progsu224.html);
 
-               2. A unidade [**objpas**](https://www.freepascal.org/docs-html/current/rtl/objpas/index.html) é feita para compatibilidade com Object Pascal implementado pelo Delphi. A unidade é carregada automaticamente pelo compilador Free Pascal sempre que o modo Delphi ou **objfpc** é inserido, seja através das opções de linha de comando -Sd ou -Sh ou com as diretivas **{$ MODE DELPHI}** ou **{$ MODE OBJFPC}**;
+               2. A unidade [**objpas**](https://www.freepascal.org/docs-html/current/rtl/objpas/index.html) é feita para compatibilidade com Object Pascal implementado pelo Delphi. A unidade é carregada automaticamente pelo compilador Free Pascal sempre que o modo Delphi ou **objfpc** é inserido, seja através das opções de linha de comando -Sd ou -Sh ou com as diretivas **{$ MODE Delphi}** ou **{$ MODE OBJFPC}**;
 
                3. A unit [printer](https://wiki.lazarus.freepascal.org/Using_the_printer) foi implementada nas seguintes plataformas:
                   1. Dos,

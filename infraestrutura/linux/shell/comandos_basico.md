@@ -410,7 +410,7 @@
    10. <!-- markdownlint-disable-next-line -->
        <span id='id_chmod'></span> [_chmod_](https://linux.die.net/man/1/chmod) altera os bits do modo de arquivo
        1. **Sintaxe:**
-          1. _chmod_ _-R_ _ZZZ_ (+ ou -) _YYY_ ./
+          1. _chmod_ _-R_ _ZZZ_ (+ ou - pu) _YYY_ ./
              1. _-R_ significa:
                 1. Informa ao _chmod_ para altera o flag de todas as subpasta dentro da pasta corrente (_./_)
 
@@ -434,6 +434,12 @@
 
                # Não permite em todos arquivos da pasta, que usuários, grupo e outros executem e gravem os arquivos .
                sudo chmod -R ugo-xw ./ 
+
+               # Permite em todos arquivos da pasta e subpastas que outros usuários só podem ler os arquivos.
+               sudo chmod -R o=r ./                
+
+               # Permite em todos arquivos da pasta e subpastas que grupo de usuários só podem ler e gravar os arquivos.
+               sudo chmod -R g=rw ./                               
                             
             ```
 

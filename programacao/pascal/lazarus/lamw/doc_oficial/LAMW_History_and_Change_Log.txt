@@ -46,7 +46,7 @@
 		-x2nie [Lazarus 1.3 patch for non LCL form designer!] 
 			http://github.com/x2nie/LiteZarus
 
-		-Fatih KILIÇ - How To Install!
+		-Fatih KILIï¿½ - How To Install!
 			http://www.youtube.com/watch?v=sQnFYJyltwY&list=UUkQrLhaIXrKY4eq9zTymxpQ
 
 		-Thierry Dijoux - Late: Apk Expert Tools [Build, Install, ...]
@@ -993,7 +993,7 @@ Version 0.6 - rev. 32 - 05 July 2015 -
 							rowPosition = -1 --> move to last!
 		
 		jHttpClient 
-			New! synchronous methods:  // <<---- by Fatih KILIÇ 
+			New! synchronous methods:  // <<---- by Fatih KILIï¿½ 
 				Get(url): string				
 
 				AddNameValueData(name,value)
@@ -1977,8 +1977,8 @@ Version 0.6 - 15 October 2014 -
 			                          
 Version 0.5 - rev. 03 - 17 august 2014 -
 
-	:: New jLocation Component: Add Partial Support for Location Object //<<---- A suggestion and request by Fatih KILIÇ
-	:: New jPreference Component: Add Partial Support for Preferences Object //<<---- A suggestion and request by Fatih KILIÇ
+	:: New jLocation Component: Add Partial Support for Location Object //<<---- A suggestion and request by Fatih KILIï¿½
+	:: New jPreference Component: Add Partial Support for Preferences Object //<<---- A suggestion and request by Fatih KILIï¿½
 	:: NEW AppLocationDemo [Eclipse Project] 
 
 Version 0.5 - rev. 02 - 14 june 2014 -
@@ -2195,7 +2195,7 @@ IV. Technical Notes: dependencies on laz4android [win32] IDE cross compiler:
 	3.1.1. File 1 - "And_log_h.pas" - the header interface file
  	
 	unit And_log_h;
-	{$mode delphi}
+	{$mode Delphi}
 
 	interface
 

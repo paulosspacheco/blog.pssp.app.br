@@ -9,3 +9,4 @@
 6. [OPERADORES BÁSICOS EM SCRIPTS DE SHELL](https://acervolima.com/operadores-basicos-em-scripts-de-shell/)
 7. [Debian Library Packaging guide](https://www.netfort.gr.jp/~dancer/column/libpkg-guide/libpkg-guide.html)
 8. [Comandos Linux: Find e Locate – Como Usar](https://www.hostinger.com.br/tutoriais/find-locate-comandos-linux#:~:text=Para%20descobrir%20seu%20diret%C3%B3rio%20atual,utilizar%20para%20procurar%20seu%20arquivo.)
+9. [Para o sistema Linux, tudo é arquivo...](https://linuxuniverse.com.br/linux/proc)

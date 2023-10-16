@@ -2,7 +2,7 @@
 <link type="text/css" href="../../../css/defaulttheme.css" rel="stylesheet" />
 
 <!-- markdownlint-disable-next-line -->
-<main>
+ 
 
 # Reflexão sobre fake, fatos e opinião
 
@@ -20,4 +20,4 @@
 >       2. Os políticos do Brasil são desonestos.  
 
 <!-- markdownlint-disable-next-line -->
-</main>
+ 

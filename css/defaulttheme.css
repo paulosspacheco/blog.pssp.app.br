@@ -447,3 +447,19 @@ a:hover {
   text-decoration: underline;
 }
 
+/*tipesearch: 
+  isso fornece algum espaço seguro para caber sempre mesmo em telas muito estreitas */
+.search-input input, .search-button {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*tipesearch: */
+.search-form {
+  white-space: nowrap;
+}
+
+/*tipesearch: */
+.search-input input {
+  max-width: 80%;
+}

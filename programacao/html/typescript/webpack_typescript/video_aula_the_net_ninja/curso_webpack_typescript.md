@@ -86,7 +86,7 @@
                        <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
                            rel="stylesheet" />
                    </head>
-                   <body>
+                   <bodY>
                        <p>Formulário teste webpack</p>
 
                        <form action="endpoint" method="get">
@@ -103,7 +103,7 @@
 
                        </form>
 
-                   </body>
+                    </body>
                </html>
 
            ```
@@ -346,7 +346,7 @@
                        <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
                            rel="stylesheet" />
                    </head>
-                   <body>
+                   <bodY>
                        <p>Formulário teste webpack</p>
 
                        <form action="endpoint" method="get">
@@ -364,7 +364,7 @@
                        </form>
 
                        <script src='bundle.js'> </script>
-                   </body>
+                    </body>
                </html>
               
             ```

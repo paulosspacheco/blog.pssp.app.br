@@ -11,7 +11,7 @@
     <script type="application/x-javascript" src="./responsivo02_topnav.js"></script>
     
   </head>
-  <body> 
+  <bodY> 
     <div class="row">
       <h2>
         <div class="col-3"> Bogger PauloSSPacheco </div>
@@ -78,5 +78,5 @@
       Data da última atualização: 02/10/2020 <br>
       e-mail: paulosspacheco@yahoo.com.br <br>
       Icaraí - Caucaia - Ceará - Brasil </div>
-  </body>
+   </body>
 </html>

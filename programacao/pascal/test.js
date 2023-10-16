@@ -633,7 +633,7 @@ end;
 procedure inicializa_LancAutomatico_Indup(aModulo:TLaModulo);
 
   // 03/04/2004
-  //  inicializa o codigo dos lancamentos automaticos porque implantei nova forma de contabilizar usando as tabelas de reeitas e  despesas.
+  //  inicializa o código dos lancamentos automaticos porque implantei nova forma de contabilizar usando as tabelas de reeitas e  despesas.
 
 
   Var

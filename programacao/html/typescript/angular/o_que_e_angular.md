@@ -356,7 +356,7 @@
 
                   2. <text onclick="goBack()">[🔙]</text>
 
-               2. O arquivo **src/app/app.module.ts** é usado para registrar todos os componentes (units do delphi) do projeto.
+               2. O arquivo **src/app/app.module.ts** é usado para registrar todos os componentes (units do Delphi) do projeto.
                   1. Código typescript criado automaticamente.
 
                      ```ts

@@ -12,7 +12,7 @@
     <meta name="description" content="Descrição do documento.">
     <meta name="keywords" content="flatpak,linux,aplicativo">
   </head>
-  <body>
+  <bodY>
     <!-- Barra do logomarca e login  -->
     <div class="row">
       <h3>
@@ -100,5 +100,5 @@
         <li>e-mail: paulosspacheco@yahoo.com.br</li>
         <li>Icaraí - Caucaia - Ceará - Brasil</li>
       </b></div>
-  </body>
+   </body>
 </html>

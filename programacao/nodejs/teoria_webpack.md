@@ -669,9 +669,9 @@
                      -->
                      <!-- <script src="https://unpkg.com/lodash@4.17.20"></script> -->
                   </head>
-                  <body>
+                  <bodY>
                      <script src="./src/index.js"></script>
-                  </body>
+                   </body>
                   </html>
 
                ```
@@ -731,10 +731,10 @@
                         -->
                         <!-- <script src="https://unpkg.com/lodash@4.17.20"></script> -->
                      </head>
-                     <body>
+                     <bodY>
                         <!-- <script src="./src/index.js"> -->
                         <script src="main.js"></script>
-                     </body>
+                      </body>
                      </html>
 
                   ```
@@ -798,9 +798,9 @@
                      <title>Getting Started</title>
                      <script src="https://unpkg.com/lodash@4.17.20"></script>
                   </head>
-                  <body>
+                  <bodY>
                      <script src="./src/index.js"></script>
-                  </body>
+                   </body>
                   </html>
                   
                   ```

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Home - Blog.pssp.app.br - em permanente construção. 🚧</title>
+  <meta name="createDate" content="13/11/2020" />
+  <meta name="createDateUpdate" content="05/05/2023" />
+  <meta name="description" content="Este blog tem como objetivo registrar todo conhecimento que eu adquirir na minha vida. " />
+  <meta name="keywords" content="html, javascript, css, Delphi, Lazarus, jardinagem, marcenaria, eletricidade, mecânica, curiosidades, saúde" />
+
+  <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link type="text/css" href="./css/defaulttheme.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="./js/generic.js"></script>
+  <script type="application/x-javascript" src="./js/tgeneric.js"></script>
+  <!-- <script type="application/x-javascript" src="./js/tincludehtml.js" defer="defer"></script>  -->
+
+  <script src="js/tipuesearch/jquery.min.js"></script>
+  <script src="js/tipuesearch/tipuesearch_set.js"></script>
+  <script src="tipuesearch_content.js"></script>
+  <!-- <link rel="stylesheet" href="js/tipuesearch/tipuesearch.css"> -->
+  <script src="js/tipuesearch/tipuesearch.js"></script>  
+
+</head>
+
+<body onmouseover="generic.display()">
+  <main>
+    <!-- Menu de opções -->
+    <div class="topnav" id="myTopnav">
+      <script type="application/x-javascript" src="./menu/index.js"></script>
+
+      <!-- input tag -->
+      <div w3-include-html="./js/search_children.inc"></div>
+    </div>
+
+    <!-- <div w3-include-html="./js/title.inc"></div> -->
+    <div class="title">
+      <script>
+        document.write(document.title);
+      </script>
+    </div>
+
+    <!-- Conteúdo da página <div class="col-12"> -->
+    <div class="col-12">
+        <h3>Resultado da pesquisa:</h3>
+  
+
+        <div style="padding-top: 36px;">
+            <form>
+              <!-- <div class="tipue_search_group"> -->
+                <div class="search-input">
+                <input type="text" 
+                       name="q" 
+                       id="tipue_search_input" 
+                       pattern=".{3,}" 
+                       title="Número de caracteres mínimos para pesquisa: 3 caracteres. Pesquisa parcial deve estar entre aspas." 
+                       required><button 
+                       type="submit" 
+                       class="tipue_search_button">
+                  <div class="tipue_search_icon">&#9906;</div>
+                </button>
+              </div>
+            </form>
+        
+            <div id="tipue_search_content"></div>
+          </div>
+        
+    </div>
+
+
+    <!--<script type="application/x-javascript" src="./js/treeview_xhtml.js"></script> -->
+    <script type="application/x-javascript" src="./js/treeview_xhtml.js"></script>
+
+    <!-- RODAPÉ DA PÁGINA  -->
+    <div class="footer">
+      <div w3-include-html="./js/footer.inc"></div>
+    </div>
+    <!--<script> includeHTML();</script>  -->
+    <script>
+      includeHTML();
+    </script>
+    
+  </main>
+
+
+  <script>
+    $(document).ready(function() {
+      $('#tipue_search_input').tipuesearch();
+    });
+  </script>
+
+
+
+</body>
+
+</html>

@@ -4,12 +4,12 @@
  * Função usada para incluir um arquivo dentro do código html
  * obs: O arquivo não pode ter a extensão .html e sim .txt ou .inc
  * Exemplo de uso:
- *    <body>
+ *    <bodY>
  *      <div w3-include-html="content.html"></div> 
  *      <script>
  *        includeHTML();
  *      </script>
- *    </body>
+ *     </body>
  */
 function includeHTML() {
 var z, i, elmnt, file, xhttp;

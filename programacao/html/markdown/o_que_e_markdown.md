@@ -893,7 +893,7 @@
 > >   <html lang="pt-BR">
 > >      <head>
 > >      </head>
-> >      <body>
+> >      <bodY>
 > >          <p>Alo Mundo.</p>
 > >          <script>
 > >             document.print("Alo Mundo");
@@ -905,7 +905,7 @@
 > >                      alt="API WEB https://math.justforfun.click/$/ "
 > >                      title="Retorna a expressão matemática passada no parâmetro">
 > >          </script>
-> >      </body>
+> >       </body>
 > >   </html>
 > > ```
 > >

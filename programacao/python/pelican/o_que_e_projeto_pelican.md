@@ -2,7 +2,7 @@
 #### o que é projeto pelican <a href="o_que_e_projeto_pelican.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!-- markdownlint-disable-next-line -->
-<main>
+ 
 
 - [OBJETIVO](#objetivo)
 - [PASSO 01 - Instalação do stork no sistema operacional linux](#passo-01---instalação-do-stork-no-sistema-operacional-linux)
@@ -25,4 +25,4 @@
 3. [Vídeo aula - Python - Pelican intro](https://www.youtube.com/watch?v=fp3EjRHltcc)
 
 <!-- markdownlint-disable-next-line -->
-</main>
+ 

@@ -54209,7 +54209,7 @@ o_que_e_vue.html
 o_que_e_vue.md
 
 programacao/pascal:
-delphi
+Delphi
 lazarus
 lazarus1
 mermaid_graph_td.html
@@ -54221,12 +54221,12 @@ teste.html
 test.js
 test.pas
 
-programacao/pascal/delphi:
+programacao/pascal/Delphi:
 imgs
 pacotes_em_delphi.html
 pacotes_em_delphi.md
 
-programacao/pascal/delphi/imgs:
+programacao/pascal/Delphi/imgs:
 instalar_pacotes_delphi.jpg
 
 programacao/pascal/lazarus:

@@ -2,7 +2,7 @@
     <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
-        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Tudo sobre pacotes delphi XE&lt;a href&equals;&quot;modelo03&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x1fa9f; &lt;&sol;a&gt;</title>
+        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;Tudo sobre pacotes Delphi XE&lt;a href&equals;&quot;modelo03&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x1fa9f; &lt;&sol;a&gt;</title>
         <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -3439,7 +3439,7 @@ a:hover { text-decoration: underline; }
             data-light-theme="light"
             data-dark-theme="dark"
         >
-            <div class="github-markdown-content"><h1 id="tudo-sobre-pacotes-delphi-xe---"><span id="topo"><span>Tudo sobre pacotes delphi XE<a href="modelo03.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
+            <div class="github-markdown-content"><h1 id="tudo-sobre-pacotes-Delphi-xe---"><span id="topo"><span>Tudo sobre pacotes Delphi XE<a href="modelo03.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
 <h2 id="1-index"><strong>1. INDEX</strong></h2>
 <hr>
 <ol>
@@ -3493,7 +3493,7 @@ a:hover { text-decoration: underline; }
 <p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
 <ol>
 <li>
-<p>Este documento contém tudo que estudei sobre criação de pacotes em delphi e suas configurações.</p>
+<p>Este documento contém tudo que estudei sobre criação de pacotes em Delphi e suas configurações.</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -3504,7 +3504,7 @@ a:hover { text-decoration: underline; }
 <p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
 <ol>
 <li>
-<p>Domínio da linguagem pascal versão delphi;</p>
+<p>Domínio da linguagem pascal versão Delphi;</p>
 </li>
 <li>
 <p>Conhecimento básico do IDE Delphix XE.</p>
@@ -3521,8 +3521,8 @@ a:hover { text-decoration: underline; }
 <p>Os pacotes em Delphi são semelhantes as DLL (Dynamic-link library) do windows com algumas diferenças:</p>
 <ol>
 <li>A DLL permite apenas criar biblioteca de funções e os Pacotes Delphi permitem criar bibliotecas de classes.</li>
-<li>Como os pacotes delphi possuem classes, as mesmas podem ser instanciadas e herdadas como se fizesse parte do projeto atual;</li>
-<li>Os pacotes delphi podem acompanhar o projeto principal assim como as DLL, porém é possível que as classes dentro deles sejam ligadas em tempo de projeto ou em tempo de execução como as DLLs.</li>
+<li>Como os pacotes Delphi possuem classes, as mesmas podem ser instanciadas e herdadas como se fizesse parte do projeto atual;</li>
+<li>Os pacotes Delphi podem acompanhar o projeto principal assim como as DLL, porém é possível que as classes dentro deles sejam ligadas em tempo de projeto ou em tempo de execução como as DLLs.</li>
 <li>Os pacotes permitem facilitar o desenvolvimento porque isola os programas de acordo com sua função facilitando assim a manutenção do mesmo.</li>
 </ol>
 </li>
@@ -3551,7 +3551,7 @@ a:hover { text-decoration: underline; }
 <p><span id=id_assunto01></span><strong>Tipos de pacotes</strong></p>
 <ol>
 <li>
-<p><img src="file:////home/paulosspacheco/blog.pssp.app.br/programacao/pascal/delphi/imgs/Instalar_pacotes_delphi.jpg" alt=""></p>
+<p><img src="file:////home/paulosspacheco/blog.pssp.app.br/programacao/pascal/Delphi/imgs/Instalar_pacotes_delphi.jpg" alt=""></p>
 </li>
 <li>
 <p><u>Pacotes ligados em tempo de projeto:</u></p>
@@ -3591,22 +3591,22 @@ a:hover { text-decoration: underline; }
 </ol>
 </li>
 <li>
-<p><strong>Pasta dos pacotes delphi</strong>:</p>
+<p><strong>Pasta dos pacotes Delphi</strong>:</p>
 <ol>
 <li>
 <p>Nome das variáveis de ambiente tem a sintaxe $(VariableName) e cada campo possui um valor padrão e está associado a uma entrada no registro do windows. A instalação define o valor padrão:</p>
 <ol>
 <li>
-<p><u>$(BDS)</u>  Contém a pasta raiz onde o delphi foi instalado. No windows 2003 é a pasta: 'C:\Arquivos de programas\Embarcadero\RAD Studio\8.0' e está definido na variável do registro <u>RootDir</u> = &quot;HKEY_CURRENT_USER\Software\Embarcadero\BDS\8.0&quot;</p>
+<p><u>$(BDS)</u>  Contém a pasta raiz onde o Delphi foi instalado. No windows 2003 é a pasta: 'C:\Arquivos de programas\Embarcadero\RAD Studio\8.0' e está definido na variável do registro <u>RootDir</u> = &quot;HKEY_CURRENT_USER\Software\Embarcadero\BDS\8.0&quot;</p>
 </li>
 <li>
-<p><u>$(BDSCOMMONDIR)</u> Contém o nome da pasta comum a todos os usuários do sistema e é definido na instalação do delphi e é guardada no registro do windows 2003 em .</p>
+<p><u>$(BDSCOMMONDIR)</u> Contém o nome da pasta comum a todos os usuários do sistema e é definido na instalação do Delphi e é guardada no registro do windows 2003 em .</p>
 <ol>
 <li>No windows 2003 seu conteúdo contém o nome da pasta: 'C:\Documents and Settings\All Users\Documentos\RAD Studio\8.0'</li>
 </ol>
 </li>
 <li>
-<p><u>$(BDSLIB)</u> Contém o nome da pasta raiz das bibliotecas da IDE e é definido no registro do windows quando se instala o delphi: &quot;HKEY_CURRENT_USER\Software\Embarcadero\BDS\8.0\Library&quot;</p>
+<p><u>$(BDSLIB)</u> Contém o nome da pasta raiz das bibliotecas da IDE e é definido no registro do windows quando se instala o Delphi: &quot;HKEY_CURRENT_USER\Software\Embarcadero\BDS\8.0\Library&quot;</p>
 <ol>
 <li>Pasta: &quot;C:\Arquivos de programas\Embarcadero\RAD Studio\8.0\lib&quot;</li>
 </ol>
@@ -3887,7 +3887,7 @@ a:hover { text-decoration: underline; }
 <li>
 <p><strong>Referências:</strong></p>
 <ol>
-<li><a href="https://www.devmedia.com.br/quick-tips-como-trabalhar-com-packages-no-delphi/16421">Quick Tips : Como trabalhar com Packages no Delphi</a></li>
+<li><a href="https://www.devmedia.com.br/quick-tips-como-trabalhar-com-packages-no-Delphi/16421">Quick Tips : Como trabalhar com Packages no Delphi</a></li>
 <li><a href="link">title</a></li>
 </ol>
 </li>
@@ -4007,5 +4007,5 @@ a:hover { text-decoration: underline; }
         </div>
         <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
         
-    </body>
+     </body>
     </html>

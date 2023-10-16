@@ -210,9 +210,9 @@
 
                            </head>
 
-                           <body>
+                           <bodY>
                               <p>Alo mundo</p>
-                           </body>
+                            </body>
 
                         </html>
 

@@ -135,10 +135,10 @@ begin
       '<head>',
       '<title>Echo request</title>',
       '</head>',
-      '<body>'
+      '<bodY>'
     ]);
     DumpRequest(aRequest,L);
-    L.AddStrings(['</body>','</html>']);
+    L.AddStrings([' </body>','</html>']);
     AResponse.Content:=L.Text;
     AResponse.SendResponse;
   finally

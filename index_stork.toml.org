@@ -75,7 +75,7 @@
     {path = "./programacao/pascal/lazarus/lamw/instalar_configurar_lamw.html",  url = "0001", title = ""},
     {path = "./programacao/pascal/lazarus/pas2js/o_que_e_pas2js.html",  url = "0001", title = ""},
     {path = "./programacao/pascal/lazarus/como_criar_projetos_free_pascal_multiplataforma.html",  url = "0001", title = ""},
-    {path = "./programacao/pascal/delphi/pacotes_em_delphi.html",  url = "0001", title = ""},
+    {path = "./programacao/pascal/Delphi/pacotes_em_delphi.html",  url = "0001", title = ""},
     {path = "./programacao/pascal/o_que_e_pascal.html",  url = "0001", title = ""},
     {path = "./programacao/pascal/mermaid_graph_td.html",  url = "0001", title = ""},
     {path = "./programacao/pascal/teste.html",  url = "0001", title = ""},

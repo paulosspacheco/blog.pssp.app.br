@@ -2,7 +2,7 @@
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!-- markdownlint-disable-next-line -->
-<main>
+ 
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 17/08/2023</b></legend>
@@ -83,12 +83,12 @@
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
-#### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
+#### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚      </a>
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 04/07/2023</b></legend>
 
-- [x] [Adicionado exemplo do comando tee](./infraestrutura/linux/shell/comandos_basico.html) 
+- [x] [Adicionado exemplo do comando tee](./infraestrutura/linux/shell/comandos_basico.html)
 
 </fieldset>
 
@@ -491,4 +491,4 @@
 16. WTF: ("que p0rr@ é essa?") Fizeram um besteira muito grande aqui.
 
 <!-- markdownlint-disable-next-line -->
-</main>
+ 

@@ -1,24 +1,165 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
+    <html dir="ltr" lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <title>O que &eacute; pacote de pesquisa de site stork &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;stork&period;html&quot;  target&equals;&quot;&lowbar;blank&quot;  title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;&#x279a;&lt;&sol;a&gt;</title>
- 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
-        <!-- CSS markdown -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
         
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- CSS markdown  -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+            
         <!-- CSS da página /index.html -->
         <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
 
-
+</style>
     </head>
-    <body class="vscode-body vscode-dark">
+    <body class="vscode-body vscode-dark"><main>
         <!-- markdownlint-disable-next-line -->
 <h4 id="o-que-é-pacote-de-pesquisa-de-site-stork-">O que é pacote de pesquisa de site stork <a href="o_que_e_stork.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a></h4>
-<!-- markdownlint-disable-next-line -->
 <main>
+<!-- markdownlint-disable-next-line -->
 <ul>
 <li><a href="#objetivo">OBJETIVO</a></li>
 <li><a href="#passo-01---instala%C3%A7%C3%A3o-do-stork-no-sistema-operacional-linux">PASSO 01 - Instalação do stork no sistema operacional linux</a></li>
@@ -79,7 +220,7 @@
 <p>Sirva esses arquivos de seu <em>servidor web</em>. Carregue os arquivos Javascript <em>stork.js</em> e <em>WASM</em> <em>stork.wasm</em> em seu servidor ou host da Web e os <em>apresente publicamente</em> como faria com uma folha de <em>estilo</em> ou <em>imagem</em>.</p>
 </li>
 <li>
-<p>Certifique-se de servir o arquivo <em>WASM</em> com o <em>application/wasm</em> tipo <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types"><em>MIME</em></a> . Se você estiver colocando esses arquivos atrás do <em>seu CDN</em>, certifique-se de encaminhar o <em>Content-Type</em> cabeçalho_ da fonte do arquivo, por meio desse CDN.</p>
+<p>Certifique-se de servir o arquivo <em>WASM</em> com o <em>application/wasm</em> tipo <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types"><em>MIME</em></a> . Se você estiver colocando esses arquivos atrás do seu <a href="https://pt.wikipedia.org/wiki/Rede_de_fornecimento_de_conte%C3%BAdo">CDN</a>, certifique-se de encaminhar o <em>Content-Type</em> cabeçalho da fonte do arquivo, por meio desse <a href="https://pt.wikipedia.org/wiki/Rede_de_fornecimento_de_conte%C3%BAdo">CDN</a>.</p>
 </li>
 <li>
 <p>Inicialize o <em>Stork</em> em sua página da Web com o <em>URL do WASM</em>. A página Javascript avançado descreve o <em>stork.initialize()</em> método, que instrui o <em>Stork a carregar o WASM</em>. Certifique-se de chamar este método - mesmo se estiver usando a <em>stork.register()</em> API mais simples - <em>antes de chamar qualquer outro método Stork</em>:</p>
@@ -139,7 +280,7 @@
 <p>Para criar um índice para arquivo <a href="/js/stork.js">stork.js</a>, é necessário instalar o pacote <em>stork</em> descrito no <a href="#passo-01---instala%C3%A7%C3%A3o-do-stork-no-sistema-operacional-linux"><em>passo 01</em> acima</a>.</p>
 </li>
 <li>
-<p>Cada arquivo da lista de arquivos as serem pesquisados, devem ter as palavras <em>&lt;main&gt;</em>  <em>&lt;/main&gt;</em> para marcar o trecho de código que deve ser pesquisado.</p>
+<p>Cada arquivo da lista de arquivos as serem pesquisados, devem ter as palavras _\ _  _\ _ para marcar o trecho de código que deve ser pesquisado.</p>
 <ol>
 <li>
 <p>Exemplo:</p>
@@ -148,7 +289,7 @@
    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../../css/defaulttheme.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> /&gt;</span></span>
 
    <span class="xml"><span class="hljs-comment">&lt;!-- markdownlint-disable-next-line --&gt;</span></span>
-   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span></span>
+<span class="hljs-code">    </span>
 
    # Reflexão sobre fake, fatos e opinião
 
@@ -166,7 +307,7 @@
    &gt;       2. Os políticos do Brasil são desonestos.  
 
    <span class="xml"><span class="hljs-comment">&lt;!-- markdownlint-disable-next-line --&gt;</span></span>
-   <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span></span>
+<span class="hljs-code">    </span>
 
 </code></pre>
 </li>
@@ -256,7 +397,7 @@
 
       <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-      <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">bodY</span>&gt;</span>
          <span class="hljs-comment">&lt;!-- Cada interface de pesquisa deve ter um elemento de entrada e um elemento de saída . 
               (O wrapper é usado apenas pelo tema basic.css que incluímos acima.) --&gt;</span>
          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"stork-wrapper"</span>&gt;</span>
@@ -265,7 +406,7 @@
          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             
          <span class="hljs-comment">&lt;!-- Você pode carregar a biblioteca Javascript do Stork CDN (com suporte do AWS Cloudfront) ou auto-hospedá-la.
-            Logo antes da &lt;/body&gt;tag de fechamento, inclua o script Stork e registre o index.--&gt;</span>
+            Logo antes da  &lt;/body&gt;tag de fechamento, inclua o script Stork e registre o index.--&gt;</span>
          <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://files.stork-search.net/releases/v1.6.0/stork.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
          <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
             stork.register(
@@ -273,7 +414,7 @@
             <span class="hljs-string">'https://files.stork-search.net/releases/v1.6.0/federalist.st'</span>
             )
          </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
     
@@ -314,7 +455,7 @@
 
       <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 
-      <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">bodY</span>&gt;</span>
          <span class="hljs-comment">&lt;!-- Cada interface de pesquisa deve ter um elemento de entrada e um elemento de saída . 
             (O wrapper é usado apenas pelo tema stork.css que incluímos acima.) --&gt;</span>
          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"stork-wrapper"</span>&gt;</span>
@@ -334,7 +475,7 @@
             stork.register(<span class="hljs-string">'list_stork'</span>, <span class="hljs-string">'list_stork.st'</span> )
          </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
          
-      <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 
    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
          
@@ -388,7 +529,7 @@
 <li><a href="https://stork-search.net/docs/stork-and-netlify.">stork-and-netlify - pelican</a></li>
 </ol>
 <!-- markdownlint-disable-next-line -->
-</main>
+ </main>
         
         
     </body>
