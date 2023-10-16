@@ -2,7 +2,11 @@
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!-- markdownlint-disable-next-line -->
- 
+<fieldset> <legend> <b>Feito em 16/10/2023</b></legend>
+
+- [x] [Criando documento sobre algorítimo](./programacao/algoritimos/o_que_e_algoritimo.html)
+
+</fieldset>
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 17/08/2023</b></legend>
