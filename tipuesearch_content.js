@@ -198,7 +198,6 @@ var tipuesearch = {
 { title: "Comandos básico do Shell do Linux ", text: "", tags: "", url: "infraestrutura/linux/shell/comandos_basico.html" },
 { title: "Objetivo", text: "", tags: "", url: "infraestrutura/linux/shell/objetivo.html" },
 { title: "Linux shell", text: "", tags: "", url: "infraestrutura/linux/shell/index.html" },
-{ title: "Comandos básico do Shell do Linux ", text: "", tags: "", url: "infraestrutura/linux/shell/comandos_basico-na nuvem.html" },
 { title: "Histórico das ocorrências da página ", text: "", tags: "", url: "infraestrutura/linux/shell/historico.html" },
 { title: "$bash (1) - página de manual do Linux", text: "", tags: "", url: "infraestrutura/linux/shell/shell_bash/index.html" },
 { title: "Desvantagens do serviço NFS", text: "", tags: "", url: "infraestrutura/linux/nfs/desvantagens.html" },
