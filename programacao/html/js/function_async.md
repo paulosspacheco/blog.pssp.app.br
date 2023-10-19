@@ -1,4 +1,5 @@
-# <span id="topo"><span>JAVASCRIPT - Funções assíncronas<a href="function_async.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<span id="topo"><span>
+# JAVASCRIPT - Funções assíncronas<a href="function_async.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
 

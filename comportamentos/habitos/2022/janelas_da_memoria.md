@@ -10,7 +10,7 @@ O mundo dos sentimentos possui as chaves para abrir as janelas. O medo, a tensã
 
 Veja como as janelas interferem no nosso comportamento. Quantas vezes, depois de passarmos por perdas ou frustrações, achamos que deveríamos ter dito ou feito isto ou aquilo? A abertura das janelas depende muito do estado emocional. O medo, a pressão, as crises, a tensão fecham as janelas. Há pessoas que se engasgam ao falar em público, embora sejam eloquentes. Alguns alunos podem ter um péssimo desempenho nos exames por causa da ansiedade. Alguns intelectuais agem como crianças frágeis quando contrariados.
 
-(...) Por que razão as mulheres ciumentas perdem o autocontrolo? Porque nas crises de ciúmes o seu Eu não tem acesso às janelas que poderiam financiar a sua autoconfiança e autoestima. Porque é que as mulheres cultas se autoflagelam tanto? Entre diversas causas, destaca-se a dificuldade de aceder a janelas em cálidos momentos que as façam relaxar e superar a necessidade de serem perfeitas.
+(...) Por que razão as mulheres ciumentas perdem o autocontrole? Porque nas crises de ciúmes o seu Eu não tem acesso às janelas que poderiam financiar a sua autoconfiança e autoestima. Porque é que as mulheres cultas se autoflagelam tanto? Entre diversas causas, destaca-se a dificuldade de aceder a janelas em cálidos momentos que as façam relaxar e superar a necessidade de serem perfeitas.
 
 Está a ver aqueles dias em que nos sentimos superfelizes e não sabemos os motivos de tanta alegria? Ou em que estamos tão calmos e tolerantes que nada nos aborrece? Ou aqueles dias em que nos sentimos tão irritadiços que nem a nós próprios nos suportamos? E o tédio do domingo à tarde? Estes movimentos emocionais ocorrem devido aos deslocamentos do território de leitura das janelas.
 

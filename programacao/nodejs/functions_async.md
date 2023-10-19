@@ -1,4 +1,6 @@
-# <span id="topo"><span>Como usar funções assíncronas em javascript <a href="functions_async.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<span id="topo"><span>
+
+# Como usar funções assíncronas em javascript <a href="functions_async.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
 

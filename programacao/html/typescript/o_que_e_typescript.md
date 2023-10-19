@@ -1,4 +1,6 @@
-# <span id="topo"><span>O que é typescript <a href="o_que_e_typescript.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<span id="topo"><span>
+
+# O que é typescript <a href="o_que_e_typescript.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
  <details>
    <summary><b>1. INDEX </b></summary>

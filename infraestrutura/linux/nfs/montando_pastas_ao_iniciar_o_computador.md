@@ -1,5 +1,7 @@
 <!-- markdownlint-disable-next-line -->
-#### <span id="topo"><span>Como montar um dispositivo ou pasta ao iniciar o computador<a href="montando_pastas_ao_iniciar_o_computador.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<span id="topo"><span>
+<!-- markdownlint-disable-next-line -->
+### Como montar um dispositivo ou pasta ao iniciar o computador<a href="montando_pastas_ao_iniciar_o_computador.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. **Existe três tipos de montagem diferentes quais sejam:**
     1. [_mount_](https://linux.die.net/man/8/mount) – Comando usado para monta um sistema de arquivos.

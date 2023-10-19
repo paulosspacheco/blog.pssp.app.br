@@ -1,4 +1,6 @@
-# <span id="topo"><span>O que é Framework Angular <a href="o_que_e_angular.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<span id="topo"><span>
+
+# O que é Framework Angular <a href="o_que_e_angular.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
 

@@ -1,4 +1,5 @@
-# <span id="topo"><span>Como documentar um programa typescript com a sintaxe tsdoc <a href="tsdoc.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<span id="topo"><span>
+# Como documentar um programa typescript com a sintaxe tsdoc <a href="tsdoc.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
 

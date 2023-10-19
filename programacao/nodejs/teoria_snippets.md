@@ -1,4 +1,6 @@
-# <span id="topo"><span>Teoria snippets do editor vscode <a href="teoria_snippets.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<span id="topo"><span>
+
+# Teoria snippets do editor vscode <a href="teoria_snippets.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. **INDEX**
    1. [Objetivo.](#id_objetivo)

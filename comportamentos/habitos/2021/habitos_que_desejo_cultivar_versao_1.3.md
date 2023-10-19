@@ -1,4 +1,4 @@
-# **Hábitos que desejo adquirir em 2021 Versão: 1.3 - Data: 19/01/2021**
+# Hábitos que desejo adquirir em 2021 Versão: 1.3 - Data: 19/01/2021
 
 ## **1. INDEX**
 

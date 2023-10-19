@@ -1,4 +1,4 @@
-# Copying to a temporary location...
+# Copying to a temporary location
 
 Creating directory /home/paulosspacheco/lamw_manager
 Verifying archive integrity...  100%   All good.

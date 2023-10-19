@@ -1,4 +1,6 @@
-# <span id="topo"><span>Prática da Video aula Webpack & TypeScript <a href="curso_webpack_typescript.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<span id="topo"><span>
+
+# Prática da Video aula Webpack & TypeScript <a href="curso_webpack_typescript.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 0. [Play Lista da Video aula Webpack & TypeScript](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hOkGbwzgYFmaxB0WiduYJC)
 
 1. [Aula 01 - Setup - Introduction](https://www.youtube.com/watch?v=sOUhEJeJ-kI&list=PL4cUxeGkcC9hOkGbwzgYFmaxB0WiduYJC&index=2):

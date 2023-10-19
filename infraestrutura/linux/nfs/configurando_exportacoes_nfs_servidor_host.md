@@ -1,5 +1,7 @@
 <!-- markdownlint-disable-next-line -->
-#### <span id="topo"><span>Configurando as exportações NFS no servidor host<a href="configurando_exportacoes_nfs_servidor_host.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<span id="topo"><span>
+<!-- markdownlint-disable-next-line -->
+### Configurando as exportações NFS no servidor host<a href="configurando_exportacoes_nfs_servidor_host.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Com editor de sua preferência, edite o arquivo _/etc/exports_ para adicionar um novo compartilhamento para a pasta _/var/nfs/share_:
 

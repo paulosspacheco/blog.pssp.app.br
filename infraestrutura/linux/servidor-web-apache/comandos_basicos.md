@@ -1,3 +1,4 @@
+<!-- markdownlint-disable-next-line -->
 #### Comandos mais usados na manutenção dos sites <a href="comandos_basicos.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
 
 1. Comandos para ver o status do servidor:

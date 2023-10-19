@@ -1,4 +1,6 @@
-# <span id="topo"><span>Como instalar typescript no vscode<a href="instalar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a><a href="instalar.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a>
+<span id="topo"><span>
+
+# Como instalar typescript no vscode<a href="instalar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a><a href="instalar.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a>
 
 <!-- <details>
    <summary><b>1. INDEX </b></summary> -->

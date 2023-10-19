@@ -1,4 +1,6 @@
-# <span id="topo"><span>Framework LoopBack 4.0 <a href="loopback.4.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<span id="topo"><span>
+
+# Framework LoopBack 4.0 <a href="loopback.4.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
 

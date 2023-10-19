@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Como instalar typescript no vscode&lt;a href&equals;&quot;instalar&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;&lt;a href&equals;&quot;instalar&period;pdf&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para visualizar o PDF deste documento em nova aba&period;&quot;&gt;&weierp;&lt;&sol;a&gt;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- CSS markdown  -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+            
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
+
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <p><span id="topo"><span></p>
+<h1 id="como-instalar-typescript-no-vscode---">Como instalar typescript no vscode<a href="instalar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a><a href="instalar.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a></h1>
+<!-- <details>
+   <summary><b>1. INDEX </b></summary> -->
+<ol>
+<li>
+<p><strong>Operadores aritméticos</strong></p>
+<ol>
+<li>Subtração:
+<ol>
+<li><strong>(  -  )</strong></li>
+</ol>
+</li>
+<li>Soma:
+<ol>
+<li><strong>(  +  )</strong></li>
+</ol>
+</li>
+<li>Divisão:
+<ol>
+<li><strong>(  \  )</strong></li>
+</ol>
+</li>
+<li>Multiplicação:
+<ol>
+<li><strong>(  *  )</strong></li>
+</ol>
+</li>
+<li>Módulo — resto da divisão:
+<ol>
+<li>(  %  )</li>
+</ol>
+</li>
+<li>Exponenciação:
+<ol>
+<li>(  **  )</li>
+</ol>
+</li>
+<li>Incremento:
+<ol>
+<li>(  ++  )</li>
+</ol>
+</li>
+<li>Decremento:
+<ol>
+<li>( -- )</li>
+</ol>
+</li>
+</ol>
+</li>
+<li></li>
+<li>
+<p>,</p>
+</li>
+<li>
+<p>;</p>
+</li>
+<li>
+<p>:</p>
+</li>
+<li>
+<p>!==</p>
+</li>
+<li>
+<p>()</p>
+</li>
+<li>
+<p>[].indexOf()</p>
+</li>
+<li>
+<p>{}</p>
+</li>
+<li>
+<p>&amp;&amp;</p>
+</li>
+<li>
+<p>`</p>
+</li>
+<li>
+<p>&lt;=</p>
+</li>
+<li>
+<blockquote>
+<p>=</p>
+</blockquote>
+</li>
+<li>
+<p>${}</p>
+</li>
+<li>
+<p>case</p>
+</li>
+<li>
+<p>class</p>
+</li>
+<li>
+<p>console.log</p>
+</li>
+<li>
+<p>else</p>
+</li>
+<li>
+<p>Error</p>
+</li>
+<li>
+<p>export</p>
+</li>
+<li>
+<p>function</p>
+</li>
+<li>
+<p>if</p>
+</li>
+<li>
+<p>is</p>
+</li>
+<li>
+<p>new</p>
+</li>
+<li>
+<p>number</p>
+</li>
+<li>
+<p>private</p>
+</li>
+<li>
+<p>protected</p>
+</li>
+<li>
+<p>public</p>
+</li>
+<li>
+<p>return</p>
+</li>
+<li>
+<p>string</p>
+</li>
+<li>
+<p>switch</p>
+</li>
+<li>
+<p>this</p>
+</li>
+<li>
+<p>throw</p>
+</li>
+<li>
+<p>undefined</p>
+</li>
+</ol>
+<!-- </details> -->
+<h2 id="exemplos">Exemplos</h2>
+<ol>
+<li>Calculadora:
+<ol>
+<li>
+<p>Código typescript</p>
+<pre><code class="hljs language-typescript">
+ <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Calculator {
+ <span class="hljs-keyword">private</span> current = <span class="hljs-number">0</span>;
+ <span class="hljs-keyword">private</span> memory = <span class="hljs-number">0</span>;
+ <span class="hljs-keyword">private</span> operator: <span class="hljs-built_in">string</span>;
+ <span class="hljs-keyword">protected</span> processDigit(digit: <span class="hljs-built_in">string</span>, currentValue: <span class="hljs-built_in">number</span>) {
+     <span class="hljs-keyword">if</span> (digit &gt;= <span class="hljs-string">"0"</span> &amp;&amp; digit &lt;= <span class="hljs-string">"9"</span>) {
+     <span class="hljs-keyword">return</span> currentValue * <span class="hljs-number">10</span> + (digit.charCodeAt(<span class="hljs-number">0</span>) - <span class="hljs-string">"0"</span>.charCodeAt(<span class="hljs-number">0</span>));
+     }
+ }
+ <span class="hljs-keyword">protected</span> processOperator(operator: <span class="hljs-built_in">string</span>) {
+     <span class="hljs-keyword">if</span> ([<span class="hljs-string">"+"</span>, <span class="hljs-string">"-"</span>, <span class="hljs-string">"*"</span>, <span class="hljs-string">"/"</span>].indexOf(operator) &gt;= <span class="hljs-number">0</span>) {
+     <span class="hljs-keyword">return</span> operator;
+     }
+ }
+ <span class="hljs-keyword">protected</span> evaluateOperator(
+     operator: <span class="hljs-built_in">string</span>,
+     left: <span class="hljs-built_in">number</span>,
+     right: <span class="hljs-built_in">number</span>
+ ): <span class="hljs-built_in">number</span> {
+     <span class="hljs-keyword">switch</span> (<span class="hljs-keyword">this</span>.operator) {
+     <span class="hljs-keyword">case</span> <span class="hljs-string">"+"</span>:
+         <span class="hljs-keyword">return</span> left + right;
+     <span class="hljs-keyword">case</span> <span class="hljs-string">"-"</span>:
+         <span class="hljs-keyword">return</span> left - right;
+     <span class="hljs-keyword">case</span> <span class="hljs-string">"*"</span>:
+         <span class="hljs-keyword">return</span> left * right;
+     <span class="hljs-keyword">case</span> <span class="hljs-string">"/"</span>:
+         <span class="hljs-keyword">return</span> left / right;
+     }
+ }
+ <span class="hljs-keyword">private</span> evaluate() {
+     <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.operator) {
+     <span class="hljs-keyword">this</span>.memory = <span class="hljs-keyword">this</span>.evaluateOperator(
+         <span class="hljs-keyword">this</span>.operator,
+         <span class="hljs-keyword">this</span>.memory,
+         <span class="hljs-keyword">this</span>.current
+     );
+     } <span class="hljs-keyword">else</span> {
+     <span class="hljs-keyword">this</span>.memory = <span class="hljs-keyword">this</span>.current;
+     }
+     <span class="hljs-keyword">this</span>.current = <span class="hljs-number">0</span>;
+ }
+ <span class="hljs-keyword">public</span> handleChar(char: <span class="hljs-built_in">string</span>) {
+     <span class="hljs-keyword">if</span> (char === <span class="hljs-string">"="</span>) {
+     <span class="hljs-keyword">this</span>.evaluate();
+     <span class="hljs-keyword">return</span>;
+     } <span class="hljs-keyword">else</span> {
+     <span class="hljs-keyword">let</span> value = <span class="hljs-keyword">this</span>.processDigit(char, <span class="hljs-keyword">this</span>.current);
+     <span class="hljs-keyword">if</span> (value !== <span class="hljs-literal">undefined</span>) {
+         <span class="hljs-keyword">this</span>.current = value;
+         <span class="hljs-keyword">return</span>;
+     } <span class="hljs-keyword">else</span> {
+         <span class="hljs-keyword">let</span> value = <span class="hljs-keyword">this</span>.processOperator(char);
+         <span class="hljs-keyword">if</span> (value !== <span class="hljs-literal">undefined</span>) {
+         <span class="hljs-keyword">this</span>.evaluate();
+         <span class="hljs-keyword">this</span>.operator = value;
+         <span class="hljs-keyword">return</span>;
+         }
+     }
+     }
+     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Unsupported input: '<span class="hljs-subst">${char}</span>'`</span>);
+ }
+ <span class="hljs-keyword">public</span> getResult() {
+     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.memory;
+ }
+ }
+ <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params">c: Calculator, input: <span class="hljs-built_in">string</span></span>) </span>{
+ <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; input.length; i++) {
+     c.handleChar(input[i]);
+ }
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`result of '<span class="hljs-subst">${input}</span>' is '<span class="hljs-subst">${c.getResult()}</span>'`</span>);
+ }
+
+
+</code></pre>
+</li>
+<li>
+<p>.</p>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+</ol>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

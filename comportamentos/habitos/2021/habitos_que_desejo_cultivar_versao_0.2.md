@@ -1,4 +1,4 @@
-# **Hábitos que desejo adquirir em 2021 Versão: 0.2**
+# Hábitos que desejo adquirir em 2021 Versão: 0.2
 
 ## **INDEX**
 

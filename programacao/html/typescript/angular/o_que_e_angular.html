@@ -1,29 +1,20 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
+    <html>
     <head>
         <meta charset="UTF-8">
-        <title>&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;O que &eacute; Framework Angular &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;angular&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;&crarr;&lt;&sol;a&gt;&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;angular&period;pdf&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para visualizar o PDF deste documento em nova aba&period;&quot;&gt;&wp;&lt;&sol;a&gt;</title>
-        <style>
-</style>
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-<style>
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-                font-size: 14px;
-                line-height: 1.6;
-            }
-        </style>
-        <style>
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
-</style>
-        
-        
-        
+        <title>O que &eacute; Framework Angular &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;angular&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- CSS markdown  -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+            
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
+
     </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="span-idtopospano-que-é-framework-angular-"><span id="topo"><span>O que é Framework Angular <a href="o_que_e_angular.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a><a href="o_que_e_angular.pdf" target="_blank" title="Pressione aqui para visualizar o PDF deste documento em nova aba.">℘</a></h1>
+    <body class="vscode-body vscode-dark">
+        <p><span id="topo"><span></p>
+<h1 id="o-que-é-framework-angular----">O que é Framework Angular <a href="o_que_e_angular.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
 <h2 id="1-index"><strong>1. INDEX</strong></h2>
 <hr>
 <ol>
@@ -189,7 +180,7 @@
 <ol>
 <li>
 <p>Código ShellScript</p>
-<pre><code class="language-sh"><div>   <span class="hljs-comment"># checar versão do node instalada.</span>
+<pre><code class="hljs language-sh">   <span class="hljs-comment"># checar versão do node instalada.</span>
    node -v
 
    <span class="hljs-comment"># Checar a ultima versão no npm</span>
@@ -208,7 +199,7 @@
    <span class="hljs-comment"># Para visualizar a versão atual do angular</span>
    ng --version
 
-</div></code></pre>
+</code></pre>
 </li>
 </ol>
 </li>
@@ -237,7 +228,7 @@
 </li>
 <li>
 <p>Execute os comandos abaixo para criar e executar o novo projeto:</p>
-<pre><code class="language-sh"><div>
+<pre><code class="hljs language-sh">
    <span class="hljs-comment"># Para criar um novo projeto                  </span>
    ng new nome-do-projeto --routing
 
@@ -255,7 +246,7 @@
    <span class="hljs-comment"># Executa a aplicação criada pelo comando: .</span>
    ng serve
 
-</div></code></pre>
+</code></pre>
 <ol>
 <li><strong>NOTAS:</strong>
 <ol>
@@ -374,15 +365,15 @@
 </li>
 <li>
 <p>Exemplo:</p>
-<pre><code class="language-js"><div>   <span class="hljs-keyword">const</span> routes: Routes = [
-      { <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;first-component&#x27;</span>, <span class="hljs-attr">component</span>: FirstComponent },
-      { <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;second-component&#x27;</span>, <span class="hljs-attr">component</span>: SecondComponent },
-      { <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;nome-do-component&#x27;</span>, <span class="hljs-attr">component</span>: NomeDoComponent },
+<pre><code class="hljs language-js">   <span class="hljs-keyword">const</span> routes: Routes = [
+      { <span class="hljs-attr">path</span>: <span class="hljs-string">'first-component'</span>, <span class="hljs-attr">component</span>: FirstComponent },
+      { <span class="hljs-attr">path</span>: <span class="hljs-string">'second-component'</span>, <span class="hljs-attr">component</span>: SecondComponent },
+      { <span class="hljs-attr">path</span>: <span class="hljs-string">'nome-do-component'</span>, <span class="hljs-attr">component</span>: NomeDoComponent },
 
       ...
 
       ];
-</div></code></pre>
+</code></pre>
 </li>
 </ol>
 </li>
@@ -443,10 +434,10 @@
 </li>
 <li>
 <p><strong>Exemplo de como criar componente no prompt do linux</strong>.</p>
-<pre><code class="language-sh"><div>   <span class="hljs-comment"># Cria componente de nome home</span>
+<pre><code class="hljs language-sh">   <span class="hljs-comment"># Cria componente de nome home</span>
    ng generate component pages/home
    
-</div></code></pre>
+</code></pre>
 </li>
 <li>
 <p>Referências:</p>
@@ -481,15 +472,15 @@
 <ol>
 <li>
 <p>Como criar workspace vazio:</p>
-<pre><code class="language-sh"><div>   ng new my-workspace --create-application=<span class="hljs-literal">false</span>
-</div></code></pre>
+<pre><code class="hljs language-sh">   ng new my-workspace --create-application=<span class="hljs-literal">false</span>
+</code></pre>
 </li>
 <li>
 <p>Como criar uma biblioteca com angula cli:</p>
-<pre><code class="language-sh"><div>   <span class="hljs-built_in">cd</span> my-workspace
+<pre><code class="hljs language-sh">   <span class="hljs-built_in">cd</span> my-workspace
    ng generate library my-lib
 
-</div></code></pre>
+</code></pre>
 </li>
 </ol>
 </li>
@@ -517,7 +508,7 @@
 </li>
 <li>
 <p>Para gerar a pasta <strong>./dist/nome-do-projeto</strong> executar o seguinte comando:</p>
-<pre><code class="language-sh"><div>   <span class="hljs-comment"># Executando via comando ng</span>
+<pre><code class="hljs language-sh">   <span class="hljs-comment"># Executando via comando ng</span>
    ng build
 
    <span class="hljs-comment"># ou usar somente a abreviação de build = b</span>
@@ -525,7 +516,7 @@
 
    <span class="hljs-comment"># ou pode ser gerado também usando o comando:</span>
    npm run build
-</div></code></pre>
+</code></pre>
 </li>
 <li>
 <p>Referências</p>
@@ -546,8 +537,8 @@
 </li>
 <li>
 <p>Criando módulo usando o angular cli.</p>
-<pre><code class="language-sh"><div>   ng g m NomeDoModulo
-</div></code></pre>
+<pre><code class="hljs language-sh">   ng g m NomeDoModulo
+</code></pre>
 </li>
 <li>
 <p><strong>Referências:</strong></p>
@@ -575,28 +566,28 @@
 <ol>
 <li>
 <p>Código typescript criado automaticamente.</p>
-<pre><code class="language-ts"><div>   <span class="hljs-keyword">import</span> { NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
-   <span class="hljs-keyword">import</span> { RouterModule, Routes } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/router&#x27;</span>;
+<pre><code class="hljs language-ts">   <span class="hljs-keyword">import</span> { NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+   <span class="hljs-keyword">import</span> { RouterModule, Routes } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/router'</span>;
 
    <span class="hljs-comment">//Matriz Router criada automaticamente paras as rotas</span>
    <span class="hljs-keyword">const</span> routes: Routes = [ ]; 
 
    <span class="hljs-comment">/* Exemplo de rota para 3 componentes
    const routes: Routes = [
-      { path: &#x27;first&#x27;, component: FirstComponent },
-      { path: &#x27;second&#x27;, component: SecondComponent },
-      { path: &#x27;rota&#x27;, component: NomeDoComponent },
+      { path: 'first', component: FirstComponent },
+      { path: 'second', component: SecondComponent },
+      { path: 'rota', component: NomeDoComponent },
       ...
    */</span>
       ];
 
    <span class="hljs-meta">@NgModule</span>({
    imports: [RouterModule.forRoot(routes)],
-   <span class="hljs-built_in">exports</span>: [RouterModule]
+   exports: [RouterModule]
    })
    <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppRoutingModule { } <span class="hljs-comment">//Classe exportada para a classe AppModule abaixo.</span>
 
-</div></code></pre>
+</code></pre>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -608,11 +599,11 @@
 <ol>
 <li>
 <p>Código typescript criado automaticamente.</p>
-<pre><code class="language-ts"><div>   <span class="hljs-keyword">import</span> { NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
-   <span class="hljs-keyword">import</span> { BrowserModule } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/platform-browser&#x27;</span>;
+<pre><code class="hljs language-ts">   <span class="hljs-keyword">import</span> { NgModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+   <span class="hljs-keyword">import</span> { BrowserModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/platform-browser'</span>;
 
-   <span class="hljs-keyword">import</span> { AppRoutingModule } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./app-routing.module&#x27;</span>;
-   <span class="hljs-keyword">import</span> { AppComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./app.component&#x27;</span>;
+   <span class="hljs-keyword">import</span> { AppRoutingModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'./app-routing.module'</span>;
+   <span class="hljs-keyword">import</span> { AppComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">'./app.component'</span>;
 
    <span class="hljs-meta">@NgModule</span>({
    declarations: [
@@ -628,7 +619,7 @@
    })
    <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule { }
 
-</div></code></pre>
+</code></pre>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -653,13 +644,13 @@
 <ol>
 <li>
 <p>Código shellscript:</p>
-<pre><code class="language-sh"><div>   <span class="hljs-comment"># Página para login do usuário</span>
+<pre><code class="hljs language-sh">   <span class="hljs-comment"># Página para login do usuário</span>
    ng generate c page/login
 
    <span class="hljs-comment"># Página de inscrição de usuário</span>
    ng generate c page/signup
    
-</div></code></pre>
+</code></pre>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -671,27 +662,27 @@
 <ol>
 <li>
 <p>No arquivo <strong>app-routing-module.ts</strong> adicione as seguintes linhas:</p>
-<pre><code class="language-ts"><div>
+<pre><code class="hljs language-ts">
    <span class="hljs-comment">// Na secção de importação importe os dois componentes abaixo</span>
-   <span class="hljs-keyword">import</span> { LoginComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./pages/login/login.component&#x27;</span>;
-   <span class="hljs-keyword">import</span> { SignupComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./pages/signup/signup.component&#x27;</span>;                  
+   <span class="hljs-keyword">import</span> { LoginComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">'./pages/login/login.component'</span>;
+   <span class="hljs-keyword">import</span> { SignupComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">'./pages/signup/signup.component'</span>;                  
 
    <span class="hljs-comment">//Na matriz de Routes adicione os dois objetos abaixo:</span>
    <span class="hljs-keyword">const</span> routes: Routes = [
-   {path:<span class="hljs-string">&#x27;login&#x27;</span>, component:LoginComponent},
-   {path:<span class="hljs-string">&#x27;signup&#x27;</span>, component:SignupComponent},
+   {path:<span class="hljs-string">'login'</span>, component:LoginComponent},
+   {path:<span class="hljs-string">'signup'</span>, component:SignupComponent},
    ];
 
-</div></code></pre>
+</code></pre>
 <ol>
 <li><text onclick="goBack()">[🔙]</text></li>
 </ol>
 </li>
 <li>
 <p>No arquivo <strong>app-module.ts</strong> adicione as seguintes linhas:</p>
-<pre><code class="language-ts"><div>   <span class="hljs-comment">// Na secção de importação importe os dois componentes abaixo</span>
-   <span class="hljs-keyword">import</span> { LoginComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./pages/login/login.component&#x27;</span>;
-   <span class="hljs-keyword">import</span> { SignupComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./pages/signup/signup.component&#x27;</span>;
+<pre><code class="hljs language-ts">   <span class="hljs-comment">// Na secção de importação importe os dois componentes abaixo</span>
+   <span class="hljs-keyword">import</span> { LoginComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">'./pages/login/login.component'</span>;
+   <span class="hljs-keyword">import</span> { SignupComponent } <span class="hljs-keyword">from</span> <span class="hljs-string">'./pages/signup/signup.component'</span>;
 
    <span class="hljs-comment">// Matriz declarations adicione os dois componentes importados</span>
    declarations: [                       
@@ -699,7 +690,7 @@
       SignupComponent,                        
    ],
 
-</div></code></pre>
+</code></pre>
 <ol>
 <li><text onclick="goBack()">[🔙]</text></li>
 </ol>
@@ -778,8 +769,8 @@
 <ol>
 <li>
 <p>Código ShellScript:</p>
-<pre><code class="language-sh"><div>   ng generate guard your-guard
-</div></code></pre>
+<pre><code class="hljs language-sh">   ng generate guard your-guard
+</code></pre>
 </li>
 </ol>
 </li>
@@ -831,7 +822,7 @@
 <ol>
 <li>
 <p>Descrição do exemplo</p>
-<pre><code class="language-ts"><div></div></code></pre>
+<pre><code class="hljs language-ts"></code></pre>
 </li>
 </ol>
 </li>
@@ -851,7 +842,7 @@
 </li>
 <li>
 <p>Descrição do exemplo</p>
-<pre><code class="language-ts"><div></div></code></pre>
+<pre><code class="hljs language-ts"></code></pre>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -869,7 +860,7 @@
 <ol>
 <li>
 <p>Descrição do exemplo</p>
-<pre><code class="language-ts"><div></div></code></pre>
+<pre><code class="hljs language-ts"></code></pre>
 </li>
 </ol>
 </li>
@@ -918,20 +909,20 @@
 <li>
 <p>22/06/2021 <!--TODO: HISTÓRICO --></p>
 <ul class="contains-task-list">
-<li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar este documento baseado no o_que_e_angular.md ;</p>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar este documento baseado no o_que_e_angular.md ;</p>
 </li>
-<li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Objetivos;</p>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Objetivos;</p>
 </li>
-<li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Pre-requisitos</p>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Pre-requisitos</p>
 </li>
-<li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Benefícios</p>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Benefícios</p>
 </li>
-<li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico desvantagens</p>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico desvantagens</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -941,11 +932,11 @@
 <li>
 <p>24/06/2021</p>
 <ul class="contains-task-list">
-<li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Conteúdo estudado</p>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Conteúdo estudado</p>
 </li>
-<li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever tópico Referências</p>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Referências</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -955,17 +946,17 @@
 <li>
 <p>02/07/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
 <ul class="contains-task-list">
-<li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever o exemplo:Como criar formulário de login no angular</p>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever o exemplo:Como criar formulário de login no angular</p>
 </li>
-<li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Escrever tópico Referências</p>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</p>
 </li>
-<li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Atualizar o histórico deste documento.</p>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</p>
 </li>
-<li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox"> Testar este documento depois após uma semana de concluído.</p>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -978,5 +969,7 @@
 <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
  <script>    function goBack() {    window.history.back()}</script>
 
-     </body>
+        
+        
+    </body>
     </html>

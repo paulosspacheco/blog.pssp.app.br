@@ -1,4 +1,7 @@
-# <span id="topo"><span>Como criar projetos free pascal multiplataforma <a href="modelo03.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<!-- markdownlint-disable-next-line -->
+ <span id="topo"><span>
+<!-- markdownlint-disable-next-line -->
+# Como criar projetos free pascal multiplataforma <a href="modelo03.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
 

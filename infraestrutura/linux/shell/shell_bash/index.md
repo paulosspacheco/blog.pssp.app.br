@@ -1,4 +1,4 @@
-# [$bash (1) - página de manual do Linux](https://linux.die.net/man/1/bash)
+# $bash (1) - página de manual do Linux
 
 1. **Nome**
    1. bash - GNU Bourne-Again SHell
@@ -64,3 +64,5 @@
 7. Extensões do vscode.
    1. [shell-syntax](https://marketplace.visualstudio.com/items?itemName=bmalehorn.shell-syntax)
 
+8. **Referências**
+   1. [$bash (1) - página de manual do Linux](https://linux.die.net/man/1/bash)

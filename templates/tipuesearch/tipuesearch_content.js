@@ -4,5 +4,3 @@ var tipuesearch = {
   <!--#files_path#-->
   ],
 };
-
-

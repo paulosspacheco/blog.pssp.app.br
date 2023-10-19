@@ -1,4 +1,4 @@
-# Tutorial: How to get your "signed" release Apk: "AppLAMWProject1"
+# Tutorial: How to get your 'signed' release Apk: 'AppLAMWProject1'
 
 - 1) Edit/change the project file "keytool_input.txt" to more representative informations:"
   - .Your keystore password [--ks-pass pass] : 123456

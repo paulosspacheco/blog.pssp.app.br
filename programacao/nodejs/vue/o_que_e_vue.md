@@ -1,4 +1,6 @@
-# <span id="topo"><span>O que é vue framework <a href="o_que_e_vue.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<span id="topo"><span>
+
+# O que é vue framework <a href="o_que_e_vue.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
 

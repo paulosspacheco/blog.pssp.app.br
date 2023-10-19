@@ -23,7 +23,7 @@
   <script src="js/tipuesearch/tipuesearch_set.js"></script>
   <script src="tipuesearch_content.js"></script>
   <!-- <link rel="stylesheet" href="js/tipuesearch/tipuesearch.css"> -->
-  <script src="js/tipuesearch/tipuesearch.js"></script>  
+  <script src="js/tipuesearch/tipuesearch.js"></script>
 
 </head>
 
@@ -44,31 +44,23 @@
       </script>
     </div>
 
+
     <!-- Conteúdo da página <div class="col-12"> -->
     <div class="col-12">
-        <h3>Resultado da pesquisa:</h3>
-  
-
-        <div style="padding-top: 36px;">
-            <form>
-              <!-- <div class="tipue_search_group"> -->
-                <div class="search-input">
-                <input type="text" 
-                       name="q" 
-                       id="tipue_search_input" 
-                       pattern=".{3,}" 
-                       title="Número de caracteres mínimos para pesquisa: 3 caracteres. Pesquisa parcial deve estar entre aspas." 
-                       required><button 
-                       type="submit" 
-                       class="tipue_search_button">
-                  <div class="tipue_search_icon">&#9906;</div>
-                </button>
-              </div>
-            </form>
-        
-            <div id="tipue_search_content"></div>
+      <h2>Resultado da pesquisa:</h2>
+      <div style="padding-top: 36px;">
+        <form>
+          <!-- <div class="tipue_search_group"> -->
+          <div class="search-input">
+            <input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="Número de caracteres mínimos para pesquisa: 3 caracteres. Pesquisa parcial deve estar entre aspas." required><button type="submit" class="tipue_search_button">
+              <div class="tipue_search_icon">&#9906;</div>
+            </button>
           </div>
-        
+        </form>
+
+        <div id="tipue_search_content"></div>
+      </div>
+
     </div>
 
 
@@ -83,7 +75,7 @@
     <script>
       includeHTML();
     </script>
-    
+
   </main>
 
 

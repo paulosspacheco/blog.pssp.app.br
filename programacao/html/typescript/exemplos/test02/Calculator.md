@@ -1,4 +1,5 @@
-# <span id="topo"><span>Exemplo de Calculadora com TypeScript <a href="Calculator.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<span id="topo"><span>
+# Exemplo de Calculadora com TypeScript <a href="Calculator.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
 
