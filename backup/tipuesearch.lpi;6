@@ -55,15 +55,11 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="html/comandos_basico.html"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="html/search.html"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
         <Filename Value="templates/tipuesearch/tipuesearch_content.js"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="projeto em contrução org.txt"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>

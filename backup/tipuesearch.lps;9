@@ -7,9 +7,9 @@
       <Unit>
         <Filename Value="tipuesearch.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
-        <CursorPos Y="16"/>
-        <UsageCount Value="26"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="19" Y="18"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -17,41 +17,48 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="u_TipueSearch"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="142"/>
-        <CursorPos Y="150"/>
-        <UsageCount Value="26"/>
+        <TopLine Value="151"/>
+        <CursorPos X="25" Y="164"/>
+        <FoldState Value=" TL20e011 PKlI0 T7iVNJ T8ic68 T3m02OG"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="tipuesearch_content.js"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="14" Y="7"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="36"/>
         <DefaultSyntaxHighlighter Value="JScript"/>
-      </Unit>
-      <Unit>
-        <Filename Value="html/comandos_basico.html"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="25"/>
-        <DefaultSyntaxHighlighter Value="HTML"/>
-      </Unit>
-      <Unit>
-        <Filename Value="html/search.html"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="23"/>
-        <CursorPos X="15" Y="28"/>
-        <UsageCount Value="25"/>
-        <DefaultSyntaxHighlighter Value="HTML"/>
       </Unit>
       <Unit>
         <Filename Value="templates/tipuesearch/tipuesearch_content.js"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="36"/>
         <DefaultSyntaxHighlighter Value="JScript"/>
+      </Unit>
+      <Unit>
+        <Filename Value="projeto em contrução org.txt"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="7"/>
+        <CursorPos X="1647" Y="2"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Text"/>
+      </Unit>
+      <Unit>
+        <Filename Value="html/comandos_basico.html"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="27"/>
+        <DefaultSyntaxHighlighter Value="HTML"/>
+      </Unit>
+      <Unit>
+        <Filename Value="html/search.html"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="23"/>
+        <CursorPos X="15" Y="28"/>
+        <UsageCount Value="27"/>
+        <DefaultSyntaxHighlighter Value="HTML"/>
       </Unit>
       <Unit>
         <Filename Value="units/u_create_tipue_search.pas"/>
@@ -103,127 +110,204 @@
         <CursorPos Y="1503"/>
         <UsageCount Value="10"/>
       </Unit>
+      <Unit>
+        <Filename Value="../../../../Lazarus/lazarus-3.0.0-rc1/ccr/internettools/data/xquery__parse.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="772"/>
+        <CursorPos Y="784"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.objects.methods.pas"/>
+        <UnitName Value="mi.rtl.Objects.Methods"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="2458"/>
+        <CursorPos Y="2481"/>
+        <UsageCount Value="14"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.consts.pas"/>
+        <UnitName Value="mi.rtl.Consts"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="19"/>
+        <UsageCount Value="14"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.objects.methods.pageproducer.pas"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="1705"/>
+        <CursorPos Y="1740"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlist.pas"/>
+        <UnitName Value="mi.rtl.miStringlist"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="13"/>
+        <CursorPos X="35" Y="24"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
+        <UnitName Value="mi.rtl.MiStringlistbase"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="252"/>
+        <CursorPos Y="265"/>
+        <FoldState Value=" T3nM2m3 PiTjK8X"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../Lazarus/lazarus-3.0.0-rc1/fpcsrc/rtl/inc/objpash.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="244"/>
+        <CursorPos X="167" Y="256"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../Lazarus/lazarus-3.0.0-rc1/ccr/internettools/data/xquery_types.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="551"/>
+        <CursorPos Y="566"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../../../Lazarus/lazarus-3.0.0-rc1/fpcsrc/rtl/objpas/classes/classesh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="843"/>
+        <CursorPos X="31" Y="856"/>
+        <UsageCount Value="10"/>
+      </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="149" TopLine="143"/>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
+        <Caret Line="235" TopLine="220"/>
+      </Position>
+      <Position>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
+        <Caret Line="242" TopLine="220"/>
+      </Position>
+      <Position>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
+        <Caret Line="235" TopLine="220"/>
+      </Position>
+      <Position>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
+        <Caret Line="246" TopLine="222"/>
+      </Position>
+      <Position>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
+        <Caret Line="252" TopLine="238"/>
+      </Position>
+      <Position>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
+        <Caret Line="253" TopLine="238"/>
+      </Position>
+      <Position>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
+        <Caret Line="257" TopLine="238"/>
+      </Position>
+      <Position>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
+        <Caret Line="258" TopLine="238"/>
+      </Position>
+      <Position>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
+        <Caret Line="261" TopLine="238"/>
+      </Position>
+      <Position>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
+        <Caret Line="267" TopLine="252"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="156" TopLine="143"/>
+        <Caret Line="256" TopLine="248"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="149" TopLine="143"/>
+        <Caret Line="141" TopLine="125"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="156" TopLine="143"/>
+        <Caret Line="142" TopLine="125"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="149" TopLine="143"/>
+        <Caret Line="144" TopLine="125"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="156" TopLine="143"/>
+        <Caret Line="145" TopLine="125"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="149" TopLine="143"/>
+        <Caret Line="146" TopLine="125"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="156" TopLine="143"/>
+        <Caret Line="147" TopLine="125"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="149" TopLine="143"/>
+        <Caret Line="148" TopLine="125"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="156" TopLine="143"/>
+        <Caret Line="150" TopLine="126"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="149" TopLine="143"/>
+        <Caret Line="151" TopLine="127"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="156" TopLine="143"/>
+        <Caret Line="152" TopLine="141"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="149" TopLine="143"/>
+        <Caret Line="154" TopLine="141"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="156" TopLine="143"/>
+        <Caret Line="161" Column="36" TopLine="144"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="149" TopLine="143"/>
+        <Caret Line="159" TopLine="144"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="156" TopLine="143"/>
+        <Caret Line="254" TopLine="216"/>
+      </Position>
+      <Position>
+        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
+        <Caret Line="265" TopLine="252"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="149" TopLine="143"/>
+        <Caret Line="159" Column="38" TopLine="145"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="152" Column="29" TopLine="143"/>
+        <Caret Line="161" TopLine="145"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="179" Column="31" TopLine="167"/>
+        <Caret Line="162" TopLine="145"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="182" TopLine="167"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="156" TopLine="142"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="179" TopLine="165"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="154" Column="9" TopLine="142"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="144" Column="31" TopLine="142"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="180" Column="20" TopLine="169"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="144" Column="33" TopLine="142"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="184" Column="18" TopLine="166"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="180" Column="41" TopLine="167"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="144" Column="32" TopLine="142"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="156" TopLine="142"/>
+        <Caret Line="161" TopLine="145"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -231,4 +315,29 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="units/u_tipuesearch.pas"/>
+        <Line Value="191"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="units/u_tipuesearch.pas"/>
+        <Line Value="254"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="units/u_tipuesearch.pas"/>
+        <Line Value="159"/>
+      </Item>
+    </BreakPoints>
+  </Debugging>
 </CONFIG>
