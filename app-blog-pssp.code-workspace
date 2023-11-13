@@ -11,6 +11,6 @@
 		"markdown.styles": [
 			"/inc/linksCSS.inc"
 		],
-		"liveServer.settings.port": 5501
+		"liveServer.settings.port": 5502
 	}
 }

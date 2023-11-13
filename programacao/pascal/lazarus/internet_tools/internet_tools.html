@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Internet Tools - pacote FreePascal&lt;a href&equals;&quot;internet&lowbar;tools&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+
+        <!-- CSS markdown  -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+            
+        <!-- CSS da página /index.html -->
+        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
+
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <!-- markdownlint-disable-next-line -->
+<p><span id="topo"><span></p>
+<!-- markdownlint-disable-next-line -->
+<h1 id="internet-tools---pacote-freepascal---">Internet Tools - pacote FreePascal<a href="internet_tools.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
+<h2 id="1-index"><strong>1. INDEX</strong></h2>
+<hr>
+<ol>
+<li>
+<p><a href="#id_resumo">Resumo do conteúdo</a></p>
+</li>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+<li><a href="#id_beneficios">Benefícios.</a></li>
+<li><a href="#id_desvantagens">Desvantagens.</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_Conteudo"><strong>Conteúdos.</strong></a></p>
+<ol>
+<li><a href="#id_intalacao">Como instalar o componente internet tools</a></li>
+<li><a href="#id_assunto02">assunto02</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_referencias"><strong>Referências globais.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+<hr>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li>
+<p><span id="id_resumo"><span><strong>Resumo do conteúdo:</strong></p>
+<ol>
+<li>O projeto <a href="https://wiki.lazarus.freepascal.org/Internet_Tools#Overview">internettools</a> foi escrito na linguagem pascal e depende dos projetos <a href="https://github.com/BeRo1985/flre">FLRE</a> e <a href="https://wiki.lazarus.freepascal.org/Synapse">synapse</a> no qual  podem ser instalados usando o projeto <a href="https://wiki.lazarus.freepascal.org/fpcupdeluxe">fpcupdeluxe</a>.</li>
+<li>O <em>fpcupdeluxe</em> tem a opções de instalar o pacote <em>internettools</em>, porém a instalação não funciona e quebra a IDE, por isso é recomendado instalar usando a forma manual descrita neste documento.</li>
+</ol>
+</li>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id="id_objetivo"><span>
+<strong>Objetivo:</strong></p>
+<ol>
+<li>
+<p>Internet Tools é uma biblioteca para processar páginas da web e deve ser facilmente utilizável. <a href="https://wiki.lazarus.freepascal.org/Internet_Tools">Veja mais...</a></p>
+</li>
+<li>
+<p>Internet Tools fornece unidades para processar dados X/HTML e baixá-los por meio de uma conexão HTTP ou HTTPS.</p>
+</li>
+<li>
+<p>Internet Tools não implementam conexões HTTPS por si só, mas fornecem <em>wrappers</em> em torno dos pacotes <em>wininet</em>, <em>synapse</em> e <em>Apache HttpComponents</em>.</p>
+</li>
+<li>
+<p>Internet Tools é totalmente implementada em Pascal, thread-safe e GPL.</p>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id="id_pre_requisitos"></span>
+<strong>Pre-requisitos:</strong></p>
+<ol>
+<li>
+<p>Os wrappers são implementados como classes derivadas de uma interface abstrata, para que o aplicativo possa alternar facilmente entre os dois back-ends. No entanto, é recomendado usar o wrapper wininet no Windows, o wrapper synapse no Linux e o wrapper Apache no Android.</p>
+</li>
+<li>
+<p>No Linux você também precisa instalar o Synapse e o OpenSSL devel. Para Android, você precisa do Android SDK/NDK padrão e inicializar a referência JVM em bbjniutils. Nas configurações padrão ele usa FLRE como biblioteca de expressões regulares, você pode definir uma definição USE_SOROKINS_REGEX para usar a unidade regexpr do Sorokin/FPC.</p>
+</li>
+<li>
+<p>Dependências que podem ser instaladas com <em>fpCupDeLuxe</em>:</p>
+<ol>
+<li><a href="https://github.com/BeRo1985/flre">FLRE</a> -
+<ol>
+<li>FLRE - Fast Light Regular Expressions - Uma biblioteca de expressões regulares fast light</li>
+</ol>
+</li>
+<li><a href="https://wiki.lazarus.freepascal.org/Synapse">synapse</a>.
+<ol>
+<li>O Synapse fornece uma porta serial fácil de usar e uma biblioteca TCP/IP síncrona.</li>
+</ol>
+</li>
+<li>.</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id="id_beneficios"></span>
+<strong>Benefícios:</strong></p>
+<ol>
+<li>
+<p>Uso essa ferramenta para extrai o título e o corpo do html para criar o campo tags do arquivo <em>tipuesearch_content.js</em> do programa <em>tipuesearch</em>.</p>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id="id_desvantagens"></span>
+<strong>Desvantagens</strong>.</p>
+<ol>
+<li>
+<p>Difícil de instalar com fpCupDeLuxe porque quebra o lazarus. Para resolver é necessário entrar na configuração das pastas e informa a pasta das dependências.</p>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li>
+<p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
+<ol>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id=id_intalacao></span><strong>Passo a passo para instalar o componente internet tools</strong></p>
+<ol>
+<li>
+<p>Executar projeto <em>FpCupDeLuxe</em></p>
+<ol>
+<li>Na aba <em>Modules</em> instalar os pacotes:
+<ol>
+<li><a href="https://github.com/BeRo1985/flre">FLRE</a> -
+<ol>
+<li>FLRE - Fast Light Regular Expressions - Uma biblioteca de expressões regulares fast light</li>
+</ol>
+</li>
+<li><a href="https://wiki.lazarus.freepascal.org/Synapse">synapse</a>.
+<ol>
+<li>O Synapse fornece uma porta serial fácil de usar e uma biblioteca TCP/IP síncrona.</li>
+</ol>
+</li>
+<li>Nota:
+<ol>
+<li>Não execute <em>intertools</em> da <em>Modules</em> porque não funciona. É necessário seguir os passos abaixo.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Baixar projeto InternetTools do github</p>
+<pre><code class="hljs language-sh">   <span class="hljs-built_in">cd</span> ~/Lazarus/ccr       
+   <span class="hljs-built_in">cd</span> ccr
+   git <span class="hljs-built_in">clone</span> git@github.com:benibela/internettools.git             
+      
+</code></pre>
+</li>
+<li>
+<p>Executar o lazarus;</p>
+</li>
+<li>
+<p>Selecionar opção <em>/pacotes/abri arquivo de pacotes</em>;</p>
+</li>
+<li>
+<p>Selecionar pacote <em>~/Lazarus/ccr/internettools</em>;</p>
+</li>
+<li>
+<p>Selecionar <em>opções/paths</em></p>
+</li>
+<li>
+<p>Na opção <em>outros caminhos da unidade</em>  adicionar os seguintes paths criadas pelo programa fpcupdeluxe:</p>
+<ol>
+<li>../synapse</li>
+<li>../flre/src</li>
+<li>Nota:
+<ol>
+<li>Deletar os caminhos inválido que vem no projeto;</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Executar a opção  recompilar tudo requerido</p>
+</li>
+<li>
+<p>Executar a opção instalar pacote.</p>
+</li>
+<li>
+<p>Notas</p>
+<ol>
+<li>Para usar o pacote <em>~/Lazarus/ccr/internettools</em> é necessário informar em seu projeto o local das units do projeto internettools.</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id=id_referencias></span><strong>REFERÊNCIAS GLOBAIS</strong></p>
+<ol>
+<li>
+<p><a href="https://benibela.de/documentation/internettools/">Internet-Tools Overview</a></p>
+</li>
+<li>
+<p><a href="https://benibela.de/sources_en.html#internettools">BeniBela on-line/internettools</a></p>
+</li>
+<li>
+<p><a href="https://www.videlibri.de/cgi-bin/xidelcgi">Pattern matching / XPath 3.1 / XQuery 3.1 / CSS 3 Selector Online Tester</a></p>
+</li>
+<li>
+<p><a href="https://www.videlibri.de/xidel.html#downloads">Xidel - ferramenta de extração de dados HTML/XML/JSON</a></p>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<!--TODO: HISTÓRICO -->
+<ol>
+<li><strong>27/10/2023</strong> <!--FIXME: Falta fazer os item abaixo: -->
+<ul class="contains-task-list">
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar este documento baseado no internet_tools.md ;</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Objetivos;</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Pre-requisitos</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Benefícios</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico desvantagens</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Exemplos</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+<!-- markdownlint-disable-next-line -->
+ <script>    function goBack() {    window.history.back()}</script>
+
+        
+        
+    </body>
+    </html>

@@ -18,7 +18,7 @@
         <UnitName Value="u_TipueSearch"/>
         <IsVisibleTab Value="True"/>
         <TopLine Value="130"/>
-        <CursorPos X="21" Y="143"/>
+        <CursorPos Y="142"/>
         <FoldState Value=" TL20e011 PKlS0 T7iVNJ T8ic68 T3mA2O3"/>
         <UsageCount Value="38"/>
         <Loaded Value="True"/>
@@ -191,10 +191,6 @@
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="184" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
         <Caret Line="185" TopLine="161"/>
       </Position>
       <Position>
@@ -309,6 +305,10 @@
         <Filename Value="units/u_tipuesearch.pas"/>
         <Caret Line="152" TopLine="130"/>
       </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="143" Column="21" TopLine="130"/>
+      </Position>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
@@ -323,6 +323,13 @@
         <WatchKind Value="wpkWrite"/>
         <Source Value="units/u_tipuesearch.pas"/>
         <Line Value="154"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="units/u_tipuesearch.pas"/>
+        <Line Value="142"/>
       </Item>
     </BreakPoints>
   </Debugging>

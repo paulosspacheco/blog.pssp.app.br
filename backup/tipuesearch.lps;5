@@ -18,8 +18,8 @@
         <UnitName Value="u_TipueSearch"/>
         <IsVisibleTab Value="True"/>
         <TopLine Value="130"/>
-        <CursorPos X="36" Y="143"/>
-        <FoldState Value=" TL20e011 PKlP0 T7iVNJ T8ic68 T3m72OA"/>
+        <CursorPos X="21" Y="143"/>
+        <FoldState Value=" TL20e011 PKlS0 T7iVNJ T8ic68 T3mA2O3"/>
         <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit>
@@ -191,18 +191,6 @@
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="185" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="181" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="183" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
         <Caret Line="184" TopLine="161"/>
       </Position>
       <Position>
@@ -309,6 +297,18 @@
         <Filename Value="units/u_tipuesearch.pas"/>
         <Caret Line="151" TopLine="129"/>
       </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="143" Column="36" TopLine="130"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="151" TopLine="130"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="152" TopLine="130"/>
+      </Position>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
@@ -322,7 +322,7 @@
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="units/u_tipuesearch.pas"/>
-        <Line Value="151"/>
+        <Line Value="154"/>
       </Item>
     </BreakPoints>
   </Debugging>

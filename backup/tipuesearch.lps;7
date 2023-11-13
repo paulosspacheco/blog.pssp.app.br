@@ -9,7 +9,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="6"/>
         <CursorPos X="19" Y="18"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -17,24 +17,24 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="u_TipueSearch"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="148"/>
+        <TopLine Value="129"/>
         <CursorPos Y="154"/>
         <FoldState Value=" TL20e011 PKlP0 T7iVNJ T8ic68 T3m72OA"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="tipuesearch_content.js"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <DefaultSyntaxHighlighter Value="JScript"/>
       </Unit>
       <Unit>
         <Filename Value="templates/tipuesearch/tipuesearch_content.js"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="37"/>
         <DefaultSyntaxHighlighter Value="JScript"/>
       </Unit>
       <Unit>
@@ -42,7 +42,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="7"/>
         <CursorPos X="1647" Y="2"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="30"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Text"/>
       </Unit>
@@ -315,4 +315,15 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="units/u_tipuesearch.pas"/>
+        <Line Value="151"/>
+      </Item>
+    </BreakPoints>
+  </Debugging>
 </CONFIG>

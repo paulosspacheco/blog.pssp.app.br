@@ -23,7 +23,7 @@ http://www.tipue.com/search
           'imageZoom'              : true,
           'minimumLength'          : 3,
           'newWindow'              : false,
-          'show'                   : 10,
+          'show'                   : 1000,
           'showContext'            : true,
           'showRelated'            : true,
           'showTime'               : true,

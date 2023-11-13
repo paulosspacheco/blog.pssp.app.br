@@ -17,8 +17,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="u_TipueSearch"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="129"/>
-        <CursorPos Y="154"/>
+        <TopLine Value="130"/>
+        <CursorPos X="36" Y="143"/>
         <FoldState Value=" TL20e011 PKlP0 T7iVNJ T8ic68 T3m72OA"/>
         <UsageCount Value="38"/>
         <Loaded Value="True"/>
@@ -191,18 +191,6 @@
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="181" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="183" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="184" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
         <Caret Line="185" TopLine="161"/>
       </Position>
       <Position>
@@ -308,6 +296,18 @@
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
         <Caret Line="171" Column="23" TopLine="148"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="154" TopLine="129"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="146" Column="16" TopLine="129"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="151" TopLine="129"/>
       </Position>
     </JumpHistory>
     <RunParams>

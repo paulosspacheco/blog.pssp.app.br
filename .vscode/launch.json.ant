@@ -16,7 +16,7 @@
             ],
             //"program": "${workspaceFolder}"
             "program": "${workspaceFolder}/js/generic.js"
-            //"program": "${workspaceFolder}/menu/index.js"
+            //"program": "${workspaceFolder}/js/menu/index.js"
             //"program": "${workspaceFolder}/programacao/nodejs/exemplos/nodejs_sequelize/test_function_async_1..js"
             //"program": "${workspaceFolder}/programacao/nodejs/exemplos/nodejs_sequelize/test_sequelize_mariadb_string.js"
             //"program": "${workspaceFolder}/programacao/nodejs/exemplos/nodejs_sequelize/test_sequelize_mariadb.js"

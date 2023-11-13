@@ -17,8 +17,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="u_TipueSearch"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="130"/>
-        <CursorPos Y="142"/>
+        <TopLine Value="131"/>
+        <CursorPos Y="154"/>
         <FoldState Value=" TL20e011 PKlS0 T7iVNJ T8ic68 T3mA2O3"/>
         <UsageCount Value="38"/>
         <Loaded Value="True"/>
@@ -191,111 +191,47 @@
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="185" TopLine="161"/>
+        <Caret Line="154" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="181" TopLine="161"/>
+        <Caret Line="142" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="183" TopLine="161"/>
+        <Caret Line="154" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="184" TopLine="161"/>
+        <Caret Line="142" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="185" TopLine="161"/>
+        <Caret Line="154" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="181" TopLine="161"/>
+        <Caret Line="142" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="183" TopLine="161"/>
+        <Caret Line="145" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="184" TopLine="161"/>
+        <Caret Line="147" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="185" TopLine="161"/>
+        <Caret Line="148" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="181" TopLine="161"/>
+        <Caret Line="149" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="183" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="184" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="185" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="181" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="183" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="184" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="185" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="181" TopLine="161"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="191" TopLine="177"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="285" TopLine="272"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="319" TopLine="304"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="191" TopLine="177"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="171" Column="23" TopLine="148"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="154" TopLine="129"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="146" Column="16" TopLine="129"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="151" TopLine="129"/>
-      </Position>
-      <Position>
-        <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="143" Column="36" TopLine="130"/>
+        <Caret Line="150" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
@@ -303,11 +239,75 @@
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="152" TopLine="130"/>
+        <Caret Line="153" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="143" Column="21" TopLine="130"/>
+        <Caret Line="154" TopLine="130"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="155" TopLine="131"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="157" TopLine="133"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="178" TopLine="164"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="142" TopLine="127"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="145" TopLine="127"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="147" TopLine="127"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="154" TopLine="130"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="155" TopLine="131"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="157" TopLine="133"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="178" TopLine="164"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="142" TopLine="127"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="145" TopLine="127"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="147" TopLine="127"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="148" TopLine="127"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="142" TopLine="130"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="155" TopLine="131"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -323,13 +323,6 @@
         <WatchKind Value="wpkWrite"/>
         <Source Value="units/u_tipuesearch.pas"/>
         <Line Value="154"/>
-      </Item>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="units/u_tipuesearch.pas"/>
-        <Line Value="142"/>
       </Item>
     </BreakPoints>
   </Debugging>

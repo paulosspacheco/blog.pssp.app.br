@@ -809,7 +809,7 @@ RuntimeRepo = https://dl.flathub.org/repo/flathub.flatpakrepo
     </div>
     <!-- Conteúdo da página --> <code>
       <div class="topnav" id="myTopnav"> &gt; 
-        <script type="application/x-javascript" src="../../../menu/index.js">    </script>
+        <script type="application/x-javascript" src="../../../js/menu/index.js">    </script>
       </div>
     </code>
     <!-- Rodapé da página -->

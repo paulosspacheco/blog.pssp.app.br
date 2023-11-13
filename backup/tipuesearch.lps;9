@@ -17,9 +17,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="u_TipueSearch"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="151"/>
-        <CursorPos X="25" Y="164"/>
-        <FoldState Value=" TL20e011 PKlI0 T7iVNJ T8ic68 T3m02OG"/>
+        <TopLine Value="148"/>
+        <CursorPos X="23" Y="171"/>
+        <FoldState Value=" TL20e011 PKlP0 T7iVNJ T8ic68 T3m72OA"/>
         <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
@@ -190,124 +190,124 @@
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
-        <Caret Line="235" TopLine="220"/>
-      </Position>
-      <Position>
-        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
-        <Caret Line="242" TopLine="220"/>
-      </Position>
-      <Position>
-        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
-        <Caret Line="235" TopLine="220"/>
-      </Position>
-      <Position>
-        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
-        <Caret Line="246" TopLine="222"/>
-      </Position>
-      <Position>
-        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
-        <Caret Line="252" TopLine="238"/>
-      </Position>
-      <Position>
-        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
-        <Caret Line="253" TopLine="238"/>
-      </Position>
-      <Position>
-        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
-        <Caret Line="257" TopLine="238"/>
-      </Position>
-      <Position>
-        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
-        <Caret Line="258" TopLine="238"/>
-      </Position>
-      <Position>
-        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
-        <Caret Line="261" TopLine="238"/>
-      </Position>
-      <Position>
-        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
-        <Caret Line="267" TopLine="252"/>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="185" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="256" TopLine="248"/>
+        <Caret Line="181" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="141" TopLine="125"/>
+        <Caret Line="183" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="142" TopLine="125"/>
+        <Caret Line="184" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="144" TopLine="125"/>
+        <Caret Line="185" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="145" TopLine="125"/>
+        <Caret Line="181" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="146" TopLine="125"/>
+        <Caret Line="183" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="147" TopLine="125"/>
+        <Caret Line="184" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="148" TopLine="125"/>
+        <Caret Line="185" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="150" TopLine="126"/>
+        <Caret Line="181" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="151" TopLine="127"/>
+        <Caret Line="183" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="152" TopLine="141"/>
+        <Caret Line="184" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="154" TopLine="141"/>
+        <Caret Line="185" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="161" Column="36" TopLine="144"/>
+        <Caret Line="181" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="159" TopLine="144"/>
+        <Caret Line="183" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="254" TopLine="216"/>
-      </Position>
-      <Position>
-        <Filename Value="../../../LazarusProjects/maricarai_v090_lazarus_3_0_RC1/mi.rtl/units/mi.rtl.mistringlistbase.pas"/>
-        <Caret Line="265" TopLine="252"/>
+        <Caret Line="184" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="159" Column="38" TopLine="145"/>
+        <Caret Line="185" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="161" TopLine="145"/>
+        <Caret Line="181" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="162" TopLine="145"/>
+        <Caret Line="183" TopLine="161"/>
       </Position>
       <Position>
         <Filename Value="units/u_tipuesearch.pas"/>
-        <Caret Line="161" TopLine="145"/>
+        <Caret Line="184" TopLine="161"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="185" TopLine="161"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="181" TopLine="161"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="183" TopLine="161"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="184" TopLine="161"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="185" TopLine="161"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="181" TopLine="161"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="191" TopLine="177"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="285" TopLine="272"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="319" TopLine="304"/>
+      </Position>
+      <Position>
+        <Filename Value="units/u_tipuesearch.pas"/>
+        <Caret Line="191" TopLine="177"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -315,29 +315,4 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
-  <Debugging>
-    <BreakPoints>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="units/u_tipuesearch.pas"/>
-        <Line Value="191"/>
-      </Item>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="units/u_tipuesearch.pas"/>
-        <Line Value="254"/>
-      </Item>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="units/u_tipuesearch.pas"/>
-        <Line Value="159"/>
-      </Item>
-    </BreakPoints>
-  </Debugging>
 </CONFIG>

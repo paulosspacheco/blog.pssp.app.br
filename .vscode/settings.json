@@ -7,5 +7,6 @@
     "markdown.styles": [
         "inc/linksCSS.inc"
     ],
-    "copyMarkdownAsHtml.langPrefix": "pt-br"
+    "copyMarkdownAsHtml.langPrefix": "pt-br",
+    "liveServer.settings.port": 5501
 }

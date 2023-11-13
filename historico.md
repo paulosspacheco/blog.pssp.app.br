@@ -2,6 +2,13 @@
 #### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 27/10/2023</b></legend>
+
+- [x] [Criar documento sobre o pacote internettools do lazarus](./programacao/pascal/lazarus/internet_tools/internet_tools.html)
+
+</fieldset>
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 16/10/2023</b></legend>
 
 - [x] [Criando documento sobre algorítimo](./programacao/algoritimos/o_que_e_algoritimo.html)
@@ -430,7 +437,7 @@
 <!--DONE: em: 28/11/2020-->
 
 - [x] Criar menu línguas humanas
-  - [x] Criei método TMenuBar.setLinguagemHumana() no arquivo [/menu/index](/menu/index.js)
+  - [x] Criei método TMenuBar.setLinguagemHumana() no arquivo [/menu/index](/js/menu/index.js)
   - [x] Criei atributo TMenuBar.linguagemHumana.
 
 - [x] Criar o index da pasta produção de textos:
