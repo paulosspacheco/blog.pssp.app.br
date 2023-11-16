@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo de TreeView Menu usando Input e Label</title>
+    <style>
+      ul,
+      li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .tree-view {
+        font-family: Arial, sans-serif;
+      }
+
+      .tree-node {
+        margin-bottom: 5px;
+      }
+
+      .tree-node label {
+        cursor: pointer;
+        padding-left: 10px;
+        position: relative;
+      }
+
+      .tree-node input {
+        display: none;
+      }
+
+      .tree-node ul {
+        margin-left: 20px;
+        display: none;
+      }
+
+      .tree-node input:checked + label + ul {
+        display: block;
+      }
+
+      .arrow::before {
+        content: "\25B6 "; /* Seta para a direita */
+        position: absolute;
+        left: 0;
+      }
+
+      .tree-node input:checked + label .arrow::before {
+        content: "\25BC "; /* Seta para baixo */
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Exemplo de TreeView Menu usando Input e Label</h1>
+    <div class="tree-view">
+      <ul class="tree-node">
+        <li><input type="checkbox" id="Menu" /><label for="Menu" class="arrow">Menu</label>
+          <ul>
+            <li><input type="checkbox" id="Item01"  /> <label for="Item01">Item01</label></li>
+            <li><input type="checkbox" id="Item02"  /> <label for="Item02">Item02</label></li>
+            <li><input type="checkbox" id="SubMenu1"/> <label for="SubMenu1" class="arrow">SubMenu1</label>
+              <ul>
+                <li><input type="checkbox" id="Item01" /> <label for="Item01">Item01</label></li>
+                <li><input type="checkbox" id="Item02" /> <label for="Item02">Item02</label></li>
+                <li><input type="checkbox" id="Item03" /> <label for="Item03" >Item03</label></li>
+                <li><input type="checkbox" id="Item04" /> <label for="Item04">Item04</label></li>
+              </ul>
+            </li>
+
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

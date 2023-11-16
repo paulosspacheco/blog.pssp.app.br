@@ -1,0 +1,40 @@
+/* Style for the TreeView menu */
+.treeview {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tree-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.with-submenu::before {
+    content: '▶';
+    /* Set the initial state to a right arrow */
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin-left: 20px;
+    /* Adjust the margin as needed */
+    display: none;
+    /* Initially hide the submenu */
+}
+
+/* Style for the TreeView menu */
+
+/* Add styles for when the submenu is open */
+.tree-item.opened::before {
+    content: '▼';
+    /* Change the arrow to down when the submenu is open */
+}
+
+/* Add styles to show the submenu when the parent is clicked */
+.tree-item.with-submenu:hover .submenu {
+    display: block;
+}
