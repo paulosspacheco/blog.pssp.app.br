@@ -1,3 +1,7 @@
+
+<!-- markdownlint-disable-next-line -->
+<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>   
+
 <!-- markdownlint-disable-next-line -->
 #### Configurando git para enviar para o github <a href="configurando_git_para_enviar_para_o_github.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
@@ -112,3 +116,5 @@
 8. [Verificando as chaves SSH existentes](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
 9. [Configurando arquivos ignorados para todos os repositórios em seu computador](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files).
 
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>    

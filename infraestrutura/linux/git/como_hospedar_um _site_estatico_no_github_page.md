@@ -1,4 +1,7 @@
 <!-- markdownlint-disable-next-line -->
+<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>
+
+<!-- markdownlint-disable-next-line -->
 #### Como hospedar um site estático no github page <a href="como_hospedar_um _site_estático_no_github_page.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 1. [**O que é o github pages?**](https://docs.github.com/pt/pages/getting-started-with-github-pages/about-github-pages)
@@ -25,3 +28,6 @@
 
 3. **REFERÊNCIAS**
    1. [Início rápido para o GitHub Pages](https://docs.github.com/pt/pages/quickstart)
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>      

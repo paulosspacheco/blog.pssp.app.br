@@ -3,7 +3,7 @@
         <meta name="keywords" content="" />
            
         <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
-        <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/>
+        <!-- <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/> -->
         <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
 
         <script type="application/x-javascript" src="/js/generic.js"></script>

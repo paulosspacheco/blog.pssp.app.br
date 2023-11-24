@@ -1,4 +1,7 @@
 <!-- markdownlint-disable-next-line -->
+<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>    
+
+<!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 # O que é git? <a href="o_que_e_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
@@ -530,4 +533,4 @@
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
- <!-- <script>    function goBack() {    window.history.back()}</script> -->
+<script>  includeHTML(); </script>               

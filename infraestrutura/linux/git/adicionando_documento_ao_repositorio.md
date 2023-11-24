@@ -1,4 +1,7 @@
 <!-- markdownlint-disable-next-line -->
+<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>   
+
+<!-- markdownlint-disable-next-line -->
 #### Adicionando documento ao repositório <a href="adicionando_documento_ao_repositorio.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Siga os comandos abaixo para adicionar todo o conteúdo da pasta corrente  \*.\*  ao repositório git:
@@ -29,3 +32,6 @@
    3. [git init](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init#:~:text=The%20git%20init%20command%20creates,run%20in%20a%20new%20project.).
    4. [Adicionando modificações](https://githowto.com/pt-BR/staging_changes)
    5. [Exemplo de várias alterações e vários commits](https://githowto.com/pt-BR/changes_not_files)
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>       

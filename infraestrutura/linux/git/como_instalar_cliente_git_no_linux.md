@@ -1,4 +1,7 @@
 <!-- markdownlint-disable-next-line -->
+<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>    
+
+<!-- markdownlint-disable-next-line -->
 #### Como instalar cliente git no Linux Debian ou derivados <a href="como_instalar_cliente_git_no_linux.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Para instalar no Linux distribuição baseada em Debian como o Ubuntu, Linux Mint, etc use o apt-get:.
@@ -35,3 +38,6 @@
 1. [1.5 Getting Started - Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 2. [8.1 Customizing Git - Git Configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 3. [Configurar o Git para uso com delimitadores de linha](https://docs.github.com/pt/get-started/getting-started-with-git/configuring-git-to-handle-line-endings)
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>    

@@ -1,6 +1,8 @@
 <!-- markdownlint-disable-next-line -->
-#### Clonando repositório do github <a href="clonando_repositorio_do_github.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>   
 
+<!-- markdownlint-disable-next-line -->
+#### Clonando repositório do github <a href="clonando_repositorio_do_github.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. **Eureca!!!** a forma mais prática que encontrei para usar o github e vscode foi:
    1. No vscode instalei a extensão [**GitLens — Git supercharged**](https://learn.microsoft.com/pt-br/shows/vs-code-livestreams/10-things-about-gitlens)
@@ -37,3 +39,6 @@
 ##### REFERÊNCIAS
 
 1. [Clonar um repositório](https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository)
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>    

@@ -1,7 +1,10 @@
 <!-- markdownlint-disable-next-line -->
+<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>   
+
+<!-- markdownlint-disable-next-line -->
 #### COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a>
 
-- [COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO](#como-instalar-e-configurar-um-servidor-git-remoto---)
+- [COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO  ➚ ](#como-instalar-e-configurar-um-servidor-git-remoto---)
   - [INTRODUÇÃO](#introdução)
   - [INSTALANDO SERVIDOR _GIT_ E SERVIDOR _SSH_ NO DEBIAN OU DERIVADOS](#instalando-servidor-git-e-servidor-ssh-no-debian-ou-derivados)
   - [CONFIGURAÇÕES DO REPOSITÓRIO NO SERVIDOR](#configurações-do-repositório-no-servidor)
@@ -442,4 +445,5 @@
    
    ```
 
-
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>
