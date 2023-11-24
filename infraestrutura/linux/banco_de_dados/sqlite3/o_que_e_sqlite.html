@@ -5,25 +5,33 @@
         <title>O que &eacute; banco de dados sqLite&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;sqlite&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <!-- CSS do menu-->
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
+        
         <!-- CSS markdown  -->
         <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
-            
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
+
+
+        <!-- Scripts da página -->
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>  
 
 
     </head>
     <body class="vscode-body vscode-dark">
-        <p><span id="topo"><span></p>
+        <!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<p><span id="topo"><span></p>
 <h1 id="o-que-é-banco-de-dados-sqlite---">O que é banco de dados sqLite<a href="o_que_e_sqlite.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
 <h2 id="1-index"><strong>1. INDEX</strong></h2>
-<hr>
 <ol>
-<li>
-<p><a href="#id_resumo">Resumo do conteúdo</a></p>
-</li>
-<li>
-<p><strong>Introdução</strong></p>
+<li><a href="#id_resumo">Resumo do conteúdo</a></li>
+<li><strong>Introdução</strong>
 <ol>
 <li><a href="#id_objetivo">Objetivo.</a></li>
 <li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
@@ -31,33 +39,27 @@
 <li><a href="#id_desvantagens">Desvantagens.</a></li>
 </ol>
 </li>
-<li>
-<p><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a></p>
+<li><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a>
 <ol>
 <li><a href="#id_assunto01">Como instalar no Linux</a></li>
 <li><a href="#id_assunto02">Como conectar-se ao banco de dados SQLite</a></li>
 <li><a href="#id_assunto03">Lista de comandos do cliente sqlite3</a></li>
 </ol>
-<!-- 4. [Assunto 04](#id_assunto04)
-5. [Assunto 05](#id_assunto05)
-6. [Assunto 06](#id_assunto06)
-7. [Assunto 07](#id_assunto07)
-8. [Assunto 08](#id_assunto08)
-9. [Assunto 09](#id_assunto09)
-10. [Assunto 10](#id_assunto10) -->
+ <!-- 4. [Assunto 04](#id_assunto04)
+ 4. [Assunto 05](#id_assunto05)
+ 5. [Assunto 06](#id_assunto06)
+ 6. [Assunto 07](#id_assunto07)
+ 7. [Assunto 08](#id_assunto08)
+ 8. [Assunto 09](#id_assunto09)
+ 9.  [Assunto 10](#id_assunto10) -->
 </li>
-<li>
-<p><a href="#id_referencias"><strong>Referências globais.</strong></a></p>
-</li>
-<li>
-<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
-</li>
+<li><a href="#id_referencias"><strong>Referências globais.</strong></a></li>
+<li><a href="#id_historico"><strong>Histórico.</strong></a></li>
 </ol>
-<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
-<hr>
+<h2 id="2-conteúdo">2. CONTEÚDO</h2>
 <ol>
 <li>
-<p><span id="id_resumo"><span><strong>Resumo do conteúdo:</strong></p>
+<p>Resumo do conteúdo:<span id="id_resumo"><span></p>
 <ol>
 <li>Descreve um resumo de como foi feito esse documento com as facilidade encontradas para produzi-lo e dificuldade encontrada.</li>
 </ol>
@@ -68,51 +70,28 @@
 <li>
 <p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
 <ol>
-<li>
-<p><a href="https://www.sqlite.org/index.html">SQLite</a> é uma biblioteca de linguagem C que implementa um mecanismo de banco de dados SQL pequeno, rápido, independente, de alta confiabilidade e com todos os recursos. <strong>SQLite</strong> é o mecanismo de banco de dados mais usado no mundo. O <strong>SQLite</strong> está embutido em todos os telefones celulares e na maioria dos computadores e vem dentro de inúmeros outros aplicativos que as pessoas usam todos os dias.</p>
-</li>
-<li>
-<p><a href="https://www.sqlite.org/about.html">Sobre o SQLite</a></p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
+<li><a href="https://www.sqlite.org/index.html">SQLite</a> é uma biblioteca de linguagem C que implementa um mecanismo de banco de dados SQL pequeno, rápido, independente, de alta confiabilidade e com todos os recursos. <strong>SQLite</strong> é o mecanismo de banco de dados mais usado no mundo. O <strong>SQLite</strong> está embutido em todos os telefones celulares e na maioria dos computadores e vem dentro de inúmeros outros aplicativos que as pessoas usam todos os dias.</li>
+<li><a href="https://www.sqlite.org/about.html">Sobre o SQLite</a></li>
+<li><text onclick="goBack()">[🔙]</text></li>
 </ol>
 </li>
 <li>
 <p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
 <ol>
-<li>
-<p>Linguagem MySql;</p>
-</li>
-<li>
-<p>Saber como instalar pacotes no sistema operacional Linux;</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
+<li>Linguagem MySql;</li>
+<li>Saber como instalar pacotes no sistema operacional Linux;</li>
+<li><text onclick="goBack()">[🔙]</text></li>
 </ol>
 </li>
 <li>
 <p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
 <ol>
-<li>
-<p>Quando você tem a exigência de ler e escrever direto da unidade de armazenamento.</p>
-</li>
-<li>
-<p>Facilidade de distribuição do aplicativo porque o pacote é distribuído na mesma pasta do aplicativo;</p>
-</li>
-<li>
-<p>Linguagem SQL permite geração de consultas complexas com relativa facilidade;</p>
-</li>
-<li>
-<p>Todos os celulares do mundo tem o sqlite instalado;</p>
-</li>
-<li>
-<p>O banco de dados SqLite é um arquivo único permitindo backup com facilidade;</p>
-</li>
-<li>
-<p>Como a aplicação usa SQL, a mesma pode ser adaptada facilmente para outros bancos de dados cliente-servidor, desde que não use nada específico de algum banco de dados em particular.</p>
+<li>Quando você tem a exigência de ler e escrever direto da unidade de armazenamento.</li>
+<li>Facilidade de distribuição do aplicativo porque o pacote é distribuído na mesma pasta do aplicativo;</li>
+<li>Linguagem SQL permite geração de consultas complexas com relativa facilidade;</li>
+<li>Todos os celulares do mundo tem o sqlite instalado;</li>
+<li>O banco de dados SqLite é um arquivo único permitindo backup com facilidade;</li>
+<li>Como a aplicação usa SQL, a mesma pode ser adaptada facilmente para outros bancos de dados cliente-servidor, desde que não use nada específico de algum banco de dados em particular.
 <ol>
 <li>Exemplo:
 <ol>
@@ -122,29 +101,17 @@
 </li>
 </ol>
 </li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
+<li><text onclick="goBack()">[🔙]</text></li>
 </ol>
 </li>
 <li>
 <p><span id="id_desvantagens"></span><strong>Desvantagens</strong>.</p>
 <ol>
-<li>
-<p>Não permite controle de usuários, por isso é criado para acesso de único usuário;</p>
-</li>
-<li>
-<p>A SQLite não tem um mecanismo de autenticação integrado. Os arquivos da base de dados podem ser acessados por qualquer um;</p>
-</li>
-<li>
-<p>Não é facilmente escalável;</p>
-</li>
-<li>
-<p>Não é adequada para grandes bases de dados;</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
+<li>Não permite controle de usuários, por isso é criado para acesso de único usuário;</li>
+<li>A SQLite não tem um mecanismo de autenticação integrado. Os arquivos da base de dados podem ser acessados por qualquer um;</li>
+<li>Não é facilmente escalável;</li>
+<li>Não é adequada para grandes bases de dados;</li>
+<li><text onclick="goBack()">[🔙]</text></li>
 </ol>
 </li>
 </ol>
@@ -213,8 +180,7 @@
 <li><strong>NOTAS</strong>
 <ol>
 <li>Para ver todos as opções do cliente <strong>sqlite3</strong> escreva <strong>.help</strong></li>
-<li>Caso o comando <strong>CREATE TABLE</strong> não seja executado o banco de dados não será
-criado porque não existe tabela dentro dele.</li>
+<li>Caso o comando <strong>CREATE TABLE</strong> não seja executado o banco de dados não será criado porque não existe tabela dentro dele.</li>
 </ol>
 </li>
 </ol>
@@ -589,212 +555,11 @@ criado porque não existe tabela dentro dele.</li>
 </ol>
 </li>
 </ol>
-<!-- 4. <span id=id_assunto04></span>**Assunto 04**
-   1. Descrição do conteúdo.
-   2. **Exemplo do assunto 04**.
-      1. Descrição do exemplo
-<pre><code class="hljs">     ```ts
-     ```
-</code></pre>
-<ol start="3">
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-<li>
-<p><span id=id_assunto05></span><strong>Assunto 05</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 05</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto06></span><strong>Assunto 06</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 06</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto07></span><strong>Assunto 07</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 07</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto08></span><strong>Assunto 08</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 08</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto09></span><strong>Assunto 09</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 09</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto10></span><strong>Assunto 10</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 10</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text> --&gt;</p>
-</li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
 </li>
 <li>
 <p><span id=id_referencias></span><strong>REFERÊNCIAS GLOBAIS</strong></p>
 <ol>
-<li>
-<p><a href="#1">Site oficial para produzir este documento</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
+<li><a href="#1">Site oficial para produzir este documento</a></li>
 </ol>
 </li>
 <li>
@@ -809,46 +574,26 @@ criado porque não existe tabela dentro dele.</li>
 <li>
 <p>dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
 <ul class="contains-task-list">
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Criar este documento baseado no <a href="http://modelo03.html">modelo03.md</a> ;</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Objetivos;</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Pre-requisitos</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Benefícios</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico desvantagens</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Exemplos</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Criar este documento baseado no <a href="http://modelo03.html">modelo03.md</a> ;</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Objetivos;</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Pre-requisitos</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Benefícios</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico desvantagens</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Exemplos</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</li>
+<li><text onclick="goBack()">[🔙]</text></li>
 </ul>
 </li>
 </ol>
 </li>
 </ol>
 <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
- <script>    function goBack() {    window.history.back()}</script>
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
         
         

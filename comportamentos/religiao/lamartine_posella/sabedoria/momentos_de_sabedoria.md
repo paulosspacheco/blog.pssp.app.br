@@ -1,3 +1,8 @@
+<!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Síntese do Vídeo [SABEDORIA PARA ALCANÇAR A GRANDEZA | Palavras de Deus | Lamartine Posella](https://www.youtube.com/watch?v=6WhYOiSSq9o)
 
  1. Elimine tudo aquilo que é perda de tempo ou distração na tua vida.
@@ -57,3 +62,7 @@
 ## Referência
 
 - [SABEDORIA PARA ALCANÇAR A GRANDEZA | Palavras de Deus | Lamartine Posella](https://www.youtube.com/watch?v=6WhYOiSSq9o) em 28/12/2021.
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>
+[🔝🔝](#topo "Retorna ao topo")

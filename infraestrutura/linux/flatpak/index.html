@@ -13,12 +13,16 @@
   <meta name="keywords" content="flatpak,linux,aplicativo">
   <meta name="description"  content="Flatpak é uma forma de distribuir software linux, equivalente ao .deb, com a diferença de que pode ser instalado em todas as distribuições linux.">
 
-  <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />
 
-  <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet">
-
-  <script type="application/x-javascript" src="../../../js/generic.js"></script>
-  <script type="application/x-javascript" src="../../../js/tgeneric.js"></script>
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
 </head>
 
 
@@ -26,10 +30,11 @@
 
   
   <!-- Menu de opções  -->
-  <div class="topnav" id="myTopnav"> &gt;
-    <script type="text/javascript" src="../../../js/menu/index.js"></script>
-   
-  </div>
+  <nav>
+    <div class="topnav" id="myTopnav">
+      <div w3-include-html="/menu.inc"></div>
+    </div>
+  </nav>
 
 <!-- <div w3-include-html="../../../js/title.inc"> </div> -->
 <div class="title">
@@ -807,8 +812,7 @@ RuntimeRepo = https://dl.flathub.org/repo/flathub.flatpakrepo
         </ol>
       </div>
     </div>
-<!--<script type="application/x-javascript" src="../../js/treeview_xhtml.js"></script> -->
-<script type="application/x-javascript" src="../../../js/treeview_xhtml.js"></script>
+
 
 <!-- RODAPÉ DA PÁGINA  -->
 <div class="footer">

@@ -1,3 +1,8 @@
+<!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Banco de dados mysql no Linux <a href="teoria_mysql.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
 
 ## OBJETIVOS
@@ -14,6 +19,7 @@
 ## REFERÊNCIAS
 
    1. [comandos-avancados-para-controle-de-transacao-mysql](https://marcosmuniz.com.br/desenvolvimento-web/mysql/3-comandos-avancados-para-controle-de-transacao-mysql/).
+   2. [Apostila SQL](./apostila_sql.pdf)
 
 ## EXEMPLOS DE USO
 
@@ -25,3 +31,7 @@
   - [ ] Escrever o documento configuracao.md
   - [ ] Escrever a sessão exemplos de uso do banco de dados mysql
   - [ ] .
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>
+[🔝🔝](#topo "Retorna ao topo")

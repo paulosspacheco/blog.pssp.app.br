@@ -14,22 +14,24 @@
     <meta name="description" content="Rust é uma linguagem compilada concorrente do c++">
     <meta name="keywords" content="template,html,javascript,css">
 
-    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        rel="stylesheet">
-    <link type="text/css" href="../../css/defaulttheme.css" rel="stylesheet">
-
-    <script type="application/x-javascript" src="../../js/generic.js"></script>
-    <script type="application/x-javascript" src="../../js/tgeneric.js"></script>
-
+    <!-- CSS do menu-->
+    <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
+    <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/>         
+    
+    <!-- Scripts da página -->
+    <script type="application/x-javascript" src="/js/generic.js"></script>
+    <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+    <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>
+            
 </head>
 
 <body onmouseover="generic.display()">
 
     <!-- Menu de opções -->
-    <div class="topnav" id="myTopnav">
-        <script type="application/x-javascript" src="../../js/menu/index.js"> </script>
-    </div>
-
+    <nav>
+       <div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+    </nav>
+                
     
     <!-- <div w3-include-html="../../js/title.inc"> </div> -->
     <div class="title">
@@ -76,110 +78,9 @@
                 </ol>
             </li>
 
-            <li>
-                <span class="rootTree"></span>
-                <b><a id="div3">div 3</a></b>
-                <ol>
-                    <div class="children">
-                        <ol>
-                            <li>item div 2</li>
-                            <li>..</li>
-                        </ol>
-                    </div>
-                </ol>
-            </li>
 
-            <li>
-                <span class="rootTree"></span>
-                <b><a id="div4">div 4</a></b>
-                <ol>
-                    <div class="children">
-                        <ol>
-                            <li>item div 4</li>
-                            <li>..</li>
-                        </ol>
-                    </div>
-                </ol>
-            </li>
 
-            <li>
-                <span class="rootTree"></span>
-                <b><a id="div5">div 5</a></b>
-                <ol>
-                    <div class="children">
-                        <ol>
-                            <li>item div 5</li>
-                            <li>..</li>
-                        </ol>
-                    </div>
-                </ol>
-            </li>
-
-            <li>
-                <span class="rootTree"></span>
-                <b><a id="div6">div 6</a></b>
-                <ol>
-                    <div class="children">
-                        <ol>
-                            <li>item div 6</li>
-                            <li>..</li>
-                        </ol>
-                    </div>
-                </ol>
-            </li>
-
-            <li>
-                <span class="rootTree"></span>
-                <b><a id="div7">div 7</a></b>
-                <ol>
-                    <div class="children">
-                        <ol>
-                            <li>item div 7</li>
-                            <li>..</li>
-                        </ol>
-                    </div>
-                </ol>
-            </li>
-
-            <li>
-                <span class="rootTree"></span>
-                <b><a id="div8">div 8</a></b>
-                <ol>
-                    <div class="children">
-                        <ol>
-                            <li>item div 8</li>
-                            <li>..</li>
-                        </ol>
-                    </div>
-                </ol>
-            </li>
-
-            <li>
-                <span class="rootTree"></span>
-                <b><a id="div9">div 9</a></b>
-                <ol>
-                    <div class="children">
-                        <ol>
-                            <li>item div 9</li>
-                            <li>..</li>
-                        </ol>
-                    </div>
-                </ol>
-            </li>
-
-            <li>
-                <span class="rootTree"></span>
-                <b><a id="div10">DIV 10</a></b>
-                <ol>
-                    <div class="children">
-                        <ol>
-                            <li>item div 10</li>
-                            <li>..</li>
-                        </ol>
-                    </div>
-                </ol>
-            </li>
-
+ 
 
 
         </ol>
@@ -198,23 +99,11 @@
             <ol>
                 <li><a href="https://www.rust-lang.org/pt-BR" target="_blank">Site oficial da linguagem.</a></li>
                 <li><a href="https://medium.com/swlh/rust-cross-platform-mobile-development-9117a67ac9b7" target="_blank">Rust e desenvolvimento móvel multiplataforma.</a></li>
-                <li><a href="#" target="_blank">..</a></li>
-                <li><a href="#" target="_blank">..</a></li>
-                <li><a href="#" target="_blank">..</a></li>
-                <li><a href="#" target="_blank">..</a></li>
-                <li><a href="#" target="_blank">..</a></li>
-                <li><a href="#" target="_blank">..</a></li>
-                <li><a href="#" target="_blank">..</a></li>
-                <li><a href="#" target="_blank">..</a></li>
-                <li><a href="#" target="_blank">..</a></li>
-                <li><a href="#" target="_blank">..</a></li>
             </ol>
         </div>
 
     </div>
 
-    <!--<script type="application/x-javascript" src="../../js/treeview_xhtml.js"></script> -->
-    <script type="application/x-javascript" src="../../js/treeview_xhtml.js"></script>
 
     <!-- RODAPÉ DA PÁGINA  -->
     <div class="footer">

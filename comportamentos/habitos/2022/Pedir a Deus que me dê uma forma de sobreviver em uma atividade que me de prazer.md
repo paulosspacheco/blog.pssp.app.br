@@ -1,8 +1,13 @@
+<!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Pedir a Deus que me dê uma forma de sobreviver em uma atividade que me dê prazer
 
 - **O que me da prazer**?
   - Programar computador;
-  - Resolver problema difíceis de serem resolvidos;
+  - Resolver problemas difíceis de serem resolvidos;
   - Conversar com pessoas inteligentes;
   - Comprar o que preciso sem me preocupar com dinheiro, por isso preciso ganhar mais do que preciso para ter reservas.
 
@@ -16,3 +21,7 @@
 
 - Como ganhar mais do que preciso em tarefas que me dá prazer?
   - ..
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>
+[🔝🔝](#topo "Retorna ao topo")

@@ -1,37 +1,34 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
+    <html>
     <head>
         <meta charset="UTF-8">
         <title>Estudo da linguagem JSON</title>
-        <style>
-</style>
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-<style>
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-                font-size: 14px;
-                line-height: 1.6;
-            }
-        </style>
-        <style>
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
-</style>
-        
-        
-        
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
+        <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/>
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>   
+
+
     </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="estudo-da-linguagem-json">Estudo da linguagem JSON</h1>
+    <body class="vscode-body vscode-dark">
+        <!-- markdownlint-disable-next-line -->
+<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav> 
+<h1 id="estudo-da-linguagem-json">Estudo da linguagem JSON</h1>
 <h2 id="objetivo-do-json">Objetivo do json</h2>
 <ol>
 <li>JSON (JavaScript Object Notation) é um formato de intercâmbio de dados leve. É fácil para humanos ler e escrever. É fácil para as máquinas analisar e gerar. É baseado em um subconjunto do Padrão de Linguagem de Programação JavaScript ECMA-262 3ª Edição - dezembro de 1999 . JSON é um formato de texto totalmente independente da linguagem, mas usa convenções familiares aos programadores da família C de linguagens, incluindo C, C ++, C #, Java, JavaScript, Perl, Python e muitos outros. Essas propriedades tornam o JSON uma linguagem de intercâmbio de dados ideal. <a href="https://www.json.org/json-en.html">Veja mais...</a></li>
 </ol>
 <h2 id="tipos-de-dados-sintaxe-e-exemplos">Tipos de dados, sintaxe e exemplos</h2>
 <ol>
-<li>
-<p>Os tipos de dados básicos do JSON são:</p>
+<li>Os tipos de dados básicos do JSON são:
 <ol>
 <li><strong>Number</strong>: um número que pode ter sinal, uma parte fracionária separada por um ponto (. , como é usual em alguns países) e eventualmente usar a notação E exponencial, mas não pode incluir não-números como NaN. Não há distinção entre inteiros e números de ponto flutuante, refletindo o fato de que o JavaScript armazena qualquer número como ponto flutuante de dupla precisão, mas outras linguagens que implementem JSON podem ter diferenças na representação dos números.</li>
 <li><strong>String</strong>: uma cadeia de zero ou mais caracteres Unicode. Strings são delimitados por aspas duplas (&quot;) e suportam a barra inversa () como caractere de escape. obs: Parecido com as string da linguagem c.</li>
@@ -41,46 +38,42 @@
 <li><strong>null</strong>: Valor vazio ou nulo (não confundir com o zero) representado pela palavra null.</li>
 </ol>
 </li>
-<li>
-<p><strong>Espaços em branco</strong> são permitidos com limites e ignorados em volta e entre elementos sintáticos, mas não dentro de um string. Só quatro caracteres são tratados assim: o <strong>espaço</strong>, a <strong>tabulação horizontal(TAB)</strong>, o <strong>line feed(LF)</strong> e o <strong>carriage return(CR</strong>). Em particular, a marca de ordem de byte não deve aparecer em um documento JSON conforme o padrão. JSON não tem uma sintaxe para comentários. Para troca de dados em um ecossistema aberto, JSON deve estar <em>codificado em UTF-8</em>.</p>
-</li>
-<li>
-<p>Quando se trabalha com <em>json</em> é importante na sessão <em>&lt;head&gt;&lt;/head&gt;</em> a tag: <em>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</em></p>
-</li>
+<li><strong>Espaços em branco</strong> são permitidos com limites e ignorados em volta e entre elementos sintáticos, mas não dentro de um string. Só quatro caracteres são tratados assim: o <strong>espaço</strong>, a <strong>tabulação horizontal(TAB)</strong>, o <strong>line feed(LF)</strong> e o <strong>carriage return(CR</strong>). Em particular, a marca de ordem de byte não deve aparecer em um documento JSON conforme o padrão. JSON não tem uma sintaxe para comentários. Para troca de dados em um ecossistema aberto, JSON deve estar <em>codificado em UTF-8</em>.</li>
+<li>Quando se trabalha com <em>json</em> é importante na sessão <em>&lt;head&gt;&lt;/head&gt;</em> a tag: <em>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</em></li>
 </ol>
 <h3 id="exemplo-de-um-objeto-e-uma-matriz-em-json">Exemplo de um objeto e uma matriz em json</h3>
-<pre><code class="language-json"><div>
+<pre><code class="hljs language-json">
 <span class="hljs-comment">// Um objeto</span>
 {
-    <span class="hljs-attr">&quot;Clientes&quot;</span>: {
-        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-attr">&quot;nome&quot;</span>: <span class="hljs-string">&quot;Paulo Sérgio da Silva Pacheco&quot;</span>,
-        <span class="hljs-attr">&quot;rua&quot;</span>: <span class="hljs-string">&quot;Rua Francisco oliveira de Souza&quot;</span>,
-        <span class="hljs-attr">&quot;numero&quot;</span>: <span class="hljs-number">15</span>,
-        <span class="hljs-attr">&quot;bairro&quot;</span>: <span class="hljs-string">&quot;Icarai&quot;</span>,
-        <span class="hljs-attr">&quot;municipio&quot;</span>: <span class="hljs-string">&quot;caucaia&quot;</span>,
-        <span class="hljs-attr">&quot;estado&quot;</span>: <span class="hljs-string">&quot;ceara&quot;</span>
+    <span class="hljs-attr">"Clientes"</span>: {
+        <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"nome"</span>: <span class="hljs-string">"Paulo Sérgio da Silva Pacheco"</span>,
+        <span class="hljs-attr">"rua"</span>: <span class="hljs-string">"Rua Francisco oliveira de Souza"</span>,
+        <span class="hljs-attr">"numero"</span>: <span class="hljs-number">15</span>,
+        <span class="hljs-attr">"bairro"</span>: <span class="hljs-string">"Icarai"</span>,
+        <span class="hljs-attr">"municipio"</span>: <span class="hljs-string">"caucaia"</span>,
+        <span class="hljs-attr">"estado"</span>: <span class="hljs-string">"ceara"</span>
     }
 }
 
 <span class="hljs-comment">// Uma matriz </span>
 {
-    <span class="hljs-attr">&quot;usuarios &quot;</span>: [
+    <span class="hljs-attr">"usuarios "</span>: [
         {
-            <span class="hljs-attr">&quot;nome&quot;</span>: <span class="hljs-string">&quot;primeiro nome&quot;</span>,
-            <span class="hljs-attr">&quot;site&quot;</span>: <span class="hljs-string">&quot;www.primeirousuario.com.br&quot;</span>,
-            <span class="hljs-attr">&quot;usuario_id&quot;</span>: <span class="hljs-number">1</span>
+            <span class="hljs-attr">"nome"</span>: <span class="hljs-string">"primeiro nome"</span>,
+            <span class="hljs-attr">"site"</span>: <span class="hljs-string">"www.primeirousuario.com.br"</span>,
+            <span class="hljs-attr">"usuario_id"</span>: <span class="hljs-number">1</span>
         },
         {
-            <span class="hljs-attr">&quot;nome&quot;</span>: <span class="hljs-string">&quot;segundo nome&quot;</span>,
-            <span class="hljs-attr">&quot;site&quot;</span>: <span class="hljs-string">&quot;www.segundousuario.com.br&quot;</span>,
-            <span class="hljs-attr">&quot;usuario_id&quot;</span>: <span class="hljs-number">1</span>
+            <span class="hljs-attr">"nome"</span>: <span class="hljs-string">"segundo nome"</span>,
+            <span class="hljs-attr">"site"</span>: <span class="hljs-string">"www.segundousuario.com.br"</span>,
+            <span class="hljs-attr">"usuario_id"</span>: <span class="hljs-number">1</span>
         }
     ]
 }
 
 
-</div></code></pre>
+</code></pre>
 <h2 id="referências">REFERÊNCIAS</h2>
 <ol>
 <li><a href="https://www.json.org/json-en.html">Introducing JSON</a></li>
@@ -88,14 +81,17 @@
 </ol>
 <h2 id="histórico">HISTÓRICO</h2>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar este documento com nome do arquivo <a href="http://json.html">json.md</a></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Procurar site oficial da linguagem json e criar resumo e um link para o mesmo.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar um exemplo de um objeto json e uma matriz json.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar a sessão tipos de dados, sintaxe e exemplos.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar a sessão referências e adicionar as referências na produção deste documento.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar a página json/index.html</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Criar opção no menu/index.js para acessar a página json/index.html</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar este documento com nome do arquivo <a href="json.html">json.md</a></li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Procurar site oficial da linguagem json e criar resumo e um link para o mesmo.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar um exemplo de um objeto json e uma matriz json.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar a sessão tipos de dados, sintaxe e exemplos.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar a sessão referências e adicionar as referências na produção deste documento.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar a página json/index.html</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar opção no menu/index.js para acessar a página json/index.html</li>
 </ul>
-
-     </body>
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>      
+        
+        
+    </body>
     </html>

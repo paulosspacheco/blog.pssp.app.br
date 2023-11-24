@@ -12,21 +12,24 @@
   <meta name="description" content="Anotações que fiz ao estudar a linguagem html " />
   <meta name="keywords" content="template,html,javascript,css,linguagem" />
 
-  <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"  rel="stylesheet" />
+  <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <link type="text/css" href="../../css/defaulttheme.css" rel="stylesheet" />
 
   <script type="application/x-javascript" src="../../js/generic.js"></script>
   <script type="application/x-javascript" src="../../js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
 </head>
 
 <body onmouseover="generic.display()">
-  <!-- Menu de opções -->
-  <div class="topnav" id="myTopnav">
-    <script type="application/x-javascript" src="/js/menu/index.js"></script>
-    <!-- input tag -->
-    <div w3-include-html="/js/search_children.inc"></div>
-  </div>
-  
+  <nav>
+    <div class="topnav" id="myTopnav">
+      <div w3-include-html="/menu.inc"></div>
+    </div>
+  </nav>
 
   <!-- <div w3-include-html="../../js/title.inc"></div> -->
   <div class="title">
@@ -46,8 +49,7 @@
             <ol>
               <li>
                 Objetivo deste documento é registrar minhas anotações de
-                estudo da linguagem
-                <b>JavaScript.</b>
+                estudo da linguagem <b>HTML.</b>
               </li>
               <li>..</li>
             </ol>
@@ -200,17 +202,25 @@
             compactar o html</a>.
         </li>
         <li>
-          <a href="https://webdesign.tutsplus.com/pt/tutorials/native-popups-and-modals-with-the-html5-dialog-element--cms-23876"
-            target="_blank">Este site mostra como usar dialogs modal em html5.
+          <a href="https://webdesign.tutsplus.com/pt/tutorials/native-popups-and-modals-with-the-html5-dialog-element--cms-23876" target="_blank">Este site mostra como usar dialogs modal em html5.
           </a>
         </li>
+        <li>
+          <a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank">Boa práticas de codificação criadas pelo Google</a>
+        </li>
+
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/CSS" target="_blank">Boa práticas de codificação criadas pela Mozilla</a>
+        </li>
+        <li>
+          <a href="https://www.devmedia.com.br/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205" target="_blank">Menu em CSS - Menu dropdown horizontal com HTML5 e CSS3</a>
+        </li>
+
+
       </ol>
     </div>
   </div>
 
-
-  <!--<script type="application/x-javascript" src="../../js/treeview_xhtml.js"></script> -->
-  <script type="application/x-javascript" src="../../js/treeview_xhtml.js"></script>
 
   <!-- RODAPÉ DA PÁGINA  -->
   <div class="footer">
@@ -221,6 +231,6 @@
   <script>
     includeHTML();
   </script>
- </body>
+</body>
 
 </html>

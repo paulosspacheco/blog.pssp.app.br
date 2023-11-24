@@ -10,23 +10,25 @@
   <meta name="createDateUpdate" content="12/04/2023" />
   <meta name="description" content="Esta página servir de modelo para pssp.app.br" />
   <meta name="keywords" content="template,html,javascript,css" />
-  <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-  <link type="text/css" href="../../../css/defaulttheme.css" rel="stylesheet" />
-  <script type="text/javascript" src="../../../js/generic.js"></script>
-  <script type="text/javascript" src="../../../js/tgeneric.js"></script>
-  <script type="text/javascript" src="../../../js/tincludehtml.js" defer="defer"></script> 
+
+  <!-- CSS do menu-->
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
+
+  <!-- CSS markdown  -->
+  <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/>
+
+  <!-- Scripts da página -->
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>
+                       
 </head>
 
 <body onmouseover="generic.display()">
 
   <!-- Menu de opções -->
-  <div class="topnav" id="myTopnav">
-    <script type="text/javascript" src="../../../js/menu/index.js"></script>
-  </div>
 
-  <!-- title 
-  <div w3-include-html="../../../js/title.inc"></div>   -->
- 
+  <div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>         
 
   <div class="title">
     <script>
@@ -168,8 +170,6 @@
   </div>
   
 
-  <!-- PROGRAMA PARA MINIMIZAR E MÁXIMIZAR O TÓPICO-->
-  <script type="text/javascript" src="../../../js/treeview_xhtml.js"></script>
 
   <!-- RODAPÉ DA PÁGINA  -->
   <div class="footer">    

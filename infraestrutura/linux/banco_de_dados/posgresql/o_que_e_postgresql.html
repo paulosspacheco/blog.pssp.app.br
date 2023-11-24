@@ -3,26 +3,36 @@
     <head>
         <meta charset="UTF-8">
         <title>O que &eacute; banco de dados postgresql&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;postgresql&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-
+       
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <!-- CSS markdown  -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
-            
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+
         <!-- CSS da página /index.html -->
         <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
 
+        <!-- CSS markdown  -->
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+            
+        
+        <!-- Scripts da página -->
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>  
+
+
     </head>
     <body class="vscode-body vscode-dark">
-        <p><span id="topo"><span></p>
+        <!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
 <h1 id="o-que-é-banco-de-dados-postgresql---">O que é banco de dados postgresql<a href="o_que_e_postgresql.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
 <h2 id="1-index"><strong>1. INDEX</strong></h2>
 <hr>
 <ol>
-<li>
-<p><a href="#id_resumo">Resumo do conteúdo</a></p>
-</li>
-<li>
-<p><strong>Introdução</strong></p>
+<li><a href="#id_resumo">Resumo do conteúdo</a></li>
+<li><strong>Introdução</strong>
 <ol>
 <li><a href="#id_objetivo">Objetivo.</a></li>
 <li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
@@ -30,27 +40,14 @@
 <li><a href="#id_desvantagens">Desvantagens.</a></li>
 </ol>
 </li>
-<li>
-<p><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a></p>
+<li><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a>
 <ol>
 <li><a href="#id_assunto01">Instalar no linux Mint - Versão debian 10.</a></li>
 <li><a href="#id_assunto02">Aplicativos Clientes disponível do shell do linux</a></li>
-<li><a href="#id_assunto03">Assunto 03</a></li>
-<li><a href="#id_assunto04">Assunto 04</a></li>
-<li><a href="#id_assunto05">Assunto 05</a></li>
-<li><a href="#id_assunto06">Assunto 06</a></li>
-<li><a href="#id_assunto07">Assunto 07</a></li>
-<li><a href="#id_assunto08">Assunto 08</a></li>
-<li><a href="#id_assunto09">Assunto 09</a></li>
-<li><a href="#id_assunto10">Assunto 10</a></li>
 </ol>
 </li>
-<li>
-<p><a href="#id_referencias"><strong>Referências globais.</strong></a></p>
-</li>
-<li>
-<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
-</li>
+<li><a href="#id_referencias"><strong>Referências globais.</strong></a></li>
+<li><a href="#id_historico"><strong>Histórico.</strong></a></li>
 </ol>
 <h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
 <hr>
@@ -71,60 +68,34 @@
 <li>
 <p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
 <ol>
-<li>
-<p>O PostgreSQL é um banco de dados livre criado pela Universidade da Califórnia em Berkeley e tem mais de 30 anos de desenvolvimento ativo.</p>
-</li>
-<li>
-<p>Sua licença é mais flexível do que a licença do mysql porque o mysql é da Oracle e o PostgreSQL é da comunidade.</p>
-</li>
-<li>
-<p>O mysql por ter sua licença restritiva a comunidade criou o MariaDB e com ele veio as incompatibilidades do projetos existentes. O Lazarus não consegue conectar-se ao mariaDB e por isso estou estudando o PostgreSQL.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
+<li>O PostgreSQL é um banco de dados livre criado pela Universidade da Califórnia em Berkeley e tem mais de 30 anos de desenvolvimento ativo.</li>
+<li>Sua licença é mais flexível do que a licença do mysql porque o mysql é da Oracle e o PostgreSQL é da comunidade.</li>
+<li>O mysql por ter sua licença restritiva a comunidade criou o MariaDB e com ele veio as incompatibilidades do projetos existentes. O Lazarus não consegue conectar-se ao mariaDB e por isso estou estudando o PostgreSQL.</li>
+<li><text onclick="goBack()">[🔙]</text></li>
 </ol>
 </li>
 <li>
-<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
+<p><strong>Pre-requisitos:</strong><span id="id_pre_requisitos"></span></p>
 <ol>
-<li>
-<p>Linguagem sql</p>
-</li>
-<li>
-<p>sistema operacional linux.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
+<li>Linguagem sql</li>
+<li>sistema operacional linux.</li>
+<li><text onclick="goBack()">[🔙]</text></li>
 </ol>
 </li>
 <li>
-<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
+<p><span id="id_beneficios"></span>
+<strong>Benefícios:</strong></p>
 <ol>
-<li>
-<p>Banco de dados cliente servidor, robusto, escalável e sua licença é BSD.</p>
-</li>
-<li>
-<p>.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
+<li>Banco de dados cliente servidor, robusto, escalável e sua licença é BSD.</li>
+<li><text onclick="goBack()">[🔙]</text></li>
 </ol>
 </li>
 <li>
 <p><span id="id_desvantagens"></span><strong>Desvantagens</strong>.</p>
 <ol>
-<li>
-<p>Não vi desvantagem em relação ao mysql.</p>
-</li>
-<li>
-<p>Para uma aplicação mono-usuário é mais difícil de instalar e configurar. O SqLite á mais indicado para essa tarefa.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
+<li>Não vi desvantagem em relação ao mysql.</li>
+<li>Para uma aplicação mono-usuário é mais difícil de instalar e configurar. O SqLite á mais indicado para essa tarefa.</li>
+<li><text onclick="goBack()">[🔙]</text></li>
 </ol>
 </li>
 </ol>
@@ -133,7 +104,8 @@
 <p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
 <ol>
 <li>
-<p><span id=id_assunto01></span><strong>Instalar no linux Mint LMDE 4 - Versão Debian 10.</strong></p>
+<p><span id=id_assunto01></span>
+<strong>Instalar no linux Mint LMDE 4 - Versão Debian 10.</strong></p>
 <ol>
 <li>
 <p>Código ShellScript</p>
@@ -173,15 +145,14 @@
   <span class="hljs-comment"># Executar psql estando dentro do usuário corrente.</span>
   psql -Upostgres -hlocalhost
 
-   
+ 
 
 </code></pre>
 </li>
 <li>
 <p><strong>NOTAS</strong></p>
 <ol>
-<li>
-<p>Dados para conexão com banco de de dados postgres</p>
+<li>Dados para conexão com banco de de dados postgres
 <ol>
 <li><strong>DataBaseName</strong> : postgres</li>
 <li><strong>HostName</strong> : 127.0.0.1  # Obs: a porta 5432 não precisa informar no Lazarus quando for máquina local.</li>
@@ -189,8 +160,7 @@
 <li><strong>Password</strong> : masterkey</li>
 </ol>
 </li>
-<li>
-<p>A versão Linux Mint LMDE 4 Debian cria os arquivos de configurações na pasta: <strong>/etc/postgresql/11/main</strong></p>
+<li>A versão Linux Mint LMDE 4 Debian cria os arquivos de configurações na pasta: <strong>/etc/postgresql/11/main</strong>
 <ol>
 <li>
 <p>A instalação cria o arquivo <strong>/etc/postgresql/11/main/postgresql.conf</strong> com os parâmetros básico do postgresql.</p>
@@ -323,332 +293,27 @@ clusterdb --table foo xyzzy
 </ol>
 </li>
 <li>
-<p>**</p>
-<ol>
-<li>
-<p>Código ShellScript</p>
-<pre><code class="hljs language-sh">  <span class="hljs-comment"># Como usar?</span>
-  
-
-</code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p>**</p>
-<ol>
-<li>
-<p>Código ShellScript</p>
-<pre><code class="hljs language-sh">  <span class="hljs-comment"># Como usar?</span>
-  
-
-</code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p>**</p>
-<ol>
-<li>
-<p>Código ShellScript</p>
-<pre><code class="hljs language-sh">  <span class="hljs-comment"># Como usar?</span>
-  
-
-</code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p>**</p>
-<ol>
-<li>
-<p>Código ShellScript</p>
-<pre><code class="hljs language-sh">  <span class="hljs-comment"># Como usar?</span>
-  
-
-</code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p>**</p>
-<ol>
-<li>
-<p>Código ShellScript</p>
-<pre><code class="hljs language-sh">  <span class="hljs-comment"># Como usar?</span>
-  
-
-</code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
 <p><text onclick="goBack()">[🔙]</text></p>
 </li>
 </ol>
 </li>
-<li>
-<p><span id=id_assunto03></span><strong>Assunto 03</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 03</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
 </ol>
 </li>
 <li>
-<p><strong>Referências:</strong></p>
+<p><span id=id_referencias></span>
+<strong>REFERÊNCIAS GLOBAIS</strong></p>
 <ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto04></span><strong>Assunto 04</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 04</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto05></span><strong>Assunto 05</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 05</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto06></span><strong>Assunto 06</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 06</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto07></span><strong>Assunto 07</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 07</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto08></span><strong>Assunto 08</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 08</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto09></span><strong>Assunto 09</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 09</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto10></span><strong>Assunto 10</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 10</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_referencias></span><strong>REFERÊNCIAS GLOBAIS</strong></p>
-<ol>
-<li>
-<p><a href="https://www.postgresql.org/docs/11/index.html">Documentação do PostgreSQL 11.15</a></p>
-</li>
-<li>
-<p><a href="https://www.postgresql.org/docs/11/maintenance.html">Capítulo 24. Tarefas de manutenção de rotina do banco de dados</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
-<ol>
-<li>
-<p>dd/mm/2021 <!--TODO: HISTÓRICO --></p>
-<ul>
+<li><a href="https://www.postgresql.org/docs/11/index.html">Documentação do PostgreSQL 11.15</a></li>
+<li><a href="https://www.postgresql.org/docs/11/maintenance.html">Capítulo 24. Tarefas de manutenção de rotina do banco de dados</a></li>
 <li><text onclick="goBack()">[🔙]</text></li>
-</ul>
+</ol>
 </li>
 <li>
-<p>dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
+<p><span id="id_historico"><span>
+<strong>HISTÓRICO</strong></p>
+<ol>
+<li>dd/mm/2021 <!--TODO: HISTÓRICO --></li>
+<li>dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: -->
 <ul class="contains-task-list">
 <li class="task-list-item enabled">
 <p><input class="task-list-item-checkbox"type="checkbox"> Criar este documento baseado no <a href="http://modelo03.html">modelo03.md</a> ;</p>
@@ -690,6 +355,9 @@ clusterdb --table foo xyzzy
 </ol>
 <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
  <script>    function goBack() {    window.history.back()}</script>
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
         
         

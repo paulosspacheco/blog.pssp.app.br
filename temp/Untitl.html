@@ -1,0 +1,3635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Menu em CSS: Menu dropdown horizontal com HTML5 e CSS3</title>
+  <meta name="description" content="Neste artigo vou mostrar como criar um menu em css dropdown na posição horizontal usando a nova tag para menu, a tag nav do html5 e efeitos de CSS3." />
+
+  <meta name="robots" content="index, follow">
+  <!-- google tags -->
+  <link rel="author" href="https://plus.google.com/+devmedia/posts" />
+  <link rel="publisher" href="https://plus.google.com/+devmedia" />
+  <meta itemprop="name" content="Menu em CSS: Menu dropdown horizontal com HTML5 e CSS3" />
+  <meta itemprop="description" content="Neste artigo vou mostrar como criar um menu em css dropdown na posição horizontal usando a nova tag para menu, a tag nav do html5 e efeitos de CSS3." />
+  <!-- twitter tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Menu em CSS: Menu dropdown horizontal com HTML5 e CSS3" />
+  <meta name="twitter:description" content="Neste artigo vou mostrar como criar um menu em css dropdown na posição horizontal usando a nova tag para menu, a tag nav do html5 e efeitos de CSS3." />
+  <meta name="twitter:site" content="@DevMedia" />
+  <meta name="twitter:creator" content="@DevMedia" />
+  <meta property="twitter:image" content="http://arquivo.devmedia.com.br/cursos/imagem/curso_html5-data-attributes-como-criar-atributos-customizados-no-html_2007.jpg" />
+  <!-- facebook tags -->
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://www.devmedia.com.br/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205" />
+  <meta property="og:title" content="Menu em CSS: Menu dropdown horizontal com HTML5 e CSS3" />
+  <meta property="og:description" content="Neste artigo vou mostrar como criar um menu em css dropdown na posição horizontal usando a nova tag para menu, a tag nav do html5 e efeitos de CSS3." />
+  <meta property="og:site_name" content="DevMedia" />
+  <meta property="og:type" content="article" />
+  <meta property="fb:admins" content="devmedia.com.br" />
+  <meta property="article:author" content="https://www.facebook.com/devmedia.com.br" />
+  <meta property="og:image:secure_url" content="http://arquivo.devmedia.com.br/cursos/imagem/curso_html5-data-attributes-como-criar-atributos-customizados-no-html_2007.jpg" />
+  <meta property="og:image" content="http://arquivo.devmedia.com.br/cursos/imagem/curso_html5-data-attributes-como-criar-atributos-customizados-no-html_2007.jpg" />
+
+
+  <link rel="canonical" href="https://www.devmedia.com.br/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205">
+  <link rel="amphtml" href="https://www.devmedia.com.br/amp/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205">
+  <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="apple-mobile-web-app-title" content="Menu em CSS: Menu dropdown horizontal com HTML5 e CSS3">
+  <meta property="fb:app_id" content="264090640744017" />
+  <!-- ICON MAC -->
+  <link rel="apple-touch-icon" href="//www.devmedia.com.br/favicon.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="//www.devmedia.com.br/imagens/2013/Devmedia72x.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="//www.devmedia.com.br/imagens/2013/Devmedia114x.png" />
+  <link rel="apple-touch-icon" sizes="129x129" href="//www.devmedia.com.br/imagens/2013/Devmedia129x.png" />
+  <!-- FAVICON HTML5-->
+  <link rel="icon" href="//www.devmedia.com.br/favicon.png">
+  <!-- FAVICON IE-->
+  <link rel="icon" type="image/png" href="//www.devmedia.com.br/favicon.png">
+  <link rel="stylesheet" type="text/css" href="//www.devmedia.com.br/css/2013/devmedia-header-footer.min.css?d=75.099">
+  <link rel="stylesheet" type="text/css" href="//www.devmedia.com.br/perfil/css/preview.css?i=a75.099" media="none" onload="if(media!='all')media='all'">
+  <link rel="stylesheet" href="https://www.devmedia.com.br/css/prism/prism-dark.css" />
+  <link rel="stylesheet" href="https://www.devmedia.com.br/css/prism/prism-line-numbers.min.css" />
+
+  <Script>
+    ! function() {
+      if ("undefined" != typeof self && self.Prism && self.document) {
+        var l = "line-numbers",
+          c = /\n(?!$)/g,
+          m = function(e) {
+            var t = a(e)["white-space"];
+            if ("pre-wrap" === t || "pre-line" === t) {
+              var n = e.querySelector("code"),
+                r = e.querySelector(".line-numbers-rows"),
+                s = e.querySelector(".line-numbers-sizer"),
+                i = n.textContent.split(c);
+              s || ((s = document.createElement("span")).className = "line-numbers-sizer", n.appendChild(s)), s.style.display = "block", i.forEach(function(e, t) {
+                s.textContent = e || "\n";
+                var n = s.getBoundingClientRect().height;
+                r.children[t].style.height = n + "px"
+              }), s.textContent = "", s.style.display = "none"
+            }
+          },
+          a = function(e) {
+            return e ? window.getComputedStyle ? getComputedStyle(e) : e.currentStyle || null : null
+          };
+        window.addEventListener("resize", function() {
+          Array.prototype.forEach.call(document.querySelectorAll("pre." + l), m)
+        }), Prism.hooks.add("complete", function(e) {
+          if (e.code) {
+            var t = e.element,
+              n = t.parentNode;
+            if (n && /pre/i.test(n.nodeName) && !t.querySelector(".line-numbers-rows")) {
+              for (var r = !1, s = /(?:^|\s)line-numbers(?:\s|$)/, i = t; i; i = i.parentNode)
+                if (s.test(i.className)) {
+                  r = !0;
+                  break
+                } if (r) {
+                t.className = t.className.replace(s, " "), s.test(n.className) || (n.className += " line-numbers");
+                var l, a = e.code.match(c),
+                  o = a ? a.length + 1 : 1,
+                  u = new Array(o + 1).join("<span></span>");
+                (l = document.createElement("span")).setAttribute("aria-hidden", "true"), l.className = "line-numbers-rows", l.innerHTML = u, n.hasAttribute("data-start") && (n.style.counterReset = "linenumber " + (parseInt(n.getAttribute("data-start"), 10) - 1)), e.element.appendChild(l), m(n), Prism.hooks.run("line-numbers", e)
+              }
+            }
+          }
+        }), Prism.hooks.add("line-numbers", function(e) {
+          e.plugins = e.plugins || {}, e.plugins.lineNumbers = !0
+        }), Prism.plugins.lineNumbers = {
+          getLine: function(e, t) {
+            if ("PRE" === e.tagName && e.classList.contains(l)) {
+              var n = e.querySelector(".line-numbers-rows"),
+                r = parseInt(e.getAttribute("data-start"), 10) || 1,
+                s = r + (n.children.length - 1);
+              t < r && (t = r), s < t && (t = s);
+              var i = t - r;
+              return n.children[i]
+            }
+          }
+        }
+      }
+    }();
+  </Script>
+  <style>
+    pre[class*=pre_],
+    :not(pre)>code[class*=pre_] {
+      background: #263238 !important;
+      border: none !important;
+      box-shadow: none !important;
+      font-size: 16px !important;
+    }
+
+    .token.number,
+    .token.unit {
+      color: #af7dff !important;
+    }
+  </style>
+  <!-- slider -->
+  <link rel="stylesheet" href="//www.devmedia.com.br/view/css/slider.css?6,031" />
+  <!-- fim slider -->
+  <link rel="stylesheet" type="text/css" href="//www.devmedia.com.br/exemplos/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" type="text/css" href="//www.devmedia.com.br/view/css/viewcomp.css?6,031">
+  <link rel='stylesheet' href='https://www.devmedia.com.br/pro/lib/owlCarousel/dist/assets/owl.carousel.min.css?i=1'>
+  <style>
+    .content-site-devmedia {
+      margin-top: 70px;
+    }
+
+    .tecnologia-topo-destaque:before {
+      width: 100vw;
+    }
+  </style>
+  <script src="//www.devmedia.com.br/js/jquery.3.6.3.min.js"></script>
+  <!-- syntax highlighter -->
+  <script type="text/javascript" src="https://www.devmedia.com.br/js/prism/prism.js"></script>
+  <script type="text/javascript" src="//www.devmedia.com.br/js/prism/prism-autoloader.min.js"></script>
+  <script type="text/javascript" src="//www.devmedia.com.br/js/prism/prism-line-numbers.min.js"></script>
+  <script type="text/javascript" src="//www.devmedia.com.br/js/prism/prism-normalize-whitespace.min.js"></script>
+  <script type="text/javascript">
+    // Optional
+    Prism.plugins.NormalizeWhitespace.setDefaults({
+      'remove-trailing': true,
+      'remove-indent': true,
+      'left-trim': true,
+      'right-trim': true,
+    });
+  </script>
+  <!-- fim SH -->
+  <!-- slider -->
+  <script type="text/javascript" async src="//www.devmedia.com.br/view/js/devslider.js?6,031" id="devslider"></script>
+  <!-- fim slider -->
+  <script type="text/javascript" src="//www.devmedia.com.br/exemplos/js/jquery.mCustomScrollbar.js"></script>
+  <script async src="//www.devmedia.com.br/view/js/utils.1.1.0.js?6,031" id="utilscript" type="text/javascript"></script>
+  <script src="//www.devmedia.com.br/view/js/viewcomp.js?6,031" type="text/javascript"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.devmedia.com.br/"
+      },
+      "headline": "Menu em CSS: Menu dropdown horizontal com HTML5 e CSS3",
+      "image": "https://arquivo.devmedia.com.br/cursos/imagem/curso_html5-data-attributes-como-criar-atributos-customizados-no-html_2007.jpg",
+      "datePublished": "2016-10-20-0315:55:00-03:00",
+      "dateModified": "2016-10-20-0315:54:48-03:00",
+      "author": {
+        "@type": "Person",
+        "name": "Ricardo Arrigoni"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DevMedia",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.devmedia.com.br/Imagens/2013/logo_ass.png"
+        }
+      },
+      "description": "Neste artigo vou mostrar como criar um menu em css dropdown na posição horizontal usando a nova tag para menu, a tag nav do html5 e efeitos de CSS3."
+    }
+  </script>
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Artigos",
+        "item": "https://devmedia.com.br/artigos"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "HTML e CSS",
+        "item": "https://devmedia.com.br/artigos/front-end-web"
+      }, {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Menu em CSS - Menu dropdown horizontal com HTML5 e CSS3",
+        "item": "https://www.devmedia.com.br/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205"
+      }]
+    }
+  </script>
+
+  <script>
+    function fixScreenDevMedia() {
+      $("body").css("top", ($(window).scrollTop() * -1) + "px");
+      $("body").addClass("fixScreen-devmedia");
+    }
+
+    function unfixScreenDevMedia() {
+      var top = $("body").offset().top * -1;
+      $("body").removeClass("fixScreen-devmedia");
+      $(window).scrollTop(top);
+    }
+  </script>
+  <!--[if lt IE 9]>
+    <script async defer src="js/modernizr.custom.js"></script>
+    <![endif]-->
+  <script async>
+    dataLayer = [{
+      'visitorType': 'deslogado'
+    }, {
+      'userName': 'Programador'
+    }];
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        "gtm.start": new Date().getTime(),
+        event: "gtm.js"
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })
+    (window, document, "script", "dataLayer", "GTM-MCHBV6W");
+  </script>
+  <!-- End Google Tag Manager -->
+  <script>
+    var header;
+    var lastScrollTop;
+    var topScrollLimit;
+    var topScrollOffset = 200;
+
+    function showHideHeader(header) {
+      var headerTop = header.offset().top;
+      var headerHeight = header.innerHeight();
+      var newScrollTop = $(window).scrollTop();
+      var menuSalaTopo = $('.header-container');
+      if (newScrollTop > lastScrollTop) {
+        /*descendo*/
+        var tso = topScrollOffset;
+        if (topScrollLimit == 0) {
+          tso = 50;
+        }
+        var newtop = topScrollLimit - newScrollTop;
+        if (newtop <= (headerHeight * -1)) {
+          header.css('top', (headerHeight * -1) + 'px');
+          topScrollLimit = newScrollTop - headerHeight;
+        } else if (newtop < 0) {
+          header.css('top', newtop + 'px');
+        } /*$('.nav-menu-devmedia').fadeOut('fast');*/
+      } else if (newScrollTop < lastScrollTop) {
+        /*subindo*/
+        var newtop = topScrollLimit - newScrollTop;
+        if (newtop >= 0) {
+          header.css('top', '');
+          topScrollLimit = newScrollTop;
+        } else {
+          header.css('top', newtop + 'px');
+        } /*$('.nav-menu-devmedia').css('display','');*/
+      }
+      if (typeof updatePageElements == 'function') {
+        updatePageElements(headerHeight + header[0].offsetTop);
+      }
+      lastScrollTop = newScrollTop;
+    }
+    $(function() {
+      header = $('.header-site-devmedia');
+      lastScrollTop = topScrollLimit = $(window).scrollTop(); /*EVENTO SCROLL*/
+      $(window).on('scroll', function() {
+        showHideHeader(header);
+      });
+    })
+  </script>
+  <link href='https://fonts.googleapis.com/css?family=Lato:200,300,400,500,600,700|Roboto:200,300,400,500,600,700|Montserrat:200,300,400,500,600,700|Poppins:200,300,400,500,600,700|Roboto+Mono|Roboto+Slab:300,400,700|Oswald:300,400|Source+Serif+Pro:400,700' rel='stylesheet'>
+</head>
+
+<body>
+  <!-- Tag manager --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCHBV6W" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- Tag manager -->
+  <section>
+    <header class="header-site-devmedia ">
+      <nav class="lateral">
+        <!-- MENU LATERAL -->
+        <style>
+          header .lateral {
+            overflow-anchor: none;
+          }
+
+          header nav.lateral>ul li>a {
+            box-shadow: none !important;
+          }
+
+          header nav.lateral>ul hr {
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+          }
+        </style>
+
+        <ul>
+          <li>
+            <a href="#" class="back close-menu close-menu-back" data-main="true">
+              <div class="sidebar-lateral-close"></div>Fechar
+            </a>
+          </li>
+          <li><a href="//www.devmedia.com.br/shop/">Assine</a></li>
+          <li><a href="https://www.devmedia.com.br/front-end/">Carreira Front-end</a>
+          <li><a href="https://www.devmedia.com.br/mobile/">Carreira Mobile</a>
+          <li><a href="https://www.devmedia.com.br/back-end/">Carreira Back-end</a>
+          <li><a href="//www.devmedia.com.br/fale-conosco/" rel="nofollow">Fale conosco</a></li>
+          <li>
+            <a href="#" class="back submenu-titulo" data-tipo="tecnologias">
+              Tecnologias
+              <div class="container-svg-menu-lateral"><svg viewBox="0 0 7.453 4.647" class="img-seta-menu">
+                  <path class="img-seta-menu-path" d="M18.9,6.556l2.851-2.851L18.9.9" transform="translate(7.454 -18.002) rotate(90)"></path>
+                </svg></div>
+            </a>
+          </li>
+          <li class="submenu-itens submenu-tecnologias">
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/html/">HTML</a>
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/css/">CSS</a>
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/algoritmo/">Algoritmo</a>
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/javascript/">JavaScript</a>
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/react/">React</a>
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/react-native/">React Native</a>
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/node-js/">Node.js</a>
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/sql/">SQL</a>
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/mysql/">MySQL</a>
+
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/uml/">UML</a>
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/scrum/">Scrum</a>
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/levantamento-de-requisitos/">Levantamento de requisitos</a>
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/padrao-de-projeto/">Padrões de projeto</a>
+            <a class="item-link-tecnologia" href="https://www.devmedia.com.br/teste-de-software/">Teste de software</a>
+          </li>
+        </ul>
+
+        <script>
+          $(function() {
+            $(document).on("click", ".submenu-titulo", function() {
+              var tipo = $(this).data("tipo");
+              var menus = $(".submenu-titulo");
+              for (var i = 0; i < menus.length; i++) {
+                var datatipo = $(menus[i]).data('tipo');
+                if (datatipo != tipo) {
+                  $(".submenu-" + datatipo).hide();
+                  $(menus[i]).find('.container-svg-menu-lateral').removeClass("img-rotate");
+                }
+              }
+              $(".submenu-" + tipo).slideToggle(300);
+              $(this).find('.container-svg-menu-lateral').toggleClass("img-rotate");
+              $("body").addClass("fixScreen-devmedia");
+            });
+
+            $(window).resize(function() {
+              $("header nav.lateral,header nav.lateral>ul").height(window.innerHeight);
+            });
+
+            $(document).on("click", "header .opacity,header .close-menu", function(e) {
+              if ($(e.target).attr('class') == "lateral") {
+                $("header nav.lateral").fadeOut(100).find(".active").removeClass("active");
+              }
+
+              if (typeof unfixScreenDevMedia != undefined) {
+                unfixScreenDevMedia();
+              }
+            });
+
+            $(document).on("click", "header .menu", function(event) {
+              event.preventDefault();
+              $("header nav.lateral,header nav.lateral>ul").height(window.innerHeight);
+              $("header nav.lateral").css({
+                "display": "table"
+              });
+              $("header nav.lateral").fadeIn(100, function() {
+                $("header nav.lateral").css({
+                  "display": "block"
+                });
+                $("header nav.lateral>ul").css({
+                  "display": "table"
+                });
+              });
+              if (typeof fixScreenDevMedia != undefined) {
+                fixScreenDevMedia();
+              }
+            });
+
+            $(document).on("click", "header nav.lateral li a", function(event) {
+              if ($(this).attr("href") == "#") event.preventDefault();
+              var alvo = $(this).parent().parent().find(".active");
+              if (alvo.length) {
+                event.preventDefault();
+                alvo.removeClass("active");
+              } else {
+                $(this).parent().children("ul").addClass("active");
+                // $("header nav.lateral").scrollTop(0);
+              }
+            });
+
+            $(document).on("click", "header nav.lateral li .home", function() {
+              $("header nav.lateral").find(".active").removeClass("active");
+            });
+
+            $(document).on("click", "header nav.lateral li .back", function() {
+              if ($(this).data("main") == true) {
+                $("header nav.lateral").fadeOut(100).find(".active").removeClass("active");
+                $("header .opacity").fadeOut(100);
+                $("body").css({
+                  "overflow": "auto"
+                });
+              } else {
+                $(this).parent().parent().parent().find(".active").removeClass("active");
+              }
+            });
+          });
+        </script>
+      </nav>
+
+      <nav class="menu-topo-devmedia">
+        <!-- MENU MOBILE -->
+        <div class="devmenu-mobile">
+          <i class="drop-mobile">
+            <a href="#" aria-label="menu secundario mobile" class="menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+          </i>
+          <a class="logo-mob" aria-label="logo devmedia ir para pagina inicial" href="//www.devmedia.com.br/">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415.8 57.608">
+              <g id="Group_12827" data-name="Group 12827" transform="translate(6923.284 -4629.421)">
+                <g id="Logo_new" transform="translate(-7091.984 4591.029)">
+                  <g id="Layer_1-2">
+                    <path id="Path_78099" data-name="Path 78099" class="cls-1" d="M168.7,95.9V38.4h20.9a30.56,30.56,0,0,1,12.3,2.3A25.02,25.02,0,0,1,216.1,56a34.876,34.876,0,0,1,1.8,11.1,32.376,32.376,0,0,1-2,11.9,25.465,25.465,0,0,1-5.7,9.1,26.354,26.354,0,0,1-8.9,5.8A33.182,33.182,0,0,1,189.6,96Zm38-28.8a27.931,27.931,0,0,0-1.1-7.6,17.656,17.656,0,0,0-3.3-6,14.98,14.98,0,0,0-5.4-3.9,18.251,18.251,0,0,0-7.3-1.4h-9.7V86.1h9.7a18.345,18.345,0,0,0,7.3-1.5,14.06,14.06,0,0,0,5.3-4,17.656,17.656,0,0,0,3.3-6,24.017,24.017,0,0,0,1.2-7.5Z"></path>
+                    <path id="Path_78100" data-name="Path 78100" class="cls-1" d="M270.2,86.1v9.8H226.7V38.4h43.5v9.8H237.9V62h32.3v9.1H237.9v15Z"></path>
+                    <path id="Path_78101" data-name="Path 78101" class="cls-1" d="M390.3,95.9V46.2L368.3,80l-22-33.8V95.9h-4.1V38.4h4.1l22,34.1,22-34.1h4.1V95.9Z"></path>
+                    <path id="Path_78102" data-name="Path 78102" class="cls-1" d="M448.2,92.2v3.7H408V38.4h39.5v3.7H412.1V64.7h36.1v3.6H412.1V92.2h36.1Z"></path>
+                    <path id="Path_78103" data-name="Path 78103" class="cls-1" d="M459.2,95.9V38.4h21.2a28.387,28.387,0,0,1,11.9,2.3,22.811,22.811,0,0,1,8.5,6.2,27.318,27.318,0,0,1,5.1,9.1,35.213,35.213,0,0,1,1.7,11.1A34.88,34.88,0,0,1,505.7,79a24.4,24.4,0,0,1-14.1,14.9A31.034,31.034,0,0,1,480.3,96Zm44.4-28.8a33.651,33.651,0,0,0-1.5-10,22.228,22.228,0,0,0-4.5-7.9,21.181,21.181,0,0,0-7.3-5.2,25.656,25.656,0,0,0-9.9-1.9H463.3v50h17.1a24.711,24.711,0,0,0,10-1.9,19.036,19.036,0,0,0,7.2-5.3,22.411,22.411,0,0,0,4.4-8A30.038,30.038,0,0,0,503.6,67.1Z"></path>
+                    <path id="Path_78104" data-name="Path 78104" class="cls-1" d="M518.3,95.9V38.4h4.1V95.9Z"></path>
+                    <path id="Path_78105" data-name="Path 78105" class="cls-1" d="M555.8,38.4h3.7l25,57.5H580l-6-13.8-32.8.2-6,13.7h-4.6Zm16.8,39.7L557.7,43.4,542.5,78.2Z"></path>
+                    <path id="Path_78106" data-name="Path 78106" class="cls-1" d="M322.4,38.4,304.7,82.9v-.1l-.1.1L287,38.4H275.9l22.4,57.5h12.8l22.4-57.5Z"></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <!-- FIM MENU MOBILE -->
+
+        <!-- MENU DESKTOP -->
+        <div class="devmenu">
+          <a class="logo-devmedia-svg" href="//www.devmedia.com.br/" title="DevMedia - Plataforma para Programadores">
+            <svg class="logo-devmedia" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 584.52 132.87" shape-rendering="geometricPrecision ">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill: #7bac3b;
+                  }
+
+                  .cls-2 {
+                    fill: #484848;
+                  }
+                </style>
+              </defs>
+              <title>DevMedia - Plataforma para Programadores</title>
+              <g id="Layer_2" data-name="Layer 2">
+                <g id="Layer_1-2" data-name="Layer 1">
+                  <g id="_Group_" data-name="<Group>">
+                    <path id="_Path_" data-name="<Path>" class="cls-1" d="M39.7,61.42,94.78,6.34A66.45,66.45,0,0,0,9.87,31.59Z"></path>
+                    <path id="_Path_2" data-name="<Path>" class="cls-1" d="M71.3,39.7l55.18,55.18A66.47,66.47,0,0,0,101.19,9.81Z"></path>
+                    <path id="_Path_3" data-name="<Path>" class="cls-1" d="M93,71.31,37.89,126.44A66.47,66.47,0,0,0,123,101.28Z"></path>
+                    <path id="_Path_4" data-name="<Path>" class="cls-1" d="M61.42,93l-55-55a66.46,66.46,0,0,0,25.11,85Z"></path>
+                  </g>
+                  <path class="cls-2" d="M168.68,95.88V38.41h20.88a31.2,31.2,0,0,1,12.34,2.27,24.82,24.82,0,0,1,14.21,15.26,34.27,34.27,0,0,1,1.78,11.13,33.65,33.65,0,0,1-2,11.86A25.34,25.34,0,0,1,210.2,88a25.7,25.7,0,0,1-8.94,5.83,31.58,31.58,0,0,1-11.7,2.06Zm38-28.82a24.48,24.48,0,0,0-1.13-7.61,17,17,0,0,0-3.32-6,14.78,14.78,0,0,0-5.38-3.89,18.18,18.18,0,0,0-7.25-1.38h-9.71V86.08h9.71a17.5,17.5,0,0,0,7.33-1.46,15,15,0,0,0,5.34-4,17.87,17.87,0,0,0,3.28-6A24.19,24.19,0,0,0,206.64,67.06Z"></path>
+                  <path class="cls-2" d="M270.19,86.08v9.79H226.72V38.41h43.47V48.2h-32.3V62h32.3v9.07h-32.3v15Z"></path>
+                  <path class="cls-2" d="M390.26,95.88V46.18l-22,33.77-22-33.77v49.7h-4.13V38.41h4.13l22,34.12,22-34.12h4.13V95.88Z"></path>
+                  <path class="cls-2" d="M448.19,92.15v3.72H408V38.41h39.47v3.72H412.12V64.71h36.07v3.56H412.12V92.15Z"></path>
+                  <path class="cls-2" d="M459.23,95.88V38.41h21.22a29.36,29.36,0,0,1,11.94,2.27,24,24,0,0,1,8.54,6.15,25.77,25.77,0,0,1,5.1,9.11,35.75,35.75,0,0,1,1.7,11.13,34.94,34.94,0,0,1-1.9,11.86A25.58,25.58,0,0,1,500.36,88a24.4,24.4,0,0,1-8.62,5.83,29.64,29.64,0,0,1-11.29,2.06ZM503.6,67.06a31.22,31.22,0,0,0-1.54-10,22.51,22.51,0,0,0-4.49-7.89A20.49,20.49,0,0,0,490.32,44a24.61,24.61,0,0,0-9.87-1.86H463.36v50h17.09a24.65,24.65,0,0,0,10-1.9,19.94,19.94,0,0,0,7.24-5.3,23.18,23.18,0,0,0,4.41-8A31.72,31.72,0,0,0,503.6,67.06Z"></path>
+                  <path class="cls-2" d="M518.32,95.88V38.41h4.13V95.88Z"></path>
+                  <path class="cls-2" d="M555.84,38.41h3.67l25,57.47H580l-6-13.82-32.8.15-6,13.67h-4.59Zm16.71,39.67L557.67,43.43,542.44,78.24Z"></path>
+                  <polygon class="cls-2" points="322.35 38.41 304.73 82.9 304.69 82.78 304.64 82.9 287.02 38.41 275.85 38.41 298.27 95.88 304.69 95.88 311.1 95.88 333.52 38.41 322.35 38.41"></polygon>
+                </g>
+              </g>
+            </svg>
+          </a>
+
+          <nav class="menu-itens-devmedia">
+            <div class="secao-menu-devmedia-1">
+              <span class="menu-item-devmedia show-submenu-devmedia menu-inicio-devmedia">Carreiras
+                <svg viewBox="0 0 7.453 4.647" class="img-seta-menu">
+                  <path class="img-seta-menu-path" d="M18.9,6.556l2.851-2.851L18.9.9" transform="translate(7.454 -18.002) rotate(90)"></path>
+                </svg>
+                <nav class="nav-menu-devmedia nav-menu-tecnologia">
+                  <div class="wrap-teclogias-novidades">
+                    <div class="wrap-tecnologias">
+                      <div class="topico-tecnologia">
+                        <span class="menu-titulo-topico">Comece aqui</span>
+                        <nav class="itens-topico-tecnologia">
+                          <ul class="lista-tecnologia">
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/front-end/">Carreira Front-end</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/mobile/">Carreira Mobile</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/back-end/">Carreira Back-end</a></li>
+                          </ul>
+                        </nav>
+                      </div>
+
+                      <div class="topico-tecnologia">
+                        <span class="menu-titulo-topico">Tecnologias</span>
+                        <nav class="itens-topico-tecnologia">
+                          <ul class="lista-tecnologia">
+
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/html/">HTML</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/css/">CSS</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/algoritmo/">Algoritmo</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/javascript/">JavaScript</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/react/">React</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/react-native/">React Native</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/node-js/">Node.js</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/sql/">SQL</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/mysql/">MySQL</a></li>
+                          </ul>
+                        </nav>
+                      </div>
+
+                      <div class="topico-tecnologia">
+                        <span class="menu-titulo-topico">Engenharia</span>
+                        <nav class="itens-topico-tecnologia">
+                          <ul class="lista-tecnologia">
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/uml/">UML</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/scrum/">Scrum</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/levantamento-de-requisitos/">Levantamento de requisitos</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/padrao-de-projeto/">Padrões de projeto</a></li>
+                            <li class="lista-item-tecnologia"><a class="item-link-tecnologia" href="https://www.devmedia.com.br/teste-de-software/">Teste de software</a></li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+              </span>
+
+              <nav class="secundario-menu-devmedia-1">
+                <a class="secundario-link" href="//www.devmedia.com.br/artigos/iniciantes">Iniciantes</a>
+                <a class="secundario-link" href="//www.devmedia.com.br/artigos/" class="">Artigos</a>
+                <a class="secundario-link" href="//www.devmedia.com.br/cursos/" class="">Cursos</a>
+                <a class="secundario-link" href="//www.devmedia.com.br/depoimentos/" class="">Casos de Sucesso</a>
+              </nav>
+            </div>
+
+            <div class="secao-menu-devmedia-2">
+              <span class="menu-item-devmedia show-submenu-devmedia menu-forum-devmedia">Navegue
+                <svg viewBox="0 0 7.453 4.647" class="img-seta-menu">
+                  <path class="img-seta-menu-path" d="M18.9,6.556l2.851-2.851L18.9.9" transform="translate(7.454 -18.002) rotate(90)"></path>
+                </svg>
+                <nav class="submenu-itens-devmedia subsecundario">
+                  <a href="//www.devmedia.com.br/devcast/" class="submenu-item-devmedia">Vídeos</a>
+                  <a href="//www.devmedia.com.br/exemplos/" class="submenu-item-devmedia">Projetos</a>
+                  <a href="//www.devmedia.com.br/guias/" class="submenu-item-devmedia">Guias</a>
+                  <a href="//www.devmedia.com.br/revistas/" class="submenu-item-devmedia">Revistas</a>
+                  <a href="//www.devmedia.com.br/forum/" class="submenu-item-devmedia">Fórum</a>
+                  <a href="//www.devmedia.com.br/gamification/devups/" class="submenu-item-devmedia">Ranking</a>
+                </nav>
+              </span>
+            </div>
+          </nav>
+
+          <div class="login-box">
+            <div class="page-mvp">
+              <a href="//www.devmedia.com.br/join/" class="link-page-mvp">Criar conta grátis</a>
+            </div>
+
+            <div class="form-busca form-busca-off">
+              <a class="top-bar-search" href="//www.devmedia.com.br/busca/" title="Buscar na plataforma">
+                <svg onclick="OpenSearch();" id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1002.67 1002.67">
+                  <path id="Caminho_321" data-name="Caminho 321" d="M718.08,636.59H675.3L660.14,622c127-147.91,110-370.74-37.9-497.71s-370.74-110-497.71,37.91-110,370.73,37.91,497.7c132.24,113.53,327.55,113.53,459.8,0L636.86,675v42.78L867,948a57.07,57.07,0,0,0,80.68-80.68Zm-324.9,0c-134.57,0-243.67-109.1-243.67-243.68s109.1-243.67,243.67-243.67S636.86,258.33,636.86,392.91c.18,134.4-108.63,243.5-243,243.68Z"></path>
+                </svg>
+              </a>
+            </div>
+
+
+            <div class="empresarial-devmedia">
+              <a class="link-empresarial-devmedia" href="//www.devmedia.com.br/empresarial/">Empresarial</a>
+            </div>
+
+            <div class="login-devmedia">
+              <svg class="link-login-devmedia" width="35" height="35" viewBox="0 0 35 35">
+                <g transform="translate(0)">
+                  <path class="login-usuario" d="M29.874,22.626a17.433,17.433,0,0,0-6.65-4.171,10.117,10.117,0,1,0-11.449,0A17.528,17.528,0,0,0,0,35H2.734a14.766,14.766,0,1,1,29.531,0H35A17.386,17.386,0,0,0,29.874,22.626ZM17.5,17.5a7.383,7.383,0,1,1,7.383-7.383A7.391,7.391,0,0,1,17.5,17.5Z" transform="translate(0)"></path>
+                </g>
+              </svg>
+
+              <div class="box-login-devmedia">
+                <form action="//www.devmedia.com.br/login/login.asp" method="post">
+                  <label class="lbl-form-devmedia" for="usuario">Login</label>
+                  <input class="input-form-devmedia" type="text" name="usuario" required="">
+                  <label class="lbl-form-devmedia" for="senha">Senha</label>
+                  <input class="input-form-devmedia" type="password" name="senha" autocomplete="off" required="">
+                  <input type="hidden" name="ac" value="1">
+                  <input type="hidden" name="erro" value="-1">
+                  <a class="lembrar-senha-devmedia" href="//www.devmedia.com.br/cadastro/lembrar-cadastro/">Esqueceu o login ou a senha?</a>
+                  <button class="submit-form-devmedia" type="submit">Entrar</button>
+                  <a class="cadastro-devmedia" href="//www.devmedia.com.br/join/?cadastro">Cadastre-se</a>
+                </form>
+              </div>
+            </div>
+            <script>
+              $(document).on("click", ".link-login-devmedia", function() {
+                $(".box-login-devmedia").toggleClass('show-form-login-devmedia');
+                $(".login-devmedia").toggleClass('active_login');
+                $("body").toggleClass('body-form-login-devmedia');
+              });
+            </script>
+            <div class="busca-mobile">
+              <a href="//www.devmedia.com.br/busca/" title="Buscar na plataforma">
+                <svg class="icon-busca-mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1002.67 1002.67">
+                  <path id="Caminho_321" data-name="Caminho 321" d="M718.08,636.59H675.3L660.14,622c127-147.91,110-370.74-37.9-497.71s-370.74-110-497.71,37.91-110,370.73,37.91,497.7c132.24,113.53,327.55,113.53,459.8,0L636.86,675v42.78L867,948a57.07,57.07,0,0,0,80.68-80.68Zm-324.9,0c-134.57,0-243.67-109.1-243.67-243.68s109.1-243.67,243.67-243.67S636.86,258.33,636.86,392.91c.18,134.4-108.63,243.5-243,243.68Z"></path>
+                </svg>
+              </a>
+              <!-- <img src="//www.devmedia.com.br/imagens/2013/buscar_grey.png" alt="Buscar conteudo"> -->
+              <!-- <form action="//www.devmedia.com.br/busca/">
+                                <span class="busca-close"></span>
+                                <input type="text" name="txtsearch" placeholder="Buscar">
+                            </form> -->
+            </div>
+          </div>
+        </div>
+        <!-- FIM MENU DESKTOP -->
+      </nav>
+
+    </header>
+
+    <main class="content-site-devmedia ">
+      <section id="viewcomp" class="">
+        <div class="dark-overlay"></div>
+
+        <script>
+          document.getElementsByTagName("body")[0].classList.add("sala-conteudo-global");
+        </script>
+        <section class="page-header">
+          <div class="page-header-bg">
+            <span class="page-header-bg-gradient"></span>
+          </div>
+          <section class="page-header-wrapper">
+            <span class="page-tipo">
+              Artigo
+            </span>
+            <style>
+              .acesso-mvp-topo {
+                font-family: "Montserrat", sans-serif;
+                background-color: #FE0056;
+                background: transparent;
+                border: 1px solid;
+                color: #fff;
+                padding: 20px 30px;
+                font-size: 18px;
+                border-radius: 5px;
+                box-shadow: 12px 15px 20px rgba(0, 0, 0, .16);
+                position: relative;
+                cursor: pointer;
+                display: flex;
+                text-decoration: none;
+                justify-content: center;
+                align-items: center;
+                margin: 10px 0;
+              }
+
+              svg.slide-next {
+                width: 20px;
+                height: 20px;
+                background-color: #FFFFFF;
+                position: absolute;
+                right: -15px;
+                padding: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+                box-shadow: 12px 15px 20px rgba(0, 0, 0, .16);
+                border-radius: 2px;
+                transition: .3s all;
+              }
+            </style>
+            <a href="#modulo-mvp" class="acesso-mvp-topo">Invista em você! Saiba como a DevMedia pode ajudar sua carreira.
+              <svg class="slide-next" viewBox="0 0 4.6 7.5" xml:space="preserve">
+                <path class="seta" d="M0.9,6.6l2.9-2.9L0.9,0.9"></path>
+              </svg>
+            </a>
+            <h1 class="page-title">Menu em CSS - Menu dropdown horizontal com HTML5 e CSS3</h1>
+            <h2 class="page-description">Neste artigo vou mostrar como criar um menu em css dropdown na posição horizontal usando a nova tag para menu, a tag nav do html5 e efeitos de CSS3.</h2>
+          </section>
+        </section>
+        <section class="page-body">
+
+          <section class="action-menu side-menu menu-hidden">
+            <ul class="action-menu-list">
+
+              <li class="action-menu-item comment-button">
+                <span class="action-menu-icone">
+                  <svg class="icone-svg svg-comment">
+                    <path class="svg-element border" d="M26,7.8H8.8c-1.5,0-2.7,1.2-2.7,2.7v16.8l5.8-4.6h14.3c1.5,0,2.7-1.2,2.7-2.7v-9.5
+                        C28.7,8.9,27.5,7.9,26,7.8z" />
+                    <line class="svg-element line" x1="11.4" y1="12.9" x2="23.6" y2="12.9" />
+                    <line class="svg-element line" x1="11.4" y1="17" x2="17.4" y2="17" />
+                  </svg>
+                </span>
+                <span class="action-menu-label">Suporte ao aluno</span>
+              </li>
+
+              <li class="action-menu-item note-button" data-id="37205">
+                <span class="action-menu-icone">
+                  <svg class="icone-svg svg-notes">
+                    <path class="svg-element pen" d="M28.4,9.3L16.6,21.1l-4,1.4l1.4-3.9L25.8,6.8L28.4,9.3z" />
+                    <polygon class="svg-element border" points="25.8,6.8 27.4,5.2 30,7.6 28.4,9.3 " />
+                    <path class="svg-element line" d="M23.8,18.4v10.1c0,0.7-0.5,1.2-1.2,1.2H6.2c-0.7,0-1.2-0.5-1.2-1.2V7.3c0-0.7,0.5-1.2,1.2-1.2h15.5" />
+                    <line class="svg-element line" x1="8.4" y1="10.5" x2="18.8" y2="10.5" />
+                    <line class="svg-element line" x1="8.4" y1="14.2" x2="14.9" y2="14.2" />
+                    <line class="svg-element line" x1="8.4" y1="17.8" x2="11.1" y2="17.8" />
+                    <line class="svg-element line" x1="8.4" y1="22.5" x2="12.6" y2="22.5" />
+                  </svg>
+                </span>
+                <span class="action-menu-label">Anotações</span>
+              </li>
+
+              <li class="action-menu-item fav-button" data-id="37205" onclick="ga('send', {hitType: 'social', socialNetwork: 'DevMedia', socialAction: 'favoritar', socialTarget: 'https://www.devmedia.com.br/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205'});">
+                <span class="action-menu-icone">
+                  <svg class="icone-svg svg-star">
+                    <path class="svg-element border" d="M27.2,14.2c0.2-0.2,0.3-0.5,0.2-0.7c-0.1-0.3-0.3-0.5-0.6-0.5l-5.4-0.7c-0.3-0.2-0.6-0.4-0.8-0.7
+                        l-2.4-4.9c-0.1-0.3-0.3-0.4-0.6-0.4c-0.3,0-0.5,0.2-0.6,0.4l-2.5,4.9c-0.2,0.4-0.5,0.6-0.9,0.6L8.3,13c-0.3,0-0.6,0.2-0.6,0.5
+                        c-0.1,0.3,0,0.6,0.2,0.7l3.8,3.7c0.3,0.3,0.4,0.7,0.3,1l-0.9,5.3c0,0.3,0.1,0.5,0.3,0.7c0.1,0.1,0.3,0.1,0.4,0.1l0,0
+                        c0.1,0,0.2,0,0.3-0.1l0.4-0.2l4.4-2.3c0.2-0.1,0.3-0.1,0.5-0.1c0.2,0,0.4,0,0.5,0.1l4.8,2.5C22.8,25,22.9,25,23,25
+                        c0.1,0,0.3,0,0.4-0.1c0.2-0.2,0.3-0.5,0.3-0.7l-0.9-5.3c-0.1-0.4,0.1-0.8,0.3-1L27.2,14.2z" />
+                    <line class="svg-element line" x1="11.1" y1="8" x2="10.4" y2="7.1" />
+                    <line class="svg-element line" x1="23.9" y1="8" x2="24.5" y2="7.1" />
+                    <line class="svg-element line" x1="7.2" y1="20.1" x2="6.2" y2="20.4" />
+                    <line class="svg-element line" x1="27.8" y1="20.1" x2="28.9" y2="20.4" />
+                    <line class="svg-element line" x1="17.6" y1="27.6" x2="17.6" y2="28.7" />
+                  </svg>
+                </span>
+                <span class="action-menu-label">Favoritar</span>
+              </li>
+
+              <li class="action-menu-item concluido-button" data-id="37205">
+                <span class="action-menu-icone">
+                  <svg class="icone-svg svg-concluido" viewBox="0 0 35 35">
+                    <circle cx="17.5" cy="17.5" r="10.5"></circle>
+                    <path d="M21.1,14.4l-4.4,6.9l-3.5-4"></path>
+                  </svg>
+                </span>
+                <span class="action-menu-label">Concluído</span>
+              </li>
+
+              <li class="action-menu-item like-button" data-id="37205" onclick="ga('send', {hitType: 'social', socialNetwork: 'DevMedia', socialAction: 'like', socialTarget: 'https://www.devmedia.com.br/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205'});">
+                <span class="action-menu-icone">
+                  <svg class="icone-svg svg-like" id="svg-like" x="0px" y="0px" viewBox="0 0 35 35">
+                    <path d="M18.2,26.7h-2.7c-1.6,0-2.9-1.3-2.9-2.9V16c4.8-1.3,4.5-4.5,4.5-8.1c0,0,3.4-0.5,3.4,2.4v3.8h5
+                        c1.3-0.1,2.5,1,2.6,2.3c0,0.2,0,0.4,0,0.6l-0.9,6.9c-0.3,1.7-1.7,2.9-3.3,2.9h-5.7V26.7z"></path>
+                    <path d="M9.9,25.7h1.8c0.4,0,0.8-0.4,0.8-0.8l0,0v-9.1c0-0.4-0.4-0.8-0.8-0.8l0,0H9
+                        c-0.4,0-0.8,0.4-0.8,0.8l0,0v8.3"></path>
+                    <circle cx="8.4" cy="25.6" r="1.5"></circle>
+                  </svg>
+
+
+                  <span class="menu-icone-like-count">36</span>
+                </span>
+                <span class="action-menu-label">Gostei</span>
+              </li>
+
+              <li class="action-menu-item sub-menu">
+                <span class="action-menu-icone sub-menu">
+                  <svg class="icone-svg svg-share" viewBox="0 0 17.552 18.498">
+                    <g transform="translate(1 1)">
+                      <path class="svg-element lines" d="M12.594,11.3a2.959,2.959,0,0,0-2.337,1.152L5.728,9.917a2.96,2.96,0,0,0,0-1.948l4.529-2.526a2.964,2.964,0,1,0-.441-.818L5.287,7.151A2.946,2.946,0,1,0,5.3,10.734l4.529,2.53a2.9,2.9,0,0,0-.171.985A2.95,2.95,0,1,0,12.594,11.3Zm0-9.666a2.025,2.025,0,1,1-2.025,2.025,2.026,2.026,0,0,1,2.025-2.025ZM2.954,10.97A2.025,2.025,0,1,1,4.979,8.945,2.026,2.026,0,0,1,2.954,10.97Zm9.64,5.3a2.025,2.025,0,1,1,2.025-2.025,2.026,2.026,0,0,1-2.025,2.025Zm0,0" transform="translate(0 -0.7)" />
+                    </g>
+                  </svg>
+                </span>
+                <span class="action-menu-sub-icone">
+                </span>
+                <span class="action-menu-label">Compartilhar</span>
+              </li>
+
+
+            </ul>
+          </section>
+
+          <section class="action-menu menu-action-top menu-hidden">
+            <ul class="action-menu-list">
+              <li class="action-menu-item like-button" data-id="37205" onclick="ga('send', {hitType: 'social', socialNetwork: 'DevMedia', socialAction: 'like', socialTarget: 'https://www.devmedia.com.br/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205'});">
+                <span class="action-menu-icone">
+                  <svg class="icone-svg svg-like" x="0px" y="0px" viewBox="0 0 35 35">
+                    <path class="svg-element border" d="M17.6,26.9h-2.7c-1.6,0-2.9-1.3-2.9-2.9v-7.8c4.8-1.3,4.5-4.5,4.5-8.1c0,0,3.4-0.5,3.4,2.4v3.8h5 c1.3-0.1,2.5,1,2.6,2.3c0,0.2,0,0.4,0,0.6l-0.9,6.9c-0.3,1.7-1.7,2.9-3.3,2.9H17.6z" />
+                    <path class="svg-element border" d="M11.9,25.1V16c0-0.4-0.4-0.8-0.8-0.8c0,0,0,0,0,0H8.4c-0.4,0-0.8,0.4-0.8,0.8c0,0,0,0,0,0v8.7" />
+                  </svg>
+                  <span class="menu-icone-like-count">36</span>
+                </span>
+                <span class="action-menu-label">Gostei</span>
+              </li>
+              <li class="action-menu-item fav-button" data-id="37205" onclick="ga('send', {hitType: 'social', socialNetwork: 'DevMedia', socialAction: 'favoritar', socialTarget: 'https://www.devmedia.com.br/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205'});">
+                <span class="action-menu-icone">
+                  <svg class="icone-svg svg-star">
+                    <path class="svg-element border" d="M27.2,14.2c0.2-0.2,0.3-0.5,0.2-0.7c-0.1-0.3-0.3-0.5-0.6-0.5l-5.4-0.7c-0.3-0.2-0.6-0.4-0.8-0.7
+                        l-2.4-4.9c-0.1-0.3-0.3-0.4-0.6-0.4c-0.3,0-0.5,0.2-0.6,0.4l-2.5,4.9c-0.2,0.4-0.5,0.6-0.9,0.6L8.3,13c-0.3,0-0.6,0.2-0.6,0.5
+                        c-0.1,0.3,0,0.6,0.2,0.7l3.8,3.7c0.3,0.3,0.4,0.7,0.3,1l-0.9,5.3c0,0.3,0.1,0.5,0.3,0.7c0.1,0.1,0.3,0.1,0.4,0.1l0,0
+                        c0.1,0,0.2,0,0.3-0.1l0.4-0.2l4.4-2.3c0.2-0.1,0.3-0.1,0.5-0.1c0.2,0,0.4,0,0.5,0.1l4.8,2.5C22.8,25,22.9,25,23,25
+                        c0.1,0,0.3,0,0.4-0.1c0.2-0.2,0.3-0.5,0.3-0.7l-0.9-5.3c-0.1-0.4,0.1-0.8,0.3-1L27.2,14.2z" />
+                    <line class="svg-element line" x1="11.1" y1="8" x2="10.4" y2="7.1" />
+                    <line class="svg-element line" x1="23.9" y1="8" x2="24.5" y2="7.1" />
+                    <line class="svg-element line" x1="7.2" y1="20.1" x2="6.2" y2="20.4" />
+                    <line class="svg-element line" x1="27.8" y1="20.1" x2="28.9" y2="20.4" />
+                    <line class="svg-element line" x1="17.6" y1="27.6" x2="17.6" y2="28.7" />
+                  </svg>
+                </span>
+                <span class="action-menu-label">Favoritar</span>
+              </li>
+              <li class="action-menu-item sub-menu">
+                <span class="action-menu-icone sub-menu">
+                  <svg class="icone-svg svg-share" viewBox="0 0 17.552 18.498">
+                    <g transform="translate(1 1)">
+                      <path class="svg-element lines" d="M12.594,11.3a2.959,2.959,0,0,0-2.337,1.152L5.728,9.917a2.96,2.96,0,0,0,0-1.948l4.529-2.526a2.964,2.964,0,1,0-.441-.818L5.287,7.151A2.946,2.946,0,1,0,5.3,10.734l4.529,2.53a2.9,2.9,0,0,0-.171.985A2.95,2.95,0,1,0,12.594,11.3Zm0-9.666a2.025,2.025,0,1,1-2.025,2.025,2.026,2.026,0,0,1,2.025-2.025ZM2.954,10.97A2.025,2.025,0,1,1,4.979,8.945,2.026,2.026,0,0,1,2.954,10.97Zm9.64,5.3a2.025,2.025,0,1,1,2.025-2.025,2.026,2.026,0,0,1-2.025,2.025Zm0,0" transform="translate(0 -0.7)" />
+                    </g>
+                  </svg>
+                </span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="page-content main-content video-conteudo-area">
+            <section class="page-content-wrapper">
+
+              <section class="body-menu-top">
+                <button class="action-menu-item comment-button" style="margin-top: 0;">
+                  <span class="label">Suporte ao aluno</span>
+                  <span class="btn-icon">
+                    <svg class="svg-element border" viewBox="0 0 35 35">
+                      <path id="Path_975" class="st0" d="M26,7.8H8.8c-1.5,0-2.7,1.2-2.7,2.7v16.8l5.8-4.6h14.3c1.5,0,2.7-1.2,2.7-2.7v-9.5
+                                    C28.7,8.9,27.5,7.9,26,7.8z"></path>
+                      <line id="Line_423" class="st0" x1="11.4" y1="12.9" x2="23.6" y2="12.9"></line>
+                      <line id="Line_424" class="st0" x1="11.4" y1="17" x2="17.4" y2="17"></line>
+                    </svg>
+                  </span>
+                </button>
+
+                <button class="note-button " data-id="37205">
+                  <span class="label">Anotar</span>
+                  <span class="btn-icon">
+                    <svg class="icone-svg svg-notes" viewBox="0 0 35 35">
+                      <path class="svg-element pen" d="M28.4,9.3L16.6,21.1l-4,1.4l1.4-3.9L25.8,6.8L28.4,9.3z" />
+                      <polygon class="svg-element border" points="25.8,6.8 27.4,5.2 30,7.6 28.4,9.3 " />
+                      <path class="svg-element line" d="M23.8,18.4v10.1c0,0.7-0.5,1.2-1.2,1.2H6.2c-0.7,0-1.2-0.5-1.2-1.2V7.3c0-0.7,0.5-1.2,1.2-1.2h15.5" />
+                      <line class="svg-element line" x1="8.4" y1="10.5" x2="18.8" y2="10.5" />
+                      <line class="svg-element line" x1="8.4" y1="14.2" x2="14.9" y2="14.2" />
+                      <line class="svg-element line" x1="8.4" y1="17.8" x2="11.1" y2="17.8" />
+                      <line class="svg-element line" x1="8.4" y1="22.5" x2="12.6" y2="22.5" />
+                    </svg>
+                  </span>
+                </button>
+                <button class="finish-btn " data-id="37205">
+                  <span class="label">Marcar como concluído</span>
+                  <span class="btn-icon">
+                    <svg class="svg-symbol" id="svg-checked" viewBox="0 0 35 35">
+                      <circle class="st1" cx="17.5" cy="17.5" r="10.5" />
+                      <path id="Path_1130_1_" class="st0" d="M21.1,14.4l-4.4,6.9l-3.5-4" />
+                    </svg>
+                  </span>
+                </button>
+
+                <button class="download-btn fontes" data-id="37205">
+                  <span class="label">Código fonte</span>
+                  <span class="btn-icon">
+                    <svg class="icone-svg svg-dwonload-code" viewBox="0 0 35 35">
+                      <path class="svg-element border" d="M22,11.4l-4.3,4.3l-4.4-4.3" />
+                      <line class="svg-element line" x1="17.6" y1="15.4" x2="17.6" y2="3" />
+                      <path class="svg-element border" d="M9.4,11.4H6.6c-1,0-1.9,0.8-1.9,1.9v16.9c0,1,0.8,1.9,1.9,1.9h21.9c1,0,1.9-0.8,1.9-1.9V13.3
+                                        c0-1-0.8-1.9-1.9-1.9h-2.8" />
+                      <path class="svg-element border" d="M13,27.4L8.7,23l4.3-4.4" />
+                      <path class="svg-element border" d="M22,27.4l4.4-4.4L22,18.6" />
+                      <line class="svg-element line" x1="19.6" y1="18.6" x2="15.6" y2="27.4" />
+                    </svg>
+                  </span>
+                </button>
+              </section>
+
+              <div class="breadcrumb">
+                <a href="https://www.devmedia.com.br/artigos/" title="Artigos">Artigos</a>
+                <span class="arrow-left"></span>
+                <a href="https://www.devmedia.com.br/artigos/front-end-web" title="Artigos de HTML e CSS">HTML e CSS</a>
+                <span class="arrow-left"></span>
+                <span class="bread-artigo">Menu em CSS - Menu dropdown horizontal com HTML5 e CSS3</span>
+              </div>
+
+              </div>
+              <div class="lf-secao">
+                <h3>Tutorial - Criando um menu horizontal com CSS e HTML</h3>
+
+                <p>Olá pessoal, no artigo anterior eu falei sobre a criação de <a href="http://www.devmedia.com.br/criando-um-menu-vertical-dropdown-com-css-e-html/37207" title="Criando Menu em CSS" target="_blank">Criando Menu vertical dropdown em CSS</a>. Neste artigo irei mostrar como fazer um menu horizontal usando um pouco de <a href="http://www.devmedia.com.br/curso/curso-de-html-5/275" title="Novidades HTML5" target="_blank">HTML5</a> e CSS.</p>
+
+                <p>O menu, ou barra de navegação é um elemento muito importante de qualquer website, pois como o próprio nome já diz, é por ele que os <strong>usuários visitam todas as páginas do site e com a ajuda do CSS podemos deixar o nosso menu de uma forma bem mais agradável</strong>.</p>
+
+                <div class="videoWrapper" style="margin-top:20px"><iframe width="560" height="315" src="https://www.youtube.com/embed/z0kkiWgTXWs?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+
+                <div id="box_artigo_canal" style='background: #f9f9f9;border-top: 1px solid #c7c7c7;padding-top: 8px;border-bottom: 1px solid #c7c7c7;border-left: 2px solid #118e9c;border-right: 1px solid #c7c7c7;padding-bottom: 8px;'>
+                  <label style='font-family:verdana;font-size: 0.9em;'>
+                    <span style='color: #375c61;font-weight: 400;'> Relacionado: </span>
+
+                    <u><a href="https://www.devmedia.com.br/guia/carreira-programador-front-end/38792" target="_blank" style='border-bottom:0px;text-decoration:none;' title="Programador Front-End">Guia do programador Front-End</a></u>
+                  </label>
+                </div>
+
+                <p>Muitas pessoas que estão começando agora no mundo do webdesign me perguntam como fazer para o menu ficar na orientação horizontal, por isso resolvi escrever esse artigo, para mostrar para todos que criar um <a href="http://www.devmedia.com.br/menu-dropdown-com-css-parte-01/9781" target="_blank" title="Video: Menu DropDown com CSS – Parte 01">menu em css</a> na posição horizontal é muito simples, <strong>ainda mais com a ajuda do HTML5 agora</strong>. Observe o código da Listagem 1.</p>
+
+                <div class="pre_xml">
+                  <div>
+                    <pre style='white-space:pre;' class='line-numbers'><code>&lt;!DOCTYPE HTML&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Menu Dropdown Horizontal - Linha de Código&lt;/title&gt;
+     &lt;!-- Aqui chamamos o nosso arquivo css externo --&gt;
+    &lt;link rel="stylesheet" type="text/css"  href="estilo.css" /&gt;
+    &lt;!--[if lte IE 8]&gt;
+ &lt;script src="http://html5shim.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
+ &lt;![endif]--&gt;    
+&lt;/head&gt;
+&lt;body&gt;
+&lt;nav&gt;
+  &lt;ul class="menu"&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+	  		&lt;li&gt;&lt;a href="#"&gt;O que fazemos?&lt;/a&gt;
+	         	&lt;ul&gt;
+	                  &lt;li&gt;&lt;a href="#"&gt;Web Design&lt;/a&gt;&lt;/li&gt;
+	                  &lt;li&gt;&lt;a href="#"&gt;SEO&lt;/a&gt;&lt;/li&gt;
+	                  &lt;li&gt;&lt;a href="#"&gt;Design&lt;/a&gt;&lt;/li&gt;                    
+	       		&lt;/ul&gt;
+			&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Links&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Contato&lt;/a&gt;&lt;/li&gt;                
+&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/body&gt;
+&lt;/html&gt; </code></pre>
+                  </div><span class="listagem">Listagem 1. Criando o HTML do Menu</span>
+                </div>
+
+                <p>Notem que no nosso <strong>html, estamos usando uma tag nova, bastante utilizada no HTML5, é a tag &lt;nav&gt;</strong>. Esta tag foi criada para agrupar blocos de links de um mesmo assunto ou links internos do website, indicando que um determinado bloco é um bloco de navegação.</p>
+                <p>Lembrando que para chamar um arquivo CSS externo, devemos utilizar o código da Listagem 2, dentro da tag &lt;head&gt;.</p>
+                <div class="pre_css">
+                  <div>
+                    <pre style='white-space:pre;' class='line-numbers'><code>&lt;link rel="stylesheet" type="text/css"  href="estilo.css" /&gt;</code></pre>
+                  </div><span class="listagem">Listagem 2. Fazendo link ao CSS externo</span>
+                </div>
+
+                <p>Como podemos ver na Figura 1, o resultado desse HTML é algo bem feio.</p>
+                <figure class="lazy-img"><img class='imagem_artigo' data-src="//arquivo.devmedia.com.br/artigos/Ricardo_Arrigoni/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/menuemcssDropdown01.jpg" alt="Menu sem estilo"><br>
+                  <figcaption>Figura 1. Menu sem estilo</p>
+                  </figcaption>
+                </figure>
+                <p>Vamos colocar um estilo para começar a melhorar nosso menu?</p>
+                <p>Vamos começar zerando o margin e padding para todos os navegadores, colocaremos um estilo de texto para o nosso texto do menu e removeremos os bullets da lista. Depois vamos definir uma borda e colocaremos o float:"left"; para que as bordas fiquem certinhas.</p>
+                <div class="pre_css">
+                  <div>
+                    <pre style='white-space:pre;' class='line-numbers'><code>*&#123;margin: 0; padding: 0;&#125;
+
+body&#123;
+font-family: arial, helvetica, sans-serif;
+font-size: 12px;
+&#125;
+
+.menu&#123;
+list-style:none; 
+border:1px solid #c0c0c0; 
+float:left; 
+&#125;</code></pre>
+                  </div><span class="listagem">Listagem 3. Removendo bullets e colocando borda</span>
+                </div>
+
+                <p>Agora vamos estilizar os itens do menu. Utilizaremos o position:relative; para que futuramente possamos posicionar o submenu.</p>
+
+                <div class="pre_css">
+                  <div>
+                    <pre style='white-space:pre;' class='line-numbers'><code>.menu li&#123;
+position:relative; 
+float:left; 
+border-right:1px solid #c0c0c0; 
+&#125;</code></pre>
+                  </div><span class="listagem">Listagem 4. Estilizando itens do menu</span>
+                </div>
+
+                <p>Agora vamos estilizar os links, você pode ficar à vontade em estilizar os links de acordo com o seu gosto e layout. Neste exemplo eu inseri uma propriedade chamada text-shadow e box-shadow, do <strong>CSS3, caso você esteja usando um navegador atualizado</strong>, poderá ver essa propriedade em ação.</p>
+
+                <div class="pre_css">
+                  <div>
+                    <pre style='white-space:pre;' class='line-numbers'>
+  <code>.menu li a&#123;color:#333; text-decoration:none; padding:5px 10px; display:block;&#125;
+
+.menu li a:hover&#123;
+     background:#333; 
+     color:#fff; 
+     -moz-box-shadow:0 3px 10px 0 #CCC; 
+     -webkit-box-shadow:0 3px 10px 0 #ccc; 
+     text-shadow:0px 0px 5px #fff; 
+    &#125;
+</code>
+</pre>
+                  </div><span class="listagem">Listagem 5. Estilizando links</span>
+                </div>
+
+              </div>
+              <div class="lf-secao">
+                <h3>Menu em CSS dropdown</h3>
+
+                <p>Agora vamos começar a trabalhar com o submenu, vamos começar definindo a sua posição como absoluta(postition:absolute;), para que os itens do submenu não ultrapassem o seu menu pai e para que ele não interfira no fluxo dos elementos do menu.</p>
+
+                <p>Vamos também definir cores de fundo e esconder o submenu com o display:none;</p>
+
+                <div class="pre_css">
+                  <div>
+                    <pre style='white-space:pre;' class='line-numbers'><code>.menu li  ul&#123;
+position:absolute; 
+top:25px; 
+left:0;
+background-color:#fff; 
+display:none;
+&#125;	</code></pre>
+                  </div><span class="listagem">Listagem 6. Escondendo submenu</span>
+                </div>
+
+                <p>Vamos ver como está ficando o nosso menu em css até agora?</p>
+
+                <figure class="lazy-img"><img class='imagem_artigo' style="max-width: 100%; height: auto" data-src="//arquivo.devmedia.com.br/artigos/Ricardo_Arrigoni/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/menuemcssDropdown02.jpg" alt="Menu em css 80% pronto"><br>
+                  <figcaption> Figura 2. Menu em css 80% pronto</p>
+                  </figcaption>
+                </figure>
+
+                <p>Como podemos ver, o nosso menu está quase pronto, digamos que uns 80%, faltando apenas exibir o submenu, vamos ver como fazemos isso?</p>
+
+                <div class="pre_css">
+                  <div>
+                    <pre style='white-space:pre;' class='line-numbers'><code>.menu li:hover ul, .menu li.over ul&#123;display:block;&#125;</code></pre>
+                  </div><span class="listagem">Listagem 7. Exibindo submenu</span>
+                </div>
+
+                <p>Pronto, agora nosso submenu está aparecendo mas não está funcionando perfeitamente ainda, ainda falta alguns ajustes finais para que fique 100%</p>
+
+                <div class="pre_css">
+                  <div>
+                    <pre style='white-space:pre;' class='line-numbers'><code>.menu li ul li&#123;
+border:1px solid #c0c0c0; 
+display:block; 
+width:150px;
+&#125;</code></pre>
+                  </div><span class="listagem">Listagem 8. Ajustes finais</span>
+                </div>
+
+                <p>Agora sim, nosso menu em css está funcionando perfeitamente, estilizado, moderno e com o dropdown funcionando direitinho.</p>
+
+                <p>Se você conseguir seguir esse tutorial passo a passo direitinho, o seu menu deve estar aparecendo dessa forma:</p>
+
+
+                <figure class="lazy-img"><img class='imagem_artigo' style="max-width: 100%; height: auto" data-src="//arquivo.devmedia.com.br/artigos/Ricardo_Arrigoni/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/menuemcssDropdown03.jpg" alt="Menu em CSS pronto"><br>
+                  <figcaption>Figura 3. Menu em CSS pronto</p>
+                  </figcaption>
+                </figure>
+
+                <p>Caso o seu menu não tenha ficado assim, provavelmente você esqueceu de algum passo do nosso tutorial, abaixo vou disponibilizar um link de download do código fonte e <a href="http://arquivo.devmedia.com.br/artigos/LinhaDeCodigo/RicardoArrigoni/MenuEmCSSdropdown/index.html" target="_blank" title="Teste Online do Menu">teste online o menu criado</a>.</p>
+
+
+
+                <p>Espero que tenham gostado, um abraço e até o próximo artigo.</p>
+              </div>
+
+              <div id="sugestao" Style="border-top: 1px solid #c9c9c9; margin-top: 12px;">
+                <h4 style="line-height: 20px; ">
+                  <span style="font-size: 14px; color: #0F8593; font-weight: 600; ">Links Úteis</span>
+                </h4>
+                <ul style="font-size: 12px; line-height: 25px; ">
+                  <li><a href="http://www.w3schools.com/html5" target="_blank" title="W3Schools - Tutorial de HTML5">W3Schools - Tutorial de HTML5</a>:<br></li>
+
+                  <li><a href="http://www.w3.org/TR/html5" target="_blank" title="W3C - HTML5">W3C - HTML5</a>:<br></li>
+
+                  <li><a href="http://pt.wikipedia.org/wiki/HTML5" target="_blank" title="Wikipédia - HTML5">Wikipédia - HTML5</a>:<br>
+                  </li>
+                </ul>
+
+
+                <h4 style="font-size: 13px;line-height: 10px;color: #505050;font-weight: 400;">Saiba mais sobre JavaScript ;)</h4>
+                <ul style="font-size: 12px; line-height: 25px; ">
+                  <li><a href="https://www.devmedia.com.br/programando-em-html5/31040" target="_blank" title="Artigo">Programando em HTML5</a>:<br>
+                    Ao ser anunciada a versão 5 do padrão HTML, inicialmente parte do mercado não recebeu com grande entusiasmo, acostumado a receber poucos recursos novos de uma versão para outra. A verdade é que, desde que a versão 4.0 foi lançada em 1997, poucos avanços aconteceram nos dez anos seguintes. </li>
+
+                  <li><a href="https://www.devmedia.com.br/as-novidades-do-html5/23992" target="_blank" title="As Novidades do HTML5">As Novidades do HTML5</a>:<br>
+                    Neste artigo apresento as principais novidades da nova versão da linguagem de marcação de hipertexto HTML, que já está disponível nos principais navegadores de internet com suporte quase que total.</li>
+
+                  <li><a href="https://www.devmedia.com.br/o-que-e-o-html5/25820" target="_blank" title="O que é o HTML5">O que é o HTML5</a>:<br>
+                    Veja neste artigo um pouco da história do HTML, o que é o HTML5 e suas principais mudanças em relação às versões anteriores.</li>
+
+                </ul>
+              </div>
+
+            </section>
+          </section>
+
+          <section class="page-content page-content-tags">
+            <span class="tag-label">Tecnologias:</span>
+            <ul class="tag-list">
+              <li class="tag-item">
+                <a href="//www.devmedia.com.br/css/" title="CSS">CSS</a>
+              </li>
+              <li class="tag-item">
+                <a href="//www.devmedia.com.br/html/" title="HTML">HTML</a>
+              </li>
+            </ul>
+          </section>
+          <section class="page-content page-content-buttons">
+            <section class="page-content-wrapper">
+              <section class="body-menu-top bottom">
+
+                <button class="action-menu-item comment-button" style="margin-top: 0; display: none;">
+                  <span class="label">Suporte ao aluno</span>
+                  <span class="btn-icon">
+                    <svg class="svg-element border" viewBox="0 0 35 35">
+                      <path id="Path_975" class="st0" d="M26,7.8H8.8c-1.5,0-2.7,1.2-2.7,2.7v16.8l5.8-4.6h14.3c1.5,0,2.7-1.2,2.7-2.7v-9.5
+                                    	C28.7,8.9,27.5,7.9,26,7.8z"></path>
+                      <line id="Line_423" class="st0" x1="11.4" y1="12.9" x2="23.6" y2="12.9"></line>
+                      <line id="Line_424" class="st0" x1="11.4" y1="17" x2="17.4" y2="17"></line>
+                    </svg>
+                  </span>
+                </button>
+
+                <button class="note-button " data-id="37205">
+                  <span class="label">Anotar</span>
+                  <span class="btn-icon">
+                    <svg class="icone-svg svg-notes" viewBox="0 0 35 35">
+                      <path class="svg-element pen" d="M28.4,9.3L16.6,21.1l-4,1.4l1.4-3.9L25.8,6.8L28.4,9.3z" />
+                      <polygon class="svg-element border" points="25.8,6.8 27.4,5.2 30,7.6 28.4,9.3 " />
+                      <path class="svg-element line" d="M23.8,18.4v10.1c0,0.7-0.5,1.2-1.2,1.2H6.2c-0.7,0-1.2-0.5-1.2-1.2V7.3c0-0.7,0.5-1.2,1.2-1.2h15.5" />
+                      <line class="svg-element line" x1="8.4" y1="10.5" x2="18.8" y2="10.5" />
+                      <line class="svg-element line" x1="8.4" y1="14.2" x2="14.9" y2="14.2" />
+                      <line class="svg-element line" x1="8.4" y1="17.8" x2="11.1" y2="17.8" />
+                      <line class="svg-element line" x1="8.4" y1="22.5" x2="12.6" y2="22.5" />
+                    </svg>
+                  </span>
+                </button>
+                <button class="finish-btn " data-id="37205">
+                  <span class="label">Marcar como concluído</span>
+                  <span class="btn-icon">
+                    <svg class="svg-symbol" id="svg-checked" viewBox="0 0 35 35">
+                      <circle class="st1" cx="17.5" cy="17.5" r="10.5" />
+                      <path id="Path_1130_1_" class="st0" d="M21.1,14.4l-4.4,6.9l-3.5-4" />
+                    </svg>
+                  </span>
+                </button>
+
+              </section>
+
+            </section>
+          </section>
+          <div class="page-content page-iframe">
+            <div id="iframe-ads">
+              <a href="https://www.devmedia.com.br/join/?ebook=manual" target="_blank" class="ads_ebook">
+                <img loading="lazy" class="ad-small" src="https://www.devmedia.com.br/marketing/banners/ebook/ebook-300x250.webp">
+                <img loading="lazy" class="ad-medium" src="https://www.devmedia.com.br/marketing/banners/ebook/ebook-160x600.webp">
+                <img loading="lazy" class="ad-big" src="https://www.devmedia.com.br/marketing/banners/ebook/ebook-300x600.webp">
+              </a>
+            </div>
+          </div>
+          <section class="page-content sessao-boxes-recomendados">
+            <h4>Confira outros conteúdos:</h4>
+            <div class="artigos-container">
+              <div class="box-artigo-recomendado">
+                <a href="https://www.devmedia.com.br/css-border/43522" class="artigo-link" title="CSS Border">
+                  <img loading="lazy" src="https://arquivo.devmedia.com.br/cursos/imagem/curso_como-criar-sua-primeira-pagina-com-css_1981.png" alt="" class="artigo-img">
+                  <div class="box-titulo">
+                    <h3 class="artigo-titulo">CSS Border</h3>
+                  </div>
+                </a>
+              </div>
+              <div class="box-artigo-recomendado">
+                <a href="https://www.devmedia.com.br/html-icons-utilizando-icones-em-paginas-html/43517" class="artigo-link" title="HTML Icons: utilizando ícones em páginas HTML">
+                  <img loading="lazy" src="https://arquivo.devmedia.com.br/noticias/devcast/devcast_formularios-em-html-5-conhecendo-e-usando_28579.jpg" alt="" class="artigo-img">
+                  <div class="box-titulo">
+                    <h3 class="artigo-titulo">HTML Icons: utilizando ícones em...</h3>
+                  </div>
+                </a>
+              </div>
+              <div class="box-artigo-recomendado">
+                <a href="https://www.devmedia.com.br/html-hr-como-utilizar-a-tag-hr-para-criar-quebras-de-linhas-tematicas/43516" class="artigo-link" title="HTML hr: como utilizar a tag hr para criar quebras de linhas temáticas">
+                  <img loading="lazy" src="https://arquivo.devmedia.com.br/cursos/imagem/curso_html5-data-attributes-como-criar-atributos-customizados-no-html_2007.jpg" alt="" class="artigo-img">
+                  <div class="box-titulo">
+                    <h3 class="artigo-titulo">HTML hr: como utilizar a tag hr para...</h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section id="content-end"></section>
+
+          <style>
+            /* FAQ */
+            #duvidas .box_container {
+              max-width: 1250px;
+              margin: 0 auto;
+            }
+
+            .titulo-duvidas {
+              text-transform: capitalize;
+              color: #ed4c28;
+              font-size: 40px;
+              margin-bottom: 15px;
+              font-weight: 600;
+            }
+
+            .box_duvidas {
+              padding: 80px 90px;
+              background: #f4faff;
+              font-family: 'Montserrat', sans-serif;
+            }
+
+            .subtitulo-duvidas {
+              font-size: 20px;
+              color: #ed4c28;
+              font-family: 'Roboto', sans-serif;
+            }
+
+            .container-todas-duvidas {
+              margin-top: 40px;
+              color: #253a44;
+            }
+
+            .resposta-duvida.hide {
+              display: none;
+            }
+
+            .container-pergunta {
+              display: flex;
+              justify-content: space-between;
+              position: relative;
+            }
+
+            .duvida-titulo {
+              font-size: 18px;
+              font-weight: 700;
+              padding: 0 30px 0 5px;
+            }
+
+            .svg-seta {
+              fill: #fff;
+              width: 23px;
+              height: 23px;
+              transform: scale(0.8);
+              transition: 0.2s;
+            }
+
+            .svg-seta.open {
+              transform: scale(0.8) rotate(180deg);
+            }
+
+            .container-svg {
+              background: #253a44;
+              width: 30px;
+              height: 25px;
+              justify-content: center;
+              align-items: center;
+              display: flex;
+              border-radius: 6px 6px 0 0;
+              position: absolute;
+              right: 0;
+              bottom: -15px;
+            }
+
+            .container-duvida {
+              cursor: pointer;
+              padding: 15px 0;
+              margin-bottom: 20px;
+            }
+
+            .duvida-border {
+              border-bottom: 1px solid #253a44;
+            }
+
+            .resposta-duvida {
+              color: #000;
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              padding: 20px 20px 20px 5px;
+              margin-top: 30px;
+              border-radius: 0 0 6px 6px;
+              font-size: 18px;
+              line-height: 1.8em;
+            }
+
+            @media (max-width: 1440px) {
+              .box_duvidas {
+                padding: 40px 25px;
+              }
+            }
+
+            @media (max-width: 1024px) {
+              .subtitulo-duvidas {
+                font-size: 16px;
+              }
+            }
+
+            @media (max-width: 640px) {
+              .box_duvidas {
+                padding: 40px 20px;
+              }
+            }
+          </style>
+
+          <section class="subscription-container" id="modulo-mvp">
+            <div class="subscription-content">
+              <style>
+                #modulo-mvp * {
+                  font-family: 'Montserrat';
+                  box-sizing: border-box;
+                }
+
+                .subscription-container {
+                  width: 100%;
+                  padding: 40px 30px;
+                  background-color: rgba(244, 250, 255, 1);
+                  background-size: cover;
+                  background-position: 30%;
+                  box-sizing: border-box;
+                }
+
+                .subscription-content {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  max-width: 1250px;
+                  margin: 0 auto;
+                }
+
+                .subscription-left,
+                .subscription-right {
+                  width: 50%;
+                }
+
+                .subscription-title {
+                  font-weight: 600;
+                  color: rgb(0 0 0 / 70%);
+                  filter: drop-shadow(1px 1px 1px rgb(0 0 0 / 90%));
+                  text-transform: uppercase;
+                  font-size: 36px;
+                  margin-bottom: 40px;
+                }
+
+                .subscription-title span {
+                  color: #ed4c28;
+                  font-size: 48px;
+                }
+
+                .botao-whatsapp {
+                  display: flex;
+                  flex-wrap: nowrap;
+                  gap: 5px;
+                  padding: 5px 15px;
+                  text-decoration: none;
+                  font-weight: 500;
+                  color: #6fac3b;
+                  align-items: center;
+                  border-radius: 50px;
+                  font-size: 14px;
+                  border: 1px solid #6fac3b;
+                  max-width: 360px;
+                }
+
+                .botao-whatsapp:hover {
+                  background: #6fac3b14;
+                }
+
+                .simbolo-whatsapp {
+                  width: 25px;
+                  fill: #6fac3b;
+                }
+
+                .plan-container {
+                  display: flex;
+                  align-items: center;
+                  gap: 40px;
+                }
+
+                .plan-content {
+                  display: flex;
+                  background: #fff;
+                  padding: 0;
+                  border-radius: 20px 20px 40px 40px;
+                  cursor: pointer;
+                  border: 2px solid #82689c;
+                  flex-direction: column;
+                  max-width: 260px;
+                  box-sizing: border-box;
+                  position: relative;
+                  align-items: center;
+                  text-decoration: none;
+                }
+
+                .plan-content:hover {
+                  border-color: #ed4c28;
+                }
+
+                .plan-content:hover .button-container {
+                  background: #ed4c28;
+                }
+
+                /* .plan-content.melhor-op:before { content: 'Melhor Opção'; background: #ed4c28; width: 110px; text-align: center; color: #ffff; padding: 3px 5px; border-radius: 6px; position: absolute; top: -10px; font-size: 11px; font-weight: 700; text-transform: uppercase;} */
+
+                .plan-title {
+                  font-weight: 600;
+                  font-size: 20px;
+                  width: 100%;
+                  color: #323232;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-direction: column;
+                  padding: 20px 0;
+                  text-align: center;
+                }
+
+                .plan-list {
+                  padding: 0;
+                  display: flex;
+                  flex-direction: column;
+                  flex: 1 1 auto;
+                  width: 100%;
+                }
+
+                .plan-list li {
+                  font-weight: 500;
+                  color: #4e4e4e;
+                  width: 100%;
+                  font-size: 14px;
+                  padding: 10px 20px;
+                  list-style: none;
+                  position: relative;
+                  display: flex;
+                  justify-content: space-between;
+                }
+
+                .plan-list li:after {
+                  width: 100%;
+                  content: '';
+                  height: 1px;
+                  background: #a7a7a7;
+                  position: absolute;
+                  left: 0;
+                  bottom: 0;
+                }
+
+                .plan-list li:last-child:after {
+                  display: none;
+                }
+
+                .plan-list li:last-child {
+                  margin-bottom: 0;
+                }
+
+                .plan-list li span {
+                  position: absolute;
+                  background: #f44336;
+                  border: 1px solid #f44336;
+                  color: #ffffff;
+                  font-size: 9px;
+                  text-transform: uppercase;
+                  padding: 2px 4px;
+                  border-radius: 6px;
+                  right: 30px;
+                  top: 10px;
+                }
+
+                svg.icon-item {
+                  flex: 0 0 auto;
+                  width: 25px;
+                  fill: #6fac3b;
+                }
+
+                .button-container {
+                  background: #82689c;
+                  text-align: center;
+                  color: #fff;
+                  font-weight: 500;
+                  font-size: 18px;
+                  text-shadow: 2px 2px 3px #000;
+                  margin: 0 0 20px;
+                  border-radius: 110px;
+                  padding: 10px 45px;
+                  min-width: 210px;
+                  text-decoration: none;
+                }
+
+                /* .button-container:hover{ background: #ed4c28;} */
+                .box-item-valor {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 28px;
+                  font-weight: 600;
+                  color: #323232;
+                }
+
+                .box-item-valor small {
+                  font-size: 20px;
+                  margin: 0 5px 0 10px;
+                }
+
+                .container-box-info {
+                  padding-bottom: 20px;
+                  color: #000;
+                }
+
+                .box-info-plano.box-info-detalhe.box-inicio,
+                .box-info-plano.box-info-detalhe {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 22px;
+                }
+
+                .box-info-plano.box-info-detalhe.box-inicio {
+                  margin-bottom: 20px;
+                }
+
+                .info-destaque.info-inicio {
+                  margin-left: 25px;
+                }
+
+                .box-info-plano.box-info-detalhe {
+                  font-size: 28px;
+                }
+
+                .box-info-plano.box-info-detalhe.box-inicio .mes-recorente {
+                  margin-left: 10px;
+                }
+
+                .info-destaque {
+                  font-weight: 600;
+                }
+
+                .info-destaque.info-inicio {
+                  font-weight: 400;
+                }
+
+                .info-destaque small {
+                  font-size: 16px;
+                  margin-right: 5px;
+                }
+
+                .info-destaque.info-inicio small {
+                  margin-right: 0;
+                }
+
+                .mes-recorente {
+                  font-size: 10px;
+                  margin-left: 5px;
+                  text-transform: uppercase;
+                }
+
+                .valor-total {
+                  width: 100%;
+                  text-align: center;
+                  padding: 10px 0 10px;
+                  font-weight: 500;
+                  font-size: 12px;
+                  color: #82689c;
+                  border-bottom: 1px solid;
+                  text-transform: uppercase;
+                }
+
+                /* BLACK-FRIDAY */
+                .plan-content.black {
+                  border: 2px solid #faae02;
+                  background: #000;
+                }
+
+                .plan-title.titulo-black {
+                  color: #faae02;
+                  padding: 10px 0;
+                }
+
+                .box-item-valor.valor-black {
+                  flex-direction: column;
+                  padding: 5px 0;
+                }
+
+                .text-black-friday {
+                  font-size: 20px;
+                  /* background: #faae02; */
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                  margin-bottom: 5px;
+                  font-weight: 700;
+                  color: #faae02;
+                }
+
+                .text-black-friday-ultima {
+                  background: red;
+                  color: #fff;
+                  border-radius: 40px;
+                  margin: 20px 0 0;
+                  text-transform: uppercase;
+                  padding: 5px 10px;
+                  font-weight: 700;
+                }
+
+                .valor-parcela {
+                  display: flex;
+                  color: #faae02;
+                }
+
+                .total-desconto-black {
+                  font-size: 15px;
+                  margin-top: 5px;
+                  color: #faae02;
+                }
+
+                .valor-total.total-black {
+                  color: #faae02;
+                  padding: 10px 0 20px;
+                }
+
+                .plan-list.list-black li {
+                  color: #faae02;
+                }
+
+                .plan-list.list-black li:after {
+                  width: 100%;
+                  content: '';
+                  height: 1px;
+                  background: #faae02;
+                  position: absolute;
+                  left: 0;
+                  bottom: 0;
+                }
+
+                .button-container.button-black {
+                  background: #faae02;
+                  color: #000;
+                  text-shadow: none;
+                  font-weight: 700;
+                  margin-top: 15px;
+                  border: 2px solid #faae02;
+                }
+
+                .plan-content.black:hover .button-container {
+                  background: #000;
+                  color: #faae02;
+                }
+
+                /* .plan-content.black:hover {border-color: #ff1515;}.plan-content:hover .button-container.button-black {background: #ff0000;} */
+                /* BLACK-FRIDAY */
+                @media (max-width: 1200px) {
+                  .subscription-content {
+                    flex-direction: column;
+                  }
+
+                  .subscription-left,
+                  .subscription-right {
+                    width: 100%;
+                  }
+
+                  .subscription-title {
+                    text-align: center;
+                  }
+
+                  .plan-container {
+                    justify-content: center;
+                    margin-top: 50px;
+                  }
+
+                  .plan-content {
+                    width: 290px;
+                    max-width: initial;
+                  }
+
+                  .botao-whatsapp {
+                    justify-content: center;
+                    margin: 0 auto;
+                  }
+                }
+
+                @media (max-width: 640px) {
+                  .subscription-container {
+                    padding: 40px 20px;
+                  }
+
+                  .subscription-title {
+                    font-size: 30px;
+                  }
+
+                  .subscription-description {
+                    font-size: 18px;
+                    margin: 20px 0;
+                  }
+
+                  .plan-container {
+                    flex-direction: column-reverse;
+                  }
+                }
+
+                @media (max-width: 620px) {
+                  .subscription-title {
+                    font-size: 30px;
+                  }
+
+                  .subscription-title span {
+                    font-size: 34px;
+                  }
+
+                  .subscription-description p {
+                    font-size: 24px;
+                    margin-top: 5px;
+                  }
+
+                  .subscription-description p span {
+                    font-size: 30px;
+                  }
+                }
+
+                @media(max-width: 450px) {
+                  .botao-whatsapp {
+                    width: 195px;
+                    text-align: center;
+                    margin: 40px auto 10px
+                  }
+
+                  .simbolo-whatsapp {
+                    width: 50px;
+                    margin: 0;
+                  }
+                }
+
+                small.info-mes {
+                  font-size: 10px;
+                  text-transform: uppercase;
+                  margin-left: -2px;
+                  font-weight: 400;
+                  color: #000;
+                }
+              </style>
+              <div class="subscription-left">
+                <div class="subscription-title">PARA QUEM QUER SER<br>PROGRAMADOR DE VERDADE.<br><span>VAGAS LIMITADAS</span></div>
+                <a href="https://api.whatsapp.com/send?1=pt_br&phone=5521966414328" target="_blank" class="botao-whatsapp">
+                  Em caso de d&uacute;vidas chame no whatsapp
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="simbolo-whatsapp">
+                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+                  </svg>
+                </a>
+              </div>
+
+              <div class="subscription-right">
+                <div class="plan-container">
+                  <!-- <a href="//www.devmedia.com.br/shop/" title="Assine agora o plano DevMedia" class="plan-content">
+                        <div class="plan-title">Plano Anual</div>
+
+                        <div class="box-item-valor">
+                            <p class="mes-parcela">12x</p> 
+                            <p class="info-destaque">
+                                <small>R$</small>59,90
+                            </p>
+                        </div>
+
+                        <div class="valor-total">
+                            12 MESES = R$ 718,80
+                        </div>
+
+                        <ul class="plan-list">
+                            <li>
+                                Forma&ccedil;&atilde;o FullStack completa
+                                <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                                </svg>
+                            </li>
+                            <li>
+                                +10mil exercícios gamificados
+                                <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                                </svg>
+                            </li>
+                            <li>
+                                +50 projetos reais
+                                <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                                </svg>
+                            </li>
+                            <li>
+                                Suporte online
+                                <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                                </svg>
+                            </li>
+                        </ul>
+          
+                        <span class="button-container">
+                            Matricule-se
+                        </span>
+                    </a> -->
+
+                  <!-- black-friday -->
+                  <a href="https://www.devmedia.com.br/shop/?c=blackdev" title="Assine agora o plano DevMedia" class="plan-content black">
+                    <div class="text-black-friday-ultima">ÚLTIMA SEMANA!</div>
+                    <div class="text-black-friday">BLACK FRIDAY</div>
+                    <div class="box-item-valor valor-black">
+                      <div class="plan-title titulo-black">Plano Anual</div>
+                      <div class="valor-parcela">
+                        <p class="mes-parcela parcela-black">12x</p>
+                        <p class="info-destaque destaque-black">
+                          <small>R$</small>45,00
+                        </p>
+                      </div>
+                      <p class="total-desconto-black">R$ 178 de desconto</p>
+                    </div>
+                    <div class="valor-total total-black">
+                      12 MESES = R$ 540,00
+                    </div>
+                    <ul class="plan-list list-black">
+                      <li>
+                        Forma&ccedil;&atilde;o FullStack completa
+                        <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                        </svg>
+                      </li>
+                      <li>
+                        +10mil exercícios gamificados
+                        <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                        </svg>
+                      </li>
+                      <li>
+                        +50 projetos reais
+                        <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                        </svg>
+                      </li>
+                      <li>
+                        Suporte online
+                        <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                        </svg>
+                      </li>
+                    </ul>
+                    <span class="button-container button-black">
+                      APROVEITE
+                    </span>
+                  </a>
+                  <!-- ***********.plan-content.melhor-op:before comentado (caixa laranja escrito melhor opcao)********** -->
+                  <a href="//www.devmedia.com.br/shop/" title="Assine agora o plano DevMedia" class="plan-content melhor-op">
+                    <div class="plan-title">Plano Recorrente</div>
+
+                    <div class="container-box-info">
+                      <div class="box-info-plano box-info-detalhe box-inicio">
+                        <div class="info-destaque info-inicio">
+                          <small>R$</small>89,90<small class="info-mes"> /mês</small>
+                        </div>
+                        <div class="mes-recorente">primeiros<br>3 meses</div>
+                      </div>
+                      <div class="box-info-plano box-info-detalhe">
+                        <div class="info-destaque">
+                          <small>R$</small>49,90<small class="info-mes"> /mês</small>
+                        </div>
+                        <div class="mes-recorente">a partir<br>do 4° m&ecirc;s</div>
+                      </div>
+                    </div>
+
+                    <div class="valor-total">
+                      12 MESES = R$ 718,80
+                    </div>
+
+                    <ul class="plan-list">
+                      <li>
+                        Forma&ccedil;&atilde;o FullStack completa
+                        <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                        </svg>
+                      </li>
+                      <li>
+                        +10mil exercícios gamificados
+                        <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                        </svg>
+                      </li>
+                      <li>
+                        +50 projetos reais
+                        <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                        </svg>
+                      </li>
+                      <li>
+                        Suporte online
+                        <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                        </svg>
+                      </li>
+                      <li>
+                        Pra quem tem pouco limite no cartão
+                        <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                        </svg>
+                      </li>
+                      <li>
+                        Fidelidade de 12 meses
+                        <svg class="icon-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+                        </svg>
+                      </li>
+                    </ul>
+
+                    <span class="button-container">
+                      Matricule-se
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="box_sessao box_duvidas" id="duvidas">
+            <div class="box_container">
+              <h3 class="titulo-duvidas">Perguntas frequentes</h3>
+
+              <div class="container-todas-duvidas">
+
+                <div class="container-duvida duvida-border">
+                  <div class="container-pergunta">
+                    <span class="duvida-titulo">Quem somos?</span>
+                    <div class="container-svg">
+                      <svg class="svg-seta" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <span class="resposta-duvida hide">
+                    <span>A DevMedia &eacute; uma escola de forma&ccedil;&atilde;o de programadores com mais de 20 anos de mercado. J&aacute; formamos mais de 100 mil programadores. </span>
+
+                    <span>A DevMedia ensina programa&ccedil;&atilde;o web, (desenvolvimento de site e aplicativos para celulares). A programa&ccedil;&atilde;o web &eacute; a &aacute;rea que mais contrata programadores em todo o mundo, sendo a maior porta de entrada para a &aacute;rea da tecnologia.</span>
+                  </span>
+                </div>
+
+                <div class="container-duvida duvida-border">
+                  <div class="container-pergunta">
+                    <span class="duvida-titulo">Por que a programa&ccedil;&atilde;o se tornou a profiss&atilde;o mais promissora da atualidade?</span>
+                    <div class="container-svg">
+                      <svg class="svg-seta" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <span class="resposta-duvida hide">
+                    <span>Nunca o mundo necessitou tanto de programadores como atualmente. Com a quarentena estabelecida pela Covid-19, lojas, restaurantes, escrit&oacute;rios e escolas, que tiveram suas atividades paralisadas, perceberam a urgente necessidade de adaptar seus neg&oacute;cios para o mundo digital.</span>
+
+                    <span>Em contrapartida as empresas de tecnologias, durante esse per&iacute;odo, cresceram como nunca tanto em faturamento quanto em n&uacute;mero de usu&aacute;rios.</span>
+
+                    <span>Com isso a necessidade de programadores cresceu muito. Empresas de grande e pequeno porte est&atilde;o com vagas abertas e n&atilde;o conseguem contratar por falta de profissionais qualificados. No momento estima-se que o n&uacute;mero de oportunidades no Brasil seja acima de 200 mil!</span>
+                  </span>
+                </div>
+
+                <div class="container-duvida duvida-border">
+                  <div class="container-pergunta">
+                    <span class="duvida-titulo">Como fa&ccedil;o para come&ccedil;ar a estudar?</span>
+                    <div class="container-svg">
+                      <svg class="svg-seta" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <span class="resposta-duvida hide">
+                    <span>Programa&ccedil;&atilde;o &eacute; um universo amplo, existem muitos caminhos e por isso &eacute; muito f&aacute;cil se perder. Nosso conselho &eacute;: N&Atilde;O ESTUDE SOZINHO. Infelizmente 78% das pessoas que come&ccedil;am a estudar sozinhas desistem da profiss&atilde;o por n&atilde;o conseguirem aprender. Com uma boa orienta&ccedil;&atilde;o elas teriam conseguido!</span>
+
+                    <span>Se voc&ecirc; tomou a decis&atilde;o de entrar nesse mercado, fa&ccedil;a um investimento no seu futuro e busque aprender com quem sabe. Isso vai triplicar suas chances de dominar a programa&ccedil;&atilde;o e conquistar uma vaga no mercado.</span>
+                  </span>
+                </div>
+
+                <div class="container-duvida duvida-border">
+                  <div class="container-pergunta">
+                    <span class="duvida-titulo">Em quanto tempo de estudo vou me tornar um programador?</span>
+                    <div class="container-svg">
+                      <svg class="svg-seta" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <span class="resposta-duvida hide">
+                    <span>O tempo depende, claro, da dedica&ccedil;&atilde;o de cada estudante. A DevMedia ensina programa&ccedil;&atilde;o h&aacute; 20 anos e com toda essa experi&ecirc;ncia montamos uma metodologia que tem como objetivo principal acelerar os seus estudos.</span>
+
+                    <span>Voc&ecirc; ter&aacute; um Plano de Estudo para te orientar em todos os passos do aprendizado. Desenvolver&aacute; diversos projetos reais para colocar em pr&aacute;tica os conhecimentos e contar&aacute; com o melhor suporte ao aluno da web. Todas as suas d&uacute;vidas ser&atilde;o respondidas de imediato.</span>
+
+                    <span>Seguindo nossa metodologia e se dedicando, entre 6 meses e um ano voc&ecirc; j&aacute; estar&aacute; programando.</span>
+                  </span>
+                </div>
+
+                <div class="container-duvida duvida-border">
+                  <div class="container-pergunta">
+                    <span class="duvida-titulo">Sim, voc&ecirc; pode se tornar um programador e n&atilde;o precisa ter diploma de curso superior!</span>
+                    <div class="container-svg">
+                      <svg class="svg-seta" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <span class="resposta-duvida hide">
+                    <span>Ser programador &eacute; uma das maiores oportunidades que o Brasil oferece para quem n&atilde;o tem condi&ccedil;&otilde;es de fazer uma faculdade. Muitas empresas contratam sem fazer quest&atilde;o de diploma, o que importa para elas &eacute; que o candidato seja um bom t&eacute;cnico e consiga atender suas necessidades.</span>
+
+                    <span>Os sal&aacute;rios iniciais para programadores s&atilde;o de R$2.500 mil, podendo chegar aos R$15 mil para aqueles que se dedicam.</span>
+
+                    <span>Com disciplina e um estudo correto, que n&atilde;o te fa&ccedil;a perder tempo, &eacute; poss&iacute;vel se tornar um programador em menos de um ano de estudo.</span>
+
+                    <span>Quando voc&ecirc; j&aacute; estiver empregado, a&iacute; sim voc&ecirc; pode se aprimorar ainda mais fazendo uma faculdade na &aacute;rea.</span>
+                  </span>
+                </div>
+
+                <div class="container-duvida duvida-border">
+                  <div class="container-pergunta">
+                    <span class="duvida-titulo">O que eu irei aprender estudando pela DevMedia?</span>
+                    <div class="container-svg">
+                      <svg class="svg-seta" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <span class="resposta-duvida hide">
+                    <span>Nossas trilhas de estudo te permitem virar um programador Full Stack, que &eacute; aquele programador mais completo, ele domina o desenvolvimento Front-end, Back-end e Mobile.</span>
+
+                    <span>Voc&ecirc; ficar&aacute; apto para criar sistemas para computadores e aplicativos para celulares. Utilizamos como base a linguagem JavaScript que &eacute; a linguagem mais utilizada no mundo. Outra vantagem do JavaScript &eacute; a quantidade de oportunidades no mercado de trabalho. &Eacute; sem d&uacute;vida a linguagem que mais possui vagas e a que mais d&aacute; oportunidade para os iniciantes.</span>
+                  </span>
+                </div>
+
+
+                <div class="container-duvida duvida-border">
+                  <div class="container-pergunta">
+                    <span class="duvida-titulo">Principais diferenciais da DevMedia</span>
+                    <div class="container-svg">
+                      <svg class="svg-seta" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <span class="resposta-duvida hide">
+                    <span><strong>Suporte ao aluno</strong> - O aluno conta com a ajuda de professores para tirar d&uacute;vidas durante toda a jornada de ensino. As perguntas s&atilde;o respondidas em menos de uma hora por professores experientes e atuantes no mercado.</span>
+
+                    <span><strong>Gamifica&ccedil;&atilde;o</strong> - A plataforma de ensino &eacute; divertida e motivante. &Eacute; como se o aluno estivesse dentro de um game. Ele ter&aacute; seu card pessoal, que poder&aacute; ser customizado utilizando as moedas que ele ganha quando acerta os exerc&iacute;cios. Ele poder&aacute; tamb&eacute;m trocar suas moedas por outros produtos dentro da plataforma. Al&eacute;m disso, seus acertos contam pontos no ranking mensal dos alunos. Tudo isso deixa os estudos mais leves e motivantes.</span>
+
+                    <span><strong>Did&aacute;tica</strong> - A DevMedia j&aacute; ensina programa&ccedil;&atilde;o h&aacute; mais de 20 anos. Desenvolvemos ao longo desse tempo uma metodologia que ensina a programar de verdade, com menos aulas e mais pr&aacute;tica, s&atilde;o dezenas de projetos e exerc&iacute;cios que desenvolvem a mente programadora no aluno.</span>
+
+                    <span><strong>Projetos reais</strong> - Durante os estudos os alunos ir&atilde;o desenvolver dezenas de projetos em cada uma das carreira (front-end, back-end e mobile). Mas o principal &eacute; que os projetos da DevMedia n&atilde;o s&atilde;o &ldquo;copia e cola&rdquo; como se encontra por a&iacute;. Aqui o aluno vai desenvolver os projetos de forma aut&ocirc;noma, recebendo claro a nossa mentoria e suporte, mas o aluno ter&aacute; condi&ccedil;&otilde;es para desenvolv&ecirc;-los sozinho.</span>
+
+                    <span><strong>Milhares de exerc&iacute;cios</strong> - Programa&ccedil;&atilde;o &eacute; pr&aacute;tica, por isso a cada nova mat&eacute;ria o aluno passar&aacute; por um bloco de exerc&iacute;cios para fixar o conte&uacute;do e cada acerto ser&aacute; bonificado com pontos e moedas e valem uma posi&ccedil;&atilde;o no ranking dos alunos.</span>
+                  </span>
+                </div>
+
+                <div class="container-duvida duvida-border">
+                  <div class="container-pergunta">
+                    <span class="duvida-titulo">Qual o investimento financeiro que preciso fazer para me tornar um programador?</span>
+                    <div class="container-svg">
+                      <svg class="svg-seta" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <span class="resposta-duvida hide">
+                    <span>Na internet &eacute; poss&iacute;vel encontrar cursos de todos os pre&ccedil;os, desde 50,00 a R$15.000,00.</span>
+
+                    <span>Os cursos de 50,00 s&atilde;o cursos avulsos, que explicam apenas peda&ccedil;os de uma determinada mat&eacute;ria. Para criar um conhecimento completo voc&ecirc; precisaria comprar no m&iacute;nimo de 15 a 20 cursos avulsos e correria o risco deles n&atilde;o se complementarem t&atilde;o perfeitamente e seu conhecimento ficaria cheio de &quot;buracos&quot;.</span>
+
+                    <span>Os cursos de R$15.000,00 n&atilde;o fazem nenhum sentido. Deixe para investir em cursos caros quando quiser se especializar. Por esse pre&ccedil;o voc&ecirc; pode inclusive estudar fora do pais. Na DevMedia, voc&ecirc; ter&aacute; um plano de estudo montado por quem j&aacute; formou mais de 100 mil alunos, e j&aacute; est&aacute; nesse mercado h&aacute; mais de 20 anos. Somos a &uacute;nica plataforma que oferece Suporte ao Aluno em tempo real e uma experi&ecirc;ncia de estudos gamificada para te manter motivado durante todo o per&iacute;odo de estudo. E o melhor, nosso pagamento &eacute; recorrente, voc&ecirc; n&atilde;o precisa usar o limite do seu cart&atilde;o de cr&eacute;dito para investir no seu futuro. Aproveite para se matricular agora mesmo.</span>
+                  </span>
+                </div>
+
+                <div class="container-duvida duvida-border">
+                  <div class="container-pergunta">
+                    <span class="duvida-titulo">Como funciona a forma de pagamento da DevMedia?</span>
+                    <div class="container-svg">
+                      <svg class="svg-seta" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <span class="resposta-duvida hide">
+                    <span>Para que voc&ecirc; possa investir nos seus estudos sem complicar sua vida financeira, a DevMedia cobra o valor da assinatura de forma recorrente, Igual o Netflix. Todos os meses debitamos o valor da parcela em seu cart&atilde;o de cr&eacute;dito, sem comprometer o limite total do cart&atilde;o. :)</span>
+
+                    <span>As primeiras 3 parcelas custam R$89,90 e a partir do 4o m&ecirc;s sua parcela diminui para R$49,90! Assim ela pesa cada vez manos no seu bolso!</span>
+
+                    <span>Nesse modelo, a gente te ajuda a pagar seus estudos, mas voc&ecirc; precisa ajudar a gente a pagar nossos custos. Por isso a assinatura recorrente tem uma fidelidade de um ano. Essa fidelidade tamb&eacute;m vai te ajudar a se manter comprometido com os seus estudos.</span>
+
+                    <span>Temos um trato?</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <script>
+            $(document).on("click", ".container-duvida", function() {
+
+              var container_duvida = $(this);
+              container_duvida.toggleClass("duvida-border");
+
+              var resposta_duvida = container_duvida.find(".resposta-duvida");
+              resposta_duvida.toggleClass("hide");
+
+              var seta = container_duvida.find(".svg-seta");
+              seta.toggleClass("open");
+
+              $(".container-duvida").not(container_duvida).addClass("duvida-border");
+              $(".resposta-duvida").not(resposta_duvida).addClass("hide");
+              $(".svg-seta").not(seta).removeClass("open");
+            });
+          </script>
+
+          <style>
+            .box_sessao.box_depoimentos {
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              max-width: 950px;
+              margin: 60px auto;
+            }
+
+
+            .dep-nome-imagem {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            }
+
+            .nome-feedback {
+              font-size: 20px;
+              color: black;
+              font-weight: 500;
+            }
+
+            .nome-feedback a {
+              text-decoration: none;
+              color: black;
+              font-weight: 600;
+            }
+
+            .nome-feedback a:hover {
+              color: #666666;
+            }
+
+            .dep-usuario {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+
+            .dep-icone-linkedin {
+              width: 25px !important;
+              height: 25px;
+            }
+
+            .box_depoimentos {
+              font-family: 'Montserrat';
+            }
+
+            .box_depoimentos .titulo_gerais {
+              color: #253a44;
+              font-size: 18px;
+              margin: 0;
+            }
+
+            .dep-box {
+              box-sizing: border-box;
+              background-color: #F2F3F6;
+              display: flex;
+              border-radius: 10px;
+              margin: auto;
+              border: 0.5px solid #253a4426;
+              flex-direction: column;
+              padding: 20px;
+              box-shadow: 6px 6px 13px rgb(0 0 0 / 10%);
+            }
+
+            .dep-card {
+              width: 34%;
+            }
+
+            .dep-info {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+            }
+
+            .dep-info p {
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 1.5;
+              text-align: left;
+              color: #3a3a3a;
+              margin: 0;
+            }
+
+            .destaque-texto-feedback {
+              font-size: 16px;
+              font-weight: 600;
+              color: #444444;
+              background: aquamarine;
+            }
+
+            .box_btn_depoimentos {
+              display: flex;
+              justify-content: center;
+              box-sizing: border-box;
+            }
+
+            .btn_depoimentos {
+              box-sizing: border-box;
+              text-decoration: none;
+              color: #fff;
+              font-size: 15px;
+              font-weight: 600;
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              background-color: #253a44;
+              border-radius: 10px;
+              padding: 10px 15px;
+              border: 1px solid #253a44;
+            }
+
+            .btn_depoimentos:hover {
+              background-color: transparent;
+              color: #253a44;
+            }
+
+            .dep-info .dep-box-info {
+              display: flex;
+              margin-left: 16px;
+              justify-content: space-between;
+              width: 100%;
+              padding-right: 25px;
+              align-items: baseline;
+              flex-wrap: wrap;
+            }
+
+            .dep-info .dep-box-info #dep-txt-nome {
+              font-family: Inter;
+              font-size: 16px;
+              font-weight: 600;
+              line-height: 1.53;
+              text-align: left;
+              color: #ed4c28;
+            }
+
+            .dep-info .dep-box-info #dep-txt-nome-des {
+              font-family: Inter;
+              font-size: 16px;
+              line-height: 1.53;
+              text-align: left;
+              color: #b6b6b6;
+              margin-left: 16px;
+            }
+
+            .depoimentos-content {
+              display: flex;
+              flex-direction: column;
+              gap: 30px;
+              box-sizing: border-box;
+              max-width: 950px;
+            }
+
+            .dep-box-info2 {
+              display: flex;
+              align-items: center;
+              margin: 20px 0px 15px 5px;
+            }
+
+            .dep-box-info2 .avatar-dep {
+              width: 54px !important;
+              height: 54px;
+            }
+
+            .dep-box-imginfo {
+              width: 35px;
+              height: 35px;
+              background-color: #1d2f6f;
+              border-radius: 50%;
+            }
+
+            #dep1 {
+              background-image: url("https://www.devmedia.com.br/pro/imagens/dep_aluno_3.webp");
+              background-repeat: no-repeat, repeat;
+              background-size: cover;
+            }
+
+            #dep2 {
+              background-image: url("https://www.devmedia.com.br/pro/imagens/dep-leonardo.webp");
+              background-repeat: no-repeat, repeat;
+              background-size: cover;
+            }
+
+            #dep3 {
+              background-image: url("https://www.devmedia.com.br/pro/imagens/dep-lucas.webp");
+              background-repeat: no-repeat, repeat;
+              background-size: cover;
+            }
+
+            #dep4 {
+              background-image: url("https://www.devmedia.com.br/pro/imagens/dep_julio.webp");
+              background-repeat: no-repeat, repeat;
+              background-size: cover;
+            }
+
+            #dep5 {
+              background-image: url("https://www.devmedia.com.br/pro/imagens/dep_joel.webp");
+              background-repeat: no-repeat, repeat;
+              background-size: cover;
+            }
+
+            #dep6 {
+              background-image: url("https://www.devmedia.com.br/pro/imagens/dep-usuario.webp");
+              background-size: cover;
+              background-position: center;
+            }
+
+            #dep7 {
+              background-image: url("https://www.devmedia.com.br/pro/imagens/dep_aluno_1.webp");
+              background-repeat: no-repeat, repeat;
+              background-size: cover;
+            }
+
+            #dep8 {
+              background-image: url("https://www.devmedia.com.br/pro/imagens/dep-jose-lucas.webp");
+              background-repeat: no-repeat, repeat;
+              background-size: cover;
+            }
+
+            #dep9 {
+              background-image: url("https://www.devmedia.com.br/pro/imagens/dep-eduardo-dorneles.webp");
+              background-repeat: no-repeat, repeat;
+              background-size: cover;
+            }
+
+            #dep10 {
+              background-image: url("https://www.devmedia.com.br/pro/imagens/dep-adauto-junior.webp");
+              background-repeat: no-repeat, repeat;
+              background-size: cover;
+            }
+
+            #dep11 {
+              background-image: url("https://www.devmedia.com.br/pro/imagens/dep_julio2.jpg");
+              background-repeat: no-repeat, repeat;
+              background-size: cover;
+            }
+
+            .depoimentos-container {
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+            }
+          </style>
+          <section class="page-content box_sessao box_depoimentos">
+            <h4 class="titulo_gerais">Nossos casos de sucesso</h4>
+            <div class="depoimentos-content">
+              <div class="depoimentos-container">
+                <div class="dep-box">
+                  <div class="dep-info">
+                    <div class="dep-usuario">
+                      <div class="dep-nome-imagem">
+                        <div class="dep-box-imginfo" id="dep2"></div>
+                        <p id="dep-txt-nome" class="nome-feedback">
+                          <a target="_blank" href="https://www.devmedia.com.br/perfil/leonardo-carlos-reis-picanco" title="Ir para perfil de Leonardo Carlos">
+                            Leonardo Carlos
+                          </a>
+                        </p>
+                      </div>
+                      <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" class="dep-icone-linkedin">
+                    </div>
+
+                    <p class="texto-feedback">Eu sabia pouquíssimas coisas de programação antes de começar a estudar com
+                      vocês, fui me especializando em várias áreas e ferramentas que tinham na plataforma, e com essa
+                      bagagem <span class="destaque-texto-feedback">consegui um estágio logo no início do meu primeiro
+                        período na faculdade.</span></p>
+
+                  </div>
+                </div>
+
+                <div class="dep-box">
+                  <div class="dep-info">
+                    <div class="dep-usuario">
+                      <div class="dep-nome-imagem">
+                        <div class="dep-box-imginfo" id="dep3"></div>
+                        <p id="dep-txt-nome" class="nome-feedback">
+                          <a target="_blank" href="https://www.devmedia.com.br/perfil/lucas-eliabe-cruz-rodrigues" title="Ir para perfil de Lucas Rodrigues">
+                            Lucas Rodrigues
+                          </a>
+                        </p>
+                      </div>
+                      <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" class="dep-icone-linkedin">
+                    </div>
+
+                    <p class="texto-feedback">Estudo aqui na Dev desde o meio do ano passado!
+                      Nesse período a Dev me ajudou a crescer muito aqui no trampo.<br>
+                      <span class="destaque-texto-feedback">Fui o primeiro desenvolvedor contratado pela minha
+                        empresa. Hoje eu lidero um time de desenvolvimento!</span><br>
+                      <span class="paragrafo-final">Minha meta é continuar estudando e praticando para ser um
+                        Full-Stack Dev!</span>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="dep-box">
+                  <div class="dep-info">
+                    <div class="dep-usuario">
+                      <div class="dep-nome-imagem">
+                        <div class="dep-box-imginfo" id="dep1"></div>
+                        <p id="dep-txt-nome" class="nome-feedback">
+                          <a target="_blank" href="https://www.devmedia.com.br/perfil/heraclito-pantoja-junior" title="Ir para perfil de Heráclito Junior">
+                            Heráclito Júnior
+                          </a>
+                        </p>
+                      </div>
+                      <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" class="dep-icone-linkedin">
+                    </div>
+
+                    <p class="texto-feedback">Economizei 3 meses para assinar a plataforma e sendo sincero valeu muito a
+                      pena, pois a <span class="destaque-texto-feedback">plataforma é bem intuitiva e muuuuito
+                        didática a metodologia de ensino.</span> Sinto que estou EVOLUINDO a cada dia. Muito
+                      obrigado!</p>
+                  </div>
+                </div>
+
+                <div class="dep-box">
+                  <div class="dep-info">
+                    <div class="dep-usuario">
+                      <div class="dep-nome-imagem">
+                        <div class="dep-box-imginfo" id="dep4"></div>
+                        <p id="dep-txt-nome" class="nome-feedback">
+                          <a target="_blank" href="https://www.devmedia.com.br/perfil/julio-238" title="Ir para perfil de Julio Cablen">
+                            Julio Cablen
+                          </a>
+                        </p>
+                      </div>
+                      <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" class="dep-icone-linkedin">
+                    </div>
+
+                    <p class="texto-feedback">Nossa! Plataforma maravilhosa. To amando o curso de desenvolvimento
+                      front-end, tinha coisas que eu ainda não tinha visto. <span class="destaque-texto-feedback">A
+                        didática é do jeito que qualquer pessoa consegue aprender.</span> Sério, to apaixonado,
+                      adorando demais.</p>
+
+                  </div>
+                </div>
+
+                <div class="dep-box">
+                  <div class="dep-info">
+                    <div class="dep-usuario">
+                      <div class="dep-nome-imagem">
+                        <div class="dep-box-imginfo" id="dep5"></div>
+                        <p id="dep-txt-nome" class="nome-feedback">
+                          <a target="_blank" href="https://www.devmedia.com.br/perfil/joelberth-sena" title="Ir para perfil de Joelberth Sena">
+                            Joelberth Sena
+                          </a>
+                        </p>
+                      </div>
+                      <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" class="dep-icone-linkedin">
+                    </div>
+
+                    <p class="texto-feedback">Adquiri o curso de vocês e logo percebi que são os melhores do Brasil. É
+                      um passo a passo incrível. <span class="destaque-texto-feedback">Só não aprende quem não quer.
+                        Foi o melhor investimento da minha vida!</span></p>
+
+                  </div>
+                </div>
+
+                <div class="dep-box">
+                  <div class="dep-info">
+                    <div class="dep-usuario">
+                      <div class="dep-nome-imagem">
+                        <div class="dep-box-imginfo" id="dep6"></div>
+                        <p id="dep-txt-nome" class="nome-feedback">
+                          <a target="_blank" href="https://www.devmedia.com.br/perfil/devfelipenunes" title="Ir para perfil de Felipe Nunes">
+                            Felipe Nunes
+                          </a>
+                        </p>
+                      </div>
+                      <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" class="dep-icone-linkedin">
+                    </div>
+
+                    <p class="texto-feedback">Foi um dos melhores investimentos que já fiz na vida e tenho aprendido
+                      bastante com a plataforma. Vocês estão fazendo parte da minha jornada nesse mundo da
+                      programação, <span class="destaque-texto-feedback">irei assinar meu contrato como programador
+                        graças a plataforma.</span></p>
+
+                  </div>
+                </div>
+
+                <div class="dep-box">
+                  <div class="dep-info">
+                    <div class="dep-usuario">
+                      <div class="dep-nome-imagem">
+                        <div class="dep-box-imginfo" id="dep7"></div>
+                        <p id="dep-txt-nome" class="nome-feedback">
+                          Wanderson Oliveira
+                        </p>
+                      </div>
+                      <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" class="dep-icone-linkedin">
+                    </div>
+
+                    <p class="texto-feedback"><span class="destaque-texto-feedback">Comprei a assinatura tem uma semana,
+                        aprendi mais do que 4 meses estudando outros cursos.</span> Exercícios práticos que não tem
+                      como não aprender, estão de parabéns!</p>
+
+                  </div>
+                </div>
+
+                <div class="dep-box">
+                  <div class="dep-info">
+                    <div class="dep-usuario">
+                      <div class="dep-nome-imagem">
+                        <div class="dep-box-imginfo" id="dep8"></div>
+                        <p id="dep-txt-nome" class="nome-feedback">
+                          <a target="_blank" href="https://www.devmedia.com.br/perfil/jose-lucas-domingues" title="Ir para perfil de José Lucas">
+                            José Lucas
+                          </a>
+                        </p>
+                      </div>
+                      <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" class="dep-icone-linkedin">
+                    </div>
+
+                    <p class="texto-feedback">Obrigado DevMedia, nunca presenciei <span class="destaque-texto-feedback">uma plataforma de ensino tão presente na vida acadêmica de
+                        seus alunos</span>, parabéns!</p>
+
+                  </div>
+                </div>
+
+                <div class="dep-box">
+                  <div class="dep-info">
+                    <div class="dep-usuario">
+                      <div class="dep-nome-imagem">
+                        <div class="dep-box-imginfo" id="dep9"></div>
+                        <p id="dep-txt-nome" class="nome-feedback">
+                          Eduardo Dorneles
+                        </p>
+                      </div>
+                      <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" class="dep-icone-linkedin">
+                    </div>
+
+                    <p class="texto-feedback">Aprendi React na plataforma da DevMedia há cerca de 1 ano e meio... <span class="destaque-texto-feedback">Hoje estou há 1 ano empregado</span> trabalhando 100% com
+                      React!</p>
+
+                  </div>
+                </div>
+
+                <div class="dep-box">
+                  <div class="dep-info">
+                    <div class="dep-usuario">
+                      <div class="dep-nome-imagem">
+                        <div class="dep-box-imginfo" id="dep10"></div>
+                        <p id="dep-txt-nome" class="nome-feedback">
+                          Adauto Junior
+                        </p>
+                      </div>
+                      <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" class="dep-icone-linkedin">
+                    </div>
+
+                    <p class="texto-feedback">Já fiz alguns cursos na área e <span class="destaque-texto-feedback">nenhum é tão bom quanto o de vocês.</span> Estou aprendendo
+                      muito, muito obrigado por existirem. Estão de parabéns... Espero um dia conseguir um emprego na
+                      área.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="box_btn_depoimentos">
+                <a href="https://www.devmedia.com.br/depoimentos/" class="btn_depoimentos" target="_blank">Ver todos os
+                  casos de sucesso</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="page-content page-info ">
+            <section class="page-content-wrapper">
+              <div class="autor-info-area">
+                <figure>
+                  <img src="//www.devmedia.com.br/imagens/fotoscolunistas/294727_20160415175806.png" alt="autor">
+                </figure>
+                <div class="autor-info">
+                  Por
+                  <span class="autor-nome">Ricardo</span>
+                  <span class="autor-ano">Em 2016</span>
+                </div>
+              </div>
+            </section>
+          </section>
+          <section class="page-content page-comment">
+            <section class="page-content-wrapper">
+
+
+
+              <div class="comentarios_outer" id="comentario">
+                <link rel="stylesheet" href="//www.devmedia.com.br/comentarios/css/comentarios.css?id=0.1">
+                <link rel="stylesheet" href="//www.devmedia.com.br/comentarios/css/dvm.editable.css?id=0.1" />
+                <link rel="stylesheet" href="//www.devmedia.com.br/comentarios/css/notifIt.css?id=0.1" />
+                <link rel="stylesheet" href="//www.devmedia.com.br/view/css/slider.css?id=0.1" />
+
+                <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+                <style>
+                  #carrega-comentarios {
+                    height: 50px;
+                    background-image: url(//www.devmedia.com.br/comentarios/img/loading.gif);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    margin: 40px 0;
+                  }
+
+                  #div_comentarios .comentario-load {
+                    opacity: 0;
+                    transition: opacity 1s;
+                  }
+
+                  #div_comentarios .comentario-load.active {
+                    opacity: 1;
+                  }
+
+                  #div_comentarios .comentarios_outer {
+                    box-sizing: border-box;
+                    margin: 30px auto;
+                    max-width: 950px;
+                    position: relative;
+                    width: 100%
+                  }
+
+                  #div_comentarios .comentario_header {
+                    font-family: 'Montserrat', sans-serif;
+                    text-align: center;
+                    background-color: #253a44;
+                    padding: 20px 20px;
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    color: white;
+                    border-radius: 5px;
+                    box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+                    margin-bottom: 20px;
+                  }
+
+                  #div_comentarios .oculto-btn {
+                    color: #575757;
+                    font-weight: 600;
+                    font-size: 14px;
+                    border-top: 2px dashed #b5b5b5;
+                    text-align: center;
+                    padding: 5px;
+                    margin: 10px 0 15px;
+                    cursor: pointer;
+                    transition: all .2s ease;
+                  }
+
+                  #div_comentarios .oculto-btn:hover {
+                    color: #253a44;
+                    border-top: 2px dashed #e9e9e9;
+                  }
+
+                  @media screen and (max-width: 1199px) {
+                    .comentarios_outer {
+                      box-sizing: border-box;
+                      margin: 40px auto 0;
+                      width: 100%;
+                    }
+                  }
+
+                  @media screen and (max-width: 639px) {
+                    .comentarios_outer {
+                      padding: 0 15px;
+                    }
+                  }
+                </style>
+
+                <aside id="div_comentarios" data-idcomp="37205">
+                  <section class="comentario_header">Comentários</section>
+                  <section class="comentario_area">
+
+                  </section>
+
+                </aside>
+
+                <script>
+                  let comentariosReadyEvent = document.createEvent('Event');
+                  comentariosReadyEvent.initEvent('comentariosReady', true, true);
+                  window.comentariosReady = false;
+
+                  function loadPreview() {
+                    var canload = $("script[src='//www.devmedia.com.br/perfil/js/preview.js']").length == 0;
+                    if (canload) {
+                      var newScript = $("<script>");
+                      newScript.attr("src", "//www.devmedia.com.br/perfil/js/preview.js?id=17");
+                      newScript.attr("type", "text/javascript");
+                      $("head").append(newScript);
+                    }
+                  }
+
+                  $(document).ready(function() {
+                    loadPreview();
+
+                    $("body").on("click", ".subcomentarios_area.compacto .oculto-btn", function() {
+                      $subcomentarios_area = $(this).closest(".subcomentarios_area");
+
+                      let id_pai = $subcomentarios_area.siblings(".comentario_principal").find(".comentario_conteudo_texto").attr("data-comentario");
+
+                      $subcomentarios_area.prepend("<div id='carrega-comentarios'></div>");
+
+                      $(this).remove();
+
+                      var dados = {
+                        id_pai: id_pai,
+                        acao: "retornaFilhosRestantesPublicos"
+                      };
+
+                      var url = "//www.devmedia.com.br/inc/comentarios/controller/comentario_controller.php";
+
+                      $.ajax({
+                        url: url,
+                        method: "POST",
+                        data: dados
+                      }).done(function(response) {
+                        $subcomentarios_area.find(".carrega-comentarios").remove();
+                        $subcomentarios_area.html(response);
+
+                        if (typeof instgrm != "undefined") {
+                          instgrm.Embeds.process()
+                        }
+                      });
+
+                    });
+                  });
+                </script>
+                <script defer type="text/javascript" src="//www.devmedia.com.br/comentarios/js/embed_insta.js"></script>
+                <script type="text/javascript" src="//www.devmedia.com.br/comentarios/js/comentario_new.js?id=0.1"></script>
+              </div>
+            </section>
+          </section>
+
+          <section id="menu-anotacao" off></section>
+
+
+
+        </section>
+      </section>
+
+      <div class="dev-modal">
+        <div class="dev-modal-body">
+          <span class="dev-modal-close">
+            <svg x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+              <path d="M505.943,6.058c-8.077-8.077-21.172-8.077-29.249,0L6.058,476.693c-8.077,8.077-8.077,21.172,0,29.249 C10.096,509.982,15.39,512,20.683,512c5.293,0,10.586-2.019,14.625-6.059L505.943,35.306 C514.019,27.23,514.019,14.135,505.943,6.058z"></path>
+              <path d="M505.942,476.694L35.306,6.059c-8.076-8.077-21.172-8.077-29.248,0c-8.077,8.076-8.077,21.171,0,29.248l470.636,470.636 c4.038,4.039,9.332,6.058,14.625,6.058c5.293,0,10.587-2.019,14.624-6.057C514.018,497.866,514.018,484.771,505.942,476.694z"></path>
+            </svg>
+          </span>
+
+          <div class="devbot-wrapper">
+            <link rel="stylesheet" href="//www.devmedia.com.br/tecnologia/css/devbot.css?2">
+            <script src="//www.devmedia.com.br/assistente/js/core.js"></script>
+            <script src="//www.devmedia.com.br/tecnologia/js/devbot.js?a1"></script>
+
+            <div class="devbot-avatar" id="devbot-avatar-box">
+              <svg xmlns="http://www.w3.org/2000/svg" class="dev-avatar" viewBox="0 0 1513.29 1836.18">
+                <defs>
+                  <style>
+                    .dev-avatar .robot-avatar {
+                      isolation: isolate;
+                    }
+
+                    .dev-avatar .background-circle {
+                      fill: #0ac5d4;
+                    }
+
+                    .dev-avatar .robot-skin,
+                    .dev-avatar .robot-face-shadow {
+                      fill: #ececec;
+                    }
+
+                    .dev-avatar .robot-stroke {
+                      fill: #665c64;
+                    }
+
+                    .dev-avatar .robot-neck-shadow {
+                      fill: #c7c7c7;
+                    }
+
+                    .dev-avatar .robot-neck-shadow,
+                    .dev-avatar .robot-face-shadow {
+                      mix-blend-mode: multiply;
+                    }
+
+                    .dev-avatar .robot-face {
+                      fill: #3f3f3f;
+                    }
+
+                    .dev-avatar .robot-reflection {
+                      fill: #fff;
+                      opacity: 0.57;
+                      mix-blend-mode: screen;
+                    }
+
+                    .dev-avatar .robot-eyes {
+                      fill: #31d6cc;
+                      fill-opacity: 1;
+                      animation: robot-blinkEye 3.3s infinite linear;
+                    }
+
+                    .sad-avatar .dev-avatar .robot-eyes.right-eye {
+                      animation-name: robot-sad-right-eye, robot-sad-blink-right-eye;
+                      animation-duration: 1s, 3.3s;
+                      animation-delay: 0.5s, 1.5s;
+                      animation-iteration-count: 1, infinite;
+                      animation-fill-mode: forwards, unset;
+                    }
+
+                    .sad-avatar .dev-avatar .robot-eyes.left-eye {
+                      animation-name: robot-sad-left-eye, robot-sad-blink-left-eye;
+                      animation-duration: 1s, 3.3s;
+                      animation-delay: 0.5s, 1.5s;
+                      animation-iteration-count: 1, infinite;
+                      animation-fill-mode: forwards, unset;
+                    }
+
+                    .dev-avatar .robot-mouth-wrapper {
+                      transform-origin: center center;
+                    }
+
+                    .dev-avatar .robot-mouth {
+                      fill: #31d6cc;
+                      transition: .2s ease;
+                      transform-origin: center;
+                      transform: translate(-214px, -48px);
+                    }
+
+                    .sad-avatar .dev-avatar .robot-mouth {
+                      animation: robot-sad-mouth 1s 0.5s 1 forwards;
+                    }
+
+                    .talk-avatar .dev-avatar .robot-mouth-wrapper {
+                      animation: robot-talk-mouth .4s infinite ease;
+                    }
+
+                    @keyframes robot-sad-mouth {
+                      0% {
+                        transform: translate(-214px, -48px) scale(1, 1);
+                      }
+
+                      50% {
+                        transform: translate(-107px, -220px) scale(0.5, 0);
+                      }
+
+                      100% {
+                        transform: translate(-214px, -440px) scale(1, -1);
+                      }
+                    }
+
+                    @keyframes robot-talk-mouth {
+
+                      0%,
+                      100% {
+                        transform: translate(0px, 0px) scale(1, 1);
+                      }
+
+                      50% {
+                        transform: translate(0px, -200px) scale(1, 0.2);
+                      }
+                    }
+
+                    @keyframes robot-blinkEye {
+                      0% {
+                        transform: translate(-214px, -48px) scaleY(1);
+                      }
+
+                      5% {
+                        transform: translate(-214px, 455px) scaleY(0.1);
+                      }
+
+                      10% {
+                        transform: translate(-214px, -48px) scaleY(1);
+                      }
+
+                      100% {
+                        transform: translate(-214px, -48px) scaleY(1);
+                      }
+                    }
+
+                    @keyframes robot-sad-right-eye {
+                      0% {
+                        transform: translate(-214px, -48px) rotate(0deg);
+                      }
+
+                      100% {
+                        transform: rotate(-15deg) translate(-400px, 230px)
+                      }
+                    }
+
+                    @keyframes robot-sad-blink-right-eye {
+                      0% {
+                        transform: rotate(-15deg) translate(-400px, 230px) scaleY(1)
+                      }
+
+                      10% {
+                        transform: rotate(-15deg) translate(-400px, 700px) scaleY(0.1)
+                      }
+
+                      20% {
+                        transform: rotate(-15deg) translate(-400px, 230px) scaleY(1)
+                      }
+
+                      100% {
+                        transform: rotate(-15deg) translate(-400px, 230px) scaleY(1)
+                      }
+                    }
+
+                    @keyframes robot-sad-left-eye {
+                      0% {
+                        transform: rotate(0deg) translate(-214px, -48px)
+                      }
+
+                      100% {
+                        transform: rotate(15deg) translate(-75px, -170px)
+                      }
+                    }
+
+                    @keyframes robot-sad-blink-left-eye {
+                      0% {
+                        transform: rotate(15deg) translate(-60px, -170px) scaleY(1)
+                      }
+
+                      10% {
+                        transform: rotate(15deg) translate(-60px, 310px) scaleY(0.1)
+                      }
+
+                      20% {
+                        transform: rotate(15deg) translate(-60px, -170px) scaleY(1)
+                      }
+
+                      100% {
+                        transform: rotate(15deg) translate(-60px, -170px) scaleY(1)
+                      }
+                    }
+                  </style>
+                </defs>
+                <g class="robot-avatar">
+                  <circle class="background-circle" cx="756.64" cy="1079.54" r="756.64" />
+                  <g>
+                    <path class="robot-skin" d="M1552.57,848.59a72.18,72.18,0,0,1-11-.85c-33.92-5.26-61.6-34.14-78-81.32-15.63-45.12-19.23-102.23-10.14-160.81,18.13-116.8,81-204.88,146.35-204.88a72.14,72.14,0,0,1,11,.84c33.92,5.27,61.61,34.15,78,81.33,15.63,45.12,19.23,102.23,10.14,160.81-18.13,116.8-81.05,204.88-146.35,204.88Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-stroke" d="M1599.83,410.28a62.34,62.34,0,0,1,9.53.74c62.56,9.71,98.43,113.23,80.11,231.22-17.38,112-77.34,196.8-136.9,196.8a62.34,62.34,0,0,1-9.53-.74c-62.56-9.71-98.43-113.23-80.12-231.22,17.39-112,77.35-196.8,136.91-196.8Zm0-19.11c-35.34,0-70.83,22.93-99.93,64.55-27.21,38.92-47.05,91.63-55.86,148.43-20.24,130.39,22,241.54,96.07,253a81,81,0,0,0,12.46,1c35.33,0,70.83-22.93,99.93-64.55,27.21-38.92,47-91.63,55.86-148.43,20.24-130.39-22-241.54-96.07-253a81.21,81.21,0,0,0-12.46-1Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-skin" d="M1664.18,452.55c-14.2-23.11-32.85-38.12-54.82-41.53-62.56-9.71-128.12,78.07-146.44,196.06S1480.48,828.59,1543,838.3c20.71,3.22,41.75-4.31,61.3-20Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-skin" d="M390,809.21c-65.3,0-128.22-88.09-146.35-204.89-19.41-125.1,19.28-231.45,88.09-242.13a72.38,72.38,0,0,1,11-.85c65.3,0,128.22,88.08,146.35,204.89C508.47,691.32,469.78,797.68,401,808.36A72.28,72.28,0,0,1,390,809.21Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-stroke" d="M342.71,370.9c59.56,0,119.52,84.78,136.91,196.79,18.31,118-17.56,221.52-80.12,231.23a62.32,62.32,0,0,1-9.53.73c-59.56,0-119.52-84.78-136.91-196.8-18.31-118,17.56-221.51,80.12-231.22a62.32,62.32,0,0,1,9.53-.73Zm0-19.12h0a82.29,82.29,0,0,0-12.46,1c-37.59,5.84-67.95,37-85.52,87.64C228.6,487,224.85,545.69,234.18,605.79,243,662.59,262.83,715.3,290,754.21c29.11,41.63,64.59,64.55,99.93,64.55a81,81,0,0,0,12.46-1c37.59-5.83,68-36.95,85.52-87.63,16.13-46.57,19.88-105.32,10.55-165.41-8.81-56.8-28.65-109.51-55.86-148.42-29.1-41.63-64.59-64.56-99.93-64.56Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-skin" d="M278.36,413.16c14.19-23.11,32.85-38.12,54.82-41.53,62.56-9.71,128.12,78.07,146.44,196.06S462.06,789.21,399.5,798.92c-20.72,3.21-41.75-4.32-61.3-20Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-skin" d="M403.54,298.51l19.52-130.32c9.28-62,63.58-108.79,126.28-108.79h839.52c62.7,0,117,46.77,126.28,108.79l19.51,130.32Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-stroke" d="M1388.86,70.8a116.3,116.3,0,0,1,115,99.07l17.55,117.24H416.78l17.55-117.24a116.3,116.3,0,0,1,115-99.07Zm0-22.8H549.35A139.08,139.08,0,0,0,411.79,166.5L394.23,283.74l-3.92,26.17H1547.88L1544,283.74,1526.41,166.5A139.1,139.1,0,0,0,1388.86,48Z" transform="translate(-214.64 -48)" />
+                    <rect class="robot-skin" x="400.84" y="829.28" width="707.24" height="317.97" />
+                    <rect class="robot-neck-shadow" x="400.84" y="829.28" width="707.24" height="212.75" />
+                    <path class="robot-stroke" d="M1311.32,888.68v295.17H626.88V888.68Zm22.8-22.8h-730v340.77h730V865.88Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-skin" d="M511.34,1009.67c-62.7,0-117-46.77-126.28-108.79L298.09,320a127.7,127.7,0,0,1,126.29-146.6H1513.82A127.7,127.7,0,0,1,1640.11,320l-87,580.89c-9.28,62-63.57,108.79-126.28,108.79Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-stroke" d="M1513.82,184.79c71.09,0,125.54,63.21,115,133.51l-87,580.89a116.28,116.28,0,0,1-115,99.08H511.35a116.28,116.28,0,0,1-115-99.08l-87-580.89c-10.52-70.3,43.93-133.51,115-133.51Zm0-22.8H424.37A139.1,139.1,0,0,0,286.81,321.68l87,580.89a139.08,139.08,0,0,0,137.56,118.49h915.5a139.08,139.08,0,0,0,137.56-118.49l87-580.89A139.08,139.08,0,0,0,1513.82,162Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-face-shadow" d="M1541.86,830.46a116.28,116.28,0,0,1-115,99.07H511.35a116.28,116.28,0,0,1-115-99.07l-84-560.76a115.88,115.88,0,0,0-3,48.6l87,580.89a116.28,116.28,0,0,0,115,99.08h915.5a116.28,116.28,0,0,0,115-99.08l87-580.89a115.88,115.88,0,0,0-3-48.6Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-face" d="M590.53,837.9a116.09,116.09,0,0,1-115.46-99.31L443.41,529.08A160,160,0,0,1,601.63,345.15H1341a160,160,0,0,1,158.22,183.93L1467.5,738.59a116.08,116.08,0,0,1-115.45,99.31Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-stroke" d="M601.05,356.55h739.32c90.93,0,160.54,80.92,147,170.82l-31.66,209.51a105.38,105.38,0,0,1-104.19,89.63H590a105.37,105.37,0,0,1-104.18-89.63L454.11,527.37c-13.59-89.9,56-170.82,146.94-170.82Zm0-22.79a171.39,171.39,0,0,0-169.48,197l31.66,209.51A128.15,128.15,0,0,0,590,849.3h761.52a128.17,128.17,0,0,0,126.73-109l31.66-209.51a171.4,171.4,0,0,0-169.49-197Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-face" d="M601.05,389.68h739.32c77.48,0,139.44,58.77,147.68,131.77,9.73-87.5-58.76-164.9-147.68-164.9H601.05c-88.92,0-157.4,77.4-147.67,164.9C461.62,448.45,523.57,389.68,601.05,389.68Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-eyes right-eye" transform="translate(-214.64 -48)" d="M 1197.48,491.81 A 62.41,62.41 0 0 0 1195.24,507 L 1320,506 a 62.55,62.55 0 0 0 -2.47,-15.15 z m -2.2606,31.56526 124.9563,-0.95962 0.1165,15.16956 -124.9564,0.95961 z M 1205.8,617.53 a 62.36,62.36 0 0 0 105.35,-0.81 z m -10.3391,-62.70758 124.9563,-0.95961 0.1165,15.16955 -124.9563,0.95961 z M 1310.05,474.66 a 62.37,62.37 0 0 0 -105.36,0.82 z m 10.55,110.54 -124.74,1 a 62,62 0 0 0 2.47,15.14 l 120,-0.93 a 62.81,62.81 0 0 0 2.27,-15.21 z" />
+                    <path class="robot-eyes left-eye" transform="translate(-214.64 -48)" d="m 625.51,492 a 62.47,62.47 0 0 0 -2.21,15.19 l 124.75,-1.25 a 62.34,62.34 0 0 0 -2.51,-15.14 z m -2.10988,31.37228 124.9536,-1.26494 0.15356,15.16922 -124.9536,1.26494 z M 634.11,617.65 a 62.37,62.37 0 0 0 105.36,-1.06 z m -10.40153,-62.82246 124.95359,-1.26494 0.15357,15.16922 -124.9536,1.26494 z M 738,474.54 a 62.37,62.37 0 0 0 -105.36,1.06 z m 10.84,110.51 -124.74,1.26 a 62,62 0 0 0 2.51,15.14 l 120,-1.21 a 61.84,61.84 0 0 0 2.23,-15.19 z" />
+                    <path class="robot-skin" d="M440.48,1506.13A66.52,66.52,0,0,1,374,1439.69V1259.92a87.57,87.57,0,0,1,87.47-87.47H1476.69a87.56,87.56,0,0,1,87.46,87.47v179.77a66.51,66.51,0,0,1-66.43,66.44Z" transform="translate(-214.64 -48)" id="path3894" />
+                    <path class="robot-stroke" d="M1476.69,1183.85a76.06,76.06,0,0,1,76.06,76.07v179.77a55,55,0,0,1-55,55H440.48a55,55,0,0,1-55-55V1259.92a76.07,76.07,0,0,1,76.07-76.07Zm0-22.8H461.51a99,99,0,0,0-98.87,98.87v179.77a77.92,77.92,0,0,0,77.84,77.83H1497.72a77.91,77.91,0,0,0,77.83-77.83V1259.92a99,99,0,0,0-98.86-98.87Z" transform="translate(-214.64 -48)" id="path3896" />
+                    <path class="robot-skin" d="M450.79,114h0Z" transform="translate(-214.64 -48)" />
+                    <rect class="robot-stroke" x="236.15" y="60.25" width="1036.61" height="11.4" />
+                    <path class="robot-skin" d="M623.59,1048.23h0Z" transform="translate(-214.64 -48)" />
+                    <rect class="robot-stroke" x="408.95" y="994.53" width="698.88" height="11.4" />
+                    <path class="robot-skin" d="M623.59,1113.15h0Z" transform="translate(-214.64 -48)" />
+                    <rect class="robot-stroke" x="408.95" y="1059.44" width="698.88" height="11.4" />
+                    <path class="robot-reflection" d="M722.13,242.29c4.48,29.79-65.18,62-155.61,72s-167.36-6.09-171.85-35.88,65.18-62,155.61-72S717.64,212.49,722.13,242.29Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-reflection" d="M910.43,237.48c-.44,11.5-35.28,19.75-77.82,18.42s-76.64-11.72-76.2-23.22,35.29-19.75,77.82-18.42S910.88,226,910.43,237.48Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-skin" d="M452.46,1184.41v71.88a54.56,54.56,0,0,0,16,38.59L509,1335.46a54.53,54.53,0,0,0,38.58,16h0A54.57,54.57,0,0,1,602.18,1406v88.71Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-stroke" d="M607.88,1494.73h-11.4V1406a48.92,48.92,0,0,0-48.86-48.87A59.89,59.89,0,0,1,505,1339.5l-40.59-40.59a59.9,59.9,0,0,1-17.65-42.62v-71.88h11.4v71.88a48.54,48.54,0,0,0,14.31,34.56l40.59,40.59a48.54,48.54,0,0,0,34.56,14.31A60.34,60.34,0,0,1,607.88,1406Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-skin" d="M1472.2,1184.41v71.88a54.61,54.61,0,0,1-16,38.59l-40.59,40.58a54.54,54.54,0,0,1-38.59,16h0a54.57,54.57,0,0,0-54.57,54.57v88.71Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-stroke" d="M1328.17,1494.73h-11.39V1406a60.34,60.34,0,0,1,60.26-60.27,48.54,48.54,0,0,0,34.56-14.31l40.59-40.59a48.54,48.54,0,0,0,14.31-34.56v-71.88h11.4v71.88a59.9,59.9,0,0,1-17.65,42.62l-40.59,40.59a59.89,59.89,0,0,1-42.62,17.65,48.93,48.93,0,0,0-48.87,48.87Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-stroke" d="M707.77,1263.14h-75a19.22,19.22,0,0,1-19.22-19.21h0a19.23,19.23,0,0,1,19.22-19.22h75A19.22,19.22,0,0,1,727,1243.93h0A19.21,19.21,0,0,1,707.77,1263.14Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-stroke" d="M632.26,1314h0a16.5,16.5,0,0,1-16.5-16.5v-3.27a16.49,16.49,0,0,1,16.5-16.49h0a16.49,16.49,0,0,1,16.49,16.49v3.27A16.49,16.49,0,0,1,632.26,1314Z" transform="translate(-214.64 -48)" />
+                    <path class="robot-stroke" d="M710.48,1314h0a16.5,16.5,0,0,1-16.49-16.5v-3.27a16.49,16.49,0,0,1,16.49-16.49h0a16.49,16.49,0,0,1,16.5,16.49v3.27A16.5,16.5,0,0,1,710.48,1314Z" transform="translate(-214.64 -48)" />
+                    <g class="robot-mouth-wrapper" viewBox="0 0 1513.29 1836.18">
+                      <path class="robot-mouth" x="10" d="M902.31,674.83a7.31,7.31,0,0,0-7.35,7.86,87.8,87.8,0,0,0,174.89,0,7.32,7.32,0,0,0-7.36-7.86Z" />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="devbot-dialog" id="devbot-dialog-box"></div>
+          </div>
+          <script>
+            var devbotWrapper = document.getElementsByClassName("devbot-wrapper")[0];
+            var texto = ` `;
+
+            devbot = new Devbot(devbotWrapper, DevbotHumor.default, texto);
+          </script>
+
+        </div>
+      </div>
+
+      <section class="container-modal-share hide">
+        <div class="modal-share">
+          <span class="close-button"></span>
+          <span class="texto-modal-share">Compartilhe esse conteúdo com um amigo! <br>
+            Faça <a href='https://www.devmedia.com.br/login/?ret=/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205' class='link-indicacao' target='_blank'>login</a> para ganhar recompensas.</span>
+
+          <div class="indique-input-wrapper">
+            <label for="indique-link">Copie o link e envie para seus amigos</label>
+            <input type="text" name="indique-link" class="indique-input input-link" value="https://www.devmedia.com.br/menu-em-css-menu-dropdown-horizontal-com-html5-e-css3/37205" readonly="">
+            <button type="text" class="indique-copy-btn">Copiar</button>
+          </div>
+
+          <span class="texto-modal-share share">Ou</span>
+
+          <div class="indique-share-area">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.devmedia.com.br%2Fmenu-em-css-menu-dropdown-horizontal-com-html5-e-css3%2F37205" target="_blank" class="indique-link indique-facebbok" title="Compartilhar no Facebook"></a>
+
+            <a href="https://wa.me/?text=Veja%20esse%20conte%C3%BAdo%20na%20%40DevMedia%3A Menu%20em%20CSS%20-%20Menu%20dropdown%20horizontal%20com%20HTML5%20e%20CSS3 https%3A%2F%2Fwww.devmedia.com.br%2Fmenu-em-css-menu-dropdown-horizontal-com-html5-e-css3%2F37205" target="_blank" class="indique-link indique-Whatsapp" title="Compartilhar no Whatsapp"></a>
+
+            <a href="https://twitter.com/intent/tweet?text=Veja%20esse%20conte%C3%BAdo%20na%20%40DevMedia%3A Menu%20em%20CSS%20-%20Menu%20dropdown%20horizontal%20com%20HTML5%20e%20CSS3 https%3A%2F%2Fwww.devmedia.com.br%2Fmenu-em-css-menu-dropdown-horizontal-com-html5-e-css3%2F37205" target="_blank" class="indique-link indique-twitter" title="Compartilhar no Twitter"></a>
+
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.devmedia.com.br%2Fmenu-em-css-menu-dropdown-horizontal-com-html5-e-css3%2F37205" target="_blank" class="indique-link indique-Linkedin" title="Compartilhar no Linkedin"></a>
+
+            <a href="https://telegram.me/share/url?text=Veja%20esse%20conte%C3%BAdo%20na%20%40DevMedia%3A Menu%20em%20CSS%20-%20Menu%20dropdown%20horizontal%20com%20HTML5%20e%20CSS3 +&url=https%3A%2F%2Fwww.devmedia.com.br%2Fmenu-em-css-menu-dropdown-horizontal-com-html5-e-css3%2F37205" target="_blank" class="indique-link indique-telegram" title="Compartilhar no Telegram"></a>
+          </div>
+
+        </div>
+      </section>
+
+      <script>
+        function updatePageElements(top) {
+          $(".header-container").css("top", top + "px");
+
+          let altura_barra_principal = $(".header-container").height();
+          let offset_top_menu_lateral = altura_barra_principal + top;
+
+          if ($(window).innerWidth() < 1024) {
+            $(".side-menu-container").css("top", top + "px");
+          } else {
+            $(".side-menu-container").css("top", offset_top_menu_lateral + "px");
+          }
+        }
+      </script>
+
+
+    </main>
+
+    </main>
+    <footer class="container-footer">
+      <section class="container-menu-redes-sociais">
+        <div class="menu-footer">
+          <p class="menu-footer-title">Menu</p>
+          <nav class="link_menu">
+            <a class="links-menu" title="Assine" href="//www.devmedia.com.br/shop/">Assine agora</a>
+            <a class="links-menu" title="Quem Somos" href="//www.devmedia.com.br/quem-somos/">Quem Somos</a>
+            <a class="links-menu" title="Fale conosco" href="//www.devmedia.com.br/fale-conosco/">Fale conosco</a>
+            <a class="links-menu" title="Assinatura educacional" href="//www.devmedia.com.br/marketing/educacional/">Plano para Instituição de ensino</a>
+            <a class="links-menu" title="Assinatura Empresarial" href="//www.devmedia.com.br/empresarial/">Assinatura para empresas</a>
+          </nav>
+        </div>
+        <div class="redes-footer">
+          <div class="redes-sociais">
+            <a href="https://github.com/DevMedia" aria-label="github devmedia" target="_blank" rel="noopener noreferrer" class="footer-icons" data-external="true">
+              <svg class="git-footer" viewBox="0 0 90 90">
+                <path d="M65.709,10.5c1.17,2.657,1.928,7.07,0.797,10.301c4.625,3.949,6.215,13.549,3.982,21.394 C77.08,42.698,84.932,41.953,90,43.976c-4.738-0.609-11.209-1.804-17.32-1.388c-1.158,0.079-2.873-0.044-2.789,1.585 c7.074,0.555,14.104,1.16,19.912,2.973c-5.761-0.941-12.754-2.375-19.912-2.574c-2.957,5.835-8.908,8.703-17.123,9.307 c0.883,1.922,2.574,2.653,2.987,5.744c0.616,4.618-0.964,11.381,0.595,14.459c0.748,1.475,1.967,1.514,2.789,2.775 c-2.012,2.381-7-0.268-7.568-2.775c-0.973-4.295,1.482-10.953-1.192-13.865c0.188,4.685-1.108,11.264,0.199,15.449 c0.515,1.646,2.002,2.281,1.593,3.766c-9.352,0.949-5.443-12.104-6.972-19.81c-1.411,0.101-0.791,2.113-0.796,2.972 c-0.04,7.524,1.54,17.844-6.57,16.838c-0.237-1.582,1.088-2.119,1.593-3.563c1.479-4.233-0.277-10.542,0.401-15.651 c-3.095,2.334,0.325,10.48-1.593,14.657c-1.105,2.404-4.666,3.45-7.367,2.377c0.352-1.79,2.2-1.501,2.984-3.169 c1.096-2.324,0.008-5.674,0.399-9.111c-5.729,1.144-10.173-0.166-12.348-3.764c-0.973-1.615-1.214-3.52-2.39-4.951 c-1.17-1.432-3.04-1.625-3.582-3.563c7.095-1.708,7.367,7.302,13.739,7.524c1.954,0.071,2.97-0.563,4.778-0.988 c0.506-2.272,1.589-3.967,3.186-5.153c-7.929-1.085-14.477-3.554-17.522-9.504c-7.208,0.354-13.804,1.317-19.913,2.771 c5.545-2.014,12.384-2.736,19.715-2.973c-0.432-2.596-4.219-1.882-6.57-1.782C8.973,42.781,3.473,43.324,0,43.976 c5.034-1.795,12.098-1.571,18.918-1.585c-2.086-6.54-1.363-16.929,3.186-20.798C20.815,18.344,21.215,13.03,22.9,10.5 c5.079,0.228,8.159,2.443,11.35,4.557c3.957-1.125,8.118-1.685,13.54-1.387c2.28,0.126,4.651,1.151,6.369,0.989 c1.685-0.158,3.542-2.049,5.178-2.771C61.468,10.947,63.271,10.588,65.709,10.5z"></path>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/devmedia.com.br/" aria-label="facebook devmedia" target="_blank" rel="noopener noreferrer" class="footer-icons">
+              <svg class="icon-facebook">
+                <path d="M18.6,15h-2.4v8.4h-3.5V15H11v-3h1.7v-1.9c-0.1-1.8,1.2-3.4,3-3.5c0.2,0,3.1,0,3.1,0v2.9H17 c-0.4,0-0.7,0.3-0.7,0.7l0,1.8H19L18.6,15z" />
+              </svg>
+            </a>
+            <a href="http://twitter.com/devmedia" aria-label="twitter devmedia" target="_blank" rel="noopener noreferrer" class="footer-icons">
+              <svg viewBox="380.022 68.081 171.875 157.366" xmlns="http://www.w3.org/2000/svg" class="icon-twitter">
+                <g transform="matrix(8.039835, 0, 0, 8.039835, 369.519226, 50.28537)" style="">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                </g>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/devmedia.com.br/" aria-label="instagram devmedia" target="_blank" rel="noopener noreferrer" class="footer-icons">
+              <svg class="icon-instagram">
+                <path d="M19.9,5H10c-2.8,0-5,2.2-5,5v10c0,2.8,2.2,5,5,5H20c2.8,0,5-2.2,5-5V10C24.9,7.2,22.7,5,19.9,5 z M22.7,20c0,1.6-1.3,2.9-2.9,2.9l0,0H9.9C8.3,22.9,7,21.6,7,20V10C7,8.4,8.3,7.1,10,7.1l0,0h9.9c1.6,0,2.9,1.3,2.9,2.9v0L22.7,20z" />
+                <circle cx="20.3" cy="9.7" r="1.2" />
+                <path d="M14.9,9.7c-2.9,0-5.3,2.4-5.3,5.3s2.4,5.3,5.3,5.3c2.9,0,5.3-2.4,5.3-5.3S17.8,9.7,14.9,9.7z M14.9,18 c-1.7,0-3-1.4-3-3s1.4-3,3-3c1.7,0,3,1.4,3,3S16.6,18,14.9,18z" />
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/c/DevmediaBrasil" aria-label="youtube devmedia" target="_blank" rel="noopener noreferrer" class="footer-icons">
+              <svg class="icon-youtube">
+                <path d="M25.3,9.9C25,8.8,24.1,8,23,7.8c-2.7-0.2-5.3-0.3-8-0.3c-2.7-0.1-5.3,0-8,0.3 C5.9,8,5,8.8,4.7,9.9c-0.3,1.7-0.5,3.4-0.4,5.1c-0.1,1.7,0.1,3.4,0.4,5.1C5,21.2,5.9,22,7,22.2c2.7,0.2,5.3,0.3,8,0.3 c2.7,0.1,5.3,0,8-0.3c1.1-0.1,2.1-1,2.3-2.1c0.3-1.7,0.5-3.4,0.4-5.1C25.8,13.3,25.6,11.6,25.3,9.9z M12.2,18.3v-7.1 c2.3,1.2,4.5,2.4,6.8,3.5C16.7,16,14.5,17.1,12.2,18.3z" />
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@devmediaoficial" aria-label="tiktok devmedia" target="_blank" rel="noopener noreferrer" class="footer-icons">
+              <svg viewBox="0 0 512 512" class="icon-tiktok">
+                <path d="M412.19,118.66a109.27,109.27,0,0,1-9.45-5.5,132.87,132.87,0,0,1-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14,23.9,350,16,350.13,16H267.69V334.78c0,4.28,0,8.51-.18,12.69,0,.52-.05,1-.08,1.56,0,.23,0,.47-.05.71,0,.06,0,.12,0,.18a70,70,0,0,1-35.22,55.56,68.8,68.8,0,0,1-34.11,9c-38.41,0-69.54-31.32-69.54-70s31.13-70,69.54-70a68.9,68.9,0,0,1,21.41,3.39l.1-83.94a153.14,153.14,0,0,0-118,34.52,161.79,161.79,0,0,0-35.3,43.53c-3.48,6-16.61,30.11-18.2,69.24-1,22.21,5.67,45.22,8.85,54.73v.2c2,5.6,9.75,24.71,22.38,40.82A167.53,167.53,0,0,0,115,470.66v-.2l.2.2C155.11,497.78,199.36,496,199.36,496c7.66-.31,33.32,0,62.46-13.81,32.32-15.31,50.72-38.12,50.72-38.12a158.46,158.46,0,0,0,27.64-45.93c7.46-19.61,9.95-43.13,9.95-52.53V176.49c1,.6,14.32,9.41,14.32,9.41s19.19,12.3,49.13,20.31c21.48,5.7,50.42,6.9,50.42,6.9V131.27C453.86,132.37,433.27,129.17,412.19,118.66Z">
+                </path>
+              </svg>
+            </a>
+          </div>
+          <div class="porta80-mobile-container">
+            <a href="#" title="Porta 80 Web Hosting" class="porta80">
+              Hospedagem web por Porta 80 Web Hosting.
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="container-tecnologias">
+        <!-- TECNOLOGIA -->
+        <div class="box-tecnologias-footer">
+          <p class="title-tecnologias">Tecnologia:</p>
+          <nav class="links-tecnologias">
+            <a title="HTML" href="//www.devmedia.com.br/html/">HTML</a>
+            <span> - </span>
+            <a title="CSS" href="//www.devmedia.com.br/css">CSS</a>
+            <span> - </span>
+            <a title="Algoritmo" href="//www.devmedia.com.br/algoritmo">Algoritmo</a>
+            <span> - </span>
+            <a title="Javascript" href="//www.devmedia.com.br/javascript/">Javascript</a>
+            <span> - </span>
+            <a title="React" href="//www.devmedia.com.br/react/">React</a>
+            <span> - </span>
+            <a title="React Native" href="//www.devmedia.com.br/react-native">React Native</a>
+            <span> - </span>
+            <a title="Node.js" href="//www.devmedia.com.br/node-js">Node.js</a>
+            <span> - </span>
+            <a title="SQL" href="//www.devmedia.com.br/sql">SQL</a>
+            <span> - </span>
+            <a title="MySQL" href="//www.devmedia.com.br/mysql">MySQL</a>
+            <span> - </span>
+            <a title="UML" href="//www.devmedia.com.br/uml">UML</a>
+            <span> - </span>
+            <a title="Scrum" href="//www.devmedia.com.br/scrum">Scrum</a>
+            <span> - </span>
+            <a title="Levantamento de Requisitos" href="//www.devmedia.com.br/levantamento-de-requisitos">Levantamento de Requisitos</a>
+            <span> - </span>
+            <a title="Padrão de Projeto" href="//www.devmedia.com.br/padrao-de-projeto">Padrão de Projeto</a>
+            <span> - </span>
+            <a title="Teste de Software" href="//www.devmedia.com.br/teste-de-softwaree">Teste de Software</a>
+          </nav>
+        </div>
+        <!-- CURSOS -->
+        <div class="box-tecnologias-footer">
+          <p class="title-tecnologias">Cursos:</p>
+          <nav class="links-tecnologias">
+            <a title="HTML" href="//www.devmedia.com.br/cursos/front-end-web">HTML e CSS</a>
+            <span> - </span>
+            <a title="Javascript" href="//www.devmedia.com.br/cursos/javascript">Javascript</a>
+            <span> - </span>
+            <a title="Iniciante" href="//www.devmedia.com.br/cursos/iniciante">Programação para Iniciantes</a>
+            <span> - </span>
+            <a title="Angular" href="//www.devmedia.com.br/cursos/angular">Angular</a>
+            <span> - </span>
+            <a title="React" href="//www.devmedia.com.br/cursos/react">React</a>
+            <span> - </span>
+            <a title="Vue.js" href="//www.devmedia.com.br/cursos/vue-js">Vue.js</a>
+            <span> - </span>
+            <a title="Node.js" href="//www.devmedia.com.br/cursos/node-js">Node.js</a>
+            <span> - </span>
+            <a title="Spring" href="//www.devmedia.com.br/cursos/spring">Spring</a>
+            <span> - </span>
+            <a title=".NET Core" href="//www.devmedia.com.br/cursos/net">.NET Core</a>
+            <span> - </span>
+            <a title="Mobile" href="//www.devmedia.com.br/cursos/mobile">Mobile</a>
+            <span> - </span>
+            <a title="React Native" href="//www.devmedia.com.br/cursos/react-native">React Native</a>
+            <span> - </span>
+            <a title="Android" href="//www.devmedia.com.br/cursos/android">Android</a>
+            <span> - </span>
+            <a title="Flutter" href="//www.devmedia.com.br/cursos/flutter">Flutter</a>
+            <span> - </span>
+            <a title="Algoritmo" href="//www.devmedia.com.br/cursos/algoritmo">Algoritmo</a>
+            <span> - </span>
+            <a title="Automação" href="//www.devmedia.com.br/cursos/automacao">Automação</a>
+            <span> - </span>
+            <a title="Delphi" href="//www.devmedia.com.br/cursos/delphi">Delphi</a>
+            <span> - </span>
+            <a title="Java" href="//www.devmedia.com.br/cursos/java">Java</a>
+            <span> - </span>
+            <a title="PHP" href="//www.devmedia.com.br/cursos/php">PHP</a>
+            <span> - </span>
+            <a title="Python" href="//www.devmedia.com.br/cursos/python">Python</a>
+            <span> - </span>
+            <a title="SQL" href="//www.devmedia.com.br/cursos/banco-de-dados">SQL e Banco de Dados</a>
+            <span> - </span>
+            <a title="Engenharia de Software" href="//www.devmedia.com.br/cursos/engenharia-de-software">Engenharia de Software</a>
+            <span> - </span>
+            <a title="Canal Mais" href="//www.devmedia.com.br/cursos/outros">Canal Mais</a>
+            <span> - </span>
+            <a title="Gratuitos" href="//www.devmedia.com.br/cursos/gratuitos">Gratuitos</a>
+          </nav>
+        </div>
+        <!-- ARTIGOS -->
+        <div class="box-tecnologias-footer">
+          <p class="title-tecnologias">Artigos:</p>
+          <nav class="links-tecnologias">
+            <a title="Front-End" href="//www.devmedia.com.br/artigos/front-end-webt">Front-End</a>
+            <span> - </span>
+            <a title="Javascript" href="//www.devmedia.com.br/artigos/javascript">Javascript</a>
+            <span> - </span>
+            <a title="Iniciantes" href="//www.devmedia.com.br/artigos/iniciantes">Iniciantes</a>
+            <span> - </span>
+            <a title="Angular" href="//www.devmedia.com.br/artigos/angular">Angular</a>
+            <span> - </span>
+            <a title="Dart" href="//www.devmedia.com.br/artigos/dart">Dart</a>
+            <span> - </span>
+            <a title="Engenharia" href="//www.devmedia.com.br/artigos/engenharia-de-software">Engenharia</a>
+            <span> - </span>
+            <a title="Mobile" href="//www.devmedia.com.br/artigos/mobile">Mobile</a>
+            <span> - </span>
+            <a title="Node.js" href="//www.devmedia.com.br/artigos/node-js">Node.js</a>
+            <span> - </span>
+            <a title="Python" href="//www.devmedia.com.br/artigos/python">Python</a>
+            <span> - </span>
+            <a title="React Native" href="//www.devmedia.com.br/artigos/react-native">React Native</a>
+            <span> - </span>
+            <a title="Vue.js" href="//www.devmedia.com.br/artigos/vue-js">Vue.js</a>
+            <span> - </span>
+            <a title="Android" href="//www.devmedia.com.br/artigos/android">Android</a>
+            <span> - </span>
+            <a title="Banco de Dados" href="//www.devmedia.com.br/artigos/banco-de-dados">Banco de Dados</a>
+            <span> - </span>
+            <a title="Delphi" href="//www.devmedia.com.br/artigos/delphi">Delphi</a>
+            <span> - </span>
+            <a title="Flutter" href="//www.devmedia.com.br/artigos/flutter">Flutter</a>
+            <span> - </span>
+            <a title="Java" href="//www.devmedia.com.br/artigos/java">Java</a>
+            <span> - </span>
+            <a title="Kotlin" href="//www.devmedia.com.br/artigos/kotlin">Kotlin</a>
+            <span> - </span>
+            <a title=".Net" href="//www.devmedia.com.br/artigos/dotnet">.Net</a>
+            <span> - </span>
+            <a title="PHP" href="//www.devmedia.com.br/artigos/php">PHP</a>
+            <span> - </span>
+            <a title="React" href="//www.devmedia.com.br/artigos/react">React</a>
+            <span> - </span>
+            <a title="Spring" href="//www.devmedia.com.br/artigos/spring">Spring</a>
+            <span> - </span>
+            <a title="Gratuitos" href="//www.devmedia.com.br/artigos/gratuitos">Gratuitos</a>
+          </nav>
+        </div>
+        <!-- DEVCAST -->
+        <div class="box-tecnologias-footer">
+          <p class="title-tecnologias">DevCast:</p>
+          <nav class="links-tecnologias">
+            <a title="Front-End" href="//www.devmedia.com.br/devcast/front-end-webt">HTML e CSS</a>
+            <span> - </span>
+            <a title="Javascript" href="//www.devmedia.com.br/devcast/javascript">Javascript</a>
+            <span> - </span>
+            <a title="Angular" href="//www.devmedia.com.br/devcast/angular">Angular</a>
+            <span> - </span>
+            <a title="Engenharia" href="//www.devmedia.com.br/devcast/engenharia-de-software">Engenharia</a>
+            <span> - </span>
+            <a title="Mobile" href="//www.devmedia.com.br/devcast/mobile">Mobile</a>
+            <span> - </span>
+            <a title="Node.js" href="//www.devmedia.com.br/devcast/node-js">Node.js</a>
+            <span> - </span>
+            <a title="Python" href="//www.devmedia.com.br/devcast/python">Python</a>
+            <span> - </span>
+            <a title="React Native" href="//www.devmedia.com.br/devcast/react-native">React Native</a>
+            <span> - </span>
+            <a title="Android" href="//www.devmedia.com.br/devcast/android">Android</a>
+            <span> - </span>
+            <a title="Banco de Dados" href="//www.devmedia.com.br/devcast/banco-de-dados">Banco de Dados</a>
+            <span> - </span>
+            <a title="Delphi" href="//www.devmedia.com.br/devcast/delphi">Delphi</a>
+            <span> - </span>
+            <a title="Flutter" href="//www.devmedia.com.br/devcast/flutter">Flutter</a>
+            <span> - </span>
+            <a title="Java" href="//www.devmedia.com.br/devcast/java">Java</a>
+            <span> - </span>
+            <a title="Automação" href="//www.devmedia.com.br/devcast/automacao">Automação</a>
+            <span> - </span>
+            <a title=".Net" href="//www.devmedia.com.br/devcast/dotnet">.Net</a>
+            <span> - </span>
+            <a title="PHP" href="//www.devmedia.com.br/devcast/php">PHP</a>
+            <span> - </span>
+            <a title="React" href="//www.devmedia.com.br/devcast/react">React</a>
+            <span> - </span>
+            <a title="Spring" href="//www.devmedia.com.br/devcast/spring">Spring</a>
+            <span> - </span>
+            <a title="Gratuitos" href="//www.devmedia.com.br/devcast/gratuitos">Gratuitos</a>
+            <span> - </span>
+            <a title="Canal Mais" href="//www.devmedia.com.br/devcast/outros">Canal Mais</a>
+          </nav>
+        </div>
+        <!-- GUIA -->
+        <div class="box-tecnologias-footer">
+          <p class="title-tecnologias">Guia:</p>
+          <nav class="links-tecnologias">
+            <a title="Fundamentos" href="//www.devmedia.com.br/guias/fundamentos">Fundamentos</a>
+            <span> - </span>
+            <a title=".NET" href="//www.devmedia.com.br/guias/net">.NET</a>
+            <span> - </span>
+            <a title="PHP" href="//www.devmedia.com.br/guias/php">PHP</a>
+            <span> - </span>
+            <a title="Python" href="//www.devmedia.com.br/guias/python">Python</a>
+            <span> - </span>
+            <a title="Java" href="//www.devmedia.com.br/guias/java">Java</a>
+            <span> - </span>
+            <a title="Delphi" href="//www.devmedia.com.br/guias/delphi">Delphi</a>
+            <span> - </span>
+            <a title="Front-End" href="//www.devmedia.com.br/guias/html-e-css">HTML e CSS</a>
+            <span> - </span>
+            <a title="JavaScript" href="//www.devmedia.com.br/guias/javascript">JavaScript</a>
+            <span> - </span>
+            <a title="Node" href="//www.devmedia.com.br/guias/node-js">Node</a>
+            <span> - </span>
+            <a title="React Native" href="//www.devmedia.com.br/guias/react-native">React Native</a>
+            <span> - </span>
+            <a title="Flutter" href="//www.devmedia.com.br/guias/flutter">Flutter</a>
+            <span> - </span>
+            <a title="Banco de dados" href="//www.devmedia.com.br/guias/banco-de-dados">Banco de Dados</a>
+            <span> - </span>
+            <a title="Mobile" href="//www.devmedia.com.br/guias/mobile">Mobile</a>
+            <span> - </span>
+            <a title="Spring" href="//www.devmedia.com.br/guias/spring">Spring</a>
+            <span> - </span>
+            <a title="Arquitetura" href="//www.devmedia.com.br/guias/arquitetura">Arquitetura</a>
+            <span> - </span>
+            <a title="Automação Comercial" href="//www.devmedia.com.br/guias/automacao-comercial">Automação</a>
+            <span> - </span>
+            <a title="Engenharia de Software" href="//www.devmedia.com.br/guias/engenharia-de-software">Engenharia</a>
+            <span> - </span>
+            <a title="Outras Tecnologias" href="//www.devmedia.com.br/guias/mais-assuntos">+ Assuntos</a>
+          </nav>
+        </div>
+      </section>
+    </footer>
+    <style>
+      .container-footer * {
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .container-footer {
+        background-color: #ececec;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 45px 0;
+        gap: 50px;
+      }
+
+      .container-menu-redes-sociais {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 30px;
+      }
+
+      .menu-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .link_menu {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .menu-footer-title,
+      .title-tecnologias {
+        font-size: 14px;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 5px;
+      }
+
+      .links-menu {
+        text-decoration: none;
+        color: #000;
+        font-size: 13px;
+      }
+
+      .redes-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .redes-sociais {
+        display: flex;
+      }
+
+      .footer-icons {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+      }
+
+      .footer-icons svg {
+        width: 30px;
+        height: 30px;
+      }
+
+      .footer-icons svg path {
+        fill: #8795A2;
+      }
+
+      .icon-twitter {
+        width: 20px !important;
+        height: 20px !important;
+      }
+
+      .icon-tiktok {
+        width: 23px !important;
+        height: 23px !important;
+      }
+
+      .git-footer {
+        width: 27px !important;
+        height: 27px !important;
+      }
+
+      a.porta80 {
+        text-decoration: none;
+        color: #747474;
+        font-size: 11px;
+      }
+
+      .container-tecnologias:not(.perfil-container) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding: 0 30px;
+      }
+
+      .box-tecnologias-footer {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .links-tecnologias a {
+        text-decoration: none;
+        font-size: 12px;
+        color: #000;
+      }
+
+      .links-tecnologias span {
+        color: #000;
+      }
+
+      .links-menu:hover {
+        color: #373737;
+      }
+
+      .links-tecnologias a:hover {
+        color: #373737;
+      }
+
+      @media(max-width:630px) {
+        .container-menu-redes-sociais {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .menu-footer-title,
+        .links-menu {
+          text-align: center;
+        }
+      }
+    </style>
+</body>
+
+</html>
+
+<style>
+  section.termos-politica {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: #1f4f66;
+    padding: 10px 20px;
+    line-height: 24px;
+    font-family: Montserrat;
+    font-size: 14px;
+    color: #ffffff;
+    box-shadow: 0 5px 12px 14px rgba(0, 0, 0, .06);
+    z-index: 999;
+  }
+
+  .termos-politica p {
+    margin-right: 20px;
+    text-align: left;
+  }
+
+  section.termos-politica a {
+    color: #ffffff;
+  }
+
+  .termos-politica-acoes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .termos-politica-acoes span.aceitar-termos-politica {
+    margin: 0;
+    padding: 5px 30px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+    border: 1px solid;
+  }
+
+  .termos-politica-acoes span.aceitar-termos-politica:hover {
+    background: #ffffff;
+    color: #1f4f66;
+  }
+
+  @media (max-width: 1024px) {
+    section.termos-politica {
+      width: initial;
+    }
+
+    section.termos-politica br {
+      display: none;
+    }
+  }
+
+  @media (max-width: 579px) {
+    section.termos-politica {
+      flex-direction: column;
+      font-size: 12px;
+      padding: 10px;
+    }
+
+    .termos-politica p {
+      margin: 0;
+      text-align: center;
+    }
+
+    .termos-politica-acoes {
+      margin: 10px 0 0;
+    }
+
+    .termos-politica-acoes span.aceitar-termos-politica {
+      padding: 5px 30px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    section.termos-politica {
+      font-size: 12px;
+      padding: 10px 7px;
+    }
+
+    .termos-politica-acoes {
+      margin: 5px 0 0;
+    }
+
+    .termos-politica-acoes span.aceitar-termos-politica {
+      padding: 1px 30px;
+    }
+  }
+</style>
+<section class="termos-politica">
+  <p>Utilizamos cookies para fornecer uma melhor experiência para nossos usuários, consulte nossa <a href="https://www.devmedia.com.br/join/politicaprivacidade.asp" target="_blank">política de privacidade</a>.</p>
+  <div class="termos-politica-acoes">
+    <span class="aceitar-termos-politica">Aceitar</span>
+  </div>
+</section>
+
+<script>
+  $(document).on('click', '.aceitar-termos-politica', function(e) {
+    e.preventDefault();
+
+    $.ajax({
+        url: '//www.devmedia.com.br/inc/usuario/controller/usuario_controller.php',
+        type: 'post',
+        data: {
+          acao: "aceitaTermos"
+        }
+      })
+      .done(function() {
+        var d = new Date();
+        d.setTime(d.getTime() + (168 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = "cpp" + "=" + "1" + ";" + expires + ";path=/";
+
+        $(".termos-politica").fadeOut();
+      })
+      .fail(function() {
+        console.log("Não foi possivel registrar o aceite dos termos.");
+      })
+  });
+</script>
+</body>
+
+</html>

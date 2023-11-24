@@ -1,5 +1,5 @@
 
-<form class="search-form" action="/tipue_results.html">
+<form class="search-form" action="tipue_results.html">
   <div class="search-input">
     <input
       type="text"

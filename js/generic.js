@@ -38,7 +38,7 @@ function getPathRaiz() {
   
 function getPathRaiz() {
     //return 'file:///home/paulosspacheco/Documentos/blogger/blog.pssp.app.br/';
-    return '/blog.pssp.app.br/';
+    return '../';
     //return '/';
 }
 
@@ -57,7 +57,44 @@ function search(aClass) {
     }
 }
 
-
+// function toggleTree() {
+//   // Para usar a função na sua página HTML, você pode chamá-la em algum lugar após o   
+//   // carregamento do DOM, por exemplo, no evento "DOMContentLoaded":
+//   // document.addEventListener("DOMContentLoaded", function() {toggleTree();});    
+//     var togglers = document.querySelectorAll(".rootTree");
+  
+//     Array.from(togglers).forEach(item => {
+//       item.addEventListener("click", () => {
+//         item.parentElement.querySelector(".children").classList.toggle("active");
+//         item.classList.toggle("rootTree-down");
+//       });
+//     });
+//   }
+  
+function toggleTree() {
+    // Adiciona um ouvinte de evento ao elemento pai
+    document.addEventListener("click", function (event) {
+      // Verifica se o clique foi em um elemento com a classe 'rootTree'
+      if (event.target.classList.contains("rootTree")) {
+        // Obtém o elemento pai do elemento clicado
+        var parent = event.target.parentElement;
+  
+        // Encontra o elemento '.children' dentro do pai
+        var children = parent.querySelector(".children");
+  
+        // Verifica se o elemento '.children' foi encontrado
+        if (children) {
+          // Alterna a classe 'active' no elemento '.children'
+          children.classList.toggle("active");
+  
+          // Alterna a classe 'rootTree-down' no elemento clicado
+          event.target.classList.toggle("rootTree-down");
+        }
+      }
+    });
+  }
+  
+function goBack(){  history.back()}  
 
 //Testes:
 // var x  = '10';

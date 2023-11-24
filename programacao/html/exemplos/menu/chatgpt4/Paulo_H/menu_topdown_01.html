@@ -1,0 +1,57 @@
+<!-- Para criar um menu funcional com HTML, CSS e JavaScript, você pode usar o 
+     código base abaixo. Este exemplo cria um menu de navegação superior com 
+     um dropdown que se expande ao clicar no botão.
+     Este código cria um menu de navegação superior com um menu dropdown que 
+     mostra os submenus quando você clica no botão ☰. O CSS estiliza o menu e 
+     o JavaScript gerencia a exibição e ocultação do conteúdo dropdown. Você 
+     pode ajustar o código para atender às suas necessidades específicas.
+     
+### Arquivo HTML (`menu.html`) -->
+
+html
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Menu de Navegação</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <div class="dropdown">
+      <button class="dropbtn">☰</button>
+      <div class="dropdown-content">
+        <ul>
+          <li>
+            <span class="rootTree"></span>
+            <b><a id="id_html">html</a></b>
+            <ul>
+              <div class="children">
+                <li>
+                  <span class="rootTree"></span>
+                  <b><a id="id_menu">menu</a></b>
+                  <ul>
+                    <div class="children">
+                      <li> <a href="html/menu/menu_topdown_01.html" target="_blank">Exemplo 01 de menu topdown ➚ </a></li>
+                      <li> <a href="html/menu/menu_topdown_02.html" target="_blank">Exemplo 02 de menu topdown ➚ </a></li>
+                    </div>
+                  </ul>
+                </li>
+                <li> <a href="html/teste_link.html" target="_blank">REFERÊNCIAS ➚ </a></li>
+              </div>
+            </ul>
+          </li>
+          <li> <a href="index.html" target="_blank">Index ➚ </a></li>
+          <li> <a href="opcoes.html" target="_blank">Opções do projeto ➚ </a></li>
+        </ul>
+      </div>
+    </div>
+    <a href="index.html">Home</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

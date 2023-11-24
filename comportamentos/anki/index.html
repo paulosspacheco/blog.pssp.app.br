@@ -1,343 +1,304 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Estudo do programa Anki &lt;a href&equals;&quot;index&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a;</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <!-- CSS markdown  -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
-            
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8">
+  <title>Estudo do programa Anki &lt;a href&equals;&quot;index&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a;</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
 
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <p><span id="topo"><span></p>
-<h1 id="estudo-do-programa-anki---">Estudo do programa Anki <a href="index.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚</h1>
-<h2 id="1-index"><strong>1. INDEX</strong></h2>
-<hr>
-<ol>
-<li>
-<p><strong>Introdução</strong></p>
-<ol>
-<li><a href="#id_objetivo">Objetivo.</a></li>
-<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
-<li><a href="#id_beneficios">benefícios.</a></li>
-</ol>
-</li>
-<li>
-<p><a href="#id_Descricao">Descrição.</a></p>
-</li>
-<li>
-<p><strong>Como instalar o Anki</strong></p>
-<ol>
-<li><a href="#id_instalar_ubuntu"><em>Como instalar o software Anki no Linux - distribuição ubuntu e derivadas</em></a>;</li>
-<li><a href="https://apps.ankiweb.net/">Instalando a versão atual</a></li>
-<li><a href="#id_instalar_android"><em>Como instalar o software Anki no android</em></a>.</li>
-</ol>
-</li>
-<li>
-<p><a href="#id_extensoes">Como instalar extensões do pacote anki</a></p>
-</li>
-<li>
-<p><a href="#id_exemplos">Exemplos</a></p>
-</li>
-<li>
-<p><a href="#id_referencias">Referências</a></p>
-</li>
-<li>
-<p><a href="#id_historico">Histórico</a></p>
-</li>
-</ol>
-<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
-<hr>
-<ol>
-<li>
-<p><strong>Introdução</strong></p>
-<ol>
-<li>
-<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
-<ol>
-<li>
-<p>Este documento contém tudo que estudei do programa anki.</p>
-</li>
-<li>
-<p>Anki é um programa usado para memorizar palavras, conteúdos estudados e tudo que você precisa gravar na memória de longo prazo.</p>
-</li>
-<li>
-<p>O anki usa o estudo do psicólogo alemão <a href="https://pt.wikipedia.org/wiki/Hermann_Ebbinghaus">Hermann Ebbinghaus</a> no final do século XIX onde ele criar a função <a href="https://estudoesquematizado.com.br/curva-do-esquecimento/">curva do esquecimento</a> baseado em sua memória.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
-<ol>
-<li>
-<p>Para instalar o programa anki é necessário saber como instalar um aplicativo no sistema operacional usado. É possível instalar nos seguintes SO:</p>
-<ol>
-<li>Linux ubuntu e derivados;</li>
-<li>Android;</li>
-<li>IOS;</li>
-<li>Windows.</li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
-<ol>
-<li>
-<p>Registrar na memória de longo prazo palavras novas de um idioma.</p>
-</li>
-<li>
-<p>Gravar textos de músicas.</p>
-</li>
-<li>
-<p>Gravar conteúdos que precisam estar na memória por não poder consultar em livros.</p>
-</li>
-<li>
-<p>Aprender um novo idioma.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_Descricao></span><strong>Descrição</strong></p>
-<ol>
-<li>
-<p>O programa usa o algorítimo SRS (Spaced repetition System ) onde o aplicativo faz várias vezes uma pergunta do que se quer gravar, em seguida registra se o usuário aprendeu a palavra no dia e checa nos dias seguintes se o conteúdo foi registrado na memória.</p>
-</li>
-<li>
-<p>Veja os <a href="https://mizerablebr.github.io/anki-manual/#/getting-started?id=conceitos-chave">conceitos chaves</a> do anki para melhor compreensão.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Como instalar anki</strong></p>
-<ol>
-<li>
-<p>Como instalar o software Anki no Linux - distribuição ubuntu e derivadas:</p>
-<ol>
-<li><span id=id_instalar_ubuntu></span>Selecione o terminal de comandos pressionando as teclas <strong>control+alt+t</strong>:
-<ol>
-<li>
-<p>Antes de instalar o Anki é necessário instalar os pacotes abaixo:</p>
-<pre><code class="hljs language-shellscript">   sudo -i
+</head>
+
+<body class="vscode-body vscode-dark">
+  <!-- markdownlint-disable-next-line -->
+  <nav>
+    <div class="topnav" id="myTopnav">
+      <div w3-include-html="/menu.inc"></div>
+    </div>
+  </nav>
+  <!-- markdownlint-disable-next-line -->
+  <p><span id="topo"><span></p>
+  <h1 id="estudo-do-programa-anki---">Estudo do programa Anki <a href="index.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba."> ➚</h1>
+  <h2 id="1-index"><strong>1. INDEX</strong></h2>
+  <hr>
+  <ol>
+    <li><strong>Introdução</strong>
+      <ol>
+        <li><a href="#id_objetivo">Objetivo.</a></li>
+        <li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+        <li><a href="#id_beneficios">benefícios.</a></li>
+      </ol>
+    </li>
+    <li><a href="#id_Descricao">Descrição.</a></li>
+    <li><strong>Como instalar o Anki</strong>
+      <ol>
+        <li><a href="#id_instalar_ubuntu"><em>Como instalar o software Anki no Linux - distribuição ubuntu e derivadas</em></a>;</li>
+        <li><a href="https://apps.ankiweb.net/">Instalando a versão atual</a></li>
+        <li><a href="#id_instalar_android"><em>Como instalar o software Anki no android</em></a>.</li>
+      </ol>
+    </li>
+    <li><a href="#id_extensoes">Como instalar extensões do pacote anki</a></li>
+    <li><a href="#id_exemplos">Exemplos</a></li>
+    <li><a href="#id_referencias">Referências</a></li>
+    <li><a href="#id_historico">Histórico</a></li>
+  </ol>
+  <h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+  <hr>
+  <ol>
+    <li>
+      <p><strong>Introdução</strong></p>
+      <ol>
+        <li><span id="id_objetivo"><span><strong>Objetivo:</strong>
+              <ol>
+                <li>Este documento contém tudo que estudei do programa anki.</li>
+                <li>Anki é um programa usado para memorizar palavras, conteúdos estudados e tudo que você precisa gravar na memória de longo prazo.</li>
+                <li>O anki usa o estudo do psicólogo alemão <a href="https://pt.wikipedia.org/wiki/Hermann_Ebbinghaus">Hermann Ebbinghaus</a> no final do século XIX onde ele criar a função <a href="https://estudoesquematizado.com.br/curva-do-esquecimento/">curva do esquecimento</a> baseado em sua memória.</li>
+                <li><button onclick="history.back()">🔙</button></li>
+              </ol>
+        </li>
+        <li><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong>
+          <ol>
+            <li>Para instalar o programa anki é necessário saber como instalar um aplicativo no sistema operacional usado. É possível instalar nos seguintes SO:
+              <ol>
+                <li>Linux ubuntu e derivados;</li>
+                <li>Android;</li>
+                <li>IOS;</li>
+                <li>Windows.</li>
+              </ol>
+            </li>
+            <li><button onclick="history.back()">🔙</button></li>
+          </ol>
+        </li>
+        <li><span id="id_beneficios"></span><strong>Benefícios:</strong>
+          <ol>
+            <li>Registrar na memória de longo prazo palavras novas de um idioma.</li>
+            <li>Gravar textos de músicas.</li>
+            <li>Gravar conteúdos que precisam estar na memória por não poder consultar em livros.</li>
+            <li>Aprender um novo idioma.</li>
+            <li><button onclick="history.back()">🔙</button></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p><span id=id_Descricao></span><strong>Descrição</strong></p>
+      <ol>
+        <li>O programa usa o algorítimo SRS (Spaced repetition System ) onde o aplicativo faz várias vezes uma pergunta do que se quer gravar, em seguida registra se o usuário aprendeu a palavra no dia e checa nos dias seguintes se o conteúdo foi registrado na memória.</li>
+        <li>Veja os <a href="https://mizerablebr.github.io/anki-manual/#/getting-started?id=conceitos-chave">conceitos chaves</a> do anki para melhor compreensão.</li>
+        <li><button onclick="history.back()">🔙</button></li>
+      </ol>
+    </li>
+    <li>
+      <p><strong>Como instalar anki</strong></p>
+      <ol>
+        <li>
+          <p>Como instalar o software Anki no Linux - distribuição ubuntu e derivadas:</p>
+          <ol>
+            <li><span id=id_instalar_ubuntu></span>Selecione o terminal de comandos pressionando as teclas <strong>control+alt+t</strong>:
+              <ol>
+                <li>
+                  <p>Antes de instalar o Anki é necessário instalar os pacotes abaixo:</p>
+                  <pre><code class="hljs language-bash">   sudo -i
    apt update
    apt upgrade
    apt install mplayer
    apt install mpv
    apt install lame
 </code></pre>
-</li>
-<li>
-<p>Para instalar a versão do anki que acompanha a distribuição linux:</p>
-<pre><code class="hljs language-shellscript">   sudo -i
+                </li>
+                <li>
+                  <p>Para instalar a versão do anki que acompanha a distribuição linux:</p>
+                  <pre><code class="hljs language-bash">   sudo -i
    apt update
    apt upgrade
    apt install anki                    
 
 </code></pre>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_instalar_android></span><strong>Como instalar o software Anki no android</strong>:</p>
-<ol>
-<li>
-<p>Selecione o programa <strong>AnkiDroid</strong> na Play Store;</p>
-<ol>
-<li>Click no botão instalar.</li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_extensoes></span><strong>Como instalar extensões do pacote anki.</strong></p>
-<ol>
-<li>
-<p>No linux usando o código divulgado no site:</p>
-<ol>
-<li>
-<p>Selecione a opção <strong>/ferramentas/complementos</strong>;</p>
-<ol>
-<li>Digite o <a href="https://ankiweb.net/shared/addons/">código do complemento</a>;</li>
-<li>Pressione no botão ok.
-<ol>
-<li>Veja imagens:
-<ol>
-<li><img src="./img/instalar_complementos.jpeg" alt="Opção: instalar complemento" title="Anki - Instalar complementos"></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p>No android não achei opção para instalar complementos.</p>
-<ol>
-<li>
-<p>...</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="https://ankiweb.net/shared/addons/">Extensões do Anki</a> usadas no me dia a dia:</p>
-<ol>
-<li>
-<p><a href="https://ankiweb.net/shared/info/1436550454" title="Obs: Este complemento não está disponível para o anki que vem no Linux Mint versão 20.0, é preciso baixar a última versão do site anki download.">AwesomeTTS - Adicione voz aos seus flashcards</a></p>
-<ol>
-<li><a href="https://www.youtube.com/watch?v=4nIxrqGK6gI">Vídeo de como configurar AwesomeTTS</a></li>
-</ol>
-</li>
-<li>
-<p><a href="https://ankiweb.net/shared/info/877182321" title="Na opção baralhos adiciona algumas opções úteis.">Código: 877182321 - Enhance main window</a></p>
-</li>
-<li>
-<p><a href="https://ankiweb.net/shared/info/516643804" title="Congela conteúdo do lado 01 da carta.">Código: 516643804 - Frozen Fields</a></p>
-</li>
-<li>
-<p><a href="https://ankiweb.net/shared/info/318752047">Add Hyperlink</a></p>
-</li>
-<li>
-<p><a href="https://ankiweb.net/shared/info/153625306">Pop-up Dictionary (beta)</a></p>
-</li>
-<li>
-<p>.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_exemplos></span><strong>Exemplos.</strong></p>
-<ol>
-<li>
-<p>item 01.</p>
-</li>
-<li>
-<p>item 02.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
-<ol>
-<li>
-<p><a href="https://mizerablebr.github.io/anki-manual/#/">anki-manual</a></p>
-</li>
-<li>
-<p><a href="https://www.youtube.com/watch?v=cM2wxh95KOc">Como funcionam os Flashcards e a configuração inicial do ANKI, para aumentar a velocidade de estudo</a></p>
-</li>
-<li>
-<p><a href="https://ankiweb.net/shared/addons/">Lista de complementos</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
-<ol>
-<li>
-<p>13/04/2021 <!--TODO: HISTÓRICO --></p>
-<ul class="contains-task-list">
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar este documento baseado no <a href="http://modelo02.html">modelo02.md</a> ;</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Objetivos;</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Pre-requisitos</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Benefícios</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Descrição</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ul>
-</li>
-<li>
-<p>14/04/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
-<ul class="contains-task-list">
-<li>
-<p>Escrever tópico Exemplos</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo 01</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Ler no dia seguinte este documento para checar os erros de português.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
- <script>    function goBack() {    window.history.back()}</script>
+                </li>
+                <li>
+                  <p><button onclick="history.back()">🔙</button></p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <p><span id=id_instalar_android></span><strong>Como instalar o software Anki no android</strong>:</p>
+          <ol>
+            <li>Selecione o programa <strong>AnkiDroid</strong> na Play Store;
+              <ol>
+                <li>Click no botão instalar.</li>
+              </ol>
+            </li>
+            <li><button onclick="history.back()">🔙</button></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p><span id=id_extensoes></span><strong>Como instalar extensões do pacote anki.</strong></p>
+      <ol>
+        <li>
+          <p>No linux usando o código divulgado no site:</p>
+          <ol>
+            <li>
+              <p>Selecione a opção <strong>/ferramentas/complementos</strong>;</p>
+              <ol>
+                <li>Digite o <a href="https://ankiweb.net/shared/addons/">código do complemento</a>;</li>
+                <li>Pressione no botão ok.
+                  <ol>
+                    <li>Veja imagens:
+                      <ol>
+                        <li><img src="./img/instalar_complementos.jpeg" alt="Opção: instalar complemento" title="Anki - Instalar complementos"></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p><button onclick="history.back()">🔙</button></p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <p>No android não achei opção para instalar complementos.</p>
+          <ol>
+            <li>
+              <p>????</p>
+            </li>
+            <li>
+              <p><button onclick="history.back()">🔙</button></p>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p><a href="https://ankiweb.net/shared/addons/">Extensões do Anki</a> usadas no me dia a dia:</p>
+      <ol>
+        <li><a href="https://ankiweb.net/shared/info/1436550454" title="Obs: Este complemento não está disponível para o anki que vem no Linux Mint versão 20.0, é preciso baixar a última versão do site anki download.">AwesomeTTS - Adicione voz aos seus flashcards</a>
+          <ol>
+            <li><a href="https://www.youtube.com/watch?v=4nIxrqGK6gI">Vídeo de como configurar AwesomeTTS</a></li>
+          </ol>
+        </li>
+        <li><a href="https://ankiweb.net/shared/info/877182321" title="Na opção baralhos adiciona algumas opções úteis.">Código: 877182321 - Enhance main window</a></li>
+        <li><a href="https://ankiweb.net/shared/info/516643804" title="Congela conteúdo do lado 01 da carta.">Código: 516643804 - Frozen Fields</a></li>
+        <li><a href="https://ankiweb.net/shared/info/318752047">Add Hyperlink</a></li>
+        <li><a href="https://ankiweb.net/shared/info/153625306">Pop-up Dictionary (beta)</a></li>
+        <li><button onclick="history.back()">🔙</button></li>
+      </ol>
+    </li>
+    <li>
+      <p><span id=id_exemplos></span><strong>Exemplos.</strong></p>
+      <ol>
+        <li>
+          <p>item 01.</p>
+        </li>
+        <li>
+          <p>item 02.</p>
+        </li>
+        <li>
+          <p><button onclick="history.back()">🔙</button></p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
+      <ol>
+        <li>
+          <p><a href="https://mizerablebr.github.io/anki-manual/#/">anki-manual</a></p>
+        </li>
+        <li>
+          <p><a href="https://www.youtube.com/watch?v=cM2wxh95KOc">Como funcionam os Flashcards e a configuração inicial do ANKI, para aumentar a velocidade de estudo</a></p>
+        </li>
+        <li>
+          <p><a href="https://ankiweb.net/shared/addons/">Lista de complementos</a></p>
+        </li>
+        <li>
+          <p><button onclick="history.back()">🔙</button></p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+      <ol>
+        <li>
+          <p>13/04/2021
+            <!--TODO: HISTÓRICO -->
+          </p>
+          <ul class="contains-task-list">
+            <li class="task-list-item enabled">
+              <p><input class="task-list-item-checkbox" checked="" type="checkbox"> Criar este documento baseado no <a href="http://modelo02.html">modelo02.md</a> ;</p>
+            </li>
+            <li class="task-list-item enabled">
+              <p><input class="task-list-item-checkbox" checked="" type="checkbox"> Escrever tópico Objetivos;</p>
+            </li>
+            <li class="task-list-item enabled">
+              <p><input class="task-list-item-checkbox" checked="" type="checkbox"> Escrever tópico Pre-requisitos</p>
+            </li>
+            <li class="task-list-item enabled">
+              <p><input class="task-list-item-checkbox" checked="" type="checkbox"> Escrever tópico Benefícios</p>
+            </li>
+            <li class="task-list-item enabled">
+              <p><input class="task-list-item-checkbox" checked="" type="checkbox"> Escrever tópico Descrição</p>
+            </li>
+            <li>
+              <p><button onclick="history.back()">🔙</button></p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>14/04/2021
+            <!--FIXME: Falta fazer os item abaixo: -->
+          </p>
+          <ul class="contains-task-list">
+            <li>
+              <p>Escrever tópico Exemplos</p>
+            </li>
+            <li class="task-list-item enabled">
+              <p><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Conteúdo 01</p>
+            </li>
+            <li class="task-list-item enabled">
+              <p><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Referências</p>
+            </li>
+            <li class="task-list-item enabled">
+              <p><input class="task-list-item-checkbox" type="checkbox"> Atualizar o histórico deste documento.</p>
+            </li>
+            <li class="task-list-item enabled">
+              <p><input class="task-list-item-checkbox" type="checkbox"> Ler no dia seguinte este documento para checar os erros de português.</p>
+            </li>
+            <li>
+              <p><button onclick="history.back()">🔙</button></p>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </li>
+  </ol>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-        
-        
-    </body>
-    </html>
+
+
+</body>
+
+</html>

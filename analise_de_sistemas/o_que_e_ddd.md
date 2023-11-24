@@ -1,4 +1,9 @@
+<!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+
+<!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
+<!-- markdownlint-disable-next-line -->
 # O que é DDD <a href="O_que_e_ddd.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
@@ -84,3 +89,7 @@
 [🔝🔝](#topo "Retorna ao topo")
 
  <script>    function goBack() {    window.history.back()}</script>
+
+<!-- Transferir para o final da página antes de </body>-->            
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>

@@ -1,3 +1,8 @@
+<!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Tudo em minha vida é para honra e glória de Deus
 
 - Tudo em minha vida é para honra e glória de Deus e o que está acontecendo agora, no momento certo, Deus revelará.
@@ -11,3 +16,6 @@
 - **Rodapé:**
   - Data da inspiração: 16/07/2021  
   - A Célia decidiu me abandonar.
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>

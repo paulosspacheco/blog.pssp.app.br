@@ -1,3 +1,8 @@
+<!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # COMO INSTALAR DO BANCO DE DADOS MARIADB <a href="instalar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **INDEX**<span id="topo_Index"><span>
@@ -174,3 +179,7 @@
    5. [install mariadb ubuntu 18 04](https://www.youtube.com/watch?v=bCKxijsiG9M).
    6. [Testando o servidor](https://dev.mysql.com/doc/refman/5.7/en/testing-server.html)
    7. [🔝](#topo_Index "Retorna ao topo")
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>
+[🔝🔝](#topo "Retorna ao topo")

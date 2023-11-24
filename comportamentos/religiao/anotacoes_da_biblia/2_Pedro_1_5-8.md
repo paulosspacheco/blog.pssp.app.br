@@ -1,3 +1,8 @@
+<!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Anotações da bíblia 2 Pedro 1:5-8
 
 - [**2 Pedro 1:5-8**](https://bo.net.br/pt/ntlh/2-pedro/1/)
@@ -18,3 +23,7 @@
 
     - ...e fizerem com que elas aumentem, serão cada vez mais ativos e produzirão muita coisa boa como resultado do conhecimento que vocês têm do nosso Senhor Jesus Cristo...
   - ...
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>
+[🔝🔝](#topo "Retorna ao topo")

@@ -1,4 +1,7 @@
+<!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
 
+<!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 # **Hábitos que desejo adquirir em 2021 Versão: 1.6.3 - Data: 29/05/2021**
 
@@ -9,27 +12,16 @@
    1. **Hábitos profissionais - Index**<span id="topo_profissional"><span>
 
       1. [Não sair do foco ao encontrar curiosidade ao estudar a solução da tarefa corrente  para ser mais produtivo](#profissionais_1).
-
       2. [Preciso ser mais observador para escrever corretamente na primeira vêz, memorizar o que leio com facilidade e enxergar as oportunidades em minha vida.](#profissionais_2).
-
       3. [Só investir meu tempo em atividades que possam gerar lucro financeiro ou intelectual ou emocional no prazo de um ano](#profissionais_3).
-
       4. [Preciso ser mais perseverante na execução de todos os meus projetos](#profissionais_4)
-
       5. [Resumo dos hábitos profissional](#profissionais_5).
-
    2. **Hábitos pessoais - index**<span id="topo_pessoais"><span>
-
       1. [Preciso pensar antes de prometer que vou fazer qualquer coisa em minha vida](#pessoais_1).
-
       2. [Preciso caminhar diariamente](#pessoais_2).
-
       3. [Fazer jejum intermitente de pelo menos 12 horas](#pessoais_3).
-
       4. [Resumo dos hábitos pessoais](#pessoais_4)
-
    3. **Hábitos nos meus relacionamentos - index**<span id="topo_relacionamentos"><span>
-
       1. [Colocar em prática o versículo do livro de Tiago 1:19 "Portanto, meus amados irmãos, todo o homem seja pronto para ouvir, tardio para falar, tardio para se irar"](#relacionamentos_1).
 
    4. [**Histórico**](#historico_top)
@@ -39,7 +31,6 @@
 ---
 
 1. **Hábitos profissionais - conteúdo**
-
    1. <span id="profissionais_1"><span>Não sair do foco ao encontrar curiosidade ao estudar a solução da tarefa corrente para ser mais produtivo.
       1. Gatilho:Não sair do foco quando leio um documento que desperta minha curiosidade.
          1. Comportamento:
@@ -209,3 +200,6 @@
    8. [🔝](#topo "Retorna ao topo")
 
 <!--FIXME: Fixar estes comportamentos em minhas memórias dos hábitos. -->
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>

@@ -1,4 +1,9 @@
 <!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
+<!-- markdownlint-disable-next-line -->
 #### Cinco Dicas do filme 'O poder além da vida' <a href="Cinco_dicas_do_filme_o_poder_alem_da_vida.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Primeira lição de um guerreiro: _Ter consciência de que não sabe_.
@@ -14,3 +19,6 @@ Essa produção é baseada em _fatos reais_ e conta a incrível autobiografia do
 ##### Referências
 
 - ["O poder além da vida"](https://www.youtube.com/watch?v=Sjyse7X2qhg)
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>

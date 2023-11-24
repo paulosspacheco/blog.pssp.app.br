@@ -1,3 +1,8 @@
+<!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Estudar qual a relação do aumento de pressão e diâmetro do cano
 
 1. [O que é a equação de Bernoulli?](https://pt.khanacademy.org/science/physics/fluids/fluid-dynamics/a/what-is-bernoullis-equation)
@@ -31,3 +36,7 @@
 
 5. [Tubo de Venturi](https://mundoeducacao.uol.com.br/fisica/tubo-venturi.htm)
    1. O tubo de Venturi é um instrumento que indica a variação da pressão exercida por um líquido que se encontra em movimento por tubos com áreas variáveis.
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>
+[🔝🔝](#topo "Retorna ao topo")

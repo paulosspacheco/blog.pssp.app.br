@@ -1,6 +1,10 @@
 <!-- markdownlint-disable-next-line -->
 #### Comandos básico do Shell do Linux <a href="comandos_basico.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
+<div class="topnav" id="myTopnav">
+   <div w3-include-html="/menu.inc"></div>
+</div>
+
 <!-- markdownlint-disable-next-line -->
 #### INDEX
 
@@ -1290,3 +1294,14 @@
 
 - _15/05/2021_
   - [x] Criado este documento;
+
+
+  <!-- RODAPÉ DA PÁGINA  -->
+  <div class="footer">
+    <div w3-include-html="/js/footer.inc"></div>
+  </div>
+  <!--<script> includeHTML();</script>  -->
+  <script>
+    includeHTML();
+    document.addEventListener("DOMContentLoaded", function() {toggleTree();});  
+  </script>

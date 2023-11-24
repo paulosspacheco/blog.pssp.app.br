@@ -6,19 +6,20 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Pesquisa</title>
+  <title>Pesquisa palavras ou frase no site</title>
   <meta name="createDate" content="13/11/2020" />
   <meta name="createDateUpdate" content="05/05/2023" />
   <meta name="description" content="Página de pesquisa do site http://pssp.app.br " />
   <meta name="keywords" content="html, javascript, css, Delphi, Lazarus, jardinagem, marcenaria, eletricidade, mecânica, curiosidades, saúde" />
 
-  <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-  <link type="text/css" href="./css/defaulttheme.css" rel="stylesheet" />
-
-  <script type="application/x-javascript" src="./js/generic.js"></script>
-  <script type="application/x-javascript" src="./js/tgeneric.js"></script>
-  <!-- <script type="application/x-javascript" src="./js/tincludehtml.js" defer="defer"></script>  -->
-
+  <!-- CSS do menu-->
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
+  <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/>
+                                                                            
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>
+                                                                                                 
   <script src="js/tipuesearch/jquery.min.js"></script>
   <script src="js/tipuesearch/tipuesearch_set.js"></script>
   <script src="tipuesearch_content.js"></script>
@@ -29,15 +30,10 @@
 
 <body onmouseover="generic.display()">
   <main>
-    <!-- Menu de opções -->
     <div class="topnav" id="myTopnav">
-      <script type="application/x-javascript" src="./js/menu/index.js"></script>
-
-      <!-- input tag -->
-      <!-- <div w3-include-html="./js/search_children.inc"></div> -->
+      <div w3-include-html="/menu.inc"></div>
     </div>
-
-    
+   
     <div class="title">
       <script>
         document.write(document.title);
@@ -47,7 +43,7 @@
 
     <!-- Conteúdo da página <div class="col-12"> -->
     <div class="col-12">
-      <B>Resultado da pesquisa:</B>
+      <B>Qual a palavra ou frase?</B>
       <!-- <div style="padding-top: 36px;"> -->
        
         <form>
@@ -70,13 +66,11 @@
           $('#tipue_search_input').tipuesearch();
         });
       </script>
-    
+      <button onclick="history.back()">🔙</button>
     
     </div>
 
 
-    <!--<script type="application/x-javascript" src="./js/treeview_xhtml.js"></script> -->
-    <script type="application/x-javascript" src="./js/treeview_xhtml.js"></script>
 
     <!-- RODAPÉ DA PÁGINA  -->
     <div class="footer">

@@ -1,4 +1,10 @@
-#### O QUE É LINGUAGEM SQL <a href="O_que_e_sql.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a> <span id="topo_Index"><span>
+
+<!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
+#### O QUE É LINGUAGEM SQL <a href="o_que_e_sql.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a> <span id="topo_Index"><span>
 
 ## **1. INDEX**
 
@@ -21,7 +27,6 @@
 ### **1. O que é Linguagem SQL**<span id=id_01></span>
 
  1. Structured Query Language, ou Linguagem de Consulta Estruturada ou SQL, é a linguagem de pesquisa declarativa padrão para banco de dados relacional (base de dados relacional). Muitas das características originais do SQL foram inspiradas na álgebra relacional. O SQL foi desenvolvido originalmente no início dos anos 70 nos laboratórios da IBM em San Jose, dentro do projeto System R, que tinha por objetivo demonstrar a viabilidade da implementação do modelo relacional proposto por E. F. Codd. O nome original da linguagem era SEQUEL, acrônimo para "Structured English Query Language" (Linguagem de Consulta Estruturada, em Inglês), vindo daí o facto de, até hoje, a sigla, em inglês, ser comumente pronunciada "síquel" ao invés de "és-kiú-él", letra a letra. No entanto, em português, a pronúncia mais corrente é letra a letra: "ésse-quê-éle". [Veja mais...](https://pt.wikipedia.org/wiki/SQL)
-
     1. Bons tutoriais que encontrei na web.:
        1. [Tutorial w3schools.com/sql](https://www.w3schools.com/sql/default.asp);
        2. [mysqltutorial.org](https://www.mysqltutorial.org/)
@@ -30,7 +35,6 @@
           3. [mysql-triggers](https://www.mysqltutorial.org/mysql-triggers.aspx)
           4. [mysql-views-tutorial](https://www.mysqltutorial.org/mysql-views-tutorial.aspx)
           5. [mysql-index](https://www.mysqltutorial.org/mysql-index/)
-
  2. Dicas:
     1. Não há diferença entre maiúsculas e minusculas como na linguagem c++.
     2. A linguagem é interpretada.
@@ -41,7 +45,6 @@
     7. [Comparativo entre mysql x postgreSQL](https://www.devmedia.com.br/postgresql-x-mysql-qual-escolher/3923).
     8. [MySQL UUID Smackdown: UUID vs. INT para chave primária](https://www.mysqltutorial.org/mysql-uuid/)
     9. [Dicas de MySQL](https://www.mysqltutorial.org/mysqltips.aspx)
-
  3. [🔝](#topo_Index "Retorna ao topo")  
 
 ### **2. Comandos SQL mais importantes**<span id=id_02></span>
@@ -49,7 +52,6 @@
 <span id=id_02_01></span>
 
  1. <span id=id_02_02></span>[**DATABASE**](https://mariadb.com/kb/pt-br/create-database/)
-
     1. [CREATE DATABASE - cria um novo banco de dados](https://www.w3schools.com/sql/sql_create_db.asp)
        1. **Sintaxe**:
 
@@ -353,5 +355,9 @@
     2. [Obtendo dados de MariaDB](https://mariadb.com/kb/en/getting-data-from-mariadb/)
  4. [Restrição SQL FOREIGN KEY](https://www.w3schools.com/sql/sql_foreignkey.asp)
  5. [Para saber onde estão as bases de dados fisicamente](http://www.help.market.com.br/linux/index.html?reiniciar_o_servico_do_postgre.htm)
- 6. 
- 7. [🔝](#topo_Index "Retorna ao topo")  
+
+ 6. [🔝](#topo_Index "Retorna ao topo")  
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>
+[🔝🔝](#topo "Retorna ao topo")

@@ -1,5 +1,7 @@
 <!-- markdownlint-disable-next-line -->
-#### REFERÊNCIAS  <a href="referencias.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a> <span id="topo"><span>
+# REFERÊNCIAS  <a href="referencias.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a> <span id="topo"><span>
+
+## Links da página referências
 
 1. [Vídeo aula sobre os principais comandos do shell](https://www.youtube.com/watch?v=QZ2nyxzZXPY)
 2. [bash(1) - página de manual do Linux](https://linux.die.net/man/1/bash)
@@ -10,3 +12,6 @@
 7. [Debian Library Packaging guide](https://www.netfort.gr.jp/~dancer/column/libpkg-guide/libpkg-guide.html)
 8. [Comandos Linux: Find e Locate – Como Usar](https://www.hostinger.com.br/tutoriais/find-locate-comandos-linux#:~:text=Para%20descobrir%20seu%20diret%C3%B3rio%20atual,utilizar%20para%20procurar%20seu%20arquivo.)
 9. [Para o sistema Linux, tudo é arquivo...](https://linuxuniverse.com.br/linux/proc)
+10. [7 maneiras simples de liberar espaço no Ubuntu e Linux Mint](https://itsfoss.com/free-up-space-ubuntu-linux/#1-get-rid-of-packages-that-are-no-longer-required-recommended-)
+11. [Melhores utilitários de limpeza de sistema semelhantes ao CCleaner para Ubuntu Linux](https://itsfoss.com/ccleaner-alternatives-ubuntu-linux/)
+12. [Como liberar espaço no disco rígido do Linux Ubuntu, Mint, Debian](https://mazer.dev/pt-br/linux/dicas/como-liberar-espaco-no-disco-rigido-do-linux-ubuntu-mint-debian/)

@@ -1,3 +1,6 @@
+<!-- markdownlint-disable-next-line -->
+<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav> 
+
 # Estudo da linguagem JSON
 
 ## Objetivo do json
@@ -13,7 +16,6 @@
       4. **Array**: uma lista ordenada de zero ou mais valores, cada um podendo ser de qualquer tipo. Arrays são delimitados por colchetes (_**[ ]**_), dentro dos quais ficam os valores, também conhecidos como elementos, _separados por vírgulas_. O primeiro elemento é o de índice 0.
       5. **Object**: uma coleção não ordenada de pares atributo-valor onde os atributos (ou nomes ou chaves) são strings. Como os objects pretendem representar vetores associativos (ECMA-404), é recomendado, mas não obrigatório, que cada atributo seja único dentro de um objeto. Objects são delimitados por chaves ( _**{ }**_ ) e usam _vírgulas_ para _separar cada par_ , enquanto que no par o _atributo_ e o _valor_ ficam separados por dois pontos (_** : **_).
       6. **null**: Valor vazio ou nulo (não confundir com o zero) representado pela palavra null.
-
    2. **Espaços em branco** são permitidos com limites e ignorados em volta e entre elementos sintáticos, mas não dentro de um string. Só quatro caracteres são tratados assim: o **espaço**, a **tabulação horizontal(TAB)**, o **line feed(LF)** e o **carriage return(CR**). Em particular, a marca de ordem de byte não deve aparecer em um documento JSON conforme o padrão. JSON não tem uma sintaxe para comentários. Para troca de dados em um ecossistema aberto, JSON deve estar _codificado em UTF-8_.
    3. Quando se trabalha com _json_ é importante na sessão _\<head>\</head>_ a tag: _\<meta http-equiv="Content-Type" content="text/html; charset=utf-8"\>_
 
@@ -60,10 +62,13 @@
 
 ## HISTÓRICO
 
-- [x] Criar este documento com nome do arquivo json.md
+- [x] Criar este documento com nome do arquivo [json.md](json.md)
 - [x] Procurar site oficial da linguagem json e criar resumo e um link para o mesmo.
 - [x] Criar um exemplo de um objeto json e uma matriz json.
 - [x] Criar a sessão tipos de dados, sintaxe e exemplos.
 - [x] Criar a sessão referências e adicionar as referências na produção deste documento.
 - [x] Criar a página json/index.html
 - [x] Criar opção no menu/index.js para acessar a página json/index.html
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>      

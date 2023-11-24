@@ -1,3 +1,7 @@
+<!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
 
 # Minhas crenças limitadoras em 2016
 
@@ -13,3 +17,6 @@ Vou refletir sobre esse assunto.
 
 <p style="text-align: right">
 Paulo Pacheco, 02/12/2020</p>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>

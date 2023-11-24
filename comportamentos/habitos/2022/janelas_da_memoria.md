@@ -1,3 +1,9 @@
+<!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
+
 # As Janelas da Memória
 
 A memória humana não é lida globalmente, como a memória dos computadores, mas por áreas específicas a que chamo de janelas. Através das janelas vemos, reagimos, interpretamos... Quantas vezes tentamos lembrar-nos de algo que não nos vem à ideia? Nesse caso, a janela permaneceu fechada ou inacessível.
@@ -23,3 +29,7 @@ Há três grupos básicos de janelas da memória: as neutras, que contêm milhõ
 O Eu, como líder da sua mente, deveria aprender a romper as fronteiras das janelas killer e a penetrar nas áreas das janelas light. Eis a grande meta da mulher inteligente!
 
 Augusto Cury, in 'Mulheres Inteligentes, Relações Saudáveis'
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>
+[🔝🔝](#topo "Retorna ao topo")

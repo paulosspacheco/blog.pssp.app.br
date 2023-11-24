@@ -1,0 +1,22 @@
+/* ... (o restante do seu código CSS permanece o mesmo) */
+/* Adicionei algumas regras para estilizar os submenus */
+.dropdown-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dropdown-content ul ul {
+  display: none;
+  position: absolute;
+  left: 100%; /* Posiciona os submenus à direita do menu principal */
+  top: 0;
+}
+
+.dropdown-content ul ul li {
+  padding: 8px 16px;
+  background-color: #333; /* Cor de fundo dos submenus */
+}
+
+.dropdown-content li:hover > ul {
+  display: block; /* Exibe o submenu quando o item pai é hover */
+}

@@ -1,4 +1,9 @@
-# O QUE É MARIADB<a href="O_que_e_mariadb.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+<!-- markdownlint-disable-next-line -->
+<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
+# O QUE É MARIADB<a href="o_que_e_mariadb.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 <span id="topo_Index"><span>
 
@@ -37,3 +42,7 @@
  2. [mariadb.com](https://mariadb.com)
  3. [download](https://downloads.mariadb.org/mariadb)
  4. [🔝](#topo_Index "Retorna ao topo")
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>
+[🔝🔝](#topo "Retorna ao topo")
