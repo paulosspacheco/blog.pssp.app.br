@@ -1,5 +1,5 @@
 <header>
-   <nav id="nav">
+   <nav id="topnav">
       <div w3-include-html="/menu.inc"></div>
       <div class="title"> <script>document.write(document.title);</script></div>
    </nav>
