@@ -10,6 +10,21 @@
     display: none;
 }
 
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+
+
+
+
+
 /* From extension bierner.markdown-checkbox */
 .contains-task-list {
     padding-left: 0;
@@ -133,9 +148,14 @@
     list-style-type: none;
 }
 
-.task-list-item-checkbox {
+/* .task-list-item-checkbox {
     margin-left: 24px;
     vertical-align: middle;
+} */
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
 }
 
 @font-face {
@@ -2641,13 +2661,44 @@ em {
   }
   
   
-  .task-list-item {
-      list-style-type: none;
+
+  .title {
+    overflow: hidden;
+    background-color: lightgray;
+    color: black;
+    align-content: center;
+    text-align: center;
+  
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    /*padding: 35px;*/
   }
   
-  .task-list-item-checkbox {
-      margin-left: -20px;
-      vertical-align: middle;
-      pointer-events: none;
+  .referencia {
+    background-color: rgb(216, 226, 220);
+    color: black;
+    padding: 15px;
+  }
+  
+  .footer {
+    background-color: rgb(216, 226, 220);
+    color: black;
+    text-align: left;
+    /*font-family: 'Courier New', Courier, monospace;
+      font-size: 12px;*/
+    padding: 15px;
+    display: table;
+    width: 100%;
+  }
+  
+  /* As duas linhas abaixo faz com que o 
+sublinhado do link só apareça se o mouse se posicionar em cima do link*/
+a {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
   }
   

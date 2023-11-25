@@ -11,6 +11,15 @@
   padding: 4px 4px;
   text-decoration: none;
   font-size: 17px;
+
+  /* position: fixed;
+  top: 0;
+  width: 100%;
+  height: 53px;
+  background-color: #131313;
+  z-index: 100; */
+
+
 }
 
 /*
@@ -61,7 +70,7 @@
 .dropdown:hover .dropbtn {
   background-color: #555;
   color: white;
-   
+
 }
 
 .dropdown-content a:hover {
@@ -109,7 +118,7 @@
 
   .topnav.responsive .dropdown-content {
     position: relative;
-    
+
   }
 
   .topnav.responsive .dropdown .dropbtn {
@@ -117,4 +126,77 @@
     width: 100%;
     text-align: left;
   }
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: rgb(216, 226, 220);
+  color: black;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+.rootTree {
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+  color: blue;
+}
+
+.rootTree::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.rootTree-down::before {
+  transform: rotate(90deg);
+}
+
+.children {
+  display: none;
+}
+
+.childrenDefault {
+  display: block;
+  background-color: white;
+  color: black;
+}
+
+.active {
+  background-color: white;
+  color: black;
+  font-style: italic;
+  display: block;
+}
+
+/* O ID NAV é usado para manter um menu no topo da página*/
+#nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #131313;
+  z-index: 1999;
+}
+
+#article {
+  position: relative;
+  top: 44px;
+  width: 100%;
+  height: 100%;
+  overflow: auto hidden;
+  z-index: 1998;
+
 }

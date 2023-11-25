@@ -1,11 +1,13 @@
-<!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav">
-   <!-- markdownlint-disable-next-line -->    
-   <div w3-include-html="/menu.inc"></div>
-</div>
+<header>
+   <nav id="nav">
+      <div w3-include-html="/menu.inc"></div>
+      <div class="title"> <script>document.write(document.title);</script></div>
+   </nav>
+</header>
+
+<article id="article">
 
 # Como criar uma muda de planta?
-
 
 1. Objetivo deste documento:
    1. Este documento contém tudo que anotei sobre como criar mudas de plantas por estaquia e por sementes.
@@ -15,6 +17,7 @@
          1. Como produzir o Ácido Indol Butílico (AIB) em casa?
             1. Feijão ou a lentilha possui o AIB e para extraí-lo do cereal siga os seguintes passos:
 
+</article>
+
 <!-- markdownlint-disable-next-line -->
 <script>  includeHTML(); </script>
-

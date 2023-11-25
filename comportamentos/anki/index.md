@@ -1,7 +1,12 @@
-<!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>   
+<header>
+   <nav id="nav">
+      <div w3-include-html="/menu.inc"></div>
+      <div class="title"> <script>document.write(document.title);</script></div>
+   </nav>
+</header>
 
-<!-- markdownlint-disable-next-line -->
+<article id="article">
+
 <span id="topo"><span>
 
 # Estudo do programa Anki <a href="index.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚
@@ -138,6 +143,8 @@
       - [ ] Ler no dia seguinte este documento para checar os erros de português.
 
       - <button onclick="history.back()">🔙</button>
+
+</article>
 
 <!-- markdownlint-disable-next-line -->
 <script>  includeHTML(); </script>

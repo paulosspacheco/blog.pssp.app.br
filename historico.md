@@ -1,10 +1,16 @@
 <!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
-<!-- markdownlint-disable-next-line -->
-<span id="topo"><span>
+<header><nav id="nav">
+   <!-- markdownlint-disable-next-line -->
+   <div w3-include-html="/menu.inc"></div>
+
+   <!-- markdownlint-disable-next-line -->
+   <div class="title"> <script>document.write(document.title);</script></div>
+</nav></header>
 
 <!-- markdownlint-disable-next-line -->
-#### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
+<article id="article">
+
+# Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 27/10/2023</b></legend>
@@ -37,6 +43,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -47,6 +54,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -58,6 +66,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -70,6 +79,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -81,6 +91,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -96,10 +107,12 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
-#### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚      </a>
+
+#### Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚ </a>
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 04/07/2023</b></legend>
@@ -109,6 +122,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -121,6 +135,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -133,6 +148,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -145,6 +161,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -155,6 +172,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -166,6 +184,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -176,6 +195,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -188,6 +208,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -196,13 +217,14 @@
 - [x] [Criar página Shell Script](./infraestrutura/linux/shell/index.html)
 - [x] Enviar pasta blog.pssp.app.br novamente para nuvem github. Versão: 0.200.1 . Motivo: Problema com github desktop.;
 - [x] Enviar pasta blog.pssp.app.br novamente para nuvem github. Versão: 0.201.0 . Motivo: Problema com github desktop.;
-- [x] [Criar documento de como enviar sites para o github pages.](./infraestrutura/linux/git/como_hospedar_um _site_estático_no_github_page.html)
+- [x] [Criar documento de como enviar sites para o github pages.](./infraestrutura/linux/git/como_hospedar_um \_site_estático_no_github_page.html)
 - [x] Corrigido problema da pasta github. (Não estava usando o arquivo css da pasta .css)
 - [x] Colocar um link no documento clonando repositório do github
 
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -213,6 +235,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -228,6 +251,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -238,6 +262,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -251,6 +276,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -262,6 +288,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -274,20 +301,22 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>25/04/2023 </b></legend>
 
-- [X] [Instalar e configurar o framework AngularJs](./programacao/html/js/angular/configuracao.md)
+- [x] [Instalar e configurar o framework AngularJs](./programacao/html/js/angular/configuracao.md)
 - [x] [Instalar e configurar o nodejs](./programacao/nodejs/configurar.html)
-- [X] [Estudar extensão do nodejs express.](programacao/nodejs/teoria_node_js.html)
-- [X] [Estudar banco de dados MariaDb](./infraestrutura/linux/banco_de_dados/mariadb/index.html)
-- [X] Agrupar os itens github na página de index do documento[Git - Sistema de controle de versões distribuído](./infraestrutura/linux/git/index.html)
+- [x] [Estudar extensão do nodejs express.](programacao/nodejs/teoria_node_js.html)
+- [x] [Estudar banco de dados MariaDb](./infraestrutura/linux/banco_de_dados/mariadb/index.html)
+- [x] Agrupar os itens github na página de index do documento[Git - Sistema de controle de versões distribuído](./infraestrutura/linux/git/index.html)
 
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -301,8 +330,8 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
-[🔝](#)
 
+[🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>03/01/2021 </b></legend>
@@ -312,6 +341,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -322,6 +352,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -333,6 +364,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -342,18 +374,19 @@
 - [x] Inserir a página [/histórico.html](/histórico.html) em [/index.html](/index.html)
 - [x] Hoje passei bastante tempo tentando resolver problema do gerador de gráficos mermaid.
 - [x] Concluir a página [/programacao/html/markdown/index.html](/programacao/html/markdown/index.html).
-  - [X] Concluir a aba de Referências de markdown.
+  - [x] Concluir a aba de Referências de markdown.
 
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>03/12/2020 </b></legend>
 
-- [X] Concluir a página [/programacao/html/markdown/index.html](/programacao/html/markdown/index.html).
-  - [X] Concluir a aba de Referências de markdown.
+- [x] Concluir a página [/programacao/html/markdown/index.html](/programacao/html/markdown/index.html).
+  - [x] Concluir a aba de Referências de markdown.
   - [x] Padronizar no rodapé da pagina a descrição do histórico do documento.
     - [x] Estudar como usar repositórios que guarde todas as versões dos arquivos ao serem gravados em disco.
       - A melhor opção no meu ponto de vista é usar o projeto [git](https://en.wikipedia.org/wiki/Git) criado por Linus Torvalds
@@ -365,6 +398,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -379,6 +413,7 @@
 - [x] Instalar [vscode pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf "Essa extensão permite visualizar pdf no vscode").
 
 - [x] Instalar extensão no vscode para criar pdf a partir de um documento markdown.
+
   - [x] Achei as extensão: [Markdown Converter](https://marketplace.visualstudio.com/items?itemName=manuth.markdown-converter)
     - [x] obs: desinstalei porque não funciona.
 
@@ -387,12 +422,13 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>01/12/2020 </b></legend>
 
-- [x] Conclui o documento [o_que_é_markdown.md](/programacao/html/markdown/o_que_e_markdown.md)
+- [x] Conclui o documento [o*que*é_markdown.md](/programacao/html/markdown/o_que_e_markdown.md)
 - [x] Instalei e testei os programas ReText e ghostwriter no Linux mais o mesmo não reconheceu a sintaxe que o vscode reconhece.
 - [x] Criar documento ensinando como criar notas de rodapé.
 - [x] Instalar a extensão [bierner.markdown-footnotes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes) para seja possível criar notas de rodapé no documento.
@@ -400,6 +436,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -408,33 +445,37 @@
 - [x] Estudar por que o corregedor ortográfico parou de funcionar depois que eu comecei a trabalhar com markdown docs.
   - [x] Instalar a extensão [code-spell-checker-portuguese-brazilian](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese-brazilian)
   - [x] Desinstalar markdown docs.
-- [X] Instalar a extensão [auto rename tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
-- [X] Corrigir o documento editores_markdown para que eu possa referencia-lo no documento o_que_e_markdown.
+- [x] Instalar a extensão [auto rename tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+- [x] Corrigir o documento editores_markdown para que eu possa referencia-lo no documento o_que_e_markdown.
 - [x] [Documentar o uso do element semântico html \<details\>](/programacao/html/markdown/o_que_e_markdown.html)
 
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
  <fieldset> <legend> <b>29/11/2020</b></legend>
 
-- [x] Estudar como customizar css das fórmulas matemáticas de documentos markdown.  
+- [x] Estudar como customizar css das fórmulas matemáticas de documentos markdown.
+
   - [Arquivo de estilo css para fórmulas matemáticas](./css/theme_markdown.css)
   - O [theme_markdown.css](./css/theme_markdown.css) pode ser customizado para usar no lugar do css sugerido pelo vscode.
 
 - [x] Instalar suporte a fluxograma em documentos markdown: [mermaid-js](https://mermaid-js.github.io/mermaid/#/flowchart?id=flowcharts-basic-syntax)
+
   - [Extensão markdown-mermaid](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
 
 - [x] Estudar como instalar extensão para inserir emoji no vscode:
   - [🎸 emoji-on-vscode](https://dev.to/pjijin/emoji-on-vscode--571l)
   - [🥕 https://emojipedia.org/people/](https://emojipedia.org/people/)
   - [😀 https://marketplace.visualstudio.com/items?itemName=devzstudio.emoji-snippets](https://marketplace.visualstudio.comtems?itemName=devzstudio.emoji-snippets)
-  
+
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -442,36 +483,42 @@
 <!--DONE: em: 28/11/2020-->
 
 - [x] Criar menu línguas humanas
+
   - [x] Criei método TMenuBar.setLinguagemHumana() no arquivo [/menu/index](/js/menu/index.js)
   - [x] Criei atributo TMenuBar.linguagemHumana.
 
 - [x] Criar o index da pasta produção de textos:
+
   - [x] Documento criado: [index.html](línguas_humanas/português/produção_de_textos/index.html)
 
 - [x] Criei as pastas:
+
   - [x] línguas_humanas
   - [x] português
   - [x] produção_de_textos
 
 - [x] Estudei descrição de textos:
+
   - [x] Documento criado: [descrição_de_textos.html](línguas_humanas/português/produção_de_textos/descrição_de_textos.html)
 
 - [x] Amanheci inspirado para escrever a reflexão sobre a diferença entre fake x fato x opinião.
-  - [x] Documento criado: [fake_fato_opinião.html](línguas_humanas/português/produção_de_textos/fake_fato_opinião.html)  
+  - [x] Documento criado: [fake_fato_opinião.html](línguas_humanas/português/produção_de_textos/fake_fato_opinião.html)
 
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
  <fieldset> <legend> <b>29/04/2021</b></legend><!--FIXME: Falta fazer os item abaixo: -->
 
-1. [ ] Estudar com usar a tag \[link\]\(url\)\{:target="_blank"\} usando [kramdown](https://kramdown.gettalong.org/)
+1. [ ] Estudar com usar a tag \[link\]\(url\)\{:target="\_blank"\} usando [kramdown](https://kramdown.gettalong.org/)
 
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 <!-- markdownlint-disable-next-line -->
@@ -485,6 +532,7 @@
 </fieldset>
 
 <!-- markdownlint-disable-next-line -->
+
 [🔝](#)
 
 ## LEGENDA
@@ -506,8 +554,9 @@
 15. REVIEW: ("revise") Revise isso pra mim, usado onde se costuma fazer peer review.
 16. WTF: ("que p0rr@ é essa?") Fizeram um besteira muito grande aqui.
 
-<!-- markdownlint-disable-next-line -->
- 
+</article>
+
 <!-- markdownlint-disable-next-line -->
 <script>  includeHTML(); </script>
+
 [🔝🔝](#topo "Retorna ao topo")

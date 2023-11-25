@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>
-     Exemplo 02 de menu topdown  
+    Exemplo 02 de menu topdown
   </title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,8 @@
       float: left;
     }
 
-    li a, .dropdown-content a {
+    li a,
+    .dropdown-content a {
       display: block;
       color: white;
       text-align: center;
@@ -27,7 +29,8 @@
       text-decoration: none;
     }
 
-    li a:hover, .dropdown-content a:hover {
+    li a:hover,
+    .dropdown-content a:hover {
       background-color: #111;
     }
 
@@ -43,34 +46,36 @@
       display: none;
       position: absolute;
       background-color: #333;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
       z-index: 1;
     }
   </style>
 </head>
+
 <body>
 
-<!-- Estrutura do menu com submenus -->
-<ul>
-  <li><a href="#home">Home</a></li>
-  <li class="dropdown">
-    <a href="#about">About</a>
-    <div class="dropdown-content">
-      <a href="#team">Our Team</a>
-      <a href="#history">History</a>
-      <a href="#mission">Mission</a>
-    </div>
-  </li>
-  <li class="dropdown">
-    <a href="#services">Services</a>
-    <div class="dropdown-content">
-      <a href="#web">Web Development</a>
-      <a href="#design">Graphic Design</a>
-      <a href="#marketing">Digital Marketing</a>
-    </div>
-  </li>
-  <li><a href="#contact">Contact</a></li>
-</ul>
+  <!-- Estrutura do menu com submenus -->
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li class="dropdown">
+      <a href="#about">About</a>
+      <div class="dropdown-content">
+        <a href="#team">Our Team</a>
+        <a href="#history">History</a>
+        <a href="#mission">Mission</a>
+      </div>
+    </li>
+    <li class="dropdown">
+      <a href="#services">Services</a>
+      <div class="dropdown-content">
+        <a href="#web">Web Development</a>
+        <a href="#design">Graphic Design</a>
+        <a href="#marketing">Digital Marketing</a>
+      </div>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 
 </body>
+
 </html>

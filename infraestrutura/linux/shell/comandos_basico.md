@@ -1,12 +1,16 @@
-<!-- markdownlint-disable-next-line -->
-#### Comandos básico do Shell do Linux <a href="comandos_basico.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
-<div class="topnav" id="myTopnav">
-   <div w3-include-html="/menu.inc"></div>
-</div>
+<header>
+   <nav id="nav">
+      <div w3-include-html="/menu.inc"></div>
+      <div class="title"> <script>document.write(document.title);</script></div>
+   </nav>
+</header>
 
-<!-- markdownlint-disable-next-line -->
-#### INDEX
+<article id="article">
+
+# Comandos básico do Shell do Linux <a href="comandos_basico.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+
+## INDEX
 
 1. [Introdução](#id_introducao)
 2. [Atalho para criar um terminal de comandos](#id_Ctrl_Alt_T)
@@ -35,7 +39,7 @@
 13. [REFERÊNCIAS](#id_referencias)
 
 <!-- markdownlint-disable-next-line -->
-#### CONTEÚDO
+## CONTEÚDO
 
 1. <!-- markdownlint-disable-next-line -->
    <span id='id_introducao'></span>**Introdução:**
@@ -1295,13 +1299,11 @@
 - _15/05/2021_
   - [x] Criado este documento;
 
+  <!-- markdownlint-disable-next-line -->
+  <div class="footer"><div w3-include-html="/js/footer.inc"></div></div>
 
-  <!-- RODAPÉ DA PÁGINA  -->
-  <div class="footer">
-    <div w3-include-html="/js/footer.inc"></div>
-  </div>
-  <!--<script> includeHTML();</script>  -->
-  <script>
-    includeHTML();
-    document.addEventListener("DOMContentLoaded", function() {toggleTree();});  
-  </script>
+<!-- markdownlint-disable-next-line -->  
+</article>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); </script>
