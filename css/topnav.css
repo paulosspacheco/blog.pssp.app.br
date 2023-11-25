@@ -1,6 +1,15 @@
-.topnav {
+/* .topnav {
   overflow: hidden;
   background-color: #333;
+} */
+/* O ID NAV é usado para manter um menu no topo da página*/
+#topnav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #131313;
+  z-index: 1999;
 }
 
 .topnav a {
@@ -181,15 +190,7 @@
   display: block;
 }
 
-/* O ID NAV é usado para manter um menu no topo da página*/
-#nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 50px;
-  background-color: #131313;
-  z-index: 1999;
-}
+
 
 #article {
   position: relative;
