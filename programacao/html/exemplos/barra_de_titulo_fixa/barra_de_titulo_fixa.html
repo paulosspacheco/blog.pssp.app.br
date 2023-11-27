@@ -7,12 +7,12 @@
 
   <meta charset="UTF-8">
 
-  <title>Código HTML: Exemplo de barra de título fixa no topo da página</title>
+  <title> Exemplo de barra de título fixa no topo da página</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
-  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />
   <!-- <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/>   -->
 
   <script type="application/x-javascript" src="/js/generic.js"></script>
@@ -28,7 +28,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      height: 43px;
+      height: 30px;
       background-color: #131313;
       z-index: 1999;
     }
@@ -46,19 +46,18 @@
 
 </head>
 
-<body>
+<body onmouseover="generic.display()">
 
 
-  <nav id="topnav">
-
+  <div id="topnav">
     <div w3-include-html="/menu.inc"></div>
-
-
     <div class="title">
       <script>
-        document.write(document.title);
+        var larguraDaTela = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+        document.write("|| "+larguraDaTela + " " + document.title);
       </script>
-  </nav>
+    </div>
 
   </div>
 
