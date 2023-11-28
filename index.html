@@ -32,141 +32,134 @@
 <body onmouseover="generic.display()">
   <main>
     <!-- Menu de opções -->
-    <header class="col-12">
-      
-      <nav id="topnav">
-        <div w3-include-html="/menu.inc"></div>
-           
-      </nav>
+       
+    <div class="header" id="myHeader">
+      <div class="navbar" w3-include-html="/menu.inc"> </div>
+    </div>
  
-     
-    </header>
+    
+    <!-- Conteúdo da página <div class="col-12"> -->
+    <div class="col-12">
+      <div class="title">
+        <script>
+          document.write(document.title);
+        </script>
+      </div>  
+
+      <ol>         
+        <li><span class="rootTree"></span><b><a id="objetivo">Objetivo</a></b>
+          <ol>
+            <!-- <div class="childrenDefault"> -->
+            <div class="children">
+              <iframe src="./objetivo.html" title="" width="100%" height=80></iframe><br />
+            </div>
+          </ol>
+        </li>
+
+        <li> <span class="rootTree"></span> <b><a id="Infraestrutura_de_ti">Infraestrutura de TI</a></b>
+          <ol>
+            <div class="childrenDefault">
+
+              <li>
+                <a href="./infraestrutura/linux/shell/index.html " target="_blank">Comandos do shell do Linux ➚</a>
+              </li>
+              <li>
+                <a href="./infraestrutura/linux/flatpak/index.html " target="_blank">Aplicativo flatpak ➚</a>
+              </li>
+
+              <li>
+                <a href="./infraestrutura/linux/git/index.html " target="_blank">Aplicativo Git ➚</a>
+              </li>
+
+              <li>
+                <a href="./infraestrutura/linux/servidor-web-apache/index.html" target="_blank">Servidor Web Service Apache2 ➚</a>
+              </li>
+
+              <li>
+                <a href="./infraestrutura/linux/nfs/index.html" target="_blank">Network File System (NFS) ➚</a>
+              </li>
 
 
-    <article id="article">
+            </div>
+          </ol>
+        </li>
+        <li><span class="rootTree"></span> <b><a id="id_programacao">Programação</a></b>
+          <ol>
+            <div class="childrenDefault">
 
-      <!-- Conteúdo da página <div class="col-12"> -->
-      <div class="col-12">
-        <div class="title">
-          <script>
-            document.write(document.title);
-          </script>
-        </div>  
+              <li>
+                <a href="./programacao/html/js/index.html" target="_blank">Java Script ➚</a>
+              </li>
 
-        <ol>         
-          <li><span class="rootTree"></span><b><a id="objetivo">Objetivo</a></b>
-            <ol>
-              <!-- <div class="childrenDefault"> -->
-              <div class="children">
-                <iframe src="./objetivo.html" title="" width="100%" height=80></iframe><br />
-              </div>
-            </ol>
-          </li>
+              <li>
+                <a href="./programacao/html/json/index.html" target="_blank">Json ➚</a>
+              </li>
 
-          <li> <span class="rootTree"></span> <b><a id="Infraestrutura_de_ti">Infraestrutura de TI</a></b>
-            <ol>
-              <div class="childrenDefault">
+              <li>
+                <a href="./programacao/html/typescript/index.html" target="_blank">Type Script ➚</a>
+              </li>
+              <li>
+                <a href="./programacao/html/markdown/index.html" target="_blank">Markdown ➚</a>
+              </li>
 
-                <li>
-                  <a href="./infraestrutura/linux/shell/index.html " target="_blank">Comandos do shell do Linux ➚</a>
-                </li>
-                <li>
-                  <a href="./infraestrutura/linux/flatpak/index.html " target="_blank">Aplicativo flatpak ➚</a>
-                </li>
+              <li>
+                <a href="./programacao/nodejs/index.html" target="_blank">Runtime typescript nodejs ➚</a>
+              </li>
 
-                <li>
-                  <a href="./infraestrutura/linux/git/index.html " target="_blank">Aplicativo Git ➚</a>
-                </li>
+            </div>
+          </ol>
+        </li>
 
-                <li>
-                  <a href="./infraestrutura/linux/servidor-web-apache/index.html" target="_blank">Servidor Web Service Apache2 ➚</a>
-                </li>
-
-                <li>
-                  <a href="./infraestrutura/linux/nfs/index.html" target="_blank">Network File System (NFS) ➚</a>
-                </li>
+        <li>
+          <span class="rootTree"></span>
+          <b><a id="historico">Histórico das atividade do blog</a></b>
+          <ol>
+            <div class="children">
+              <iframe src="./historico.html" title="" width="100%" height="100%"></iframe><br />
+            </div>
+          </ol>
+        </li>
 
 
-              </div>
-            </ol>
-          </li>
-          <li><span class="rootTree"></span> <b><a id="id_programacao">Programação</a></b>
-            <ol>
-              <div class="childrenDefault">
+        <li>
+          <span class="rootTree"></span>
+          <b><a id="projetos_em_construcao">Projetos em construção</a></b>
+          <ol>
+            <div class="children">
+              <iframe src="./projetos_em_construcao.html" title="" width="100%" height="500px"></iframe><br />
+            </div>
+          </ol>
+        </li>
 
-                <li>
-                  <a href="./programacao/html/js/index.html" target="_blank">Java Script ➚</a>
-                </li>
+        <li>
+          <span class="rootTree"></span> <b><a id="Agenda_do_Projeto">Agenda do Projeto</a></b>
+          <ol>
+            <div class="children">
+              <iframe src="https://calendar.google.com/calendar/embed?src=d6aa84c58dce6c223910e7fcca27bfb8a9cca1a281f344977700f9cf9360c68d%40group.calendar.google.com&ctz=America%2FFortaleza" title="" width="100%" height="100%"></iframe>
+            </div>
+          </ol>
+        </li>
+        <li>
+          <a href="https://calendar.google.com/calendar/embed?src=d6aa84c58dce6c223910e7fcca27bfb8a9cca1a281f344977700f9cf9360c68d%40group.calendar.google.com&ctz=America%2FFortaleza" target="_blank">Agenda do Projeto ➚</a>
+        </li>
+        <li>
+          <span class="rootTree"></span> <b><a id="Id_Mapa_do_Site">Mapa do site</a></b>
+          <ol>
+            <div class="children">
+              <iframe src="./mapa_do_site.html" title="" width="100%" height="100%"></iframe>
+            </div>
+          </ol>
+        </li>
+        <li>
+          <a href="https://calendar.google.com/calendar/embed?src=d6aa84c58dce6c223910e7fcca27bfb8a9cca1a281f344977700f9cf9360c68d%40group.calendar.google.com&ctz=America%2FFortaleza" target="_blank">Agenda do Projeto ➚</a>
+        </li>
+        <li>
 
-                <li>
-                  <a href="./programacao/html/json/index.html" target="_blank">Json ➚</a>
-                </li>
+          <a href="./mapa_do_site.html" target="_blank">Mapa do site ➚</a>
+        </li>
 
-                <li>
-                  <a href="./programacao/html/typescript/index.html" target="_blank">Type Script ➚</a>
-                </li>
-                <li>
-                  <a href="./programacao/html/markdown/index.html" target="_blank">Markdown ➚</a>
-                </li>
-
-                <li>
-                  <a href="./programacao/nodejs/index.html" target="_blank">Runtime typescript nodejs ➚</a>
-                </li>
-
-              </div>
-            </ol>
-          </li>
-
-          <li>
-            <span class="rootTree"></span>
-            <b><a id="historico">Histórico das atividade do blog</a></b>
-            <ol>
-              <div class="children">
-                <iframe src="./historico.html" title="" width="100%" height="100%"></iframe><br />
-              </div>
-            </ol>
-          </li>
-
-
-          <li>
-            <span class="rootTree"></span>
-            <b><a id="projetos_em_construcao">Projetos em construção</a></b>
-            <ol>
-              <div class="children">
-                <iframe src="./projetos_em_construcao.html" title="" width="100%" height="500px"></iframe><br />
-              </div>
-            </ol>
-          </li>
-
-          <li>
-            <span class="rootTree"></span> <b><a id="Agenda_do_Projeto">Agenda do Projeto</a></b>
-            <ol>
-              <div class="children">
-                <iframe src="https://calendar.google.com/calendar/embed?src=d6aa84c58dce6c223910e7fcca27bfb8a9cca1a281f344977700f9cf9360c68d%40group.calendar.google.com&ctz=America%2FFortaleza" title="" width="100%" height="100%"></iframe>
-              </div>
-            </ol>
-          </li>
-          <li>
-            <a href="https://calendar.google.com/calendar/embed?src=d6aa84c58dce6c223910e7fcca27bfb8a9cca1a281f344977700f9cf9360c68d%40group.calendar.google.com&ctz=America%2FFortaleza" target="_blank">Agenda do Projeto ➚</a>
-          </li>
-          <li>
-            <span class="rootTree"></span> <b><a id="Id_Mapa_do_Site">Mapa do site</a></b>
-            <ol>
-              <div class="children">
-                <iframe src="./mapa_do_site.html" title="" width="100%" height="100%"></iframe>
-              </div>
-            </ol>
-          </li>
-          <li>
-            <a href="https://calendar.google.com/calendar/embed?src=d6aa84c58dce6c223910e7fcca27bfb8a9cca1a281f344977700f9cf9360c68d%40group.calendar.google.com&ctz=America%2FFortaleza" target="_blank">Agenda do Projeto ➚</a>
-          </li>
-          <li>
-
-            <a href="./mapa_do_site.html" target="_blank">Mapa do site ➚</a>
-          </li>
-
-        </ol>
-    </article>
+      </ol>
+  
   </main>
 
   <!-- RODAPÉ DA PÁGINA  -->
@@ -175,7 +168,7 @@
   </div>
 
   <script>
-    includeHTML();
+    includeHTML();FixHeader(window,"myHeader");
   </script>
 
 

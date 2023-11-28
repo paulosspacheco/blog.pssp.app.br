@@ -7,13 +7,13 @@
 
   <meta charset="UTF-8">
 
-  <title> Exemplo de barra de título fixa no topo da página</title>
+  <title>Código HTML: Exemplo de barra de título fixa no topo da página</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <!-- <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" /> -->
   <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />
-  <!-- <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/>   -->
 
   <script type="application/x-javascript" src="/js/generic.js"></script>
   <script type="application/x-javascript" src="/js/tgeneric.js"></script>
@@ -23,47 +23,25 @@
     });
   </script>
 
-  <style>
-    #nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 30px;
-      background-color: #131313;
-      z-index: 1999;
-    }
-
-    #article {
-      position: relative;
-      top: 44px;
-      width: 100%;
-      height: 100%;
-      overflow: auto hidden;
-      z-index: 1998;
-
-    }
-  </style>
-
 </head>
 
-<body onmouseover="generic.display()">
+
+<body style="background-color:white;">
 
 
-  <div id="topnav">
-    <div w3-include-html="/menu.inc"></div>
-    <div class="title">
-      <script>
-        var larguraDaTela = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-        document.write("|| "+larguraDaTela + " " + document.title);
-      </script>
-    </div>
-
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
   </div>
 
+  <!-- <div class="topnav" w3-include-html="/menu.inc"> </div> -->
 
-  <article id="article">
 
+  <div class="content">
+    <div class="title">
+      <script>
+        document.write(document.title);
+      </script>
+    </div> 
 
     <pre>
 
@@ -73,33 +51,6 @@ Este recurso por enquanto não dar certo quando temos menus muito grande
 porque não tem como selecionar o menu.
 
 Linha 2<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -129,12 +80,14 @@ Linha n<br>
 
     </div>
 
-  </article>
+  </div>
 
-  <script>
-    includeHTML();
+  <script>    
+    includeHTML(); FixHeader(window,"myHeader");   
+ 
   </script>
 
+  
 </body>
 
 </html>

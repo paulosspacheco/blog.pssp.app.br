@@ -96,7 +96,19 @@ function toggleTree() {
   
 function goBack(){  history.back()}  
 
-//Testes:
-// var x  = '10';
-// console.log(  x == 10 );
-// retorna true.
+/** A função usada para fixar um div fix na parte superior da tela usada para menus */
+function FixHeader(window,id){
+
+    window.onscroll = function() {myFunction()};
+        
+    var header = document.getElementById(id);
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+    }
+}  
