@@ -40,7 +40,7 @@ body {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: rgb(237, 194, 19);
 }
 
 .dropdown-content {
@@ -279,7 +279,7 @@ body {
 
 /*--@media 450px------------------  */
 
-@media screen and (max-width: 450px) {
+/* @media screen and (max-width: 450px) {
   .topnav a:not(:first-child),
   .dropdown .dropbtn {
     display: none;
@@ -320,11 +320,11 @@ body {
     text-align: left;
   }
 }
-
-
-@media only screen and (min-width: 450px) {
+ */
 
   /* For tablets: */
+/* @media only screen and (min-width: 450px) {
+
   .col-s-1 {
     width: 8.33%;
   }
@@ -372,4 +372,4 @@ body {
   .col-s-12 {
     width: 100%;
   }
-}
+} */
