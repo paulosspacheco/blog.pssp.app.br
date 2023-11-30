@@ -1,5 +1,8 @@
-<!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
@@ -63,6 +66,8 @@
 
 - [SABEDORIA PARA ALCANÇAR A GRANDEZA | Palavras de Deus | Lamartine Posella](https://www.youtube.com/watch?v=6WhYOiSSq9o) em 28/12/2021.
 
+</main>
+
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 [🔝🔝](#topo "Retorna ao topo")

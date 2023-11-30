@@ -1,14 +1,8 @@
-<!-- markdownlint-disable-next-line -->
-<header><nav id="nav">
-   <!-- markdownlint-disable-next-line -->
-   <div w3-include-html="/menu.inc"></div>
-
-   <!-- markdownlint-disable-next-line -->
-   <div class="title"> <script>document.write(document.title);</script></div>
-</nav></header>
-
-<!-- markdownlint-disable-next-line -->
-<article id="article">
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 
 # Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
@@ -554,9 +548,9 @@
 15. REVIEW: ("revise") Revise isso pra mim, usado onde se costuma fazer peer review.
 16. WTF: ("que p0rr@ é essa?") Fizeram um besteira muito grande aqui.
 
-</article>
+</main>
 
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 
 [🔝🔝](#topo "Retorna ao topo")

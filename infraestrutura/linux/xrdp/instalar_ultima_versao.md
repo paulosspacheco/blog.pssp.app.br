@@ -1,46 +1,72 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Instruções de instalação para xrdp
 
-* Coisas que você precisa para compilar e instalar. A maioria dos sistemas os programas abaixo não são instalados por padrão.
-  * <pre>
+* Coisas que você precisa para compilar e instalar.
+  * Obs: A maioria dos sistemas, os programas abaixo, não são instalados por padrão.
+
+    ```bash
       sudo apt install gcc -y
       sudo apt install make -y
-    </pre>
+
+    ```
+
   * [Header files for pam](https://pubs.opengroup.org/onlinepubs/8329799/apdxa.htm)
   * Header files for openssll
 
-* Você pode construir o sesman sem pam, há um parâmetro Makefile para isso.
-* Eu também tenho um substituto ssl_calls.c para evitar a dependência do openssl envie um e-mail para mim (Jay) ou consulte http://server1.xrdp.org/xrdp/openssl. Devido à licença, não posso incluí-lo neste projeto.
-  * http://server1.xrdp.org/xrdp/openssl/
+* Você pode construir o _sesman_ sem _pam_, há um parâmetro _Makefile_ para isso.
+* Eu também tenho um substituto _ssl_calls.c_ para evitar a dependência do _openssl_ envie um e-mail para mim (Jay) ou consulte http://server1.xrdp.org/xrdp/openssl. Devido à licença, não posso incluí-lo neste projeto.
+  * <http://server1.xrdp.org/xrdp/openssl/>
 
-* descompacte o tarball
-  * <pre>$ tar -zxvf xrdp-0.1.tar.gz </pre>
-    * Obs: O comando acima irá criar uma pasta xrdp
+* descompacte o _tarball_
+
+  ```bash
+
+    # Obs: O comando abaixo cria uma pasta xrdp
+    tar -zxvf xrdp-0.1.tar.gz 
+     
+  
+  ```
 
 * mudar para a pasta xrdp e executar make em seguida make install:
-  * <pre>  
-        $ cd xrdp
-        $ ./configure
-        $ make
-        $ sudo make install</pre>
+  
+  ```bash
+    cd xrdp
+    ./configure
+    make
+    sudo make install</pre>
+  ```
 
-* Isso instalará a maioria dos arquivos em /usr/local/xrdp. Alguns arquivos são instalados em /etc/xrdp. Estas são configurações arquivos.
+  * Obs:
+    * Os comandos acima instalará a maioria dos arquivos em _/usr/local/xrdp_. Alguns arquivos são instalados em _/etc/xrdp_. Estas são configurações arquivos.
 
 * arquivos e localização
-  * /usr/local/xrdp/startwm.sh - script que inicia o gerenciador de janelas
+  * _/usr/local/xrdp/startwm.sh_ - script que inicia o gerenciador de janelas
   * Você pode precisar editar este arquivo para executar o gerenciador de janelas.
-    * /etc/sesman.ini - arquivo de configuração sesman
-    * /etc/rsakeys.ini - coisas rsa
-    * /etc/xrdp.ini - arquivo de configuração xrdp
-    * /var/run/sesman.pid
-    * /var/rub/xrdp.pid
+    * _/etc/sesman.ini_ - arquivo de configuração _sesman_
+    * _/etc/rsakeys.ini_ - coisas _rsa_
+    * _/etc/xrdp.ini_ - arquivo de configuração xrdp
+    * _/var/run/sesman.pid_
+    * _/var/rub/xrdp.pid_
 
-* Sesman e xrdp devem estar rodando como root. Você deve configurá-los para iniciar quando o sistema for iniciado. Você pode usar o script xrdp_control.sh para iniciá-los.
+* _Sesman_ e _xrdp_ devem estar rodando como _root_. Você deve configurá-los para iniciar quando o sistema for iniciado. Você pode usar o script _xrdp_control.sh_ para iniciá-los.
 
-* Para remover completamente o xrdp
-  * remover diretório /usr/local/xrdp
-  * remover diretório /etc/xrdp
-  * remova o arquivo /var/run/xrdp.pid
-  * remova o arquivo /var/run/sesman.pid
-  * remova quaisquer links de inicialização adicionados a /etc/init.d ou /etc/rcX.d
+* Para remover completamente o _xrdp_
+  * remover diretório _/usr/local/xrdp_
+  * remover diretório _/etc/xrdp_
+  * remova o arquivo _/var/run/xrdp.pid_
+  * remova o arquivo _/var/run/sesman.pid_
+  * remova quaisquer links de inicialização adicionados a _/etc/init.d_ ou _/etc/rcX.d_
   
-Escrito por: jay.sorg@gmail.com
+Escrito por: _jay.sorg@gmail.com_
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>

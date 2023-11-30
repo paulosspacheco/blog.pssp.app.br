@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Configuração dos rastreadores do étios orn0884
 
 ## Dados do aparelho
@@ -47,3 +55,9 @@
 
            4. Configurar para acesso a GPRS
               1. Enviar SMS **gprs123456**  (minúsculas)
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

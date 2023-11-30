@@ -1,5 +1,8 @@
-<!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
@@ -37,6 +40,8 @@
 5. [Tubo de Venturi](https://mundoeducacao.uol.com.br/fisica/tubo-venturi.htm)
    1. O tubo de Venturi é um instrumento que indica a variação da pressão exercida por um líquido que se encontra em movimento por tubos com áreas variáveis.
 
+</main>
+
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 [🔝🔝](#topo "Retorna ao topo")

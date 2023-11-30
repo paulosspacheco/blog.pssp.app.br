@@ -40,4 +40,4 @@
 3. [Configurar o Git para uso com delimitadores de linha](https://docs.github.com/pt/get-started/getting-started-with-git/configuring-git-to-handle-line-endings)
 
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>    
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>    

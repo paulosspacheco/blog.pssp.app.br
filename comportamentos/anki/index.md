@@ -1,11 +1,8 @@
-<header>
-   <nav id="nav">
-      <div w3-include-html="/menu.inc"></div>
-      <div class="title"> <script>document.write(document.title);</script></div>
-   </nav>
-</header>
-
-<article id="article">
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 
 <span id="topo"><span>
 
@@ -144,8 +141,8 @@
 
       - <button onclick="history.back()">🔙</button>
 
-</article>
+</main>
 
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 [🔝🔝](#topo "Retorna ao topo")

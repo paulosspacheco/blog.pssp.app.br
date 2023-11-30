@@ -1,5 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-# [Um servidor de protocolo de área de trabalho remota de código aberto Xrdp](http://xrdp.org/) <a href="teoria_xrdp.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+
+# Servidor de protocolo de área de trabalho remota de código aberto Xrdp <a href="teoria_xrdp.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
 
@@ -79,15 +86,16 @@
       2. [🔝](#topo_pessoais "Retorna ao topo")  
 
    4. <span id=id_referencias></span>**REFERÊNCIAS**
-      1. [Manual do xrdp.ini](https://www.systutorials.com/docs/linux/man/5-xrdp.ini/)
-      2. [xrdp/install.txt](https://github.com/neutrinolabs/xrdp/blob/devel/install.txt)
-      3. [xrdp é mantido por neutrino labs](https://github.com/neutrinolabs )
-      4. [XRDP - Habilitando Recurso de Redirecionamento de Unidades e Área de Transferência](https://c-nergy.be/blog/?p=9285)
-      5. [Video - installing Xrdp Server (Remote Desktop RDP ) On Ubuntu 20.04 LTS (Focal Fossa) Desktop](https://www.youtube.com/watch?v=fOkQJ2a69PI)
-      6. [Como configurar o XRDP para iniciar o cinnamon como sessão de desktop padrão](https://askubuntu.com/questions/135483/how-to-configure-xrdp-to-start-cinnamon-as-default-desktop-session)
-      7. [Notas de versão para xrdp v0.9.15 (2020/12/28)](https://github.com/neutrinolabs/xrdp/releases)
-      8. [xrdp.ini (5) - Man Pages Linux](/etc/xrdp/xrdp.ini)
-      9. [Como configurar o servidor xRDP no Ubuntu 18.04](https://serverspace.io/support/help/how-to-configure-xrdp-server-on-ubuntu-18-04/).
+      1. [site http://xrdp.org](http://xrdp.org)
+      2. [Manual do xrdp.ini](https://www.systutorials.com/docs/linux/man/5-xrdp.ini/)
+      3. [xrdp/install.txt](https://github.com/neutrinolabs/xrdp/blob/devel/install.txt)
+      4. [xrdp é mantido por neutrino labs](https://github.com/neutrinolabs )
+      5. [XRDP - Habilitando Recurso de Redirecionamento de Unidades e Área de Transferência](https://c-nergy.be/blog/?p=9285)
+      6. [Video - installing Xrdp Server (Remote Desktop RDP ) On Ubuntu 20.04 LTS (Focal Fossa) Desktop](https://www.youtube.com/watch?v=fOkQJ2a69PI)
+      7. [Como configurar o XRDP para iniciar o cinnamon como sessão de desktop padrão](https://askubuntu.com/questions/135483/how-to-configure-xrdp-to-start-cinnamon-as-default-desktop-session)
+      8. [Notas de versão para xrdp v0.9.15 (2020/12/28)](https://github.com/neutrinolabs/xrdp/releases)
+      9. [xrdp.ini (5) - Man Pages Linux](/etc/xrdp/xrdp.ini)
+      10. [Como configurar o servidor xRDP no Ubuntu 18.04](https://serverspace.io/support/help/how-to-configure-xrdp-server-on-ubuntu-18-04/).
 
    5. <span id="id_historico"><span>**HISTÓRICO**
 
@@ -104,3 +112,8 @@
          - [🔝](#topo "Retorna ao topo")
 
 [🔝🔝](#topo "Retorna ao topo")
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>

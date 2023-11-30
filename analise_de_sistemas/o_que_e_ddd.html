@@ -1,57 +1,69 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>O que &eacute; DDD</title>
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description"   content="" />
-        <meta name="keywords" content="" />
-           
-        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+<html>
 
-        <script type="application/x-javascript" src="/js/generic.js"></script>
-        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>   
+<head>
+  <meta charset="UTF-8">
+  <title>O que &eacute; DDD</title>
 
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <header>
-   <nav id="topnav">
-      <div w3-include-html="/menu.inc"></div>
-      <div class="title"> <script>document.write(document.title);</script></div>
-   </nav>
-</header>
-<article id="article">
-<span id="topo"><span>
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
 
-<ol>
-<li>
-<p><strong>Introdução</strong></p>
-<ol>
-<li>
-<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
-<ol>
-<li>O <strong>Domain Driven Design</strong>, ou DDD como também é conhecido, é um conjunto de princípios e práticas com o foco em estabelecer uma comunicação eficiente entre especialistas do domínio (especialistas da área, usuários, analistas) e desenvolvedores de software para a construção de uma aplicação que atenda as necessidades do cliente. <a href="https://www.voitto.com.br/blog/artigo/domain-driven-design">Veja mais...</a>.</li>
-<li><text onclick="goBack()">[🔙]</text></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências</strong></p>
-<ol>
-<li><a href="./ddd_reference_2015-03.pdf">ddd_reference_2015-03</a></li>
-</ol>
-</li>
-</ol>
-</article>
-<script>  includeHTML(); </script>
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
 
-        
-        
-    </body>
-    </html>
+
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <p><span id="topo"><span></p>
+    <!-- <h1 id="o-que-é-ddd">O que é DDD</h1> -->
+    <ol>
+      <li>
+        <p><strong>Introdução</strong></p>
+        <ol>
+          <li>
+            <p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+            <ol>
+              <li>O <strong>Domain Driven Design</strong>, ou DDD como também é conhecido, é um conjunto de princípios e práticas com o foco em estabelecer uma comunicação eficiente entre especialistas do domínio (especialistas da área, usuários, analistas) e desenvolvedores de software para a construção de uma aplicação que atenda as necessidades do cliente. <a href="https://www.voitto.com.br/blog/artigo/domain-driven-design">Veja mais...</a>.</li>
+              <li><text onclick="goBack()">[🔙]</text></li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p><strong>Referências</strong></p>
+        <ol>
+          <li><a href="./ddd_reference_2015-03.pdf">ddd_reference_2015-03</a></li>
+        </ol>
+      </li>
+    </ol>
+  </main>
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+
+
+
+</body>
+
+</html>

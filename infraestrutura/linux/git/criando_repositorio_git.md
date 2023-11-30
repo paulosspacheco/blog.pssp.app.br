@@ -35,4 +35,4 @@
    2. [Como mover/separar a pasta .git da sua árvore de trabalho](https://rakhesh.com/coding/how-to-move-separate-the-git-folder-out-of-your-working-tree/)
 
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>

@@ -117,4 +117,4 @@
 9. [Configurando arquivos ignorados para todos os repositórios em seu computador](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files).
 
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>    
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>    

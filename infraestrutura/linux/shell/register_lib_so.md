@@ -1,5 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-#### Como registrar biblioteca compartilhada no Linux para que o Lazarus reconheça. <a href="register_lib_so.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
+<span id="topo"><span>
+
+# Como registrar biblioteca compartilhada no Linux para que o Lazarus reconheça. <a href="register_lib_so.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
 
 1. As bibliotecas normalmente são instaladas usando o gerenciador de pacotes de sua distribuição, porém as biblioteca que criamos ainda não tem um gerenciador de pacotes e por isso é necessário registra-las no Linux na pasta _/usr/lib_ para que o _IDE Lazarus_ reconheça em seus projetos.
 2. Além de está na pasta _/usr/lib_, precisa também que o modo de acesso seja alterado da seguinte forma:
@@ -114,3 +121,8 @@
 5. **Referências**
    1. [Bibliotecas compartilhadas](https://packaging.ubuntu.com/pt-br/html/libraries.html#:~:text=Bibliotecas%20compartilhadas%20s%C3%A3o%20c%C3%B3digos%20compilados,de%20fun%C3%A7%C3%B5es%2C%20classes%20e%20vari%C3%A1veis.)
    2. [Debian Library Packaging guide](https://www.netfort.gr.jp/~dancer/column/libpkg-guide/libpkg-guide.html)
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>

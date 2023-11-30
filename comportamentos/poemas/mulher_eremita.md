@@ -1,5 +1,8 @@
-<!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
@@ -10,7 +13,7 @@
 - **Trabalhe em solidão!**
   - Um homem encontrou uma mulher eremita em uma montanha e perguntou-lhe:
     - O que você está fazendo aqui, sozinha?
-      - Ah, eu tenho um monte de trabalho. Estou treinando dois falcões e duas águias, tenho que tranquilizar dois coelhos, disciplinar uma cobra, motivar um burro e domar um leão.
+      - **Ah, eu tenho um monte de trabalho. Estou treinando dois falcões e duas águias, tenho que tranquilizar dois coelhos, disciplinar uma cobra, motivar um burro e domar um leão.**
     - E onde estão eles que não os vejo?
       - Estão dentro de mim.
         - Os falcões querem de tudo que vem pela frente, bom ou ruim, tenho que treiná-los para quererem coisas boas. Eles são meus olhos.
@@ -22,7 +25,8 @@
     - Viu como tenho um monte de trabalho? E você trabalha no que?"
 
 😀😀
+</main>
 
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 [🔝🔝](#topo "Retorna ao topo")

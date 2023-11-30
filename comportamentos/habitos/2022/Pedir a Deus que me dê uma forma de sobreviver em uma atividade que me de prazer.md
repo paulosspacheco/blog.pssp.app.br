@@ -1,7 +1,8 @@
-<!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
-<!-- markdownlint-disable-next-line -->
-<span id="topo"><span>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 
 # Pedir a Deus que me dê uma forma de sobreviver em uma atividade que me dê prazer
 
@@ -21,7 +22,9 @@
 
 - Como ganhar mais do que preciso em tarefas que me dá prazer?
   - ..
+  
+</main>
 
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 [🔝🔝](#topo "Retorna ao topo")

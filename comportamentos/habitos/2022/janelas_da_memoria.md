@@ -1,8 +1,10 @@
-<!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-
 
 # As Janelas da Memória
 
@@ -29,7 +31,7 @@ Há três grupos básicos de janelas da memória: as neutras, que contêm milhõ
 O Eu, como líder da sua mente, deveria aprender a romper as fronteiras das janelas killer e a penetrar nas áreas das janelas light. Eis a grande meta da mulher inteligente!
 
 Augusto Cury, in 'Mulheres Inteligentes, Relações Saudáveis'
-
+</main>
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 [🔝🔝](#topo "Retorna ao topo")

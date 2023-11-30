@@ -1,11 +1,10 @@
-<header>
-   <nav id="topnav">
-      <div w3-include-html="/menu.inc"></div>
-      <div class="title"> <script>document.write(document.title);</script></div>
-   </nav>
-</header>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 
-<article id="article">
+
 <span id="topo"><span>
 
 # O que é DDD
@@ -19,6 +18,6 @@
 
 2. **Referências**
    1. [ddd_reference_2015-03](./ddd_reference_2015-03.pdf) 
-</article>
+</main>
 
-<script>  includeHTML(); </script>
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>

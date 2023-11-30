@@ -24,20 +24,16 @@
 </head>
 
 <body class="vscode-body vscode-dark">
-  <header>
-    <nav id="nav">
-      <div w3-include-html="/menu.inc"></div>
-      <div class="title">
-        <script>
-          document.write(document.title);
-        </script>
-      </div>
-    </nav>
-  </header>
-
-
-  <article id="article">
-
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- <h1 id="histórico-das-ocorrência-do-blog-">Histórico das ocorrência do Blog <a href="historico.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">➚</a></h1> -->
     <!-- markdownlint-disable-next-line -->
     <fieldset>
       <legend> <b>Feito em 27/10/2023</b></legend>
@@ -565,10 +561,11 @@
       <li>REVIEW: (&quot;revise&quot;) Revise isso pra mim, usado onde se costuma fazer peer review.</li>
       <li>WTF: (&quot;que p0rr@ é essa?&quot;) Fizeram um besteira muito grande aqui.</li>
     </ol>
-  </article>
+  </main>
   <!-- markdownlint-disable-next-line -->
   <script>
     includeHTML();
+    FixHeader(window, "myHeader");
   </script>
   <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 

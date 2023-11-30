@@ -1,153 +1,182 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>&dollar;bash &lpar;1&rpar; - p&aacute;gina de manual do Linux</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <!-- CSS markdown  -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
-            
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8">
+  <title>&dollar;bash &lpar;1&rpar; - p&aacute;gina de manual do Linux</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
 
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <h1 id="bash-1---página-de-manual-do-linux">$bash (1) - página de manual do Linux</h1>
-<ol>
-<li>
-<p><strong>Nome</strong></p>
-<ol>
-<li>bash - GNU Bourne-Again SHell</li>
-</ol>
-</li>
-<li>
-<p><strong>Sinopse</strong></p>
-<ol>
-<li>bash [opções] [arquivo]</li>
-</ol>
-</li>
-<li>
-<p><strong>direito autoral</strong></p>
-<ol>
-<li>O Bash é protegido por Copyright © 1989-2009 da Free Software Foundation, Inc</li>
-</ol>
-</li>
-<li>
-<p><strong>Descrição</strong></p>
-<ol>
-<li>O Bash é um interpretador de linguagem de comando compatível com sh que executa comandos lidos a partir da entrada padrão ou de um arquivo. O Bash também incorpora recursos úteis dos shells Korn e C ( ksh e csh ).</li>
-<li>O Bash se destina a ser uma implementação em conformidade da parte Shell e utilitários da especificação IEEE POSIX (IEEE Standard 1003.1). O Bash pode ser configurado para estar em conformidade com POSIX por padrão.</li>
-</ol>
-</li>
-<li>
-<p><em><strong>Opções</strong></em></p>
-<ol>
-<li>Além das opções de shell de caractere único documentadas na descrição do comando set builtin, o bash interpreta as seguintes opções quando é chamado:
-<ol>
-<li><strong>-c string</strong>
-<ol>
-<li>Se a opção -c estiver presente, os comandos serão lidos da string . Se houver argumentos após a string , eles serão atribuídos aos parâmetros posicionais, começando com $0.</li>
-</ol>
-</li>
-<li><strong>-i</strong>
-<ol>
-<li>Se a opção -i estiver presente, o shell será interativo.</li>
-</ol>
-</li>
-<li>-I
-<ol>
-<li>Faça o bash agir como se tivesse sido invocado como um shell de login (veja INVOCATION abaixo).</li>
-</ol>
-</li>
-<li><strong>-r</strong>
-<ol>
-<li>Se a opção -r estiver presente, o shell se torna restrito (consulte SHELL RESTRITO abaixo).</li>
-</ol>
-</li>
-<li><strong>-s</strong>
-<ol>
-<li>Se a opção -s estiver presente ou se nenhum argumento permanecer após o processamento da opção, os comandos serão lidos a partir da entrada padrão. Esta opção permite que os parâmetros posicionais sejam definidos ao chamar um shell interativo.</li>
-</ol>
-</li>
-<li><strong>-D</strong>
-<ol>
-<li>Uma lista de todas as strings entre aspas precedidas por $ é impressa na saída padrão. Essas são as strings que estão sujeitas à tradução de idioma quando o local atual não é C ou POSIX . Isso implica na opção -n ; nenhum comando será executado.</li>
-</ol>
-</li>
-<li><strong>[- +] O [ shopt_option ]</strong>
-<ol>
-<li>shopt_option é uma das opções de shell aceitas pelo shopt embutido (veja os COMANDOS DE CONSTRUÇÃO DE SHELL abaixo). Se shopt_option estiver presente, -O define o valor dessa opção; + O desarma. Se shopt_option não for fornecido, os nomes e valores das opções de shell aceitas por shopt serão impressos na saída padrão. Se a opção de chamada for + O , a saída será exibida em um formato que pode ser reutilizado como entrada.</li>
-</ol>
-</li>
-<li><strong>--</strong>
-<ol>
-<li>A -- sinaliza o fim das opções e desativa o processamento posterior das opções. Quaisquer argumentos após -- são tratados como nomes de arquivos e argumentos. Um argumento de - é equivalente a -- .</li>
-<li>O Bash também interpreta várias opções de vários caracteres. Essas opções devem aparecer na linha de comando antes das opções de caractere único serem reconhecidas.</li>
-</ol>
-</li>
-<li><strong>--debugger</strong>
-<ol>
-<li>Faça com que o perfil do depurador seja executado antes que o shell seja iniciado. Ativa o modo de depuração estendido (veja a descrição da opção extdebug para o shopt embutido abaixo) e rastreamento de função shell (veja a descrição da opção -o functrace para o conjunto embutido abaixo).</li>
-</ol>
-</li>
-<li><strong>--dump-po-strings</strong>
-<ol>
-<li>Equivalente a -D , mas a saída está no formato de arquivo GNU gettext po (objeto portátil).
-11.<strong>--dump-strings</strong></li>
-<li>Equivalente a -D.
-12.<strong>--help.</strong></li>
-<li>Exibir uma mensagem de uso na saída padrão e sair com sucesso.
-13.<strong>--init-file file</strong></li>
-<li>.
-14.<strong>--rcfile file.</strong></li>
-<li>Execute comandos do arquivo em vez do arquivo de inicialização pessoal padrão ~/.bashrc se o shell for interativo (consulte INVOCATION abaixo).
-15.<strong>--login</strong></li>
-<li>Equivalente a -l.
-16.<strong>--noediting</strong></li>
-<li>Não use a biblioteca GNU readline para ler linhas de comando quando o shell for interativo.
-17.<strong>--noprofile</strong></li>
-<li>Não leia o arquivo de inicialização do sistema /etc/ profile ou qualquer um dos arquivos de inicialização pessoal ~/.bash_profile , ~/.bash_login ou ~/.profile. Por padrão, o bash lê esses arquivos quando é chamado como um shell de login (veja INVOCATION abaixo)..
-18.<strong>--norc</strong></li>
-<li>Não leia e execute o arquivo de inicialização pessoal ~/.bashrc se o shell for interativo. Esta opção está ativada por padrão se o shell for chamado como sh.
-19.<strong>--posix</strong></li>
-<li>Altere o comportamento do bash onde a operação padrão difere do padrão POSIX para corresponder ao padrão ( modo posix )
-20.<strong>--restricted</strong></li>
-<li>O shell torna-se restrito (consulte SHELL RESTRITO abaixo).
-21.<strong>--rpm-requires</strong></li>
-<li>Produza a lista de arquivos necessários para a execução do script de shell. Isso implica '-n' e está sujeito às mesmas limitações da verificação de erro em tempo de compilação; Críticas, [] testes e evals não são analisados, portanto, algumas dependências podem ser perdidas.
-22.<strong>--verbose</strong></li>
-<li>Equivalente a -v .
-23.<strong>--version</strong></li>
-<li>Mostra informações de versão para esta instância do bash na saída padrão e sai com sucesso.</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><em><strong>Argumentos.</strong></em></p>
-<ol>
-<li>Se os argumentos permanecerem após o processamento da opção, e nem a opção -c nem a opção -s foram fornecidas, o primeiro argumento é considerado o nome de um arquivo contendo comandos shell. Se o bash for invocado dessa maneira, $ 0 será definido como o nome do arquivo e os parâmetros posicionais serão definidos como os argumentos restantes. O Bash lê e executa comandos desse arquivo e, em seguida, sai. O status de saída do Bash é o status de saída do último comando executado no script. Se nenhum comando for executado, o status de saída é 0. Primeiro, é feita uma tentativa de abrir o arquivo no diretório atual e, se nenhum arquivo for encontrado, o shell pesquisa os diretórios em PATH para o script.</li>
-</ol>
-</li>
-<li>
-<p>Extensões do vscode.</p>
-<ol>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=bmalehorn.shell-syntax">shell-syntax</a></li>
-</ol>
-</li>
-<li>
-<p><strong>Referências</strong></p>
-<ol>
-<li><a href="https://linux.die.net/man/1/bash">$bash (1) - página de manual do Linux</a></li>
-</ol>
-</li>
-</ol>
 
-        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
-        
-    </body>
-    </html>
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="bash-1---página-de-manual-do-linux">$bash (1) - página de manual do Linux</h1> -->
+        <ol>
+          <li>
+            <p><strong>Nome</strong></p>
+            <ol>
+              <li>bash - GNU Bourne-Again SHell</li>
+            </ol>
+          </li>
+          <li>
+            <p><strong>Sinopse</strong></p>
+            <ol>
+              <li>bash [opções] [arquivo]</li>
+            </ol>
+          </li>
+          <li>
+            <p><strong>direito autoral</strong></p>
+            <ol>
+              <li>O Bash é protegido por Copyright © 1989-2009 da Free Software Foundation, Inc</li>
+            </ol>
+          </li>
+          <li>
+            <p><strong>Descrição</strong></p>
+            <ol>
+              <li>O Bash é um interpretador de linguagem de comando compatível com sh que executa comandos lidos a partir da entrada padrão ou de um arquivo. O Bash também incorpora recursos úteis dos shells Korn e C ( ksh e csh ).</li>
+              <li>O Bash se destina a ser uma implementação em conformidade da parte Shell e utilitários da especificação IEEE POSIX (IEEE Standard 1003.1). O Bash pode ser configurado para estar em conformidade com POSIX por padrão.</li>
+            </ol>
+          </li>
+          <li>
+            <p><em><strong>Opções</strong></em></p>
+            <ol>
+              <li>Além das opções de shell de caractere único documentadas na descrição do comando set builtin, o bash interpreta as seguintes opções quando é chamado:
+                <ol>
+                  <li><strong>-c string</strong>
+                    <ol>
+                      <li>Se a opção -c estiver presente, os comandos serão lidos da string . Se houver argumentos após a string , eles serão atribuídos aos parâmetros posicionais, começando com $0.</li>
+                    </ol>
+                  </li>
+                  <li><strong>-i</strong>
+                    <ol>
+                      <li>Se a opção -i estiver presente, o shell será interativo.</li>
+                    </ol>
+                  </li>
+                  <li>-I
+                    <ol>
+                      <li>Faça o bash agir como se tivesse sido invocado como um shell de login (veja INVOCATION abaixo).</li>
+                    </ol>
+                  </li>
+                  <li><strong>-r</strong>
+                    <ol>
+                      <li>Se a opção -r estiver presente, o shell se torna restrito (consulte SHELL RESTRITO abaixo).</li>
+                    </ol>
+                  </li>
+                  <li><strong>-s</strong>
+                    <ol>
+                      <li>Se a opção -s estiver presente ou se nenhum argumento permanecer após o processamento da opção, os comandos serão lidos a partir da entrada padrão. Esta opção permite que os parâmetros posicionais sejam definidos ao chamar um shell interativo.</li>
+                    </ol>
+                  </li>
+                  <li><strong>-D</strong>
+                    <ol>
+                      <li>Uma lista de todas as strings entre aspas precedidas por $ é impressa na saída padrão. Essas são as strings que estão sujeitas à tradução de idioma quando o local atual não é C ou POSIX . Isso implica na opção -n ; nenhum comando será executado.</li>
+                    </ol>
+                  </li>
+                  <li><strong>[- +] O [ shopt_option ]</strong>
+                    <ol>
+                      <li>shopt_option é uma das opções de shell aceitas pelo shopt embutido (veja os COMANDOS DE CONSTRUÇÃO DE SHELL abaixo). Se shopt_option estiver presente, -O define o valor dessa opção; + O desarma. Se shopt_option não for fornecido, os nomes e valores das opções de shell aceitas por shopt serão impressos na saída padrão. Se a opção de chamada for + O , a saída será exibida em um formato que pode ser reutilizado como entrada.</li>
+                    </ol>
+                  </li>
+                  <li><strong>--</strong>
+                    <ol>
+                      <li>A -- sinaliza o fim das opções e desativa o processamento posterior das opções. Quaisquer argumentos após -- são tratados como nomes de arquivos e argumentos. Um argumento de - é equivalente a -- .</li>
+                      <li>O Bash também interpreta várias opções de vários caracteres. Essas opções devem aparecer na linha de comando antes das opções de caractere único serem reconhecidas.</li>
+                    </ol>
+                  </li>
+                  <li><strong>--debugger</strong>
+                    <ol>
+                      <li>Faça com que o perfil do depurador seja executado antes que o shell seja iniciado. Ativa o modo de depuração estendido (veja a descrição da opção extdebug para o shopt embutido abaixo) e rastreamento de função shell (veja a descrição da opção -o functrace para o conjunto embutido abaixo).</li>
+                    </ol>
+                  </li>
+                  <li><strong>--dump-po-strings</strong>
+                    <ol>
+                      <li>Equivalente a -D , mas a saída está no formato de arquivo GNU gettext po (objeto portátil).
+                        11.<strong>--dump-strings</strong></li>
+                      <li>Equivalente a -D.
+                        12.<strong>--help.</strong></li>
+                      <li>Exibir uma mensagem de uso na saída padrão e sair com sucesso.
+                        13.<strong>--init-file file</strong></li>
+                      <li>.
+                        14.<strong>--rcfile file.</strong></li>
+                      <li>Execute comandos do arquivo em vez do arquivo de inicialização pessoal padrão ~/.bashrc se o shell for interativo (consulte INVOCATION abaixo).
+                        15.<strong>--login</strong></li>
+                      <li>Equivalente a -l.
+                        16.<strong>--noediting</strong></li>
+                      <li>Não use a biblioteca GNU readline para ler linhas de comando quando o shell for interativo.
+                        17.<strong>--noprofile</strong></li>
+                      <li>Não leia o arquivo de inicialização do sistema /etc/ profile ou qualquer um dos arquivos de inicialização pessoal ~/.bash_profile , ~/.bash_login ou ~/.profile. Por padrão, o bash lê esses arquivos quando é chamado como um shell de login (veja INVOCATION abaixo)..
+                        18.<strong>--norc</strong></li>
+                      <li>Não leia e execute o arquivo de inicialização pessoal ~/.bashrc se o shell for interativo. Esta opção está ativada por padrão se o shell for chamado como sh.
+                        19.<strong>--posix</strong></li>
+                      <li>Altere o comportamento do bash onde a operação padrão difere do padrão POSIX para corresponder ao padrão ( modo posix )
+                        20.<strong>--restricted</strong></li>
+                      <li>O shell torna-se restrito (consulte SHELL RESTRITO abaixo).
+                        21.<strong>--rpm-requires</strong></li>
+                      <li>Produza a lista de arquivos necessários para a execução do script de shell. Isso implica '-n' e está sujeito às mesmas limitações da verificação de erro em tempo de compilação; Críticas, [] testes e evals não são analisados, portanto, algumas dependências podem ser perdidas.
+                        22.<strong>--verbose</strong></li>
+                      <li>Equivalente a -v .
+                        23.<strong>--version</strong></li>
+                      <li>Mostra informações de versão para esta instância do bash na saída padrão e sai com sucesso.</li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p><em><strong>Argumentos.</strong></em></p>
+            <ol>
+              <li>Se os argumentos permanecerem após o processamento da opção, e nem a opção -c nem a opção -s foram fornecidas, o primeiro argumento é considerado o nome de um arquivo contendo comandos shell. Se o bash for invocado dessa maneira, $ 0 será definido como o nome do arquivo e os parâmetros posicionais serão definidos como os argumentos restantes. O Bash lê e executa comandos desse arquivo e, em seguida, sai. O status de saída do Bash é o status de saída do último comando executado no script. Se nenhum comando for executado, o status de saída é 0. Primeiro, é feita uma tentativa de abrir o arquivo no diretório atual e, se nenhum arquivo for encontrado, o shell pesquisa os diretórios em PATH para o script.</li>
+            </ol>
+          </li>
+          <li>
+            <p>Extensões do vscode.</p>
+            <ol>
+              <li><a href="https://marketplace.visualstudio.com/items?itemName=bmalehorn.shell-syntax">shell-syntax</a></li>
+            </ol>
+          </li>
+          <li>
+            <p><strong>Referências</strong></p>
+            <ol>
+              <li><a href="https://linux.die.net/man/1/bash">$bash (1) - página de manual do Linux</a></li>
+            </ol>
+          </li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+
+  <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

@@ -1,108 +1,131 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Instru&ccedil;&otilde;es de instala&ccedil;&atilde;o para xrdp</title>
+<html>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <title>Instru&ccedil;&otilde;es de instala&ccedil;&atilde;o para xrdp</title>
 
-    <!-- CSS markdown -->
-    <link
-      type="text/css"
-      href="../../../css/defaultthemeMarkdown.css"
-      rel="stylesheet"
-    />
-    <!-- CSS da página /index.html -->
-    <link
-      type="text/css"
-      href="../../../css/defaulttheme.css"
-      rel="stylesheet"
-    />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="instruções-de-instalação-para-xrdp">Instruções de instalação para xrdp</h1>
-<ul>
-<li>
-<p>Coisas que você precisa para compilar e instalar. A maioria dos sistemas os programas abaixo não são instalados por padrão.</p>
-<ul>
-<li>
-<pre>
-  sudo apt install gcc -y
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="instruções-de-instalação-para-xrdp">Instruções de instalação para xrdp</h1> -->
+        <ul>
+          <li>
+            <p>Coisas que você precisa para compilar e instalar.</p>
+            <ul>
+              <li>
+                <p>Obs: A maioria dos sistemas, os programas abaixo, não são instalados por padrão.</p>
+                <pre><code class="hljs language-bash">  sudo apt install gcc -y
   sudo apt install make -y
-</pre>
-</li>
-<li><a href="https://pubs.opengroup.org/onlinepubs/8329799/apdxa.htm">Header files for pam</a></li>
-<li>Header files for openssll</li>
-</ul>
-</li>
-<li>
-<p>Você pode construir o sesman sem pam, há um parâmetro Makefile para isso.</p>
-</li>
-<li>
-<p>Eu também tenho um substituto ssl_calls.c para evitar a dependência do openssl envie um e-mail para mim (Jay) ou consulte <a href="http://server1.xrdp.org/xrdp/openssl">http://server1.xrdp.org/xrdp/openssl</a>. Devido à licença, não posso incluí-lo neste projeto.</p>
-<ul>
-<li><a href="http://server1.xrdp.org/xrdp/openssl/">http://server1.xrdp.org/xrdp/openssl/</a></li>
-</ul>
-</li>
-<li>
-<p>descompacte o tarball</p>
-<ul>
-<li>
-<pre>$ tar -zxvf xrdp-0.1.tar.gz </pre>
-<ul>
-<li>Obs: O comando acima irá criar uma pasta xrdp</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>mudar para a pasta xrdp e executar make em seguida make install:</p>
-<ul>
-<li>
-<pre>  
-    $ cd xrdp
-    $ ./configure
-    $ make
-    $ sudo make install</pre>
-</li>
-</ul>
-</li>
-<li>
-<p>Isso instalará a maioria dos arquivos em /usr/local/xrdp. Alguns arquivos são instalados em /etc/xrdp. Estas são configurações arquivos.</p>
-</li>
-<li>
-<p>arquivos e localização</p>
-<ul>
-<li>/usr/local/xrdp/startwm.sh - script que inicia o gerenciador de janelas</li>
-<li>Você pode precisar editar este arquivo para executar o gerenciador de janelas.
-<ul>
-<li>/etc/sesman.ini - arquivo de configuração sesman</li>
-<li>/etc/rsakeys.ini - coisas rsa</li>
-<li>/etc/xrdp.ini - arquivo de configuração xrdp</li>
-<li>/var/run/sesman.pid</li>
-<li>/var/rub/xrdp.pid</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Sesman e xrdp devem estar rodando como root. Você deve configurá-los para iniciar quando o sistema for iniciado. Você pode usar o script xrdp_control.sh para iniciá-los.</p>
-</li>
-<li>
-<p>Para remover completamente o xrdp</p>
-<ul>
-<li>remover diretório /usr/local/xrdp</li>
-<li>remover diretório /etc/xrdp</li>
-<li>remova o arquivo /var/run/xrdp.pid</li>
-<li>remova o arquivo /var/run/sesman.pid</li>
-<li>remova quaisquer links de inicialização adicionados a /etc/init.d ou /etc/rcX.d</li>
-</ul>
-</li>
-</ul>
-<p>Escrito por: <a href="mailto:jay.sorg@gmail.com">jay.sorg@gmail.com</a></p>
 
-        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
-        
-     </body>
-    </html>
+</code></pre>
+              </li>
+              <li>
+                <p><a href="https://pubs.opengroup.org/onlinepubs/8329799/apdxa.htm">Header files for pam</a></p>
+              </li>
+              <li>
+                <p>Header files for openssll</p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>Você pode construir o <em>sesman</em> sem <em>pam</em>, há um parâmetro <em>Makefile</em> para isso.</p>
+          </li>
+          <li>
+            <p>Eu também tenho um substituto <em>ssl_calls.c</em> para evitar a dependência do <em>openssl</em> envie um e-mail para mim (Jay) ou consulte <a href="http://server1.xrdp.org/xrdp/openssl">http://server1.xrdp.org/xrdp/openssl</a>. Devido à licença, não posso incluí-lo neste projeto.</p>
+            <ul>
+              <li><a href="http://server1.xrdp.org/xrdp/openssl/">http://server1.xrdp.org/xrdp/openssl/</a></li>
+            </ul>
+          </li>
+          <li>
+            <p>descompacte o <em>tarball</em></p>
+            <pre><code class="hljs language-bash">
+  <span class="hljs-comment"># Obs: O comando abaixo cria uma pasta xrdp</span>
+  tar -zxvf xrdp-0.1.tar.gz 
+   
+
+</code></pre>
+          </li>
+          <li>
+            <p>mudar para a pasta xrdp e executar make em seguida make install:</p>
+            <pre><code class="hljs language-bash">  <span class="hljs-built_in">cd</span> xrdp
+  ./configure
+  make
+  sudo make install&lt;/pre&gt;
+</code></pre>
+            <ul>
+              <li>Obs:
+                <ul>
+                  <li>Os comandos acima instalará a maioria dos arquivos em <em>/usr/local/xrdp</em>. Alguns arquivos são instalados em <em>/etc/xrdp</em>. Estas são configurações arquivos.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>arquivos e localização</p>
+            <ul>
+              <li><em>/usr/local/xrdp/startwm.sh</em> - script que inicia o gerenciador de janelas</li>
+              <li>Você pode precisar editar este arquivo para executar o gerenciador de janelas.
+                <ul>
+                  <li><em>/etc/sesman.ini</em> - arquivo de configuração <em>sesman</em></li>
+                  <li><em>/etc/rsakeys.ini</em> - coisas <em>rsa</em></li>
+                  <li><em>/etc/xrdp.ini</em> - arquivo de configuração xrdp</li>
+                  <li><em>/var/run/sesman.pid</em></li>
+                  <li><em>/var/rub/xrdp.pid</em></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p><em>Sesman</em> e <em>xrdp</em> devem estar rodando como <em>root</em>. Você deve configurá-los para iniciar quando o sistema for iniciado. Você pode usar o script <em>xrdp_control.sh</em> para iniciá-los.</p>
+          </li>
+          <li>
+            <p>Para remover completamente o <em>xrdp</em></p>
+            <ul>
+              <li>remover diretório <em>/usr/local/xrdp</em></li>
+              <li>remover diretório <em>/etc/xrdp</em></li>
+              <li>remova o arquivo <em>/var/run/xrdp.pid</em></li>
+              <li>remova o arquivo <em>/var/run/sesman.pid</em></li>
+              <li>remova quaisquer links de inicialização adicionados a <em>/etc/init.d</em> ou <em>/etc/rcX.d</em></li>
+            </ul>
+          </li>
+        </ul>
+        <p>Escrito por: <em><a href="mailto:jay.sorg@gmail.com">jay.sorg@gmail.com</a></em></p>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+
+
+
+</body>
+
+</html>

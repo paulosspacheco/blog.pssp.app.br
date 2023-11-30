@@ -41,4 +41,4 @@
 1. [Clonar um repositório](https://docs.github.com/pt/repositories/creating-and-managing-repositories/cloning-a-repository)
 
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>    
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>    

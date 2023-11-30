@@ -1,118 +1,146 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Configura&ccedil;&atilde;o dos rastreadores do &eacute;tios orn0884</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <title>Configura&ccedil;&atilde;o dos rastreadores do &eacute;tios orn0884</title>
 
-        <!-- CSS markdown -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
-        
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="configuração-dos-rastreadores-do-étios-orn0884">Configuração dos rastreadores do étios orn0884</h1>
-<h2 id="dados-do-aparelho">Dados do aparelho</h2>
-<ol>
-<li>Manual do tk303
-1. <a href="https://cdn.awsli.com.br/78/78556/arquivos/Manual_TKs.pdf">https://cdn.awsli.com.br/78/78556/arquivos/Manual_TKs.pdf</a></li>
-</ol>
-<h2 id="dados-do-fornecedor-m2m">Dados do fornecedor m2m</h2>
-<ol>
-<li><strong>Nome:</strong> Wisley vende chip m2m no Maracanaú</li>
-<li><strong>telefone:</strong> 85 9 8189 8440</li>
-</ol>
-<h2 id="sites-de-rastreamento">Sites de rastreamento</h2>
-<ol>
-<li><a href="http://www.gpstrackerxy.com/Login.aspx?Server=1">TrackHome</a>
-<ol>
-<li><strong>Vídeos aulas</strong>
-<ol>
-<li><a href="https://www.youtube.com/watch?v=IyEjTOv4Rf4">Como adicionar sub usuários</a></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="étios---placa-orn0884">étios - placa: orn0884</h2>
-<ol>
-<li>
-<p><strong>Dados para conexão com o chip m2m</strong></p>
-<ol>
-<li><strong>Telefone vivo:</strong> 62-9 9604 3182
-<ol>
-<li><strong>Site da operadora:</strong> <a href="http://transmeet.br">transmeet.br</a></li>
-<li><strong>Imei:</strong> 864 893 033 858 450</li>
-<li><strong>site TRACKHOME:</strong> <a href="http://www.gpstrackerxy.com/Login.aspx?Server=1">http://www.gpstrackerxy.com/Login.aspx?Server=1</a>
-<ol>
-<li><strong>IP:</strong> 103.39.235.8</li>
-<li><strong>Porta:</strong> 9000</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Dados necessários para enviar por sms para o rastreador tk303:</strong></p>
-<ol>
-<li>Para cada comando enviado por sms abaixo, espere o rastreador responder time ok! ou aguarde 1 minuto  para enviar a próxima mensagem:
-<ol>
-<li>
-<p>Reset do rastreador <em>(Enviar SMS &quot;begin + senha&quot; para a unidade, ele irá responder &quot;begin ok&quot; e inicializar todas as configurações para as configurações padrão de fábrica (senha padrão: 123456).)</em></p>
-<ol>
-<li>Reset rastreador:
-<ol>
-<li>Enviar SMS <strong>begin123456</strong> (minúsculas)</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>Configurar time zone.</p>
-<ol>
-<li>Enviar SMS <strong>time zone123456 -3</strong> (minúsculas)</li>
-</ol>
-</li>
-<li>
-<p>GPRS Definição <em>(O usuário deve enviar SMS via telefone celular para configurar APN, IP ea porta antes de iniciar rastreamento por GPRS)</em></p>
-<ol>
-<li>
-<p>Configurar APN</p>
-<ol>
-<li>Enviar sms <strong>apn123456 <a href="http://transmeet.br">transmeet.br</a></strong>  (minúsculas)</li>
-</ol>
-</li>
-<li>
-<p>Configurar UP <em>( Enviar SMS &quot;up + senha + espaço + espaço + usuário + senha&quot;, Se bem sucedida, &quot;de usuário, senha ok!&quot; É devolvido pelo rastreador em SMS.)</em></p>
-<ol>
-<li>Enviar sms <strong>up123456 vivo vivo</strong> (minúsculas)</li>
-</ol>
-</li>
-<li>
-<p>IP e port Setup <em>( Enviar SMS comando &quot;adminip123456 202.104.150.75 9000&quot; para o dispositivo rastreador, se conseguiu &quot;, adminip OK&quot; é retornado pelo dispositivo em SMS. (123456 é a senha padrão, é 103.39.235.78 IP, 9000 é a porta). Menos tráfego 6,)</em></p>
-<ol>
-<li>Enviar sms <strong>adminip123456 103.39.235.8 9000</strong> (minúsculas)</li>
-</ol>
-</li>
-<li>
-<p>Configurar para acesso a GPRS</p>
-<ol>
-<li>Enviar SMS <strong>gprs123456</strong>  (minúsculas)</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
 
-        
-        
-     </body>
-    </html>
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="configuração-dos-rastreadores-do-étios-orn0884">Configuração dos rastreadores do étios orn0884</h1> -->
+        <h2 id="dados-do-aparelho">Dados do aparelho</h2>
+        <ol>
+          <li>Manual do tk303
+            1. <a href="https://cdn.awsli.com.br/78/78556/arquivos/Manual_TKs.pdf">https://cdn.awsli.com.br/78/78556/arquivos/Manual_TKs.pdf</a></li>
+        </ol>
+        <h2 id="dados-do-fornecedor-m2m">Dados do fornecedor m2m</h2>
+        <ol>
+          <li><strong>Nome:</strong> Wisley vende chip m2m no Maracanaú</li>
+          <li><strong>telefone:</strong> 85 9 8189 8440</li>
+        </ol>
+        <h2 id="sites-de-rastreamento">Sites de rastreamento</h2>
+        <ol>
+          <li><a href="http://www.gpstrackerxy.com/Login.aspx?Server=1">TrackHome</a>
+            <ol>
+              <li><strong>Vídeos aulas</strong>
+                <ol>
+                  <li><a href="https://www.youtube.com/watch?v=IyEjTOv4Rf4">Como adicionar sub usuários</a></li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+        <h2 id="étios---placa-orn0884">étios - placa: orn0884</h2>
+        <ol>
+          <li>
+            <p><strong>Dados para conexão com o chip m2m</strong></p>
+            <ol>
+              <li><strong>Telefone vivo:</strong> 62-9 9604 3182
+                <ol>
+                  <li><strong>Site da operadora:</strong> <a href="http://transmeet.br">transmeet.br</a></li>
+                  <li><strong>Imei:</strong> 864 893 033 858 450</li>
+                  <li><strong>site TRACKHOME:</strong> <a href="http://www.gpstrackerxy.com/Login.aspx?Server=1">http://www.gpstrackerxy.com/Login.aspx?Server=1</a>
+                    <ol>
+                      <li><strong>IP:</strong> 103.39.235.8</li>
+                      <li><strong>Porta:</strong> 9000</li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p><strong>Dados necessários para enviar por sms para o rastreador tk303:</strong></p>
+            <ol>
+              <li>Para cada comando enviado por sms abaixo, espere o rastreador responder time ok! ou aguarde 1 minuto para enviar a próxima mensagem:
+                <ol>
+                  <li>
+                    <p>Reset do rastreador <em>(Enviar SMS &quot;begin + senha&quot; para a unidade, ele irá responder &quot;begin ok&quot; e inicializar todas as configurações para as configurações padrão de fábrica (senha padrão: 123456).)</em></p>
+                    <ol>
+                      <li>Reset rastreador:
+                        <ol>
+                          <li>Enviar SMS <strong>begin123456</strong> (minúsculas)</li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>Configurar time zone.</p>
+                    <ol>
+                      <li>Enviar SMS <strong>time zone123456 -3</strong> (minúsculas)</li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>GPRS Definição <em>(O usuário deve enviar SMS via telefone celular para configurar APN, IP ea porta antes de iniciar rastreamento por GPRS)</em></p>
+                    <ol>
+                      <li>
+                        <p>Configurar APN</p>
+                        <ol>
+                          <li>Enviar sms <strong>apn123456 <a href="http://transmeet.br">transmeet.br</a></strong> (minúsculas)</li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p>Configurar UP <em>( Enviar SMS &quot;up + senha + espaço + espaço + usuário + senha&quot;, Se bem sucedida, &quot;de usuário, senha ok!&quot; É devolvido pelo rastreador em SMS.)</em></p>
+                        <ol>
+                          <li>Enviar sms <strong>up123456 vivo vivo</strong> (minúsculas)</li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p>IP e port Setup <em>( Enviar SMS comando &quot;adminip123456 202.104.150.75 9000&quot; para o dispositivo rastreador, se conseguiu &quot;, adminip OK&quot; é retornado pelo dispositivo em SMS. (123456 é a senha padrão, é 103.39.235.78 IP, 9000 é a porta). Menos tráfego 6,)</em></p>
+                        <ol>
+                          <li>Enviar sms <strong>adminip123456 103.39.235.8 9000</strong> (minúsculas)</li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p>Configurar para acesso a GPRS</p>
+                        <ol>
+                          <li>Enviar SMS <strong>gprs123456</strong> (minúsculas)</li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+
+
+</body>
+
+</html>

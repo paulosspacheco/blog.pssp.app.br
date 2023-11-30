@@ -27,4 +27,4 @@
    1. [Uma coleção de **.gitignore** modelos](https://github.com/github/gitignore)
 
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>      
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>      

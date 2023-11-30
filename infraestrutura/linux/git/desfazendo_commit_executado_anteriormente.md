@@ -111,4 +111,4 @@ Essa técnica é chamada de **“redefinir para HEAD”** e é uma ferramenta ba
 2. [git log](https://git-scm.com/docs/git-log/pt_BR)
 
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>    
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>    

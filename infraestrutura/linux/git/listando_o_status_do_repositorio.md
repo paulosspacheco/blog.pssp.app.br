@@ -20,4 +20,4 @@
    2. [Git Status: Inspecting a repository](https://www.atlassian.com/git/tutorials/inspecting-a-repository#:~:text=The%20git%20status%20command%20displays,regarding%20the%20committed%20project%20history.)
 
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>               
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>               

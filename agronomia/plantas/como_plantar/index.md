@@ -1,11 +1,8 @@
-<header>
-   <nav id="topnav">
-      <div w3-include-html="/menu.inc"></div>
-      <div class="title"> <script>document.write(document.title);</script></div>
-   </nav>
-</header>
-
-<article id="article">
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 
 # Como criar uma muda de planta?
 
@@ -17,7 +14,7 @@
          1. Como produzir o Ácido Indol Butílico (AIB) em casa?
             1. Feijão ou a lentilha possui o AIB e para extraí-lo do cereal siga os seguintes passos:
 
-</article>
+</main>
 
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); </script>
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>

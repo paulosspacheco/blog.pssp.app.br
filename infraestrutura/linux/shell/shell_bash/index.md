@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # $bash (1) - página de manual do Linux
 
 1. **Nome**
@@ -66,3 +74,8 @@
 
 8. **Referências**
    1. [$bash (1) - página de manual do Linux](https://linux.die.net/man/1/bash)
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>

@@ -1,29 +1,47 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Como registrar biblioteca compartilhada no Linux para que o Lazarus reconhe&ccedil;a&period; &lt;a href&equals;&quot;register&lowbar;lib&lowbar;so&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;  &#x279a; &lt;&sol;a&gt;</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <title>Como registrar biblioteca compartilhada no Linux para que o Lazarus reconhe&ccedil;a&period; &lt;a href&equals;&quot;register&lowbar;lib&lowbar;so&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt; &#x279a; &lt;&sol;a&gt;</title>
 
-        <!-- CSS markdown -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
-        
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
 
-    </head>
-    <body class="vscode-body vscode-light">
-        <!-- markdownlint-disable-next-line -->
-<h4 id="como-registrar-biblioteca-compartilhada-no-linux-para-que-o-lazarus-reconheça----">Como registrar biblioteca compartilhada no Linux para que o Lazarus reconheça. <a href="register_lib_so.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h4>
-<ol>
-<li>
-<p>As bibliotecas normalmente são instaladas usando o gerenciador de pacotes de sua distribuição, porém as biblioteca que criamos ainda não tem um gerenciador de pacotes e por isso é necessário registra-las no Linux na pasta <em>/usr/lib</em> para que o <em>IDE Lazarus</em> reconheça em seus projetos.</p>
-</li>
-<li>
-<p>Além de está na pasta <em>/usr/lib</em>, precisa também que o modo de acesso seja alterado da seguinte forma:</p>
-<pre><code class="hljs language-sh">
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="como-registrar-biblioteca-compartilhada-no-linux-para-que-o-lazarus-reconheça----">Como registrar biblioteca compartilhada no Linux para que o Lazarus reconheça. <a href="register_lib_so.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h1> -->
+        <ol>
+          <li>
+            <p>As bibliotecas normalmente são instaladas usando o gerenciador de pacotes de sua distribuição, porém as biblioteca que criamos ainda não tem um gerenciador de pacotes e por isso é necessário registra-las no Linux na pasta <em>/usr/lib</em> para que o <em>IDE Lazarus</em> reconheça em seus projetos.</p>
+          </li>
+          <li>
+            <p>Além de está na pasta <em>/usr/lib</em>, precisa também que o modo de acesso seja alterado da seguinte forma:</p>
+            <pre><code class="hljs language-sh">
    <span class="hljs-comment"># O dono, o grupo e outros usuários da LibName podem executar, gravar e ler</span>
    sudo chmod ugo+xwr LibName
 
@@ -31,15 +49,15 @@
    sudo chmod go-w LibName
 
 </code></pre>
-</li>
-<li>
-<p>Para copiar a <em>LibName</em> para a pasta <em>/usr/lib</em> é necessário ter direitos de usuário <em>root</em>.</p>
-<ol>
-<li><strong>EXEMPLO</strong>:
-<ol>
-<li>
-<p>Suponha que ser queira registrar a biblioteca <em>~/exemplos/libwebview.so</em> da pasta <em>~/exemplos</em>:</p>
-<pre><code class="hljs language-sh">
+          </li>
+          <li>
+            <p>Para copiar a <em>LibName</em> para a pasta <em>/usr/lib</em> é necessário ter direitos de usuário <em>root</em>.</p>
+            <ol>
+              <li><strong>EXEMPLO</strong>:
+                <ol>
+                  <li>
+                    <p>Suponha que ser queira registrar a biblioteca <em>~/exemplos/libwebview.so</em> da pasta <em>~/exemplos</em>:</p>
+                    <pre><code class="hljs language-sh">
    <span class="hljs-comment"># Move-se para pasta onde a lib está </span>
    <span class="hljs-built_in">cd</span> ~/exemplos
 
@@ -55,17 +73,17 @@
 
   
 </code></pre>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>Programa para registro automático de uma biblioteca:</p>
-<ol>
-<li>
-<p>O programa <a href="./registerlib.sh">registerlib.sh</a> recebe o <em>path/namelib.so</em> a ser registrada:</p>
-<pre><code class="hljs language-bash">  
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>Programa para registro automático de uma biblioteca:</p>
+            <ol>
+              <li>
+                <p>O programa <a href="./registerlib.sh">registerlib.sh</a> recebe o <em>path/namelib.so</em> a ser registrada:</p>
+                <pre><code class="hljs language-bash">  
    <span class="hljs-comment">#!/bin/bash</span>
    <span class="hljs-comment"># Registro de biblioteca no Linux.</span>
    <span class="hljs-comment"># Exemplo de uso: </span>
@@ -134,19 +152,26 @@
    <span class="hljs-keyword">fi</span>
    
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências</strong></p>
-<ol>
-<li><a href="https://packaging.ubuntu.com/pt-br/html/libraries.html#:~:text=Bibliotecas%20compartilhadas%20s%C3%A3o%20c%C3%B3digos%20compilados,de%20fun%C3%A7%C3%B5es%2C%20classes%20e%20vari%C3%A1veis.">Bibliotecas compartilhadas</a></li>
-<li><a href="https://www.netfort.gr.jp/~dancer/column/libpkg-guide/libpkg-guide.html">Debian Library Packaging guide</a></li>
-</ol>
-</li>
-</ol>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p><strong>Referências</strong></p>
+            <ol>
+              <li><a href="https://packaging.ubuntu.com/pt-br/html/libraries.html#:~:text=Bibliotecas%20compartilhadas%20s%C3%A3o%20c%C3%B3digos%20compilados,de%20fun%C3%A7%C3%B5es%2C%20classes%20e%20vari%C3%A1veis.">Bibliotecas compartilhadas</a></li>
+              <li><a href="https://www.netfort.gr.jp/~dancer/column/libpkg-guide/libpkg-guide.html">Debian Library Packaging guide</a></li>
+            </ol>
+          </li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
 
-        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
-        
-     </body>
-    </html>
+  <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

@@ -6,7 +6,7 @@
 </div> </ul> </li>
 </div> </ul> </li>
 <li><span class="rootTree"><b>ANALISE_DE_SISTEMAS</b></span> <ul> <div class="children">
-<li> <a href="/analise_de_sistemas/o_que_e_ddd.html" target="">O que é DDD   ➚ </a></li>
+<li> <a href="/analise_de_sistemas/o_que_e_ddd.html" target="">O que é DDD  ➚ </a></li>
 </div> </ul> </li>
 <li><span class="rootTree"><b>COMPORTAMENTOS</b></span> <ul> <div class="children">
 <li><span class="rootTree"><b>ANKI</b></span> <ul> <div class="children">
@@ -36,7 +36,7 @@
 <li> <a href="/Hidraulica/estudo_relacao_aumento_ pressao_diametro_do_cano.html" target="">Estudar qual a relação do aumento de pressão e diâmetro do cano  ➚ </a></li>
 </div> </ul> </li>
 <li> <a href="/historico.html" target="">Histórico das ocorrência do Blog   ➚ </a></li>
-<li> <a href="/index.html" target="">Home - Blog.pssp.app.br - em permanente construção. 🚧  ➚ </a></li>
+<li> <a href="/index.html" target="">Home - Blog.pssp.app.br  ➚ </a></li>
 <li><span class="rootTree"><b>INFRAESTRUTURA</b></span> <ul> <div class="children">
 <li><span class="rootTree"><b>ANDROIDE</b></span> <ul> <div class="children">
 <li> <a href="/infraestrutura/androide/O_que_e_android_studio.html" target="">Modelo 03 de documento markdown   ➚ </a></li>
@@ -85,7 +85,6 @@
 <li> <a href="/infraestrutura/linux/git/objetivo.html" target="">Objetivo do git  ➚ </a></li>
 <li> <a href="/infraestrutura/linux/git/o_que_e_git.html" target="">O que é git?   ➚ </a></li>
 <li> <a href="/infraestrutura/linux/git/pre_requisitos.html" target="">Pre-requisitos para instalar o git  ➚ </a></li>
-<li> <a href="/infraestrutura/linux/git/test.html" target="">COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO   ➚ </a></li>
 <li> <a href="/infraestrutura/linux/git/tudo_sobre_git_remote.html" target="">Tudo sobre git remoto   ➚ </a></li>
 </div> </ul> </li>
 <li><span class="rootTree"><b>NFS</b></span> <ul> <div class="children">
@@ -174,6 +173,9 @@
 <li> <a href="/programacao/html/css/teste css.html" target="">Minhas anotações que fiz ao estudar programação da linguagem css  ➚ </a></li>
 </div> </ul> </li>
 <li><span class="rootTree"><b>EXEMPLOS</b></span> <ul> <div class="children">
+<li><span class="rootTree"><b>BARRA_DE_TITULO_FIXA</b></span> <ul> <div class="children">
+<li> <a href="/programacao/html/exemplos/barra_de_titulo_fixa/barra_de_titulo_fixa.html" target="">Código HTML: Exemplo de barra de título fixa no topo da página  ➚ </a></li>
+</div> </ul> </li>
 <li><span class="rootTree"><b>FINDTEXTINDOCUMENT</b></span> <ul> <div class="children">
 <li> <a href="/programacao/html/exemplos/FindTextInDocument/index.html" target="">FindTextInDocument  ➚ </a></li>
 </div> </ul> </li>
