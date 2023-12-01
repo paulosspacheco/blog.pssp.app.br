@@ -29,19 +29,16 @@
 <body onmouseover="generic.display()">
 
   <!-- Menu de opções -->
-  <header>
-    <nav id="nav">
-      <div w3-include-html="/menu.inc"></div>
-      <div class="title">
-        <script>
-          document.write(document.title);
-        </script>
-      </div>
-    </nav>
-  </header>
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
 
-
-  <article id="article">
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
 
     <!--<div class="col-12">  -->
     <div class="col-12">
@@ -138,13 +135,15 @@
         <div w3-include-html="/js/footer.inc"></div>
       </div>
 
-  </article>
 
-  <!--<script> includeHTML();</script>  -->
+  </main>
+
+  <!-- markdownlint-disable-next-line -->
   <script>
     includeHTML();
+    FixHeader(window, "myHeader");
   </script>
-
+  
 </body>
 
 </html>

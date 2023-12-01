@@ -114,9 +114,9 @@
 <li> <a href="/infraestrutura/linux/servidor-web-apache/objetivo.html" target="">Objetivo do servidor web apache2  ➚ </a></li>
 <li> <a href="/infraestrutura/linux/servidor-web-apache/pre_requisitos.html" target="">Pre-requisito para instalar o servidor web apache2  ➚ </a></li>
 <li> <a href="/infraestrutura/linux/servidor-web-apache/temp.html" target="">Este é um exemplo de como pode ser fácil escrever um documento para web.  ➚ </a></li>
-<li> <a href="/infraestrutura/linux/servidor-web-apache/teste_do_protocolo_cgi_usando_a_linguagem_perl.html" target="">**Exemplo de código usando a linguagem perl**   ➚ </a></li>
+<li> <a href="/infraestrutura/linux/servidor-web-apache/teste_do_protocolo_cgi_usando_a_linguagem_perl.html" target="">Exemplo de código usando a linguagem perl   ➚ </a></li>
 <li> <a href="/infraestrutura/linux/servidor-web-apache/teste_do_protocolo_cgi_usando_a_linguagem_shell_script.html" target="">Teste do protocolo CGI usando a linguagem shell script   ➚ </a></li>
-<li> <a href="/infraestrutura/linux/servidor-web-apache/teste_do_protocolo_fastcgi_usando_a_linguagem_perl.html" target="">**Teste do protocolo FastCGI usando a linguagem perl**   ➚ </a></li>
+<li> <a href="/infraestrutura/linux/servidor-web-apache/teste_do_protocolo_fastcgi_usando_a_linguagem_perl.html" target="">Teste do protocolo FastCGI usando a linguagem perl   ➚ </a></li>
 </div> </ul> </li>
 <li><span class="rootTree"><b>SHELL</b></span> <ul> <div class="children">
 <li> <a href="/infraestrutura/linux/shell/comandos_basico.html" target="">Comandos básico do Shell do Linux   ➚ </a></li>
@@ -129,7 +129,7 @@
 </div> </ul> </li>
 <li><span class="rootTree"><b>XRDP</b></span> <ul> <div class="children">
 <li> <a href="/infraestrutura/linux/xrdp/instalar_ultima_versao.html" target="">Instruções de instalação para xrdp  ➚ </a></li>
-<li> <a href="/infraestrutura/linux/xrdp/teoria_xrdp.html" target="">[Um servidor de protocolo de área de trabalho remota de código aberto Xrdp](http://xrdp.org/)   ➚ </a></li>
+<li> <a href="/infraestrutura/linux/xrdp/teoria_xrdp.html" target="">Servidor de protocolo de área de trabalho remota de código aberto Xrdp   ➚ </a></li>
 </div> </ul> </li>
 </div> </ul> </li>
 </div> </ul> </li>
@@ -147,7 +147,7 @@
 </div> </ul> </li>
 </div> </ul> </li>
 <li> <a href="/objetivo.html" target="">Objetivo  ➚ </a></li>
-<li> <a href="/pendencias.html" target="">Projetos em construção  ➚ </a></li>
+<li> <a href="/pendencias.html" target="">Pendências do projeto  ➚ </a></li>
 <li><span class="rootTree"><b>PROGRAMACAO</b></span> <ul> <div class="children">
 <li><span class="rootTree"><b>ALGORITIMOS</b></span> <ul> <div class="children">
 <li> <a href="/programacao/algoritimos/o_que_e_algoritimo.html" target="">O que é algorítimo   ➚ </a></li>

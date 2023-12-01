@@ -11,7 +11,7 @@
   <meta name="createDateUpdate" content="13/11/2020">
 
   <meta name="keywords" content="flatpak,linux,aplicativo">
-  <meta name="description"  content="Flatpak é uma forma de distribuir software linux, equivalente ao .deb, com a diferença de que pode ser instalado em todas as distribuições linux.">
+  <meta name="description" content="Flatpak é uma forma de distribuir software linux, equivalente ao .deb, com a diferença de que pode ser instalado em todas as distribuições linux.">
 
   <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
   <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />
@@ -26,232 +26,220 @@
 </head>
 
 
-<body onmouseover="generic.display()"> 
+<body onmouseover="generic.display()">
 
-  
-  <!-- Menu de opções  -->
-  <nav>
-    <div class="topnav" id="myTopnav">
-      <div w3-include-html="/menu.inc"></div>
-    </div>
-  </nav>
+  <!-- Menu de opções -->
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
 
-<!-- <div w3-include-html="../../../js/title.inc"> </div> -->
-<div class="title">
-  <script>
-    document.write(document.title);
-  </script>
-</div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
 
 
-  <!--<div class="row">  -->
-  <div class="row">
-    <!-- Índice: class="col-3 col-s-3 menu  -->
-    <div class="col-3 col-s-3 menu">
-      <ul>
-        <li>
-          <h3> Índice </h3>
-        </li>
-        <li><b><a href="#objetivo"
-              title="Flatpak, anteriormente conhecido como xdg-app, é um utilitário para implantação de software, gestão de pacote e virtualização para Linux. Uma aplicação empacotada no formato Flatpak provê um ambiente sandbox onde o usuário pode executar programas em isolamento do resto do sistema, ou seja, onde cada aplicação empacotada possui apenas as bibliotecas necessárias para a execução do programa.">Objetivo</a>
-            ...</b></li>
-        <li><b><a href="#O-que-e-identificadores">O que é identificadores de
-              aplicativos?</a></b></li>
-        <ol>
-        </ol>
-        <li><b><a href="#como_instalar_gerenciador_de_pacotes_flatpak">Como
-              instalar o gerenciador de pacotes flatpak?</a></b></li>
-        <li><b><a href="#Como-Usar">Como usar o programa flatpak no modo
-              console.</a></b></li>
-        <ol>
-          <li><a href="#Como_instalar_repositorio_gerenciador_pacotes_flatpak">Como
-              instalar repositório ao gerenciador de pacotes flatpak?</a></li>
-          <li><a href="#Como_remover_repositorio_gerenciador_pacotes_flatpak">Como&nbsp;
-              remover repositório ao gerenciador de pacotes fatpak?</a></li>
-          <li><a href="#Como_instalar_aplicativo_via_Flatpak">Como instalar o
-              aplicativo&nbsp; via Flatpak?.</a></li>
-          <li><a href="#Como-desinstalar-o-cliente">Como desinstalar o
-              aplicativo via flatpak</a>?</li>
-          <li><a href="#Como-executar">Como executar o aplicativo via flatpak</a>.</li>
-          <li><a href="#Como-atualizar">Como atualizar um aplicativo flatpak
-              instalado.</a></li>
-          <li><a href="#ComSaberNomeTodosAplicativosRegistrados">Como saber o
-              nome de todos os aplicativos registrados?</a></li>
-          <li><a href="#Com-saber-o-nome-de-todos-os-aplicativos-instalados">Com
-              saber o nome de todos os aplicativos instalados?</a></li>
-          <li><a href="#Como_pesquisar_aplicativo_usando_uma_palavra">Como
-              pesquisar o aplicativo usando uma palavra?</a></li>
-          <li><a href="#Como_corrigir_inconsistencias_da_instalacao_local">Como
-              corrigir inconsistências da instalação local? </a></li>
-          <li><a href="#Como-remover-tempos-de-execucao"
-              title="Quando removemos um aplicativos o mesmo deixa suas extesões  e para remove-las precisamos executar o comando: $ flatpak uninstall --unused">Como
-              remover tempos de execução e extensões de aplicativos não
-              usados?</a></li>
-          <li><a href="#Como-redefinir-todas-as-permiss%C3%B5es-do-portal">Como
-              redefinir todas as permissões do portal para um aplicativo
-              específico? </a></li>
-          <li><a href="#Como-imprimir-o-log-flatpak">Como imprimir o log do
-              aplicativo flatpak?.</a></li>
-          <li><a href="#Como-saber-tudo-sobre-o-aplicativo">Como saber tudo
-              sobre o aplicativo instalado?</a></li>
-          <li><a href="#o-que-e-flatpakref">O que é a extensão de arquivo </a>
-            <a href="#o-que-e-flatpakref"> <b>.flatpakref </b>?</a></li>
-          <li><a href="#show-permissions">Como saber as permissões de um
-              aplicativo instalado?</a></li>
-          <li>?</li>
-        </ol>
-        <li><b><a href="#uso-flatpak-usando-ambiente-grafico-gnome">Uso de
-              flatpak usando o ambiente gráfico no gnome:</a></b></li>
-        <ol>
-          <li><a href="#Como-instalar%20-facil">Como instalar programas
-              hospedados no site flathub,org de forma fácil?.</a></li>
-          <li> <br>
+    <!--<div class="row">  -->
+    <div class="row">
+      <!-- Índice: class="col-3 col-s-3 menu  -->
+      <div class="col-3 col-s-3 menu">
+        <ul>
+          <li>
+            <h3> Índice </h3>
           </li>
-          <li><a href="#Como-executar-de-forma-facil">Como executar de forma
-              fácil?</a></li>
-          <li><a href="#Como-desinstalar-de-forma-f%C3%A1cil?">Como
-              desinstalar de forma fácil?</a></li>
-        </ol>
-        <li><b>Construindo seu primeiro aplicativo usando o flatpak.</b></li>
-      </ul>
-      <ol>
-        <li><a href="https://docs.flatpak.org/en/latest/building-introduction.html" target="new">Introdução a construção
-            de aplicativos flatpak</a></li>
-        <li><a href="https://docs.flatpak.org/en/latest/conventions.html" target="new">Requisitos
-            e convenções para construir aplicativo flatpak</a></li>
-        <li><a href="https://docs.flatpak.org/en/latest/first-build.html#create-the-app" target="new"><span
-              style="color: #0000ee;">Como criar aplicativos
-              para ser distribuídos com o formato flatpak?</span></a> </li>
-        <li><a href="https://docs.flatpak.org/en/latest/first-build.html#create-the-app" target="new"><span
-              style="color: #0000ee;"></span></a><a
-            href="https://docs.flatpak.org/en/latest/building-introduction.html#flatpak-builder."
-            target="_blank">https://docs.flatpak.org/en/latest/building-introduction.html#flatpak-builder.</a></li>
-      </ol>
-      <ol>
-      </ol>
-      <ul>
-        <li><a href="#Referencias">Referências</a>.</li>
-      </ul>
-    </div>
-    <!-- Conteúdo da página -->
-    <div class="col-6 col-s-9">
-
-      <ol>
-        <li><b><a id="objetivo">Objetivo do flatpak</a>..</b></li>
-        <ol>
-          <a href="https://docs.flatpak.org/en/latest/" target="new"> </a>
-          <li><a href="https://docs.flatpak.org/en/latest/" target="new">Documento
-              oficial do flatpak...</a></li>
-          <li><a href="https://wiki.archlinux.org/index.php/Flatpak_%28Portugu%C3%AAs%29" target="new">Flatpak</a> é uma
-            ferramenta para gerenciar
-            aplicações e os runtimes que elas usam. No modelo Flatpak,
-            aplicações podem ser construídas e distribuídas independentemente
-            do sistema hospedeiro em que elas estão usando, e elas são
-            isoladas do sistema hospedeiro (‘sandboxed’) em algum grau, no
-            runtime. Flatpak usa <a href="https://ostree.readthedocs.io/en/latest/manual/introduction/"
-              title="OSTree é um sistema de atualização para sistemas operacionais baseados em Linux que realiza atualizações atômicas de árvores completas do sistema de arquivos. "
-              target="new">OSTree</a> para distribuir e implantar dados. Os
-            repositórios que ele usa são<a href="https://ostree.readthedocs.io/en/latest/manual/repo/"
-              title="Anatomia de um repositório OSTree" target="new">
-              repositórios OSTree</a> e podem ser manipulados com a ferramenta
-            ostree. Runtimes instalados e aplicações são checkouts do OSTree.
-          </li>
-          <li><a href="https://docs.flatpak.org/en/latest/introduction.html#target-audience" target="new">Introdução ao
-              Flatpak</a></li>
-          <li><a href="https://docs.flatpak.org/en/latest/basic-concepts.html" target="new">Conceitos básicos do
-              flatpak</a>;</li>
-          <li><br>
-          </li>
-        </ol>
-        <li><b><a id="O-que-e-identificadores">O que é identificadores de
-              aplicativos?</a></b></li>
-        <ol>
-          <li>Flatpak identifica cada aplicativo e tempo de execução usando um
-            identificador de três partes exclusivo, como <b>com.company.App</b>.
-            O segmento final deste endereço é o nome do objeto, e a parte
-            anterior identifica o desenvolvedor, para que o mesmo
-            desenvolvedor possa ter vários aplicativos, como <b>com.company.App1</b>
-            e <b>com.company.App2</b>. </li>
-          <li>Caso se precise&nbsp; do número da versão e arquitetura então o
-            identificador será: <b>name/architecture/branch </b></li>
+          <li><b><a href="#objetivo" title="Flatpak, anteriormente conhecido como xdg-app, é um utilitário para implantação de software, gestão de pacote e virtualização para Linux. Uma aplicação empacotada no formato Flatpak provê um ambiente sandbox onde o usuário pode executar programas em isolamento do resto do sistema, ou seja, onde cada aplicação empacotada possui apenas as bibliotecas necessárias para a execução do programa.">Objetivo</a>
+              ...</b></li>
+          <li><b><a href="#O-que-e-identificadores">O que é identificadores de
+                aplicativos?</a></b></li>
           <ol>
-            <li>Ex: <b>com.company.App/I386/stable</b></li>
-            <li>Ver documentação completa em: <a href="https://docs.flatpak.org/en/latest/using-flatpak.html"
-                target="new">https://docs.flatpak.org/en/latest/using-flatpak.html</a></li>
           </ol>
-          <li>As vezes precisamos informar a versão e omitir a arquitetura,
-            então a parte que não existe pode ficar em banco.</li>
+          <li><b><a href="#como_instalar_gerenciador_de_pacotes_flatpak">Como
+                instalar o gerenciador de pacotes flatpak?</a></b></li>
+          <li><b><a href="#Como-Usar">Como usar o programa flatpak no modo
+                console.</a></b></li>
           <ol>
-            <li>Ex: <b>com.company.App//stable</b> </li>
+            <li><a href="#Como_instalar_repositorio_gerenciador_pacotes_flatpak">Como
+                instalar repositório ao gerenciador de pacotes flatpak?</a></li>
+            <li><a href="#Como_remover_repositorio_gerenciador_pacotes_flatpak">Como&nbsp;
+                remover repositório ao gerenciador de pacotes fatpak?</a></li>
+            <li><a href="#Como_instalar_aplicativo_via_Flatpak">Como instalar o
+                aplicativo&nbsp; via Flatpak?.</a></li>
+            <li><a href="#Como-desinstalar-o-cliente">Como desinstalar o
+                aplicativo via flatpak</a>?</li>
+            <li><a href="#Como-executar">Como executar o aplicativo via flatpak</a>.</li>
+            <li><a href="#Como-atualizar">Como atualizar um aplicativo flatpak
+                instalado.</a></li>
+            <li><a href="#ComSaberNomeTodosAplicativosRegistrados">Como saber o
+                nome de todos os aplicativos registrados?</a></li>
+            <li><a href="#Com-saber-o-nome-de-todos-os-aplicativos-instalados">Com
+                saber o nome de todos os aplicativos instalados?</a></li>
+            <li><a href="#Como_pesquisar_aplicativo_usando_uma_palavra">Como
+                pesquisar o aplicativo usando uma palavra?</a></li>
+            <li><a href="#Como_corrigir_inconsistencias_da_instalacao_local">Como
+                corrigir inconsistências da instalação local? </a></li>
+            <li><a href="#Como-remover-tempos-de-execucao" title="Quando removemos um aplicativos o mesmo deixa suas extesões  e para remove-las precisamos executar o comando: $ flatpak uninstall --unused">Como
+                remover tempos de execução e extensões de aplicativos não
+                usados?</a></li>
+            <li><a href="#Como-redefinir-todas-as-permiss%C3%B5es-do-portal">Como
+                redefinir todas as permissões do portal para um aplicativo
+                específico? </a></li>
+            <li><a href="#Como-imprimir-o-log-flatpak">Como imprimir o log do
+                aplicativo flatpak?.</a></li>
+            <li><a href="#Como-saber-tudo-sobre-o-aplicativo">Como saber tudo
+                sobre o aplicativo instalado?</a></li>
+            <li><a href="#o-que-e-flatpakref">O que é a extensão de arquivo </a>
+              <a href="#o-que-e-flatpakref"> <b>.flatpakref </b>?</a>
+            </li>
+            <li><a href="#show-permissions">Como saber as permissões de um
+                aplicativo instalado?</a></li>
+            <li>?</li>
           </ol>
-          <li>As vezes precisamos informar a arquitetura e omitir a versãoa,
-            então a parte que não existe pode ficar em banco..</li>
+          <li><b><a href="#uso-flatpak-usando-ambiente-grafico-gnome">Uso de
+                flatpak usando o ambiente gráfico no gnome:</a></b></li>
           <ol>
-            <li><b>com.company.App/I386//</b><br>
-              <br>
+            <li><a href="#Como-instalar%20-facil">Como instalar programas
+                hospedados no site flathub,org de forma fácil?.</a></li>
+            <li> <br>
+            </li>
+            <li><a href="#Como-executar-de-forma-facil">Como executar de forma
+                fácil?</a></li>
+            <li><a href="#Como-desinstalar-de-forma-f%C3%A1cil?">Como
+                desinstalar de forma fácil?</a></li>
+          </ol>
+          <li><b>Construindo seu primeiro aplicativo usando o flatpak.</b></li>
+        </ul>
+        <ol>
+          <li><a href="https://docs.flatpak.org/en/latest/building-introduction.html" target="new">Introdução a construção
+              de aplicativos flatpak</a></li>
+          <li><a href="https://docs.flatpak.org/en/latest/conventions.html" target="new">Requisitos
+              e convenções para construir aplicativo flatpak</a></li>
+          <li><a href="https://docs.flatpak.org/en/latest/first-build.html#create-the-app" target="new"><span style="color: #0000ee;">Como criar aplicativos
+                para ser distribuídos com o formato flatpak?</span></a> </li>
+          <li><a href="https://docs.flatpak.org/en/latest/first-build.html#create-the-app" target="new"><span style="color: #0000ee;"></span></a><a href="https://docs.flatpak.org/en/latest/building-introduction.html#flatpak-builder." target="_blank">https://docs.flatpak.org/en/latest/building-introduction.html#flatpak-builder.</a></li>
+        </ol>
+        <ol>
+        </ol>
+        <ul>
+          <li><a href="#Referencias">Referências</a>.</li>
+        </ul>
+      </div>
+      <!-- Conteúdo da página -->
+      <div class="col-6 col-s-9">
+
+        <ol>
+          <li><b><a id="objetivo">Objetivo do flatpak</a>..</b></li>
+          <ol>
+            <a href="https://docs.flatpak.org/en/latest/" target="new"> </a>
+            <li><a href="https://docs.flatpak.org/en/latest/" target="new">Documento
+                oficial do flatpak...</a></li>
+            <li><a href="https://wiki.archlinux.org/index.php/Flatpak_%28Portugu%C3%AAs%29" target="new">Flatpak</a> é uma
+              ferramenta para gerenciar
+              aplicações e os runtimes que elas usam. No modelo Flatpak,
+              aplicações podem ser construídas e distribuídas independentemente
+              do sistema hospedeiro em que elas estão usando, e elas são
+              isoladas do sistema hospedeiro (‘sandboxed’) em algum grau, no
+              runtime. Flatpak usa <a href="https://ostree.readthedocs.io/en/latest/manual/introduction/" title="OSTree é um sistema de atualização para sistemas operacionais baseados em Linux que realiza atualizações atômicas de árvores completas do sistema de arquivos. " target="new">OSTree</a> para distribuir e implantar dados. Os
+              repositórios que ele usa são<a href="https://ostree.readthedocs.io/en/latest/manual/repo/" title="Anatomia de um repositório OSTree" target="new">
+                repositórios OSTree</a> e podem ser manipulados com a ferramenta
+              ostree. Runtimes instalados e aplicações são checkouts do OSTree.
+            </li>
+            <li><a href="https://docs.flatpak.org/en/latest/introduction.html#target-audience" target="new">Introdução ao
+                Flatpak</a></li>
+            <li><a href="https://docs.flatpak.org/en/latest/basic-concepts.html" target="new">Conceitos básicos do
+                flatpak</a>;</li>
+            <li><br>
             </li>
           </ol>
-        </ol>
-        <li><b><a id="como_instalar_gerenciador_de_pacotes_flatpak">Como
-              instalar o gerenciador de pacotes flatpak</a></b></li>
-        <ol>
-          <li> A primeira coisa a fazer é <a href="https://flatpak.org/setup/" target="new">instalar o Flatpak</a>. O
-            processo é simples. Abra
-            uma janela de terminal e siga estas etapas: </li>
+          <li><b><a id="O-que-e-identificadores">O que é identificadores de
+                aplicativos?</a></b></li>
           <ol>
-            <li>Adicione o repositório necessário com o comando sudo
-              add-apt-repository ppa:alexlarsson/flatpak.</li>
-            <li>Atualize o apt com o comando sudo apt update </li>
-            <li> Instale o Flatpak com o comando sudo apt install flatpak . </li>
-            <li>Instale o suporte Flatpak para o software GNOME com o comando
-              sudo apt install gnome-software-plugin-flatpak. </li>
-            <li>Reinicialize seu sistema. </li>
-            <li>Exemplo:</li>
+            <li>Flatpak identifica cada aplicativo e tempo de execução usando um
+              identificador de três partes exclusivo, como <b>com.company.App</b>.
+              O segmento final deste endereço é o nome do objeto, e a parte
+              anterior identifica o desenvolvedor, para que o mesmo
+              desenvolvedor possa ter vários aplicativos, como <b>com.company.App1</b>
+              e <b>com.company.App2</b>. </li>
+            <li>Caso se precise&nbsp; do número da versão e arquitetura então o
+              identificador será: <b>name/architecture/branch </b></li>
             <ol>
-              <li>
-                <pre>
+              <li>Ex: <b>com.company.App/I386/stable</b></li>
+              <li>Ver documentação completa em: <a href="https://docs.flatpak.org/en/latest/using-flatpak.html" target="new">https://docs.flatpak.org/en/latest/using-flatpak.html</a></li>
+            </ol>
+            <li>As vezes precisamos informar a versão e omitir a arquitetura,
+              então a parte que não existe pode ficar em banco.</li>
+            <ol>
+              <li>Ex: <b>com.company.App//stable</b> </li>
+            </ol>
+            <li>As vezes precisamos informar a arquitetura e omitir a versãoa,
+              então a parte que não existe pode ficar em banco..</li>
+            <ol>
+              <li><b>com.company.App/I386//</b><br>
+                <br>
+              </li>
+            </ol>
+          </ol>
+          <li><b><a id="como_instalar_gerenciador_de_pacotes_flatpak">Como
+                instalar o gerenciador de pacotes flatpak</a></b></li>
+          <ol>
+            <li> A primeira coisa a fazer é <a href="https://flatpak.org/setup/" target="new">instalar o Flatpak</a>. O
+              processo é simples. Abra
+              uma janela de terminal e siga estas etapas: </li>
+            <ol>
+              <li>Adicione o repositório necessário com o comando sudo
+                add-apt-repository ppa:alexlarsson/flatpak.</li>
+              <li>Atualize o apt com o comando sudo apt update </li>
+              <li> Instale o Flatpak com o comando sudo apt install flatpak . </li>
+              <li>Instale o suporte Flatpak para o software GNOME com o comando
+                sudo apt install gnome-software-plugin-flatpak. </li>
+              <li>Reinicialize seu sistema. </li>
+              <li>Exemplo:</li>
+              <ol>
+                <li>
+                  <pre>
 $ sudo add-apt-repository ppa:alexlarsson/flatpak
 $ sudo apt update
 $ sudo apt install flatpak
 $ sudo apt install gnome-software-plugin-flatpak
 $ reboot                    
                     </pre>
-              </li>
-              <li> <br>
-              </li>
+                </li>
+                <li> <br>
+                </li>
+              </ol>
             </ol>
-          </ol>
-          <li> Pastas onde o flatpak instala seus pacotes:</li>
-          <ol>
-            <li>Pasta do usuário:&nbsp; ~/.local/share/flatpak&nbsp;</li>
-            <li>Pasta do root:&nbsp; /var/lib/flatpak . </li>
+            <li> Pastas onde o flatpak instala seus pacotes:</li>
             <ol>
+              <li>Pasta do usuário:&nbsp; ~/.local/share/flatpak&nbsp;</li>
+              <li>Pasta do root:&nbsp; /var/lib/flatpak . </li>
               <ol>
+                <ol>
+                </ol>
               </ol>
             </ol>
           </ol>
-        </ol>
-        <li><b><a id="Como-Usar">Como usar o programa flatpak no modo console.</a></b></li>
-        <ol>
-          <li><a id="Como_instalar_repositorio_gerenciador_pacotes_flatpak">Como
-              instalar repositório ao gerenciador de pacotes flatpak? </a></li>
+          <li><b><a id="Como-Usar">Como usar o programa flatpak no modo console.</a></b></li>
           <ol>
-            <li><b>SYNOPSIS: flatpak remote-add [OPTION...] NAME LOCATION </b></li>
-            <li>O comando<b> remote-add </b>adiciona um repositório remoto à
-              configuração do <b>repositório flatpak</b>. </li>
+            <li><a id="Como_instalar_repositorio_gerenciador_pacotes_flatpak">Como
+                instalar repositório ao gerenciador de pacotes flatpak? </a></li>
             <ol>
-              <li><b>NAME</b> é o nome do novo controle remoto e </li>
-              <li><b>LOCATION</b> é um url ou nome de caminho. </li>
-              <li>Obs: O <b>LOCATION</b> é um repositório flatpak ou um
-                arquivo<b> .flatpakrepo </b>que descreve um repositório. No
-                primeiro caso, você também pode ter que especificar opções
-                extras, como a chave<b> gpg para o repo</b>. A menos que seja
-                substituído pelas opções <b>--user</b> ou <b>--installation,</b>
-                este comando altera a instalação padrão de todo o sistema.</li>
-            </ol>
-            <ol>
-              <li>
-                <pre>
+              <li><b>SYNOPSIS: flatpak remote-add [OPTION...] NAME LOCATION </b></li>
+              <li>O comando<b> remote-add </b>adiciona um repositório remoto à
+                configuração do <b>repositório flatpak</b>. </li>
+              <ol>
+                <li><b>NAME</b> é o nome do novo controle remoto e </li>
+                <li><b>LOCATION</b> é um url ou nome de caminho. </li>
+                <li>Obs: O <b>LOCATION</b> é um repositório flatpak ou um
+                  arquivo<b> .flatpakrepo </b>que descreve um repositório. No
+                  primeiro caso, você também pode ter que especificar opções
+                  extras, como a chave<b> gpg para o repo</b>. A menos que seja
+                  substituído pelas opções <b>--user</b> ou <b>--installation,</b>
+                  este comando altera a instalação padrão de todo o sistema.</li>
+              </ol>
+              <ol>
+                <li>
+                  <pre>
 EXEMPLOS:
    1) $ flatpak --user remote-add ftathub https://flathub.org/repo/flathub.flatpakrepo
    2) $ flatpak remote-add ftathub https://flathub.org/repo/flathub.flatpakrepo
@@ -367,40 +355,35 @@ __________________________
    Especifique quais informações mostrar sobre cada ref. Você pode listar vários campos ou usar  esta opção várias vezes. 
    Anexe :s[tart], :m[iddle], :e[nd] or :f[ull]  aos nomes das colunas para alterar a elipsização.                    
                     </pre>
-              </li>
-              <li>Mais informações:</li>
-              <ol>
-                <li><a
-                    href="https://docs.flatpak.org/en/latest/flatpak-command-reference.html?highlight=remote-add#flatpak-remote-add"
-                    target="new">&nbsp;https://docs.flatpak.org/en/latest/flatpak-command-reference.html?highlight=remote-add#flatpak-remote-add</a>.
                 </li>
-                <li><a
-                    href="https://docs.flatpak.org/en/latest/search.html?q=remote-add&amp;check_keywords=yes&amp;area=default"
-                    target="new">https://docs.flatpak.org/en/latest/search.html?q=remote-add&amp;check_keywords=yes&amp;area=default<br>
-                  </a></li>
+                <li>Mais informações:</li>
+                <ol>
+                  <li><a href="https://docs.flatpak.org/en/latest/flatpak-command-reference.html?highlight=remote-add#flatpak-remote-add" target="new">&nbsp;https://docs.flatpak.org/en/latest/flatpak-command-reference.html?highlight=remote-add#flatpak-remote-add</a>.
+                  </li>
+                  <li><a href="https://docs.flatpak.org/en/latest/search.html?q=remote-add&amp;check_keywords=yes&amp;area=default" target="new">https://docs.flatpak.org/en/latest/search.html?q=remote-add&amp;check_keywords=yes&amp;area=default<br>
+                    </a></li>
+                </ol>
               </ol>
             </ol>
-          </ol>
-          <li> <a id="Como_remover_repositorio_gerenciador_pacotes_flatpak">Como&nbsp;
-              remover repositório do gerenciador de pacotes flatpak?</a></li>
-          <ol>
-            <li>?</li>
-            <li>
-              <pre>
+            <li> <a id="Como_remover_repositorio_gerenciador_pacotes_flatpak">Como&nbsp;
+                remover repositório do gerenciador de pacotes flatpak?</a></li>
+            <ol>
+              <li>?</li>
+              <li>
+                <pre>
  ; Para deletar repositório remoto usar comando "flatpak remote-delete nome" onde nome é o nome do repositório.
   Ex:
     $ flatpak remote-delete flathub
                   </pre>
-            </li>
-          </ol>
-          <li><a id="Como_instalar_aplicativo_via_Flatpak">Como instalar o
-              aplicativo via Flatpak?</a> </li>
-          <ol>
-            <li>Primeiro passo é <a href="https://manpages.debian.org/testing/flatpak/flatpak-remote-add.1.en.html"
-                target="new">adicionar o repositório hospedado no Flathub </a>:</li>
+              </li>
+            </ol>
+            <li><a id="Como_instalar_aplicativo_via_Flatpak">Como instalar o
+                aplicativo via Flatpak?</a> </li>
             <ol>
-              <li>
-                <pre>
+              <li>Primeiro passo é <a href="https://manpages.debian.org/testing/flatpak/flatpak-remote-add.1.en.html" target="new">adicionar o repositório hospedado no Flathub </a>:</li>
+              <ol>
+                <li>
+                  <pre>
 $ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo                   
 
 Como pesquisar o aplicativo usando uma chave de pesquisa?;Obs: Aqui, flathub é o nome local que é dado ao controle remoto. 
@@ -410,64 +393,62 @@ Como pesquisar o aplicativo usando uma chave de pesquisa?;Obs: Aqui, flathub é 
 Para remover o repositório remoto flhathub: 
 $ flatpak remote-delete flathub
                     </pre>
-              </li>
+                </li>
+              </ol>
+              <li>Para descobrir o comando exato para cada instalação, é preciso
+                entrar na página <a href="https://flathub.org/apps" target="new">https://flathub.org/apps</a>
+                do site Flathub.org , selecionar o aplicativo desejado, em
+                seguida procurar o identificador do aplicativo no final da
+                página.</li>
+              <li>Agora é possível instalar qualquer aplicativo Flatpak
+                encontrado no repositório Flathub. Por exemplo, para instalar o
+                Spotify , execute os passos abaixo:</li>
+              <ol>
+                <li>
+                  <pre>
+ $ sudo flatpak install flathub com.spotify.Client
+                    </pre>
+                </li>
+              </ol>
             </ol>
-            <li>Para descobrir o comando exato para cada instalação, é preciso
-              entrar na página <a href="https://flathub.org/apps" target="new">https://flathub.org/apps</a>
-              do site Flathub.org , selecionar o aplicativo desejado, em
-              seguida procurar o identificador do aplicativo no final da
-              página.</li>
-            <li>Agora é possível instalar qualquer aplicativo Flatpak
-              encontrado no repositório Flathub. Por exemplo, para instalar o
-              Spotify , execute os passos abaixo:</li>
+            <li><a id="Como-desinstalar-o-cliente">Como desinstalar o aplicativo
+                via flatpak</a>?</li>
             <ol>
               <li>
                 <pre>
- $ sudo flatpak install flathub com.spotify.Client
-                    </pre>
-              </li>
-            </ol>
-          </ol>
-          <li><a id="Como-desinstalar-o-cliente">Como desinstalar o aplicativo
-              via flatpak</a>?</li>
-          <ol>
-            <li>
-              <pre>
  Como-executar-de-forma-facil                  
  ; sudo flatpak uninstall nome do pacote
  ; ex:
  $ sudo flatpak uninstall 
                      </pre>
-            </li>
-          </ol>
-          <li><b><a id="Como-executar">Como executar o aplicativo via flatpak</a>?</b></li>
-          <ol>
-            <li>
-              <pre>
+              </li>
+            </ol>
+            <li><b><a id="Como-executar">Como executar o aplicativo via flatpak</a>?</b></li>
+            <ol>
+              <li>
+                <pre>
  ; Para executar usar o comando: flatpak run nome do programa                    
  ; ex:
      $ flatpak run com.spotify.Client
                   </pre>
-            </li>
-          </ol>
-          <li><a id="Como-atualizar">Como atualizar um aplicativo flatpak
-              instalado? </a></li>
-          <ol>
-            <li>
-              <pre>
+              </li>
+            </ol>
+            <li><a id="Como-atualizar">Como atualizar um aplicativo flatpak
+                instalado? </a></li>
+            <ol>
+              <li>
+                <pre>
  ; Para atualizar um aplicativo usar o comando: sudo flatbak update nome do aplicativo.
  ; ex:
      $ sudo flatpak update com.spotify.Client               
                     </pre>
-            </li>
-          </ol>
-          <li> <a href="http://manpages.ubuntu.com/manpages/focal/man1/flatpak-list.1.html" target="new"
-              id="Com_saber_nome_todos_os_aplicativos_registrados">
-              Com saber o nome de todos os aplicativos registrados</a><a
-              id="ComSaberNomeTodosAplicativosRegistrados">?</a></li>
-          <ol>
-            <li>
-              <pre>
+              </li>
+            </ol>
+            <li> <a href="http://manpages.ubuntu.com/manpages/focal/man1/flatpak-list.1.html" target="new" id="Com_saber_nome_todos_os_aplicativos_registrados">
+                Com saber o nome de todos os aplicativos registrados</a><a id="ComSaberNomeTodosAplicativosRegistrados">?</a></li>
+            <ol>
+              <li>
+                <pre>
  ; O comando list do flatpak mostra o Nome, ID de aplicativo e a Versão  de todos os programas instalados com flatpak.
  ; ex:
  	  $ flatpak list
@@ -484,13 +465,13 @@ Mint-Y Gtk Theme                               org.gtk.Gtk3theme.Mint-Y         
 KDE Application Platform                       org.kde.Platform                                           5.14         system
 VLC                                            org.videolan.VLC                           3.0.11.1        stable       system
                   </pre>
-            </li>
-          </ol>
-          <li><a id="Com-saber-o-nome-de-todos-os-aplicativos-instalados">Com
-              saber o nome de todos os aplicativos instalados?</a></li>
-          <ol>
-            <li><b> </b>
-              <pre>
+              </li>
+            </ol>
+            <li><a id="Com-saber-o-nome-de-todos-os-aplicativos-instalados">Com
+                saber o nome de todos os aplicativos instalados?</a></li>
+            <ol>
+              <li><b> </b>
+                <pre>
  $ flatpak list --app
  
  ; Resultado:
@@ -501,13 +482,13 @@ VLC                                            org.videolan.VLC                 
    Spotify       com.spotify.Client       1.1.26.501       stable      system
    VLC           org.videolan.VLC         3.0.11.1         stable      system
                 </pre>
-            </li>
-          </ol>
-          <li><a id="Como_pesquisar_aplicativo_usando_uma_palavra">Como
-              pesquisar o aplicativo usando uma palavra?</a></li>
-          <ol>
-            <li>
-              <pre>
+              </li>
+            </ol>
+            <li><a id="Como_pesquisar_aplicativo_usando_uma_palavra">Como
+                pesquisar o aplicativo usando uma palavra?</a></li>
+            <ol>
+              <li>
+                <pre>
  ; O comando search pesquisa todas os aplicativo que contenha a palavra chave
  ex: flatpak search VLC
                 
@@ -520,56 +501,57 @@ FDK-AAC Encoding Plug… Provides better AAC encoding and HE profiles support.  
          
 Como atualizar uma instalação feita em um local específico                
                 </pre>
-              <b><br>
-              </b></li>
+                <b><br>
+                </b>
+              </li>
+              <b> </b>
+            </ol>
             <b> </b>
-          </ol>
-          <b> </b>
-          <li><a id="Como_corrigir_inconsistencias_da_instalacao_local">Como
-              corrigir inconsistências da instalação local?:</a></li>
-          <ol>
-            <li>
-              <pre>
+            <li><a id="Como_corrigir_inconsistencias_da_instalacao_local">Como
+                corrigir inconsistências da instalação local?:</a></li>
+            <ol>
+              <li>
+                <pre>
  $ flatpak repair
                 </pre>
-            </li>
-          </ol>
-          <li><a id="Como-remover-tempos-de-execucao">Como remover tempos de
-              execução e extensões de aplicativos não usados?</a></li>
-          <ol>
-            <li>
-              <pre>
+              </li>
+            </ol>
+            <li><a id="Como-remover-tempos-de-execucao">Como remover tempos de
+                execução e extensões de aplicativos não usados?</a></li>
+            <ol>
+              <li>
+                <pre>
  $ flatpak uninstall --unused
                 </pre>
-            </li>
-          </ol>
-          <li><a id="Como-redefinir-todas-as-permissões-do-portal">Como
-              redefinir todas as permissões do portal para um aplicativo
-              específico? </a></li>
-          <ol>
-            <li>
-              <pre>
+              </li>
+            </ol>
+            <li><a id="Como-redefinir-todas-as-permissões-do-portal">Como
+                redefinir todas as permissões do portal para um aplicativo
+                específico? </a></li>
+            <ol>
+              <li>
+                <pre>
  ; Para redefinir premisssão usar o comando: $ flatpak permission-reset Id do aplicativo
  
   Ex:
     $ flatpak permission-reset org.gimp.GIMP            
                 </pre>
-            </li>
-          </ol>
-          <li><a id="Como-imprimir-o-log-flatpak">Como imprimir o log do
-              aplicativo flatpak?</a></li>
-          <ol>
-            <li>
-              <pre>
+              </li>
+            </ol>
+            <li><a id="Como-imprimir-o-log-flatpak">Como imprimir o log do
+                aplicativo flatpak?</a></li>
+            <ol>
+              <li>
+                <pre>
  $ flatpak history
                 </pre>
-            </li>
-          </ol>
-          <li><a id="Como-saber-tudo-sobre-o-aplicativo">Como saber tudo sobre
-              o aplicativo instalado?</a></li>
-          <ol>
-            <li>
-              <pre>
+              </li>
+            </ol>
+            <li><a id="Como-saber-tudo-sobre-o-aplicativo">Como saber tudo sobre
+                o aplicativo instalado?</a></li>
+            <ol>
+              <li>
+                <pre>
  ; Exemplo do comando flatpak info id do aplicativo
  
  
@@ -598,18 +580,18 @@ Instalação: system
    Assunto: Update to 3.0.11.1 + update deps (#112) (5b2de27d)
       Data: 2020-08-24 22:42:04 +0000
                 </pre>
-              <br>
-            </li>
-          </ol>
-          <li><a id="o-que-e-flatpakref">O que é a extensão de arquivo
-              .flatpakref ?</a></li>
-          <ol>
-            <li>Arquivos com extensão .flatpakref contém detalhes de como o
-              flatpak deve instalar um aplicativo incluindo a chave por
-              exemplo: </li>
+                <br>
+              </li>
+            </ol>
+            <li><a id="o-que-e-flatpakref">O que é a extensão de arquivo
+                .flatpakref ?</a></li>
             <ol>
-              <li>
-                <pre>
+              <li>Arquivos com extensão .flatpakref contém detalhes de como o
+                flatpak deve instalar um aplicativo incluindo a chave por
+                exemplo: </li>
+              <ol>
+                <li>
+                  <pre>
 ;Arquivo org.kde.kate.flatpakref contém os dados abaixo:
 
 [Flatpak Ref]
@@ -623,43 +605,43 @@ SuggestRemoteName = flathub
 GPGKey      = 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
 RuntimeRepo = https://dl.flathub.org/repo/flathub.flatpakrepo
                   </pre>
-              </li>
-            </ol>
-            <li>Para instalar o programa do pelo arquivo
-              org.kde.kate.flatpakref que está na pasta corrente executar o
-              seguinte comando:,</li>
-            <ol>
-              <li>
-                <pre>
+                </li>
+              </ol>
+              <li>Para instalar o programa do pelo arquivo
+                org.kde.kate.flatpakref que está na pasta corrente executar o
+                seguinte comando:,</li>
+              <ol>
+                <li>
+                  <pre>
   $ sudo flatpak install ./org.kde.kate.flatpakref
                   
                   </pre>
-                .</li>
-            </ol>
-            <li>Para instalar o programa do pelo arquivo
-              org.kde.kate.flatpakref que está no repositório
-              https://flathub.org/repo/appstream :</li>
-            <ol>
-              <li>
-                <pre>
+                  .
+                </li>
+              </ol>
+              <li>Para instalar o programa do pelo arquivo
+                org.kde.kate.flatpakref que está no repositório
+                https://flathub.org/repo/appstream :</li>
+              <ol>
+                <li>
+                  <pre>
   $ sudo flatpak install https://flathub.org/repo/appstream/org.kde.kate.flatpakref.flatpakref
                   </pre>
+                </li>
+              </ol>
+              <li><br>
               </li>
             </ol>
-            <li><br>
-            </li>
-          </ol>
-          <li><a href="https://docs.flatpak.org/en/latest/sandbox-permissions-reference.html" target="new"
-              id="show-permissions">Como saber as permissões de
-              um aplicativo instalado</a><a id="show-permissions">?</a></li>
-          <ol>
-            <li>Os aplicativos Flatpak vêm com regras de sandbox predefinidas
-              que definem os recursos e os caminhos do sistema de arquivos que
-              o aplicativo tem permissão para acessar. Para ver as permissões
-              específicas do aplicativo: </li>
+            <li><a href="https://docs.flatpak.org/en/latest/sandbox-permissions-reference.html" target="new" id="show-permissions">Como saber as permissões de
+                um aplicativo instalado</a><a id="show-permissions">?</a></li>
             <ol>
-              <li>
-                <pre>
+              <li>Os aplicativos Flatpak vêm com regras de sandbox predefinidas
+                que definem os recursos e os caminhos do sistema de arquivos que
+                o aplicativo tem permissão para acessar. Para ver as permissões
+                específicas do aplicativo: </li>
+              <ol>
+                <li>
+                  <pre>
  ; $ flatpak info --show-permissions name , onde name deve ser o ID do aplicativo;
  ; Ex: 
      paulosspacheco@host:~$ flatpak info --show-permissions org.videolan.VLC
@@ -683,152 +665,145 @@ RuntimeRepo = https://dl.flathub.org/repo/flathub.flatpakrepo
      [Environment]
        DCONF_USER_CONFIG_DIR=.config/dconf
                   </pre>
-              </li>
+                </li>
+              </ol>
+            </ol>
+            <li>?</li>
+            <li>?</li>
+            <li>?</li>
+            <li><b><br>
+              </b> </li>
+            <b> </b>
+          </ol>
+          <li><b><a id="uso-flatpak-usando-ambiente-grafico-gnome">Uso de
+                flatpak usando o ambiente gráfico no gnome</a>: .</b><br>
+          </li>
+          <ol>
+            <ol>
             </ol>
           </ol>
-          <li>?</li>
-          <li>?</li>
-          <li>?</li>
-          <li><b><br>
-            </b> </li>
-          <b> </b>
-        </ol>
-        <li><b><a id="uso-flatpak-usando-ambiente-grafico-gnome">Uso de
-              flatpak usando o ambiente gráfico no gnome</a>: .</b><br>
-        </li>
-        <ol>
+          <ol>
+            <li><a id="Como-instalar -facil">Como instalar programas hospedados
+                no site flathub.org de forma fácil?.</a></li>
+          </ol>
+          <ol>
+            <ol>
+              <li>Se sua distribuição não tem instalado o flatpak, então siga
+                primeiro esses&nbsp; passos: <a href="#como_instalar_gerenciador_de_pacotes_flatpak">Instalar-flatpak</a>
+              </li>
+              <li>Entrar no site <a href="https://flathub.org/apps" target="new">flathub.org/apps</a>.</li>
+              <li>No campo pesquisa digite o nome o aplicativo que deseja
+                instalar.</li>
+              <li>Na página de resultado click o botão do programa desejado.</li>
+              <li>Na próxima tela click no botão install</li>
+              <li>Na próxima tela pressione no botão instalar.</li>
+            </ol>
+          </ol>
+          <li><b><a id="Como-executar-de-forma-facil">Como executar de forma
+                fácil?</a>.</b></li>
+          <ol>
+            <li>Procurar o aplicativo no menu de opções do ambiente gráfico
+              atual.</li>
+          </ol>
           <ol>
           </ol>
-        </ol>
-        <ol>
-          <li><a id="Como-instalar -facil">Como instalar programas hospedados
-              no site flathub.org de forma fácil?.</a></li>
-        </ol>
-        <ol>
+          <li><b><a id="Como-desinstalar-de-forma-fácil?">Como desinstalar de
+                forma fácil?</a></b></li>
           <ol>
-            <li>Se sua distribuição não tem instalado o flatpak, então siga
-              primeiro esses&nbsp; passos: <a href="#como_instalar_gerenciador_de_pacotes_flatpak">Instalar-flatpak</a>
-            </li>
-            <li>Entrar no site <a href="https://flathub.org/apps" target="new">flathub.org/apps</a>.</li>
-            <li>No campo pesquisa digite o nome o aplicativo que deseja
-              instalar.</li>
-            <li>Na página de resultado click o botão do programa desejado.</li>
-            <li>Na próxima tela click no botão install</li>
-            <li>Na próxima tela pressione no botão instalar.</li>
+            <li>Entrar no gerenciador de aplicativos do gnome e pesquisar o
+              aplicativo pelo nome.</li>
+            <li>Pressione no botão remover.</li>
           </ol>
-        </ol>
-        <li><b><a id="Como-executar-de-forma-facil">Como executar de forma
-              fácil?</a>.</b></li>
-        <ol>
-          <li>Procurar o aplicativo no menu de opções do ambiente gráfico
-            atual.</li>
-        </ol>
-        <ol>
-        </ol>
-        <li><b><a id="Como-desinstalar-de-forma-fácil?">Como desinstalar de
-              forma fácil?</a></b></li>
-        <ol>
-          <li>Entrar no gerenciador de aplicativos do gnome e pesquisar o
-            aplicativo pelo nome.</li>
-          <li>Pressione no botão remover.</li>
-        </ol>
-        <li><b>Como atualizar uma instalação feita em um local específico</b>
-          (<a href="https://manpages.debian.org/testing/flatpak/flatpak-make-current.1.en.html"
-            target="new">https://manpages.debian.org/testing/flatpak/flatpak-make-current.1.en.html</a>).</li>
-        <li><br>
-        </li>
-      </ol>
-    </div>
-    <!-- Referências: class="col-3 col-s-12 -->
-    <div class="col-3 col-s-12">
-      <div class="aside">
-        <h2><a id="Referencias">Referências?</a></h2>
-      </div>
-      <div class="aside">
-        <ul>
-        </ul>
-        <ol>
-          <li> <a href="https://docs.flatpak.org/en/latest/first-build.html" target="new">docs.flatpak.org</a></li>
-          <li> <a href="https://flatpak.org/setup/" target="new">https://flatpak.org/setup/</a></li>
-          <li> <a href="https://wiki.archlinux.org/index.php/Flatpak_%28Portugu%C3%AAs%29" target="new">Flatpak
-              (Português)</a></li>
-          <li> <a href="https://flathub.org/home" target="new">https://www.youtube.com/watch?v=OfAnMDy9TGk</a></li>
-          <li> <a href="https://www.youtube.com/watch?v=uOaFgtYLkDA" target="new">Vídeo
-              de Flatpak - Instalando pacotes </a></li>
-          <li> <a href="https://flathub.org/home" target="new">https://flathub.org/home</a></li>
-          <li> <a href="https://flathub.org/apps/details/org.mypaint.MyPaint" target="new">Programa gráfico .MyPaint</a>
+          <li><b>Como atualizar uma instalação feita em um local específico</b>
+            (<a href="https://manpages.debian.org/testing/flatpak/flatpak-make-current.1.en.html" target="new">https://manpages.debian.org/testing/flatpak/flatpak-make-current.1.en.html</a>).</li>
+          <li><br>
           </li>
-          <li> <a href="https://flathub.org/apps/details/com.obsproject.Studio" target="new">OBS Studio</a></li>
-          <li> <a href="https://medium.com/@leandroembu/construindo-seu-primeiro-flatpak-47ae2d13d6b8" target="new">Como
-              criar um pacote flatpak</a></li>
-          <li> <a href="https://diolinux.com.br/2019/10/flatpak-1-5-lancado-com-novidades-freeze-app-mask.html">Flatpak
-              1.5 lançado com novidades</a></li>
-          <li> <a href="https://flathub.org/apps/details/net.meijn.onvifviewer" target="new">ONVIFViewer Visualize e
-              controle câmeras de rede
-              usando o protocolo ONVIF</a></li>
-          <li> <a href="https://flathub.org/apps/details/org.kde.kdenlive" target="new">Kdenlive</a></li>
-          <li> <a href="https://flathub.org/apps/details/com.google.AndroidStudio" target="new">AndroidStudio</a></li>
-          <li> <a href="https://flathub.org/apps/details/cc.arduino.arduinoide" target="new">ID arduino</a></li>
-          <li> <a href="https://www.youtube.com/watch?v=uOaFgtYLkDA" target="new">Flatpak
-              - Instalando pacotes</a></li>
-          <li> <a
-              href="https://flatpak-testing.readthedocs.io/en/latest/distributing-applications.html#single-file-bundles"
-              target="new">Pacotes de arquivo único</a></li>
-          <li> <a href="https://docs.flatpak.org/en/latest/flatpak-command-reference.html" target="new">Comandos
-              flatpak</a></li>
-          <li> <a href="https://docs.flatpak.org/en/latest/using-flatpak.html" target="new">Using Flatpak</a></li>
-          <li> <a href="https://www.linux.com/training-tutorials/how-install-and-use-flatpak-linux/" target="new"><span
-                style="color: #0000ee;">Resumo dos comandos
-                mais usados no flatpak</span></a></li>
-          <li> <a href="https://docs.flatpak.org/en/latest/first-build.html" target="new">Como empacotar programas
-              usando flatpak</a>.</li>
-          <li> <a href="https://www.edivaldobrito.com.br/instalar-o-suporte-flatpak-no-linux/" target="new">Como
-              instalar o suporte a flatpak em várias
-              distribuições linux</a>.</li>
-          <li> <a
-              href="/home/paulosspacheco/Documentos/blogger/paulosspacheco/sistemas_operacionais/linux/flatpak/flatpak-builder-docs.html"
-              target="new">flatpak-builder-docs.html</a>.</li>
-          <li> <a
-              href="https://flatpak-testing.readthedocs.io/en/latest/distributing-applications.html#single-file-bundles"
-              target="new">Pacotes de arquivo único</a>.</li>
-          <li> <a href="https://docs.flatpak.org/en/latest/flatpak-builder-command-reference.html"
-              target="new">Referência de comandos do Flatpak Builder</a>.</li>
-          <li> <a href="https://docs.flatpak.org/en/latest/tips-and-tricks.html" target="new">Dicas de instalação
-              personalizada</a></li>
-          <li> <a href="https://freedesktop-sdk.io/#about" target="new">https://freedesktop-sdk.io/#about</a></li>
-          <li> <a href="https://docs.flatpak.org/en/latest/available-runtimes.html#freedesktop" target="new">Tempos de
-              execução disponíveis</a></li>
-          <li> <a href="#s" target="new">Referências para produção deste
-              documento.</a></li>
-          <li> <a href="https://docs.flatpak.org/en/latest/using-flatpak.html" target="new"><span
-                style="color: #0000ee;">https://docs.flatpak.org/en/latest/using-flatpak.html</span></a></li>
-          <li> <a href="%20https://www.linux.com/training-tutorials/how-install-and-use-flatpak-linux." target="new">Uso
-              fácil no ambiente <b>kde </b>pode ser
-              encontrado no site</a></li>
-          <li> <a href="https://docs.flatpak.org/en/latest/flatpak-command-reference.html"
-              target="new">flatpak-command-reference.html</a></li>
-          <li> <a href="https://docs.flatpak.org/en/latest/libflatpak-api-reference.html#FlatpakRemote"
-              target="new">libflatpak API Reference</a></li>
         </ol>
       </div>
+      <!-- Referências: class="col-3 col-s-12 -->
+      <div class="col-3 col-s-12">
+        <div class="aside">
+          <h2><a id="Referencias">Referências?</a></h2>
+        </div>
+        <div class="aside">
+          <ul>
+          </ul>
+          <ol>
+            <li> <a href="https://docs.flatpak.org/en/latest/first-build.html" target="new">docs.flatpak.org</a></li>
+            <li> <a href="https://flatpak.org/setup/" target="new">https://flatpak.org/setup/</a></li>
+            <li> <a href="https://wiki.archlinux.org/index.php/Flatpak_%28Portugu%C3%AAs%29" target="new">Flatpak
+                (Português)</a></li>
+            <li> <a href="https://flathub.org/home" target="new">https://www.youtube.com/watch?v=OfAnMDy9TGk</a></li>
+            <li> <a href="https://www.youtube.com/watch?v=uOaFgtYLkDA" target="new">Vídeo
+                de Flatpak - Instalando pacotes </a></li>
+            <li> <a href="https://flathub.org/home" target="new">https://flathub.org/home</a></li>
+            <li> <a href="https://flathub.org/apps/details/org.mypaint.MyPaint" target="new">Programa gráfico .MyPaint</a>
+            </li>
+            <li> <a href="https://flathub.org/apps/details/com.obsproject.Studio" target="new">OBS Studio</a></li>
+            <li> <a href="https://medium.com/@leandroembu/construindo-seu-primeiro-flatpak-47ae2d13d6b8" target="new">Como
+                criar um pacote flatpak</a></li>
+            <li> <a href="https://diolinux.com.br/2019/10/flatpak-1-5-lancado-com-novidades-freeze-app-mask.html">Flatpak
+                1.5 lançado com novidades</a></li>
+            <li> <a href="https://flathub.org/apps/details/net.meijn.onvifviewer" target="new">ONVIFViewer Visualize e
+                controle câmeras de rede
+                usando o protocolo ONVIF</a></li>
+            <li> <a href="https://flathub.org/apps/details/org.kde.kdenlive" target="new">Kdenlive</a></li>
+            <li> <a href="https://flathub.org/apps/details/com.google.AndroidStudio" target="new">AndroidStudio</a></li>
+            <li> <a href="https://flathub.org/apps/details/cc.arduino.arduinoide" target="new">ID arduino</a></li>
+            <li> <a href="https://www.youtube.com/watch?v=uOaFgtYLkDA" target="new">Flatpak
+                - Instalando pacotes</a></li>
+            <li> <a href="https://flatpak-testing.readthedocs.io/en/latest/distributing-applications.html#single-file-bundles" target="new">Pacotes de arquivo único</a></li>
+            <li> <a href="https://docs.flatpak.org/en/latest/flatpak-command-reference.html" target="new">Comandos
+                flatpak</a></li>
+            <li> <a href="https://docs.flatpak.org/en/latest/using-flatpak.html" target="new">Using Flatpak</a></li>
+            <li> <a href="https://www.linux.com/training-tutorials/how-install-and-use-flatpak-linux/" target="new"><span style="color: #0000ee;">Resumo dos comandos
+                  mais usados no flatpak</span></a></li>
+            <li> <a href="https://docs.flatpak.org/en/latest/first-build.html" target="new">Como empacotar programas
+                usando flatpak</a>.</li>
+            <li> <a href="https://www.edivaldobrito.com.br/instalar-o-suporte-flatpak-no-linux/" target="new">Como
+                instalar o suporte a flatpak em várias
+                distribuições linux</a>.</li>
+            <li> <a href="/home/paulosspacheco/Documentos/blogger/paulosspacheco/sistemas_operacionais/linux/flatpak/flatpak-builder-docs.html" target="new">flatpak-builder-docs.html</a>.</li>
+            <li> <a href="https://flatpak-testing.readthedocs.io/en/latest/distributing-applications.html#single-file-bundles" target="new">Pacotes de arquivo único</a>.</li>
+            <li> <a href="https://docs.flatpak.org/en/latest/flatpak-builder-command-reference.html" target="new">Referência de comandos do Flatpak Builder</a>.</li>
+            <li> <a href="https://docs.flatpak.org/en/latest/tips-and-tricks.html" target="new">Dicas de instalação
+                personalizada</a></li>
+            <li> <a href="https://freedesktop-sdk.io/#about" target="new">https://freedesktop-sdk.io/#about</a></li>
+            <li> <a href="https://docs.flatpak.org/en/latest/available-runtimes.html#freedesktop" target="new">Tempos de
+                execução disponíveis</a></li>
+            <li> <a href="#s" target="new">Referências para produção deste
+                documento.</a></li>
+            <li> <a href="https://docs.flatpak.org/en/latest/using-flatpak.html" target="new"><span style="color: #0000ee;">https://docs.flatpak.org/en/latest/using-flatpak.html</span></a></li>
+            <li> <a href="%20https://www.linux.com/training-tutorials/how-install-and-use-flatpak-linux." target="new">Uso
+                fácil no ambiente <b>kde </b>pode ser
+                encontrado no site</a></li>
+            <li> <a href="https://docs.flatpak.org/en/latest/flatpak-command-reference.html" target="new">flatpak-command-reference.html</a></li>
+            <li> <a href="https://docs.flatpak.org/en/latest/libflatpak-api-reference.html#FlatpakRemote" target="new">libflatpak API Reference</a></li>
+          </ol>
+        </div>
+      </div>
+
+
+      <!-- RODAPÉ DA PÁGINA  -->
+      <div class="footer">
+        <!--<div w3-include-html="../../js/footer.inc"> </div>-->
+        <div w3-include-html="../../../js/footer.inc"> </div>
+      </div>
+
+
     </div>
 
+  </main>
 
-<!-- RODAPÉ DA PÁGINA  -->
-<div class="footer">
-    <!--<div w3-include-html="../../js/footer.inc"> </div>-->
-    <div w3-include-html="../../../js/footer.inc"> </div>
-</div>
-<!--<script> includeHTML();</script>  -->
-<script>
+  <!-- markdownlint-disable-next-line -->
+  <script>
     includeHTML();
-</script>
+    FixHeader(window, "myHeader");
+  </script>
 
-  </div>
+</body>
 
 
-
-
- </body>
+</body>
 
 </html>

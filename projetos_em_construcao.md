@@ -1,5 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-#### Projetos em construção<a href="projetos_em_construcao.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">➚</a>
+<span id="topo"><span>
+
+# Projetos em construção<a href="projetos_em_construcao.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!--TODO: em: A fazer até 13/07/2023 -->
 <!-- markdownlint-disable-next-line -->
@@ -36,3 +43,9 @@
 14. GLITCH (alha) Algo estranho ocorre aqui em situação bem específica.
 15. REVIEW: (revise) Revise isso pra mim, usado onde se costuma fazer peer review.
 16. WTF: (que p0rr@ é essa?) Fizeram um besteira muito grande aqui.
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")
