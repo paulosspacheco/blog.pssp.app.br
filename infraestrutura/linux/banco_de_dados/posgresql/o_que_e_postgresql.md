@@ -1,5 +1,8 @@
-<!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
@@ -56,7 +59,7 @@
    **Instalar no linux Mint LMDE 4 - Versão Debian 10.**
       1. Código ShellScript
 
-         ```sh
+         ```bash
            # Instalar o servidor           
            sudo apt install postgresql
 
@@ -111,7 +114,7 @@
                      1. Nota:
                         1. É necessário mover o conteúdo /var/lib/postgresql/11/main para /home/paulosspacheco/Documentos/db/postgresql usando o seguinte comando:
 
-                           ```sh
+                           ```bash
                              # Parar o banco de dados postgres
                              sudo systemctl stop postgresql
 
@@ -135,7 +138,7 @@
 
                2. Como reiniciar o servidor postgres:
 
-                  ```sh
+                  ```bash
 
                     sudo /etc/init.d/postgresql restart
 
@@ -143,7 +146,7 @@
 
                3. Como parar o servidor postgres:
 
-                  ```sh
+                  ```bash
 
                     sudo /etc/init.d/postgresql stop
 
@@ -151,7 +154,7 @@
 
                4. Como iniciar o servidor postgres:
 
-                  ```sh
+                  ```bash
 
                     sudo /etc/init.d/postgresql start
 
@@ -173,7 +176,7 @@
       1. [**clusterdb**](https://www.postgresql.org/docs/9.1/app-clusterdb.html) - um [cluster](https://www.postgresql.org/docs/11/creating-cluster.html) de banco de dados PostgreSQL.
             1. Código ShellScript
 
-               ```sh
+               ```bash
                # Para agrupar uma única tabela foo em um banco de dados chamado xyzzy :
                clusterdb --table foo xyzzy
 
@@ -182,7 +185,7 @@
       2. [**createdb**](https://www.postgresql.org/docs/11/app-createdb.html)  - Cria um banco de dados PostgreSQL
          1. Código ShellScript
 
-            ```sh
+            ```bash
               # conecta-se ao usuário postgres:
               su postgres
 
@@ -222,6 +225,8 @@
 [🔝🔝](#topo "Retorna ao topo")
 
  <script>    function goBack() {    window.history.back()}</script>
+
+</main>
 
 <!-- markdownlint-disable-next-line -->
 <script>  includeHTML(); FixHeader(window,"myHeader"); </script>

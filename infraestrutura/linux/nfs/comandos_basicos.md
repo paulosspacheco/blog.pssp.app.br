@@ -1,7 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
-### Comandos básicos do dia a dia para manutenção do serviço NFS<a href="comandos_basicos.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+# Comandos básicos do dia a dia para manutenção do serviço NFS<a href="comandos_basicos.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Reiniciar o serviço NFS _[nfs-kernel-server](https://manpages.debian.org/testing/nfs-kernel-server/mountd.8.en.html)_:
 
@@ -92,10 +97,16 @@
 
    ```
 
-##### REFERÊNCIAS
+## REFERÊNCIAS
 
 1. [nfs-kernel-server](https://manpages.debian.org/testing/nfs-kernel-server/mountd.8.en.html)
 2. [/etc/exports](https://linux.die.net/man/5/exports)
 3. [mount](https://linux.die.net/man/8/mount/)
 4. [exportfs](https://linux.die.net/man/8/exportfs)
 5. [/etc/exports](https://linux.die.net/man/5/exports)
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

@@ -1,52 +1,78 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Instala&ccedil;&atilde;o do Servi&ccedil;o NFS</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <title>Instala&ccedil;&atilde;o do Servi&ccedil;o NFS</title>
 
-        <!-- CSS markdown -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
-        
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
 
-    </head>
-    <body class="vscode-body vscode-light">
-        <!-- markdownlint-disable-next-line -->
-<h4 id="instalação-do-serviço-nfs">Instalação do Serviço NFS</h4>
-<ol>
-<li>
-<p>Para instalar o servidor NFS instale o pacote <em>nfs-kernel-server</em>.</p>
-<pre><code class="hljs language-sh">
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="instalação-do-serviço-nfs">Instalação do Serviço NFS</h1> -->
+        <ol>
+          <li>
+            <p>Para instalar o servidor NFS instale o pacote <em>nfs-kernel-server</em>.</p>
+            <pre><code class="hljs language-sh">
    sudo apt update
 
    <span class="hljs-comment"># Este app deve ser instalado na máquina que vai compartilhar os arquivos.</span>
    sudo apt install nfs-kernel-server
 
 </code></pre>
-</li>
-<li>
-<p>Para instalar o cliente NFS na máquina cliente instale o pacote <em>nfs-common</em>.</p>
-<pre><code class="hljs language-sh">
+          </li>
+          <li>
+            <p>Para instalar o cliente NFS na máquina cliente instale o pacote <em>nfs-common</em>.</p>
+            <pre><code class="hljs language-sh">
    sudo apt update
 
    <span class="hljs-comment"># Este app deve ser instalado na máquina cliente</span>
    sudo apt install nfs-common
 
 </code></pre>
-</li>
-<li>
-<p>Próximo passo:</p>
-<ol>
-<li><a href="./criando_diretorios_compartilhamento_host.html">Criando os diretórios de compartilhamento no servidor host</a></li>
-</ol>
-</li>
-</ol>
+          </li>
+          <li>
+            <p>Próximo passo:</p>
+            <ol>
+              <li><a href="./criando_diretorios_compartilhamento_host.html">Criando os diretórios de compartilhamento no servidor host</a></li>
+            </ol>
+          </li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-        
-        
-     </body>
-    </html>
+
+
+</body>
+
+</html>

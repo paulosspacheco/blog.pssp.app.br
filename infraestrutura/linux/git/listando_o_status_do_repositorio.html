@@ -1,51 +1,69 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Listando o status do reposit&oacute;rio &lt;a href&equals;&quot;listando&lowbar;o&lowbar;status&lowbar;do&lowbar;repositorio&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-    
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description"   content="" />
-        <meta name="keywords" content="" />
-           
-        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
-        <!-- <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/> -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+<html>
 
-        <script type="application/x-javascript" src="/js/generic.js"></script>
-        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>   
+<head>
+  <meta charset="UTF-8">
+  <title>Listando o status do reposit&oacute;rio &lt;a href&equals;&quot;listando&lowbar;o&lowbar;status&lowbar;do&lowbar;repositorio&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
 
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>
-<!-- markdownlint-disable-next-line -->
-<h4 id="listando-o-status-do-repositório----">Listando o status do repositório <a href="listando_o_status_do_repositorio.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h4>
-<ol>
-<li>
-<p>Use o comando <strong>git status</strong> para checar o estado atual do repositório.</p>
-<pre><code class="hljs language-sh">    <span class="hljs-comment"># A pasta ~/meuProjeto precisa ter sido inicializada pelo comando git init.</span>
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="listando-o-status-do-repositório----">Listando o status do repositório <a href="listando_o_status_do_repositorio.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+        <ol>
+          <li>
+            <p>Use o comando <strong>git status</strong> para checar o estado atual do repositório.</p>
+            <pre><code class="hljs language-sh">    <span class="hljs-comment"># A pasta ~/meuProjeto precisa ter sido inicializada pelo comando git init.</span>
     <span class="hljs-built_in">cd</span> ~/meuProjeto
 
     <span class="hljs-comment"># Esse comando mostra tudo que precisa ser feito para atualizar o repositório.</span>
     git status
     
 </code></pre>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="https://githowto.com/pt-BR/checking_status">Status do repositório</a></li>
-<li><a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository#:~:text=The%20git%20status%20command%20displays,regarding%20the%20committed%20project%20history.">Git Status: Inspecting a repository</a></li>
-</ol>
-</li>
-</ol>
-<!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>               
-        
-        
-    </body>
-    </html>
+          </li>
+          <li>
+            <p><strong>Referências:</strong></p>
+            <ol>
+              <li><a href="https://githowto.com/pt-BR/checking_status">Status do repositório</a></li>
+              <li><a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository#:~:text=The%20git%20status%20command%20displays,regarding%20the%20committed%20project%20history.">Git Status: Inspecting a repository</a></li>
+            </ol>
+          </li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+
+
+</body>
+
+</html>

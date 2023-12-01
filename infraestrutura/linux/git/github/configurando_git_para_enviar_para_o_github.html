@@ -1,32 +1,44 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Configurando git para enviar para o github &lt;a href&equals;&quot;configurando&lowbar;git&lowbar;para&lowbar;enviar&lowbar;para&lowbar;o&lowbar;github&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description"   content="" />
-        <meta name="keywords" content="" />
-           
-        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
-        <!-- <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/> -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8">
+  <title>Configurando git para enviar para o github &lt;a href&equals;&quot;configurando&lowbar;git&lowbar;para&lowbar;enviar&lowbar;para&lowbar;o&lowbar;github&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
 
-        <script type="application/x-javascript" src="/js/generic.js"></script>
-        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>   
-<!-- markdownlint-disable-next-line -->
-<h4 id="configurando-git-para-enviar-para-o-github----">Configurando git para enviar para o github <a href="configurando_git_para_enviar_para_o_github.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h4>
-<ol>
-<li>
-<p>Para <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">conectar-se ao github.com</a> é necessário criar um chave do protocolo SSH (Secure Shell Protocol), que fornece um canal seguro em uma rede não segura da seguinte forma:</p>
-<pre><code class="hljs language-sh">    
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="configurando-git-para-enviar-para-o-github----">Configurando git para enviar para o github <a href="configurando_git_para_enviar_para_o_github.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+        <ol>
+          <li>
+            <p>Para <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">conectar-se ao github.com</a> é necessário criar um chave do protocolo SSH (Secure Shell Protocol), que fornece um canal seguro em uma rede não segura da seguinte forma:</p>
+            <pre><code class="hljs language-sh">    
     <span class="hljs-comment"># Gerando uma chave ssh na pasta ~/ssh</span>
     ssh-keygen -t ed25519 -C <span class="hljs-string">"seu_email@qualquercoisa.com"</span>           
 
@@ -41,55 +53,55 @@
     ssh-add ~/.ssh/id_ed25519
 
 </code></pre>
-<ol>
-<li>NOTAS:
-<ol>
-<li>
-<p>Se você estiver usando um sistema legado que não suporta o algoritmo Ed25519, use:</p>
-<pre><code class="hljs language-sh">
+            <ol>
+              <li>NOTAS:
+                <ol>
+                  <li>
+                    <p>Se você estiver usando um sistema legado que não suporta o algoritmo Ed25519, use:</p>
+                    <pre><code class="hljs language-sh">
   ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">"paulosspacheco"</span>
 
 </code></pre>
-</li>
-<li>
-<p>Dependendo do seu ambiente, pode ser necessário usar um comando diferente.</p>
-<ol>
-<li>Por exemplo, pode ser necessário usar o acesso root executando <strong>sudo -s -H</strong> antes de iniciar o <strong>ssh-agent</strong> ou pode ser necessário usar exec <strong>ssh-agent bash</strong> ou <strong>exec ssh-agent zsh</strong> para executar o <strong>ssh-agent</strong>.</li>
-</ol>
-</li>
-<li>
-<p>Após adicionar a chave no agente ssh, é necessário <a href="https://github.com/settings/keys">registrar no servidor github</a>.</p>
-</li>
-<li>
-<p>Caso ocorra algum error na autenticação: <a href="https://docs.github.com/pt/authentication/troubleshooting-ssh">Veja esse link</a></p>
-</li>
-<li>
-<p>Caso troque a chave ssh é necessário clonar o repositório fazer as alterações necessárias e enviar novamente para o remoto. (Passei o um dia para entender isso)</p>
-</li>
-<li>
-<p><strong>REFERÊNCIAS</strong>:</p>
-<ol>
-<li><a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/">Requisitos de autenticação de token para operações Git</a>.
-<ol>
-<li><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Criação de um token de acesso pessoal</a></li>
-<li><a href="https://github.com/settings/tokens/new">Novo token de acesso pessoal</a></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>Entre no <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">github</a> para adicionar uma nova chave SSH à sua conta GitHub.</p>
-</li>
-<li>
-<p>Criando repositório no github e configurando a máquina cliente:</p>
-</li>
-<li>
-<p>Suponha que o grupo seja <strong>mi</strong> e o projeto seja maricarai então:</p>
-<pre><code class="hljs language-sh">
+                  </li>
+                  <li>
+                    <p>Dependendo do seu ambiente, pode ser necessário usar um comando diferente.</p>
+                    <ol>
+                      <li>Por exemplo, pode ser necessário usar o acesso root executando <strong>sudo -s -H</strong> antes de iniciar o <strong>ssh-agent</strong> ou pode ser necessário usar exec <strong>ssh-agent bash</strong> ou <strong>exec ssh-agent zsh</strong> para executar o <strong>ssh-agent</strong>.</li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>Após adicionar a chave no agente ssh, é necessário <a href="https://github.com/settings/keys">registrar no servidor github</a>.</p>
+                  </li>
+                  <li>
+                    <p>Caso ocorra algum error na autenticação: <a href="https://docs.github.com/pt/authentication/troubleshooting-ssh">Veja esse link</a></p>
+                  </li>
+                  <li>
+                    <p>Caso troque a chave ssh é necessário clonar o repositório fazer as alterações necessárias e enviar novamente para o remoto. (Passei o um dia para entender isso)</p>
+                  </li>
+                  <li>
+                    <p><strong>REFERÊNCIAS</strong>:</p>
+                    <ol>
+                      <li><a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/">Requisitos de autenticação de token para operações Git</a>.
+                        <ol>
+                          <li><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Criação de um token de acesso pessoal</a></li>
+                          <li><a href="https://github.com/settings/tokens/new">Novo token de acesso pessoal</a></li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>Entre no <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">github</a> para adicionar uma nova chave SSH à sua conta GitHub.</p>
+          </li>
+          <li>
+            <p>Criando repositório no github e configurando a máquina cliente:</p>
+          </li>
+          <li>
+            <p>Suponha que o grupo seja <strong>mi</strong> e o projeto seja maricarai então:</p>
+            <pre><code class="hljs language-sh">
    <span class="hljs-comment"># criando uma pasta para os arquivos do git separado da pasta corrente que se deseja versionar</span>
    git init --separate-git-dir ../maricarai.git 
 
@@ -111,63 +123,70 @@
    <span class="hljs-comment"># Pull requests (Solicitações de pull) </span>
 
 </code></pre>
-<ol>
-<li><strong>ATENÇÃO</strong>
-<ol>
-<li><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">Lei sobre Pull Requests para finalizar o processo de atualização</a></li>
-<li><a href="https://m.youtube.com/watch?v=Du04jBWrv4A">Como criar seu primeiro pull request no GitHub</a></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys">Verificando as chaves SSH existentes</a></p>
-</li>
-<li>
-<p>Digite <strong>ls -al ~/.ssh</strong> para ver se as chaves SSH existentes estão presentes.</p>
-<pre><code class="hljs language-shellScript">     
+            <ol>
+              <li><strong>ATENÇÃO</strong>
+                <ol>
+                  <li><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">Lei sobre Pull Requests para finalizar o processo de atualização</a></li>
+                  <li><a href="https://m.youtube.com/watch?v=Du04jBWrv4A">Como criar seu primeiro pull request no GitHub</a></li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys">Verificando as chaves SSH existentes</a></p>
+          </li>
+          <li>
+            <p>Digite <strong>ls -al ~/.ssh</strong> para ver se as chaves SSH existentes estão presentes.</p>
+            <pre><code class="hljs language-shellScript">     
      $ ls -al ~/.ssh
      # Lists the files in your .ssh directory, if they exist
     
 </code></pre>
-</li>
-<li>
-<p>Verifique a lista de diretórios para ver se você já possui uma chave SSH pública. Por padrão, os nomes de arquivo das chaves públicas com suporte para o GitHub são um dos seguintes.</p>
-<ol>
-<li>~/.ssh/id_rsa.pub</li>
-<li>~/.ssh/id_ecdsa.pub</li>
-<li>~/.ssh/id_ed25519.pub</li>
-</ol>
-</li>
-<li>
-<p><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Copie a chave pública SSH gerada para a área de transferência.</a></p>
-</li>
-<li>
-<p>Acesse o site <a href="https://github.com/settings/keys">github</a> e cole a chave que está na área de transferência.</p>
-</li>
-<li>
-<p>Comando para saber se a chave ssh está associada ao github:</p>
-</li>
-</ol>
-<pre><code class="hljs language-powershell">
+          </li>
+          <li>
+            <p>Verifique a lista de diretórios para ver se você já possui uma chave SSH pública. Por padrão, os nomes de arquivo das chaves públicas com suporte para o GitHub são um dos seguintes.</p>
+            <ol>
+              <li>~/.ssh/id_rsa.pub</li>
+              <li>~/.ssh/id_ecdsa.pub</li>
+              <li>~/.ssh/id_ed25519.pub</li>
+            </ol>
+          </li>
+          <li>
+            <p><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Copie a chave pública SSH gerada para a área de transferência.</a></p>
+          </li>
+          <li>
+            <p>Acesse o site <a href="https://github.com/settings/keys">github</a> e cole a chave que está na área de transferência.</p>
+          </li>
+          <li>
+            <p>Comando para saber se a chave ssh está associada ao github:</p>
+          </li>
+        </ol>
+        <pre><code class="hljs language-powershell">
    git status
 
 </code></pre>
-<h5 id="referências">REFERÊNCIAS</h5>
-<ol>
-<li><a href="https://docs.github.com/en/get-started">get-started</a></li>
-<li><a href="https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git">Instalando o Git</a></li>
-<li><a href="https://githowto.com/pt-BR/setup">Preparação</a></li>
-<li><a href="https://github.com/new">Criando novo projeto no github</a></li>
-<li><a href="https://github.com/settings/tokens/new">Novo token de acesso pessoal</a></li>
-<li><a href="https://www.youtube.com/watch?v=HIqyLRKv-YE">Como trabalhar com Git e GitHub no VsCode | Tutorial</a></li>
-<li><a href="https://www.youtube.com/watch?v=MbgR1rIDuy4">VsCode - [Extensão GitLens], Histórico do GITHUB, no vscode, commit, Linha do código editado (#201)</a></li>
-<li><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys">Verificando as chaves SSH existentes</a></li>
-<li><a href="https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files">Configurando arquivos ignorados para todos os repositórios em seu computador</a>.</li>
-</ol>
-<!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>    
-        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
-        
-    </body>
-    </html>
+        <h2 id="referências">REFERÊNCIAS</h2>
+        <ol>
+          <li><a href="https://docs.github.com/en/get-started">get-started</a></li>
+          <li><a href="https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git">Instalando o Git</a></li>
+          <li><a href="https://githowto.com/pt-BR/setup">Preparação</a></li>
+          <li><a href="https://github.com/new">Criando novo projeto no github</a></li>
+          <li><a href="https://github.com/settings/tokens/new">Novo token de acesso pessoal</a></li>
+          <li><a href="https://www.youtube.com/watch?v=HIqyLRKv-YE">Como trabalhar com Git e GitHub no VsCode | Tutorial</a></li>
+          <li><a href="https://www.youtube.com/watch?v=MbgR1rIDuy4">VsCode - [Extensão GitLens], Histórico do GITHUB, no vscode, commit, Linha do código editado (#201)</a></li>
+          <li><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys">Verificando as chaves SSH existentes</a></li>
+          <li><a href="https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files">Configurando arquivos ignorados para todos os repositórios em seu computador</a>.</li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+  <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

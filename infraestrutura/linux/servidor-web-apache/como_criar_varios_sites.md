@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Como criar vários sites na mesma máquina  <a href="como_criar_varios_sites.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
 ## Descrição dos arquivos de configuração do apache2
 
@@ -162,4 +170,8 @@
           
                 ```
 
-7. o
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

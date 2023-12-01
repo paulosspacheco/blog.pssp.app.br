@@ -1,4 +1,12 @@
-#### Como usar Webmin para configurar apache2 <a href="como_usar_webmin_para_configurar_apache2.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
+# Como usar Webmin para configurar apache2 <a href="como_usar_webmin_para_configurar_apache2.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
 
 1. **Objetivo do webmin**.
    1. O Webmin é uma ferramenta de administração de sistema baseada na web para servidores do tipo Unix.
@@ -57,3 +65,9 @@
       sudo systemctl reload apache2 
 
    ```
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

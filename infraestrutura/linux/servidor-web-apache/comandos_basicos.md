@@ -1,5 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-#### Comandos mais usados na manutenção dos sites <a href="comandos_basicos.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
+<span id="topo"><span>
+
+# Comandos mais usados na manutenção dos sites <a href="comandos_basicos.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
 
 1. Comandos para ver o status do servidor:
 
@@ -120,3 +127,8 @@
        sudo a2dismod cgid
     ```
 
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

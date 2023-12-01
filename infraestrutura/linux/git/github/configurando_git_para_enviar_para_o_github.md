@@ -1,9 +1,12 @@
-
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>   
+<span id="topo"><span>
 
-<!-- markdownlint-disable-next-line -->
-#### Configurando git para enviar para o github <a href="configurando_git_para_enviar_para_o_github.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+# Configurando git para enviar para o github <a href="configurando_git_para_enviar_para_o_github.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Para [conectar-se ao github.com](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) é necessário criar um chave do protocolo SSH (Secure Shell Protocol), que fornece um canal seguro em uma rede não segura da seguinte forma:
 
@@ -104,7 +107,7 @@
 
    ```
 
-##### REFERÊNCIAS
+## REFERÊNCIAS
 
 1. [get-started](https://docs.github.com/en/get-started)
 2. [Instalando o Git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
@@ -116,5 +119,8 @@
 8. [Verificando as chaves SSH existentes](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
 9. [Configurando arquivos ignorados para todos os repositórios em seu computador](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files).
 
+</main>
+
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>    
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

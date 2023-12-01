@@ -1,4 +1,12 @@
-#### Descrição dos arquivos de configuração do apache2 <a href="descricao_dos_arquivos_de_configuracao_do_apache2.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
+# Descrição dos arquivos de configuração do apache2 <a href="descricao_dos_arquivos_de_configuracao_do_apache2.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
 
 1. [**/etc/hosts**](https://pt.wikipedia.org/wiki/Hosts_(arquivo))
    1. Usado para associar o endereço IP local ao um nome legível com objetivo de facilitar o uso no dia a dia, visto que, o IP é um só para cada máquina e os nomes dos sites podem variar, sendo que os mesmos são usados pelo apache2 para associá-los a várias pastas dentro da pasta _/etc/www_.
@@ -181,3 +189,9 @@
 
 1. [Principais recursos do Apache HTTP Server que estão sempre disponíveis](https://httpd.apache.org/docs/current/mod/core.html#documentroot)
 2. [Binding to Addresses and Ports](https://httpd.apache.org/docs/2.4/bind.html)
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

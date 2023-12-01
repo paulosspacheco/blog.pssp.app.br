@@ -1,65 +1,84 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Como instalar cliente git no Linux Debian ou derivados &lt;a href&equals;&quot;como&lowbar;instalar&lowbar;cliente&lowbar;git&lowbar;no&lowbar;linux&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description"   content="" />
-        <meta name="keywords" content="" />
-           
-        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
-        <!-- <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/> -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8">
+  <title>Como instalar cliente git no Linux Debian ou derivados &lt;a href&equals;&quot;como&lowbar;instalar&lowbar;cliente&lowbar;git&lowbar;no&lowbar;linux&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
 
-        <script type="application/x-javascript" src="/js/generic.js"></script>
-        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>    
-<!-- markdownlint-disable-next-line -->
-<h4 id="como-instalar-cliente-git-no-linux-debian-ou-derivados----">Como instalar cliente git no Linux Debian ou derivados <a href="como_instalar_cliente_git_no_linux.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h4>
-<ol>
-<li>
-<p>Para instalar no Linux distribuição baseada em Debian como o Ubuntu, Linux Mint, etc use o apt-get:.</p>
-<pre><code class="hljs language-bash">
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="como-instalar-cliente-git-no-linux-debian-ou-derivados----">Como instalar cliente git no Linux Debian ou derivados <a href="como_instalar_cliente_git_no_linux.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+        <ol>
+          <li>
+            <p>Para instalar no Linux distribuição baseada em Debian como o Ubuntu, Linux Mint, etc use o apt-get:.</p>
+            <pre><code class="hljs language-bash">
   <span class="hljs-comment"># Atualiza sistema lista do apt-get</span>
   sudo apt-get update
 
   <span class="hljs-comment"># Instala o git </span>
   sudo apt-get install git-all
 </code></pre>
-</li>
-<li>
-<p>Execute os seguintes comandos para fazer com que o git saiba seu nome e endereço de e-mail:</p>
-<pre><code class="hljs language-bash">  <span class="hljs-comment"># Adicione o nome do usuário ao git instalado globalmente</span>
+          </li>
+          <li>
+            <p>Execute os seguintes comandos para fazer com que o git saiba seu nome e endereço de e-mail:</p>
+            <pre><code class="hljs language-bash">  <span class="hljs-comment"># Adicione o nome do usuário ao git instalado globalmente</span>
   git config --global user.name <span class="hljs-string">"Seu Nome"</span>
 
   <span class="hljs-comment"># Adicione o e-mail do usuário do git instalado globalmente</span>
   git config --global user.email <span class="hljs-string">"seu_email@qualquercoisa.com"</span>
 
 </code></pre>
-</li>
-<li>
-<p>O git funcionando no Linux é preciso que os comandos abaixo sejam executado para indicar o término de linha nos arquivos textos:</p>
-<pre><code class="hljs language-bash">  git config --global core.autocrlf input
+          </li>
+          <li>
+            <p>O git funcionando no Linux é preciso que os comandos abaixo sejam executado para indicar o término de linha nos arquivos textos:</p>
+            <pre><code class="hljs language-bash">  git config --global core.autocrlf input
   git config --global core.safecrlf warn
 </code></pre>
-</li>
-</ol>
-<h4 id="referências">REFERÊNCIAS</h4>
-<ol>
-<li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">1.5 Getting Started - Installing Git</a></li>
-<li><a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration">8.1 Customizing Git - Git Configuration</a></li>
-<li><a href="https://docs.github.com/pt/get-started/getting-started-with-git/configuring-git-to-handle-line-endings">Configurar o Git para uso com delimitadores de linha</a></li>
-</ol>
-<!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>    
-        
-        
-    </body>
-    </html>
+          </li>
+        </ol>
+        <h2 id="referências">REFERÊNCIAS</h2>
+        <ol>
+          <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">1.5 Getting Started - Installing Git</a></li>
+          <li><a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration">8.1 Customizing Git - Git Configuration</a></li>
+          <li><a href="https://docs.github.com/pt/get-started/getting-started-with-git/configuring-git-to-handle-line-endings">Configurar o Git para uso com delimitadores de linha</a></li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+
+
+</body>
+
+</html>

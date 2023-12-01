@@ -1,5 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-#### Como configurar apache2 para executar CGI e FASTCGI  <a href="como_configurar_apache2_para_executar_cgi_e_fastcgi.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a> <span id="topo"><span>
+<span id="topo"><span>
+
+# Como configurar apache2 para executar CGI e FASTCGI  <a href="como_configurar_apache2_para_executar_cgi_e_fastcgi.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a> <span id="topo"><span>
 
 1. **INDEX**
    1. [Certifique-se que os arquivos *cgi.load*,...](#id_certifiquese)
@@ -268,3 +275,9 @@
 [🔝🔝](#topo "Retorna ao topo")
 <!-- markdownlint-disable-next-line -->
  <script>    function goBack() {    window.history.back()}</script>
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

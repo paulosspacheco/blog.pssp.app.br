@@ -1,8 +1,9 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
-<!-- markdownlint-disable-next-line -->
-
-
 <span id="topo"><span>
 
 # Modelo 03 de documento markdown <a href="O que é Android Studio.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
@@ -94,6 +95,8 @@
 [🔝🔝](#topo "Retorna ao topo")
 
  <script>    function goBack() {    window.history.back()}</script>
+
+</main>
 
 <!-- markdownlint-disable-next-line -->
 <script>  includeHTML(); FixHeader(window,"myHeader"); </script>

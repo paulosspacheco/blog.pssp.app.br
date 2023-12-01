@@ -1,5 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-#### REFERÊNCIAS
+<span id="topo"><span>
+
+# REFERÊNCIAS
 
 1. [Passo 1 — Baixando e instalando os componentes](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04-pt#passo-1-baixando-e-instalando-os-componentes)
 2. [Passo 2 — Criando os diretórios de compartilhamento no host](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04-pt#passo-2-criando-os-diretorios-de-compartilhamento-no-host)
@@ -11,3 +18,9 @@
 8. [Passo 8 — Desmontando um compartilhamento NFS remoto](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04-pt#passo-8-desmontando-um-compartilhamento-nfs-remoto)
 9. [Linux NFS Mount Entry em fstab (/etc/fstab) com exemplo](https://linuxopsys.com/topics/linux-nfs-mount-entry-in-fstab-with-example)
 10. [14.2. Montando um Volume NFS](https://tldp.org/LDP/nag2/x-087-2-nfs.mountd.html)
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

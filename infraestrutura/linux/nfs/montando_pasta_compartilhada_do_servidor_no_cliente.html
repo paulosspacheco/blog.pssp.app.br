@@ -1,29 +1,46 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Montando pasta compartilhada do servidor na m&aacute;quina cliente&lt;a href&equals;&quot;montando&lowbar;pasta&lowbar;compartilhada&lowbar;do&lowbar;servidor&lowbar;no&lowbar;cliente&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-  
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <!-- CSS markdown  -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
-            
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
+<html>
 
+<head>
+  <meta charset="UTF-8">
+  <title>Montando pasta compartilhada do servidor na m&aacute;quina cliente&lt;a href&equals;&quot;montando&lowbar;pasta&lowbar;compartilhada&lowbar;do&lowbar;servidor&lowbar;no&lowbar;cliente&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <!-- markdownlint-disable-next-line -->
-<p><span id="topo"><span></p>
-<!-- markdownlint-disable-next-line -->
-<h3 id="montando-pasta-compartilhada-do-servidor-na-máquina-cliente---">Montando pasta compartilhada do servidor na máquina cliente<a href="montando_pasta_compartilhada_do_servidor_no_cliente.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h3>
-<ol>
-<li>Para acessar os compartilhamentos do <em>servidor nfs</em> é necessário criar pasta na máquina cliente e usar o comando <em>mount</em> da seguinte forma:.
-<ol>
-<li>
-<p>Criando pasta na máquina cliente:</p>
-<pre><code class="hljs language-sh">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="montando-pasta-compartilhada-do-servidor-na-máquina-cliente---">Montando pasta compartilhada do servidor na máquina cliente<a href="montando_pasta_compartilhada_do_servidor_no_cliente.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+        <ol>
+          <li>Para acessar os compartilhamentos do <em>servidor nfs</em> é necessário criar pasta na máquina cliente e usar o comando <em>mount</em> da seguinte forma:.
+            <ol>
+              <li>
+                <p>Criando pasta na máquina cliente:</p>
+                <pre><code class="hljs language-sh">
   <span class="hljs-comment"># Criar a pasta ~/LnxMint_Server_Share no cliente para compartilhada a pasta /var/nfs/share do servidor</span>
   sudo mkdir -p ~/LnxMint_Server_Share
 
@@ -31,10 +48,10 @@
  sudo mkdir -p ~/LnxMint_Server_Home
 
 </code></pre>
-</li>
-<li>
-<p>Montando as pastas compartilhadas do servidor nas pastas criadas acima:</p>
-<pre><code class="hljs language-sh">
+              </li>
+              <li>
+                <p>Montando as pastas compartilhadas do servidor nas pastas criadas acima:</p>
+                <pre><code class="hljs language-sh">
    sudo mount host_ip:/var/nfs/share ~/LnxMint_Server_Share
    <span class="hljs-comment"># Exemplo: sudo mount 192.168.15.3:/var/nfs/share ~/LnxMint_Server_Share</span>
 
@@ -42,20 +59,28 @@
    <span class="hljs-comment"># Exemplo: sudo mount 192.168.15.3:/home ~/LnxMint_Server_Home</span>
 
 </code></pre>
-</li>
-</ol>
-</li>
-</ol>
-<h5 id="nota">NOTA</h5>
-<ul>
-<li><em>Se houver arquivos e diretórios em seu ponto de montagem, eles se tornarão ocultos e você pode perde-los</em>.</li>
-</ul>
-<h5 id="referências">REFERÊNCIAS</h5>
-<ol>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04-pt#passo-5-criando-os-pontos-de-montagem-e-montando-diretorios-no-cliente">Passo 5 — Criando os pontos de montagem e montando diretórios no cliente.</a></li>
-</ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+        <h2 id="notas">NOTAS</h2>
+        <ul>
+          <li><em>Se houver arquivos e diretórios em seu ponto de montagem, eles se tornarão ocultos e você pode perde-los</em>.</li>
+        </ul>
+        <h2 id="referências">REFERÊNCIAS</h2>
+        <ol>
+          <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04-pt#passo-5-criando-os-pontos-de-montagem-e-montando-diretorios-no-cliente">Passo 5 — Criando os pontos de montagem e montando diretórios no cliente.</a></li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-        
-        
-    </body>
-    </html>
+
+
+</body>
+
+</html>

@@ -1,133 +1,141 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>O que &eacute; banco de dados sqLite&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;sqlite&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description"   content="" />
-        <meta name="keywords" content="" />
-           
-        <!-- CSS do menu-->
-        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
-        
-        <!-- CSS markdown  -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8">
+  <title>O que &eacute; banco de dados sqLite&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;sqlite&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
 
 
-        <!-- Scripts da página -->
-        <script type="application/x-javascript" src="/js/generic.js"></script>
-        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>  
+</head>
 
-
-    </head>
-    <body class="vscode-body vscode-dark">
-        <!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
-<!-- markdownlint-disable-next-line -->
-<p><span id="topo"><span></p>
-<h1 id="o-que-é-banco-de-dados-sqlite---">O que é banco de dados sqLite<a href="o_que_e_sqlite.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
-<h2 id="1-index"><strong>1. INDEX</strong></h2>
-<ol>
-<li><a href="#id_resumo">Resumo do conteúdo</a></li>
-<li><strong>Introdução</strong>
-<ol>
-<li><a href="#id_objetivo">Objetivo.</a></li>
-<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
-<li><a href="#id_beneficios">Benefícios.</a></li>
-<li><a href="#id_desvantagens">Desvantagens.</a></li>
-</ol>
-</li>
-<li><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a>
-<ol>
-<li><a href="#id_assunto01">Como instalar no Linux</a></li>
-<li><a href="#id_assunto02">Como conectar-se ao banco de dados SQLite</a></li>
-<li><a href="#id_assunto03">Lista de comandos do cliente sqlite3</a></li>
-</ol>
- <!-- 4. [Assunto 04](#id_assunto04)
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="o-que-é-banco-de-dados-sqlite---">O que é banco de dados sqLite<a href="o_que_e_sqlite.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+        <h2 id="1-index"><strong>1. INDEX</strong></h2>
+        <ol>
+          <li><a href="#id_resumo">Resumo do conteúdo</a></li>
+          <li><strong>Introdução</strong>
+            <ol>
+              <li><a href="#id_objetivo">Objetivo.</a></li>
+              <li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+              <li><a href="#id_beneficios">Benefícios.</a></li>
+              <li><a href="#id_desvantagens">Desvantagens.</a></li>
+            </ol>
+          </li>
+          <li><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a>
+            <ol>
+              <li><a href="#id_assunto01">Como instalar no Linux</a></li>
+              <li><a href="#id_assunto02">Como conectar-se ao banco de dados SQLite</a></li>
+              <li><a href="#id_assunto03">Lista de comandos do cliente sqlite3</a></li>
+            </ol>
+            <!-- 4. [Assunto 04](#id_assunto04)
  4. [Assunto 05](#id_assunto05)
  5. [Assunto 06](#id_assunto06)
  6. [Assunto 07](#id_assunto07)
  7. [Assunto 08](#id_assunto08)
  8. [Assunto 09](#id_assunto09)
  9.  [Assunto 10](#id_assunto10) -->
-</li>
-<li><a href="#id_referencias"><strong>Referências globais.</strong></a></li>
-<li><a href="#id_historico"><strong>Histórico.</strong></a></li>
-</ol>
-<h2 id="2-conteúdo">2. CONTEÚDO</h2>
-<ol>
-<li>
-<p>Resumo do conteúdo:<span id="id_resumo"><span></p>
-<ol>
-<li>Descreve um resumo de como foi feito esse documento com as facilidade encontradas para produzi-lo e dificuldade encontrada.</li>
-</ol>
-</li>
-<li>
-<p><strong>Introdução</strong></p>
-<ol>
-<li>
-<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
-<ol>
-<li><a href="https://www.sqlite.org/index.html">SQLite</a> é uma biblioteca de linguagem C que implementa um mecanismo de banco de dados SQL pequeno, rápido, independente, de alta confiabilidade e com todos os recursos. <strong>SQLite</strong> é o mecanismo de banco de dados mais usado no mundo. O <strong>SQLite</strong> está embutido em todos os telefones celulares e na maioria dos computadores e vem dentro de inúmeros outros aplicativos que as pessoas usam todos os dias.</li>
-<li><a href="https://www.sqlite.org/about.html">Sobre o SQLite</a></li>
-<li><text onclick="goBack()">[🔙]</text></li>
-</ol>
-</li>
-<li>
-<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
-<ol>
-<li>Linguagem MySql;</li>
-<li>Saber como instalar pacotes no sistema operacional Linux;</li>
-<li><text onclick="goBack()">[🔙]</text></li>
-</ol>
-</li>
-<li>
-<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
-<ol>
-<li>Quando você tem a exigência de ler e escrever direto da unidade de armazenamento.</li>
-<li>Facilidade de distribuição do aplicativo porque o pacote é distribuído na mesma pasta do aplicativo;</li>
-<li>Linguagem SQL permite geração de consultas complexas com relativa facilidade;</li>
-<li>Todos os celulares do mundo tem o sqlite instalado;</li>
-<li>O banco de dados SqLite é um arquivo único permitindo backup com facilidade;</li>
-<li>Como a aplicação usa SQL, a mesma pode ser adaptada facilmente para outros bancos de dados cliente-servidor, desde que não use nada específico de algum banco de dados em particular.
-<ol>
-<li>Exemplo:
-<ol>
-<li>Os tipos de dados o Mysql tem mais opções que o sqlite, para ter compatibilidade usar os tipos do sqlite;</li>
-<li><a href="https://www.sqlite.org/syntaxdiagrams.html">Diagrama de sintaxe do SQLite</a></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><text onclick="goBack()">[🔙]</text></li>
-</ol>
-</li>
-<li>
-<p><span id="id_desvantagens"></span><strong>Desvantagens</strong>.</p>
-<ol>
-<li>Não permite controle de usuários, por isso é criado para acesso de único usuário;</li>
-<li>A SQLite não tem um mecanismo de autenticação integrado. Os arquivos da base de dados podem ser acessados por qualquer um;</li>
-<li>Não é facilmente escalável;</li>
-<li>Não é adequada para grandes bases de dados;</li>
-<li><text onclick="goBack()">[🔙]</text></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
-<ol>
-<li>
-<p><span id=id_assunto01></span><strong>Como instalar no Linux</strong></p>
-<ol>
-<li>
-<p>A página do site <a href="http://www.w3big.com/sqlite/sqlite-installation.html">w3big</a> tem instruções detalhada de como instalar o sqlite.</p>
-<ol>
-<li>
-<p>Instalar no Linux distribuição Debian e seus derivados**.</p>
-<pre><code class="hljs language-sh">
+          </li>
+          <li><a href="#id_referencias"><strong>Referências globais.</strong></a></li>
+          <li><a href="#id_historico"><strong>Histórico.</strong></a></li>
+        </ol>
+        <h2 id="2-conteúdo">2. CONTEÚDO</h2>
+        <ol>
+          <li>
+            <p>Resumo do conteúdo:<span id="id_resumo"><span></p>
+            <ol>
+              <li>Descreve um resumo de como foi feito esse documento com as facilidade encontradas para produzi-lo e dificuldade encontrada.</li>
+            </ol>
+          </li>
+          <li>
+            <p><strong>Introdução</strong></p>
+            <ol>
+              <li>
+                <p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+                <ol>
+                  <li><a href="https://www.sqlite.org/index.html">SQLite</a> é uma biblioteca de linguagem C que implementa um mecanismo de banco de dados SQL pequeno, rápido, independente, de alta confiabilidade e com todos os recursos. <strong>SQLite</strong> é o mecanismo de banco de dados mais usado no mundo. O <strong>SQLite</strong> está embutido em todos os telefones celulares e na maioria dos computadores e vem dentro de inúmeros outros aplicativos que as pessoas usam todos os dias.</li>
+                  <li><a href="https://www.sqlite.org/about.html">Sobre o SQLite</a></li>
+                  <li><text onclick="goBack()">[🔙]</text></li>
+                </ol>
+              </li>
+              <li>
+                <p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
+                <ol>
+                  <li>Linguagem MySql;</li>
+                  <li>Saber como instalar pacotes no sistema operacional Linux;</li>
+                  <li><text onclick="goBack()">[🔙]</text></li>
+                </ol>
+              </li>
+              <li>
+                <p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
+                <ol>
+                  <li>Quando você tem a exigência de ler e escrever direto da unidade de armazenamento.</li>
+                  <li>Facilidade de distribuição do aplicativo porque o pacote é distribuído na mesma pasta do aplicativo;</li>
+                  <li>Linguagem SQL permite geração de consultas complexas com relativa facilidade;</li>
+                  <li>Todos os celulares do mundo tem o sqlite instalado;</li>
+                  <li>O banco de dados SqLite é um arquivo único permitindo backup com facilidade;</li>
+                  <li>Como a aplicação usa SQL, a mesma pode ser adaptada facilmente para outros bancos de dados cliente-servidor, desde que não use nada específico de algum banco de dados em particular.
+                    <ol>
+                      <li>Exemplo:
+                        <ol>
+                          <li>Os tipos de dados o Mysql tem mais opções que o sqlite, para ter compatibilidade usar os tipos do sqlite;</li>
+                          <li><a href="https://www.sqlite.org/syntaxdiagrams.html">Diagrama de sintaxe do SQLite</a></li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li><text onclick="goBack()">[🔙]</text></li>
+                </ol>
+              </li>
+              <li>
+                <p><span id="id_desvantagens"></span><strong>Desvantagens</strong>.</p>
+                <ol>
+                  <li>Não permite controle de usuários, por isso é criado para acesso de único usuário;</li>
+                  <li>A SQLite não tem um mecanismo de autenticação integrado. Os arquivos da base de dados podem ser acessados por qualquer um;</li>
+                  <li>Não é facilmente escalável;</li>
+                  <li>Não é adequada para grandes bases de dados;</li>
+                  <li><text onclick="goBack()">[🔙]</text></li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
+            <ol>
+              <li>
+                <p><span id=id_assunto01></span><strong>Como instalar no Linux</strong></p>
+                <ol>
+                  <li>
+                    <p>A página do site <a href="http://www.w3big.com/sqlite/sqlite-installation.html">w3big</a> tem instruções detalhada de como instalar o sqlite.</p>
+                    <ol>
+                      <li>
+                        <p>Instalar no Linux distribuição Debian e seus derivados**.</p>
+                        <pre><code class="hljs language-bash">
   <span class="hljs-comment"># biblioteca compartilhada SQLite 3</span>
   sudo apt install sqlite3
 
@@ -139,32 +147,32 @@
   sudo apt install sqlitebrowser
 
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="https://www.sqlite.org/index.html">SqLite oficial</a></li>
-<li><a href="https://www.hostinger.com.br/tutoriais/sqlite-vs-mysql#:~:text=Diferen%C3%A7a%20de%20arquitetura%20%E2%80%94%20MySQL%20x%20SQLite&amp;text=SQLite%20%C3%A9%20uma%20base%20de,de%20um%20servidor%20para%20rodar.">SQLite vs MySQL – Qual a Diferença e Qual Usar</a></li>
-<li><a href="https://www.sqlite.org/lang.html">Sintaxe SQL do SQLite</a></li>
-<li><a href="http://www.w3big.com/pt/sqlite/default.html">SQLite Tutorial</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto02></span><strong>Como conectar-se ao banco de dados SQLite</strong></p>
-<ol>
-<li>
-<p>Como criar o banco de dados <strong>DataBase1.db3</strong>?</p>
-<ol>
-<li>
-<p>Entrar no shell do linux e executar os comandos:</p>
-<pre><code class="hljs language-sh">
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><strong>Referências:</strong></p>
+                    <ol>
+                      <li><a href="https://www.sqlite.org/index.html">SqLite oficial</a></li>
+                      <li><a href="https://www.hostinger.com.br/tutoriais/sqlite-vs-mysql#:~:text=Diferen%C3%A7a%20de%20arquitetura%20%E2%80%94%20MySQL%20x%20SQLite&amp;text=SQLite%20%C3%A9%20uma%20base%20de,de%20um%20servidor%20para%20rodar.">SQLite vs MySQL – Qual a Diferença e Qual Usar</a></li>
+                      <li><a href="https://www.sqlite.org/lang.html">Sintaxe SQL do SQLite</a></li>
+                      <li><a href="http://www.w3big.com/pt/sqlite/default.html">SQLite Tutorial</a></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><span id=id_assunto02></span><strong>Como conectar-se ao banco de dados SQLite</strong></p>
+                <ol>
+                  <li>
+                    <p>Como criar o banco de dados <strong>DataBase1.db3</strong>?</p>
+                    <ol>
+                      <li>
+                        <p>Entrar no shell do linux e executar os comandos:</p>
+                        <pre><code class="hljs language-bash">
   <span class="hljs-comment"># Abre o cliente SqLite com nome do banco de dados DataBase1.db3</span>
   sqlite3 DataBase1.db3
 
@@ -176,426 +184,435 @@
 
 
 </code></pre>
-<ol>
-<li><strong>NOTAS</strong>
-<ol>
-<li>Para ver todos as opções do cliente <strong>sqlite3</strong> escreva <strong>.help</strong></li>
-<li>Caso o comando <strong>CREATE TABLE</strong> não seja executado o banco de dados não será criado porque não existe tabela dentro dele.</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>Principais comandos:</p>
-<ol>
-<li><strong>.databases</strong>
-<ol>
-<li>Lista todos os bancos de dados da pasta.</li>
-</ol>
-</li>
-<li><strong>.cd DIRECTORY</strong>
-<ol>
-<li>Altere o diretório de trabalho para DIRETÓRIO</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="https://www.sqlite.org/cli.html">Cliente sqLite3</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_assunto03></span><strong>Lista de comandos do cliente sqlite3</strong></p>
-<ol>
-<li>
-<p>sqlite&gt; .help</p>
-<ol>
-<li>.archive ...
-<ol>
-<li>Gerenciar arquivos SQL</li>
-</ol>
-</li>
-<li>.auth ON|OFF
-<ol>
-<li>Mostrar retornos de chamada do autorizador</li>
-</ol>
-</li>
-<li>.backup ?DB? FILE
-<ol>
-<li>Backup de banco de dados (padrão &quot;principal&quot;) para FILE</li>
-</ol>
-</li>
-<li>.bail on|off
-<ol>
-<li>Pare depois de acertar um erro. Padrão DESLIGADO</li>
-</ol>
-</li>
-<li>.binary on|off
-<ol>
-<li>Ligue ou desligue a saída binária. Padrão DESLIGADO</li>
-</ol>
-</li>
-<li>.cd DIRECTORY
-<ol>
-<li>Altere o diretório de trabalho para DIRETÓRIO</li>
-</ol>
-</li>
-<li>.changes on|off
-<ol>
-<li>Mostrar o número de linhas alteradas pelo SQL</li>
-</ol>
-</li>
-<li>.check GLOB
-<ol>
-<li>Falha se a saída porque .testcase não corresponde</li>
-</ol>
-</li>
-<li>.clone NEWDB
-<ol>
-<li>Clone dados em NEWDB do banco de dados existente</li>
-</ol>
-</li>
-<li>.databases
-<ol>
-<li>Listar nomes e arquivos de bancos de dados anexados</li>
-</ol>
-</li>
-<li>.dbconfig ?op? ?val?
-<ol>
-<li>Listar ou alterar as opções sqlite3_db_config()</li>
-</ol>
-</li>
-<li>.dbinfo ?DB?
-<ol>
-<li>Mostrar informações de status sobre o banco de dados</li>
-</ol>
-</li>
-<li>.dump ?TABLE? ...
-<ol>
-<li>Renderize todo o conteúdo do banco de dados como SQL</li>
-</ol>
-</li>
-<li>.echo on|off
-<ol>
-<li>Ativar ou desativar o eco de comando</li>
-</ol>
-</li>
-<li>.eqp on|off|full|...
-<ol>
-<li>Ativar ou desativar o EXPLAIN QUERY PLAN automático</li>
-</ol>
-</li>
-<li>.excel
-<ol>
-<li>Exibir a saída do próximo comando na planilha</li>
-</ol>
-</li>
-<li>.exit ?CODE?
-<ol>
-<li>Saia deste programa com o código de retorno CODE</li>
-</ol>
-</li>
-<li>.expert
-<ol>
-<li>EXPERIMENTAL. Sugerir índices para consultas</li>
-</ol>
-</li>
-<li>.explain ?on|off|auto?
-<ol>
-<li>Altere o modo de formatação EXPLAIN. Padrão: automático</li>
-</ol>
-</li>
-<li>.filectrl CMD ...
-<ol>
-<li>Execute várias operações sqlite3_file_control()</li>
-</ol>
-</li>
-<li>.fullschema ?--indent?
-<ol>
-<li>Mostrar esquema e o conteúdo das tabelas sqlite_stat</li>
-</ol>
-</li>
-<li>.headers on|off
-<ol>
-<li>Ativar ou desativar a exibição de cabeçalhos</li>
-</ol>
-</li>
-<li>.help ?-all? ?PATTERN?
-<ol>
-<li>Mostrar texto de ajuda para PATTERN</li>
-</ol>
-</li>
-<li>.import FILE TABLE
-<ol>
-<li>Importar dados de FILE para TABLE</li>
-</ol>
-</li>
-<li>.imposter INDEX TABLE
-<ol>
-<li>Criar tabela impostor TABLE no índice INDEX</li>
-</ol>
-</li>
-<li>.indexes ?TABLE?
-<ol>
-<li>Mostrar nomes de índices</li>
-</ol>
-</li>
-<li>.limit ?LIMIT? ?VAL?
-<ol>
-<li>Exibir ou alterar o valor de um SQLITE_LIMIT</li>
-</ol>
-</li>
-<li>.lint OPTIONS
-<ol>
-<li>Relate possíveis problemas de esquema.</li>
-</ol>
-</li>
-<li>.load FILE ?ENTRY?
-<ol>
-<li>Carregar uma biblioteca de extensão</li>
-</ol>
-</li>
-<li>.log FILE|off
-<ol>
-<li>Ative ou desative o registro. ARQUIVO pode ser stderr/stdout</li>
-</ol>
-</li>
-<li>.mode MODE ?TABLE?
-<ol>
-<li>Definir modo de saída</li>
-</ol>
-</li>
-<li>.nullvalue STRING
-<ol>
-<li>Use STRING no lugar de valores NULL</li>
-</ol>
-</li>
-<li>.once (-e|-x|FILE)
-<ol>
-<li>Saída para o próximo comando SQL apenas para FILE</li>
-</ol>
-</li>
-<li>.open ?OPTIONS? ?FILE?
-<ol>
-<li>Feche o banco de dados existente e reabra FILE</li>
-</ol>
-</li>
-<li>.output ?FILE?
-<ol>
-<li>Envie a saída para FILE ou stdout se FILE for omitido</li>
-</ol>
-</li>
-<li>.parameter CMD ...
-<ol>
-<li>Gerenciar associações de parâmetros SQL</li>
-</ol>
-</li>
-<li>.print STRING...
-<ol>
-<li>Imprimir literal STRING</li>
-</ol>
-</li>
-<li>.progress N
-<ol>
-<li>Invocar o manipulador de progresso após cada N opcodes</li>
-</ol>
-</li>
-<li>.prompt MAIN CONTINUE
-<ol>
-<li>Substitua os prompts padrão</li>
-</ol>
-</li>
-<li>.quit
-<ol>
-<li>Sair deste programa</li>
-</ol>
-</li>
-<li>.read FILE
-<ol>
-<li>Ler entrada de FILE</li>
-</ol>
-</li>
-<li>.recover
-<ol>
-<li>Recupere o máximo de dados possível de db corrompido.</li>
-</ol>
-</li>
-<li>.restore ?DB? FILE
-<ol>
-<li>Restaurar o conteúdo do banco de dados (padrão &quot;principal&quot;) de FILE</li>
-</ol>
-</li>
-<li>.save FILE
-<ol>
-<li>Gravar banco de dados na memória em FILE</li>
-</ol>
-</li>
-<li>.scanstats on|off
-<ol>
-<li>Ativar ou desativar as métricas sqlite3_stmt_scanstatus()</li>
-</ol>
-</li>
-<li>.schema ?PATTERN?
-<ol>
-<li>Mostrar as instruções CREATE correspondentes a PATTERN</li>
-</ol>
-</li>
-<li>.selftest ?OPTIONS?
-<ol>
-<li>Executar testes definidos na tabela SELFTEST</li>
-</ol>
-</li>
-<li>.separator COL ?ROW?
-<ol>
-<li>Alterar os separadores de coluna e linha</li>
-</ol>
-</li>
-<li>.session ?NAME? CMD ...
-<ol>
-<li>Criar ou controlar sessões</li>
-</ol>
-</li>
-<li>.sha3sum ...
-<ol>
-<li>Calcular um hash SHA3 do conteúdo do banco de dados</li>
-</ol>
-</li>
-<li>.shell CMD ARGS...
-<ol>
-<li>Execute o CMD ARGS... em um shell do sistema</li>
-</ol>
-</li>
-<li>.show
-<ol>
-<li>Mostrar os valores atuais para várias configurações</li>
-</ol>
-</li>
-<li>.stats ?on|off?
-<ol>
-<li>Mostrar estatísticas ou ativar ou desativar estatísticas</li>
-</ol>
-</li>
-<li>.system CMD ARGS...
-<ol>
-<li>Execute o CMD ARGS... em um shell do sistema</li>
-</ol>
-</li>
-<li>.tables ?TABLE?
-<ol>
-<li>Listar nomes de tabelas que correspondem ao padrão LIKE TABLE</li>
-</ol>
-</li>
-<li>.testcase NAME
-<ol>
-<li>Comece a redirecionar a saída para 'testcase-out.txt'</li>
-</ol>
-</li>
-<li>.testctrl CMD ...
-<ol>
-<li>Execute várias operações sqlite3_test_control()</li>
-</ol>
-</li>
-<li>.timeout MS
-<ol>
-<li>Tente abrir tabelas bloqueadas por milissegundos de MS</li>
-</ol>
-</li>
-<li>.timer on|off
-<ol>
-<li>Ativar ou desativar o temporizador SQL</li>
-</ol>
-</li>
-<li>.trace ?OPTIONS?
-<ol>
-<li>Saída de cada instrução SQL à medida que é executada</li>
-</ol>
-</li>
-<li>.vfsinfo ?AUX?
-<ol>
-<li>Informações sobre o VFS de nível superior</li>
-</ol>
-</li>
-<li>.vfslist
-<ol>
-<li>Listar todos os VFSs disponíveis</li>
-</ol>
-</li>
-<li>.vfsname ?AUX?
-<ol>
-<li>Imprima o nome da pilha VFS</li>
-</ol>
-</li>
-<li>.width NUM1 NUM2 ...
-<ol>
-<li>Definir larguras de coluna para o modo &quot;coluna&quot;</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="https://www.sqlite.org/cli.html">Cliente SqLite3</a></li>
-<li><a href="link">title</a></li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_referencias></span><strong>REFERÊNCIAS GLOBAIS</strong></p>
-<ol>
-<li><a href="#1">Site oficial para produzir este documento</a></li>
-</ol>
-</li>
-<li>
-<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
-<ol>
-<li>
-<p>dd/mm/2021 <!--TODO: HISTÓRICO --></p>
-<ul>
-<li><text onclick="goBack()">[🔙]</text></li>
-</ul>
-</li>
-<li>
-<p>dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
-<ul class="contains-task-list">
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Criar este documento baseado no <a href="http://modelo03.html">modelo03.md</a> ;</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Objetivos;</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Pre-requisitos</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Benefícios</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico desvantagens</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Exemplos</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</li>
-<li><text onclick="goBack()">[🔙]</text></li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
-<!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
-<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+                        <ol>
+                          <li><strong>NOTAS</strong>
+                            <ol>
+                              <li>Para ver todos as opções do cliente <strong>sqlite3</strong> escreva <strong>.help</strong></li>
+                              <li>Caso o comando <strong>CREATE TABLE</strong> não seja executado o banco de dados não será criado porque não existe tabela dentro dele.</li>
+                            </ol>
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>Principais comandos:</p>
+                    <ol>
+                      <li><strong>.databases</strong>
+                        <ol>
+                          <li>Lista todos os bancos de dados da pasta.</li>
+                        </ol>
+                      </li>
+                      <li><strong>.cd DIRECTORY</strong>
+                        <ol>
+                          <li>Altere o diretório de trabalho para DIRETÓRIO</li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><strong>Referências:</strong></p>
+                    <ol>
+                      <li><a href="https://www.sqlite.org/cli.html">Cliente sqLite3</a></li>
+                      <li><a href="link">title</a></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><span id=id_assunto03></span><strong>Lista de comandos do cliente sqlite3</strong></p>
+                <ol>
+                  <li>
+                    <p>sqlite&gt; .help</p>
+                    <ol>
+                      <li>.archive ...
+                        <ol>
+                          <li>Gerenciar arquivos SQL</li>
+                        </ol>
+                      </li>
+                      <li>.auth ON|OFF
+                        <ol>
+                          <li>Mostrar retornos de chamada do autorizador</li>
+                        </ol>
+                      </li>
+                      <li>.backup ?DB? FILE
+                        <ol>
+                          <li>Backup de banco de dados (padrão &quot;principal&quot;) para FILE</li>
+                        </ol>
+                      </li>
+                      <li>.bail on|off
+                        <ol>
+                          <li>Pare depois de acertar um erro. Padrão DESLIGADO</li>
+                        </ol>
+                      </li>
+                      <li>.binary on|off
+                        <ol>
+                          <li>Ligue ou desligue a saída binária. Padrão DESLIGADO</li>
+                        </ol>
+                      </li>
+                      <li>.cd DIRECTORY
+                        <ol>
+                          <li>Altere o diretório de trabalho para DIRETÓRIO</li>
+                        </ol>
+                      </li>
+                      <li>.changes on|off
+                        <ol>
+                          <li>Mostrar o número de linhas alteradas pelo SQL</li>
+                        </ol>
+                      </li>
+                      <li>.check GLOB
+                        <ol>
+                          <li>Falha se a saída porque .testcase não corresponde</li>
+                        </ol>
+                      </li>
+                      <li>.clone NEWDB
+                        <ol>
+                          <li>Clone dados em NEWDB do banco de dados existente</li>
+                        </ol>
+                      </li>
+                      <li>.databases
+                        <ol>
+                          <li>Listar nomes e arquivos de bancos de dados anexados</li>
+                        </ol>
+                      </li>
+                      <li>.dbconfig ?op? ?val?
+                        <ol>
+                          <li>Listar ou alterar as opções sqlite3_db_config()</li>
+                        </ol>
+                      </li>
+                      <li>.dbinfo ?DB?
+                        <ol>
+                          <li>Mostrar informações de status sobre o banco de dados</li>
+                        </ol>
+                      </li>
+                      <li>.dump ?TABLE? ...
+                        <ol>
+                          <li>Renderize todo o conteúdo do banco de dados como SQL</li>
+                        </ol>
+                      </li>
+                      <li>.echo on|off
+                        <ol>
+                          <li>Ativar ou desativar o eco de comando</li>
+                        </ol>
+                      </li>
+                      <li>.eqp on|off|full|...
+                        <ol>
+                          <li>Ativar ou desativar o EXPLAIN QUERY PLAN automático</li>
+                        </ol>
+                      </li>
+                      <li>.excel
+                        <ol>
+                          <li>Exibir a saída do próximo comando na planilha</li>
+                        </ol>
+                      </li>
+                      <li>.exit ?CODE?
+                        <ol>
+                          <li>Saia deste programa com o código de retorno CODE</li>
+                        </ol>
+                      </li>
+                      <li>.expert
+                        <ol>
+                          <li>EXPERIMENTAL. Sugerir índices para consultas</li>
+                        </ol>
+                      </li>
+                      <li>.explain ?on|off|auto?
+                        <ol>
+                          <li>Altere o modo de formatação EXPLAIN. Padrão: automático</li>
+                        </ol>
+                      </li>
+                      <li>.filectrl CMD ...
+                        <ol>
+                          <li>Execute várias operações sqlite3_file_control()</li>
+                        </ol>
+                      </li>
+                      <li>.fullschema ?--indent?
+                        <ol>
+                          <li>Mostrar esquema e o conteúdo das tabelas sqlite_stat</li>
+                        </ol>
+                      </li>
+                      <li>.headers on|off
+                        <ol>
+                          <li>Ativar ou desativar a exibição de cabeçalhos</li>
+                        </ol>
+                      </li>
+                      <li>.help ?-all? ?PATTERN?
+                        <ol>
+                          <li>Mostrar texto de ajuda para PATTERN</li>
+                        </ol>
+                      </li>
+                      <li>.import FILE TABLE
+                        <ol>
+                          <li>Importar dados de FILE para TABLE</li>
+                        </ol>
+                      </li>
+                      <li>.imposter INDEX TABLE
+                        <ol>
+                          <li>Criar tabela impostor TABLE no índice INDEX</li>
+                        </ol>
+                      </li>
+                      <li>.indexes ?TABLE?
+                        <ol>
+                          <li>Mostrar nomes de índices</li>
+                        </ol>
+                      </li>
+                      <li>.limit ?LIMIT? ?VAL?
+                        <ol>
+                          <li>Exibir ou alterar o valor de um SQLITE_LIMIT</li>
+                        </ol>
+                      </li>
+                      <li>.lint OPTIONS
+                        <ol>
+                          <li>Relate possíveis problemas de esquema.</li>
+                        </ol>
+                      </li>
+                      <li>.load FILE ?ENTRY?
+                        <ol>
+                          <li>Carregar uma biblioteca de extensão</li>
+                        </ol>
+                      </li>
+                      <li>.log FILE|off
+                        <ol>
+                          <li>Ative ou desative o registro. ARQUIVO pode ser stderr/stdout</li>
+                        </ol>
+                      </li>
+                      <li>.mode MODE ?TABLE?
+                        <ol>
+                          <li>Definir modo de saída</li>
+                        </ol>
+                      </li>
+                      <li>.nullvalue STRING
+                        <ol>
+                          <li>Use STRING no lugar de valores NULL</li>
+                        </ol>
+                      </li>
+                      <li>.once (-e|-x|FILE)
+                        <ol>
+                          <li>Saída para o próximo comando SQL apenas para FILE</li>
+                        </ol>
+                      </li>
+                      <li>.open ?OPTIONS? ?FILE?
+                        <ol>
+                          <li>Feche o banco de dados existente e reabra FILE</li>
+                        </ol>
+                      </li>
+                      <li>.output ?FILE?
+                        <ol>
+                          <li>Envie a saída para FILE ou stdout se FILE for omitido</li>
+                        </ol>
+                      </li>
+                      <li>.parameter CMD ...
+                        <ol>
+                          <li>Gerenciar associações de parâmetros SQL</li>
+                        </ol>
+                      </li>
+                      <li>.print STRING...
+                        <ol>
+                          <li>Imprimir literal STRING</li>
+                        </ol>
+                      </li>
+                      <li>.progress N
+                        <ol>
+                          <li>Invocar o manipulador de progresso após cada N opcodes</li>
+                        </ol>
+                      </li>
+                      <li>.prompt MAIN CONTINUE
+                        <ol>
+                          <li>Substitua os prompts padrão</li>
+                        </ol>
+                      </li>
+                      <li>.quit
+                        <ol>
+                          <li>Sair deste programa</li>
+                        </ol>
+                      </li>
+                      <li>.read FILE
+                        <ol>
+                          <li>Ler entrada de FILE</li>
+                        </ol>
+                      </li>
+                      <li>.recover
+                        <ol>
+                          <li>Recupere o máximo de dados possível de db corrompido.</li>
+                        </ol>
+                      </li>
+                      <li>.restore ?DB? FILE
+                        <ol>
+                          <li>Restaurar o conteúdo do banco de dados (padrão &quot;principal&quot;) de FILE</li>
+                        </ol>
+                      </li>
+                      <li>.save FILE
+                        <ol>
+                          <li>Gravar banco de dados na memória em FILE</li>
+                        </ol>
+                      </li>
+                      <li>.scanstats on|off
+                        <ol>
+                          <li>Ativar ou desativar as métricas sqlite3_stmt_scanstatus()</li>
+                        </ol>
+                      </li>
+                      <li>.schema ?PATTERN?
+                        <ol>
+                          <li>Mostrar as instruções CREATE correspondentes a PATTERN</li>
+                        </ol>
+                      </li>
+                      <li>.selftest ?OPTIONS?
+                        <ol>
+                          <li>Executar testes definidos na tabela SELFTEST</li>
+                        </ol>
+                      </li>
+                      <li>.separator COL ?ROW?
+                        <ol>
+                          <li>Alterar os separadores de coluna e linha</li>
+                        </ol>
+                      </li>
+                      <li>.session ?NAME? CMD ...
+                        <ol>
+                          <li>Criar ou controlar sessões</li>
+                        </ol>
+                      </li>
+                      <li>.sha3sum ...
+                        <ol>
+                          <li>Calcular um hash SHA3 do conteúdo do banco de dados</li>
+                        </ol>
+                      </li>
+                      <li>.shell CMD ARGS...
+                        <ol>
+                          <li>Execute o CMD ARGS... em um shell do sistema</li>
+                        </ol>
+                      </li>
+                      <li>.show
+                        <ol>
+                          <li>Mostrar os valores atuais para várias configurações</li>
+                        </ol>
+                      </li>
+                      <li>.stats ?on|off?
+                        <ol>
+                          <li>Mostrar estatísticas ou ativar ou desativar estatísticas</li>
+                        </ol>
+                      </li>
+                      <li>.system CMD ARGS...
+                        <ol>
+                          <li>Execute o CMD ARGS... em um shell do sistema</li>
+                        </ol>
+                      </li>
+                      <li>.tables ?TABLE?
+                        <ol>
+                          <li>Listar nomes de tabelas que correspondem ao padrão LIKE TABLE</li>
+                        </ol>
+                      </li>
+                      <li>.testcase NAME
+                        <ol>
+                          <li>Comece a redirecionar a saída para 'testcase-out.txt'</li>
+                        </ol>
+                      </li>
+                      <li>.testctrl CMD ...
+                        <ol>
+                          <li>Execute várias operações sqlite3_test_control()</li>
+                        </ol>
+                      </li>
+                      <li>.timeout MS
+                        <ol>
+                          <li>Tente abrir tabelas bloqueadas por milissegundos de MS</li>
+                        </ol>
+                      </li>
+                      <li>.timer on|off
+                        <ol>
+                          <li>Ativar ou desativar o temporizador SQL</li>
+                        </ol>
+                      </li>
+                      <li>.trace ?OPTIONS?
+                        <ol>
+                          <li>Saída de cada instrução SQL à medida que é executada</li>
+                        </ol>
+                      </li>
+                      <li>.vfsinfo ?AUX?
+                        <ol>
+                          <li>Informações sobre o VFS de nível superior</li>
+                        </ol>
+                      </li>
+                      <li>.vfslist
+                        <ol>
+                          <li>Listar todos os VFSs disponíveis</li>
+                        </ol>
+                      </li>
+                      <li>.vfsname ?AUX?
+                        <ol>
+                          <li>Imprima o nome da pilha VFS</li>
+                        </ol>
+                      </li>
+                      <li>.width NUM1 NUM2 ...
+                        <ol>
+                          <li>Definir larguras de coluna para o modo &quot;coluna&quot;</li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><strong>Referências:</strong></p>
+                    <ol>
+                      <li><a href="https://www.sqlite.org/cli.html">Cliente SqLite3</a></li>
+                      <li><a href="link">title</a></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p><span id=id_referencias></span><strong>REFERÊNCIAS GLOBAIS</strong></p>
+            <ol>
+              <li><a href="#1">Site oficial para produzir este documento</a></li>
+            </ol>
+          </li>
+          <li>
+            <p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+            <ol>
+              <li>
+                <p>dd/mm/2021
+                  <!--TODO: HISTÓRICO -->
+                </p>
+                <ul>
+                  <li><text onclick="goBack()">[🔙]</text></li>
+                </ul>
+              </li>
+              <li>
+                <p>dd/mm/2021
+                  <!--FIXME: Falta fazer os item abaixo: -->
+                </p>
+                <ul class="contains-task-list">
+                  <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Criar este documento baseado no <a href="http://modelo03.html">modelo03.md</a> ;</li>
+                  <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Objetivos;</li>
+                  <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Pre-requisitos</li>
+                  <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Benefícios</li>
+                  <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico desvantagens</li>
+                  <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Conteúdo</li>
+                  <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Exemplos</li>
+                  <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Referências</li>
+                  <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Atualizar o histórico deste documento.</li>
+                  <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Testar este documento depois após uma semana de concluído.</li>
+                  <li><text onclick="goBack()">[🔙]</text></li>
+                </ul>
+              </li>
+            </ol>
+          </li>
+        </ol>
+        <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-        
-        
-    </body>
-    </html>
+
+
+</body>
+
+</html>

@@ -1,7 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<!-- markdownlint-disable-next-line -->
-### Como montar um dispositivo ou pasta ao iniciar o computador<a href="montando_pastas_ao_iniciar_o_computador.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+
+# Como montar um dispositivo ou pasta ao iniciar o computador<a href="montando_pastas_ao_iniciar_o_computador.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. **Existe três tipos de montagem diferentes quais sejam:**
     1. [_mount_](https://linux.die.net/man/8/mount) – Comando usado para monta um sistema de arquivos.
@@ -193,3 +198,9 @@
             6. _rsize_ e _wsize_ : Define o número máximo de bytes em cada solicitação READ/WRITE (obs: múltiplo inteiro positivo de 1024) que o cliente NFS pode receber/enviar ao se comunicar com um _servidor NFS 192.168.15.3_. O padrão depende da versão do kernel, mas normalmente é de 1.024 bytes.
             7. _time_ : Define o tempo (em décimos de segundo) que o cliente NFS espera por uma resposta antes de tentar novamente uma solicitação NFS.
             8. [Referência...](https://linuxopsys.com/topics/linux-nfs-mount-entry-in-fstab-with-example)
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

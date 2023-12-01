@@ -1,8 +1,11 @@
-<!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>    
-
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
+
 # O que é git? <a href="o_que_e_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
@@ -532,5 +535,8 @@
 <!-- markdownlint-disable-next-line -->
 [🔝](#)
 
+</main>
+
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>               
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

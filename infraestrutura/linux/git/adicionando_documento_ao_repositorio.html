@@ -1,31 +1,46 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Adicionando documento ao reposit&oacute;rio &lt;a href&equals;&quot;adicionando&lowbar;documento&lowbar;ao&lowbar;repositorio&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-   
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description"   content="" />
-        <meta name="keywords" content="" />
-           
-        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
-        <!-- <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/> -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+<html>
 
-        <script type="application/x-javascript" src="/js/generic.js"></script>
-        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>   
+<head>
+  <meta charset="UTF-8">
+  <title>Adicionando documento ao reposit&oacute;rio &lt;a href&equals;&quot;adicionando&lowbar;documento&lowbar;ao&lowbar;repositorio&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>   
-<!-- markdownlint-disable-next-line -->
-<h4 id="adicionando-documento-ao-repositório----">Adicionando documento ao repositório <a href="adicionando_documento_ao_repositorio.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h4>
-<ol>
-<li>
-<p>Siga os comandos abaixo para adicionar todo o conteúdo da pasta corrente  *.*  ao repositório git:</p>
-<pre><code class="hljs language-sh">    <span class="hljs-comment"># Move-se para o diretório onde ser deseja adicionar os documentos ao repositório</span>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="adicionando-documento-ao-repositório----">Adicionando documento ao repositório <a href="adicionando_documento_ao_repositorio.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+        <ol>
+          <li>
+            <p>Siga os comandos abaixo para adicionar todo o conteúdo da pasta corrente *.* ao repositório git:</p>
+            <pre><code class="hljs language-bash">
+    <span class="hljs-comment"># Move-se para o diretório onde ser deseja adicionar os documentos ao repositório</span>
     <span class="hljs-built_in">cd</span> ~/meuProjeto  
 
     <span class="hljs-comment"># Caso não existe o repositório ainda, então é necessário inicializa-lo</span>
@@ -43,21 +58,28 @@
     <span class="hljs-comment"># para o último ramo selecionando.</span>
     git branch -M main                                
 </code></pre>
-</li>
-<li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="https://www.atlassian.com/br/git/tutorials/setting-up-a-repository/git-init">git init</a>;</li>
-<li><a href="https://git-scm.com/docs/git/pt_BR">https://git-scm.com/docs/git/en</a>;</li>
-<li><a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init#:~:text=The%20git%20init%20command%20creates,run%20in%20a%20new%20project.">git init</a>.</li>
-<li><a href="https://githowto.com/pt-BR/staging_changes">Adicionando modificações</a></li>
-<li><a href="https://githowto.com/pt-BR/changes_not_files">Exemplo de várias alterações e vários commits</a></li>
-</ol>
-</li>
-</ol>
-<!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>       
-        
-        
-    </body>
-    </html>
+          </li>
+          <li>
+            <p><strong>Referências:</strong></p>
+            <ol>
+              <li><a href="https://www.atlassian.com/br/git/tutorials/setting-up-a-repository/git-init">git init</a>;</li>
+              <li><a href="https://git-scm.com/docs/git/pt_BR">https://git-scm.com/docs/git/en</a>;</li>
+              <li><a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init#:~:text=The%20git%20init%20command%20creates,run%20in%20a%20new%20project.">git init</a>.</li>
+              <li><a href="https://githowto.com/pt-BR/staging_changes">Adicionando modificações</a></li>
+              <li><a href="https://githowto.com/pt-BR/changes_not_files">Exemplo de várias alterações e vários commits</a></li>
+            </ol>
+          </li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+
+
+</body>
+
+</html>

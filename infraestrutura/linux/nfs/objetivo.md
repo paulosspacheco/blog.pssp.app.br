@@ -1,5 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-#### Objetivo do Serviço NFS
+<span id="topo"><span>
+
+# Objetivo do Serviço NFS
 
 O Network File System (NFS) é um mecanismo para armazenar arquivos em uma rede. É um sistema de arquivos distribuído que permite aos usuários acessar arquivos e diretórios localizados em computadores remotos e tratar esses arquivos e diretórios como se fossem locais.
 
@@ -11,3 +18,8 @@ O pacote de software NFS inclui comandos e daemons para NFS, Network Information
 
 1. [Utilização e Operação do NFS PC/NFS](https://www.cin.ufpe.br/~flash/resultados/cursos/taais/1996-1/danise/paper3.html)
 
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

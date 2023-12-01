@@ -1,4 +1,12 @@
-#### Pre-requisito para instalar o servidor web apache2
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
+# Pre-requisito para instalar o servidor web apache2
 
 1. Sistema operacional Linux ou  windows instalado;
 2. Comunicação com a internet;
@@ -16,3 +24,9 @@
 
 9. Opcional:
    1. Abrir a porta _tcp:80_ e permitir tráfego http, caso queira tráfego _HTTPS_ a porta _tcp:443_ deve ser aberta. Se quiser abrir portas diferentes, configure o firewall, depois configure o Apache para usar o firewall.
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

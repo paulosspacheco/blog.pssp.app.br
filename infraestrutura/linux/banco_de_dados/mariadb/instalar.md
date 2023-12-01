@@ -1,5 +1,8 @@
-<!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
@@ -29,7 +32,7 @@
    1. Instala o servidor de banco de dados mariadb e seus acessórios:
       1. Código ShellScript
 
-         ```sh
+         ```bash
 
            # Atualiza o repositório:
            sudo update
@@ -48,7 +51,7 @@
          2. Execute o seguinte comando para permitir o acesso remoto ao servidor mysql:
             1. Código ShellScript
 
-               ```sh
+               ```bash
 
                   sudo ufw enable
                   sudo ufw allow mysql
@@ -58,7 +61,7 @@
    2. Como instalar a aplicação cliente MariaDb
       1. Código ShellScript
 
-         ```sh
+         ```bash
 
            # Instala a aplicação cliente do mariadb
            sudo apt install mariadb-client
@@ -80,7 +83,7 @@
 
    1. Código ShellScript
 
-      ```sh
+      ```bash
 
         # Visualiza o número da versão instalada:
         sudo mysqladmin version
@@ -179,6 +182,8 @@
    5. [install mariadb ubuntu 18 04](https://www.youtube.com/watch?v=bCKxijsiG9M).
    6. [Testando o servidor](https://dev.mysql.com/doc/refman/5.7/en/testing-server.html)
    7. [🔝](#topo_Index "Retorna ao topo")
+
+</main>
 
 <!-- markdownlint-disable-next-line -->
 <script>  includeHTML(); FixHeader(window,"myHeader"); </script>

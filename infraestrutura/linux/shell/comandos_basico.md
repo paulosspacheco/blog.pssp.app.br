@@ -1,12 +1,10 @@
-
-<header>
-   <nav id="topnav">
-      <div w3-include-html="/menu.inc"></div>
-      <div class="title"> <script>document.write(document.title);</script></div>
-   </nav>
-</header>
-
-<article id="article">
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
 
 # Comandos básico do Shell do Linux <a href="comandos_basico.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
@@ -1302,8 +1300,8 @@
   <!-- markdownlint-disable-next-line -->
   <div class="footer"><div w3-include-html="/js/footer.inc"></div></div>
 
-<!-- markdownlint-disable-next-line -->  
-</article>
+</main>
 
 <!-- markdownlint-disable-next-line -->
 <script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

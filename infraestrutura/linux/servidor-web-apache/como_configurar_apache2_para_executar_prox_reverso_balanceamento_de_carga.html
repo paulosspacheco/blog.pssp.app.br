@@ -1,32 +1,51 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Como configurar apache2 para executar proxy reverso com balanceamento de carga &lt;a href&equals;&quot;como&lowbar;configurar&lowbar;apache2&lowbar;para&lowbar;executar&lowbar;prox&lowbar;reverso&lowbar;balanceamento&lowbar;de&lowbar;carga&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;  &#x1fa9f; &lt;&sol;a&gt;</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <title>Como configurar apache2 para executar proxy reverso com balanceamento de carga &lt;a href&equals;&quot;como&lowbar;configurar&lowbar;apache2&lowbar;para&lowbar;executar&lowbar;prox&lowbar;reverso&lowbar;balanceamento&lowbar;de&lowbar;carga&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt; &#x279a; &lt;&sol;a&gt;</title>
 
-        <!-- CSS markdown -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
-        
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
 
-    </head>
-    <body class="vscode-body vscode-light">
-        <h4 id="como-configurar-apache2-para-executar-proxy-reverso-com-balanceamento-de-carga----">Como configurar apache2 para executar proxy reverso com balanceamento de carga <a href="como_configurar_apache2_para_executar_prox_reverso_balanceamento_de_carga.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h4>
-<ol>
-<li>
-<p>Checar se as configurações do apache estão <strong>ok</strong>.</p>
-<pre><code class="hljs language-sh">  
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="como-configurar-apache2-para-executar-proxy-reverso-com-balanceamento-de-carga----">Como configurar apache2 para executar proxy reverso com balanceamento de carga <a href="como_configurar_apache2_para_executar_prox_reverso_balanceamento_de_carga.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h1> -->
+        <ol>
+          <li>
+            <p>Checar se as configurações do apache estão <strong>ok</strong>.</p>
+            <pre><code class="hljs language-sh">  
    sudo apachectl configtest
 
 </code></pre>
-</li>
-<li>
-<p>Configurar Apache para funcionar como <strong>proxy reverso</strong>  (encaminhando solicitações de clientes para aplicativos de back-end.) com <strong>mod_proxy</strong>.</p>
-<pre><code class="hljs language-sh">
+          </li>
+          <li>
+            <p>Configurar Apache para funcionar como <strong>proxy reverso</strong> (encaminhando solicitações de clientes para aplicativos de back-end.) com <strong>mod_proxy</strong>.</p>
+            <pre><code class="hljs language-sh">
    <span class="hljs-comment">#  implementa proxy no servidor Apache.</span>
    sudo a2enmod proxy
 
@@ -48,10 +67,10 @@
     
 
 </code></pre>
-</li>
-<li>
-<p>Habilita módulo <strong>proxy_fcgi</strong> para fornece suporte para o protocolo FastCGI, associado <strong>setenvif</strong> que define as variáveis ​​enviadas ao FastCGI.</p>
-<pre><code class="hljs language-sh">
+          </li>
+          <li>
+            <p>Habilita módulo <strong>proxy_fcgi</strong> para fornece suporte para o protocolo FastCGI, associado <strong>setenvif</strong> que define as variáveis ​​enviadas ao FastCGI.</p>
+            <pre><code class="hljs language-sh">
   <span class="hljs-comment"># Permite prox em aplicações FastCGI</span>
   sudo a2enmod proxy_fcgi setenvif
 
@@ -59,13 +78,13 @@
   sudo systemctl restart apache2   
 
 </code></pre>
-</li>
-<li>
-<p>Crie o site /<strong>etc/apache2/sites-available/cgi-bin-80-to-8080.conf</strong> para lidar aplicação redirecionadas da porta 80 para a porta 8080 e adicione o seguinte arquivo:</p>
-<ol>
-<li>
-<p>Arquivo texto na pasta sites-available</p>
-<pre><code class="hljs language-sh">
+          </li>
+          <li>
+            <p>Crie o site /<strong>etc/apache2/sites-available/cgi-bin-80-to-8080.conf</strong> para lidar aplicação redirecionadas da porta 80 para a porta 8080 e adicione o seguinte arquivo:</p>
+            <ol>
+              <li>
+                <p>Arquivo texto na pasta sites-available</p>
+                <pre><code class="hljs language-sh">
    &lt;VirtualHost *:80&gt;
    
          ServerName cgi-bin-80-to-8080.conf
@@ -84,15 +103,15 @@
    &lt;/VirtualHost&gt;
 
 </code></pre>
-</li>
-<li>
-<p>Habilite o site <strong>cgi-bin-80-to-8080</strong> no arquivo <strong>/etc/host</strong> ou no servidor DNS instalado.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Ative o arquivo de configuração <strong>cgi-bin-80-to-8080.conf</strong></p>
-<pre><code class="hljs language-sh">  
+              </li>
+              <li>
+                <p>Habilite o site <strong>cgi-bin-80-to-8080</strong> no arquivo <strong>/etc/host</strong> ou no servidor DNS instalado.</p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>Ative o arquivo de configuração <strong>cgi-bin-80-to-8080.conf</strong></p>
+            <pre><code class="hljs language-sh">  
    <span class="hljs-comment"># Ativa o site cgi-bin-80-to-8080 </span>
    sudo a2ensite cgi-bin-80-to-8080.conf
 
@@ -100,19 +119,27 @@
    sudo systemctl reload apache2 
 
 </code></pre>
-</li>
-</ol>
-<h5 id="referências">REFERÊNCIAS</h5>
-<ol>
-<li><a href="https://httpd.apache.org/docs/2.4/mod/mod_proxy.html">Módulo Apache mod_proxy</a></li>
-<li><a href="https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html">Módulo Apache mod_proxy_fcgi</a></li>
-<li><a href="https://www.vultr.com/docs/how-to-configure-apache-as-a-reverse-proxy-with-mod-proxy-54152/?utm_source=performance-max-latam&amp;utm_medium=paidmedia&amp;obility_id=17096555207&amp;utm_adgroup=&amp;utm_campaign=&amp;utm_term=&amp;utm_content=&amp;gclid=CjwKCAjwl6OiBhA2EiwAuUwWZT7N_XoTrf3vqMja69M7ub1rV9dfn96XCLGGBd99glDrdlxWHkJPDBoCEd0QAvD_BwE">Como configurar o Apache como um proxy reverso com mod_proxy</a></li>
-<li><a href="https://eff-certbot.readthedocs.io/en/stable/intro.html">Certbot is usually meant to be used to switch an existing HTTP site to work in HTTPS...</a></li>
-<li><a href="https://eff-certbot.readthedocs.io/en/stable/what.html">O que é um Certificado?</a></li>
-<li>...</li>
-</ol>
+          </li>
+        </ol>
+        <h5 id="referências">REFERÊNCIAS</h5>
+        <ol>
+          <li><a href="https://httpd.apache.org/docs/2.4/mod/mod_proxy.html">Módulo Apache mod_proxy</a></li>
+          <li><a href="https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html">Módulo Apache mod_proxy_fcgi</a></li>
+          <li><a href="https://www.vultr.com/docs/how-to-configure-apache-as-a-reverse-proxy-with-mod-proxy-54152/?utm_source=performance-max-latam&amp;utm_medium=paidmedia&amp;obility_id=17096555207&amp;utm_adgroup=&amp;utm_campaign=&amp;utm_term=&amp;utm_content=&amp;gclid=CjwKCAjwl6OiBhA2EiwAuUwWZT7N_XoTrf3vqMja69M7ub1rV9dfn96XCLGGBd99glDrdlxWHkJPDBoCEd0QAvD_BwE">Como configurar o Apache como um proxy reverso com mod_proxy</a></li>
+          <li><a href="https://eff-certbot.readthedocs.io/en/stable/intro.html">Certbot is usually meant to be used to switch an existing HTTP site to work in HTTPS...</a></li>
+          <li><a href="https://eff-certbot.readthedocs.io/en/stable/what.html">O que é um Certificado?</a></li>
+          <li>...</li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-        
-        
-     </body>
-    </html>
+
+
+</body>
+
+</html>

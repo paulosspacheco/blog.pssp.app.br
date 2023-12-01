@@ -1,12 +1,17 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>   
+<span id="topo"><span>
 
-<!-- markdownlint-disable-next-line -->
-#### Adicionando documento ao repositório <a href="adicionando_documento_ao_repositorio.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+# Adicionando documento ao repositório <a href="adicionando_documento_ao_repositorio.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Siga os comandos abaixo para adicionar todo o conteúdo da pasta corrente  \*.\*  ao repositório git:
 
-    ```sh
+    ```bash
+    
         # Move-se para o diretório onde ser deseja adicionar os documentos ao repositório
         cd ~/meuProjeto  
 
@@ -33,5 +38,8 @@
    4. [Adicionando modificações](https://githowto.com/pt-BR/staging_changes)
    5. [Exemplo de várias alterações e vários commits](https://githowto.com/pt-BR/changes_not_files)
 
+</main>
+
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>       
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

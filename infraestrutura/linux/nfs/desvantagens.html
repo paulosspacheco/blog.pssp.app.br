@@ -1,28 +1,54 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Desvantagens do servi&ccedil;o NFS</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <title>Desvantagens do servi&ccedil;o NFS</title>
 
-        <!-- CSS markdown -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
-        
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="desvantagens-do-serviço-nfs">Desvantagens do serviço NFS</h1> -->
+        <ol>
+          <li>O NFS pode causar sobrecarga adicional à sua CPU, do servidor físico do XenServer. E o próprio TCP/IP pode introduzir alguma latência na conexão com o storage.</li>
+          <li>Não achei quase nada sobre as desvantagens do protocolo NFS.</li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
 
-    </head>
-    <body class="vscode-body vscode-light">
-        <!-- markdownlint-disable-next-line -->
-<h4 id="desvantagens-do-serviço-nfs">Desvantagens do serviço NFS</h4>
-<ol>
-<li>O NFS pode causar sobrecarga adicional à sua CPU, do servidor físico do XenServer. E o próprio TCP/IP pode introduzir alguma latência na conexão com o storage.</li>
-<li>Não achei quase nada sobre as desvantagens do protocolo NFS.</li>
-</ol>
 
-        
-        
-     </body>
-    </html>
+</body>
+
+</html>

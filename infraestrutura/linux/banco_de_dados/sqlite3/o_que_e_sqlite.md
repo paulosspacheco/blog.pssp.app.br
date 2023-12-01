@@ -1,6 +1,8 @@
-<!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
-
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
@@ -67,7 +69,7 @@
       1. A página do site [w3big](http://www.w3big.com/sqlite/sqlite-installation.html) tem instruções detalhada de como instalar o sqlite.
          1. Instalar no Linux distribuição Debian e seus derivados**.
 
-            ```sh
+            ```bash
 
               # biblioteca compartilhada SQLite 3
               sudo apt install sqlite3
@@ -91,7 +93,7 @@
       1. Como criar o banco de dados **DataBase1.db3**?
          1. Entrar no shell do linux e executar os comandos:
 
-            ```sh
+            ```bash
 
               # Abre o cliente SqLite com nome do banco de dados DataBase1.db3
               sqlite3 DataBase1.db3
@@ -278,6 +280,8 @@
       - <text onclick="goBack()">[🔙]</text>
 
 [🔝🔝](#topo "Retorna ao topo")
+
+</main>
 
 <!-- markdownlint-disable-next-line -->
 <script>  includeHTML(); FixHeader(window,"myHeader"); </script>

@@ -1,8 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>   
+<span id="topo"><span>
 
-<!-- markdownlint-disable-next-line -->
-#### COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a>
+# COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO <a href="como_instalar_servidor_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a>
 
 - [COMO INSTALAR E CONFIGURAR UM SERVIDOR GIT REMOTO  ➚ ](#como-instalar-e-configurar-um-servidor-git-remoto---)
   - [INTRODUÇÃO](#introdução)
@@ -13,7 +17,7 @@
 ---
 ---
 
-##### INTRODUÇÃO
+## INTRODUÇÃO
 
 1. **Objetivo:**
 
@@ -445,5 +449,8 @@
    
    ```
 
+</main>
+
 <!-- markdownlint-disable-next-line -->
 <script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

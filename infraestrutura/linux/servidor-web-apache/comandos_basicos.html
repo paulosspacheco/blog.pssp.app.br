@@ -1,25 +1,45 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Comandos mais usados na manuten&ccedil;&atilde;o dos sites &lt;a href&equals;&quot;comandos&lowbar;basicos&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;  &#x279a; &lt;&sol;a&gt;</title>
- 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <!-- CSS markdown  -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
-            
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Comandos mais usados na manuten&ccedil;&atilde;o dos sites &lt;a href&equals;&quot;comandos&lowbar;basicos&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt; &#x279a; &lt;&sol;a&gt;</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
 
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <!-- markdownlint-disable-next-line -->
-<h4 id="comandos-mais-usados-na-manutenção-dos-sites----">Comandos mais usados na manutenção dos sites <a href="comandos_basicos.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h4>
-<ol>
-<li>
-<p>Comandos para ver o status do servidor:</p>
-<pre><code class="hljs language-sh">
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="comandos-mais-usados-na-manutenção-dos-sites----">Comandos mais usados na manutenção dos sites <a href="comandos_basicos.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h1> -->
+        <ol>
+          <li>
+            <p>Comandos para ver o status do servidor:</p>
+            <pre><code class="hljs language-sh">
    <span class="hljs-comment"># Mostra os serviços ativos e as pastas onde estão localizado os mesmos</span>
    sudo systemctl status
 
@@ -30,10 +50,10 @@
 
 
 </code></pre>
-</li>
-<li>
-<p>Comandos para <strong>parar</strong> e <strong>iniciar</strong> servidor</p>
-<pre><code class="hljs language-sh">
+          </li>
+          <li>
+            <p>Comandos para <strong>parar</strong> e <strong>iniciar</strong> servidor</p>
+            <pre><code class="hljs language-sh">
   <span class="hljs-comment"># stop apache2</span>
   sudo systemctl stop apache2  
 
@@ -42,25 +62,25 @@
 
 
 </code></pre>
-</li>
-<li>
-<p>Comando para carregar as configurações de um novo <strong>virtual host</strong> sem que os outros sites saiam fora do ar:</p>
-<pre><code class="hljs language-sh">
+          </li>
+          <li>
+            <p>Comando para carregar as configurações de um novo <strong>virtual host</strong> sem que os outros sites saiam fora do ar:</p>
+            <pre><code class="hljs language-sh">
    <span class="hljs-comment"># recarrega as configurações sem reiniciar.</span>
    sudo systemctl reload apache2   
 
 </code></pre>
-</li>
-<li>
-<p>Comando para reiniciar o servidor apache2 desconectando todos os sites que estiverem ativos:</p>
-<pre><code class="hljs language-sh">
+          </li>
+          <li>
+            <p>Comando para reiniciar o servidor apache2 desconectando todos os sites que estiverem ativos:</p>
+            <pre><code class="hljs language-sh">
    sudo systemctl restart apache2  
 
 </code></pre>
-</li>
-<li>
-<p>Comandos para habilitar (a2ensite)  e desabilitar (a2dissite) um site (<strong>virtual host</strong>)</p>
-<pre><code class="hljs language-sh">
+          </li>
+          <li>
+            <p>Comandos para habilitar (a2ensite) e desabilitar (a2dissite) um site (<strong>virtual host</strong>)</p>
+            <pre><code class="hljs language-sh">
     <span class="hljs-comment"># HABILITAR SITE</span>
     <span class="hljs-comment">#   Move o arquivo /etc/apache2/sites-available/nome_do_site.conf para a pasta /etc/apache2/sites-enabled/nome_do_site.conf</span>
     sudo a2ensite nome_do_site.conf
@@ -73,10 +93,10 @@
     sudo systemctl reload apache2  
  
 </code></pre>
-</li>
-<li>
-<p>Comandos para habilitar (a2enmod)  e desabilitar (a2dismod) um módulo;</p>
-<pre><code class="hljs language-sh">
+          </li>
+          <li>
+            <p>Comandos para habilitar (a2enmod) e desabilitar (a2dismod) um módulo;</p>
+            <pre><code class="hljs language-sh">
     <span class="hljs-comment"># HABILITAR MÓDULO</span>
     <span class="hljs-comment">#   Move o arquivo /etc/apache2/mods-available/nome_do_módulo para a pasta /etc/apache2/mods-enabled/nome_do_módulo   </span>
     sudo a2enmod nome_do_módulo
@@ -89,45 +109,53 @@
     sudo systemctl reload apache2  
 
 </code></pre>
-</li>
-<li>
-<p>Para listar todos os módulos do Apache2 que estão disponíveis nos repositórios;</p>
-<pre><code class="hljs language-sh">     
+          </li>
+          <li>
+            <p>Para listar todos os módulos do Apache2 que estão disponíveis nos repositórios;</p>
+            <pre><code class="hljs language-sh">     
    sudo apt-cache search apache2-mod
 
 </code></pre>
-</li>
-<li>
-<p>Checar se as configurações do apache estão <strong>ok</strong>.</p>
-<pre><code class="hljs language-sh">
+          </li>
+          <li>
+            <p>Checar se as configurações do apache estão <strong>ok</strong>.</p>
+            <pre><code class="hljs language-sh">
   sudo apachectl configtest
 
 </code></pre>
-</li>
-<li>
-<p>Comando para listar todo o log:</p>
-<pre><code class="hljs language-sh">
+          </li>
+          <li>
+            <p>Comando para listar todo o log:</p>
+            <pre><code class="hljs language-sh">
   sudo journalctl -u apache2.service --since today --no-pager
 
 </code></pre>
-</li>
-<li>
-<p>Como habilitar o módulo cgi e FastCGI:</p>
-<pre><code class="hljs language-powershell">   <span class="hljs-comment"># O comando a seguir cria os links simbólicos cgid.load e cgid.conf </span>
+          </li>
+          <li>
+            <p>Como habilitar o módulo cgi e FastCGI:</p>
+            <pre><code class="hljs language-powershell">   <span class="hljs-comment"># O comando a seguir cria os links simbólicos cgid.load e cgid.conf </span>
    <span class="hljs-comment"># da pasta /etc/apache2/mods-available para a pasta /etc/apache2/mods-enabled</span>
    sudo a2enmod cgid
 </code></pre>
-</li>
-<li>
-<p>Como desabilitar o módulo cgi e FastCGI:</p>
-<pre><code class="hljs language-powershell">   <span class="hljs-comment"># O comando a seguir remove os links cgid.load e cgid.conf </span>
+          </li>
+          <li>
+            <p>Como desabilitar o módulo cgi e FastCGI:</p>
+            <pre><code class="hljs language-powershell">   <span class="hljs-comment"># O comando a seguir remove os links cgid.load e cgid.conf </span>
    <span class="hljs-comment"># da pasta/etc/apache2/mods-enabled</span>
    sudo a2dismod cgid
 </code></pre>
-</li>
-</ol>
+          </li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-        
-        
-    </body>
-    </html>
+
+
+</body>
+
+</html>

@@ -1,8 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>
+<span id="topo"><span>
 
-<!-- markdownlint-disable-next-line -->
-#### Criando repositório git <a href="criando_repositorio_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+# Criando repositório git <a href="criando_repositorio_git.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Use o comando **git init** para criar o repositório na pasta atual.
 
@@ -34,5 +38,8 @@
    1. [Crie um repositório](https://githowto.com/pt-BR/create_a_project)
    2. [Como mover/separar a pasta .git da sua árvore de trabalho](https://rakhesh.com/coding/how-to-move-separate-the-git-folder-out-of-your-working-tree/)
 
+</main>
+
 <!-- markdownlint-disable-next-line -->
 <script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

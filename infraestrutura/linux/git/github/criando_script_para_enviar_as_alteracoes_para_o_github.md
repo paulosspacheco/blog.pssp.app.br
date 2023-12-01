@@ -1,8 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>
+<span id="topo"><span>
 
-<!-- markdownlint-disable-next-line -->
-#### Criando script para enviar as alterações para o github <a href="criando_script_para_enviar_as_alteracoes_para_o_github.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+# Criando script para enviar as alterações para o github <a href="criando_script_para_enviar_as_alteracoes_para_o_github.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Crie um arquivo de nome ~/meuProjeto/**pushmain.sh** e cole os comandos a baixo, em seguida de permissão de execução para o arquivo **pushmain.sh**:
 
@@ -45,5 +49,9 @@
       ./pushmain.sh "Modificando o arquivo .....etc...."
 
    ```
+
+</main>
+
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>      
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

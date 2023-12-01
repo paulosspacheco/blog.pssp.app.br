@@ -1,4 +1,12 @@
-#### Como configurar apache2 para executar proxy reverso com balanceamento de carga <a href="como_configurar_apache2_para_executar_prox_reverso_balanceamento_de_carga.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
+# Como configurar apache2 para executar proxy reverso com balanceamento de carga <a href="como_configurar_apache2_para_executar_prox_reverso_balanceamento_de_carga.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
 1. Checar se as configurações do apache estão **ok**.
 
    ```sh
@@ -91,3 +99,9 @@
  4. [Certbot is usually meant to be used to switch an existing HTTP site to work in HTTPS...](https://eff-certbot.readthedocs.io/en/stable/intro.html)
  5. [O que é um Certificado?](https://eff-certbot.readthedocs.io/en/stable/what.html)
  6. ...
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

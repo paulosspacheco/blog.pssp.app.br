@@ -3,13 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title>&lowbar;CONFIGURA&Ccedil;&Atilde;O DO MARIADB&lowbar;&lt;a href&equals;&quot;configurar&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;&lt;span id&equals;&quot;topo&quot;&gt;&lt;span&gt;</title>
-
+     
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
            
-        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
-        <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/>
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
         <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
 
         <script type="application/x-javascript" src="/js/generic.js"></script>
@@ -19,11 +18,14 @@
 
     </head>
     <body class="vscode-body vscode-dark">
-        <!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<h1 id="configuração-do-mariadb---"><em>CONFIGURAÇÃO DO MARIADB</em><a href="configurar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a><span id="topo"><span></h1>
+<!-- <h1 id="configuração-do-mariadb---"><em>CONFIGURAÇÃO DO MARIADB</em><a href="configurar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a><span id="topo"><span></h1> -->
 <h2 id="index"><em><strong>INDEX</strong></em><span id="topo_Index"><span></h2>
 <hr>
 <ol>
@@ -45,22 +47,24 @@
 </ol>
 <h2 id="conteúdo"><em><strong>CONTEÚDO</strong></em><span id="topo_conteudo"><span></h2>
 <hr>
-<h3 id="1-descobrindo-onde-os-dados-são-gravados"><strong>1. Descobrindo onde os dados são gravados</strong><span id="id_1"><span></h3>
+<h3 id="1-descobrindo-onde-os-dados-são-gravados">1. Descobrindo onde os dados são gravados<span id="id_1"><span></h3>
 <ol>
 <li>
 <p>Para saber <strong>onde os dados são gravados no mariadb</strong> usar a sequencia abaixo:</p>
-</li>
+<ol>
 <li>
 <p>Entrar no cliente <em>mysql</em> do <em>mariadb</em>.</p>
-<pre><code class="hljs language-sh">
+<pre><code class="hljs language-bash">
    sudo mysql -u root -p  
 
 </code></pre>
 </li>
+</ol>
+</li>
 <li>
 <p>Para descobrir a pasta onde os dados são gravados executar o seguinte comando:</p>
 <pre><code class="hljs language-sql">
-    <span class="hljs-keyword">SELECT</span> @@datadir;
+      <span class="hljs-keyword">SELECT</span> @@datadir;
 
 </code></pre>
 </li>
@@ -73,8 +77,8 @@
 </li>
 <li>
 <p>Para sair do cliente mysql do mariadb:</p>
-<pre><code class="hljs language-sql">  
-  quit;
+<pre><code class="hljs language-sql">   
+   quit;
 
 </code></pre>
 </li>
@@ -83,14 +87,14 @@
 </li>
 </ol>
 <hr>
-<h3 id="2-como-alterar-a-base-de-dados-padrão-do-mysql"><strong>2. Como alterar a base de dados padrão do MySQL</strong><span id="id_2"><span></h3>
+<h3 id="2-como-alterar-a-base-de-dados-padrão-do-mysql">2. Como alterar a base de dados padrão do MySQL<span id="id_2"><span></h3>
 <ol>
 <li>
 <p>A pasta de dados padrão do MySQL é: /var/lib/mysql.</p>
 </li>
 <li>
 <p>Como mudar a pasta de dados de <em>/var/lib/mysql</em> para : <em>/mariadbdatadir</em>:</p>
-</li>
+<ol>
 <li>
 <p>O mariadb instalado é a ultima versão estável no momento da publicação desta dica: ubuntu_server-mate 5.4.0-60-generic.</p>
 </li>
@@ -102,33 +106,35 @@
 <ol>
 <li>
 <p>Parar a execução do mariadb:</p>
-<pre><code class="hljs language-sh">
+<pre><code class="hljs language-bash">
    sudo systemctl stop mariadb 
 
 </code></pre>
 </li>
 <li>
 <p>Criar pasta customizada <em>/mariadbdatadir</em>.</p>
-<pre><code class="hljs language-sh">
+<pre><code class="hljs language-bash">
    sudo mkdir /mariadbdatadir
 
 </code></pre>
 </li>
 <li>
 <p>Informa ao linux que o dono da pasta <em>/mariadbdatadir</em> é o usuário  mysql:mysql.</p>
-<pre><code class="hljs language-sh">
+<pre><code class="hljs language-bash">
    sudo chown -R mysql:mysql /mariadbdatadir ```
 
 </code></pre>
 </li>
 <li>
 <p>Editar o arquivo <em>/etc/mysql/my.cnf</em> e aponte para o novo diretório de dados:</p>
-<pre><code class="hljs language-sh">  sudo vi /etc/mysql/my.cnf ```
+<pre><code class="hljs language-bash">
+   sudo vi /etc/mysql/my.cnf 
+
 </code></pre>
 </li>
 <li>
 <p>Adicione no final do arquivo <em>/etc/mysql/my.snf</em> as linhas abaixo:</p>
-<pre><code class="hljs language-snf">
+<pre><code class="hljs language-bash">
    [mysqld] &lt;br&gt;
    datadir=/mariadbdatadir &lt;br&gt;
 
@@ -136,57 +142,59 @@
 </li>
 <li>
 <p>Copia todos as pastas e arquivos da pasta anterior (exceto links simbólicos) para a nova pasta:</p>
-<pre><code class="hljs language-sh">
+<pre><code class="hljs language-bash">
    sudo cp -vRp /var/lib/mysql/* /mariadbdatadir ```
 
 </code></pre>
 </li>
 <li>
 <p>Habilita <em>mariadb</em>:</p>
-<pre><code class="hljs language-sh">
+<pre><code class="hljs language-bash">
    sudo systemctl <span class="hljs-built_in">enable</span> mariadb 
 
 </code></pre>
 </li>
 <li>
 <p>Inicializa <em>mariadb</em>:</p>
-<pre><code class="hljs language-sh">
+<pre><code class="hljs language-bash">
    sudo systemctl start mariadb ```
 
 </code></pre>
 </li>
 <li>
 <p>Checa se foi inicializado:</p>
-<pre><code class="hljs language-sh">
+<pre><code class="hljs language-bash">
    systemctl status mariadb ```
 
 </code></pre>
 </li>
 <li>
 <p>Inicializa o Linux para que <em>mariadb</em> se ajusta as mudanças.</p>
-</li>
-</ol>
-<pre><code class="hljs language-sh">
-   reboot
+<pre><code class="hljs language-bash">
+  reboot
 
 </code></pre>
 </li>
-<li>
-<p>Caso ocorra mensagem de muitos arquivos aberto, entrar no arquivo abaixo e alterar o padrão:</p>
+</ol>
+</li>
+</ol>
 </li>
 <li>
-<p>Arquivo /etc/systemd/system/mysql.service contém a variável LimitNOFILE=16384 que determina o número máximo de arquivos abertos.</p>
+<p>Caso ocorra mensagem de muitos arquivos aberto, entrar no arquivo abaixo e alterar o padrão:</p>
+<ol>
+<li>Arquivo /etc/systemd/system/mysql.service contém a variável LimitNOFILE=16384 que determina o número máximo de arquivos abertos.</li>
+</ol>
 </li>
 <li>
 <p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
 </li>
 </ol>
 <hr>
-<h3 id="3-como-ajustar-a-segurança-do-banco-de-dados"><strong>3. Como ajustar a segurança do Banco de dados</strong><span id="id_3"><span></h3>
+<h3 id="3-como-ajustar-a-segurança-do-banco-de-dados">3. Como ajustar a segurança do Banco de dados<span id="id_3"><span></h3>
 <ol>
 <li>
 <p><strong>mysql_secure_installation</strong> é um script de shell disponível em sistemas Unix e permite que você melhore a segurança da instalação do <em>MariaDB</em> das seguintes maneiras:</p>
-</li>
+<ol>
 <li>
 <p>Você pode definir uma senha para contas root.</p>
 </li>
@@ -201,7 +209,7 @@
 </li>
 <li>
 <p>O <strong>mysql_secure_installation</strong> pode ser invocado sem argumentos:</p>
-<pre><code class="hljs language-sh">
+<pre><code class="hljs language-bash">
    sudo mysql_secure_installation
    
 </code></pre>
@@ -217,28 +225,28 @@
 <ol>
 <li>
 <p>Para entrar no <em>MariaDB</em> para protegê-lo, precisaremos da senha atual do usuário root. Se você acabou de instalar o <em>MariaDB</em> e ainda não definiu a senha do root, a senha estará em branco, então você deve apenas pressionar Enter aqui.</p>
-<pre><code class="hljs language-sh">
+<pre><code class="hljs language-bash">
    Enter current password <span class="hljs-keyword">for</span> root (enter <span class="hljs-keyword">for</span> none): 
 
 </code></pre>
 </li>
 <li>
 <p>Definir a senha de root garante que ninguém possa logar no usuário root do <em>MariaDB</em> sem a devida autorização. Se você já tem uma senha de root definida, pode responder com segurança 'n'.</p>
-<pre><code class="hljs language-sh">
+</li>
+</ol>
+<pre><code class="hljs language-bash">
    <span class="hljs-comment"># Change the root password? [Y/n] y </span>
    <span class="hljs-comment"># New password: </span>
    <span class="hljs-comment"># Re-enter new password: </span>
 
 </code></pre>
 </li>
-</ol>
-</li>
 <li>
 <p><strong>ETAPA PARA EXCLUIR OU NÃO O USUÁRIO ANÔNIMO</strong></p>
 <ol>
 <li>
 <p>Por padrão, uma instalação do <em>MariaDB</em> tem um usuário anônimo, permitindo que qualquer pessoa se logue no <em>MariaDB</em> sem ter que ter uma conta de usuário criada para eles. Destina-se apenas a teste e para tornar a instalação um pouco mais suave. Você deve removê-los antes de mudar para um ambiente de produção.</p>
-<pre><code class="hljs language-sh">
+<pre><code class="hljs language-bash">
   Remove anonymous users? [Y/n] y 
 
 </code></pre>
@@ -246,21 +254,19 @@
 <li>
 <p><strong>ETAPA PARA EXCLUIR OU NÃO O BANCO DE DADOS TESTE</strong></p>
 <ol>
-<li>
-<p>Por padrão, MariaDB vem com um banco de dados chamado 'teste' que qualquer pessoa pode acessar. Isso também se destina apenas a teste e deve ser removido antes de mudar para um ambiente de produção.</p>
-<pre><code class="hljs language-sh">
+<li>Por padrão, MariaDB vem com um banco de dados chamado 'teste' que qualquer pessoa pode acessar. Isso também se destina apenas a teste e deve ser removido antes de mudar para um ambiente de produção.</li>
+</ol>
+<pre><code class="hljs language-bash">
    Remove <span class="hljs-built_in">test</span> database and access to it? [Y/n] y
 
 </code></pre>
 </li>
-</ol>
-</li>
 <li>
 <p><strong>ETAPA PARA RECARREGAR OU NÃO A TABELA DE PRIVILÉGIOS DO BANCO DE DADOS</strong></p>
 <ol>
-<li>
-<p>Recarregar as tabelas de privilégios garantirá que todas as alterações feitas até agora terão efeito imediato.</p>
-<pre><code class="hljs language-sh">
+<li>Recarregar as tabelas de privilégios garantirá que todas as alterações feitas até agora terão efeito imediato.</li>
+</ol>
+<pre><code class="hljs language-bash">
   Reload privilege tables now? [Y/n] y 
 
 </code></pre>
@@ -276,48 +282,57 @@
 </li>
 </ol>
 <hr>
-<h3 id="4-como-configurar-mariadb-para-que-permita-acesso-remoto"><strong>4. Como configurar mariadb para que permita acesso remoto</strong><span id="id_4"><span></h3>
+<h3 id="4-como-configurar-mariadb-para-que-permita-acesso-remoto">4. Como configurar mariadb para que permita acesso remoto<span id="id_4"><span></h3>
 <ol>
 <li>
 <p>Para que todos os computadores acessem o banco de dados, edite o arquivo /etc/mysql/my.cnf e adicione no final do arquivo as linhas:</p>
-</li>
-<li>
-<pre>
-$ sudo vi /etc/mysql/my.cnf
-//em seguida adicione no final do arquivo /etc/mysql/my.cnf
-[mysqld]
-   bind-address=*
-```
+<pre><code class="hljs language-bash">
+  sudo vi /etc/mysql/my.cnf
+
+  <span class="hljs-comment"># em seguida adicione no final do arquivo /etc/mysql/my.cnf</span>
+  [mysqld]
+   <span class="hljs-built_in">bind</span>-address=*
+
+</code></pre>
 </li>
 <li>
 <p>Execute o comando abaixo no prompt do sistema para reiniciar o banco de dados mariadb:</p>
-</li>
-<li>
-<p><code>shsudo systemctl restar mariadb </code></p>
+<pre><code class="hljs language-bash">
+   sudo systemctl restar mariadb 
+
+</code></pre>
 </li>
 <li>
 <p>Habilite o usuário root para acessar de qualquer computador.</p>
-</li>
+<ol>
 <li>
 <p>Entrar no cliente mysql do mariadb do mariadb.</p>
-<ol>
+<pre><code class="hljs language-bash">
+   mysql -h localhost -u root -p 
+   
+</code></pre>
+</li>
 <li>
-<pre>mysql -h localhost -u root -p ```
+<p>Dê permissão para que o usuário root acesse fora do localhost.</p>
+<pre><code class="hljs language-bash">  
+  GRANT ALL ON *.* TO ‘root’@’%’ IDENTIFIED BY ‘password‘;
+
+</code></pre>
+<ul>
+<li><strong>Notas</strong>
+<ul>
+<li>O sinal % significa “qualquer IP”, ou seja,  indica que o usuário pode acessar o banco de dados em qualquer máquina da rede.</li>
+<li>Para habilitar o acesso apenas para um único IP, substitua o sinal % pelo IP desejado, assim somente a máquina com o IP indicado poderá conectar o servidor.</li>
+</ul>
 </li>
-<li>Dê permissão para que o usuário root acesse fora do localhost.
-<ol>
+</ul>
+</li>
 <li>
-<pre>GRANT ALL ON *.* TO ‘root’@’%’ IDENTIFIED BY ‘password‘;```
-1. Onde: O sinal % significa “qualquer IP”, ou seja,  indica que o usuário pode acessar o banco de dados em qualquer máquina da rede. Para habilitar o acesso apenas para um único IP, substitua o sinal % pelo IP desejado, assim somente a máquina com o IP indicado poderá conectar o servidor.
-</li>
-</ol>
-</li>
-<li>Para sair do cliente mysql:
-<ol>
-<li>
-<pre>quit;```
-</li>
-</ol>
+<p>Para sair do cliente mysql:</p>
+<pre><code class="hljs language-bash">
+  quit;
+  
+</code></pre>
 </li>
 </ol>
 </li>
@@ -326,64 +341,62 @@ $ sudo vi /etc/mysql/my.cnf
 </li>
 </ol>
 <hr>
-<h3 id="5-como-criar-database-no-mariadb"><strong>5. Como criar DataBase no mariadb</strong><span id="id_5"><span></h3>
+<h3 id="5-como-criar-database-no-mariadb">5. Como criar DataBase no mariadb<span id="id_5"><span></h3>
 <ol>
 <li>
 <p>Entrar no cliente mysql do mariadb do mariadb.</p>
-</li>
-<li>
-<p><code>shsudo mysql -u root -p</code></p>
+<pre><code class="hljs language-bash">
+   sudo mysql -u root -p
+
+</code></pre>
 </li>
 <li>
 <p><a href="https://mariadb.com/kb/en/create-database/">Cria o banco de dados nomeDataBase</a>:</p>
-<ol>
-<li>
-<pre>CREATE DATABASE nomeDataBase;```
-</li>
-</ol>
+<pre><code class="hljs language-bash">
+  CREATE DATABASE nomeDataBase;
+
+</code></pre>
 </li>
 <li>
 <p><a href="https://mariadb.com/kb/en/show-databases/">Para visualizar todos os DATABASES</a>:</p>
-<ol>
-<li>SHOW DATABASES;</li>
-</ol>
+<pre><code class="hljs language-bash">
+  SHOW DATABASES;
+
+</code></pre>
 </li>
 <li>
 <p>Para selecionar o banco de dados criado (nomeDataBase) executar comando:</p>
-<ol>
-<li>
-<pre>USE nomeDataBase;```
-</li>
-</ol>
+<pre><code class="hljs language-bash">    
+  USE nomeDataBase;
+
+</code></pre>
 </li>
 <li>
 <p>Para visualizar as tabela do database selecionado:</p>
-<ol>
-<li>
-<pre>show tables```
-</li>
-</ol>
+<pre><code class="hljs language-bash">
+  show tables
+
+</code></pre>
 </li>
 <li>
 <p><a href="https://mariadb.com/kb/en/show-character-set/">SHOW CHARACTER SET</a></p>
 <ol>
 <li>
 <p>Sintaxe:</p>
-<ol>
-<li>
-<pre>SHOW CHARACTER SET [LIKE 'pattern' | WHERE expr]```
-</li>
-</ol>
+<pre><code class="hljs language-bash">
+  SHOW CHARACTER SET [LIKE <span class="hljs-string">'pattern'</span> | WHERE expr]
+
+</code></pre>
 </li>
 <li>
 <p>Exemplo:</p>
 <ol>
-<li>Para checar a lista de opções de tipo de caractere e default collation em latin:
-<ol>
 <li>
-<pre>show character set like 'latin%'```
-</li>
-</ol>
+<p>Para checar a lista de opções de tipo de caractere e default collation em latin:</p>
+<pre><code class="hljs language-bash">
+  show character <span class="hljs-built_in">set</span> like <span class="hljs-string">'latin%'</span>
+  
+</code></pre>
 </li>
 </ol>
 </li>
@@ -392,41 +405,39 @@ $ sudo vi /etc/mysql/my.cnf
 <li>
 <p><a href="https://mariadb.com/kb/en/setting-character-sets-and-collations/">Definir conjuntos de caracteres e agrupamentos</a>:</p>
 <ol>
-<li>Exemplo:
-<ol>
-<li>Para não distingue letras minúsculas e maiúsculas e nem caracteres acentuados e com cedilha, ou seja, o registro que contém a palavra “Intuição” será retornado quando houver uma procura pela palavra “intúicao
-<ol>
 <li>
-<pre>ALTER DATABASE nomeDataBase CHARACTER SET = 'latin1' COLLATE = 'latin1_swedish_ci';```
-</li>
+<p>Exemplo:</p>
+<ol>
+<li>Para não distingue letras minúsculas e maiúsculas e nem caracteres acentuados e com cedilha, ou seja, o registro que contém a palavra “Intuição” será retornado quando houver uma procura pela palavra “intúicao</li>
 </ol>
-</li>
-</ol>
+<pre><code class="hljs language-bash">
+  ALTER DATABASE nomeDataBase CHARACTER SET = <span class="hljs-string">'latin1'</span> COLLATE = <span class="hljs-string">'latin1_swedish_ci'</span>;
+
+</code></pre>
 </li>
 </ol>
 </li>
 <li>
 <p><a href="https://mariadb.com/kb/en/information-schema-schemata-table/">Tabela Esquema de Informação SCHEMATA</a>:</p>
 <ol>
-<li>Exemplo:
-<ol>
 <li>
-<pre>SELECT * FROM INFORMATION_SCHEMA.SCHEMATA\G```
-</li>
-</ol>
-</li>
-</ol>
+<p>Exemplo:</p>
+<pre><code class="hljs language-bash">  
+    SELECT * FROM INFORMATION_SCHEMA.SCHEMATA\G
+
+</code></pre>
 </li>
 <li>
 <p>Para sair do cliente mysql:</p>
-<ol>
-<li>
-<pre>quit;```
+<pre><code class="hljs language-bash">
+  quit;
+  
+</code></pre>
 </li>
 </ol>
 </li>
 <li>
-<p>Obs: O nome do banco de dados usa o mesmo estilo de nomes da linguagem c++, ou seja maiúsculas e minusculas são diferentes, porém é possível mudar o padrão mudando a variável <strong>lower_case_table_names=1</strong> em /etc/mysql/my.cnf .</p>
+<p>Obs: O nome do banco de dados usa o mesmo estilo de nomes da linguagem c++, ou seja maiúsculas e minusculas são diferentes, porém é possível mudar o padrão mudando a variável <em>lower_case_table_names=1</em> em <em>/etc/mysql/my.cnf</em> .</p>
 </li>
 <li>
 <p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
@@ -435,87 +446,119 @@ $ sudo vi /etc/mysql/my.cnf
 <hr>
 <h3 id="6-usuários">6. Usuários<span id="id_6"><span></h3>
 <hr>
-<h4 id="61-adicionando-usuários">6.1 <strong>Adicionando usuários</strong><span id="id_6.1"><span></h4>
+<h4 id="61-adicionando-usuários">6.1 Adicionando usuários<span id="id_6.1"><span></h4>
 <hr>
-<h5 id="611-como-adicionar-usuários-ao-banco-de-dados"><strong>6.1.1 <a href="https://mariadb.com/kb/en/create-user/">Como adicionar usuários ao banco de dados</a></strong></h5>
+<h5 id="611-como-adicionar-usuários-ao-banco-de-dados">6.1.1 <a href="https://mariadb.com/kb/en/create-user/">Como adicionar usuários ao banco de dados</a></h5>
 <ol>
 <li>
 <p>Entrar no cliente mysql do mariadb do mariadb:</p>
+<pre><code class="hljs language-bash">
+  sudo mysql -h localhost -u root -p
+  
+</code></pre>
 </li>
 <li>
-<p><code>shsudo mysql -h localhost -u root -p</code></p>
+<p>Para <em>GRANT ALL</em> conceder privilégios a um user, permitindo que o usuário controle total sobre um determinado database se tiver no <em>localhost</em>, use a seguinte sintaxe:</p>
+<ol>
+<li>
+<p><strong>Sintaxe</strong>:</p>
+<pre><code class="hljs language-bash">
+  GRANT ALL PRIVILEGES ON database_name.* TO <span class="hljs-string">'user_name'</span>@<span class="hljs-string">'localhost'</span>;
+
+</code></pre>
 </li>
 <li>
-<p>Para GRANT ALL conceder privilégios a um user, permitindo que o usuário controle total sobre um determinado database se tiver no localhost, use a seguinte sintaxe:</p>
-<ol>
-<li>Sintaxe:
-<ol>
-<li>GRANT ALL PRIVILEGES ON database_name.* TO 'user_name'@'localhost';</li>
-</ol>
-</li>
-<li>Exemplo:
-<ol>
-<li>GRANT ALL PRIVILEGES ON Db_BlogPsspAppBr.* TO 'Use_BlogPsspAppBr'@'localhost';</li>
-</ol>
-</li>
-</ol>
+<p>Exemplo:</p>
+<pre><code class="hljs language-bash">
+  GRANT ALL PRIVILEGES ON Db_BlogPsspAppBr.* TO <span class="hljs-string">'Use_BlogPsspAppBr'</span>@<span class="hljs-string">'localhost'</span>;
+
+</code></pre>
 </li>
 <li>
 <p>Para criar o usuário &quot;User_BlogPsspAppBr&quot; com permissão de acesso a qualquer computador:</p>
-<ol>
-<li>
-<pre>CREATE USER 'User_BlogPsspAppBr'@'%' IDENTIFIED BY 'senha';```
+<pre><code class="hljs language-bash">
+   CREATE USER <span class="hljs-string">'User_BlogPsspAppBr'</span>@<span class="hljs-string">'%'</span> IDENTIFIED BY <span class="hljs-string">'senha'</span>;
+
+</code></pre>
 </li>
 </ol>
 </li>
 <li>
-<p>Para criar o usuário &quot;User_BlogPsspAppBr&quot; com privilégio de administrador, porém só pode acessar o banco de dados pelo IP:&quot;192.168.15.5&quot;:</p>
-<ol>
-<li>
-<pre>GRANT ALL PRIVILEGES ON *.* TO 'BlogPsspAppBr''@''192.168.15.5' IDENTIFIED BY 'password' WITH GRANT OPTION; ```
-</li>
-<li>
-<pre>FLUSH PRIVILEGES;```
-</li>
-</ol>
+<p>Para criar o usuário &quot;<em>User_BlogPsspAppBr</em>&quot; com privilégio de administrador, porém só pode acessar o banco de dados pelo IP:&quot;<em>192.168.15.5</em>&quot;:</p>
+<pre><code class="hljs language-bash">  
+   GRANT ALL PRIVILEGES ON *.* TO <span class="hljs-string">'BlogPsspAppBr'</span><span class="hljs-string">'@'</span><span class="hljs-string">'192.168.15.5'</span> IDENTIFIED BY <span class="hljs-string">'password'</span> WITH GRANT OPTION; 
+   FLUSH PRIVILEGES;
+
+</code></pre>
 </li>
 <li>
 <p>Para visualizar todos os usuários cadastrados:</p>
-<ol>
-<li>
-<pre>SELECT User FROM mysql.user; ```
-</li>
-</ol>
+<pre><code class="hljs language-bash">
+  SELECT User FROM mysql.user; 
+
+</code></pre>
 </li>
 <li>
 <p>Para sair do cliente mysql:</p>
-<ol>
-<li>
-<pre>quit;</pre
-</li>
-</ol>
+<pre><code class="hljs language-bash">
+  quit;
+
+</code></pre>
 </li>
 <li>
 <p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
 </li>
 </ol>
 <hr>
-<h5 id="612-como-saber-os-privilégios-dos-usuários"><strong>6.1.2 Como saber os privilégios dos usuários</strong></h5>
+<h5 id="612-como-saber-os-privilégios-dos-usuários">6.1.2 Como saber os privilégios dos usuários</h5>
 <ol>
 <li>
 <p>Entrar no cliente mysql do mariadb:</p>
-</li>
-<li>
-<p><code>shsudo mysql -h localhost -u root -p</code></p>
-</li>
-<li>
-<pre>SELECT User, Host FROM mysql.user WHERE Host <> 'localhost';```
+<pre><code class="hljs language-bash">
+  sudo mysql -h localhost -u root -p
+  SELECT User, Host FROM mysql.user WHERE Host &lt;&gt; <span class="hljs-string">'localhost'</span>;
+
+</code></pre>
 </li>
 <li>
 <p>Para sair do cliente mysql:</p>
+<pre><code class="hljs language-bash">
+   quit;
+
+</code></pre>
+</li>
+<li>
+<p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
+</li>
+</ol>
+<hr>
+<h4 id="62---excluindo-usuários"><a href="https://mariadb.com/kb/en/drop-user/">6.2 - Excluindo usuários</a><span id="id_6.2"><span></h4>
+<ol>
+<li>O DROP USER extrato remove uma ou mais contas MariaDB. Ele remove linhas de privilégios para a conta de todas as tabelas de permissões. Para usar esta instrução, você deve ter o privilégio global CREATE USER ou o privilégio DELETE para o banco de dados mysql. Cada conta é nomeada usando o mesmo formato do CREATE USER extrato; por exemplo 'jeffrey'@'localhost',. Se você especificar apenas a parte do nome de usuário do nome da conta, uma parte do nome do host de '%'será usada. Para obter informações adicionais sobre como especificar nomes de contas, consulte CREATE USER.Observe que, se você especificar uma conta que está conectada no momento, ela não será excluída até que a conexão seja fechada. A conexão não será fechada automaticamente.
 <ol>
 <li>
-<pre>quit;</pre
+<p>Exemplo:</p>
+<ol>
+<li>
+<p>Entrar no cliente mysql do mariadb:</p>
+<pre><code class="hljs language-bash">  
+  sudo mysql -h localhost -u root -p
+
+</code></pre>
+</li>
+<li>
+<p>Apaga o usuário:</p>
+<pre><code class="hljs language-bash">
+  DROP  USER  Nome_do_usuário;
+
+</code></pre>
+</li>
+<li>
+<p>Para sair do cliente mysql:</p>
+<pre><code class="hljs language-bash">
+  quit;
+
+</code></pre>
 </li>
 </ol>
 </li>
@@ -523,55 +566,30 @@ $ sudo vi /etc/mysql/my.cnf
 <p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
 </li>
 </ol>
-<hr>
-<h4 id="62---excluindo-usuários"><strong><a href="https://mariadb.com/kb/en/drop-user/">6.2 - Excluindo usuários</a></strong><span id="id_6.2"><span></h4>
-<ol>
-<li>O DROP USER extrato remove uma ou mais contas MariaDB. Ele remove linhas de privilégios para a conta de todas as tabelas de permissões. Para usar esta instrução, você deve ter o privilégio global CREATE USER ou o privilégio DELETE para o banco de dados mysql. Cada conta é nomeada usando o mesmo formato do CREATE USER extrato; por exemplo 'jeffrey'@'localhost',. Se você especificar apenas a parte do nome de usuário do nome da conta, uma parte do nome do host de '%'será usada. Para obter informações adicionais sobre como especificar nomes de contas, consulte CREATE USER.Observe que, se você especificar uma conta que está conectada no momento, ela não será excluída até que a conexão seja fechada. A conexão não será fechada automaticamente.</li>
-<li>Exemplo:
-<ol>
-<li>Entrar no cliente mysql do mariadb:
-<ol>
-<li><code>shsudo mysql -h localhost -u root -p</code></li>
-<li>Apaga o usuário:
-<ol>
-<li>
-<pre>DROP  USER  Nome_do_usuário;```
 </li>
-</ol>
-</li>
-<li>Para sair do cliente mysql:</li>
-</ol>
-</li>
-<li>
-<pre>quit;</pre
-</li>
-</ol>
-</li>
-<li><a href="#topo_Index" title="Retorna ao topo">🔝</a></li>
 </ol>
 <hr>
 <h3 id="7-variáveis-de-sistema-do-servidor-mariadb">7. Variáveis ​​de sistema do servidor mariadb<span id="id_7"><span></h3>
 <ol>
 <li>
 <p>Como visualizar todas as variáveis de servidor mariadb:</p>
-</li>
-<li>
-<p><code>shsudo mysqld --verbose --help</code></p>
+<pre><code class="hljs language-bash">
+  sudo mysqld --verbose --<span class="hljs-built_in">help</span>
+
+</code></pre>
 </li>
 <li>
 <p>Para ver os valores que um servidor usa com base apenas em seus padrões compilados, ignorando as configurações em qualquer arquivo de opção, use este comando:</p>
-</li>
-<li>
-<p><code>shsudo mysqld --no-defaults --verbose --help</code></p>
+<pre><code class="hljs language-bash">
+  sudo mysqld --no-defaults --verbose --<span class="hljs-built_in">help</span>
+
+</code></pre>
 </li>
 <li>
 <p><a href="https://mariadb.com/kb/pt-br/mysqld-startup-options/">Opções de inicialização para o mysqld</a>.</p>
-</li>
-<li>
-<p><a href="https://mariadb.com/kb/en/mysqld-options/">Todas as opções de mysqld</a>.</p>
-</li>
-<li>
-<p>Os parâmetros do mariadb-server está no arquivo /etc/mysql/my.cnf.</p>
+<ol>
+<li><a href="https://mariadb.com/kb/en/mysqld-options/">Todas as opções de mysqld</a>.</li>
+<li>Os parâmetros do mariadb-server está no arquivo /etc/mysql/my.cnf.
 <ol>
 <li>Exemplos de configurações customizadas:
 <ol>
@@ -585,44 +603,44 @@ $ sudo vi /etc/mysql/my.cnf
 </li>
 </ol>
 </li>
+</ol>
+</li>
 <li>
 <p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
 </li>
 </ol>
 <hr>
-<h3 id="8-como-o-mariadb-lida-com-letras-maiúsculas-e-minúsculas">8. <strong>Como o mariadb lida com letras maiúsculas e minúsculas</strong><span id="id_8"><span></h3>
+<h3 id="8-como-o-mariadb-lida-com-letras-maiúsculas-e-minúsculas">8. Como o mariadb lida com letras maiúsculas e minúsculas<span id="id_8"><span></h3>
 <ol>
 <li>
 <p><a href="https://dev.mysql.com/doc/refman/8.0/en/identifier-case-sensitivity.html">Sensibilidade do Identificador de Caso:</a></p>
-</li>
-<li>
-<p>No MySQL, os bancos de dados correspondem a diretórios dentro do diretório de dados. Cada tabela em um banco de dados corresponde a pelo menos um arquivo no diretório do banco de dados (e possivelmente mais, dependendo do mecanismo de armazenamento). Os gatilhos também correspondem a arquivos. Conseqüentemente, a distinção entre maiúsculas e minúsculas do sistema operacional subjacente desempenha um papel na distinção entre maiúsculas e minúsculas do banco de dados, tabela e nomes de gatilhos. Isso significa que esses nomes não diferenciam maiúsculas de minúsculas no Windows, mas na maioria das variedades do Unix. Uma exceção notável é o macOS, que é baseado em Unix, mas usa um tipo de sistema de arquivos padrão (HFS +) que não faz distinção entre maiúsculas e minúsculas. No entanto, o macOS também oferece suporte a volumes UFS, que diferenciam maiúsculas de minúsculas, assim como em qualquer Unix. Vejo Seção 1.7.1, “Extensões MySQL para SQL padrão” . A <em>lower_case_table_names</em> variável do sistema também afeta como o servidor lida com a diferenciação de maiúsculas e minúsculas do identificador, conforme descrito posteriormente nesta seção.</p>
-</li>
-<li>
-<p>O modo como os nomes das tabelas e bancos de dados são armazenados no disco e usados ​​no MySQL é afetado pela <strong>lower_case_table_names</strong>  variável do sistema.
-<strong>lower_case_table_names</strong> pode assumir os valores mostrados na tabela a seguir. Esta variável não afeta a diferenciação de maiúsculas e minúsculas dos identificadores de gatilho.
-No Unix, o valor padrão <strong>lower_case_table_names</strong> é 0.
-No Windows, o valor padrão é 1.
-No macOS, o valor padrão é 2.
-<strong>lower_case_table_names</strong> só pode ser configurado ao inicializar o servidor.
-<strong>lower_case_table_names</strong> é proibido alterar a configuração após a inicialização do servidor.</p>
-</li>
-<li>
-<p>Valores da variável <a href="https://mariadb.com/kb/en/server-system-variables/#lower_case_table_names">lower_case_table_names</a>.</p>
 <ol>
-<li><em><strong>0 (zero)</strong></em>
+<li>No MySQL, os bancos de dados correspondem a diretórios dentro do diretório de dados. Cada tabela em um banco de dados corresponde a pelo menos um arquivo no diretório do banco de dados (e possivelmente mais, dependendo do mecanismo de armazenamento). Os gatilhos também correspondem a arquivos. Consequentemente, a distinção entre maiúsculas e minúsculas do sistema operacional subjacente desempenha um papel na distinção entre maiúsculas e minúsculas do banco de dados, tabela e nomes de gatilhos. Isso significa que esses nomes não diferenciam maiúsculas de minúsculas no Windows, mas na maioria das variedades do Unix. Uma exceção notável é o macOS, que é baseado em Unix, mas usa um tipo de sistema de arquivos padrão (HFS +) que não faz distinção entre maiúsculas e minúsculas. No entanto, o macOS também oferece suporte a volumes UFS, que diferenciam maiúsculas de minúsculas, assim como em qualquer Unix. Vejo Seção 1.7.1, “Extensões MySQL para SQL padrão” . A <em>lower_case_table_names</em> variável do sistema também afeta como o servidor lida com a diferenciação de maiúsculas e minúsculas do identificador, conforme descrito posteriormente nesta seção.</li>
+</ol>
+</li>
+<li>
+<p>O modo como os nomes das tabelas e bancos de dados são armazenados no disco e usados ​​no MySQL é afetado pela <strong>lower_case_table_names</strong>  variável do sistema. <strong>lower_case_table_names</strong> pode assumir os valores mostrados na tabela a seguir. Esta variável não afeta a diferenciação de maiúsculas e minúsculas dos identificadores de gatilho. No Unix, o valor padrão <strong>lower_case_table_names</strong> é 0. No Windows, o valor padrão é <a href="http://1.No">1.No</a> macOS, o valor padrão é 2.<strong>lower_case_table_names</strong> só pode ser configurado ao inicializar o servidor. <strong>lower_case_table_names</strong> é proibido alterar a configuração após a inicialização do servidor.</p>
+<ol>
+<li>Valores da variável <a href="https://mariadb.com/kb/en/server-system-variables/#lower_case_table_names">lower_case_table_names</a>.
+<ol>
+<li>
+<p><em>0 (zero)</em></p>
 <ol>
 <li>Os nomes de tabelas e bancos de dados são armazenados no disco usando as letras maiúsculas especificadas na instrução <strong>CREATE TABLE</strong> ou <strong>CREATE DATABASE</strong>. As comparações de nomes diferenciam maiúsculas de minúsculas. Você não deve definir esta variável como 0 se estiver executando o MySQL em um sistema que tenha nomes de arquivo que não diferenciam maiúsculas de minúsculas (como Windows ou macOS). Se você forçar essa variável para 0 <strong>--lower-case-table-names = 0</strong> em um sistema de arquivos que não faz MyISAM distinção entre maiúsculas e minúsculas e acessar nomes de tabelas usando diferentes maiúsculas e minúsculas , o índice poderá ser corrompido.</li>
 </ol>
 </li>
-<li><em><strong>1 (um)</strong></em>  Obs: Penso que o ideal é não diferenciar maiúsculas de minúsculas.
+<li>
+<p><em>1 (um)</em>  Obs: Penso que o ideal é não diferenciar maiúsculas de minúsculas.</p>
 <ol>
 <li>Os nomes das tabelas são armazenados em letras minúsculas no disco e as comparações de nomes não diferenciam maiúsculas de minúsculas. O MySQL converte todos os nomes de tabelas em letras minúsculas no armazenamento e na pesquisa. Esse comportamento também se aplica a nomes de banco de dados e aliases de tabela.</li>
 </ol>
 </li>
-<li><em><strong>2 (dois)</strong></em>
+<li>
+<p><em>2 (dois)</em></p>
 <ol>
 <li>Os nomes de tabelas e bancos de dados são armazenados em disco usando letras maiúsculas especificadas na instrução <strong>CREATE TABLE</strong> ou <strong>CREATE DATABASE</strong>, mas o MySQL os converte em minúsculas na pesquisa. As comparações de nomes não diferenciam maiúsculas de minúsculas. Isso funciona apenas em sistemas de arquivos que não fazem distinção entre maiúsculas e minúsculas! InnoDB nomes de tabelas e nomes de visualizações são armazenados em letras minúsculas, assim como para <strong>lower_case_table_names=1</strong>.</li>
+</ol>
+</li>
 </ol>
 </li>
 </ol>
@@ -642,11 +660,12 @@ No macOS, o valor padrão é 2.
 <li><a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names">Variáveis ​​de sistema do servidor</a></li>
 <li><a href="#topo_Index" title="Retorna ao topo">🔝</a></li>
 </ol>
+</main>
 <!-- markdownlint-disable-next-line -->
 <script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
         
     </body>
     </html>

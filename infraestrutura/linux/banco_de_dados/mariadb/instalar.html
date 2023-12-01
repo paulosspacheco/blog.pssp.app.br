@@ -1,53 +1,64 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>COMO INSTALAR DO BANCO DE DADOS MARIADB &lt;a href&equals;&quot;instalar&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description"   content="" />
-        <meta name="keywords" content="" />
-           
-        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
-        <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/>
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8">
+  <title>COMO INSTALAR DO BANCO DE DADOS MARIADB &lt;a href&equals;&quot;instalar&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
 
-        <script type="application/x-javascript" src="/js/generic.js"></script>
-        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
-<!-- markdownlint-disable-next-line -->
-<span id="topo"><span>
-<h1 id="como-instalar-do-banco-de-dados-mariadb----">COMO INSTALAR DO BANCO DE DADOS MARIADB <a href="instalar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
-<h2 id="index"><strong>INDEX</strong><span id="topo_Index"><span></h2>
-<hr>
-<ol>
-<li><a href="#id_1">Instalar versão do MariaDb da distribuição linux originárias do debian (Ubuntu, Linux Mint, etc)</a></li>
-<li><a href="#id_2">Testando o servidor</a></li>
-<li><a href="#id_3">Instalar extensões do vscode para acessar mariadb</a></li>
-<li><a href="#id_4">HISTÓRICOS</a></li>
-<li><a href="./configurar.html">Como configurar mariadb</a></li>
-<li><a href="#id_referencias">REFERÊNCIAS</a></li>
-</ol>
-<h2 id="conteúdo"><strong>CONTEÚDO</strong><span id="topo_conteudo"><span></h2>
-<hr>
-<h3 id="1-instalar-versão-do-mariadb-da-distribuição-linux-originárias-do-debian-ubuntu-linux-mint-etc"><strong>1. Instalar versão do MariaDb da distribuição linux originárias do debian (Ubuntu, Linux Mint, etc)</strong><span id="id_1"><span></h3>
-<hr>
-<ol>
-<li>
-<p>Mais informações sobre instalação do mariadb veja em: <a href="https://mariadb.com/kb/en/installing-mariadb-deb-files/">https://mariadb.com/kb/en/installing-mariadb-deb-files/</a></p>
-<ol>
-<li>
-<p>Instala o servidor de banco de dados mariadb e seus acessórios:</p>
-<ol>
-<li>
-<p>Código ShellScript</p>
-<pre><code class="hljs language-sh">
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="como-instalar-do-banco-de-dados-mariadb----">COMO INSTALAR DO BANCO DE DADOS MARIADB <a href="instalar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+        <h2 id="index"><strong>INDEX</strong><span id="topo_Index"><span></h2>
+        <hr>
+        <ol>
+          <li><a href="#id_1">Instalar versão do MariaDb da distribuição linux originárias do debian (Ubuntu, Linux Mint, etc)</a></li>
+          <li><a href="#id_2">Testando o servidor</a></li>
+          <li><a href="#id_3">Instalar extensões do vscode para acessar mariadb</a></li>
+          <li><a href="#id_4">HISTÓRICOS</a></li>
+          <li><a href="./configurar.html">Como configurar mariadb</a></li>
+          <li><a href="#id_referencias">REFERÊNCIAS</a></li>
+        </ol>
+        <h2 id="conteúdo"><strong>CONTEÚDO</strong><span id="topo_conteudo"><span></h2>
+        <hr>
+        <h3 id="1-instalar-versão-do-mariadb-da-distribuição-linux-originárias-do-debian-ubuntu-linux-mint-etc"><strong>1. Instalar versão do MariaDb da distribuição linux originárias do debian (Ubuntu, Linux Mint, etc)</strong><span id="id_1"><span></h3>
+        <hr>
+        <ol>
+          <li>
+            <p>Mais informações sobre instalação do mariadb veja em: <a href="https://mariadb.com/kb/en/installing-mariadb-deb-files/">https://mariadb.com/kb/en/installing-mariadb-deb-files/</a></p>
+            <ol>
+              <li>
+                <p>Instala o servidor de banco de dados mariadb e seus acessórios:</p>
+                <ol>
+                  <li>
+                    <p>Código ShellScript</p>
+                    <pre><code class="hljs language-bash">
   <span class="hljs-comment"># Atualiza o repositório:</span>
   sudo update
 
@@ -58,36 +69,36 @@
   sudo apt install mariadb-server
 
 </code></pre>
-</li>
-<li>
-<p><strong>Permitir acesso remoto</strong></p>
-<ol>
-<li>
-<p>Se você tiver as <strong>tabelas de ip</strong> habilitadas e quiser se conectar ao banco de dados <strong>MySQL de outra máquina</strong>, você deve abrir uma <strong>porta no firewall</strong> do seu servidor <strong>(a porta padrão é 3306)</strong>. Você <strong>não precisa fazer isso se o aplicativo que usa o MySQL estiver sendo executado no mesmo servidor</strong>.</p>
-</li>
-<li>
-<p>Execute o seguinte comando para permitir o acesso remoto ao servidor mysql:</p>
-<ol>
-<li>
-<p>Código ShellScript</p>
-<pre><code class="hljs language-sh">
+                  </li>
+                  <li>
+                    <p><strong>Permitir acesso remoto</strong></p>
+                    <ol>
+                      <li>
+                        <p>Se você tiver as <strong>tabelas de ip</strong> habilitadas e quiser se conectar ao banco de dados <strong>MySQL de outra máquina</strong>, você deve abrir uma <strong>porta no firewall</strong> do seu servidor <strong>(a porta padrão é 3306)</strong>. Você <strong>não precisa fazer isso se o aplicativo que usa o MySQL estiver sendo executado no mesmo servidor</strong>.</p>
+                      </li>
+                      <li>
+                        <p>Execute o seguinte comando para permitir o acesso remoto ao servidor mysql:</p>
+                        <ol>
+                          <li>
+                            <p>Código ShellScript</p>
+                            <pre><code class="hljs language-bash">
    sudo ufw <span class="hljs-built_in">enable</span>
    sudo ufw allow mysql
 
 </code></pre>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>Como instalar a aplicação cliente MariaDb</p>
-<ol>
-<li>
-<p>Código ShellScript</p>
-<pre><code class="hljs language-sh">
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p>Como instalar a aplicação cliente MariaDb</p>
+                <ol>
+                  <li>
+                    <p>Código ShellScript</p>
+                    <pre><code class="hljs language-bash">
   <span class="hljs-comment"># Instala a aplicação cliente do mariadb</span>
   sudo apt install mariadb-client
 
@@ -95,28 +106,28 @@
   sudo apt install mariadb-backup
 
 </code></pre>
-</li>
-<li>
-<p><strong>REFERÊNCIAS</strong></p>
-<ol>
-<li><a href="https://mariadb.com/kb/en/mysql-command-line-client">Documentação do mariadb-cliente</a></li>
-<li><a href="https://mariadb.com/kb/en/backup-and-restore-overview/">Instala a aplicação para criação de backup</a></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
-</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h3 id="2-testando-o-servidor"><strong>2. <a href="https://dev.mysql.com/doc/refman/5.7/en/testing-server.html">Testando o servidor</a></strong><span id="id_2"><span></h3>
-<ol>
-<li>
-<p>Código ShellScript</p>
-<pre><code class="hljs language-sh">
+                  </li>
+                  <li>
+                    <p><strong>REFERÊNCIAS</strong></p>
+                    <ol>
+                      <li><a href="https://mariadb.com/kb/en/mysql-command-line-client">Documentação do mariadb-cliente</a></li>
+                      <li><a href="https://mariadb.com/kb/en/backup-and-restore-overview/">Instala a aplicação para criação de backup</a></li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
+              </li>
+            </ol>
+          </li>
+        </ol>
+        <hr>
+        <h3 id="2-testando-o-servidor"><strong>2. <a href="https://dev.mysql.com/doc/refman/5.7/en/testing-server.html">Testando o servidor</a></strong><span id="id_2"><span></h3>
+        <ol>
+          <li>
+            <p>Código ShellScript</p>
+            <pre><code class="hljs language-bash">
   <span class="hljs-comment"># Visualiza o número da versão instalada:</span>
   sudo mysqladmin version
 
@@ -158,83 +169,88 @@
   sudo mysqladmin -p -u root version
 
 </code></pre>
-</li>
-<li>
-<p><strong>REFERÊNCIAS</strong></p>
-<ol>
-<li><strong><a href="https://mariadb.com/kb/en/mysqlshow/">mysqlshow</a></strong></li>
-<li>..</li>
-</ol>
-</li>
-<li>
-<p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
-</li>
-</ol>
-<hr>
-<h3 id="3-instalar-extensões-do-vscode-para-acessar-mariadb"><strong>3. Instalar <a href="https://code.visualstudio.com/docs/editor/extension-gallery?pub=clarkyu&amp;ext=vscode-sql-beautify">extensões do vscode</a> para acessar mariadb</strong><span id="id_3"><span></h3>
-<ol>
-<li>Instalar extensão <a href="https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools">SQL TOOLS</a>.
-<ol>
-<li><a href="https://www.youtube.com/watch?v=5TVBSrFuCDA">Vídeo aula de como usar sql tools</a>.</li>
-<li><a href="https://vscode-sqltools.mteixeira.dev/">Documentação completa do sql tools</a></li>
-</ol>
-</li>
-<li>Instalar extensão <a href="https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-mysql">SQLTools MySQL/MariaDB</a>
-<ol>
-<li><a href="https://vscode-sqltools.mteixeira.dev/?umd_source=repository&amp;utm_medium=readme&amp;utm_campaign=mysql">Documentação completa de SQLTools MySQL/MariaDB</a></li>
-</ol>
-</li>
-<li>Instalar extensão <a href="https://marketplace.visualstudio.com/items?itemName=clarkyu.vscode-sql-beautify">SQL Beautify</a> para embeleza SQL.</li>
-<li>Instalar extensão <a href="https://marketplace.visualstudio.com/items?itemName=adpyke.vscode-sql-formatter">SQL Formatter</a>
-<ol>
-<li>Essa extensão usa <a href="https://github.com/kufii/sql-formatter-plus">SQL Formatter Plus</a></li>
-</ol>
-</li>
-<li><a href="#topo_Index" title="Retorna ao topo">🔝</a></li>
-</ol>
-<hr>
-<h3 id="4-históricos"><strong>4. HISTÓRICOS</strong><span id="id_4"><span></h3>
-<h4 id="27012021">27/01/2021</h4>
-<ul class="contains-task-list">
-<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> instalar mariadb server</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Testar conexão com servidor
-<ul class="contains-task-list">
-<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Fazer teste local</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Fazer teste remoto</li>
-</ul>
-</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar banco de dado db_blogpsspappbr.db</li>
-</ul>
-<p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
-<hr>
-<h3 id="referências"><strong>REFERÊNCIAS</strong><span id="id_referencias"><span></h3>
-<ol>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04-pt#pr%C3%A9-requisitos">how-to-install-mysql-on-ubuntu-20-04-pt-requisitos</a></li>
-<li><a href="MariaDB.com">MariaDB.com</a>
-<ol>
-<li><a href="https://mariadb.com/kb/en/getting-installing-and-upgrading-mariadb/">getting-installing-and-upgrading-mariadb</a>.</li>
-<li><a href="https://mariadb.com/kb/en/distributions-which-include-mariadb/">Distribuições que incluem MariaDB</a></li>
-<li><a href="https://mariadb.com/developers/">https://mariadb.com/developers</a></li>
-<li><a href="https://mariadb.com/kb/pt/documentation/">Documentação em português</a></li>
-<li><a href="https://mariadb.com/kb/en/mysql_install_db/">mysql_install_db</a></li>
-<li><a href="https://dev.mysql.com/doc/refman/5.7/en/data-directory-initialization.html">data-directory-initialization.html</a></li>
-<li><a href="https://mariadb.com/kb/en/backup-and-restore-overview/">backup-and-restore-overview</a></li>
-<li><a href="https://mariadb.com/kb/en/starting-and-stopping-mariadb-automatically/">starting-and-stopping-mariadb-automatically</a>.</li>
-<li><a href="https://mariadb.com/kb/en/full-list-of-mariadb-options-system-and-status-variables/">full-list-of-mariadb-options-system-and-status-variables</a></li>
-<li></li>
-</ol>
-</li>
-<li>Vídeo aula <a href="https://www.youtube.com/watch?v=1f22RUeiVwI">Servidor MySQL no Ubuntu</a>.</li>
-<li><a href="https://mariadb.com/kb/en/mariadb-package-repository-setup-and-usage/">documento mariadb-package-repository-setup-and-usage</a>.</li>
-<li><a href="https://www.youtube.com/watch?v=bCKxijsiG9M">install mariadb ubuntu 18 04</a>.</li>
-<li><a href="https://dev.mysql.com/doc/refman/5.7/en/testing-server.html">Testando o servidor</a></li>
-<li><a href="#topo_Index" title="Retorna ao topo">🔝</a></li>
-</ol>
-<!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
-<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+          </li>
+          <li>
+            <p><strong>REFERÊNCIAS</strong></p>
+            <ol>
+              <li><strong><a href="https://mariadb.com/kb/en/mysqlshow/">mysqlshow</a></strong></li>
+              <li>..</li>
+            </ol>
+          </li>
+          <li>
+            <p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
+          </li>
+        </ol>
+        <hr>
+        <h3 id="3-instalar-extensões-do-vscode-para-acessar-mariadb"><strong>3. Instalar <a href="https://code.visualstudio.com/docs/editor/extension-gallery?pub=clarkyu&amp;ext=vscode-sql-beautify">extensões do vscode</a> para acessar mariadb</strong><span id="id_3"><span></h3>
+        <ol>
+          <li>Instalar extensão <a href="https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools">SQL TOOLS</a>.
+            <ol>
+              <li><a href="https://www.youtube.com/watch?v=5TVBSrFuCDA">Vídeo aula de como usar sql tools</a>.</li>
+              <li><a href="https://vscode-sqltools.mteixeira.dev/">Documentação completa do sql tools</a></li>
+            </ol>
+          </li>
+          <li>Instalar extensão <a href="https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-mysql">SQLTools MySQL/MariaDB</a>
+            <ol>
+              <li><a href="https://vscode-sqltools.mteixeira.dev/?umd_source=repository&amp;utm_medium=readme&amp;utm_campaign=mysql">Documentação completa de SQLTools MySQL/MariaDB</a></li>
+            </ol>
+          </li>
+          <li>Instalar extensão <a href="https://marketplace.visualstudio.com/items?itemName=clarkyu.vscode-sql-beautify">SQL Beautify</a> para embeleza SQL.</li>
+          <li>Instalar extensão <a href="https://marketplace.visualstudio.com/items?itemName=adpyke.vscode-sql-formatter">SQL Formatter</a>
+            <ol>
+              <li>Essa extensão usa <a href="https://github.com/kufii/sql-formatter-plus">SQL Formatter Plus</a></li>
+            </ol>
+          </li>
+          <li><a href="#topo_Index" title="Retorna ao topo">🔝</a></li>
+        </ol>
+        <hr>
+        <h3 id="4-históricos"><strong>4. HISTÓRICOS</strong><span id="id_4"><span></h3>
+        <h4 id="27012021">27/01/2021</h4>
+        <ul class="contains-task-list">
+          <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked="" type="checkbox"> instalar mariadb server</li>
+          <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked="" type="checkbox"> Testar conexão com servidor
+            <ul class="contains-task-list">
+              <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked="" type="checkbox"> Fazer teste local</li>
+              <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked="" type="checkbox"> Fazer teste remoto</li>
+            </ul>
+          </li>
+          <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked="" type="checkbox"> Criar banco de dado db_blogpsspappbr.db</li>
+        </ul>
+        <p><a href="#topo_Index" title="Retorna ao topo">🔝</a></p>
+        <hr>
+        <h3 id="referências"><strong>REFERÊNCIAS</strong><span id="id_referencias"><span></h3>
+        <ol>
+          <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04-pt#pr%C3%A9-requisitos">how-to-install-mysql-on-ubuntu-20-04-pt-requisitos</a></li>
+          <li><a href="MariaDB.com">MariaDB.com</a>
+            <ol>
+              <li><a href="https://mariadb.com/kb/en/getting-installing-and-upgrading-mariadb/">getting-installing-and-upgrading-mariadb</a>.</li>
+              <li><a href="https://mariadb.com/kb/en/distributions-which-include-mariadb/">Distribuições que incluem MariaDB</a></li>
+              <li><a href="https://mariadb.com/developers/">https://mariadb.com/developers</a></li>
+              <li><a href="https://mariadb.com/kb/pt/documentation/">Documentação em português</a></li>
+              <li><a href="https://mariadb.com/kb/en/mysql_install_db/">mysql_install_db</a></li>
+              <li><a href="https://dev.mysql.com/doc/refman/5.7/en/data-directory-initialization.html">data-directory-initialization.html</a></li>
+              <li><a href="https://mariadb.com/kb/en/backup-and-restore-overview/">backup-and-restore-overview</a></li>
+              <li><a href="https://mariadb.com/kb/en/starting-and-stopping-mariadb-automatically/">starting-and-stopping-mariadb-automatically</a>.</li>
+              <li><a href="https://mariadb.com/kb/en/full-list-of-mariadb-options-system-and-status-variables/">full-list-of-mariadb-options-system-and-status-variables</a></li>
+              <li></li>
+            </ol>
+          </li>
+          <li>Vídeo aula <a href="https://www.youtube.com/watch?v=1f22RUeiVwI">Servidor MySQL no Ubuntu</a>.</li>
+          <li><a href="https://mariadb.com/kb/en/mariadb-package-repository-setup-and-usage/">documento mariadb-package-repository-setup-and-usage</a>.</li>
+          <li><a href="https://www.youtube.com/watch?v=bCKxijsiG9M">install mariadb ubuntu 18 04</a>.</li>
+          <li><a href="https://dev.mysql.com/doc/refman/5.7/en/testing-server.html">Testando o servidor</a></li>
+          <li><a href="#topo_Index" title="Retorna ao topo">🔝</a></li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-        
-        
-    </body>
-    </html>
+
+
+</body>
+
+</html>

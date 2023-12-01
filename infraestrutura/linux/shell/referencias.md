@@ -1,4 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # REFERÊNCIAS  <a href="referencias.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a> <span id="topo"><span>
 
 ## Links da página referências
@@ -15,3 +22,9 @@
 10. [7 maneiras simples de liberar espaço no Ubuntu e Linux Mint](https://itsfoss.com/free-up-space-ubuntu-linux/#1-get-rid-of-packages-that-are-no-longer-required-recommended-)
 11. [Melhores utilitários de limpeza de sistema semelhantes ao CCleaner para Ubuntu Linux](https://itsfoss.com/ccleaner-alternatives-ubuntu-linux/)
 12. [Como liberar espaço no disco rígido do Linux Ubuntu, Mint, Debian](https://mazer.dev/pt-br/linux/dicas/como-liberar-espaco-no-disco-rigido-do-linux-ubuntu-mint-debian/)
+
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>

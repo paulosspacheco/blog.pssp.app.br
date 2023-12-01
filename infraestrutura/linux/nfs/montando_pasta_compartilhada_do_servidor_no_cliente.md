@@ -1,7 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<!-- markdownlint-disable-next-line -->
-### Montando pasta compartilhada do servidor na máquina cliente<a href="montando_pasta_compartilhada_do_servidor_no_cliente.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+
+# Montando pasta compartilhada do servidor na máquina cliente<a href="montando_pasta_compartilhada_do_servidor_no_cliente.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 1. Para acessar os compartilhamentos do _servidor nfs_ é necessário criar pasta na máquina cliente e usar o comando _mount_ da seguinte forma:.
    1. Criando pasta na máquina cliente:
@@ -28,10 +33,16 @@
        
        ```
 
-##### NOTA
+## NOTAS
 
 - _Se houver arquivos e diretórios em seu ponto de montagem, eles se tornarão ocultos e você pode perde-los_.
 
-##### REFERÊNCIAS
+## REFERÊNCIAS
 
 1. [Passo 5 — Criando os pontos de montagem e montando diretórios no cliente.](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04-pt#passo-5-criando-os-pontos-de-montagem-e-montando-diretorios-no-cliente)
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

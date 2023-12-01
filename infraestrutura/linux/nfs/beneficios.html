@@ -1,38 +1,64 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Benef&iacute;cios do servi&ccedil;o NFS</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <title>Benef&iacute;cios do servi&ccedil;o NFS</title>
 
-        <!-- CSS markdown -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
-        
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="benefícios-do-serviço-nfs">Benefícios do serviço NFS</h1> -->
+        <ol>
+          <li>Alguns dos benefícios mais notáveis que o NFS pode oferecer são:
+            <ol>
+              <li>Estações locais usam menos espaço em disco porque dados freqüentemente usados podem ser armazenados em uma única máquina e ainda permanecerem acessíveis a outras pela rede.</li>
+              <li>Não há necessidade de usuários terem diretórios pessoais separados em cada máquina da rede. Diretórios pessoais podem ser configurados no servidor NFS e serem disponibilizados através da rede.</li>
+              <li>Dispositivos de armazenamento como leitores de CD-ROM e drives USB podem ser usados por outras máquinas na rede, reduzindo o número de leitores de mídia removível em toda a rede e centralizando o controle de mídias. <a href="https://cooperati.com.br/2012/03/compartilhando-com-nfs/#:~:text=Alguns%20dos%20benef%C3%ADcios%20mais%20not%C3%A1veis,acess%C3%ADveis%20a%20outras%20pela%20rede.">Veja mais...</a></li>
+              <li>Em grandes redes, pode ser mais conveniente configurar um servidor central para armazenar todos os diretórios pessoais dos usuários.</li>
+            </ol>
+          </li>
+        </ol>
+        <h2 id="referências">REFERÊNCIAS</h2>
+        <ol>
+          <li><a href="https://wiki.sj.ifsc.edu.br/images/0/0e/SMB_e_NFS_-_apresenta%C3%A7%C3%A3oARC.pdf">NFS / SAMBA</a></li>
+        </ol>
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
 
-    </head>
-    <body class="vscode-body vscode-light">
-        <!-- markdownlint-disable-next-line -->
-<h4 id="benefícios-do-serviço-nfs">Benefícios do serviço NFS</h4>
-<ol>
-<li>Alguns dos benefícios mais notáveis que o NFS pode oferecer são:
-<ol>
-<li>Estações locais usam menos espaço em disco porque dados freqüentemente usados podem ser armazenados em uma única máquina e ainda permanecerem acessíveis a outras pela rede.</li>
-<li>Não há necessidade de usuários terem diretórios pessoais separados em cada máquina da rede. Diretórios pessoais podem ser configurados no servidor NFS e serem disponibilizados através da rede.</li>
-<li>Dispositivos de armazenamento como leitores de CD-ROM e drives USB podem ser usados por outras máquinas na rede, reduzindo o número de leitores de mídia removível em toda a rede e centralizando o controle de mídias. <a href="https://cooperati.com.br/2012/03/compartilhando-com-nfs/#:~:text=Alguns%20dos%20benef%C3%ADcios%20mais%20not%C3%A1veis,acess%C3%ADveis%20a%20outras%20pela%20rede.">Veja mais...</a></li>
-<li>Em grandes redes, pode ser mais conveniente configurar um servidor central para armazenar todos os diretórios pessoais dos usuários.</li>
-</ol>
-</li>
-</ol>
-<h5 id="referências">REFERÊNCIAS</h5>
-<ol>
-<li><a href="https://wiki.sj.ifsc.edu.br/images/0/0e/SMB_e_NFS_-_apresenta%C3%A7%C3%A3oARC.pdf">NFS / SAMBA</a></li>
-</ol>
 
-        
-        
-     </body>
-    </html>
+</body>
+
+</html>

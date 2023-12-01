@@ -1,8 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>
+<span id="topo"><span>
 
-<!-- markdownlint-disable-next-line -->
-#### Como hospedar um site estático no github page <a href="como_hospedar_um _site_estático_no_github_page.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
+# Como hospedar um site estático no github page <a href="como_hospedar_um _site_estático_no_github_page.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 1. [**O que é o github pages?**](https://docs.github.com/pt/pages/getting-started-with-github-pages/about-github-pages)
    1. O [Github Pages](https://pages.github.com) é o serviço de hospedagem de sites estáticos do Github. Ele usa arquivos HTML, CSS e Javascript diretamente de um repositório, executa os arquivos por meio de um processo e publica um site. [Veja mais...](https://www.alura.com.br/artigos/como-colocar-projeto-no-ar-com-github-pages?gclid=Cj0KCQjw4NujBhC5ARIsAF4Iv6dbm7av5hMLVRnxwGMvOuu5SEhwwQ3yHfFQ3k0uIVfKIkCfRGQxo8QaAsSoEALw_wcB)
@@ -29,5 +33,8 @@
 3. **REFERÊNCIAS**
    1. [Início rápido para o GitHub Pages](https://docs.github.com/pt/pages/quickstart)
 
+</main>
+
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>      
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")

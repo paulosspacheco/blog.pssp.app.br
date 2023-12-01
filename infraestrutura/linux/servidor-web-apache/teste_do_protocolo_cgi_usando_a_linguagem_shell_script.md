@@ -1,5 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-##### Teste do protocolo CGI usando a linguagem shell script <a href="teste_do_protocolo_cgi_usando_a_linguagem_shell_script.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
+<span id="topo"><span>
+
+# Teste do protocolo CGI usando a linguagem shell script <a href="teste_do_protocolo_cgi_usando_a_linguagem_shell_script.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
 
 1. Com editor de sua preferência, crie o arquivo _/home/cgi_bin/cgi/testcgi.sh_;
 2. Adicione o _programa shell script_ abaixo no arquivo _/home/cgi_bin/cgi/testcgi.sh_, em seguida salve-o:
@@ -36,3 +43,9 @@
     1. Notas:
         1. Caso o link _http://cgi-bin/testcgi.sh_ não funcione, edite o arquivo de log na pasta _/var/log/apache2/error.log_ e observe a data dos erros e código do erro, em seguida procure na internet a solução;
         2. Esses passos descritos até aqui, foram testados no _apache2_ do _Linux Mint 21 Cinnamon_.
+
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")
