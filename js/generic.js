@@ -97,32 +97,35 @@ function goBack() {
   history.back();
 }
 
-/** A função usada para fixar um div fix na parte superior da tela usada para menus */
+/** A função usada para fixar um div fix na parte superior da tela usada para menus 
+ *  Caso a página seja inserido em um frame então omite o header 
+*/
 function FixHeader(window, id) {
   var header = document.getElementById(id);
   var sticky = header.offsetTop;
 
-  function myFunction() {
-    if (window.pageYOffset > sticky) {
-      header.classList.add("sticky");
-    } else {
-      header.classList.remove("sticky");
-    }
+  function Print_header() 
+  {
+        
+    if (window.pageYOffset > sticky) 
+    {
+      if (window.top === window.self) 
+      {
+        header.classList.add("sticky");
+      }  
+      else {   header.classList.remove("sticky");     }  
+        
+    } else {   header.classList.remove("sticky"); }   
   }
-  window.onscroll = function () { myFunction(); };
+
+  if (window.top !== window.self) 
+  {//document.title + alert(': dentro iframe');
+    header.style.display = 'none';   //Omite o header
+  } else { 
+          //  alert(document.title + ': Fora do frame');
+           window.onscroll = function () { Print_header(); }; 
+         }
+
+
+  
 }
-
-  // window.onscroll = function () {
-  //   myFunction();
-  // };
-
-  // var header = document.getElementById(id);
-  // var sticky = header.offsetTop;
-
-  // function myFunction() {
-  //   if (window.pageYOffset > sticky) {
-  //     header.classList.add("sticky");
-  //   } else {
-  //     header.classList.remove("sticky");
-  //   }
-  // }

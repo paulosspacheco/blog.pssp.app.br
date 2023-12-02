@@ -98,6 +98,4 @@
 
 </main>
 
-<!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 [🔝🔝](#topo "Retorna ao topo")

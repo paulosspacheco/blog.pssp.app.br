@@ -3,8 +3,6 @@
 </div>
 <div class="title"><script> document.write(document.title);</script></div>  
 <main>
-<!-- markdownlint-disable-next-line -->
-<span id="topo"><span>
 
 # Objetivo
 
@@ -12,7 +10,3 @@ Passei a vida aprendendo e esquecendo, por isso resolvi usar o computador para r
 Espero que dá próxima vez que eu precise do assunto, eu possa replicar a técnica com mais facilidade, já que tenho anotado tudo o que é importante sobre o assunto e as referências para aprimoramento do assunto.
 
 </main>
-
-<!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
-[🔝🔝](#topo "Retorna ao topo")

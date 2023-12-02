@@ -7,6 +7,9 @@
 
         <script type="application/x-javascript" src="/js/generic.js"></script>
         <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>   
 
-    
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
