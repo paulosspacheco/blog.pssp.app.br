@@ -2061,5 +2061,5 @@
   </div>
 </div>
 <a href="/index.html">Home</a>
-<a href="/tipue_results.html" target=""><b> 🔎 </b></a>
+<a href="/tipue_results.html" target="" style="font-size: 20px;">🔎 </a>
 

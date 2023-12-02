@@ -124,8 +124,5 @@ function FixHeader(window, id) {
   } else { 
           //  alert(document.title + ': Fora do frame');
            window.onscroll = function () { Print_header(); }; 
-         }
-
-
-  
+         } 
 }
