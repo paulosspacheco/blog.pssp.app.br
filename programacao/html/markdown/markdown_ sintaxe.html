@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="markdown-sintaxe">Markdown: Sintaxe</h1> -->
+<ul id = "ProjectSubmenu">
+    <li> <a href="/projects/markdown/" title="Markdown Project Page"> Principal </a> </li>
+    <li> <a href="/projects/markdown/basics" title="Markdown Basics"> Noções básicas </a> </li>
+    <li> <a class="selected" title="Markdown Syntax Documentation"> Sintaxe </a> </li>
+    <li> <a href="/projects/markdown/license" title="Pricing and License Information"> Licença </a> </li>
+    <li> <a href="/projects/markdown/dingus" title="Online Markdown Web Form"> Dingus </a> </li>
+</ul>
+<ul>
+<li>[Visão geral](#visão geral)
+<ul>
+<li><a href="#filosofia">Filosofia</a></li>
+<li><a href="#html">Inline HTML</a></li>
+<li><a href="#autoescape">Escape automático para caracteres especiais</a></li>
+<li><a href="#bloco">Elementos do bloco</a></li>
+<li><a href="#p">Parágrafos e quebras de linha</a></li>
+<li><a href="#cabe%C3%A7alho">Cabeçalhos</a></li>
+<li><a href="#blockquote">Blockquotes</a></li>
+<li><a href="#lista">Listas</a></li>
+<li><a href="#pr%C3%A9-c%C3%B3digo">Blocos de código</a></li>
+<li><a href="#h">Regras horizontais</a></li>
+<li><a href="#span">Span Elements</a></li>
+<li><a href="#link">Links</a></li>
+<li><a href="#em">Ênfase</a></li>
+<li><a href="#c%C3%B3digo">Código</a></li>
+<li><a href="#img">Imagens</a></li>
+</ul>
+</li>
+<li><a href="#misc">Diversos</a>
+<ul>
+<li>[Escapes de barra invertida](#barra invertida)</li>
+<li><a href="#autolink">Links automáticos</a></li>
+</ul>
+</li>
+</ul>
+<p>** Nota: ** Este documento foi escrito usando Markdown; vocês
+pode [ver a fonte adicionando '.text' ao URL] <a href="/projects/markdown/syntax.text">src</a>.</p>
+<hr>
+<h2 id = "overview"> Visão geral </h2>
+<h3 id = "philosophia"> Filosofia </h3>
+<p>O Markdown se destina a ser tão fácil de ler e escrever quanto possível.</p>
+<p>A legibilidade, no entanto, é enfatizada acima de tudo. Um formatado em Markdown
+documento deve ser publicável como está, como texto simples, sem olhar
+como se tivesse sido marcado com tags ou instruções de formatação. Enquanto
+A sintaxe do Markdown foi influenciada por vários textos para HTML existentes
+filtros - incluindo [Setext] <a href="http://docutils.sourceforge.net/mirror/setext.html">1</a>, [atx] <a href="http://www.aaronsw.com/2002/atx/">2</a>, [Textile] <a href="http://textism.com/tools/textile/">3</a>, [reStructuredText] <a href="http://docutils.sourceforge.net/rst.html">4</a>,
+[Grutatext] <a href="http://www.triptico.com/software/grutatxt.html">5</a> e [EtText] <a href="http://ettext.taint.org/doc/">6</a> - a única maior fonte de
+A inspiração para a sintaxe do Markdown é o formato do e-mail em texto simples.</p>
+<p>Para este fim, a sintaxe do Markdown é composta inteiramente de pontuação
+caracteres, cujos caracteres de pontuação foram cuidadosamente escolhidos para
+para parecer o que eles significam. Por exemplo, asteriscos ao redor de uma palavra, na verdade
+parece com \ * ênfase \ *. As listas de markdown parecem, bem, listas. Até
+blockquotes parecem passagens de texto citadas, supondo que você já
+e-mail usado.</p>
+<h3 id = "html"> HTML embutido </h3>
+<p>A sintaxe do Markdown tem um propósito: ser usada como um
+formato para * escrever * para a web.</p>
+<p>Markdown não é um substituto para o HTML, nem mesmo perto disso. Está
+sintaxe é muito pequena, correspondendo apenas a um subconjunto muito pequeno de
+Tags HTML. A ideia é * não * criar uma sintaxe que torne mais fácil
+para inserir tags HTML. Na minha opinião, as tags HTML já são fáceis de
+inserir. A ideia do Markdown é torná-lo fácil de ler, escrever e
+editar prosa. HTML é um formato de * publicação *; Markdown é uma * escrita *
+formato. Assim, a sintaxe de formatação do Markdown aborda apenas questões que
+pode ser transmitido em texto simples.</p>
+<p>Para qualquer marcação que não seja coberta pela sintaxe do Markdown, você simplesmente
+use o próprio HTML. Não há necessidade de precedê-lo ou delimitá-lo para
+indicam que você está mudando de Markdown para HTML; você acabou de usar
+as tags.</p>
+<p>As únicas restrições são os elementos HTML de nível de bloco - por exemplo, <code>&lt;div&gt;</code>,
+<code>&lt;table&gt;</code>, <code>&lt;pre&gt;</code>, <code>&lt;p&gt;</code>, etc. - deve ser separado do ambiente
+o conteúdo por linhas em branco e as tags de início e fim do bloco devem
+não ser indentado com tabulações ou espaços. Markdown é inteligente o suficiente, não
+para adicionar tags <code>&lt;p&gt;</code> extras (indesejadas) em torno das tags de nível de bloco HTML.</p>
+<p>Por exemplo, para adicionar uma tabela HTML a um artigo Markdown:</p>
+<pre><code class="hljs">Este é um parágrafo regular.
+
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt; Foo &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+Este é outro parágrafo regular.
+</code></pre>
+<p>Observe que a sintaxe de formatação do Markdown não é processada no nível de bloco
+Tags HTML. Por exemplo, você não pode usar o estilo Markdown <code>* ênfase *</code> dentro de um
+Bloco de HTML.</p>
+<p>Tags HTML de nível de expansão - por exemplo, <code>&lt;span&gt;</code>, <code>&lt;cite&gt;</code> ou <code>&lt;del&gt;</code> - podem ser
+usado em qualquer lugar em um parágrafo Markdown, item de lista ou cabeçalho. Se vocês
+desejar, você pode até usar tags HTML em vez da formatação Markdown; por exemplo, se
+você prefere usar as tags HTML <code>&lt;a&gt;</code> ou <code>&lt;img&gt;</code> em vez das tags do Markdown
+link ou sintaxe de imagem, vá em frente.</p>
+<p>Ao contrário das tags HTML de nível de bloco, a sintaxe Markdown * é * processada dentro
+tags de nível de amplitude.</p>
+<h3 id = "autoescape"> Escape automático para caracteres especiais </h3>
+<p>Em HTML, existem dois caracteres que exigem tratamento especial: <code>&lt;</code>
+e <code>&amp;</code>. Os colchetes angulares esquerdos são usados ​​para iniciar as tags; e comercial são
+usado para denotar entidades HTML. Se você quiser usá-los como literais
+caracteres, você deve escapá-los como entidades, por exemplo, <code>&amp; lt;</code>, e
+<code>&amp; amp;</code>.</p>
+<p>Os e comerciais em particular são atormentadores para os escritores da web. Se você quiser
+escrever sobre 'AT&amp;T', você precisa escrever '<code>AT &amp; amp; T</code>'. Você ainda precisa
+escape e comercial em URLs. Portanto, se você deseja criar um link para:</p>
+<pre><code class="hljs">http://images.google.com/images?num=30&amp;q=larry+bird
+</code></pre>
+<p>você precisa codificar o URL como:</p>
+<pre><code class="hljs">http://images.google.com/images?num=30&amp;q=larry+bird
+</code></pre>
+<p>no atributo da tag âncora <code>href</code>. Não é preciso dizer que é fácil
+esqueça, e é provavelmente a fonte mais comum de validação de HTML
+erros em sites bem marcados.</p>
+<p>Markdown permite que você use esses personagens naturalmente, cuidando de
+todo o escape necessário para você. Se você usar um E comercial como parte de
+uma entidade HTML, ela permanece inalterada; caso contrário, será traduzido
+em <code>&amp; amp;</code>.</p>
+<p>Então, se você quiser incluir um símbolo de direitos autorais em seu artigo, você pode escrever:</p>
+<pre><code class="hljs">&amp;cópia de;
+</code></pre>
+<p>e o Markdown vai deixá-lo sozinho. Mas se você escrever:</p>
+<pre><code class="hljs">AT&amp;T
+</code></pre>
+<p>Markdown irá traduzi-lo para:</p>
+<pre><code class="hljs">AT &amp; amp; T
+</code></pre>
+<p>Da mesma forma, como o Markdown oferece suporte a <a href="#html">HTML embutido</a>, se você usar
+colchetes angulares como delimitadores para tags HTML, Markdown irá tratá-los como
+tal. Mas se você escrever:</p>
+<pre><code class="hljs">4 &lt;5
+</code></pre>
+<p>Markdown irá traduzi-lo para:</p>
+<pre><code class="hljs">4 &amp; lt; 5
+</code></pre>
+<p>No entanto, dentro do código Markdown, vãos e blocos, colchetes angulares e
+Os e comerciais são <strong>sempre</strong> codificados automaticamente. Isso torna mais fácil de usar
+Markdown para escrever sobre o código HTML. (Ao contrário do HTML bruto, que é um
+formato terrível para escrever sobre a sintaxe HTML, porque cada <code>&lt;</code>
+e <code>&amp;</code> em seu código de exemplo precisa ser escapado.)</p>
+<hr>
+<h2 id = "block"> Elementos do bloco </h2>
+<h3 id = "p"> Parágrafos e quebras de linha </h3>
+<p>Um parágrafo é simplesmente uma ou mais linhas consecutivas de texto, separadas
+por uma ou mais linhas em branco. (Uma linha em branco é qualquer linha que se pareça com um
+linha em branco - uma linha contendo nada além de espaços ou tabulações é considerada
+em branco.) Parágrafos normais não devem ser recuados com espaços ou tabulações.</p>
+<p>A implicação da regra &quot;uma ou mais linhas consecutivas de texto&quot; é
+que o Markdown suporta parágrafos de texto &quot;hard-wrap&quot;. Isso difere
+significativamente da maioria dos outros formatadores de texto para HTML (incluindo Movable
+Opção &quot;Converter quebras de linha&quot; do tipo), que traduz cada quebra de linha
+caractere em um parágrafo em uma tag <code>&lt;br /&gt;</code>.</p>
+<p>Quando você * quer * inserir uma tag de quebra <code>&lt;br /&gt;</code> usando Markdown, você
+termine uma linha com dois ou mais espaços e digite return.</p>
+<p>Sim, isso exige um pouco mais de esforço para criar um <code>&lt;br /&gt;</code>, mas um simplista
+&quot;cada quebra de linha é uma regra<code>&lt;br /&gt;</code>&quot; não funcionaria para Markdown.
+Estilo de e-mail do Markdown [blockquoting] <a href="#blockquote">bq</a> e vários parágrafos [itens da lista] <a href="#list">l</a>
+funcionam melhor - e têm melhor aparência - quando você os formata com pausas rígidas.</p>
+<h3 id = "header"> Cabeçalhos </h3>
+<p>Markdown suporta dois estilos de cabeçalhos, [Setext] <a href="http://docutils.sourceforge.net/mirror/setext.html">1</a> e [atx] <a href="http://www.aaronsw.com/2002/atx/">2</a>.</p>
+<p>Os cabeçalhos de estilo setext são &quot;sublinhados&quot; usando sinais de igual (para o primeiro nível
+cabeçalhos) e travessões (para cabeçalhos de segundo nível). Por exemplo:</p>
+<pre><code class="hljs">Este é um H1
+=============
+
+Este é um H2
+-------------
+</code></pre>
+<p>Qualquer número de sublinhado <code>=</code> 's ou <code>-</code>'s funcionará.</p>
+<p>Os cabeçalhos de estilo Atx usam de 1 a 6 caracteres hash no início da linha,
+correspondendo aos níveis de cabeçalho 1-6. Por exemplo:</p>
+<pre><code class="hljs"># Este é um H1
+
+## Este é um H2
+
+###### Este é um H6
+</code></pre>
+<p>Opcionalmente, você pode &quot;fechar&quot; cabeçalhos de estilo atx. Isso é puramente
+cosmético - você pode usar se achar que fica melhor. o
+os hashes de fechamento nem precisam corresponder ao número de hashes
+usado para abrir o cabeçalho. (O número de hashes de abertura
+determina o nível do cabeçalho.):</p>
+<pre><code class="hljs"># Este é um H1 #
+
+## Este é um H2 ##
+
+### Este é um H3 ######
+</code></pre>
+<h3 id = "blockquote"> Blockquotes </h3>
+<p>Markdown usa caracteres do estilo de email <code>&gt;</code> para citações em bloco. Se vocês são
+familiarizado com a citação de trechos de texto em uma mensagem de e-mail, então você
+sabe como criar um blockquote no Markdown. Parece melhor se você estiver duro
+envolva o texto e coloque um <code>&gt;</code> antes de cada linha:</p>
+<pre><code class="hljs">&gt; Este é um blockquote com dois parágrafos. Lorem ipsum dolor sit amet,
+&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+&gt; 
+&gt; Donec sit amet nisl. Aliquam sempre ipsum sit amet velit. Suspendisse
+&gt; id sem consectetuer libero luctus adipiscing.
+</code></pre>
+<p>Markdown permite que você seja preguiçoso e apenas coloque o <code>&gt;</code> antes do primeiro
+linha de um parágrafo embrulhado:</p>
+<pre><code class="hljs">&gt; Este é um blockquote com dois parágrafos. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+
+&gt; Donec sit amet nisl. Aliquam sempre ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.
+</code></pre>
+<p>Blockquotes podem ser aninhados (ou seja, um blockquote-in-a-blockquote) por
+adicionar níveis adicionais de <code>&gt;</code>:</p>
+<pre><code class="hljs">&gt; Este é o primeiro nível de citação.
+&gt;
+&gt;&gt; Este é um blockquote aninhado.
+&gt;
+&gt; Voltar ao primeiro nível.
+</code></pre>
+<p>Blockquotes podem conter outros elementos Markdown, incluindo cabeçalhos, listas,
+e blocos de código:</p>
+<pre><code class="hljs">&gt; ## Este é um cabeçalho.
+&gt; 
+&gt; 1. Este é o primeiro item da lista.
+&gt; 2. Este é o segundo item da lista.
+&gt; 
+&gt; Aqui está um exemplo de código:
+&gt; 
+&gt; return shell_exec (&quot;echo $ input | $ markdown_script&quot;);
+</code></pre>
+<p>Qualquer editor de texto decente deve facilitar as citações no estilo e-mail. Para
+exemplo, com o BBEdit, você pode fazer uma seleção e escolher Aumentar
+Nível de cotação no menu Texto.</p>
+<h3 id = "list"> Listas </h3>
+<p>Markdown suporta listas ordenadas (numeradas) e não ordenadas (com marcadores).</p>
+<p>Listas não ordenadas usam asteriscos, sinais de mais e hifens - de forma intercambiável</p>
+<ul>
+<li>
+<p>como marcadores de lista:</p>
+<ul>
+<li>Vermelho</li>
+<li>Verde</li>
+<li>Azul</li>
+</ul>
+</li>
+</ul>
+<p>é equivalente a:</p>
+<pre><code class="hljs">+ Vermelho
++ Verde
++ Azul
+</code></pre>
+<p>e:</p>
+<pre><code class="hljs">- vermelho
+- verde
+- azul
+</code></pre>
+<p>Listas ordenadas usam números seguidos de pontos:</p>
+<pre><code class="hljs">1. Bird
+2. McHale
+3. Paróquia
+</code></pre>
+<p>É importante notar que os números reais que você usa para marcar o
+lista não tem efeito na saída HTML que o Markdown produz. O HTML
+O Markdown produzido da lista acima é:</p>
+<pre><code class="hljs">&lt;ol&gt;
+&lt;li&gt; pássaro &lt;/li&gt;
+&lt;li&gt; McHale &lt;/li&gt;
+&lt;li&gt; Freguesia &lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<p>Se, em vez disso, você escreveu a lista no Markdown assim:</p>
+<pre><code class="hljs">1. Bird
+1. McHale
+1. Freguesia
+</code></pre>
+<p>ou mesmo:</p>
+<pre><code class="hljs">3. Bird
+1. McHale
+8. Freguesia
+</code></pre>
+<p>você obteria exatamente a mesma saída HTML. A questão é, se você quiser,
+você pode usar números ordinais em suas listas Markdown ordenadas, de modo que
+os números em sua fonte correspondem aos números em seu HTML publicado.
+Mas se você quiser ser preguiçoso, não precisa.</p>
+<p>Se você usar a numeração de lista preguiçosa, no entanto, você ainda deve iniciar o
+lista com o número 1. Em algum momento no futuro, Markdown pode suportar
+começando listas ordenadas em um número arbitrário.</p>
+<p>Os marcadores de lista normalmente começam na margem esquerda, mas podem ser recuados por
+até três espaços. Os marcadores de lista devem ser seguidos por um ou mais espaços
+ou uma guia.</p>
+<p>Para deixar as listas bonitas, você pode envolver os itens com recuos deslocados:</p>
+<pre><code class="hljs">* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+    viverra nec, fringilla in, laoreet vitae, risus.
+* Donec sente-se amet nisl. Aliquam sempre ipsum sit amet velit.
+    Suspendisse id sem consectetuer libero luctus adipiscing.
+</code></pre>
+<p>Mas se você quiser ser preguiçoso, não precisa:</p>
+<pre><code class="hljs">* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+viverra nec, fringilla in, laoreet vitae, risus.
+* Donec sente-se amet nisl. Aliquam sempre ipsum sit amet velit.
+Suspendisse id sem consectetuer libero luctus adipiscing.
+</code></pre>
+<p>Se os itens da lista forem separados por linhas em branco, o Markdown envolverá o
+itens em tags <code>&lt;p&gt;</code> na saída HTML. Por exemplo, esta entrada:</p>
+<pre><code class="hljs">* Pássaro
+* Magia
+</code></pre>
+<p>vai se transformar em:</p>
+<pre><code class="hljs">&lt;ul&gt;
+&lt;li&gt; pássaro &lt;/li&gt;
+&lt;li&gt; Magia &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>Mas isso:</p>
+<pre><code class="hljs">* Pássaro
+
+* Magia
+</code></pre>
+<p>vai se transformar em:</p>
+<pre><code class="hljs">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Bird&lt;/p&gt; &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Magic&lt;/p&gt; &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>Os itens da lista podem consistir em vários parágrafos. Cada subseqüente
+parágrafo em um item de lista deve ser indentado por 4 espaços
+ou uma guia:</p>
+<pre><code class="hljs">1. Este é um item de lista com dois parágrafos. Lorem ipsum dolor
+    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+    mi posuere lectus.
+
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+    vitae, risus. Donec sente-se amet nisl. Aliquam sempre ipsum
+    sente-se amet velit.
+
+2. Suspendisse id sem consectetuer libero luctus adipiscing.
+</code></pre>
+<p>Parece bom se você recuar cada linha do subseqüente
+parágrafos, mas aqui novamente, Markdown permitirá que você seja
+preguiçoso:</p>
+<pre><code class="hljs">* Este é um item de lista com dois parágrafos.
+
+    Este é o segundo parágrafo do item da lista. Você é
+necessário apenas para indentar a primeira linha. Lorem ipsum dolor
+sit amet, consectetuer adipiscing elit.
+
+* Outro item da mesma lista.
+</code></pre>
+<p>Para colocar um blockquote dentro de um item da lista, o blockquote <code>&gt;</code>
+delimitadores precisam ser indentados:</p>
+<pre><code class="hljs">* Um item de lista com uma aspa:
+
+    &gt; Este é um blockquote
+    &gt; dentro de um item da lista.
+</code></pre>
+<p>Para colocar um bloco de código em um item da lista, o bloco de código precisa
+ser indentado * duas vezes * - 8 espaços ou duas tabulações:</p>
+<pre><code class="hljs">* Um item de lista com um bloco de código:
+
+        &lt;o código vai aqui&gt;
+</code></pre>
+<p>É importante notar que é possível acionar uma lista ordenada por
+acidente, escrevendo algo assim:</p>
+<pre><code class="hljs">1986. Que ótima temporada.
+</code></pre>
+<p>Em outras palavras, uma sequência de * número-período-espaço * no início de um
+linha. Para evitar isso, você pode fazer o escape do ponto com barra invertida:</p>
+<pre><code class="hljs">1986 \. Que ótima temporada.
+</code></pre>
+<h3 id = "precode"> Blocos de código </h3>
+<p>Blocos de código pré-formatados são usados ​​para escrever sobre programação ou
+código-fonte de marcação. Em vez de formar parágrafos normais, as linhas
+de um bloco de código são interpretados literalmente. Markdown envolve um bloco de código
+nas tags <code>&lt;pre&gt;</code> e <code>&lt;code&gt;</code>.</p>
+<p>Para produzir um bloco de código no Markdown, simplesmente indente cada linha do
+bloquear por pelo menos 4 espaços ou 1 tabulação. Por exemplo, com esta entrada:</p>
+<pre><code class="hljs">Este é um parágrafo normal:
+
+    Este é um bloco de código.
+</code></pre>
+<p>O Markdown irá gerar:</p>
+<pre><code class="hljs">&lt;p&gt; Este é um parágrafo normal: &lt;/p&gt;
+
+&lt;pre&gt; &lt;code&gt; Este é um bloco de código.
+&lt;/code&gt; &lt;/pre&gt;
+</code></pre>
+<p>Um nível de recuo - 4 espaços ou 1 tabulação - é removido de cada
+linha do bloco de código. Por exemplo, este:</p>
+<pre><code class="hljs">Aqui está um exemplo de AppleScript:
+
+    diga ao aplicativo &quot;Foo&quot;
+        bip
+    fim dizer
+</code></pre>
+<p>vai se transformar em:</p>
+<pre><code class="hljs">&lt;p&gt; Aqui está um exemplo de AppleScript: &lt;/p&gt;
+
+&lt;pre&gt; &lt;code&gt; diga ao aplicativo &quot;Foo&quot;
+    bip
+fim dizer
+&lt;/code&gt; &lt;/pre&gt;
+</code></pre>
+<p>Um bloco de código continua até atingir uma linha que não está indentada
+(ou no final do artigo).</p>
+<p>Dentro de um bloco de código, e comercial (<code>&amp;</code>) e colchetes angulares (<code>&lt;</code> e <code>&gt;</code>)
+são convertidos automaticamente em entidades HTML. Isso o torna muito
+fácil de incluir código-fonte HTML de exemplo usando Markdown - basta colar
+e indentá-lo, e Markdown vai lidar com o incômodo de codificar o
+e comercial e colchetes angulares. Por exemplo, este:</p>
+<pre><code class="hljs">    &lt;div class = &quot;footer&quot;&gt;
+        &amp;cópia de; 2004 Foo Corporation
+    &lt;/div&gt;
+</code></pre>
+<p>vai se transformar em:</p>
+<pre><code class="hljs">&lt;pre&gt; &lt;code&gt; &amp; lt; div class = &quot;rodapé&quot; &amp; gt;
+    &amp; amp; copiar; 2004 Foo Corporation
+&amp; lt; / div &amp; gt;
+&lt;/code&gt; &lt;/pre&gt;
+</code></pre>
+<p>A sintaxe regular do Markdown não é processada nos blocos de código. Por exemplo,
+asteriscos são apenas asteriscos literais dentro de um bloco de código. Isso significa
+também é fácil usar o Markdown para escrever sobre a própria sintaxe do Markdown.</p>
+<h3 id = "hr"> Regras horizontais </h3>
+<p>Você pode produzir uma tag de régua horizontal (<code>&lt;hr /&gt;</code>) colocando três ou
+mais hifens, asteriscos ou sublinhados em uma linha por si só. Se vocês
+desejar, você pode usar espaços entre os hífens ou asteriscos. Cada um dos
+as seguintes linhas produzirão uma régua horizontal:</p>
+<pre><code class="hljs">* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------
+</code></pre>
+<hr>
+<h2 id = "span"> Elementos Span </h2>
+<h3 id = "link"> Links </h3>
+<p>Markdown suporta dois estilos de links: * inline * e * reference *.</p>
+<p>Em ambos os estilos, o texto do link é delimitado por [colchetes].</p>
+<p>Para criar um link embutido, use um conjunto de parênteses regulares imediatamente
+após o colchete de fechamento do texto do link. Dentro dos parênteses,
+coloque o URL para onde deseja que o link aponte, junto com um * opcional *
+título do link, entre aspas. Por exemplo:</p>
+<pre><code class="hljs">Este é [um exemplo] (http://example.com/ &quot;Título&quot;) link embutido.
+
+[Este link] (http://example.net/) não tem atributo de título.
+</code></pre>
+<p>Vai produzir:</p>
+<pre><code class="hljs">&lt;p&gt; Este é &lt;a href=&quot;http://example.com/&quot; title=&quot;Title&quot;&gt;
+um exemplo &lt;/a&gt; de link embutido. &lt;/p&gt;
+
+&lt;p&gt; &lt;a href=&quot;http://example.net/&quot;&gt; Este link &lt;/a&gt; não tem
+atributo de título. &lt;/p&gt;
+</code></pre>
+<p>Se você está se referindo a um recurso local no mesmo servidor, você pode
+use caminhos relativos:</p>
+<pre><code class="hljs">Consulte minha página [Sobre] (/ sobre /) para obter detalhes.   
+</code></pre>
+<p>Os links de estilo de referência usam um segundo conjunto de colchetes, dentro
+no qual você coloca um rótulo de sua escolha para identificar o link:</p>
+<pre><code class="hljs">Este é [um exemplo] [id] link de estilo de referência.
+</code></pre>
+<p>Você pode opcionalmente usar um espaço para separar os conjuntos de colchetes:</p>
+<pre><code class="hljs">Este é [um exemplo] [id] link de estilo de referência.
+</code></pre>
+<p>Então, em qualquer lugar do documento, você define o rótulo do link assim,
+em uma linha por si só:</p>
+<pre><code class="hljs">[id]: http://example.com/ &quot;Título opcional aqui&quot;
+</code></pre>
+<p>Isso é:</p>
+<ul>
+<li>Colchetes contendo o identificador do link (opcionalmente
+recuado a partir da margem esquerda em até três espaços);</li>
+<li>seguido por dois pontos;</li>
+<li>seguido por um ou mais espaços (ou tabs);</li>
+<li>seguido pelo URL do link;</li>
+<li>opcionalmente seguido por um atributo de título para o link, incluído
+entre aspas simples ou duplas, ou entre parênteses.</li>
+</ul>
+<p>As três definições de link a seguir são equivalentes:</p>
+<pre><code class="hljs">[foo]: http://example.com/ &quot;Título opcional aqui&quot;
+[foo]: http://example.com/ 'Título opcional aqui'
+[foo]: http://example.com/ (título opcional aqui)
+</code></pre>
+<p>** Observação: ** há um bug conhecido no <a href="http://Markdown.pl">Markdown.pl</a> 1.0.1 que impede
+as aspas simples sejam usadas para delimitar títulos de links.</p>
+<p>O URL do link pode, opcionalmente, estar entre colchetes angulares:</p>
+<pre><code class="hljs">[id]: &lt;http://example.com/&gt; &quot;Título opcional aqui&quot;
+</code></pre>
+<p>Você pode colocar o atributo de título na próxima linha e usar espaços extras
+ou guias para preenchimento, que tendem a ficar melhor com URLs mais longos:</p>
+<pre><code class="hljs">[id]: http://example.com/longish/path/to/resource/aqui
+    &quot;Título opcional aqui&quot;
+</code></pre>
+<p>As definições de link são usadas apenas para criar links durante Markdown
+processamento e são retirados de seu documento na saída HTML.</p>
+<p>Os nomes de definição de link podem consistir em letras, números, espaços e
+pontuação - mas eles * não * diferenciam maiúsculas de minúsculas. Por exemplo, esses dois
+links:</p>
+<pre><code class="hljs">[texto do link] [a]
+[texto do link] [A]
+</code></pre>
+<p>são equivalentes.</p>
+<p>O atalho <em>nome do link implícito</em> permite que você omita o nome do
+link, caso em que o próprio texto do link é usado como o nome.
+Basta usar um conjunto vazio de colchetes - por exemplo, para vincular a palavra
+&quot;Google&quot; para o site <a href="http://google.com">google.com</a>, você pode simplesmente escrever:
+[Google][]</p>
+<p>E então defina o link:</p>
+<pre><code class="hljs">[Google]: http://google.com/
+</code></pre>
+<p>Como os nomes dos links podem conter espaços, este atalho funciona até mesmo para
+várias palavras no texto do link:</p>
+<pre><code class="hljs">Visite [Daring Fireball] [] para obter mais informações.
+</code></pre>
+<p>E então defina o link:</p>
+<pre><code class="hljs">[Daring Fireball]: http://daringfireball.net/
+</code></pre>
+<p>As definições de link podem ser colocadas em qualquer lugar em seu documento Markdown. Eu
+tendem a colocá-los imediatamente após cada parágrafo em que estão
+usado, mas se você quiser, pode colocá-los todos no final do seu
+documento, como notas de rodapé.</p>
+<p>Aqui está um exemplo de links de referência em ação:</p>
+<pre><code class="hljs">Recebo 10 vezes mais tráfego do [Google] [1] do que do
+[Yahoo] [2] ou [MSN] [3].
+
+  [1]: http://google.com/ &quot;Google&quot;
+  [2]: http://search.yahoo.com/ &quot;Yahoo Search&quot;
+  [3]: http://search.msn.com/ &quot;MSN Search&quot;
+</code></pre>
+<p>Usando o atalho do nome do link implícito, você pode escrever:</p>
+<pre><code class="hljs">Recebo 10 vezes mais tráfego do [Google] [] do que do
+[Yahoo] [] ou [MSN] [].
+
+  [google]: http://google.com/ &quot;Google&quot;
+  [yahoo]: http://search.yahoo.com/ &quot;Yahoo Search&quot;
+  [msn]: http://search.msn.com/ &quot;MSN Search&quot;
+</code></pre>
+<p>Ambos os exemplos acima produzirão a seguinte saída HTML:</p>
+<pre><code class="hljs">&lt;p&gt; Recebo 10 vezes mais tráfego de &lt;a href = &quot;http://google.com/&quot;
+title = &quot;Google&quot;&gt; Google &lt;/a&gt; do que de
+&lt;a href=&quot;http://search.yahoo.com/&quot; title=&quot;Yahoo Search&quot;&gt; Yahoo &lt;/a&gt;
+ou &lt;a href=&quot;http://search.msn.com/&quot; title=&quot;MSN Search&quot;&gt; MSN &lt;/a&gt;. &lt;/p&gt;
+</code></pre>
+<p>Para comparação, aqui está o mesmo parágrafo escrito usando
+Estilo de link embutido do Markdown:</p>
+<pre><code class="hljs">Recebo 10 vezes mais tráfego do [Google] (http://google.com/ &quot;Google&quot;)
+do que do [Yahoo] (http://search.yahoo.com/ &quot;Yahoo Search&quot;) ou
+[MSN] (http://search.msn.com/ &quot;MSN Search&quot;).
+</code></pre>
+<p>O ponto dos links de estilo de referência não é que sejam mais fáceis de
+escrever. O ponto é que com links de estilo de referência, seu documento
+a fonte é muito mais legível. Compare os exemplos acima: usando
+links de estilo de referência, o próprio parágrafo tem apenas 81 caracteres
+longo; com links de estilo embutido, tem 176 caracteres; e como HTML bruto,
+são 234 caracteres. No HTML bruto, há mais marcação do que
+é texto.</p>
+<p>Com os links de estilo de referência do Markdown, um documento fonte muito mais
+é muito semelhante à saída final, conforme renderizada em um navegador. Por
+permitindo que você mova os metadados relacionados à marcação para fora do parágrafo,
+você pode adicionar links sem interromper o fluxo narrativo de seu
+prosa.</p>
+<h3 id = "em"> Ênfase </h3>
+<p>Markdown trata asteriscos (<code>*</code>) e sublinhados (<code>_</code>) como indicadores de
+ênfase. O texto agrupado com um <code>*</code> ou <code>_</code> será agrupado com um
+Tag HTML <code>&lt;em&gt;</code>; double <code>*</code> 's ou <code>_</code>'s serão embrulhados com um HTML
+<code>&lt;strong&gt;</code> tag. Por exemplo, esta entrada:</p>
+<pre><code class="hljs">* asteriscos simples *
+
+_sublinhados_
+
+** asteriscos duplos **
+
+__ sublinhados duplos__
+</code></pre>
+<p>vai produzir:</p>
+<pre><code class="hljs">&lt;em&gt; asteriscos únicos &lt;/em&gt;
+
+&lt;em&gt; sublinhados simples &lt;/em&gt;
+
+&lt;strong&gt; asteriscos duplos &lt;/strong&gt;
+
+&lt;strong&gt; sublinhados duplos &lt;/strong&gt;
+</code></pre>
+<p>Você pode usar o estilo de sua preferência; a única restrição é que
+o mesmo caractere deve ser usado para abrir e fechar um intervalo de ênfase.</p>
+<p>A ênfase pode ser usada no meio de uma palavra:</p>
+<pre><code class="hljs">inacreditável * malditamente * crível
+</code></pre>
+<p>Mas se você cercar um <code>*</code> ou <code>_</code> com espaços, será tratado como um
+asterisco literal ou sublinhado.</p>
+<p>Para produzir um asterisco literal ou sublinhado em uma posição onde
+seria usado como um delimitador de ênfase, você pode usar uma barra invertida
+escapar disso:</p>
+<pre><code class="hljs">\ * este texto está rodeado por asteriscos literais \ *
+</code></pre>
+<h3 id = "code"> Código </h3>
+<p>Para indicar um intervalo de código, envolva-o com aspas crase (<code> </code> `).
+Ao contrário de um bloco de código pré-formatado, um intervalo de código indica o código dentro de um
+parágrafo normal. Por exemplo:</p>
+<pre><code class="hljs">Use a função `printf ()`.
+</code></pre>
+<p>vai produzir:</p>
+<pre><code class="hljs">&lt;p&gt; Use a função &lt;code&gt; printf () &lt;/code&gt;. &lt;/p&gt;
+</code></pre>
+<p>Para incluir um caractere literal de crase em um intervalo de código, você pode usar
+vários acúmulos como delimitadores de abertura e fechamento:</p>
+<pre><code class="hljs">`` Há uma crase literal (`) aqui``
+</code></pre>
+<p>que irá produzir isso:</p>
+<pre><code class="hljs">&lt;p&gt; &lt;code&gt; Há uma crase literal (`) aqui. &lt;/code&gt; &lt;/p&gt;
+</code></pre>
+<p>Os delimitadores de crase em torno de um intervalo de código podem incluir espaços -
+um após a abertura, um antes do fechamento. Isso permite que você coloque
+caracteres literais de crase no início ou no final de um intervalo de código:</p>
+<pre><code class="hljs">Um único backtick em uma extensão de código: `` `` `
+
+Uma string delimitada por backtick em um intervalo de código: `` `foo`` `
+</code></pre>
+<p>vai produzir:</p>
+<pre><code class="hljs">&lt;p&gt; Um único crase em um intervalo de código: &lt;code&gt;`&lt;/code&gt; &lt;/p&gt;
+
+&lt;p&gt; Uma string delimitada por backtick em um código: &lt;code&gt;`foo`&lt;/code&gt; &lt;/p&gt;
+</code></pre>
+<p>Com uma extensão de código, e comercial e colchetes angulares são codificados como HTML
+entidades automaticamente, o que torna mais fácil incluir exemplos de HTML
+Tag. Markdown transformará isso:</p>
+<pre><code class="hljs">Não use nenhuma tag `&lt;blink&gt;`.
+</code></pre>
+<p>para dentro:</p>
+<pre><code class="hljs">&lt;p&gt; Não use nenhuma tag &lt;code&gt; &amp; lt; blink &amp; gt; &lt;/code&gt;. &lt;/p&gt;
+</code></pre>
+<p>Você pode escrever isto:</p>
+<pre><code class="hljs">`&amp; # 8212;` é o equivalente codificado em decimal de `&amp; mdash;`.
+</code></pre>
+<p>para produzir:</p>
+<pre><code class="hljs">&lt;p&gt; &lt;code&gt; &amp; amp; # 8212; &lt;/code&gt; é a codificação decimal
+equivalente a &lt;code&gt; &amp; amp; mdash; &lt;/code&gt;. &lt;/p&gt;
+</code></pre>
+<h3 id = "img"> Imagens </h3>
+<p>Reconhecidamente, é bastante difícil conceber uma sintaxe &quot;natural&quot; para
+colocar imagens em um formato de documento de texto simples.</p>
+<p>Markdown usa uma sintaxe de imagem que se destina a se assemelhar à sintaxe
+para links, permitindo dois estilos: <em>embutido</em> e <em>referência</em>.</p>
+<p>A sintaxe da imagem inline é semelhante a esta:</p>
+<pre><code class="hljs">! [Texto alternativo] (/ caminho / para / img.jpg)
+
+! [Texto alternativo] (/ caminho / para / img.jpg &quot;Título opcional&quot;)
+</code></pre>
+<p>Isso é:</p>
+<ul>
+<li>Um ponto de exclamação: <code>!</code>;</li>
+<li>seguido por um conjunto de colchetes, contendo o <code>alt</code>
+atribuir texto para a imagem;</li>
+<li>seguido por um conjunto de parênteses, contendo o URL ou caminho para
+a imagem, e um atributo opcional <code>title</code> entre duas
+ou aspas simples.</li>
+</ul>
+<p>A sintaxe da imagem de estilo de referência é semelhante a esta:</p>
+<pre><code class="hljs">! [Alt text] [id]
+</code></pre>
+<p>Onde &quot;id&quot; é o nome de uma referência de imagem definida. Referências de imagem
+são definidos usando uma sintaxe idêntica às referências de link:</p>
+<pre><code class="hljs">[id]: url / para / imagem &quot;Atributo de título opcional&quot;
+</code></pre>
+<p>No momento em que este livro foi escrito, o Markdown não tinha sintaxe para especificar o
+dimensões de uma imagem; se isso for importante para você, você pode simplesmente
+use tags HTML <code>&lt;img&gt;</code> regulares.</p>
+<hr>
+<h2 id = "misc"> Diversos </h2>
+<h3 id = "autolink"> Links automáticos </h3>
+<p>Markdown suporta um estilo de atalho para a criação de links &quot;automáticos&quot; para URLs e endereços de e-mail: simplesmente coloque o URL ou endereço de e-mail entre colchetes angulares. O que isso significa é que se você deseja mostrar o texto real de um URL ou endereço de e-mail e também fazer com que seja um link clicável, você pode fazer o seguinte:</p>
+<pre><code class="hljs">&lt;http://example.com/&gt;
+</code></pre>
+<p>Markdown transformará isso em:</p>
+<pre><code class="hljs">&lt;a href=&quot;http://example.com/&quot;&gt; http://example.com/ &lt;/a&gt;
+</code></pre>
+<p>Links automáticos para endereços de e-mail funcionam de forma semelhante, exceto que
+Markdown também executa um pouco de decimal e hexadecimal aleatório
+codificação de entidade para ajudar a ocultar seu endereço da coleta de endereço
+spambots. Por exemplo, o Markdown tornará isso:</p>
+<pre><code class="hljs">&lt;endereço@example.com&gt;
+</code></pre>
+<p>em algo assim:</p>
+<pre><code class="hljs">&lt;a href = &quot;&amp; # x6D; &amp; # x61; i &amp; # x6C; &amp; # x74; &amp; # x6F;: &amp; # x61; &amp; # x64; &amp; # x64; &amp; # x72; &amp; # x65;
+&amp; # 115; &amp; # 115; &amp; # 64; &amp; # 101; &amp; # 120; &amp; # x61; &amp; # 109; &amp; # x70; &amp; # x6C; e &amp; # x2E; &amp; # 99; &amp; # 111;
+&amp; # 109; &quot;&gt; &amp; # x61; &amp; # x64; &amp; # x64; &amp; # x72; &amp; # x65; &amp; # 115; &amp; # 115; &amp; # 64; &amp; # 101; &amp; # 120; &amp; # x61;
+&amp; # 109; &amp; # x70; &amp; # x6C; e &amp; # x2E; &amp; # 99; &amp; # 111; &amp; # 109; &lt;/a&gt;
+</code></pre>
+<p>que será processado em um navegador como um link clicável para &quot;<a href="mailto:address@example.com">address@example.com</a>&quot;.</p>
+<p>(Este tipo de truque de codificação de entidade vai de fato enganar muitos, se não
+a maioria, bots de coleta de endereços, mas definitivamente não enganará todos
+eles. É melhor do que nada, mas um endereço publicado desta forma
+provavelmente começará a receber spam.)</p>
+<h3 id = "backslash"> Escapes de barra invertida </h3>
+<p>Markdown permite que você use escapes de barra invertida para gerar
+caracteres que, de outra forma, teriam um significado especial no Markdown
+sintaxe de formatação. Por exemplo, se você quiser cercar uma palavra
+com asteriscos literais (em vez de uma tag HTML <code>&lt;em&gt;</code>), você pode usar
+barras invertidas antes dos asteriscos, como este:</p>
+<pre><code class="hljs">\ * asteriscos literais \ *
+</code></pre>
+<p>Markdown fornece escapes de barra invertida para os seguintes caracteres:</p>
+<pre><code class="hljs">\ barra invertida
+`backtick
+* asterisco
+_ sublinhado
+{} chaves
+[] colchetes
+() parênteses
+# marca de hash
++ sinal de mais
+- sinal de menos (hífen)
+. ponto
+! ponto de exclamação
+</code></pre>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

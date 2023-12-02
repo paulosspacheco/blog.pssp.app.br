@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # How to Sign apk or bundle using gradle by ADiV
 
 https://forum.lazarus.freepascal.org/index.php/topic,52313.msg386040/
@@ -18,3 +26,7 @@ First we will execute "release-keystore" if we do not have the signature created
   - RELEASE_KEY_PASSWORD = yourpassword
 
 And to finish we close and open the project and it will automatically include the signature."
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

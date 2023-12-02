@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Como instalar LAMW Manager no linux</title>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="como-instalar-lamw-manager-no-linux">Como instalar LAMW Manager no linux</h1> -->
+<ol>
+<li>
+<p>O script <strong><a href="https://github.com/dosza/LAMWManager-linux#:~:text=here%20to%20download-,LAMW%20Manager%20Setup,-Go%20to%20download">lamw_manager_setup.sh</a></strong> é uma instalação antiga do lazarus 2.0.12 versão Linux e suas dependências na época.</p>
+</li>
+<li>
+<p>Esse documento é um resumo de como consegui instalar na data 21/02/2023 o <strong>lamw</strong> e suas dependências no <strong>Linux Mint</strong>.</p>
+</li>
+<li>
+<p>Tive dificuldade para fazer funcionar os exemplos e só depois de muita luta consegui fazer funcionar.</p>
+</li>
+<li>
+<p><strong>PASSO A PASSO</strong></p>
+<ol>
+<li>
+<p>Baixar o arquivo <strong><a href="https://github.com/dosza/LAMWManager-linux/releases/download/v0.5.3/lamw_manager_setup.sh">lamw_manager_setup.sh</a></strong> em uma pasta de sua preferência;</p>
+</li>
+<li>
+<p>Entre no gerenciador de arquivos do Linux e dê permissão para execução do script <strong>lamw_manager_setup.sh</strong>;</p>
+</li>
+<li>
+<p>Entre na pasta do arquivo <strong>lamw_manager_setup.sh</strong> e execute seguinte comando:</p>
+<pre><code class="hljs language-sh">  <span class="hljs-comment"># Suponha que você queira instalar na pasta ~/lamw então:</span>
+
+  $ env LOCAL_ROOT_LAMW=~/lamw bash lamw_manager_setup.sh -- --update-lamw 
+
+</code></pre>
+<ol>
+<li>Nota:
+<ol>
+<li>Vai demorar porque esse script instala muitas dependências.</li>
+<li>Mais informações de como executar o script <a href="https://github.com/dosza/LAMWManager-linux/blob/master/lamw_manager/docs/lamw_manager_setup.html">veja aqui...</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Após a instalação, executa a opção <strong>LAMW4Linux IDE</strong> do menu a opções do Linux;</p>
+<ol>
+<li>Com o Lazarus aberto siga esse <a href="https://github.com/jmpessoa/lazandroidmodulewizard/blob/master/docs/AppHelloWorld.html">esse passo a passo...</a>;</li>
+</ol>
+</li>
+<li>
+<p>Se você seguiu todos os passos, você terá o app <strong>alo mundo</strong> em seu celular.</p>
+<ol>
+<li>Notas:
+<ol>
+<li>Seu celular precisa estar no modo desenvolvedor. Para mais informações <a href="https://developer.android.com/studio/debug/dev-options?hl=pt-br"><strong>veja aqui...</strong></a></li>
+<li>Ao colocar o seu celular na <strong>porta usb</strong> o gerenciador de aquivos precisa identifica-lo.
+<ol>
+<li>Caso o gerenciador de arquivo não detecte seu celular, leia novamente e veja o que você errou nessa etapa.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>As demostrações foram escritas para celular 32 bits, por isso tem um macete para executa-los em celular 32 bits.</p>
+<ol>
+<li>O motivo desse macete é um bug na ide que não modificar a plataforma de 32 para 64 bits.</li>
+</ol>
+</li>
+<li>
+<p>O próximo artigo eu descrevo o passo a passo para fazer as demostrações funcionarem.</p>
+</li>
+</ol>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

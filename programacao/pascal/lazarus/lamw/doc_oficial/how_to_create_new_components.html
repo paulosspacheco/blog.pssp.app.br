@@ -1,21 +1,33 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
+    <html>
     <head>
         <meta charset="UTF-8">
         <title>how to create new components</title>
-   
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-        <!-- CSS markdown -->
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
         <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
-        
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
 
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
     </head>
-    <body class="vscode-body vscode-dark"><main>
-        <h1 id="how-to-create-new-components">how to create new components</h1>
+    <body class="vscode-body vscode-dark">
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="how-to-create-new-components">how to create new components</h1> -->
 <ul>
 <li>&quot;LAMW: Lazarus Android Module Wizard&quot;
 <ul>
@@ -432,8 +444,10 @@ will  be researched to try write the correct JNI methods signatures.....</p>
 </code></pre>
 </li>
 </ul>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
         
         
-     </body>
+    </body>
     </html>

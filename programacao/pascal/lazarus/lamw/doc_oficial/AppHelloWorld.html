@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello World App</title>
+   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="hello-world-app">Hello World App</h1> -->
+<h2 id="how-to-create-and-run-your-first-hello-world-android-app_">How to: Create and Run your first &quot;Hello World!&quot; Android App_</h2>
+<ul>
+<li>
+<p><a href="https://github.com/jmpessoa/lazandroidmodulewizard">LAMW: Lazarus Android Module Wizard</a></p>
+<ul>
+<li><a href="https://github.com/jmpessoa/lazandroidmodulewizard/tree/master/demos/GUI">demos/GUI</a></li>
+</ul>
+</li>
+<li>
+<p>1.0) From Lazarus IDE select &quot;Project&quot; -&gt; &quot;New Project&quot;</p>
+<ul>
+<li>
+<p>1.1) From <a href="%5BImgur%5D(https://i.imgur.com/34lqo0N.png)">displayed dialog</a> select &quot;[LAMW] GUI Android Module&quot; and &quot;Ok&quot;</p>
+</li>
+<li>
+<p>1.2) Fill the <a href="%5BImgur%5D(https://i.imgur.com/6pn9cyP.png)">form/dialog</a> fields and &quot;Ok&quot; and &quot;Save&quot; to path that is showed ...</p>
+<ul>
+<li>hint: &quot;Path to Workspace&quot; is your projects folder</li>
+<li>hint: Accept &quot;default&quot; options! (but pay attention to the * signage)</li>
+<li>hint: search your project folder... you will find many treasures there! (look for lazarus project in &quot;.../jni&quot; folder)</li>
+</ul>
+</li>
+<li>
+<p>1.3) From Lazarus IDE select &quot;Run&quot; -&gt; &quot;Build&quot;</p>
+<ul>
+<li>Success! Your sistem is up to produce your first Android Apk!</li>
+</ul>
+</li>
+<li>
+<p>1.4) From &quot;Android Bridge&quot; component tab select a <a href="https://i.imgur.com/UHbcuBQ.png">jImageView</a> and drop it on Form designer</p>
+<ul>
+<li>set property: PosRelativeToParent  = [rpTop, rpCenterHorizontal]</li>
+<li>set property: ImageIndentifier = ic_launcher</li>
+</ul>
+</li>
+<li>
+<p>1.5) From &quot;Android Bridge&quot; component tab select a <a href="https://i.imgur.com/UHbcuBQ.png">jTextView</a> and drop it on Form designer</p>
+<ul>
+<li>set property: PosRelativeToParent  = [rpCenterInParent]</li>
+<li>set property: Text = My First &quot;Hello World!&quot; App</li>
+</ul>
+</li>
+<li>
+<p>1.6) From &quot;Android Bridge&quot; component tab select a <a href="https://i.imgur.com/UHbcuBQ.png">jButton</a> and drop it on Form designer</p>
+<ul>
+<li>
+<p>set property: Anchor = jTextView1</p>
+</li>
+<li>
+<p>set property: PosRelativeToAnchor = [raBelow]</p>
+</li>
+<li>
+<p>set property: PosRelativeToParent = [rpCenterHorizontal]</p>
+</li>
+<li>
+<p>set property: LayoutParamWidth = lpTwoThirdOfParent</p>
+</li>
+<li>
+<p>set property: Text = Say Hello!</p>
+</li>
+<li>
+<p>fire event property <a href="https://i.imgur.com/pXAqloK.png">OnClick</a> and write some code:</p>
+<pre><code class="hljs language-pascal">
+     SowMessage(<span class="hljs-string">'Hello Android World!'</span>)
+
+</code></pre>
+</li>
+<li>
+<p>1.7) From Lazarus IDE select &quot;Run&quot; -&gt; &quot;Build&quot;</p>
+<ul>
+<li>Success! No bugs in the code!</li>
+</ul>
+</li>
+<li>
+<p>1.8) Configure you phone device to <a href="https://developer.android.com/studio/debug/dev-options">debug mode</a> and plug it to the computer usb port</p>
+<ul>
+<li>Go to phone Settings -&gt;  more/aditional -&gt; Developer options and check:
+<ul>
+<li>(x) stay awake</li>
+<li>(x) usb debugging</li>
+<li>(x) verify apps via usb</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>1.9) Go to Lazarus IDE menu &quot;Run&quot; -&gt; &quot;[LAMW] Build Apk and Run&quot;</p>
+<ul>
+<li>Congratulations!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2.0) How to get more/others &quot;.so&quot; chipset builds</p>
+<ul>
+<li>Google Play require APKs to include both 32 and 64 bits version of LAMW &quot;*.so&quot; libraries</li>
+<li>From LazarusIDE menu:
+<ul>
+<li>Project -&gt; Project Options -&gt; Project Options -&gt; [LAMW] Android Project Options -&gt; &quot;Build&quot; -&gt; Chipset [select!] -&gt; [OK]</li>
+<li>From LazarusIDE menu:
+<ul>
+<li>Run -&gt; Clean up and Build...</li>
+</ul>
+</li>
+<li>From LazarusIDE menu:
+<ul>
+<li>[LAMW] Build Android Apk and Run</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>2.1) About LAMW components palettes:</p>
+<ul>
+<li>[Android Bridges] and [Android Bridges Extra] need only &quot;Ant&quot; builder</li>
+<li>[Android Bridges AppCompat] and [Android Bridges jCenter] are online libraries and need &quot;Gradle&quot; builder and Internet connection</li>
+</ul>
+</li>
+</ul>
+<h2 id="others-references">Others references...</h2>
+<ol>
+<li><a href="https://github.com/jmpessoa/lazandroidmodulewizard/tree/master/docs/GUIDesignWYSIWYG.html">GUI Design WYSIWYG</a></li>
+<li><a href="https://github.com/jmpessoa/lazandroidmodulewizard/tree/master/demos/GUI/AppTest1">Multi-Form demo</a></li>
+<li><a href="https://github.com/jmpessoa/lazandroidmodulewizard/tree/master/demos/GUI">All GUI demos</a></li>
+</ol>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+        
+        
+    </body>
+    </html>

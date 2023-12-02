@@ -1,3 +1,9 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
 # Como criar formulário de login no angular <a href="modelo03.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
@@ -851,6 +857,6 @@
          - <text onclick="goBack()">[🔙]</text>
       5. .
 
-[🔝🔝](#topo "Retorna ao topo")
+</main>
 
- <script>    function goBack() {    window.history.back()}</script>
+[🔝🔝](#topo "Retorna ao topo")

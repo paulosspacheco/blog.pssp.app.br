@@ -1,5 +1,10 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav> 
+<span id="topo"><span>
 
 # Estudo da linguagem JSON
 
@@ -70,5 +75,6 @@
 - [x] Criar a página json/index.html
 - [x] Criar opção no menu/index.js para acessar a página json/index.html
 
-<!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>      
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")   

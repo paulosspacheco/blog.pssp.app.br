@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Tutorial: How to get your 'signed' release Apk: 'AppLAMWProject1'
 
 - 1) Edit/change the project file "keytool_input.txt" to more representative informations:"
@@ -186,3 +194,6 @@
 <style>
 
 ```
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

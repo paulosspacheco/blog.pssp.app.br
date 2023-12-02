@@ -1,5 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-#### Como instalar e configurar LamW<a href="instalar_econfigurar_lamw.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">➚</a>
+<span id="topo"><span>
+
+# Como instalar e configurar LamW<a href="instalar_econfigurar_lamw.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 1. **Passo  a passo para instalar os pacote no Lazarus**
    1. Baixar o projeto LamW do repositório github.
@@ -130,3 +137,8 @@
    7. 
 3. **Passo  a passo de como usar o LamW**.
    1. ????
+
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

@@ -1,139 +1,170 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Exemplo de Calculadora com TypeScript &lt;a href&equals;&quot;Calculator&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <!-- CSS markdown  -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
-            
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo de Calculadora com TypeScript &lt;a href&equals;&quot;Calculator&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <p><span id="topo"><span></p>
-<h1 id="exemplo-de-calculadora-com-typescript----">Exemplo de Calculadora com TypeScript <a href="Calculator.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
-<h2 id="1-index"><strong>1. INDEX</strong></h2>
-<hr>
-<ol>
-<li>
-<p><strong>Introdução</strong></p>
-<ol>
-<li><a href="#id_objetivo">Objetivo.</a></li>
-<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
-<li><a href="#id_beneficios">benefícios.</a></li>
-</ol>
-</li>
-<li>
-<p><a href="#id_Descricao"><strong>Descrição.</strong></a></p>
-</li>
-<li>
-<p><a href="#id_exemplos"><strong>Exemplos.</strong></a></p>
-</li>
-<li>
-<p><a href="#id_Conteudo01"><strong>Conteúdo01</strong></a></p>
-</li>
-<li>
-<p><a href="#id_referencias"><strong>Referências.</strong></a></p>
-</li>
-<li>
-<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
-</li>
-</ol>
-<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
-<hr>
-<ol>
-<li>
-<p><strong>Introdução</strong></p>
-<ol>
-<li>
-<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
-<ol>
-<li>
-<p>Este documento tem como objetivo descrever todos os comandos typescript necessários para criar uma calculadora.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
-<ol>
-<li>
-<p>Programas abaixo devem estar instalados e configurados:</p>
-<ol>
-<li>nodejs;</li>
-<li>Vscode;</li>
-<li>Compilador typescript.</li>
-<li>tsc-init</li>
-</ol>
-</li>
-<li>
-<p>.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
-<ol>
-<li>
-<p>Aprender os comandos da linguagem typescript.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_Descricao></span><strong>Descrição</strong></p>
-<ol>
-<li>
-<p>Este documentos descreve todos os comandos usados para criar o módulo Calculator com seus respectivos exemplos.</p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operadores_aritmeticos"><strong>Operadores aritméticos</strong></a> tomam valores numéricos (sejam literais ou variáveis) como seus operandos e retornam um único valor numérico.</p>
-<ol>
-<li>
-<p><a href="https://262.ecma-international.org/6.0/#sec-applying-the-additive-operators-to-numbers">Aplicando os operadores aditivos aos números</a></p>
-<ol>
-<li>
-<p><strong>Subtração (  -  )</strong>:</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> i :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      includeHTML();
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      FixHeader(window, "myHeader");
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="exemplo-de-calculadora-com-typescript----">Exemplo de Calculadora com TypeScript <a href="Calculator.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+        <h2 id="1-index"><strong>1. INDEX</strong></h2>
+        <hr>
+        <ol>
+          <li>
+            <p><strong>Introdução</strong></p>
+            <ol>
+              <li><a href="#id_objetivo">Objetivo.</a></li>
+              <li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+              <li><a href="#id_beneficios">benefícios.</a></li>
+            </ol>
+          </li>
+          <li>
+            <p><a href="#id_Descricao"><strong>Descrição.</strong></a></p>
+          </li>
+          <li>
+            <p><a href="#id_exemplos"><strong>Exemplos.</strong></a></p>
+          </li>
+          <li>
+            <p><a href="#id_Conteudo01"><strong>Conteúdo01</strong></a></p>
+          </li>
+          <li>
+            <p><a href="#id_referencias"><strong>Referências.</strong></a></p>
+          </li>
+          <li>
+            <p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+          </li>
+        </ol>
+        <h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+        <hr>
+        <ol>
+          <li>
+            <p><strong>Introdução</strong></p>
+            <ol>
+              <li>
+                <p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+                <ol>
+                  <li>
+                    <p>Este documento tem como objetivo descrever todos os comandos typescript necessários para criar uma calculadora.</p>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
+                <ol>
+                  <li>
+                    <p>Programas abaixo devem estar instalados e configurados:</p>
+                    <ol>
+                      <li>nodejs;</li>
+                      <li>Vscode;</li>
+                      <li>Compilador typescript.</li>
+                      <li>tsc-init</li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>.</p>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
+                <ol>
+                  <li>
+                    <p>Aprender os comandos da linguagem typescript.</p>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p><span id=id_Descricao></span><strong>Descrição</strong></p>
+            <ol>
+              <li>
+                <p>Este documentos descreve todos os comandos usados para criar o módulo Calculator com seus respectivos exemplos.</p>
+              </li>
+              <li>
+                <p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operadores_aritmeticos"><strong>Operadores aritméticos</strong></a> tomam valores numéricos (sejam literais ou variáveis) como seus operandos e retornam um único valor numérico.</p>
+                <ol>
+                  <li>
+                    <p><a href="https://262.ecma-international.org/6.0/#sec-applying-the-additive-operators-to-numbers">Aplicando os operadores aditivos aos números</a></p>
+                    <ol>
+                      <li>
+                        <p><strong>Subtração ( - )</strong>:</p>
+                        <ol>
+                          <li>
+                            <p>Código exemplo:</p>
+                            <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> i :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
    <span class="hljs-built_in">console</span>.log(i<span class="hljs-number">-1</span>);
    <span class="hljs-comment">//Imprime 9 no console</span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Adição (  +  )</strong>:</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> i :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
+                          </li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p><strong>Adição ( + )</strong>:</p>
+                        <ol>
+                          <li>
+                            <p>Código exemplo:</p>
+                            <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> i :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
    <span class="hljs-built_in">console</span>.log(i+<span class="hljs-number">1</span>);
    <span class="hljs-comment">//Imprime 11 no console</span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Incremento (  ++  )</strong>: Operador unário. Adiciona um ao seu operando. Se usado como operador prefixado (++x), retorna o valor de seu operando após a adição. Se usado como operador pós fixado (x++), retorna o valor de seu operando antes da adição.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-comment">//Retorna o valor de seu operando após a adição</span>
+                          </li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p><strong>Incremento ( ++ )</strong>: Operador unário. Adiciona um ao seu operando. Se usado como operador prefixado (++x), retorna o valor de seu operando após a adição. Se usado como operador pós fixado (x++), retorna o valor de seu operando antes da adição.</p>
+                        <ol>
+                          <li>
+                            <p>Código exemplo:</p>
+                            <pre><code class="hljs language-typescript">   <span class="hljs-comment">//Retorna o valor de seu operando após a adição</span>
    <span class="hljs-keyword">var</span> i :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
    <span class="hljs-built_in">console</span>.log(  ++i );
    <span class="hljs-comment">//Imprime 11 no console</span>
@@ -145,15 +176,15 @@
    <span class="hljs-built_in">console</span>.log(  i++ );
    <span class="hljs-comment">//Imprime 10 no console</span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Decremento (  --  )</strong>: Operador unário. Subtrai um de seu operando. O valor de retorno é análogo àquele do operador de incremento.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-comment">//Retorna o valor de seu operando após a subtração</span>
+                          </li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p><strong>Decremento ( -- )</strong>: Operador unário. Subtrai um de seu operando. O valor de retorno é análogo àquele do operador de incremento.</p>
+                        <ol>
+                          <li>
+                            <p>Código exemplo:</p>
+                            <pre><code class="hljs language-typescript">   <span class="hljs-comment">//Retorna o valor de seu operando após a subtração</span>
    <span class="hljs-keyword">var</span> i :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
    <span class="hljs-built_in">console</span>.log(  --i );
    <span class="hljs-comment">//Imprime 9 no console</span>
@@ -165,107 +196,107 @@
    <span class="hljs-built_in">console</span>.log(  i-- );
    <span class="hljs-comment">//Imprime 10 no console                     </span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Negação (  -  )</strong> : Operador unário. Retorna a negação de seu operando. Se x é 10, então -x retorna -10.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
+                          </li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p><strong>Negação ( - )</strong> : Operador unário. Retorna a negação de seu operando. Se x é 10, então -x retorna -10.</p>
+                        <ol>
+                          <li>
+                            <p>Código exemplo:</p>
+                            <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
    <span class="hljs-built_in">console</span>.log(  -x );
    <span class="hljs-comment">//Imprime -10 no console</span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Adição (  +  )</strong> : Operador unário. Tenta converter o operando em um número, sempre que possível.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-built_in">console</span>.log(+<span class="hljs-string">"3"</span>);
+                          </li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p><strong>Adição ( + )</strong> : Operador unário. Tenta converter o operando em um número, sempre que possível.</p>
+                        <ol>
+                          <li>
+                            <p>Código exemplo:</p>
+                            <pre><code class="hljs language-typescript">   <span class="hljs-built_in">console</span>.log(+<span class="hljs-string">"3"</span>);
    <span class="hljs-comment">//Imprime 3 no console</span>
 
    <span class="hljs-built_in">console</span>.log(+<span class="hljs-literal">true</span>);
    <span class="hljs-comment">//Imprime 1 no console</span>
 </code></pre>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="https://262.ecma-international.org/6.0/#sec-multiplicative-operators">Operadores multiplicativos:</a></p>
-<ol>
-<li>
-<p><strong>Multiplicação (  *  )</strong>:</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><a href="https://262.ecma-international.org/6.0/#sec-multiplicative-operators">Operadores multiplicativos:</a></p>
+                    <ol>
+                      <li>
+                        <p><strong>Multiplicação ( * )</strong>:</p>
+                        <ol>
+                          <li>
+                            <p>Código exemplo:</p>
+                            <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
    <span class="hljs-built_in">console</span>.log(  x * <span class="hljs-number">3</span> );
    <span class="hljs-comment">//Imprime 30 no console</span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Divisão (  /  )</strong>: <img src="img/divisao.png" alt="img"></p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
+                          </li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p><strong>Divisão ( / )</strong>: <img src="img/divisao.png" alt="img"></p>
+                        <ol>
+                          <li>
+                            <p>Código exemplo:</p>
+                            <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
    <span class="hljs-built_in">console</span>.log(  x / <span class="hljs-number">2</span> );
    <span class="hljs-comment">//Imprime 8,5 no console</span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="https://262.ecma-international.org/6.0/#sec-applying-the-mod-operator"><strong>Módulo — resto da divisão (  %  )</strong>:</a> é um operador binário. Retorna o inteiro restante da divisão dos dois operandos.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
+                          </li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p><a href="https://262.ecma-international.org/6.0/#sec-applying-the-mod-operator"><strong>Módulo — resto da divisão ( % )</strong>:</a> é um operador binário. Retorna o inteiro restante da divisão dos dois operandos.</p>
+                        <ol>
+                          <li>
+                            <p>Código exemplo:</p>
+                            <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
    <span class="hljs-built_in">console</span>.log(  x % <span class="hljs-number">2</span> );
    <span class="hljs-comment">//Imprime 1 no console</span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Exponenciação (  **  )</strong>: Calcula a base elevada á potência do expoente.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
+                          </li>
+                        </ol>
+                      </li>
+                      <li>
+                        <p><strong>Exponenciação ( ** )</strong>: Calcula a base elevada á potência do expoente.</p>
+                        <ol>
+                          <li>
+                            <p>Código exemplo:</p>
+                            <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
    <span class="hljs-built_in">console</span>.log(  x ** <span class="hljs-number">3</span> );
    <span class="hljs-comment">//Imprime 1000 no console</span>
 
    <span class="hljs-built_in">console</span>.log(  x ** <span class="hljs-number">-1</span> );
    <span class="hljs-comment">//Imprime 0,1 no console</span>
 </code></pre>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>Referência: <a href="https://medium.com/typescript/typescript-operadores-aritm%C3%A9ticos-20b28a1752d9">TypeScript: operadores aritméticos</a></p>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operador_comparacao"><strong>Operadores de comparação</strong></a> compara seus operandos e retorna um valor lógico baseado em se a comparação é verdadeira. Os operandos podem ser numéricos, strings, lógicos ou objetos. Strings são comparadas com base em ordenação lexográfica utilizando valores Unicode. Na maioria dos casos, se dois operandos não são do mesmo tipo, o JavaScript tenta convertê-los para um tipo apropriado. Isto geralmente resulta na realização de uma comparação numérica. As únicas exceções a esta regra são os operadores === e o !==, que realizam comparações de igualdade e desigualdade &quot;estritas&quot;. Estes operadores não tentam converter os operandos em tipos compatíveis antes de verificar a igualdade.</p>
-<ol>
-<li>
-<p><strong>Igual (  ==  )</strong>: Retorna verdadeiro caso os operandos sejam iguais.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>Referência: <a href="https://medium.com/typescript/typescript-operadores-aritm%C3%A9ticos-20b28a1752d9">TypeScript: operadores aritméticos</a></p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operador_comparacao"><strong>Operadores de comparação</strong></a> compara seus operandos e retorna um valor lógico baseado em se a comparação é verdadeira. Os operandos podem ser numéricos, strings, lógicos ou objetos. Strings são comparadas com base em ordenação lexográfica utilizando valores Unicode. Na maioria dos casos, se dois operandos não são do mesmo tipo, o JavaScript tenta convertê-los para um tipo apropriado. Isto geralmente resulta na realização de uma comparação numérica. As únicas exceções a esta regra são os operadores === e o !==, que realizam comparações de igualdade e desigualdade &quot;estritas&quot;. Estes operadores não tentam converter os operandos em tipos compatíveis antes de verificar a igualdade.</p>
+                <ol>
+                  <li>
+                    <p><strong>Igual ( == )</strong>: Retorna verdadeiro caso os operandos sejam iguais.</p>
+                    <ol>
+                      <li>
+                        <p>Código exemplo:</p>
+                        <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
    <span class="hljs-built_in">console</span>.log(  x == <span class="hljs-number">3</span> );
    <span class="hljs-comment">//Imprime false no console</span>
 
@@ -277,30 +308,30 @@
    <span class="hljs-comment">// A expressão console.log(  y == 10 ) vai gerar erro de sintaxe no type script e não compila.</span>
    
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Não igual (  !=  )</strong>: Retorna verdadeiro caso os operandos não sejam iguais.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><strong>Não igual ( != )</strong>: Retorna verdadeiro caso os operandos não sejam iguais.</p>
+                    <ol>
+                      <li>
+                        <p>Código exemplo:</p>
+                        <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
    <span class="hljs-built_in">console</span>.log(  x != <span class="hljs-number">3</span> );
    <span class="hljs-comment">//Imprime true no console</span>
 
    <span class="hljs-built_in">console</span>.log(  x != <span class="hljs-number">10</span> );
    <span class="hljs-comment">//Imprime false no console                   </span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Estritamente igual (  ===  )</strong>:Retorna verdadeiro caso os operandos sejam iguais e do mesmo tipo. Veja também <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/is"><strong>Object.is</strong></a> e <strong>igualdade em JS</strong>.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">any</span> = <span class="hljs-number">10</span>;
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><strong>Estritamente igual ( === )</strong>:Retorna verdadeiro caso os operandos sejam iguais e do mesmo tipo. Veja também <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/is"><strong>Object.is</strong></a> e <strong>igualdade em JS</strong>.</p>
+                    <ol>
+                      <li>
+                        <p>Código exemplo:</p>
+                        <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">any</span> = <span class="hljs-number">10</span>;
    <span class="hljs-built_in">console</span>.log(  x === <span class="hljs-number">10</span> );
    <span class="hljs-comment">//Imprime true no console</span>
 
@@ -308,15 +339,15 @@
    <span class="hljs-built_in">console</span>.log(x === <span class="hljs-string">"10"</span>);
    <span class="hljs-comment">//Imprime false no console porque são tipos diferentes                 </span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Estritamente não igual (  !==  )</strong>: Retorna verdadeiro caso os operandos não sejam iguais e/ou não sejam do mesmo tipo.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">any</span> = <span class="hljs-number">10</span>;
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><strong>Estritamente não igual ( !== )</strong>: Retorna verdadeiro caso os operandos não sejam iguais e/ou não sejam do mesmo tipo.</p>
+                    <ol>
+                      <li>
+                        <p>Código exemplo:</p>
+                        <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">any</span> = <span class="hljs-number">10</span>;
    <span class="hljs-built_in">console</span>.log(  x !== <span class="hljs-number">10</span> );
    <span class="hljs-comment">//Imprime false no console porque o número e o tipo é igual.</span>
 
@@ -324,168 +355,168 @@
    <span class="hljs-built_in">console</span>.log(x !== <span class="hljs-string">"10"</span>);
    <span class="hljs-comment">//Imprime true no console porque o número é igual mais o tipos diferentes.               </span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Maior que (  &gt;  )</strong>: Retorna verdadeiro caso o operando da esquerda seja maior que o da direita.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><strong>Maior que ( &gt; )</strong>: Retorna verdadeiro caso o operando da esquerda seja maior que o da direita.</p>
+                    <ol>
+                      <li>
+                        <p>Código exemplo:</p>
+                        <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
    <span class="hljs-built_in">console</span>.log(  x &gt; <span class="hljs-number">24</span> );
    <span class="hljs-comment">//Imprime false no console porque 17 é menor que 24.</span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Maior que ou igual (  &gt;=  )</strong>: Retorna verdadeiro caso o operando da esquerda seja maior ou igual ao da direita.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><strong>Maior que ou igual ( &gt;= )</strong>: Retorna verdadeiro caso o operando da esquerda seja maior ou igual ao da direita.</p>
+                    <ol>
+                      <li>
+                        <p>Código exemplo:</p>
+                        <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
    <span class="hljs-built_in">console</span>.log(  x &gt;= <span class="hljs-number">17</span> );
    <span class="hljs-comment">//Imprime true no console porque 17 é igual a 17.</span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Menor que (  &lt;  )</strong>: Retorna verdadeiro caso o operando da esquerda seja menor que o da direita.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><strong>Menor que ( &lt; )</strong>: Retorna verdadeiro caso o operando da esquerda seja menor que o da direita.</p>
+                    <ol>
+                      <li>
+                        <p>Código exemplo:</p>
+                        <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
    <span class="hljs-built_in">console</span>.log(  x &lt; <span class="hljs-number">17</span> );
    <span class="hljs-comment">//Imprime false no console porque 17 é igual a 17.</span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Menor que ou igual (  &lt;=  )</strong>: Retorna verdadeiro caso o operando da esquerda seja menor ou igual ao da direita.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><strong>Menor que ou igual ( &lt;= )</strong>: Retorna verdadeiro caso o operando da esquerda seja menor ou igual ao da direita.</p>
+                    <ol>
+                      <li>
+                        <p>Código exemplo:</p>
+                        <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
    <span class="hljs-built_in">console</span>.log(  x &lt;= <span class="hljs-number">17</span> );
    <span class="hljs-comment">//Imprime true no console porque 17 é igual a 17.</span>
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Indicador de arrow function (  =&gt;  )</strong>: não é um operador, mas a notação para função seta.</p>
-<ol>
-<li>
-<p>Código exemplo:</p>
-<pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><strong>Indicador de arrow function ( =&gt; )</strong>: não é um operador, mas a notação para função seta.</p>
+                    <ol>
+                      <li>
+                        <p>Código exemplo:</p>
+                        <pre><code class="hljs language-typescript">   <span class="hljs-keyword">var</span> x :<span class="hljs-built_in">number</span> = <span class="hljs-number">17</span>;
 
    <span class="hljs-comment">// Arrow function = função seta.</span>
    <span class="hljs-keyword">var</span> function_arrow = <span class="hljs-function">(<span class="hljs-params">ax:<span class="hljs-built_in">number</span></span>) =&gt;</span> {  <span class="hljs-keyword">return</span> ax+<span class="hljs-number">1</span>;}
    <span class="hljs-built_in">console</span>.log(function_arrow(x));                  
    <span class="hljs-comment">//Imprime 18 no console.              </span>
 </code></pre>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operadores_bit_a_bit"><strong>Operadores bit a bit</strong></a> tratam seus operandos como um conjunto de 32 bits (zeros e uns), em vez de tratá-los como números decimais, hexadecimais ou octais.</p>
-<ol>
-<li>
-<p>Operador <strong>( AND  )</strong> retorna um 1 para cada posição em que os bits da posição correspondente de ambos operandos sejam uns.</p>
-<ol>
-<li>A expressão  (a &amp; b).</li>
-</ol>
-</li>
-<li>
-<p>Operador <strong>( OR  )</strong> retorna um 0 para cada posição em que os bits da posição correspondente de  ambos os operandos sejam zeros.</p>
-<ol>
-<li>Expressão <strong>(a | b)</strong>.</li>
-</ol>
-</li>
-<li>
-<p>Operador <strong>( XOR  )</strong>  retorna um 0 para cada posição em que os bits da posição correspondente são os mesmos e retorna um 1 para cada posição em que os bits da posição correspondente sejam diferentes.</p>
-<ol>
-<li>Expressão <strong>(a ^ b)</strong></li>
-</ol>
-</li>
-<li>
-<p>Operador <strong>( NOT  )</strong> inverte os bits do operando.</p>
-<ol>
-<li>Expressão <strong>(~ a)</strong></li>
-</ol>
-</li>
-<li>
-<p>Operador <strong>( &lt;&lt;  )</strong> desloca <em><strong>a</strong></em> em representação binária <em><strong>b</strong></em> bits à esquerda, preenchendo com zeros à direita.</p>
-<ol>
-<li>Expressão <strong>(a &lt;&lt; b)</strong></li>
-</ol>
-</li>
-<li>
-<p>Operador <strong>( &gt;&gt;  )</strong> Deslocamento à direita com propagação de sinal. Desloca <em><strong>a</strong></em> em representação binária <em><strong>b</strong></em> bits à direita, descartando bits excedentes.</p>
-<ol>
-<li>Expressão <strong>(a &gt;&gt; b)</strong></li>
-</ol>
-</li>
-<li>
-<p>Operador <strong>( &gt;&gt;&gt;  )</strong> deslocamento à direita com preenchimento zero. Desloca <em><strong>a</strong></em> em representação binária <em><strong>b</strong></em> bits à direita, descartando bits excedentes e preenchendo com zeros à esquerda.</p>
-<ol>
-<li>Expressão <strong>(a &gt;&gt;&gt; b)</strong></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operadores_logicos"><strong>Operadores lógicos</strong></a></p>
-<ol>
-<li>Operador AND lógico (&amp;&amp;) (E lógico) - Retorna <em><strong>expr1</strong></em> caso possa ser convertido para falso; senão, retorna <em><strong>expr2</strong></em>. Assim, quando utilizado com valores booleanos, <em><strong>&amp;&amp;</strong></em> retorna verdadeiro caso ambos operandos sejam verdadeiros; caso contrário, retorna falso.
-<ol>
-<li>Expressão <strong>(expr1 &amp;&amp; expr2)</strong></li>
-</ol>
-</li>
-<li>Operador OU lógico (||) (OU lógico) -  Retorna <em><strong>expr1</strong></em> caso possa ser convertido para verdadeiro; senão, retorna <em><strong>expr2</strong></em>. Assim, quando utilizado com valores booleanos, <em><strong>||</strong></em> retorna verdadeiro caso ambos os operandos sejam verdadeiro; se ambos forem falsos, retorna <em><strong>falso</strong></em> .
-<ol>
-<li>Expressão <strong>(expr1 || expr2)</strong>.</li>
-</ol>
-</li>
-<li>Operador NOT lógico (!) (Negação lógica) Retorna <em><strong>falso</strong></em> caso o único operando possa ser convertido para verdadeiro; senão, retorna verdadeiro.
-<ol>
-<li>Expressão <strong>(!expr)</strong>.</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operador_condicional_tern%C3%A1rio"><strong>Operador condicional (ternário)</strong></a> o operador condicional (  <strong>?</strong>  ) é o único operador JavaScript que utiliza três operandos. O operador pode ter um de dois valores baseados em uma condição. A sintaxe é:</p>
-<ol>
-<li>Expressão <strong>(condição ? valor1 : valor2)</strong>
-<ol>
-<li>
-<p>Se condição for verdadeira, o operador terá o valor de <em><strong>valor1</strong></em>. Caso contrário, terá o valor de <em><strong>valor2</strong></em>. Você pode utilizar o operador condicional em qualquer lugar onde utilizaria um operador padrão.</p>
-</li>
-<li>
-<p>Código javascript:</p>
-<pre><code class="hljs language-typescript">
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operadores_bit_a_bit"><strong>Operadores bit a bit</strong></a> tratam seus operandos como um conjunto de 32 bits (zeros e uns), em vez de tratá-los como números decimais, hexadecimais ou octais.</p>
+                <ol>
+                  <li>
+                    <p>Operador <strong>( AND )</strong> retorna um 1 para cada posição em que os bits da posição correspondente de ambos operandos sejam uns.</p>
+                    <ol>
+                      <li>A expressão (a &amp; b).</li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>Operador <strong>( OR )</strong> retorna um 0 para cada posição em que os bits da posição correspondente de ambos os operandos sejam zeros.</p>
+                    <ol>
+                      <li>Expressão <strong>(a | b)</strong>.</li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>Operador <strong>( XOR )</strong> retorna um 0 para cada posição em que os bits da posição correspondente são os mesmos e retorna um 1 para cada posição em que os bits da posição correspondente sejam diferentes.</p>
+                    <ol>
+                      <li>Expressão <strong>(a ^ b)</strong></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>Operador <strong>( NOT )</strong> inverte os bits do operando.</p>
+                    <ol>
+                      <li>Expressão <strong>(~ a)</strong></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>Operador <strong>( &lt;&lt; )</strong> desloca <em><strong>a</strong></em> em representação binária <em><strong>b</strong></em> bits à esquerda, preenchendo com zeros à direita.</p>
+                    <ol>
+                      <li>Expressão <strong>(a &lt;&lt; b)</strong></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>Operador <strong>( &gt;&gt; )</strong> Deslocamento à direita com propagação de sinal. Desloca <em><strong>a</strong></em> em representação binária <em><strong>b</strong></em> bits à direita, descartando bits excedentes.</p>
+                    <ol>
+                      <li>Expressão <strong>(a &gt;&gt; b)</strong></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>Operador <strong>( &gt;&gt;&gt; )</strong> deslocamento à direita com preenchimento zero. Desloca <em><strong>a</strong></em> em representação binária <em><strong>b</strong></em> bits à direita, descartando bits excedentes e preenchendo com zeros à esquerda.</p>
+                    <ol>
+                      <li>Expressão <strong>(a &gt;&gt;&gt; b)</strong></li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operadores_logicos"><strong>Operadores lógicos</strong></a></p>
+                <ol>
+                  <li>Operador AND lógico (&amp;&amp;) (E lógico) - Retorna <em><strong>expr1</strong></em> caso possa ser convertido para falso; senão, retorna <em><strong>expr2</strong></em>. Assim, quando utilizado com valores booleanos, <em><strong>&amp;&amp;</strong></em> retorna verdadeiro caso ambos operandos sejam verdadeiros; caso contrário, retorna falso.
+                    <ol>
+                      <li>Expressão <strong>(expr1 &amp;&amp; expr2)</strong></li>
+                    </ol>
+                  </li>
+                  <li>Operador OU lógico (||) (OU lógico) - Retorna <em><strong>expr1</strong></em> caso possa ser convertido para verdadeiro; senão, retorna <em><strong>expr2</strong></em>. Assim, quando utilizado com valores booleanos, <em><strong>||</strong></em> retorna verdadeiro caso ambos os operandos sejam verdadeiro; se ambos forem falsos, retorna <em><strong>falso</strong></em> .
+                    <ol>
+                      <li>Expressão <strong>(expr1 || expr2)</strong>.</li>
+                    </ol>
+                  </li>
+                  <li>Operador NOT lógico (!) (Negação lógica) Retorna <em><strong>falso</strong></em> caso o único operando possa ser convertido para verdadeiro; senão, retorna verdadeiro.
+                    <ol>
+                      <li>Expressão <strong>(!expr)</strong>.</li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operador_condicional_tern%C3%A1rio"><strong>Operador condicional (ternário)</strong></a> o operador condicional ( <strong>?</strong> ) é o único operador JavaScript que utiliza três operandos. O operador pode ter um de dois valores baseados em uma condição. A sintaxe é:</p>
+                <ol>
+                  <li>Expressão <strong>(condição ? valor1 : valor2)</strong>
+                    <ol>
+                      <li>
+                        <p>Se condição for verdadeira, o operador terá o valor de <em><strong>valor1</strong></em>. Caso contrário, terá o valor de <em><strong>valor2</strong></em>. Você pode utilizar o operador condicional em qualquer lugar onde utilizaria um operador padrão.</p>
+                      </li>
+                      <li>
+                        <p>Código javascript:</p>
+                        <pre><code class="hljs language-typescript">
    <span class="hljs-keyword">var</span> status = (idade &gt;= <span class="hljs-number">18</span>) ? <span class="hljs-string">"adulto"</span> : <span class="hljs-string">"menor de idade"</span>;
 
 </code></pre>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><a href="https://js.plainenglish.io/comma-operator-in-javascript-cfe170f5b4d3">O operador vírgula (  <strong>,</strong>  )</a>  é operador quando atua sobre duas expressões (exp1,exp2), onde expressão é algo que envolve outros operadores, variáveis ​​e funções.</p>
-<ol>
-<li>Exemplo 01:
-<ol>
-<li>
-<p>Código typescript</p>
-<pre><code class="hljs language-typescript">
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><a href="https://js.plainenglish.io/comma-operator-in-javascript-cfe170f5b4d3">O operador vírgula ( <strong>,</strong> )</a> é operador quando atua sobre duas expressões (exp1,exp2), onde expressão é algo que envolve outros operadores, variáveis ​​e funções.</p>
+                <ol>
+                  <li>Exemplo 01:
+                    <ol>
+                      <li>
+                        <p>Código typescript</p>
+                        <pre><code class="hljs language-typescript">
    <span class="hljs-keyword">const</span> map = {[<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">0</span>]: <span class="hljs-string">"Batman"</span>,
                 [<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">1</span>]: <span class="hljs-string">"Superman"</span>,
                 [<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">2</span>]: <span class="hljs-string">"Flash"</span>,
@@ -520,127 +551,127 @@
 
 
 </code></pre>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>.</p>
-</li>
-<li></li>
-<li>
-<p>,</p>
-</li>
-<li>
-<p>;</p>
-</li>
-<li>
-<p>:</p>
-</li>
-<li>
-<p>!==</p>
-</li>
-<li>
-<p>()</p>
-</li>
-<li>
-<p>[].indexOf()</p>
-</li>
-<li>
-<p>{}</p>
-</li>
-<li>
-<p>&amp;&amp;</p>
-</li>
-<li>
-<p>`</p>
-</li>
-<li>
-<p>&lt;=</p>
-</li>
-<li>
-<blockquote>
-<p>=</p>
-</blockquote>
-</li>
-<li>
-<p>${}</p>
-</li>
-<li>
-<p>case</p>
-</li>
-<li>
-<p>class</p>
-</li>
-<li>
-<p>console.log</p>
-</li>
-<li>
-<p>else</p>
-</li>
-<li>
-<p>Error</p>
-</li>
-<li>
-<p>export</p>
-</li>
-<li>
-<p>function</p>
-</li>
-<li>
-<p>if</p>
-</li>
-<li>
-<p>is</p>
-</li>
-<li>
-<p>new</p>
-</li>
-<li>
-<p>number</p>
-</li>
-<li>
-<p>private</p>
-</li>
-<li>
-<p>protected</p>
-</li>
-<li>
-<p>public</p>
-</li>
-<li>
-<p>return</p>
-</li>
-<li>
-<p>string</p>
-</li>
-<li>
-<p>switch</p>
-</li>
-<li>
-<p>this</p>
-</li>
-<li>
-<p>throw</p>
-</li>
-<li>
-<p>undefined</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_exemplos></span><strong>Exemplos.</strong></p>
-<ol>
-<li>
-<p>Calculadora:</p>
-<ol>
-<li>Código typescript</li>
-</ol>
-<pre><code class="hljs language-typescript">
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p>.</p>
+              </li>
+              <li></li>
+              <li>
+                <p>,</p>
+              </li>
+              <li>
+                <p>;</p>
+              </li>
+              <li>
+                <p>:</p>
+              </li>
+              <li>
+                <p>!==</p>
+              </li>
+              <li>
+                <p>()</p>
+              </li>
+              <li>
+                <p>[].indexOf()</p>
+              </li>
+              <li>
+                <p>{}</p>
+              </li>
+              <li>
+                <p>&amp;&amp;</p>
+              </li>
+              <li>
+                <p>`</p>
+              </li>
+              <li>
+                <p>&lt;=</p>
+              </li>
+              <li>
+                <blockquote>
+                  <p>=</p>
+                </blockquote>
+              </li>
+              <li>
+                <p>${}</p>
+              </li>
+              <li>
+                <p>case</p>
+              </li>
+              <li>
+                <p>class</p>
+              </li>
+              <li>
+                <p>console.log</p>
+              </li>
+              <li>
+                <p>else</p>
+              </li>
+              <li>
+                <p>Error</p>
+              </li>
+              <li>
+                <p>export</p>
+              </li>
+              <li>
+                <p>function</p>
+              </li>
+              <li>
+                <p>if</p>
+              </li>
+              <li>
+                <p>is</p>
+              </li>
+              <li>
+                <p>new</p>
+              </li>
+              <li>
+                <p>number</p>
+              </li>
+              <li>
+                <p>private</p>
+              </li>
+              <li>
+                <p>protected</p>
+              </li>
+              <li>
+                <p>public</p>
+              </li>
+              <li>
+                <p>return</p>
+              </li>
+              <li>
+                <p>string</p>
+              </li>
+              <li>
+                <p>switch</p>
+              </li>
+              <li>
+                <p>this</p>
+              </li>
+              <li>
+                <p>throw</p>
+              </li>
+              <li>
+                <p>undefined</p>
+              </li>
+              <li>
+                <p><text onclick="goBack()">[🔙]</text></p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p><span id=id_exemplos></span><strong>Exemplos.</strong></p>
+            <ol>
+              <li>
+                <p>Calculadora:</p>
+                <ol>
+                  <li>Código typescript</li>
+                </ol>
+                <pre><code class="hljs language-typescript">
    <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> Calculator {
    <span class="hljs-keyword">private</span> current = <span class="hljs-number">0</span>;
    <span class="hljs-keyword">private</span> memory = <span class="hljs-number">0</span>;
@@ -716,111 +747,116 @@
 
 
 </code></pre>
-</li>
-<li>
-<p>item 02.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_Conteudo01></span><strong>Conteúdo01</strong></p>
-<ol>
-<li>
-<p>item 01.</p>
-</li>
-<li>
-<p>item 02.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
-<ol>
-<li>
-<p><a href="https://www.tutorialspoint.com/typescript/typescript_arrays.htm">TypeScript - Arrays</a></p>
-</li>
-<li>
-<p><a href="https://bleepcoder.com/pt/react-spaces/64889300/list-of-reserved-keywords">Palavras reservadas</a></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#(Bitwise_AND)">Expressions and operators by category</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
-<ol>
-<li>
-<p>24/02/2021 <!--TODO: HISTÓRICO --></p>
-<ul class="contains-task-list">
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar este documento baseado no <a href="http://Calculator.html">Calculator.md</a> ;</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Objetivos;</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Pre-requisitos</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Benefícios</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ul>
-</li>
-<li>
-<p>25/02/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
-<ul class="contains-task-list">
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Descrição</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo 02</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox"type="checkbox"> Ler no dia seguinte este documento para checar os erros de português.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
- <script>    function goBack() {    window.history.back()}</script>
+              </li>
+              <li>
+                <p>item 02.</p>
+              </li>
+              <li>
+                <p><text onclick="goBack()">[🔙]</text></p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p><span id=id_Conteudo01></span><strong>Conteúdo01</strong></p>
+            <ol>
+              <li>
+                <p>item 01.</p>
+              </li>
+              <li>
+                <p>item 02.</p>
+              </li>
+              <li>
+                <p><text onclick="goBack()">[🔙]</text></p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
+            <ol>
+              <li>
+                <p><a href="https://www.tutorialspoint.com/typescript/typescript_arrays.htm">TypeScript - Arrays</a></p>
+              </li>
+              <li>
+                <p><a href="https://bleepcoder.com/pt/react-spaces/64889300/list-of-reserved-keywords">Palavras reservadas</a></p>
+              </li>
+              <li>
+                <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#(Bitwise_AND)">Expressions and operators by category</a></p>
+              </li>
+              <li>
+                <p><a href="##">#</a></p>
+              </li>
+              <li>
+                <p><a href="##">#</a></p>
+              </li>
+              <li>
+                <p><a href="##">#</a></p>
+              </li>
+              <li>
+                <p><a href="##">#</a></p>
+              </li>
+              <li>
+                <p><text onclick="goBack()">[🔙]</text></p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+            <ol>
+              <li>
+                <p>24/02/2021
+                  <!--TODO: HISTÓRICO -->
+                </p>
+                <ul class="contains-task-list">
+                  <li class="task-list-item enabled">
+                    <p><input class="task-list-item-checkbox" checked="" type="checkbox"> Criar este documento baseado no <a href="http://Calculator.html">Calculator.md</a> ;</p>
+                  </li>
+                  <li class="task-list-item enabled">
+                    <p><input class="task-list-item-checkbox" checked="" type="checkbox"> Escrever tópico Objetivos;</p>
+                  </li>
+                  <li class="task-list-item enabled">
+                    <p><input class="task-list-item-checkbox" checked="" type="checkbox"> Escrever tópico Pre-requisitos</p>
+                  </li>
+                  <li class="task-list-item enabled">
+                    <p><input class="task-list-item-checkbox" checked="" type="checkbox"> Escrever tópico Benefícios</p>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>25/02/2021
+                  <!--FIXME: Falta fazer os item abaixo: -->
+                </p>
+                <ul class="contains-task-list">
+                  <li class="task-list-item enabled">
+                    <p><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Descrição</p>
+                  </li>
+                  <li class="task-list-item enabled">
+                    <p><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Conteúdo 02</p>
+                  </li>
+                  <li class="task-list-item enabled">
+                    <p><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Referências</p>
+                  </li>
+                  <li class="task-list-item enabled">
+                    <p><input class="task-list-item-checkbox" type="checkbox"> Atualizar o histórico deste documento.</p>
+                  </li>
+                  <li class="task-list-item enabled">
+                    <p><input class="task-list-item-checkbox" type="checkbox"> Ler no dia seguinte este documento para checar os erros de português.</p>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </li>
+        </ol>
+  </main>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
-        
-    </body>
-    </html>
+  <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

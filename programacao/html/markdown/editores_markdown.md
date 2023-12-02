@@ -1,5 +1,10 @@
-<link type="text/css" href="../../../css/defaulttheme.css" rel="stylesheet">
-<span id="topo"></h1> <span>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
 
 # Editores que reconhecem a linguagem Markdown <a href="editores_markdown.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
 ## [Visual Estúdio da Microsoft](https://code.visualstudio.com)
@@ -81,3 +86,7 @@
 
 * <a href="https://dillinger.io/" target="_blank" title="">Editor web Dillinger</a>
   * Dillinger é um editor Markdown online. Como o StackEdit , ele carrega direto no seu navegador da web, portanto, não há necessidade de baixar e instalar um aplicativo no seu computador. Dillinger tem dois painéis: o editor à esquerda e a visualização ao vivo à direita. Os painéis divididos facilitam a visualização da aparência do texto formatado em Markdown.
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

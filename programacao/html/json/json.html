@@ -3,25 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <title>Estudo da linguagem JSON</title>
-
+ 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
            
-        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
-        <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/>
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
         <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
 
         <script type="application/x-javascript" src="/js/generic.js"></script>
         <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>   
 
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
     </head>
     <body class="vscode-body vscode-dark">
-        <!-- markdownlint-disable-next-line -->
-<nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav> 
-<h1 id="estudo-da-linguagem-json">Estudo da linguagem JSON</h1>
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="estudo-da-linguagem-json">Estudo da linguagem JSON</h1> -->
 <h2 id="objetivo-do-json">Objetivo do json</h2>
 <ol>
 <li>JSON (JavaScript Object Notation) é um formato de intercâmbio de dados leve. É fácil para humanos ler e escrever. É fácil para as máquinas analisar e gerar. É baseado em um subconjunto do Padrão de Linguagem de Programação JavaScript ECMA-262 3ª Edição - dezembro de 1999 . JSON é um formato de texto totalmente independente da linguagem, mas usa convenções familiares aos programadores da família C de linguagens, incluindo C, C ++, C #, Java, JavaScript, Perl, Python e muitos outros. Essas propriedades tornam o JSON uma linguagem de intercâmbio de dados ideal. <a href="https://www.json.org/json-en.html">Veja mais...</a></li>
@@ -89,8 +95,9 @@
 <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar a página json/index.html</li>
 <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar opção no menu/index.js para acessar a página json/index.html</li>
 </ul>
-<!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>      
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
         
         
     </body>

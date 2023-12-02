@@ -1,3 +1,9 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
 # INSTALAR E CONFIGURAR O NODEJS <a href="instalar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
@@ -441,6 +447,6 @@
          - [x] Documentar a segunda forma de conectar-se ao banco de dados mariadb.
          - [x] Criar um index no arquivo instalar.md.
 
-     6. [🔝](#topo_Objetivo "Retorna ao topo")
+</main>
 
 [🔝🔝](#topo "Retorna ao topo")

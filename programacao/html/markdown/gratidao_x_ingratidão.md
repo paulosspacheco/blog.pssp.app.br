@@ -1,3 +1,10 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
 
 # Gratidão X Ingratidão  
 
@@ -41,11 +48,6 @@
   >  
   > Obrigado, Deus, por mais um dia...  
 
-# Rodapé
+</main>
 
-  > Esse é um documento no formato  .md (Markdown) e poder ser editado por todos editores de textos existente.  
-  > Caso o editor reconheça a linguagem de marcação Markdown ele pode savar o arquivo nos formatos .md,  html ou pdf .  
-  >  
-    >> Editor: [dillinger.io](https://dillinger.io/)  
-    >>  
-  >  
+[🔝🔝](#topo "Retorna ao topo")

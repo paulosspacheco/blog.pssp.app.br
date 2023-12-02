@@ -1,4 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # GUI Design WYSIWYG
 
 ## [LAMW: Lazarus Android Module Wizard](https://github.com/jmpessoa/lazandroidmodulewizard)
@@ -62,3 +69,7 @@
 2. [Multi-Form demo](https://github.com/jmpessoa/lazandroidmodulewizard/tree/master/demos/GUI/AppTest1)
 
 3. [All GUI demos](https://github.com/jmpessoa/lazandroidmodulewizard/tree/master/demos/GUI)
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

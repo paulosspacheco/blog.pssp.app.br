@@ -1,5 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
+
 <!-- markdownlint-disable-next-line -->
 # Como free pascal implementa multiplataforma <a href="modelo03.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
@@ -234,8 +240,6 @@
          - [ ] Atualizar o histórico deste documento.
          - [ ] Testar este documento depois após uma semana de concluído.
 
-         - <text onclick="goBack()">[🔙]</text>
+</main>
 
 [🔝🔝](#topo "Retorna ao topo")
-
- <script>    function goBack() {    window.history.back()}</script>

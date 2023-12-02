@@ -1,4 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
+
 # JAVASCRIPT - Funções assíncronas<a href="function_async.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
@@ -263,8 +270,6 @@
       2. 17/02/2021 <!--FIXME: Falta fazer os item abaixo: -->
          - [ ] Ler este documento para checar os erros de português.
 
-         - <text onclick="goBack()">[🔙]</text>
+</main>
 
 [🔝🔝](#topo "Retorna ao topo")
-
-<script>function goBack() { window.history.back()}</script>

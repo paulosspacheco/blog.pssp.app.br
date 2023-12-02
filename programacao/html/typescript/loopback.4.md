@@ -1,3 +1,9 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
 # Framework LoopBack 4.0 <a href="loopback.4.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
@@ -642,3 +648,8 @@
            +run()
         }
 ```
+
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

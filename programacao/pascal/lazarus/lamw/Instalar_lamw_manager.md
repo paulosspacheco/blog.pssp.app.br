@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Como instalar LAMW Manager no linux
 
 1. O script **[lamw_manager_setup.sh](https://github.com/dosza/LAMWManager-linux#:~:text=here%20to%20download-,LAMW%20Manager%20Setup,-Go%20to%20download)** é uma instalação antiga do lazarus 2.0.12 versão Linux e suas dependências na época.
@@ -35,3 +43,7 @@
    1. O motivo desse macete é um bug na ide que não modificar a plataforma de 32 para 64 bits.
 
 8. O próximo artigo eu descrevo o passo a passo para fazer as demostrações funcionarem.
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

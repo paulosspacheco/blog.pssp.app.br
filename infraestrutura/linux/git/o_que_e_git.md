@@ -529,14 +529,6 @@
       - [ ] Atualizar o histórico deste documento.
       - [ ] Testar este documento depois após uma semana de concluído.
 
-      - <!-- markdownlint-disable-next-line -->
-         [🔝](#)
-
-<!-- markdownlint-disable-next-line -->
-[🔝](#)
-
 </main>
 
-<!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 [🔝🔝](#topo "Retorna ao topo")

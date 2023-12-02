@@ -1,3 +1,9 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
 # Como usar funções assíncronas em javascript <a href="functions_async.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
@@ -69,5 +75,7 @@
          - [ ] projeto 01;
          - [ ] bug 01;
          - [🔝](#topo "Retorna ao topo")
+
+</main>
 
 [🔝🔝](#topo "Retorna ao topo")

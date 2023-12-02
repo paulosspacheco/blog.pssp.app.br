@@ -1,4 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
+
 # Modelo de documento markdown <a href="arrow_functions.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
@@ -248,8 +255,8 @@
       2. 16/02/2021
          - [x] Fazer revisão do texto do documento para saber se os textos estão claros.
 
-         - <text onclick="goBack()">[🔙]</text>
+<script>function goBack() { window.history.back()}</script>
+
+</main>
 
 [🔝🔝](#topo "Retorna ao topo")
-
-<script>function goBack() { window.history.back()}</script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>LAMW lifecycle for Android activity</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="lamw-lifecycle-for-android-activity">LAMW lifecycle for Android activity</h1> -->
+<pre><code class="hljs language-txt">
+    ---------------------------------------
+    |                                     |
+    | LAMW lifecycle for Android activity |
+    | ----------------------------------- |
+    ---------------------------------------
+
+    ReCreate  ------------------------------
+    Activity  | Activity                   |
+    |--------&gt;|  Create  OnActivityCreate()|
+    |         ------------------------------
+    |               |
+    |              \|/
+    |         OnActivityReCreate() // Only main or splash module call this, if recreate activity
+    |               |
+    |              \|/
+    | |------&gt;OnActivityResume()
+    | |             |
+    | |            \|/  
+    | |	   When the application is visible, automatic &quot;updatelayout&quot; of the main form
+    | |       ----------------------
+    | |       | ....Run LAMW App   |
+    | |       ----------------------
+    | |             |
+    | |            \|/
+    | |-------OnPause()
+    |               |
+    |              \|/
+    ----------OnStop()
+                    |
+                    \|/
+            OnDestroy()
+                    |
+                    \|/
+            -------------
+            | Activity  |
+            | Shut down |
+            -------------
+
+</code></pre>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+        
+        
+    </body>
+    </html>

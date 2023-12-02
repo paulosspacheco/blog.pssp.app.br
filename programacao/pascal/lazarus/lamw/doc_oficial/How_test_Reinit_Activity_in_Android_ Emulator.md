@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Create Android Virtual Device (AVD)
 
 - Name   : _Tablet1280x800-A7-64_
@@ -15,3 +23,7 @@
 - Once we have created the emulator, we launch the application and keep the square button pressed. We go to multiwindows mode and modify the size of our application until we get it to restart the activity.
 
 - So we can test if it works correctly.
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")
