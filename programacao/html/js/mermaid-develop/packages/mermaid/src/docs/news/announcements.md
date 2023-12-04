@@ -1,0 +1,9 @@
+# Announcements
+
+Check out our latest blog posts below. See more blog posts [here](blog.md).
+
+## [5 Reasons You Should Be Using Mermaid Chart As Your Diagram Generator](https://www.mermaidchart.com/blog/posts/5-reasons-you-should-be-using-mermaid-chart-as-your-diagram-generator/)
+
+14 November 2023 · 5 mins
+
+Mermaid Chart, a user-friendly, code-based diagram generator with AI integrations, templates, collaborative tools, and plugins for developers, streamlines the process of creating and sharing diagrams, enhancing both creativity and collaboration.
