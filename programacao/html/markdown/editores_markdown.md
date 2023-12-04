@@ -10,44 +10,46 @@
 
 ## [Visual Estúdio da Microsoft](https://code.visualstudio.com)
 
-  1. O <a href="https://code.visualstudio.com/" target="_blank" title="Clique e acesse agora!">VsCode</a> é um editor de código-fonte leve, mas poderoso, que é executado em sua área de trabalho e está disponível para Windows, macOS e Linux. Ele vem com suporte integrado para JavaScript, TypeScript e Node.js e tem um rico ecossistema de extensões para outras linguagens (como C ++, C #, Java, Python, PHP, Go) e tempos de execução (como .NET e Unity).
+1. O <a href="https://code.visualstudio.com/" target="_blank" title="Clique e acesse agora!">VsCode</a> é um editor de código-fonte leve, mas poderoso, que é executado em sua área de trabalho e está disponível para Windows, macOS e Linux. Ele vem com suporte integrado para JavaScript, TypeScript e Node.js e tem um rico ecossistema de extensões para outras linguagens (como C ++, C #, Java, Python, PHP, Go) e tempos de execução (como .NET e Unity).
+   1. **Extensões do vscode para trabalhar com markdown:**
+      1. [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one "Tem quase tudo que é precisa para escrever o Markdown (atalhos de teclado, sumário, visualização automática e muito mais)")
+      2. Ao inserir uma elemento na lista enumerada o número seguintes é calculado.
+         1. **Atalhos do teclado da extensão markdown-all-in-one:**
+              1. **Ctrl/Cmd + B** - Alternar negrito
+              2. **Ctrl/Cmd + I** - Alternar itálico
+              3. **Ctrl / Cmd + Shift + ]** - Alternar título (Insere cancela (#))
+              4. **Ctrl/Cmd + Shift + [** - Alternar título (Excluir cancela (#))
+              5. **Ctrl/Cmd + M** - Alternar ambiente matemático
+              6. **Alt+C** - Marcar / Desmarcar item da lista de tarefas
+              7. **Ctrl/Cmd + Shift + V** - Alternar visualização
 
-    1. Extensões do vscode para trabalhar com markdown:
-        1. [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one "Tem quase tudo que é precisa para escrever o Markdown (atalhos de teclado, sumário, visualização automática e muito mais)")
-          1. Ao inserir uma elemento na lista enumerada o número seguintes é calculado.
-          2. **Atalhos do teclado da extensão markdown-all-in-one:**
-                1. **Ctrl/Cmd + B** - Alternar negrito
-                2. **Ctrl/Cmd + I** - Alternar itálico
-                3. **Ctrl / Cmd + Shift + ]** - Alternar título (Insere cancela (#))
-                4. **Ctrl/Cmd + Shift + [** - Alternar título (Excluir cancela (#))
-                5. **Ctrl/Cmd + M** - Alternar ambiente matemático
-                6. **Alt+C** - Marcar / Desmarcar item da lista de tarefas
-                7. **Ctrl/Cmd + Shift + V** - Alternar visualização
+      3. A extensão [Markdown Shortcuts](https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts) facilita muito edição de tags markdown.
+      4. [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint "Linting de marcação e verificação de estilo para código do Visual Studio")
+      5. [Markdown Footnotes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes "Adiciona suporte de sintaxe de nota de rodapé \[\^1\] à visualização embutida do Markdown do VS Code")
+      6. [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks "Marque as linhas e pule para elas")
+      7. [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker "Verificador ortográfico para código-fonte")
+      8. [Brazilian Portuguese - Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese-brazilian "Extensão do dicionário do português brasileiro para o código VS")
+      9. [html-to-javascript-string](https://marketplace.visualstudio.com/items?itemName=evileumas.html-to-javascript-string "Esta extensão converte o texto selecionado do editor em string javascript")
+      10. [vscode pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf "Essa extensão permite visualizar pdf no vscode").
+      11. [markdown-preview-enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced "Visualização de Markdown aprimorada")
+      12. [markdown-pdf](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf "Converte markdown para pdf")
+      13. [Instant Markdown](https://marketplace.visualstudio.com/items?itemName=dbankier.vscode-instant-markdown "Ao editar documentos markdown em vscode esta extensão atualiza instantaneamente no navegador.")
+      14. A extensão [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree "Este link descreve tudo que é necessário fazer para configurar a extensão.") para criar lista com todos os cometários do código que contenha as palavras: TODO: ou FIXME:
+      15. A extensão [markdown-footnotes]("https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes") é usada para criar notas de rodapé em documentos markdown.
+      16. [Todos os erros que viola as regras markdown](https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md)
+      17. [markdown-styles](https://www.npmjs.com/package/markdown-styles/v/1.2.2)  
+          1. Folhas de estilo CSS prontas para Markdown.
+          2. Use sua própria marcação personalizada e CSS via --layout.
+      18. [Markdown Table](https://marketplace.visualstudio.com/items?itemName=TakumiI.markdowntable)
+      19. **Mermaid é um projeto que desenha gráficos usando a linguagem markdown**
+          1. [Mermaid Markdown Syntax Highlighting](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting)                  
+          2. [Mermaid Editor](https://marketplace.visualstudio.com/items?itemName=tomoyukim.vscode-mermaid-editor)
+          3. [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid "Gera fluxogramas, diagramas e muito mais")
+          4. [Mermaid Markdown Syntax Highlighting](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting "Suporte de sintaxe Markdown para a linguagem de gráficos Mermaid")
+          5. [Projeto mermaid no github](https://github.com/mermaid-js/mermaid)
 
-        2. A extensão [Markdown Shortcuts](https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts) facilita muito edição de tags markdown.
-        3. [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint "Linting de marcação e verificação de estilo para código do Visual Studio")
-        4. [Mermaid Markdown Syntax Highlighting](https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting "Suporte de sintaxe Markdown para a linguagem de gráficos Mermaid")
-          1. [Projeto mermaid no github](https://github.com/mermaid-js/mermaid)
-        5. [Markdown Footnotes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes "Adiciona suporte de sintaxe de nota de rodapé \[\^1\] à visualização embutida do Markdown do VS Code")
-        6. [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks "Marque as linhas e pule para elas")
-        7. [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker "Verificador ortográfico para código-fonte")
-        8. [Brazilian Portuguese - Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese-brazilian "Extensão do dicionário do português brasileiro para o código VS")
-        9. [html-to-javascript-string](https://marketplace.visualstudio.com/items?itemName=evileumas.html-to-javascript-string "Esta extensão converte o texto selecionado do editor em string javascript")
-        10. [vscode pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf "Essa extensão permite visualizar pdf no vscode").
-        11. [markdown-preview-enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced "Visualização de Markdown aprimorada")
-        12. [markdown-pdf](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf "Converte markdown para pdf")
-        13. [Instant Markdown](https://marketplace.visualstudio.com/items?itemName=dbankier.vscode-instant-markdown "Ao editar documentos markdown em vscode esta extensão atualiza instantaneamente no navegador.")
-        14. A extensão [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree "Este link descreve tudo que é necessário fazer para configurar a extensão.") para criar lista com todos os cometários do código que contenha as palavras: TODO: ou FIXME:
-        15. [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid "Gera fluxogramas, diagramas e muito mais")
-        16. A extensão [markdown-footnotes]("https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes") é usada para criar notas de rodapé em documentos markdown.
-        17. [Todos os erros que viola as regras markdown](https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md)
-        18. [markdown-styles](https://www.npmjs.com/package/markdown-styles/v/1.2.2)  
-            1. Folhas de estilo CSS prontas para Markdown.
-            2. Use sua própria marcação personalizada e CSS via --layout.
-        19. [Markdown Table](https://marketplace.visualstudio.com/items?itemName=TakumiI.markdowntable)
-
-    2. **Observação**:
-      1.  A propriedade _"markdown.extension.print.includeVscodeStylesheets": false_, para evitar que os estilos padrão entrem em conflito com o que está definido no "markdown.styles": […].
+   2. **Observação**:
+      1. A propriedade _"markdown.extension.print.includeVscodeStylesheets": false_, para evitar que os estilos padrão entrem em conflito com o que está definido no "markdown.styles": […].
 
 ## [Editor notable](https://notable.app/ )
 

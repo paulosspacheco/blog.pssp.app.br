@@ -1,71 +1,115 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Editor de diagrama&comma; fluxogramas e v&aacute;rios tipos de gr&aacute;ficos mermaid em markdown</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description"   content="" />
-        <meta name="keywords" content="" />
-           
-        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8">
+  <title>Editor de diagrama&comma; fluxogramas e v&aacute;rios tipos de gr&aacute;ficos mermaid em markdown</title>
 
-        <script type="application/x-javascript" src="/js/generic.js"></script>
-        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        includeHTML();
+      }
 
-        <script type="application/x-javascript" src="/js/mermaid.min.js"></script>
+    );
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        FixHeader(window, "myHeader");
+      }
 
-        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
-        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
-        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+    );
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        toggleTree();
+      }
 
+    );
+  </script>
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <span id="markdown-mermaid" aria-hidden="true"
-                    data-dark-mode-theme="dark"
-                    data-light-mode-theme="default"></span>
-                <div class="header" id="myHeader">
-  <div class="navbar" w3-include-html="/menu.inc"> </div>
-</div>
-<div class="title"><script> document.write(document.title);</script></div>  
-<main>
-<span id="topo"><span>
-<!-- <h1 id="editor-de-diagrama-fluxogramas-e-vários-tipos-de-gráficos-mermaid-em-markdown">Editor de diagrama, fluxogramas e vários tipos de gráficos mermaid em markdown</h1> -->
-<h2 id="exemplos-graph-td">Exemplos graph TD</h2>
-<pre><code class="hljs language-mermaid">
-graph TD;
-    A(Características?)--&gt;B(O que é Mermaid?);    
-    A(Características?)--&gt;C(Aceita comentários?); 
-    A(Características?)--&gt;D(Aceita imagem?); 
+</head>
 
-    B--&gt;f1(É um recurso gráfico editado com editor de texto.);
-    C--&gt;f2(Não sei)
-    D--&gt;f3(Vou checar) 
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <script type="application/x-javascript" src="/js/mermaid.min.js"></script>
+    <!-- 
+Esse pacote mermaid é completo porém ocupa quase 1 mg de código
+<script type="application/x-javascript" src="/js/bierner.markdown-mermaid.js"></script> -->
+    <p><span id="topo"><span></p>
+    <!-- <h1 id="editor-de-diagrama-fluxogramas-e-vários-tipos-de-gráficos-mermaid-em-markdown">Editor de diagrama, fluxogramas e vários tipos de gráficos mermaid em markdown</h1> -->
+    <h2 id="objetivo">Objetivo</h2>
+    <ul>
+      <li>Este código implementa gráficos com a biblioteca <em>&quot;/js/mermaid.min.js&quot;</em>.</li>
+      <li>Este arquivo não declara a <em>sintaxe markdown</em> para mermaid porque a instalação da extensão <em>Markdown Preview Mermaid Support</em> faz com que toda vêz que se salva um documento markdown, a biblioteca é salva, mesmo não precisando dela e o código é muito grande, por isso estou usando o código <em>mermaid.min.js</em> por ser pequeno e prática.</li>
+    </ul>
+    <h2 id="exemplos-graph-td">Exemplos graph TD</h2>
+    <pre><code class="hljs language-mermaid">
+   graph TD;
+      A(Características?)--&gt;B(O que é Mermaid?);    
+      A(Características?)--&gt;C(Aceita comentários?); 
+      A(Características?)--&gt;D(Aceita imagem?); 
 
-    
+      B--&gt;f1(É um recurso gráfico editado com editor de texto.);
+      C--&gt;f2(Não sei)
+      D--&gt;f3(Vou checar)
+
 </code></pre>
-<h2 id="exemplos-pie">Exemplos pie</h2>
-<pre><code class="hljs language-mermaid">
-   pie title Pets adopted by volunteers
-   &quot;Dogs&quot; : 386
-   &quot;Cats&quot; : 85
-   &quot;Rats&quot; : 15
+    <pre><code class="language-mermaid"><div class="mermaid">
+
+    graph TD;
+        A(Características?)-->B(O que é Mermaid?);    
+        A(Características?)-->C(Aceita comentários?); 
+        A(Características?)-->D(Aceita imagem?); 
+
+        B-->f1(É um recurso gráfico editado com editor de texto.);
+        C-->f2(Não sei)
+        D-->f3(Vou checar)
+
+</div></code></pre>
+    <h2 id="exemplos-de-gráfico-de-setor">Exemplos de gráfico de setor</h2>
+    <pre><code class="hljs language-mermaid">
+  pie title Animais de estimação adotados por voluntários
+    &quot;Cachorros&quot; : 386
+    &quot;Gatos&quot; : 85
+    &quot;Ratas&quot; : 15
 
 </code></pre>
-<h2 id="referências">Referências</h2>
-<ol>
-<li><a href="https://mermaid.live/edit#pako:eNp10VFrwyAQB_CvIvfc9APkrUQZgXUZJi0UfHF6XYUkFqeFEfPdZ5aErR3zzeN3_5NzAGU1Qg7oqJHvTnaiJ-kUh7qp9oyTMW63cSCUPZdHxk_ZjlLO6prk5CI_HmyMWWYHUnGaLjm5tlLhP6Z8OVZlwZIS0Br51iI5Wydg1n-mPSQ7VGhua_aaNaH4g5S9oVvIXPsNsrJh-6RMr9qg16hXXtFD0WTFrmFPFT-tLUv9O7X30vT3_u59a7IA6zQ61GmGANhAh66TRqdlD1O3AH_BDgVMVONZhtZPCxgTlcHb-rNXkHsXcAPhqqXH5Yfm4vgFrhOHgA">Mermaid Live</a></li>
-<li><a href="https://github.com/mermaid-js/mermaid">Github Mermaid</a></li>
-<li><a href="https://www.youtube.com/watch?v=p4lk9o5WDeY">How to add Mermaid (Markdown) Plugin in Visual Studio Code</a></li>
-<li><a href="https://www.freecodecamp.org/news/diagrams-as-code-with-mermaid-github-and-vs-code/">Como criar diagramas como código com Mermaid, GitHub e Visual Studio Code</a></li>
-</ol>
-</main>
-<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+    <pre><code class="language-mermaid"><div class="mermaid">
 
-        
-      
+   pie title Animais de estimação adotados por voluntários
+   "Cachorros" : 386
+   "Gatos" : 85
+   "Ratas" : 15
 
-    </body>
-    </html>
+</div></code></pre>
+    <h2 id="referências">Referências</h2>
+    <ol>
+      <li><a href="https://mermaid.js.org/config/Tutorials.html">Tutoriais</a></li>
+      <li><a href="https://mermaid.live/edit#pako:eNp10VFrwyAQB_CvIvfc9APkrUQZgXUZJi0UfHF6XYUkFqeFEfPdZ5aErR3zzeN3_5NzAGU1Qg7oqJHvTnaiJ-kUh7qp9oyTMW63cSCUPZdHxk_ZjlLO6prk5CI_HmyMWWYHUnGaLjm5tlLhP6Z8OVZlwZIS0Br51iI5Wydg1n-mPSQ7VGhua_aaNaH4g5S9oVvIXPsNsrJh-6RMr9qg16hXXtFD0WTFrmFPFT-tLUv9O7X30vT3_u59a7IA6zQ61GmGANhAh66TRqdlD1O3AH_BDgVMVONZhtZPCxgTlcHb-rNXkHsXcAPhqqXH5Yfm4vgFrhOHgA">Mermaid Live</a></li>
+      <li><a href="https://github.com/mermaid-js/mermaid">Github Mermaid</a></li>
+      <li><a href="https://www.youtube.com/watch?v=p4lk9o5WDeY">How to add Mermaid (Markdown) Plugin in Visual Studio Code</a></li>
+      <li><a href="https://www.freecodecamp.org/news/diagrams-as-code-with-mermaid-github-and-vs-code/">Como criar diagramas como código com Mermaid, GitHub e Visual Studio Code</a></li>
+    </ol>
+  </main>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+
+
+</body>
+
+</html>
