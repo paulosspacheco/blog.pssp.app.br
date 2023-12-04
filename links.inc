@@ -223,12 +223,17 @@
 <li> <a href="/programacao/html/json/json.html" target="">Estudo da linguagem JSON  ➚ </a></li>
 </div> </ul> </li>
 <li><span class="rootTree"><b>MARKDOWN</b></span> <ul> <div class="children">
+<li> <a href="/programacao/html/markdown/dillinger.html" target="">Dillinger  ➚ </a></li>
 <li> <a href="/programacao/html/markdown/editores_markdown.html" target="">Editores que reconhecem a linguagem Markdown   ➚ </a></li>
 <li><span class="rootTree"><b>GRAPHVIZ</b></span> <ul> <div class="children">
 <li> <a href="/programacao/html/markdown/graphviz/teste_diagrama.html" target="">teste diagrama  ➚ </a></li>
 </div> </ul> </li>
+<li> <a href="/programacao/html/markdown/gratidao_x_ingratidão.html" target="">Gratidão X Ingratidão  ➚ </a></li>
 <li> <a href="/programacao/html/markdown/indexcomprimido.html" target="">Linguagem markdown  ➚ </a></li>
 <li> <a href="/programacao/html/markdown/index.html" target="">Linguagem markdown  ➚ </a></li>
+<li> <a href="/programacao/html/markdown/markdowncomicones.html" target="">Gratidão X Ingratidão  ➚ </a></li>
+<li> <a href="/programacao/html/markdown/matemática.html" target="">Matemática em documentos markdown  ➚ </a></li>
+<li> <a href="/programacao/html/markdown/mermaid_graph_td.html" target="">Editor de diagrama, fluxogramas e vários tipos de gráficos mermaid em markdown  ➚ </a></li>
 <li> <a href="/programacao/html/markdown/o_que_e_markdown.html" target="">LINGUAGEM DE MARCAÇÃO DE TEXTO MARKDOWN   ➚ </a></li>
 <li> <a href="/programacao/html/markdown/test.html" target="">Exemplo de um arquivos markdown misturado com html  ➚ </a></li>
 <li> <a href="/programacao/html/markdown/test_markdown_shortcuts.html" target="">Test da extensão [Markdown Shortcuts](https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts)  ➚ </a></li>
@@ -342,17 +347,31 @@
 <li> <a href="/programacao/pascal/delphi/pacotes_em_delphi.html" target="">Tudo sobre pacotes Delphi XE  ➚ </a></li>
 </div> </ul> </li>
 <li><span class="rootTree"><b>LAZARUS</b></span> <ul> <div class="children">
+<li> <a href="/programacao/pascal/lazarus/como_criar_projetos_free_pascal_multiplataforma.html" target="">Como criar projetos free pascal multiplataforma   ➚ </a></li>
+<li> <a href="/programacao/pascal/lazarus/como_free_pascal_implementa_multiplataforma.html" target="">Como free pascal implementa multiplataforma   ➚ </a></li>
+<li><span class="rootTree"><b>FCL-WEB</b></span> <ul> <div class="children">
+<li><span class="rootTree"><b>FPTEMPLATE</b></span> <ul> <div class="children">
+<li> <a href="/programacao/pascal/lazarus/fcl-web/fptemplate/fptemplate.html" target="">fptemplate.pp has been moved to fcl-base.  ➚ </a></li>
+</div> </ul> </li>
+</div> </ul> </li>
 <li><span class="rootTree"><b>INTERNET_TOOLS</b></span> <ul> <div class="children">
 <li> <a href="/programacao/pascal/lazarus/internet_tools/internet_tools.html" target="">Internet Tools - pacote FreePascal  ➚ </a></li>
 </div> </ul> </li>
 <li><span class="rootTree"><b>LAMW</b></span> <ul> <div class="children">
 <li><span class="rootTree"><b>DOC_OFICIAL</b></span> <ul> <div class="children">
+<li> <a href="/programacao/pascal/lazarus/lamw/doc_oficial/AppHelloWorld.html" target="">Hello World App  ➚ </a></li>
+<li> <a href="/programacao/pascal/lazarus/lamw/doc_oficial/building-multi-arch-apk-using-gradle.html" target="">Posts: 1229  ➚ </a></li>
+<li> <a href="/programacao/pascal/lazarus/lamw/doc_oficial/GUIDesignWYSIWYG.html" target="">GUI Design WYSIWYG  ➚ </a></li>
 <li> <a href="/programacao/pascal/lazarus/lamw/doc_oficial/How_test_Reinit_Activity_in_Android_ Emulator.html" target="">Create Android Virtual Device (AVD)  ➚ </a></li>
 <li> <a href="/programacao/pascal/lazarus/lamw/doc_oficial/How_to_add_an_online_library_to_LAMW.html" target="">How to add an online library to LAMW  ➚ </a></li>
 <li> <a href="/programacao/pascal/lazarus/lamw/doc_oficial/how_to_create_new_components.html" target="">how to create new components  ➚ </a></li>
 <li> <a href="/programacao/pascal/lazarus/lamw/doc_oficial/How_To_Get_Your_Signed_Release_Apk.html" target="">Tutorial: How to get your 'signed' release Apk: 'AppLAMWProject1'  ➚ </a></li>
 <li> <a href="/programacao/pascal/lazarus/lamw/doc_oficial/How to Sign apk or bundle using gradle by ADiV.html" target="">How to Sign apk or bundle using gradle by ADiV  ➚ </a></li>
+<li> <a href="/programacao/pascal/lazarus/lamw/doc_oficial/LAMW_lifecycle_for_Android_activity.html" target="">LAMW lifecycle for Android activity  ➚ </a></li>
 </div> </ul> </li>
+<li> <a href="/programacao/pascal/lazarus/lamw/instalar_configurar_lamw.html" target="">Como instalar e configurar LamW  ➚ </a></li>
+<li> <a href="/programacao/pascal/lazarus/lamw/Instalar_lamw_manager.html" target="">Como instalar LAMW Manager no linux  ➚ </a></li>
+<li> <a href="/programacao/pascal/lazarus/lamw/mensagens_ao_instalar_lamw4linux.html" target="">Copying to a temporary location  ➚ </a></li>
 </div> </ul> </li>
 <li><span class="rootTree"><b>PAS2JS</b></span> <ul> <div class="children">
 <li> <a href="/programacao/pascal/lazarus/pas2js/o_que_e_pas2js.html" target="">O que é o projeto pas2js   ➚ </a></li>
