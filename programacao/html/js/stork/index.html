@@ -8,45 +8,41 @@
     <meta name="createDateUpdate" content="24/11/2023" />
     <meta name="description" content="Exemplo de como funciona o projeto stork " />
     <meta name="keywords" content="html, javascript, css, rust" />
-  
+
+    <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+    <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />                                                                          
+   
+    <!-- Scripts da página -->
+    <script type="application/x-javascript" src="/js/generic.js"></script>
+    <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+    <script>document.addEventListener("DOMContentLoaded", function() { includeHTML(); });</script>
+    <script>document.addEventListener("DOMContentLoaded", function() { FixHeader(window, "myHeader");});</script>
+    <script>document.addEventListener("DOMContentLoaded", function() { toggleTree(); });</script>     
+
 
     <link
       rel="stylesheet"
       href="https://files.stork-search.net/releases/v1.6.0/basic.css"
     />
-
-    <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
-    <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />
-  
-    <script type="application/x-javascript" src="/js/generic.js"></script>
-    <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        toggleTree();
-      });
-    </script>
-
+        
   </head>
   <bodY>
 
   <!-- Menu de opções -->
-  <nav>
-    <div class="topnav" id="myTopnav">
-      <div w3-include-html="/menu.inc"></div>
-    </div>
-  </nav>
+  <div class="header" id="myHeader"> <div class="navbar" w3-include-html="/menu.inc"> </div> </div>
+  <div class="title"> <script>  document.write(document.title); </script> </div>
 
 
-  <div class="title">
-    <script>
-      document.write(document.title);
-    </script>
-  </div>
-
+  <main>
 
     <div class="stork-wrapper">
       <input data-stork="federalist" class="stork-input" />
       <div data-stork="federalist-output" class="stork-output"></div>
+    </div>
+    <main>
+    <!-- RODAPÉ DA PÁGINA  -->
+    <div class="footer">
+      <div w3-include-html="/js/footer.inc"></div>
     </div>
 
     <script src="https://files.stork-search.net/releases/v1.6.0/stork.js"></script>
@@ -57,15 +53,6 @@
       );
     </script>
 
-    <!-- RODAPÉ DA PÁGINA  -->
-    <div class="footer">
-
-      <div w3-include-html="/js/footer.inc"></div>
-    </div>
-    <!--<script> includeHTML();</script>  -->
-    <script>
-      includeHTML();
-    </script>
 
    </body>
 </html>

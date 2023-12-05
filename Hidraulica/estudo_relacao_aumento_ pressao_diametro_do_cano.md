@@ -10,7 +10,7 @@
 
 1. [O que é a equação de Bernoulli?](https://pt.khanacademy.org/science/physics/fluids/fluid-dynamics/a/what-is-bernoullis-equation)
    1. A equação de Bernoulli relaciona a pressão, a velocidade e a altura de quaisquer dois pontos (1 e 2) em um fluxo constante de fluido de densidade \rhoρrho. A equação de Bernoulli é normalmente escrita da seguinte forma:
-      1. ![equação](img/equacao_de_Bernoulli.jpeg)
+      1. ![equação](./img/equacao_de_bernoulli.jpeg)
          1. Onde:
             1. p1 = pressão no ponto 1
             2. p2 = pressão no ponto 2

@@ -2,119 +2,126 @@
 <html dir="ltr" lang="pt-br">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>
-        Linguagem compilada Rust.
-    </title>
+  <title>
+    Linguagem compilada Rust.
+  </title>
 
-    <meta name="createDate" content="10/11/2020">
-    <meta name="createDateUpdate" content="13/11/2020">
-    <meta name="description" content="Rust é uma linguagem compilada concorrente do c++">
-    <meta name="keywords" content="template,html,javascript,css">
+  <meta name="createDate" content="10/11/2020">
+  <meta name="createDateUpdate" content="13/11/2020">
+  <meta name="description" content="Rust é uma linguagem compilada concorrente do c++">
+  <meta name="keywords" content="template,html,javascript,css">
 
-    <!-- CSS do menu-->
-    <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
-    <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/>         
-    
-    <!-- Scripts da página -->
-    <script type="application/x-javascript" src="/js/generic.js"></script>
-    <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-    <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>
-            
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />
+
+  <!-- Scripts da página -->
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      includeHTML();
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      FixHeader(window, "myHeader");
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
 </head>
 
 <body onmouseover="generic.display()">
 
-    <!-- Menu de opções -->
-    <nav>
-       <div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
-    </nav>
-                
-    
-    <!-- <div w3-include-html="../../js/title.inc"> </div> -->
-    <div class="title">
-        <script>
-          document.write(document.title);
-        </script>
-      </div>
+  <!-- Menu de opções -->
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
 
+  <main>
 
     <!-- Conteúdo da página <div class="col-12"> -->
     <div class="col-12">
 
-        <ol>
-            <li>
-                <span class="rootTree"></span>
-                <b><a id="objetivo"> Objetivo.</a></b>
-                <div class="children">
-                    <ol>
-                        <ol>
-                            <li>Objetivo deste documento é registrar minhas anotações de estudo da linguagem
-                                <b>Rust.</b>
-                            </li>
-                            <li>..</li>
-                        </ol>
-                    </ol>
-                </div>
-            </li>
-
-            <li>
-                <span class="rootTree"></span>
-                <b><a id="OqueRust">O que é Rust</a></b>
-                <ol>
-                    <div class="childrenDefault">
-                        <ol>
-                            <li>Performance<br>
-                                Rust é extremamente rápido e gerencia memória eficientemente: sem runtime ou garbage collector, podendo potencializar a performance de serviços críticos, rodar em sistemas embarcados, e facilmente integrar-se a outras linguagens.</li>
-                            <li>Confiabilidade<br>
-                                O rico sistema de tipos de Rust e seu modelo de ownership garantem segurança de memória e segurança de concorrência — e permite que você elimine muitas categorias de erros durante a compilação.</li>
-                            <li>Produtividade <br>
-                                Rust possui uma ótima documentação, um compilador amigável com mensagens de erros úteis, e ferramental de primeira qualidade — uma ferramenta integrada de compilação e gerenciamento de pacotes, suporte inteligente para múltiplos editores com autocompleção e inspeções de tipos, um formatador automático, e muito mais.</li>
-                            <li>..</li>                                                        
-                        </ol>
-                    </div>
-                </ol>
-            </li>
-
-
-
- 
-
-
-        </ol>
-
-
-
-    </div>
-
-
-
-    <!-- Rodapé da página -->
-    <div class="referencia">
-        <span class="rootTree"></span>
-        <b><a id="REFERENCIAS">Referências na produção deste documento</a></b>
-        <div class="childrenDefault">
+      <ol>
+        <li>
+          <span class="rootTree"></span>
+          <b><a id="objetivo"> Objetivo.</a></b>
+          <div class="children">
             <ol>
-                <li><a href="https://www.rust-lang.org/pt-BR" target="_blank">Site oficial da linguagem.</a></li>
-                <li><a href="https://medium.com/swlh/rust-cross-platform-mobile-development-9117a67ac9b7" target="_blank">Rust e desenvolvimento móvel multiplataforma.</a></li>
+              <ol>
+                <li>Rust é uma linguagem de programação multiparadigma compilada desenvolvida pela 
+                    Mozilla Research. É projetada para ser "segura, concorrente e prática", mas 
+                    diferente de outras linguagens seguras, Rust não usa coletor de lixo. 
+                    Possui suporte nativo ao WebAssembly. 
+                </li>
+                <li>..</li>
+              </ol>
             </ol>
-        </div>
+          </div>
+        </li>
+
+        <li>
+          <span class="rootTree"></span>
+          <b><a id="OqueRust">O que é Rust</a></b>
+          <ol>
+            <div class="childrenDefault">
+              <ol>
+                <li>Performance<br>
+                  Rust é extremamente rápido e gerencia memória eficientemente: sem runtime ou garbage collector, podendo potencializar a performance de serviços críticos, rodar em sistemas embarcados, e facilmente integrar-se a outras linguagens.</li>
+                <li>Confiabilidade<br>
+                  O rico sistema de tipos de Rust e seu modelo de ownership garantem segurança de memória e segurança de concorrência — e permite que você elimine muitas categorias de erros durante a compilação.</li>
+                <li>Produtividade <br>
+                  Rust possui uma ótima documentação, um compilador amigável com mensagens de erros úteis, e ferramental de primeira qualidade — uma ferramenta integrada de compilação e gerenciamento de pacotes, suporte inteligente para múltiplos editores com autocompleção e inspeções de tipos, um formatador automático, e muito mais.</li>
+                <li>..</li>
+              </ol>
+            </div>
+          </ol>
+        </li>
+
+
+
+
+
+      </ol>
+
+
 
     </div>
 
+  </main>
 
-    <!-- RODAPÉ DA PÁGINA  -->
-    <div class="footer">
-        <!--<div w3-include-html="../../js/footer.inc"> </div>-->
-        <div w3-include-html="../../js/footer.inc"> </div>
+  <!-- Rodapé da página -->
+  <div class="referencia">
+    <span class="rootTree"></span>
+    <b><a id="REFERENCIAS">Referências na produção deste documento</a></b>
+    <div class="childrenDefault">
+      <ol>
+        <li><a href="https://www.rust-lang.org/pt-BR" target="_blank">Site oficial da linguagem.</a></li>
+        <li><a href="https://medium.com/swlh/rust-cross-platform-mobile-development-9117a67ac9b7" target="_blank">Rust e desenvolvimento móvel multiplataforma.</a></li>
+      </ol>
     </div>
-    <!--<script> includeHTML();</script>  -->
-    <script>
-        includeHTML();
-    </script>
 
- </body>
+  </div>
+
+
+  <!-- RODAPÉ DA PÁGINA  -->
+  <div class="footer">
+    <div w3-include-html="../../js/footer.inc"> </div>
+  </div>
+
+</body>
 
 </html>

@@ -1,27 +1,57 @@
 <!-- Criado pelo chatgpt -->
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html dir="ltr" lang="pt-br">
+
 <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>Cadastro de Alunos da UFC</title>
+
+  <meta name="createDate" content="05/12/2023" />
+  <meta name="createDateUpdate" content="05/12/2023" />
+  <meta name="description" content="Teste de cadastro " />
+  <meta name="keywords" content="template,html,javascript,css,linguagem" />
+
+
+  <!-- CSS do menu-->
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+
+  <!-- CSS markdown  -->
+  <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />
+
+  <!-- Scripts da página -->
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function() { includeHTML(); });</script>
+  <script>document.addEventListener("DOMContentLoaded", function() { FixHeader(window, "myHeader");});</script>
+  <script>document.addEventListener("DOMContentLoaded", function() { toggleTree(); });</script>
 </head>
-<bodY>
-  <h1>Cadastro de Alunos da UFC</h1>
 
-  <form>
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required><br>
+<body onmouseover="generic.display()">
 
-    <label for="matricula">Matrícula:</label>
-    <input type="text" id="matricula" name="matricula" required><br>
+    <!-- Menu de opções -->
+    <div class="header" id="myHeader"> <div class="navbar" w3-include-html="/menu.inc"> </div> </div>
+    <div class="title"> <script>  document.write(document.title); </script> </div>
+  
+    <main>
+    <!-- <h1>Cadastro de Alunos da UFC</h1> -->
 
-    <label for="curso">Curso:</label>
-    <input type="text" id="curso" name="curso" required><br>
+    <form>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required><br>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br>
+      <label for="matricula">Matrícula:</label>
+      <input type="text" id="matricula" name="matricula" required><br>
 
-    <input type="submit" value="Cadastrar">
-  </form>
+      <label for="curso">Curso:</label>
+      <input type="text" id="curso" name="curso" required><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br>
+
+      <input type="submit" value="Cadastrar">
+    </form>
+  </main>
  </body>
 </html>

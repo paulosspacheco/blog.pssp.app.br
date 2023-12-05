@@ -132,6 +132,6 @@
          - [ ] Atualizar o histórico deste documento.
          - [ ] Ler no dia seguinte este documento para checar os erros de português.
 
-/main>
+</main>
 
 [🔝🔝](#topo "Retorna ao topo")

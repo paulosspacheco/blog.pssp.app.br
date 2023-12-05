@@ -10,155 +10,156 @@
   <meta name="description" content="Minhas anotações que fiz ao estudar programação da linguagem json" />
   <meta name="keywords" content="javascript,linguagem de computador, json" />
 
-  <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
-  <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/>
-
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />                                                                          
+ 
+  <!-- Scripts da página -->
   <script type="application/x-javascript" src="/js/generic.js"></script>
   <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>
+  <script>document.addEventListener("DOMContentLoaded", function() { includeHTML(); });</script>
+  <script>document.addEventListener("DOMContentLoaded", function() { FixHeader(window, "myHeader");});</script>
+  <script>document.addEventListener("DOMContentLoaded", function() { toggleTree(); });</script>     
+
 
           
 </head>
 
 <body onmouseover="generic.display()">
- 
+
   <!-- Menu de opções -->
-  <nav><div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div></nav>
+  <div class="header" id="myHeader"> <div class="navbar" w3-include-html="/menu.inc"> </div> </div>
+  <div class="title"> <script>  document.write(document.title); </script> </div>
 
 
-  <!-- <div w3-include-html="../../../js/title.inc"></div> -->
-  <div class="title">
-    <script>
-      document.write(document.title);
-    </script>
-  </div>
+  <main>
 
-  <!--<div class="col-12">  -->
-  <div class="col-12">
-    <ol>
-      <li>
-        <span class="rootTree"></span> <a id="objetivo"> Objetivo.</a>
-        <div class="childrenDefault">
-          <ol>
-            <ol>
-              <li>
-                Objetivo deste documento é registrar minhas anotações de
-                estudo da linguagem Json.
-              </li>
-            </ol>
-          </ol>
-        </div>
-      </li>
-      <li>
-        <span class="rootTree"></span>
-        <a id="O_que_é_json"> Anotações que fiz sobre a linguagem json</a>
-        <a href="json.html" target="_blank" title="">Veja Mais... </a>
-        <ol>
-          <div class="childrenDefault">
-            <iframe src="json.html" title="" width="100%" height="100%"></iframe>
-          </div>
-        </ol>
-      </li>
-      <!-- <li>
-          <span class="rootTree"></span> <b><a id="div4">div 4</a></b>
-          <ol>
-            <div class="children">
-              <ol>
-                <li>item div 4</li>
-                <li>..</li>
-              </ol>
-            </div>
-          </ol>
-        </li>
-        <li>
-          <span class="rootTree"></span> <b><a id="div5">div 5</a></b>
-          <ol>
-            <div class="children">
-              <ol>
-                <li>item div 5</li>
-                <li>..</li>
-              </ol>
-            </div>
-          </ol>
-        </li>
-        <li>
-          <span class="rootTree"></span> <b><a id="div6">div 6</a></b>
-          <ol>
-            <div class="children">
-              <ol>
-                <li>item div 6</li>
-                <li>..</li>
-              </ol>
-            </div>
-          </ol>
-        </li>
-        <li>
-          <span class="rootTree"></span> <b><a id="div7">div 7</a></b>
-          <ol>
-            <div class="children">
-              <ol>
-                <li>item div 7</li>
-                <li>..</li>
-              </ol>
-            </div>
-          </ol>
-        </li>
-        <li>
-          <span class="rootTree"></span> <b><a id="div8">div 8</a></b>
-          <ol>
-            <div class="children">
-              <ol>
-                <li>item div 8</li>
-                <li>..</li>
-              </ol>
-            </div>
-          </ol>
-        </li>
-        <li>
-          <span class="rootTree"></span> <b><a id="div9">div 9</a></b>
-          <ol>
-            <div class="children">
-              <ol>
-                <li>item div 9</li>
-                <li>..</li>
-              </ol>
-            </div>
-          </ol>
-        </li> -->
-    </ol>
-  </div>
-  <!-- Rodapé da página -->
-  <div class="referencia">
-    <span class="rootTree"></span>
-    <b><a id="REFERENCIAS">Referências na produção deste documento</a></b>
-    <div class="childrenDefault">
+    <!--<div class="col-12">  -->
+    <div class="col-12">
       <ol>
         <li>
-          <a href="https://www.json.org/json-en.html" target="_blank" title="">
-            Introducing JSON
-          </a>
+          <span class="rootTree"></span> <a id="objetivo"> Objetivo.</a>
+          <div class="childrenDefault">
+            <ol>
+              <ol>
+                <li>
+                  Em computação, JSON, um acrônimo de JavaScript Object Notation, é um formato compacto, 
+                  de padrão aberto independente, de troca de dados simples e rápida entre sistemas, 
+                  especificado por <b>Douglas Crockford</b> em 2000, que utiliza texto legível a humanos, 
+                  no formato atributo-valor.
+                </li>
+              </ol>
+            </ol>
+          </div>
         </li>
         <li>
-          <a href="https://pt.wikipedia.org/wiki/JSON" target="_blank" title="">JSON wikipédia
-          </a>
+          <span class="rootTree"></span>
+          <a id="O_que_é_json"> Anotações que fiz sobre a linguagem json</a>
+          <a href="json.html" target="_blank" title="">Veja Mais... </a>
+          <ol>
+            <div class="childrenDefault">
+              <iframe src="json.html" title="" width="100%" height="100%"></iframe>
+            </div>
+          </ol>
         </li>
-        <li>
-          <a href="#" target="_blank" title=""></a>
-        </li>
-        <li><a href="#" target="_blank" title=""></a></li>
-        <li><a href="#" target="_blank" title=""></a></li>
+        <!-- <li>
+            <span class="rootTree"></span> <b><a id="div4">div 4</a></b>
+            <ol>
+              <div class="children">
+                <ol>
+                  <li>item div 4</li>
+                  <li>..</li>
+                </ol>
+              </div>
+            </ol>
+          </li>
+          <li>
+            <span class="rootTree"></span> <b><a id="div5">div 5</a></b>
+            <ol>
+              <div class="children">
+                <ol>
+                  <li>item div 5</li>
+                  <li>..</li>
+                </ol>
+              </div>
+            </ol>
+          </li>
+          <li>
+            <span class="rootTree"></span> <b><a id="div6">div 6</a></b>
+            <ol>
+              <div class="children">
+                <ol>
+                  <li>item div 6</li>
+                  <li>..</li>
+                </ol>
+              </div>
+            </ol>
+          </li>
+          <li>
+            <span class="rootTree"></span> <b><a id="div7">div 7</a></b>
+            <ol>
+              <div class="children">
+                <ol>
+                  <li>item div 7</li>
+                  <li>..</li>
+                </ol>
+              </div>
+            </ol>
+          </li>
+          <li>
+            <span class="rootTree"></span> <b><a id="div8">div 8</a></b>
+            <ol>
+              <div class="children">
+                <ol>
+                  <li>item div 8</li>
+                  <li>..</li>
+                </ol>
+              </div>
+            </ol>
+          </li>
+          <li>
+            <span class="rootTree"></span> <b><a id="div9">div 9</a></b>
+            <ol>
+              <div class="children">
+                <ol>
+                  <li>item div 9</li>
+                  <li>..</li>
+                </ol>
+              </div>
+            </ol>
+          </li> -->
       </ol>
     </div>
+    <!-- Rodapé da página -->
+    <div class="referencia">
+      <span class="rootTree"></span>
+      <b><a id="REFERENCIAS">Referências na produção deste documento</a></b>
+      <div class="childrenDefault">
+        <ol>
+          <li>
+            <a href="https://www.json.org/json-en.html" target="_blank" title="">
+              Introducing JSON
+            </a>
+          </li>
+          <li>
+            <a href="https://pt.wikipedia.org/wiki/JSON" target="_blank" title="">JSON wikipédia
+            </a>
+          </li>
+          <!-- <li>
+            <a href="#" target="_blank" title=""></a>
+          </li>
+          <li><a href="#" target="_blank" title=""></a></li>
+          <li><a href="#" target="_blank" title=""></a></li> -->
+        </ol>
+      </div>
 
-    <!-- RODAPÉ DA PÁGINA  -->
-    <div class="footer">
-      <!--<div w3-include-html="../../../js/footer.inc"> </div>-->
     </div>
-    <!--<script> includeHTML();</script>  -->
-    <script>
-      includeHTML();
-    </script>
+  </main>
+
+  <!-- RODAPÉ DA PÁGINA  -->
+  <div class="footer">
+    <!--<div w3-include-html="../../../js/footer.inc"> </div>-->
   </div>
+
  </body>
 
 </html>

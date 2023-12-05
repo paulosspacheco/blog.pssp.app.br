@@ -217,7 +217,6 @@
 <li><span class="rootTree"><b>DEMO</b></span> <ul> <div class="children">
 <li> <a href="/programacao/html/js/tipuesearch/tipuesearch/Tipue Search 7.1/demo/index.html" target="">Tipue Search, a jQuery Site Search Plugin  ➚ </a></li>
 </div> </ul> </li>
-<li> <a href="/programacao/html/js/tipuesearch/tipuesearch/Tipue Search 7.1/index.html" target="">Tipue Search, a jQuery Site Search Plugin  ➚ </a></li>
 </div> </ul> </li>
 </div> </ul> </li>
 </div> </ul> </li>
@@ -267,7 +266,6 @@
 <li><span class="rootTree"><b>ENUMS</b></span> <ul> <div class="children">
 <li> <a href="/programacao/html/typescript/test01/html/docs/enums/itms_global.mapbits.html" target="">MapBits | test01  ➚ </a></li>
 </div> </ul> </li>
-<li> <a href="/programacao/html/typescript/test01/html/docs/index.html" target="">test01  ➚ </a></li>
 <li><span class="rootTree"><b>INTERFACES</b></span> <ul> <div class="children">
 <li> <a href="/programacao/html/typescript/test01/html/docs/interfaces/__menu_principal_do_aplicativo.iwidget.html" target="">IWidget | test01  ➚ </a></li>
 </div> </ul> </li>
@@ -303,7 +301,7 @@
 <li><span class="rootTree"><b>VIEWS</b></span> <ul> <div class="children">
 <li><span class="rootTree"><b>PAGES</b></span> <ul> <div class="children">
 <li> <a href="/programacao/nodejs/ejs/ejs-demo1/views/pages/about.html" target="">EJS Is Fun  ➚ </a></li>
-<li> <a href="/programacao/nodejs/ejs/ejs-demo1/views/pages/index.html" target="">EJS Is Fun  ➚ </a></li>
+<li> <a href="/programacao/nodejs/ejs/ejs-demo1/views/pages/index.html" target="">Exemplos de EJS  ➚ </a></li>
 </div> </ul> </li>
 </div> </ul> </li>
 </div> </ul> </li>

@@ -14,87 +14,89 @@
     />
     <meta name="keywords" content="template,html,javascript,css,linguagem" />
 
-    <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>
-    <link type="text/css" href="/css/defaulttheme.css"  rel="stylesheet"/>
-  
+    <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+    <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />                                                                          
+    
+    <!-- Scripts da página -->
     <script type="application/x-javascript" src="/js/generic.js"></script>
     <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-    <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>
-          
+    <script>document.addEventListener("DOMContentLoaded", function() { includeHTML(); });</script>
+    <script>document.addEventListener("DOMContentLoaded", function() { FixHeader(window, "myHeader");});</script>
+    <script>document.addEventListener("DOMContentLoaded", function() { toggleTree(); });</script>     
+  
+  
   </head>
 
   <body onmouseover="generic.display()">
+
     <!-- Menu de opções -->
-    <nav>
-      <div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
-    </nav>
-   
-    <div class="title">
-      <script>
-        document.write(document.title);
-     </script>
-    </div>
-    
+    <div class="header" id="myHeader"> <div class="navbar" w3-include-html="/menu.inc"> </div> </div>
+    <div class="title"> <script>  document.write(document.title); </script> </div>
 
-    <!-- Conteúdo da página <div class="col-12"> -->
-    <div class="col-12">
-      <ol>
-        <li>
-          <span class="rootTree"></span>
-          <b><a id="objetivo"> Objetivo.</a></b>
-          <div class="children">
-            <ol>
+    <main>
+      
+
+      <!-- Conteúdo da página <div class="col-12"> -->
+      <div class="col-12">
+        <ol>
+          <li>
+            <span class="rootTree"></span>
+            <b><a id="objetivo"> Objetivo.</a></b>
+            <div class="children">
               <ol>
-                <li>
-                  Objetivo deste documento é registrar minhas anotações de
-                  estudo da linguagem <b>SQL (Structured Query Language).</b>
-                </li>
+                <ol>
+                  <li>
+                    SQL (Structured Query Language), é uma "linguagem de consulta estruturada"  
+                    de domínio específico desenvolvida para gerenciar dados relacionais em um 
+                    sistema de gerenciamento de banco de dados, ou para processamento de fluxo de 
+                    dados em um sistema de gerenciamento de fluxo de dados.
+                  </li>
 
-                <li>
-                  Pré-requisitos:
-                  <ol>
-                    <li>
-                      <a
-                        href="https://pt.wikipedia.org/wiki/Banco_de_dados"
-                        target="_blank"
-                        title=""
-                        >Conhecimento básico do que seja um banco de dados;</a
-                      >
-                    </li>
-                    <li>
-                                                  
-                      <a       
-                        href="/infraestrutura/linux/banco_de_dados/mariadb/index.html"
-                        target="_blank"
-                        title="Banco de dados mariadb por ser usado se o o mesmo estiver instalado e configurado."
-                        >Acesso a um banco de dados ativo;</a
-                      >
-                    </li>
-                  </ol>
-                </li>
+                  <li>
+                    Pré-requisitos:
+                    <ol>
+                      <li>
+                        <a
+                          href="https://pt.wikipedia.org/wiki/Banco_de_dados"
+                          target="_blank"
+                          title=""
+                          >Conhecimento básico do que seja um banco de dados;</a
+                        >
+                      </li>
+                      <li>
+                                                    
+                        <a       
+                          href="/infraestrutura/linux/banco_de_dados/mariadb/index.html"
+                          target="_blank"
+                          title="Banco de dados mariadb por ser usado se o o mesmo estiver instalado e configurado."
+                          >Acesso a um banco de dados ativo;</a
+                        >
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
               </ol>
-            </ol>
-          </div>
-        </li>
-
-        <li>
-          <span class="rootTree"></span>
-          <b><a id="O_que_e_sql">O que é linguagem SQL. </a></b>
-          <ol>
-            <div class="childrenDefault">
-              <iframe
-                src="./o_que_e_sql.html"
-                title=""
-                width="100%"
-                height="100%"
-              ></iframe>
             </div>
-          </ol>
-        </li>
+          </li>
 
-      </ol>
-    </div>
+          <li>
+            <span class="rootTree"></span>
+            <b><a id="O_que_e_sql">O que é linguagem SQL. </a></b>
+            <ol>
+              <div class="childrenDefault">
+                <iframe
+                  src="./o_que_e_sql.html"
+                  title=""
+                  width="100%"
+                  height="100%"
+                ></iframe>
+              </div>
+            </ol>
+          </li>
 
+        </ol>
+      </div>
+    <main>
     <!-- Rodapé da página -->
     <div class="referencia">
       <span class="rootTree"></span>
@@ -111,13 +113,7 @@
 
 
     <!-- RODAPÉ DA PÁGINA  -->
-    <div class="footer">
-      <!--<div w3-include-html="../../js/footer.inc"> </div>-->
-      <div w3-include-html="../../js/footer.inc"></div>
-    </div>
-    <!--<script> includeHTML();</script>  -->
-    <script>
-      includeHTML();
-    </script>
+    <div class="footer"><div w3-include-html="../../js/footer.inc"></div></div>
+    
    </body>
 </html>

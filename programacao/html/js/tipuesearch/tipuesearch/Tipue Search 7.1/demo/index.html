@@ -1,66 +1,85 @@
 <!DOCTYPE html>
 
 <html dir="ltr" lang="pt-br">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Tipue Search, a jQuery Site Search Plugin</title>
+  <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     <title>Tipue Search, a jQuery Site Search Plugin</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<link href="https://fonts.googleapis.com/css?family=Squada+One|Source+Code+Pro|Merriweather:300|Abril+Fatface" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Squada+One|Source+Code+Pro|Merriweather:300|Abril+Fatface" rel="stylesheet">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-<link rel="stylesheet" href="../inc/standard.css">
+     <!-- <link rel="stylesheet" href="../inc/standard.css"> -->
 
-<script src="tipuesearch/tipuesearch_set.js"></script>
-<script src="tipuesearch/tipuesearch_content.js"></script>
-<link rel="stylesheet" href="tipuesearch/tipuesearch.css">
-<script src="tipuesearch/tipuesearch.js"></script>
-
-</head><body>
-
-<div class="cont">
-
-<div id="head"><div class="block"><a href="http://www.tipue.com" class="not"><div class="ban">Tipue</div></a></div></div>
-
-<div class="head">
-<div class="block" style="padding-top: 79px;">
-<h3>Tipue Search</h3>
-<div class="fo-1" style="padding-top: 17px;">V. 7.1</div>
-</div></div>
-<div class="block-790"><div class="slab fo-2"><a href="http://www.tipue.com/search/">Tipue Search. <span class="fa-1">A site search jQuery plugin. It's free, open source and fast.</span></a></div></div>
-
-<div class="block-978" style="padding-bottom: 59px;">
-
-<div style="padding-top: 10px;"><h2>A demo</h2></div>
-<div class="fo-3" style="padding-top: 17px;">
-Enter <code>tipue</code> or <code>blog</code>.
-</div>
-
-<div style="padding-top: 36px;">
-<form>
-<div class="tipue_search_group">
-<input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required><button type="submit" class="tipue_search_button"><div class="tipue_search_icon">&#9906;</div></button>
-</div>
-</form>
-
-<div id="tipue_search_content"></div>
-</div>
+     <script src="tipuesearch/tipuesearch_set.js"></script>
+     <script src="tipuesearch/tipuesearch_content.js"></script>
+     <link rel="stylesheet" href="tipuesearch/tipuesearch.css">
+     <script src="tipuesearch/tipuesearch.js"></script>
 
 
-</div>
+     <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+     <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />      
+     <!-- Scripts da página -->
+     <script type="application/x-javascript" src="/js/generic.js"></script>
+     <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+     <script>document.addEventListener("DOMContentLoaded", function() { includeHTML(); });</script>
+     <script>document.addEventListener("DOMContentLoaded", function() { FixHeader(window, "myHeader");});</script>
+     <script>document.addEventListener("DOMContentLoaded", function() { toggleTree(); });</script>     
 
-</div>
+  </head>
+<body>
+  <!-- Menu de opções -->
+  <div class="header" id="myHeader"> <div class="navbar" w3-include-html="/menu.inc"> </div> </div>
+  <div class="title"> <script>  document.write(document.title); </script> </div>
 
-<footer class="foot"><div class="block fo-1"><a href="http://www.tipue.com">Tipue</a> is a small web development studio based in North London.<p>&copy; 2019 Tipue. Est London.</div></footer>
 
-<script>
-$(document).ready(function() {
-     $('#tipue_search_input').tipuesearch();
-});
-</script>
+  <main>
+
+     <div class="cont">
+
+     <div id="head"><div class="block"><a href="http://www.tipue.com" class="not"><div class="ban">Tipue</div></a></div></div>
+
+     <div class="head">
+     <div class="block" style="padding-top: 79px;">
+     <h3>Tipue Search</h3>
+     <div class="fo-1" style="padding-top: 17px;">V. 7.1</div>
+     </div></div>
+     <div class="block-790"><div class="slab fo-2"><a href="http://www.tipue.com/search/">Tipue Search. <span class="fa-1">A site search jQuery plugin. It's free, open source and fast.</span></a></div></div>
+
+     <div class="block-978" style="padding-bottom: 59px;">
+
+     <div style="padding-top: 10px;"><h2>A demo</h2></div>
+     <div class="fo-3" style="padding-top: 17px;">
+     Enter <code>tipue</code> or <code>blog</code>.
+     </div>
+
+     <div style="padding-top: 36px;">
+     <form>
+     <div class="tipue_search_group">
+     <input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required><button type="submit" class="tipue_search_button"><div class="tipue_search_icon">&#9906;</div></button>
+     </div>
+     </form>
+
+     <div id="tipue_search_content"></div>
+     </div>
+
+
+     </div>
+
+     </div>
+
+  </main>
+    <!-- RODAPÉ DA PÁGINA  -->
+    <div class="footer">
+     <div w3-include-html="/js/footer.inc"></div>
+   </div>
+
+     <footer class="foot"><div class="block fo-1"><a href="http://www.tipue.com">Tipue</a> is a small web development studio based in North London.<p>&copy; 2019 Tipue. Est London.</div></footer>
+
+     <script>   $(document).ready(function() {    $('#tipue_search_input').tipuesearch();});  </script>
 
 </body>
 </html>
