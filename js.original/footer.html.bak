@@ -23,7 +23,8 @@
 
     <title>Este arquivo é usado para editar o arquivo footer.inc </title>
 
-    <meta name="createDate" content="12/11/2020">
+    <meta name="author" content="Paulo Pacheco" />  
+  <meta name="createDate" content="12/11/2020">
     <meta name="createDateUpdate" content="12/11/2020">
     <meta name="description" content="Este arquivo eé usado para testar o código footer.inc">
     <meta name="keywords" content="css,html,javascript">

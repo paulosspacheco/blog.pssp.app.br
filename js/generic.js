@@ -126,3 +126,16 @@ function FixHeader(window, id) {
            window.onscroll = function () { Print_header(); }; 
          } 
 }
+
+
+function PrintFooter(document) {
+ document.write('Autor: '+document.querySelector('meta[name="author"]').content);
+  document.write(' | Data da criação: '+document.querySelector('meta[name="createDate"]').content);
+  document.write(' | Data da atualização: '+document.querySelector('meta[name="createDateUpdate"]').content);
+}
+
+function PrintFooterMarkdown(document,author,createDate,createDateUpdate) {
+  document.write('Autor: '+author);
+   document.write(' | Data da criação: '+createDate);
+   document.write(' | Data da atualização: '+createDateUpdate);
+ }

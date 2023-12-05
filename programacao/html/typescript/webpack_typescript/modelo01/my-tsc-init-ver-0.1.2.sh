@@ -66,7 +66,8 @@ cat >"./"$project"/src/html/index.html"<<EOT
 
               <title>Modelo de project typescript</title>
 
-              <meta name="createDate" content="28/05/2021" />
+              <meta name="author" content="Paulo Pacheco" />  
+  <meta name="createDate" content="28/05/2021" />
               <meta name="createDateUpdate" content="25/05/2021" />
               <meta name="description" content="Todos project typescript deve seguir essa sequência ao iniciar..." />
               <meta name="keywords" content="typescript,webpack" />

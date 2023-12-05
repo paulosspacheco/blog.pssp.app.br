@@ -7,30 +7,32 @@
     <title>   
         Home - Blog.pssp.app.br   
     </title>   
-    <meta name="createDate" content="13/11/2020">   
+    <meta name="author" content="Paulo Pacheco" />  
+  <meta name="createDate" content="13/11/2020">   
     <meta name="createDateUpdate" content="13/11/2020">   
     <meta name="description" content="Este blog tem como objetivo registrar todo conhecimento que eu adquirir na minha vida. ">   
     <meta name="keywords" content="html, javascript, css, Delphi, Lazarus, jardinagem, marcenaria, eletricidade, mecânica, curiosidades, saúde">   
     
-    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">   
-    
-    <link type="text/css" href="./css/defaulttheme.css" rel="stylesheet">   
-    
-    <script type="application/x-javascript" src="./js/generic.js"></script>   
-    <script type="application/x-javascript" src="./js/tgeneric.js"></script>   
+    <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+    <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />                                                                          
+   
+    <!-- Scripts da página -->
+    <script type="application/x-javascript" src="/js/generic.js"></script>
+    <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+    <script>document.addEventListener("DOMContentLoaded", function() { includeHTML(); });</script>
+    <script>document.addEventListener("DOMContentLoaded", function() { FixHeader(window, "myHeader");});</script>
+    <script>document.addEventListener("DOMContentLoaded", function() { toggleTree(); });</script>     
+       
  
  </head>   
 
  <body onmouseover="generic.display()">  
 
     
-    <!-- Menu de opções --> 
-    <div class="topnav" id="myTopnav">   
-        <script type="application/x-javascript" src="./js/menu/index.js"> </script>   
-    </div>     
-    
-    <!--<div w3-include-html="./js/title.inc"> </div>
-    <div w3-include-html="./js/title.inc"> </div>  -->    
+  <!-- Menu de opções -->
+  <div class="header" id="myHeader"> <div class="navbar" w3-include-html="/menu.inc"> </div> </div>
+  <div class="title"> <script>  document.write(document.title); </script> </div>
+
     
     <p>   
         Servidor rodando na url http://localhost:8080<br>   
@@ -41,16 +43,9 @@
         
     </script> 
 
- <!--<script type="application/x-javascript" src="./js/treeview_xhtml.js"></script> -->   
-    <script type="application/x-javascript" src="./js/treeview_xhtml.js"></script>   
-    
-    <!-- RODAPÉ DA PÁGINA  -->   
-    <div class="footer">   
-        <!--<div w3-include-html="./js/footer.inc"> </div>-->   
-        <div w3-include-html="./js/footer.inc"> </div>   
-    </div>   
-    <!--<script> includeHTML();</script>  -->   
-    <script> includeHTML();</script>   
+    <!-- RODAPÉ DA PÁGINA  -->
+    <div class="footer">   <script>   PrintFooter(document);   </script> </div>
+
     
   </body>   
     

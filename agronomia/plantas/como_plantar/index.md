@@ -17,4 +17,4 @@
 </main>
 
 <!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+<div class="footer"><script>PrintFooterMarkdown(document,'Paulo Pacheco','05/12/2023','05/12/2023');   </script> </div>

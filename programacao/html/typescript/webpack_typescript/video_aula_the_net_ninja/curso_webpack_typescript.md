@@ -86,7 +86,8 @@
 
                        <title>Exemplo de webpack & typescript</title>
 
-                       <meta name="createDate" content="20/05/2021" />
+                       <meta name="author" content="Paulo Pacheco" />  
+  <meta name="createDate" content="20/05/2021" />
                        <meta name="createDateUpdate" content="20/05/2021" />
                        <meta name="description" content="Exemplo prático de um pacote gerador pelo webpack" />
                        <meta name="keywords" content="webpack, typescript, javascript" />
@@ -346,7 +347,8 @@
 
                        <title>Exemplo de webpack & typescript</title>
 
-                       <meta name="createDate" content="20/05/2021" />
+                       <meta name="author" content="Paulo Pacheco" />  
+  <meta name="createDate" content="20/05/2021" />
                        <meta name="createDateUpdate" content="20/05/2021" />
                        <meta name="description" content="Exemplo prático de um pacote gerador pelo webpack" />
                        <meta name="keywords" content="webpack, typescript, javascript" />

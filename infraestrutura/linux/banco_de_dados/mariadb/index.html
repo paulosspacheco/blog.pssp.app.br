@@ -7,22 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Banco de dados Mariadb</title>
-
+  
+  <meta name="author" content="Paulo Pacheco" />    
+  <meta name="author" content="Paulo Pacheco" />  
   <meta name="createDate" content="23/11/2023" />
   <meta name="createDateUpdate" content="23/11/2023" />
   <meta name="description" content="Este blog tem como objetivo registrar todo conhecimento que eu adquirir na minha vida. " />
   <meta name="keywords" content="html, javascript, css, Delphi, Lazarus, jardinagem, marcenaria, eletricidade, mecânica, curiosidades, saúde" />
 
-  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
-  <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />
+<!-- CSS do menu-->
+<link type="text/css" href="/css/topnav.css" rel="stylesheet" />
 
-  <script type="application/x-javascript" src="/js/generic.js"></script>
-  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      toggleTree();
-    });
-  </script>
+<!-- CSS markdown  -->
+<link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />
+
+<!-- Scripts da página -->
+<script type="application/x-javascript" src="/js/generic.js"></script>
+<script type="application/x-javascript" src="/js/tgeneric.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+<script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+<script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
 
 </head>
 
@@ -110,7 +115,7 @@
         </li>
       </ol>
     </div>
-    <!-- Rodapé da página -->
+ 
     <div class="referencia">
       <span class="rootTree"></span>
       <b><a id="REFERÊNCIAS">Referências na produção deste documento</a></b>
@@ -129,20 +134,14 @@
 
         </ol>
       </div>
-      <!-- RODAPÉ DA PÁGINA  -->
-      <div class="footer">
-
-        <div w3-include-html="/js/footer.inc"></div>
-      </div>
-
+      
+    
 
   </main>
+  <!-- RODAPÉ DA PÁGINA  -->
+  <div class="footer">   <script>   PrintFooter(document);   </script> </div>
 
-  <!-- markdownlint-disable-next-line -->
-  <script>
-    includeHTML();
-    FixHeader(window, "myHeader");
-  </script>
+
   
 </body>
 

@@ -8,16 +8,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!-- <link href="../css/responsivo01.css" title="Estilo principal" type="text/css" rel="stylesheet"> -->
-  <link type="text/css" href="../css/defaulttheme.css" rel="stylesheet">
 
   <script src="../js/generic.jsdddd"></script>
-  <meta name="author" content="paulosspacheco">
+
+
+  <meta name="author" content="Paulo Pacheco">
+  <meta name="createDate" content="19/01/2021" />
+  <meta name="createDateUpdate" content="19/01/2021" />
+
   <meta name="description" content="Descrição do documento.">
   <meta name="keywords" content="flatpak,linux,aplicativo">
+
+
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />                                                                          
+  
+  <!-- Scripts da página -->
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function() { includeHTML(); });</script>
+  <script>document.addEventListener("DOMContentLoaded", function() { FixHeader(window, "myHeader");});</script>
+  <script>document.addEventListener("DOMContentLoaded", function() { toggleTree(); });</script>     
+
+
 </head>
 
 <bodY>
+    <!-- Menu de opções -->
+    <div class="header" id="myHeader"> <div class="navbar" w3-include-html="/menu.inc"> </div> </div>
+    <div class="title"> <script>  document.write(document.title); </script> </div>
+
+    <main>
+
+
   <!-- Barra do logomarca e login  -->
   <div class="row">
     <h3>
@@ -102,7 +125,7 @@
       </div>
     </div>
   </div>
-  <!-- Rodapé da página -->
+
   <div class="footer"><b>
       <li>Escrito por: Paulo Sérgio da Silva Pacheco</li>
       <li>Local: Fortaleza-CE.</li>
@@ -111,6 +134,12 @@
       <li>e-mail: paulosspacheco@yahoo.com.br</li>
       <li>Icaraí - Caucaia - Ceará - Brasil</li>
     </b></div>
+
+  </main>    
+    <!-- RODAPÉ DA PÁGINA  -->
+    <div class="footer">   <script>   PrintFooter(document);   </script> </div>
+
+        
  </body>
 
 </html>

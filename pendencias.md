@@ -12,3 +12,6 @@
 </main>
 
 [🔝🔝](#topo "Retorna ao topo")
+
+<!-- markdownlint-disable-next-line -->
+<div class="footer"><script>PrintFooterMarkdown(document,'Paulo Pacheco','05/12/2023','05/12/2023');   </script> </div>
