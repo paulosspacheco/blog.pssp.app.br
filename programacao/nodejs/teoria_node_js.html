@@ -1,21 +1,33 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
+    <html>
     <head>
         <meta charset="UTF-8">
-        <title>Teoria sobre o Framework nodejs &lt;a href&equals;&quot;teoria&lowbar;node&lowbar;js&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;  &#x2b06;&#xfe0f; &lt;&sol;a&gt;</title>
+        <title>Teoria sobre o Framework nodejs &lt;a href&equals;&quot;teoria&lowbar;node&lowbar;js&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;  &#x279a; &lt;&sol;a&gt;</title>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
 
-        <!-- CSS markdown -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"  />
-        
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>        
-
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
     </head>
-    <body class="vscode-body vscode-light">
-        <h4 id="teoria-sobre-o-framework-nodejs---️-">Teoria sobre o Framework nodejs <a href="teoria_node_js.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h4>
+    <body class="vscode-body vscode-dark">
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="teoria-sobre-o-framework-nodejs----">Teoria sobre o Framework nodejs <a href="teoria_node_js.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h1> -->
 <ol>
 <li>
 <p><strong>OBJETIVOS</strong></p>
@@ -219,12 +231,12 @@
             res.setHeader(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'text/html'</span>);
             res.end(
                 <span class="hljs-string">'&lt;!DOCTYPE html&gt;'</span>+
-                <span class="hljs-string">'&lt;html&gt;'</span>+
+                <span class="hljs-string">'&lt;html lang="pt-BR"&gt;'</span>+
                     <span class="hljs-string">'&lt;head&gt;'</span>+
                         <span class="hljs-string">'&lt;meta charset="utf-8" /&gt;'</span>+
                         <span class="hljs-string">'&lt;title&gt;Exemplo do módulo calculator.js&lt;/title&gt;'</span>+
                     <span class="hljs-string">'&lt;/head&gt;'</span>+
-                    <span class="hljs-string">'&lt;body&gt;'</span>+
+                    <span class="hljs-string">'&lt;bodY&gt;'</span>+
                 
                         <span class="hljs-string">'&lt;p&gt; Soma de 1+2 = '</span>+calculator.soma(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)+<span class="hljs-string">'&lt;/p&gt;'</span>+
                         <span class="hljs-string">'&lt;p&gt; Sum  de 1+2 = '</span>+calculator.sum(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)+<span class="hljs-string">'&lt;/p&gt;'</span>+
@@ -232,7 +244,7 @@
                         <span class="hljs-string">'&lt;p&gt; multiplica  de 1 * 2 = '</span>+calculator.multiplica (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)+<span class="hljs-string">'&lt;/p&gt;'</span>+
                         <span class="hljs-string">'&lt;p&gt; dividi  de 1 / 2 = '</span>+calculator.dividi (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)+<span class="hljs-string">'&lt;/p&gt;'</span>)+
 
-                    <span class="hljs-string">'&lt;/body&gt;'</span>+
+                    <span class="hljs-string">' &lt;/body&gt;'</span>+
                 <span class="hljs-string">'&lt;/html&gt;'</span>    
         }
     );
@@ -432,23 +444,25 @@
 </ol>
 <h2 id="histórico">HISTÓRICO</h2>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever objetivos</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Escrever os exemplos de uso.
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever objetivos</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever os exemplos de uso.
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Servidor web para imprimir alo mundo.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Como criar e usar módulos em nodejs.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Como usar o módulo express do nodejs</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Servidor web para imprimir alo mundo.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Como criar e usar módulos em nodejs.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Como usar o módulo express do nodejs</li>
 </ul>
 </li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Estudar a opção que permite alterar o programa nodejs sem tira-lo do ar.
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Estudar a opção que permite alterar o programa nodejs sem tira-lo do ar.
 <ul>
 <li>O programa nodemon reinicia o nodejs toda vês que se grava o arquivo caso o mesmo foi alterado.</li>
 <li>Não uso porque o debug não funciona.</li>
 </ul>
 </li>
 </ul>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
         <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
         
-     </body>
+    </body>
     </html>

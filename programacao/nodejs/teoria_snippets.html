@@ -1,120 +1,175 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Teoria snippets do editor vscode &lt;a href&equals;&quot;teoria&lowbar;snippets&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+<html>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <!-- CSS markdown  -->
-        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
-            
-        <!-- CSS da página /index.html -->
-        <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8">
+  <title>Teoria snippets do editor vscode &lt;a href&equals;&quot;teoria&lowbar;snippets&period;html&quot;
+    target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova
+    aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <p><span id="topo"><span></p>
-<h1 id="teoria-snippets-do-editor-vscode----">Teoria snippets do editor vscode <a href="teoria_snippets.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
-<ol>
-<li>
-<p><strong>INDEX</strong></p>
-<ol>
-<li><a href="#id_objetivo">Objetivo.</a></li>
-<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
-<li><a href="#id_beneficios">benefícios.</a></li>
-<li><a href="#id_Descricao"><strong>Descrição.</strong></a></li>
-<li><a href="#id_exemplos"><strong>Exemplos.</strong></a></li>
-<li><a href="#id_referencias"><strong>Referências.</strong></a></li>
-<li><a href="#id_historico"><strong>Histórico.</strong></a></li>
-</ol>
-</li>
-<li>
-<p><strong>CONTEÚDO</strong></p>
-<ol>
-<li>
-<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
-<ol>
-<li>
-<p>Trechos de código (<a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">snippets</a>) são modelos que facilitam a inserção de padrões de código repetidos, como loops ou instruções condicionais.
-No Visual Studio Code, <em>snippets</em> aparecem no <em>IntelliSense (Ctrl + Space)</em> misturados com outras sugestões, bem como em um seletor de snippet dedicado ( <em>Insert Snippet</em> na <em>Paleta de Comandos = Crtl+ Shift +P</em>).<br>
-Caso queira que o conteúdo do campo body seja inserido após teclar no tab é necessário habilitar no campo <em>&quot;editor.tabCompletion&quot;: &quot;on&quot;</em> da opção <em>/File/Preferences/Settings</em>.<br>
-O uso é simples, ao <em>digitar uma palavra</em> no editor, a mesma é localizada no campo <em>prefix</em> do arquivo de <em>snippets</em> e após pressionar <em>Tab</em> o conteúdo do campo <em>body</em> do arquivo de <em>snippets</em> é inserido na posição do cursor.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
-<ol>
-<li>
-<p>Editor vsCode.</p>
-</li>
-<li>
-<p>Extensões do editor vscode:</p>
-<ol>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets">JavaScript (ES6) code snippets</a>.
-<ol>
-<li>Esta extensão do vscode  suporta as linguagens:
-<ol>
-<li>JavaScript (.js)</li>
-<li>TypeScript (.ts)</li>
-<li><a href="https://www.typescriptlang.org/docs/handbook/jsx.html">JavaScript React (.jsx)</a></li>
-<li><a href="https://www.agatetepe.com.br/typescript-e-react-usando-create-react-app-um-guia-passo-a-passo-para-configurar-seu-primeiro-aplicativo/#:~:text=tsx%20.,o%20JSX%20diretamente%20no%20JavaScript.">TypeScript React (.tsx)</a></li>
-<li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">Html (.html)</a></li>
-<li><a href="https://vuejs.org/">Vue (.vue)</a></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>...</li>
-</ol>
-</li>
-<li>
-<p>...</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
-<ol>
-<li>
-<p>Os snippets permitem que o programador seja mais produtivo nas seguintes situação:</p>
-<ol>
-<li>Códigos repetitivos podem ser replicado com apenas duas ou três letras + a tecla tab;</li>
-<li>Memorização de comandos das linguagens para que o programador não tenha que gravar todas as opções de uma linguagem em sua memória.</li>
-<li>Padronização de modelos de código onde um arquivo inteiro pode ser inserido com apenas 2 a 4 letras.</li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_Descricao></span><strong>Descrição</strong></p>
-<ol>
-<li>
-<p>A padronização de código através de snippets é possível através de extensões já programadas tais como:</p>
-<ol>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets"><strong>JavaScript (ES6) code snippets</strong></a> paras as linguagens javascript, typescript e html;</li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2">Angular Snippets (Version 11)</a> para é código pre-programados para ser usados com o framework Angular;</li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=hars.CppSnippets">Linguagem c/c++</a></li>
-</ol>
-</li>
-<li>
-<p>É possível também criar snippets padronizados e sava-los na pasta <strong>~/.config/Code/User/snippets/</strong>.</p>
-</li>
-<li>
-<p>Os arquivos de snippets tem extensão <strong>.json</strong> e possuem o seguinte formato:</p>
-<ol>
-<li>
-<p>Código json:</p>
-<pre><code class="hljs language-json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      includeHTML();
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      FixHeader(window, "myHeader");
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <!-- <h1 id="teoria-snippets-do-editor-vscode----">Teoria snippets do editor vscode <a href="teoria_snippets.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+        <ol>
+          <li>
+            <p><strong>INDEX</strong></p>
+            <ol>
+              <li><a href="#id_objetivo">Objetivo.</a></li>
+              <li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+              <li><a href="#id_beneficios">benefícios.</a></li>
+              <li><a href="#id_Descricao"><strong>Descrição.</strong></a></li>
+              <li><a href="#id_exemplos"><strong>Exemplos.</strong></a></li>
+              <li><a href="#id_referencias"><strong>Referências.</strong></a></li>
+              <li><a href="#id_historico"><strong>Histórico.</strong></a></li>
+            </ol>
+          </li>
+          <li>
+            <p><strong>CONTEÚDO</strong></p>
+            <ol>
+              <li>
+                <p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+                <ol>
+                  <li>
+                    <p>Trechos de código (<a
+                        href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">snippets</a>) são modelos
+                      que facilitam a inserção de padrões de código repetidos, como loops ou instruções condicionais.
+                      No Visual Studio Code, <em>snippets</em> aparecem no <em>IntelliSense (Ctrl + Space)</em>
+                      misturados com outras sugestões, bem como em um seletor de snippet dedicado ( <em>Insert
+                        Snippet</em> na <em>Paleta de Comandos = Crtl+ Shift +P</em>).<br>
+                      Caso queira que o conteúdo do campo body seja inserido após teclar no tab é necessário habilitar
+                      no campo <em>&quot;editor.tabCompletion&quot;: &quot;on&quot;</em> da opção
+                      <em>/File/Preferences/Settings</em>.<br>
+                      O uso é simples, ao <em>digitar uma palavra</em> no editor, a mesma é localizada no campo
+                      <em>prefix</em> do arquivo de <em>snippets</em> e após pressionar <em>Tab</em> o conteúdo do campo
+                      <em>body</em> do arquivo de <em>snippets</em> é inserido na posição do cursor.</p>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
+                <ol>
+                  <li>
+                    <p>Editor vsCode.</p>
+                  </li>
+                  <li>
+                    <p>Extensões do editor vscode:</p>
+                    <ol>
+                      <li><a
+                          href="https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets">JavaScript
+                          (ES6) code snippets</a>.
+                        <ol>
+                          <li>Esta extensão do vscode suporta as linguagens:
+                            <ol>
+                              <li>JavaScript (.js)</li>
+                              <li>TypeScript (.ts)</li>
+                              <li><a href="https://www.typescriptlang.org/docs/handbook/jsx.html">JavaScript React
+                                  (.jsx)</a></li>
+                              <li><a
+                                  href="https://www.agatetepe.com.br/typescript-e-react-usando-create-react-app-um-guia-passo-a-passo-para-configurar-seu-primeiro-aplicativo/#:~:text=tsx%20.,o%20JSX%20diretamente%20no%20JavaScript.">TypeScript
+                                  React (.tsx)</a></li>
+                              <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">Html (.html)</a></li>
+                              <li><a href="https://vuejs.org/">Vue (.vue)</a></li>
+                            </ol>
+                          </li>
+                        </ol>
+                      </li>
+                      <li>...</li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>...</p>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
+                <ol>
+                  <li>
+                    <p>Os snippets permitem que o programador seja mais produtivo nas seguintes situação:</p>
+                    <ol>
+                      <li>Códigos repetitivos podem ser replicado com apenas duas ou três letras + a tecla tab;</li>
+                      <li>Memorização de comandos das linguagens para que o programador não tenha que gravar todas as
+                        opções de uma linguagem em sua memória.</li>
+                      <li>Padronização de modelos de código onde um arquivo inteiro pode ser inserido com apenas 2 a 4
+                        letras.</li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><span id=id_Descricao></span><strong>Descrição</strong></p>
+                <ol>
+                  <li>
+                    <p>A padronização de código através de snippets é possível através de extensões já programadas tais
+                      como:</p>
+                    <ol>
+                      <li><a
+                          href="https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets"><strong>JavaScript
+                            (ES6) code snippets</strong></a> paras as linguagens javascript, typescript e html;</li>
+                      <li><a href="https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2">Angular
+                          Snippets (Version 11)</a> para é código pre-programados para ser usados com o framework
+                        Angular;</li>
+                      <li><a href="https://marketplace.visualstudio.com/items?itemName=hars.CppSnippets">Linguagem
+                          c/c++</a></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>É possível também criar snippets padronizados e sava-los na pasta
+                      <strong>~/.config/Code/User/snippets/</strong>.</p>
+                  </li>
+                  <li>
+                    <p>Os arquivos de snippets tem extensão <strong>.json</strong> e possuem o seguinte formato:</p>
+                    <ol>
+                      <li>
+                        <p>Código json:</p>
+                        <pre><code class="hljs language-json">
    {
       <span class="hljs-attr">" incluir script ./js"</span>: <span class="hljs-comment">// Nome reduzido do snippets.</span>
        {
@@ -146,35 +201,42 @@ O uso é simples, ao <em>digitar uma palavra</em> no editor, a mesma é localiza
    }          
 
 </code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p>A forma mais fácil de editar um código snippets é usar o site <a href="https://snippet-generator.app/?description=&amp;tabtrigger=&amp;snippet=&amp;mode=vscode">snippet generator</a> para inserir no lugar certo o nome reduzido, prefixo e o body.</p>
-<ol>
-<li>Nota: Depois do snippets pronto é só copiar do site e colocar no arquivo selecionado da pasta: <strong>~/.config/Code/User/snippets/</strong>.</li>
-</ol>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_exemplos></span><strong>Exemplos.</strong></p>
-<ol>
-<li>
-<p>Como adicionar dois snippets sendo um script para incluir um arquivo javascript (.js) e outro snippets para incluir um arquivo .css:</p>
-<ol>
-<li>Pressione as sequencia de teclas <strong>CRTL + SHIFT + P</strong> para acessar a Paleta de Comandos;</li>
-<li>Escreva a palavra <strong>snippets</strong> na linha de pesquisa;</li>
-<li>Selecione a opção: <strong>Preferences: Configure User Snippets</strong>;</li>
-<li>Se o arquivo de snippets não existe ainda, digite o nome do arquivo para a customização. Obs: Eu uso o nome da linguagem para  associar o arquivo a linguagem do snippets;</li>
-<li>Adicione o <strong>código json</strong> abaixo no arquivo de snippets que vocẽ criou na pasta <strong>~/.config/Code/User/snippets/</strong>
-<ol>
-<li>
-<p>Código json:</p>
-<pre><code class="hljs language-json">
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>A forma mais fácil de editar um código snippets é usar o site <a
+                        href="https://snippet-generator.app/?description=&amp;tabtrigger=&amp;snippet=&amp;mode=vscode">snippet
+                        generator</a> para inserir no lugar certo o nome reduzido, prefixo e o body.</p>
+                    <ol>
+                      <li>Nota: Depois do snippets pronto é só copiar do site e colocar no arquivo selecionado da pasta:
+                        <strong>~/.config/Code/User/snippets/</strong>.</li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><span id=id_exemplos></span><strong>Exemplos.</strong></p>
+                <ol>
+                  <li>
+                    <p>Como adicionar dois snippets sendo um script para incluir um arquivo javascript (.js) e outro
+                      snippets para incluir um arquivo .css:</p>
+                    <ol>
+                      <li>Pressione as sequencia de teclas <strong>CRTL + SHIFT + P</strong> para acessar a Paleta de
+                        Comandos;</li>
+                      <li>Escreva a palavra <strong>snippets</strong> na linha de pesquisa;</li>
+                      <li>Selecione a opção: <strong>Preferences: Configure User Snippets</strong>;</li>
+                      <li>Se o arquivo de snippets não existe ainda, digite o nome do arquivo para a customização. Obs:
+                        Eu uso o nome da linguagem para associar o arquivo a linguagem do snippets;</li>
+                      <li>Adicione o <strong>código json</strong> abaixo no arquivo de snippets que vocẽ criou na pasta
+                        <strong>~/.config/Code/User/snippets/</strong>
+                        <ol>
+                          <li>
+                            <p>Código json:</p>
+                            <pre><code class="hljs language-json">
    {
       <span class="hljs-attr">" incluir script ./js"</span>: {
          <span class="hljs-attr">"prefix"</span>: <span class="hljs-string">"script"</span>,
@@ -198,88 +260,80 @@ O uso é simples, ao <em>digitar uma palavra</em> no editor, a mesma é localiza
    }          
 
 </code></pre>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>...</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
-<ol>
-<li>
-<p><a href="https://www.youtube.com/watch?v=Ye8rWIVnDKs">Vídeo aula sobre snippets</a></p>
-</li>
-<li>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets">Extensão vscode JavaScript (ES6) code snippets</a></p>
-</li>
-<li>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2">Extensão vscode Angular Snippets (Version 11)</a></p>
-</li>
-<li>
-<p><a href="https://snippet-generator.app/?description=&amp;tabtrigger=&amp;snippet=&amp;mode=vscode">Site snippet generator</a></p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
-<ol>
-<li>19/05/2021 <!--TODO: HISTÓRICO -->
-<ul class="contains-task-list">
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar este documento baseado no <a href="http://modelo02.html">modelo02.md</a> ;</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Objetivos;</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Pre-requisitos</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Benefícios</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Descrição</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Exemplos</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Referências</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Atualizar o histórico deste documento.</p>
-</li>
-<li class="task-list-item enabled">
-<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Ler no dia seguinte este documento para checar os erros de português.</p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
- <script>    function goBack() {    window.history.back()}</script>
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <p>...</p>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><span id=id_referencias></span><strong>REFERÊNCIAS</strong></p>
+                <ol>
+                  <li>
+                    <p><a href="https://www.youtube.com/watch?v=Ye8rWIVnDKs">Vídeo aula sobre snippets</a></p>
+                  </li>
+                  <li>
+                    <p><a href="https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets">Extensão
+                        vscode JavaScript (ES6) code snippets</a></p>
+                  </li>
+                  <li>
+                    <p><a href="https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2">Extensão vscode
+                        Angular Snippets (Version 11)</a></p>
+                  </li>
+                  <li>
+                    <p><a
+                        href="https://snippet-generator.app/?description=&amp;tabtrigger=&amp;snippet=&amp;mode=vscode">Site
+                        snippet generator</a></p>
+                  </li>
+                  <li>
+                    <p><text onclick="goBack()">[🔙]</text></p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+                <ol>
+                  <li>19/05/2021
+                    <!--TODO: HISTÓRICO -->
+                    <ul class="contains-task-list">
+                      <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""
+                          type="checkbox"> Criar este documento baseado no <a
+                          href="http://modelo02.html">modelo02.md</a> ;</li>
+                      <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""
+                          type="checkbox"> Escrever tópico Objetivos;</li>
+                      <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""
+                          type="checkbox"> Escrever tópico Pre-requisitos</li>
+                      <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""
+                          type="checkbox"> Escrever tópico Benefícios</li>
+                      <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""
+                          type="checkbox"> Escrever tópico Descrição</li>
+                      <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""
+                          type="checkbox"> Escrever tópico Exemplos</li>
+                      <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""
+                          type="checkbox"> Escrever tópico Referências</li>
+                      <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""
+                          type="checkbox"> Atualizar o histórico deste documento.</li>
+                      <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""
+                          type="checkbox"> Ler no dia seguinte este documento para checar os erros de português.</li>
+                    </ul>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+  </main>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
-        
-    </body>
-    </html>
+  <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+
+</body>
+
+</html>

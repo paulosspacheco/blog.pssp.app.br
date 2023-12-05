@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Comando para gera documento de todos os arquivo &period;pas da pasta &period;&sol;units</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="comando-para-gera-documento-de-todos-os-arquivo-pas-da-pasta-units">Comando para gera documento de todos os arquivo .pas da pasta ./units</h1> -->
+<ul>
+<li>
+<p>O documento deve ter a marca //: ou {: ou (*: para que o comentário entre no documento final.</p>
+</li>
+<li>
+<p><a href="https://pasdoc.github.io/CommandLine">Manual do pasdoc</a></p>
+</li>
+<li>
+<p><a href="https://pasdoc.github.io/OutputLanguage">Linguagem de saída</a></p>
+</li>
+<li>
+<p><a href="https://raw.githubusercontent.com/pasdoc/pasdoc/master/source/autodoc/Makefile">Exemplo de makefile usando pasdoc</a></p>
+</li>
+<li>
+<p><a href="https://pasdoc.github.io/SpellChecking">Corregedor ortográfico spell</a></p>
+</li>
+<li>
+<p><a href="https://pasdoc.github.io/ConfigFileOption">Arquivo de configuração do pasdoc</a></p>
+</li>
+<li>
+<p><a href="https://github.com/pasdoc/pasdoc/blob/master/old_docs/pasdoc.tex">gitHub pasdoc</a></p>
+</li>
+<li>
+<p><a href="https://pasdoc.github.io/AdvancedFeatures">Você pode adicionar facilmente uma caixa de pesquisa à sua documentação...</a></p>
+</li>
+<li>
+<p><a href="https://pasdoc.github.io/CommandlineExamples">Referência sobre o script abaixo</a></p>
+<pre><code class="hljs language-sh">   pasdoc --use-tipue-search --verbosity=6 --auto-link --language=br.utf8 --marker=: --write-uses-list --staronly --markdown --output=./doc  `find ./ -iname <span class="hljs-string">'*.pas'</span>`
+   
+</code></pre>
+</li>
+</ul>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+        
+        
+    </body>
+    </html>

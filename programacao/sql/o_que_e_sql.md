@@ -1,10 +1,12 @@
-
-<!-- markdownlint-disable-next-line -->
-<div class="topnav" id="myTopnav"><div w3-include-html="/menu.inc"></div></div>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
-#### O QUE É LINGUAGEM SQL <a href="o_que_e_sql.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a> <span id="topo_Index"><span>
+# O QUE É LINGUAGEM SQL <a href="o_que_e_sql.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a> <span id="topo_Index"><span>
 
 ## **1. INDEX**
 
@@ -356,8 +358,6 @@
  4. [Restrição SQL FOREIGN KEY](https://www.w3schools.com/sql/sql_foreignkey.asp)
  5. [Para saber onde estão as bases de dados fisicamente](http://www.help.market.com.br/linux/index.html?reiniciar_o_servico_do_postgre.htm)
 
- 6. [🔝](#topo_Index "Retorna ao topo")  
+</main>
 
-<!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 [🔝🔝](#topo "Retorna ao topo")

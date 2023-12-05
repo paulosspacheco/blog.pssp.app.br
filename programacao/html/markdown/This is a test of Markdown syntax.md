@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # This is a test of Markdown syntax
 
 Arquivo usado para testar o programa pasdoc.
@@ -112,37 +120,37 @@ Incorrect lists
 
   Some preformatted code:
 
-  ```
-  program Foo;
-    Some long code
-    with
-    syntax highlight
-  ```
+    ```pascal
+    program Foo;
+      Some long code
+      with
+      syntax highlight
+    ```
 
   Some Pascal code:
 
-  ```pascal
-  program Foo;
-    Some long code
-    with
-    syntax highlight
-  ```
-  
+    ```pascal
+    program Foo;
+      Some long code
+      with
+      syntax highlight
+    ```
+
   Correct URLs:
   
   [Some one-line descr](http://example)
   
   [Some multi-line
    descr](http://example)
-   
+
   [Escaped \[\] descr](http://example)
 
   [\\](http://example)
   
   [a\\](http://example)
-   
+
   [Bracket URL](http://example/(foo))
-   
+
   Incorrect URLs:
   
   (http://example)
@@ -165,3 +173,7 @@ const
 implementation
 
 end.
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

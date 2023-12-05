@@ -1,5 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
 <!-- markdownlint-disable-next-line -->
-#### REFERÊNCIAS
+<span id="topo"><span>
+
+# REFERÊNCIAS
 
 1. [O que é SqLite3](https://www.sqlitetutorial.net/what-is-sqlite/)
 2. [SQLite3 nodejs](https://www.npmjs.com/package/sqlite3)
@@ -10,3 +17,7 @@
 7. [Nodejs](https://nodejs.dev/pt/learn/)
 8. [javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide)
 9. [SqLite3](https://www.sqlitetutorial.net/)
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

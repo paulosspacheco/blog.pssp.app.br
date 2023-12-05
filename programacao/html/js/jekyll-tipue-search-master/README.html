@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Jekyll Tipue Search</title>
+ 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="jekyll-tipue-search">Jekyll Tipue Search</h1> -->
+<p>Full-text search in Jekyll with <a href="https://github.com/Tipue/Tipue-Search">Tipue Search</a>. No plugin necessary. Fully compatible with Github Pages.</p>
+<p>The search index at <code>tipuesearch/tipuesearch_content.js</code> is generated with Liquid. The <a href="http://www.tipue.com/search">Tipue Search jQuery plugin</a> uses Javascript to search the index and display a list of results.</p>
+<p>View a <a href="https://jekylltools.github.io/jekyll-tipue-search/search/">live demo running on Github Pages</a>. The code and configuration for the demo is in the <a href="https://github.com/jekylltools/jekyll-tipue-search/tree/gh-pages">gh-pages branch</a>.</p>
+<h2 id="installation">Installation</h2>
+<ol>
+<li>
+<p>Add the <code>assets/tipuesearch</code> folder and all contents to your site.</p>
+</li>
+<li>
+<p>Add the Tipue Search scripts &amp; styles to your theme head. Some of these lines are <a href="http://www.tipue.com/search/docs/?d=1">optional, see the docs for info</a>:</p>
+</li>
+</ol>
+<pre><code class="hljs"><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">if</span></span> page.tipue_search_active or layout.tipue_search_active %}</span><span class="xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ "/assets/tipuesearch/css/normalize.css" | relative_url }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ "/assets/tipuesearch/css/tipuesearch.css" | relative_url }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ "/assets/tipuesearch/tipuesearch.<span class="hljs-name">min</span>.js" | relative_url }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</span><span class="hljs-template-tag">{% <span class="hljs-name"><span class="hljs-keyword">endif</span></span> %}</span><span class="xml">
+</span></code></pre>
+<ol start="3">
+<li>Add the Tipue Search search form, results display and script to your site. Use the example search page <code>search.html</code> for reference. Set <code>tipue_search_active: true</code> in the front-matter of every page or layout where you want to display search results. See the Tipue Search documentation for configuration of the <a href="http://www.tipue.com/search/docs/?d=1">search form</a> and <a href="http://www.tipue.com/search/docs/?d=3">display of search results</a>:</li>
+</ol>
+<pre><code class="hljs"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ page.url | relative_url }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tipue_search_left"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"</span></span></span><span class="hljs-template-variable">{{ "/assets/tipuesearch/search.png" | relative_url }}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tipue_search_icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tipue_search_right"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"q"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tipue_search_input"</span> <span class="hljs-attr">pattern</span>=<span class="hljs-string">".{3,}"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"At least 3 characters"</span> <span class="hljs-attr">required</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"clear: both;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tipue_search_content"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  $(<span class="hljs-string">'#tipue_search_input'</span>).tipuesearch();
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</span></code></pre>
+<h2 id="usage">Usage</h2>
+<p>Refer to the <a href="http://www.tipue.com/search/docs/">Tipue Search documentation</a> and <a href="https://github.com/Tipue/Tipue-Search">browse the code</a> to understand how Tipue Search works, and how to best integrate it into your site.</p>
+<h3 id="including-pages-and-collections">Including pages and collections</h3>
+<p>By default, only posts are included in the search index. Pages and collections are not included.</p>
+<p>Add the following to <code>_config.yml</code> to include pages and collections. <code>collections</code> is an array containing a list of collections you want to include.</p>
+<pre><code class="hljs"><span class="hljs-attr">tipue_search:</span>
+  <span class="hljs-attr">include:</span>
+    <span class="hljs-attr">pages:</span> <span class="hljs-literal">true</span>
+    <span class="hljs-attr">collections:</span> <span class="hljs-string">[apples,</span> <span class="hljs-string">oranges]</span>
+</code></pre>
+<h3 id="excluding-from-search-index">Excluding from search index</h3>
+<p>Exclude single documents from the search index with a front-matter variable:</p>
+<pre><code class="hljs"><span class="hljs-attr">exclude_from_search:</span> <span class="hljs-literal">true</span>
+</code></pre>
+<p>Exclude multiple files, tags or categories using a setting in <code>_config.yml</code>. <code>files</code> is an array containing a list of file paths to be excluded. <code>tags</code> and <code>categories</code> are arrays containing lists of tags and categories you want to exclude.</p>
+<pre><code class="hljs">tipue_search:
+  exclude:
+    <span class="hljs-keyword">file</span><span class="hljs-variable">s:</span> [<span class="hljs-built_in">search</span>.html, _apples/gragg.md, _oranges/valencia.md]
+    <span class="hljs-keyword">tag</span><span class="hljs-variable">s:</span> [tag1, tag2]
+    categorie<span class="hljs-variable">s:</span> [category1, category2]
+</code></pre>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

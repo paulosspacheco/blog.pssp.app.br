@@ -1,3 +1,9 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
 # Teoria snippets do editor vscode <a href="teoria_snippets.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
@@ -152,10 +158,7 @@
          - [x] Escrever tópico Referências
          - [x] Atualizar o histórico deste documento.
          - [x] Ler no dia seguinte este documento para checar os erros de português.
-         - <text onclick="goBack()">[🔙]</text>
 
-         - <text onclick="goBack()">[🔙]</text>
+</main>
 
 [🔝🔝](#topo "Retorna ao topo")
-
- <script>    function goBack() {    window.history.back()}</script>

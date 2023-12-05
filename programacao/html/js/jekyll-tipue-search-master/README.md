@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Jekyll Tipue Search
 
 Full-text search in Jekyll with [Tipue Search](https://github.com/Tipue/Tipue-Search). No plugin necessary. Fully compatible with Github Pages.
@@ -75,3 +83,6 @@ tipue_search:
     tags: [tag1, tag2]
     categories: [category1, category2]
 ```
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

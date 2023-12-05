@@ -1,32 +1,36 @@
 <!DOCTYPE html>
-    <html lang="pt-BR">
+    <html>
     <head>
         <meta charset="UTF-8">
         <title>Programa para criar projeto b&aacute;sico typescript vers&atilde;o&colon; 0&period;2&period;0</title>
-        <style>
-</style>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-<style>
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-                font-size: 14px;
-                line-height: 1.6;
-            }
-        </style>
-        <style>
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
-</style>
-        
-        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
-        
-    </head>
-    <body class="vscode-body vscode-light">
-        <h1 id="programa-para-criar-projeto-básico-typescript-versão-020">Programa para criar projeto básico typescript versão: 0.2.0</h1>
-<pre><code class="language-sh"><div><span class="hljs-meta">#!/bin/sh</span>
+  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
 
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="programa-para-criar-projeto-básico-typescript-versão-020">Programa para criar projeto básico typescript versão: 0.2.0</h1> -->
+<pre><code class="hljs language-sh"><span class="hljs-meta">#!/bin/sh
+</span>
 <span class="hljs-built_in">echo</span> PROGRAMA: Cria project typescript Básico
 <span class="hljs-built_in">echo</span> AUTOR: Paulo Pacheco
 <span class="hljs-built_in">echo</span> DATA DA CRIAÇÃO: 01/06/2021
@@ -38,8 +42,8 @@
 <span class="hljs-function"><span class="hljs-title">rename</span></span>(){
   <span class="hljs-comment">#Parâmetros</span>
   <span class="hljs-comment"># Chamada: rename param1 param2</span>
-  fileName=<span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span>;
-  fileNameOld=<span class="hljs-string">&quot;<span class="hljs-variable">$2</span>&quot;</span>;     
+  fileName=<span class="hljs-string">"<span class="hljs-variable">$1</span>"</span>;
+  fileNameOld=<span class="hljs-string">"<span class="hljs-variable">$2</span>"</span>;     
 
 <span class="hljs-comment"># begin</span>
     <span class="hljs-keyword">if</span> [ -f <span class="hljs-variable">$fileNameOld</span> ]; <span class="hljs-keyword">then</span>
@@ -69,11 +73,11 @@
   <span class="hljs-keyword">then</span>     
     <span class="hljs-comment"># echo  -z $pasta retorno true</span>
     <span class="hljs-comment"># read input</span>
-    project=<span class="hljs-string">&quot;./myproject&quot;</span>
+    project=<span class="hljs-string">"./myproject"</span>
   <span class="hljs-keyword">else</span>  
     <span class="hljs-comment"># echo  -z $pasta retorno false  </span>
     <span class="hljs-comment"># read input</span>
-    project=<span class="hljs-string">&quot;./<span class="hljs-variable">$project</span>&quot;</span>
+    project=<span class="hljs-string">"./<span class="hljs-variable">$project</span>"</span>
   <span class="hljs-keyword">fi</span>   
 
   <span class="hljs-keyword">if</span> [ -d <span class="hljs-variable">$project</span> ]; <span class="hljs-keyword">then</span> <span class="hljs-comment"># Se $pasta já existe então aborta execução.</span>
@@ -94,12 +98,12 @@
   mkdir <span class="hljs-variable">$project</span>
 
   <span class="hljs-comment"># Cria as pasta para os códigos fontes do project</span>
-  mkdir ./<span class="hljs-string">&quot;<span class="hljs-variable">$project</span>&quot;</span>/src      <span class="hljs-comment"># Pasta raiz do código fonte </span>
-  mkdir ./<span class="hljs-string">&quot;<span class="hljs-variable">$project</span>&quot;</span>/src/html <span class="hljs-comment"># Pasta html de entrada de webpack</span>
-  mkdir ./<span class="hljs-string">&quot;<span class="hljs-variable">$project</span>&quot;</span>/src/css  <span class="hljs-comment"># Pasta css de entrada de webpack</span>
-  mkdir ./<span class="hljs-string">&quot;<span class="hljs-variable">$project</span>&quot;</span>/src/js   <span class="hljs-comment"># Pasta de saide js de tsc </span>
-  mkdir ./<span class="hljs-string">&quot;<span class="hljs-variable">$project</span>&quot;</span>/src/ts   <span class="hljs-comment"># Pasta de entrada ts de tsc</span>
-  mkdir ./<span class="hljs-string">&quot;<span class="hljs-variable">$project</span>&quot;</span>/dist     <span class="hljs-comment"># Pasta destino do webpack para ser publicada na web.</span>
+  mkdir ./<span class="hljs-string">"<span class="hljs-variable">$project</span>"</span>/src      <span class="hljs-comment"># Pasta raiz do código fonte </span>
+  mkdir ./<span class="hljs-string">"<span class="hljs-variable">$project</span>"</span>/src/html <span class="hljs-comment"># Pasta html de entrada de webpack</span>
+  mkdir ./<span class="hljs-string">"<span class="hljs-variable">$project</span>"</span>/src/css  <span class="hljs-comment"># Pasta css de entrada de webpack</span>
+  mkdir ./<span class="hljs-string">"<span class="hljs-variable">$project</span>"</span>/src/js   <span class="hljs-comment"># Pasta de saide js de tsc </span>
+  mkdir ./<span class="hljs-string">"<span class="hljs-variable">$project</span>"</span>/src/ts   <span class="hljs-comment"># Pasta de entrada ts de tsc</span>
+  mkdir ./<span class="hljs-string">"<span class="hljs-variable">$project</span>"</span>/dist     <span class="hljs-comment"># Pasta destino do webpack para ser publicada na web.</span>
 
 }
 
@@ -107,11 +111,11 @@
 <span class="hljs-comment"># Passo 04 - Criar workspace para o projeto do vscode na pasta raiz do projeto;</span>
 <span class="hljs-function"><span class="hljs-title">createWorkspace</span></span>(){
 
-cat &gt;<span class="hljs-string">&quot;./&quot;</span><span class="hljs-variable">$project</span><span class="hljs-string">&quot;/workspace.code-workspace&quot;</span>&lt;&lt;EOT
+cat &gt;<span class="hljs-string">"./"</span><span class="hljs-variable">$project</span><span class="hljs-string">"/workspace.code-workspace"</span>&lt;&lt;EOT
 {
-    <span class="hljs-string">&quot;folders&quot;</span>: [
+    <span class="hljs-string">"folders"</span>: [
         {
-            <span class="hljs-string">&quot;path&quot;</span>: <span class="hljs-string">&quot;.&quot;</span>
+            <span class="hljs-string">"path"</span>: <span class="hljs-string">"."</span>
         }   
     ]
 }
@@ -123,31 +127,31 @@ EOT
 <span class="hljs-function"><span class="hljs-title">createFileIndexHtml</span></span>(){
   
 <span class="hljs-comment"># Criar arquivo inicial index.html</span>
-cat &gt;<span class="hljs-string">&quot;./&quot;</span><span class="hljs-variable">$project</span><span class="hljs-string">&quot;/src/html/index.html&quot;</span>&lt;&lt;EOT
+cat &gt;<span class="hljs-string">"./"</span><span class="hljs-variable">$project</span><span class="hljs-string">"/src/html/index.html"</span>&lt;&lt;EOT
 
   &lt;!DOCTYPE html&gt;
-      &lt;html dir=<span class="hljs-string">&quot;ltr&quot;</span> lang=<span class="hljs-string">&quot;pt-br&quot;</span>&gt;
+      &lt;html dir=<span class="hljs-string">"ltr"</span> lang=<span class="hljs-string">"pt-br"</span>&gt;
 
           &lt;head&gt;
-              &lt;meta http-equiv=<span class="hljs-string">&quot;content-type&quot;</span> content=<span class="hljs-string">&quot;text/html; charset=utf-8&quot;</span> /&gt;
+              &lt;meta http-equiv=<span class="hljs-string">"content-type"</span> content=<span class="hljs-string">"text/html; charset=utf-8"</span> /&gt;
 
-              &lt;meta name=<span class="hljs-string">&quot;viewport&quot;</span> content=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;
+              &lt;meta name=<span class="hljs-string">"viewport"</span> content=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span> /&gt;
 
               &lt;title&gt;Modelo de project typescript&lt;/title&gt;
 
-              &lt;meta name=<span class="hljs-string">&quot;createDate&quot;</span> content=<span class="hljs-string">&quot;28/05/2021&quot;</span> /&gt;
-              &lt;meta name=<span class="hljs-string">&quot;createDateUpdate&quot;</span> content=<span class="hljs-string">&quot;25/05/2021&quot;</span> /&gt;
-              &lt;meta name=<span class="hljs-string">&quot;description&quot;</span> content=<span class="hljs-string">&quot;Todos project typescript deve seguir essa sequência ao iniciar...&quot;</span> /&gt;
-              &lt;meta name=<span class="hljs-string">&quot;keywords&quot;</span> content=<span class="hljs-string">&quot;typescript,webpack&quot;</span> /&gt;
+              &lt;meta name=<span class="hljs-string">"createDate"</span> content=<span class="hljs-string">"28/05/2021"</span> /&gt;
+              &lt;meta name=<span class="hljs-string">"createDateUpdate"</span> content=<span class="hljs-string">"25/05/2021"</span> /&gt;
+              &lt;meta name=<span class="hljs-string">"description"</span> content=<span class="hljs-string">"Todos project typescript deve seguir essa sequência ao iniciar..."</span> /&gt;
+              &lt;meta name=<span class="hljs-string">"keywords"</span> content=<span class="hljs-string">"typescript,webpack"</span> /&gt;
 
-              &lt;link <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> href=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css&quot;</span>
-                  rel=<span class="hljs-string">&quot;stylesheet&quot;</span> /&gt;
+              &lt;link <span class="hljs-built_in">type</span>=<span class="hljs-string">"text/css"</span> href=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"</span>
+                  rel=<span class="hljs-string">"stylesheet"</span> /&gt;
 
           &lt;/head&gt;
 
-          &lt;body&gt;
+          &lt;bodY&gt;
               &lt;p&gt;Alo mundo&lt;/p&gt;
-          &lt;/body&gt;
+           &lt;/body&gt;
 
       &lt;/html&gt;
 
@@ -159,7 +163,7 @@ EOT
 <span class="hljs-comment"># Passo 06 - Adicionar o código .css no arquivo ./src/css/defaulttheme.css;</span>
 <span class="hljs-function"><span class="hljs-title">createFiledefaultThemeCss</span></span>() {
 
-cat &gt;<span class="hljs-string">&quot;./&quot;</span><span class="hljs-variable">$project</span><span class="hljs-string">&quot;/src/css/defaulttheme.css&quot;</span>&lt;&lt;EOT
+cat &gt;<span class="hljs-string">"./"</span><span class="hljs-variable">$project</span><span class="hljs-string">"/src/css/defaulttheme.css"</span>&lt;&lt;EOT
     html {
         scroll-behavior: smooth;
         /* scroll lento*/
@@ -176,8 +180,8 @@ EOT
 <span class="hljs-comment"># Passo 07 - Adicionar o código .ts no arquivo ./src/ts/index.ts;</span>
 <span class="hljs-function"><span class="hljs-title">createIndexTs</span></span>(){
 
-cat &gt;<span class="hljs-string">&quot;./&quot;</span><span class="hljs-variable">$project</span><span class="hljs-string">&quot;/src/ts/index.ts&quot;</span>&lt;&lt;EOT
-   console.log(<span class="hljs-string">&#x27;Alo mundo&#x27;</span>); 
+cat &gt;<span class="hljs-string">"./"</span><span class="hljs-variable">$project</span><span class="hljs-string">"/src/ts/index.ts"</span>&lt;&lt;EOT
+   console.log(<span class="hljs-string">'Alo mundo'</span>); 
 EOT
 
 }
@@ -201,34 +205,34 @@ EOT
 <span class="hljs-comment"># Passo10 - Customizar o comportamento do webpack no arquivo webpack-config.js;</span>
 <span class="hljs-function"><span class="hljs-title">alterWebpackConfig</span></span>(){
 
-  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;... &quot;</span>;
-  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Adiciona const path = require(&#x27;path&#x27;) em webpack.config.js;&quot;</span>
-  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Adiciona a declaração \&quot;const HtmlWebpackPlugin = require(&#x27;html-webpack-plugin&#x27;)\&quot; em webpack.config.js&quot;</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">"... "</span>;
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">"Adiciona const path = require('path') em webpack.config.js;"</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-string">"Adiciona a declaração \"const HtmlWebpackPlugin = require('html-webpack-plugin')\" em webpack.config.js"</span>
 
 
-  subStrOrigem=<span class="hljs-string">&#x27;module.exports = {&#x27;</span>
-  subStrDestino=<span class="hljs-string">&quot; const path = require(&#x27;path&#x27;);\n const HtmlWebpackPlugin = require(&#x27;html-webpack-plugin&#x27;); \n\n module.exports = {&quot;</span>
+  subStrOrigem=<span class="hljs-string">'module.exports = {'</span>
+  subStrDestino=<span class="hljs-string">" const path = require('path');\n const HtmlWebpackPlugin = require('html-webpack-plugin'); \n\n module.exports = {"</span>
                 
-  fileNameOld=<span class="hljs-string">&quot;./webpack.config.js.ant&quot;</span>
-  fileName=<span class="hljs-string">&quot;./webpack.config.js&quot;</span>
+  fileNameOld=<span class="hljs-string">"./webpack.config.js.ant"</span>
+  fileName=<span class="hljs-string">"./webpack.config.js"</span>
 
-  rename <span class="hljs-string">&quot;<span class="hljs-variable">$fileName</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$fileNameOld</span>&quot;</span>
+  rename <span class="hljs-string">"<span class="hljs-variable">$fileName</span>"</span> <span class="hljs-string">"<span class="hljs-variable">$fileNameOld</span>"</span>
 
-  sed <span class="hljs-string">&quot;s/<span class="hljs-variable">$subStrOrigem</span>/<span class="hljs-variable">$subStrDestino</span>/g&quot;</span> <span class="hljs-variable">$fileNameOld</span> &gt; <span class="hljs-variable">$fileName</span> 
+  sed <span class="hljs-string">"s/<span class="hljs-variable">$subStrOrigem</span>/<span class="hljs-variable">$subStrDestino</span>/g"</span> <span class="hljs-variable">$fileNameOld</span> &gt; <span class="hljs-variable">$fileName</span> 
       
   <span class="hljs-built_in">echo</span> ...
   
-  <span class="hljs-built_in">echo</span> Adiciona a propriedade <span class="hljs-string">&quot;HtmlWebpackPlugin&quot;</span> em module.exports = { webpack.config.js
+  <span class="hljs-built_in">echo</span> Adiciona a propriedade <span class="hljs-string">"HtmlWebpackPlugin"</span> em module.exports = { webpack.config.js
 
-  subStrOrigem=<span class="hljs-string">&#x27;module.exports = {&#x27;</span>
-  subStrDestino=<span class="hljs-string">&quot;module.exports = \{plugins:\[new HtmlWebpackPlugin\(\{filename:&#x27;index.html&#x27;,template:&#x27;.\/src\/html\/index.html&#x27;,inject:&#x27;body&#x27;\}\)\],&quot;</span>
+  subStrOrigem=<span class="hljs-string">'module.exports = {'</span>
+  subStrDestino=<span class="hljs-string">"module.exports = \{plugins:\[new HtmlWebpackPlugin\(\{filename:'index.html',template:'.\/src\/html\/index.html',inject:'body'\}\)\],"</span>
                 
-  fileNameOld=<span class="hljs-string">&quot;./webpack.config.js.ant&quot;</span>
-  fileName=<span class="hljs-string">&quot;./webpack.config.js&quot;</span>
+  fileNameOld=<span class="hljs-string">"./webpack.config.js.ant"</span>
+  fileName=<span class="hljs-string">"./webpack.config.js"</span>
 
-  rename <span class="hljs-string">&quot;<span class="hljs-variable">$fileName</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$fileNameOld</span>&quot;</span>
+  rename <span class="hljs-string">"<span class="hljs-variable">$fileName</span>"</span> <span class="hljs-string">"<span class="hljs-variable">$fileNameOld</span>"</span>
 
-  sed <span class="hljs-string">&quot;s/<span class="hljs-variable">$subStrOrigem</span>/<span class="hljs-variable">$subStrDestino</span>/g&quot;</span> <span class="hljs-variable">$fileNameOld</span> &gt; <span class="hljs-variable">$fileName</span> 
+  sed <span class="hljs-string">"s/<span class="hljs-variable">$subStrOrigem</span>/<span class="hljs-variable">$subStrDestino</span>/g"</span> <span class="hljs-variable">$fileNameOld</span> &gt; <span class="hljs-variable">$fileName</span> 
 
   <span class="hljs-built_in">echo</span> ...
 
@@ -236,34 +240,34 @@ EOT
   <span class="hljs-built_in">echo</span> Alterar o arquivo webpack.config.js  
 
   <span class="hljs-comment"># Atualiza o arquivo de entrada de webpack.config.js</span>
-  subStrOrigem=<span class="hljs-string">&quot;entry: &#x27;.\/index.ts&#x27;&quot;</span>
-  subStrDestino=<span class="hljs-string">&quot;entry: &#x27;.\/src\/ts\/index.ts&#x27;&quot;</span>
-  fileNameOld=<span class="hljs-string">&quot;./webpack.config.js.ant&quot;</span>
-  fileName=<span class="hljs-string">&quot;./webpack.config.js&quot;</span>
-  rename <span class="hljs-string">&quot;<span class="hljs-variable">$fileName</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$fileNameOld</span>&quot;</span>
-  sed <span class="hljs-string">&quot;s/<span class="hljs-variable">$subStrOrigem</span>/<span class="hljs-variable">$subStrDestino</span>/g&quot;</span> <span class="hljs-variable">$fileNameOld</span> &gt; <span class="hljs-variable">$fileName</span>   
+  subStrOrigem=<span class="hljs-string">"entry: '.\/index.ts'"</span>
+  subStrDestino=<span class="hljs-string">"entry: '.\/src\/ts\/index.ts'"</span>
+  fileNameOld=<span class="hljs-string">"./webpack.config.js.ant"</span>
+  fileName=<span class="hljs-string">"./webpack.config.js"</span>
+  rename <span class="hljs-string">"<span class="hljs-variable">$fileName</span>"</span> <span class="hljs-string">"<span class="hljs-variable">$fileNameOld</span>"</span>
+  sed <span class="hljs-string">"s/<span class="hljs-variable">$subStrOrigem</span>/<span class="hljs-variable">$subStrDestino</span>/g"</span> <span class="hljs-variable">$fileNameOld</span> &gt; <span class="hljs-variable">$fileName</span>   
 }
 
 <span class="hljs-comment"># Passo11 - Customizar arquivo package.json;</span>
 <span class="hljs-function"><span class="hljs-title">alterPackage</span></span>(){
   <span class="hljs-built_in">echo</span> ...
   
-  <span class="hljs-built_in">echo</span> Atualiza script <span class="hljs-string">&quot;dev&quot;</span> <span class="hljs-keyword">do</span> package.json
-  subStrOrigem=<span class="hljs-string">&quot;webpack-dev-server --inline --hot&quot;</span>
-  subStrDestino=<span class="hljs-string">&quot;webpack serve --mode development --env development --hot --port 3000&quot;</span>
-  fileNameOld=<span class="hljs-string">&quot;./package.json.ant&quot;</span>
-  fileName=<span class="hljs-string">&quot;./package.json&quot;</span>
-  rename <span class="hljs-string">&quot;<span class="hljs-variable">$fileName</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$fileNameOld</span>&quot;</span>
-  sed <span class="hljs-string">&quot;s/<span class="hljs-variable">$subStrOrigem</span>/<span class="hljs-variable">$subStrDestino</span>/g&quot;</span> <span class="hljs-variable">$fileNameOld</span> &gt; <span class="hljs-variable">$fileName</span> 
+  <span class="hljs-built_in">echo</span> Atualiza script <span class="hljs-string">"dev"</span> <span class="hljs-keyword">do</span> package.json
+  subStrOrigem=<span class="hljs-string">"webpack-dev-server --inline --hot"</span>
+  subStrDestino=<span class="hljs-string">"webpack serve --mode development --env development --hot --port 3000"</span>
+  fileNameOld=<span class="hljs-string">"./package.json.ant"</span>
+  fileName=<span class="hljs-string">"./package.json"</span>
+  rename <span class="hljs-string">"<span class="hljs-variable">$fileName</span>"</span> <span class="hljs-string">"<span class="hljs-variable">$fileNameOld</span>"</span>
+  sed <span class="hljs-string">"s/<span class="hljs-variable">$subStrOrigem</span>/<span class="hljs-variable">$subStrDestino</span>/g"</span> <span class="hljs-variable">$fileNameOld</span> &gt; <span class="hljs-variable">$fileName</span> 
 
   <span class="hljs-built_in">echo</span> ...
-  <span class="hljs-built_in">echo</span>  Atualiza script <span class="hljs-string">&quot;build&quot;</span> <span class="hljs-keyword">do</span> package.json
-  subStrOrigem=<span class="hljs-string">&quot;webpack -p&quot;</span>
-  subStrDestino=<span class="hljs-string">&quot;webpack --mode=&#x27;production&#x27;&quot;</span>
-  fileNameOld=<span class="hljs-string">&quot;./package.json.ant&quot;</span>
-  fileName=<span class="hljs-string">&quot;./package.json&quot;</span>
-  rename <span class="hljs-string">&quot;<span class="hljs-variable">$fileName</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$fileNameOld</span>&quot;</span>
-  sed <span class="hljs-string">&quot;s/<span class="hljs-variable">$subStrOrigem</span>/<span class="hljs-variable">$subStrDestino</span>/g&quot;</span> <span class="hljs-variable">$fileNameOld</span> &gt; <span class="hljs-variable">$fileName</span> 
+  <span class="hljs-built_in">echo</span>  Atualiza script <span class="hljs-string">"build"</span> <span class="hljs-keyword">do</span> package.json
+  subStrOrigem=<span class="hljs-string">"webpack -p"</span>
+  subStrDestino=<span class="hljs-string">"webpack --mode='production'"</span>
+  fileNameOld=<span class="hljs-string">"./package.json.ant"</span>
+  fileName=<span class="hljs-string">"./package.json"</span>
+  rename <span class="hljs-string">"<span class="hljs-variable">$fileName</span>"</span> <span class="hljs-string">"<span class="hljs-variable">$fileNameOld</span>"</span>
+  sed <span class="hljs-string">"s/<span class="hljs-variable">$subStrOrigem</span>/<span class="hljs-variable">$subStrDestino</span>/g"</span> <span class="hljs-variable">$fileNameOld</span> &gt; <span class="hljs-variable">$fileName</span> 
 
 }
 
@@ -271,17 +275,17 @@ EOT
 <span class="hljs-function"><span class="hljs-title">alterTsconfig</span></span>(){
     <span class="hljs-built_in">echo</span> ...
     
-    <span class="hljs-built_in">echo</span> Adiciona a propriedade <span class="hljs-string">&quot;outDir&quot;</span> em <span class="hljs-string">&quot;compilerOptions&quot;</span>: {} <span class="hljs-keyword">do</span> tsconfig.json
+    <span class="hljs-built_in">echo</span> Adiciona a propriedade <span class="hljs-string">"outDir"</span> em <span class="hljs-string">"compilerOptions"</span>: {} <span class="hljs-keyword">do</span> tsconfig.json
 
-    subStrOrigem=<span class="hljs-string">&#x27;&quot;compilerOptions&quot;: {&#x27;</span>
-    subStrDestino=<span class="hljs-string">&#x27;&quot;compilerOptions&quot;: {&quot;outDir&quot;: &quot;.\/src\/js&quot;,&#x27;</span>                
+    subStrOrigem=<span class="hljs-string">'"compilerOptions": {'</span>
+    subStrDestino=<span class="hljs-string">'"compilerOptions": {"outDir": ".\/src\/js",'</span>                
                   
-    fileNameOld=<span class="hljs-string">&quot;./tsconfig.json.ant&quot;</span>
-    fileName=<span class="hljs-string">&quot;./tsconfig.json&quot;</span>
+    fileNameOld=<span class="hljs-string">"./tsconfig.json.ant"</span>
+    fileName=<span class="hljs-string">"./tsconfig.json"</span>
 
-    rename <span class="hljs-string">&quot;<span class="hljs-variable">$fileName</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$fileNameOld</span>&quot;</span>
+    rename <span class="hljs-string">"<span class="hljs-variable">$fileName</span>"</span> <span class="hljs-string">"<span class="hljs-variable">$fileNameOld</span>"</span>
 
-    sed <span class="hljs-string">&quot;s/<span class="hljs-variable">$subStrOrigem</span>/<span class="hljs-variable">$subStrDestino</span>/g&quot;</span> <span class="hljs-variable">$fileNameOld</span> &gt; <span class="hljs-variable">$fileName</span> 
+    sed <span class="hljs-string">"s/<span class="hljs-variable">$subStrOrigem</span>/<span class="hljs-variable">$subStrDestino</span>/g"</span> <span class="hljs-variable">$fileNameOld</span> &gt; <span class="hljs-variable">$fileName</span> 
 
     <span class="hljs-built_in">echo</span> ...
     
@@ -291,7 +295,7 @@ EOT
 <span class="hljs-comment"># PROGRAMA PRINCIPAL</span>
   <span class="hljs-comment"># $1 é passado na execução de my-tsc-init.sh</span>
 
-project=<span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span>
+project=<span class="hljs-string">"<span class="hljs-variable">$1</span>"</span>
 createProject
 createWorkspace
 createFileIndexHtml
@@ -306,7 +310,11 @@ alterTsconfig
 <span class="hljs-built_in">echo</span> fim <span class="hljs-keyword">do</span> script
 
 
-</div></code></pre>
+</code></pre>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-     </body>
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
     </html>

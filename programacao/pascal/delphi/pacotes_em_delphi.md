@@ -1,6 +1,12 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
-# Tudo sobre pacotes Delphi XE<a href="modelo03.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+# Tudo sobre pacotes Delphi XE<a href="pacotes_em_delphi.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **1. INDEX**
 
@@ -288,8 +294,6 @@
          - [ ] Atualizar o histórico deste documento.
          - [ ] Testar este documento depois após uma semana de concluído.
 
-         - <text onclick="goBack()">[🔙]</text>
+/main>
 
 [🔝🔝](#topo "Retorna ao topo")
-
- <script>    function goBack() {    window.history.back()}</script>

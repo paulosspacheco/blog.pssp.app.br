@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      includeHTML();
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      FixHeader(window, "myHeader");
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+</head>
+
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+    <!-- markdownlint-disable-next-line -->
+    <span id="topo"><span>
+        <p>This demo demonstrates the routing mechanism of fpWeb.</p>
+        <p>It can be run as a CGI or as a HTTP standalone server program.</p>
+        <p>In order to get a correct set of routes in the demo, demorouting.ini file
+          must be configured correctly and placed next to the binary.</p>
+        <p>There is a different section for each type of binary: (CGI or Standalone)</p>
+        <p>Each section needs at least the BaseURL key, this is the URL where the
+          application can be reached.</p>
+        <p>Example:</p>
+        <p>[CGI]
+          ; Assuming the demo is in cgi-bin
+          BaseURL=http://localhost/cgi-bin/demorouting.cgi</p>
+        <p>[Standalone]
+          Port=8080
+          ; Optional, the following is the default.
+          ;BaseURL=http://localhost:8080/</p>
+  </main>
+  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+
+
+</body>
+
+</html>

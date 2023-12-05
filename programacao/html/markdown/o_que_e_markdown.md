@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # LINGUAGEM DE MARCAÇÃO DE TEXTO MARKDOWN <a href="o_que_e_markdown.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba."> ➚ </a>
 
 <span id="id_topo"> <span>
@@ -888,7 +896,7 @@
 > >
 > > \`\`\`html
 > >
-> > ```Html>
+> > ```Html
 > >
 > >   <html lang="pt-BR">
 > >      <head>
@@ -1219,9 +1227,6 @@
 
 </ol>
 
+</main>
 
-<text onclick="goBack()">[🔙]</text>
-
-<script>  function goBack() {    window.history.back()}</script>
-
-### NOTAS DE RODAPÉ
+[🔝🔝](#topo "Retorna ao topo")

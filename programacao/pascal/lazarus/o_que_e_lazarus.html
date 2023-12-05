@@ -2,8 +2,8 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>O que &eacute; o projeto pas2js &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;pas2js&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-   
+        <title>O que &eacute; IDE Lazarus &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;lazarus&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -27,7 +27,7 @@
 <main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<!-- <h1 id="o-que-é-o-projeto-pas2js----">O que é o projeto pas2js <a href="o_que_e_pas2js.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+<!-- <h1 id="o-que-é-ide-lazarus----">O que é IDE Lazarus <a href="o_que_e_lazarus.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
 <h2 id="1-index"><strong>1. INDEX</strong></h2>
 <hr>
 <ol>
@@ -41,13 +41,12 @@
 <li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
 <li><a href="#id_beneficios">Benefícios.</a></li>
 <li><a href="#id_desvantagens">Desvantagens.</a></li>
-<li><a href="https://gitlab.com/freepascal.org/fpc/pas2js">Repositório do projeto</a></li>
 </ol>
 </li>
 <li>
 <p><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a></p>
 <ol>
-<li><a href="#id_apiclient">Exemplo demo/apiclient</a></li>
+<li><a href="#id_assunto01">Como instalar o Lazarus</a></li>
 <li><a href="#id_assunto02">Assunto 02</a></li>
 <li><a href="#id_assunto03">Assunto 03</a></li>
 <li><a href="#id_assunto04">Assunto 04</a></li>
@@ -82,17 +81,7 @@
 <p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
 <ol>
 <li>
-<p>O <a href="https://wiki.freepascal.org/pas2js">Pas2js</a> é um transpiler Pascal para JavaScript de código aberto . Ele analisa Object Pascal e emite JavaScript. O JavaScript está atualmente no nível ECMAScript 5 e deve rodar em qualquer navegador ou no Node.js (target &quot;nodejs&quot;). Está disponível em 5 formas:</p>
-<ol>
-<li>como uma biblioteca;</li>
-<li>como um programa de linha de comando;</li>
-<li>como servidor web;</li>
-<li>como um programa node.js;</li>
-<li>como um programa em execução no navegador.</li>
-</ol>
-</li>
-<li>
-<p>Documento oficial do projeto pode ser lido <a href="https://wiki.freepascal.org/pas2js">aqui...</a></p>
+<p>Este documento foi criado com objetivo de registrar tudo que preciso lembrar sobre a IDE Lazarus e o compilador FreePascal.</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -103,7 +92,10 @@
 <p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
 <ol>
 <li>
-<p>Conhecimento da linguagem pascal, html, javascript, nodejs e tecnologias web necessárias para pode publicar uma site na nuvem.</p>
+<p>Conhecimento do sistema operacional onde a IDE Lazarus  e o compilador FreePascal serão instalados.</p>
+</li>
+<li>
+<p>Conhecimento da linguagem pascal.</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -111,24 +103,17 @@
 </ol>
 </li>
 <li>
-<p><span id="id_beneficios"></span> <strong>Benefícios:</strong></p>
+<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
 <ol>
 <li>
-<p>Permitir programar com uma linguagem tipada como o pascal para construção de aplicações clientes e usar a linguagem  pascal como aplicação servidora.</p>
+<p>O FreePascal permite criar aplicativo nativos para vários sistemas operacionais.</p>
 </li>
 <li>
-<p>As aplicações clientes web facilita a vida do usuário, porque eles tem em sua máquina o browser instalado e o browse há protege de acesso a sua máquina em dados que o mesmo não deseja compartilhar com fornecedores de software.</p>
+<p>A IDE Lazarus permite criar formulários visualmente, compila-los e executa-los ao pressionar a tela f9.</p>
 </li>
 <li>
-<p>Programadores pascal não precisam dominar as nuncias de uma nova linguagem para produzir aplicações web.</p>
+<p>A IDE possui o programa <strong>FPDebug</strong> que permite executar o programa passo a passo pressionado a tecla F7.</p>
 </li>
-<li>
-<p>É possível dentro do pascal instanciar uma classe javascript usando a palavra reservada <a href="https://gitlab.com/freepascal.org/fpc/pas2js/-/blob/main/demo/library/main.lpr">external</a>. <a href="https://wiki.freepascal.org/pas2js#Compiler">Veja mais...</a>;</p>
-</li>
-<li>
-<p>O pas2js permite criar módulos javascript usando a sintaxe library do pascal. <a href="https://wiki.freepascal.org/pas2js_modules">Veja mais...</a>;</p>
-</li>
-<li></li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
 </li>
@@ -138,7 +123,7 @@
 <p><span id="id_desvantagens"></span><strong>Desvantagens</strong>.</p>
 <ol>
 <li>
-<p>Ainda não tenho opinião formada para dar o meu parecer.</p>
+<p>Essa pergunta é difícil responder porque é relativa.</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -151,64 +136,129 @@
 <p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
 <ol>
 <li>
-<p><span id=id_apiclient></span><strong>Exemplo demo/apiclient</strong></p>
+<p><span id=id_assunto01></span><strong>Como instalar o Lazarus e FreePascal</strong></p>
 <ol>
 <li>
-<p>O objetivo deste exemplo é demostrar a interação dos códigos escritos em pascal e o browser através do código javascript gerado pelo transpilador pas2js.</p>
+<p>Instalar o aplicativo <strong>FPCupDeLuxe</strong> no Linux Debian ou derivados.</p>
+<ol>
+<li>
+<p>Instalando as dependências:</p>
+<pre><code class="hljs language-sh">
+ sudo apt-get install libx11-dev
+ sudo apt-get install libgtk2.0-dev 
+ sudo apt-get install libcairo2-dev  
+ sudo apt-get install libpango1.0-dev 
+ sudo apt-get install libxtst-dev 
+ sudo apt-get install libgdk-pixbuf2.0-dev 
+ sudo apt-get install libatk1.0-dev  
+ sudo apt-get install libghc-x11-dev 
+ sudo apt-get install libgl1-mesa-dev
+ sudo apt-get install git
+ sudo apt-get install mercurial
+
+</code></pre>
 </li>
 <li>
-<p>Arquivos do projeto:</p>
-<ol>
+<p>Criar pasta <strong>~/Download/FpCupDeLuxe</strong></p>
+<pre><code class="hljs language-sh">
+  mkdir ~/Downloads/FpCupDeLuxe
+  
+</code></pre>
+</li>
 <li>
-<p><strong>apiclient.dpr</strong></p>
+<p>Baixar o programa <strong>FpCupDeLuxe</strong> para a pasta <strong>~/Downloads/FpCupDeLuxea</strong> :</p>
 <ol>
-<li>Arquivo de projeto principal com código pascal.</li>
+<li><a href="https://github.com/LongDirtyAnimAlf/fpcupdeluxe/releases">Download do FpCupDeLuxe</a>.</li>
 </ol>
 </li>
 <li>
-<p><strong>Index.html</strong></p>
+<p>Executar programa  <strong>fpcupdeluxe-x86_64-linux</strong></p>
+<pre><code class="hljs language-sh">
+ <span class="hljs-built_in">cd</span> ~/Downloads/FpCupDeLuxe
+ ./fpcupdeluxe-x86_64-linux
+    
+
+</code></pre>
+</li>
+<li>
+<p>Configurar <strong>FpCupeDeLuxe</strong> para instalar o <strong>FPC</strong> com opção de debug de todos os pacotes, inclusive a FCL, LCL etc...</p>
 <ol>
-<li>Arquivo html editado com editor de página html e o mesmo é obrigatório para poder executar o arquivo <strong>apiclient.js</strong> gerado pelo transpilador <strong>pas2js</strong>.</li>
+<li>
+<p>Selecionar a opção Setup+ do FpCupDeLuxe:</p>
+<ol>
+<li><img src="img/setup_fpcupdeluxe.png" alt="Opção Setup+"></li>
+<li><img src="img/Opcoes_Avancadas.jpeg" alt="Formulário de Opções avançadas"></li>
 </ol>
 </li>
 <li>
-<p><strong>bulma.min.css</strong></p>
+<p>Pressione o botão <a href="img/Opcoes_Avancadas.jpeg"><strong>Setup+</strong></a> do <strong>FpCupDeLuxe</strong>, para editar o formulário de <strong>Opções Avançadas</strong>:</p>
 <ol>
-<li>Arquivo com a formatação dos códigos .css criador com editor de .css;</li>
+<li>Adicione os comandos <strong>-g -gl -O-</strong> no campo &quot;FPC Options&quot;.</li>
 </ol>
 </li>
-<li>
-<p><strong>apiclient.js</strong></p>
-<ol>
-<li>Arquivo javascript gerado pelo transpilador pas2js ele contém toda programação feita no arquivo <strong>apiclient.dpr</strong>.</li>
 </ol>
-</li>
-<li>
-<p><strong>apiclient.js.map</strong></p>
-<ol>
-<li>Um mapa de origem é usado para que possa depurar o código usando o browser. <a href="https://wiki.freepascal.org/pas2js">Veja mais...</a></li>
-</ol>
-</li>
-<li>
-<p>..</p>
 </li>
 </ol>
 </li>
 <li>
-<p><strong>Exemplo do Exemplo demo/apiclient</strong>.</p>
+<p><strong>Instalar Lazarus com o programa FPCupDeLuxe:</strong></p>
 <ol>
 <li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
+<p>Executar programa <strong>FpCupDeLuxe</strong></p>
+</li>
+<li>
+<p>No painel <strong>GitLab</strong> selecione a versão <strong>Fixed</strong> para o compilador <strong>FPC</strong> e para IDE <strong>Lazarus</strong>.</p>
+<ol>
+<li><img src="img/painel_gitlab.jpeg" alt="Painel GitLab">.</li>
+</ol>
+</li>
+<li>
+<p>Pressionar o botão:</p>
+<ol>
+<li><img src="img/botao_instalar_fpc_lazarus.jpeg" alt="Botão instalar">.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Instalar pacotes opcionais</strong>.</p>
+<ol>
+<li>Na área de trabalho seleciona o ícone <strong>Lazarus_fpcupdeluxe</strong>.</li>
+<li>Selecione a opção <a href="img/form_instalar_pacotes.jpeg"><strong>/Pacotes/instalar/disponíveis para instalação/</strong></a>:
+<ol>
+<li>
+<p>No painel <strong>Disponíveis para instalar</strong> selecione os seguintes pacotes:</p>
+<ol>
+<li>
+<p>Para transformar em janela única:</p>
+<ol>
+<li><a href="https://wiki.freepascal.org/AnchorDockingDsgn"><strong>AnchorDockingDsgn</strong></a>;</li>
+<li><a href="https://github.com/alrieckert/lazarus/blob/master/components/sparta/dockedformeditor/sparta_dockedformeditor.pas"><strong>Sparta_DockedFormEditor</strong></a>.</li>
+</ol>
+</li>
+<li>
+<p>Instalar a opção de grupo de projetos.</p>
+<ol>
+<li><a href="https://wiki.freepascal.org/Project_Groups"><strong>LazProjectGroups</strong></a>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>No painel <strong>Disponíveis para instalar</strong> pressione o botão <strong>Instalar pacotes selecionados</strong>.</p>
+</li>
+<li>
+<p>No painel de botões abaixo do painel <strong>Disponíveis para instalar</strong> pressione o botão <strong>Salvar e reconstruir a IDE</strong></p>
+</li>
+</ol>
 </li>
 </ol>
 </li>
 <li>
 <p><strong>Referências:</strong></p>
 <ol>
-<li><a href="https://code.visualstudio.com/docs/editor/debugging#_launch-configurations">Como usar o vscode para debugar o projeto</a></li>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
+<li><a href="https://gladiston.net.br/programacao/lazarus-ide/usando-como-instalador-o-fpcupdeluge-nivel-medio/">usando-como-instalador-o-fpcupdeluge-nivel-medio</a></li>
+<li><a href="https://github.com/LongDirtyAnimAlf/fpcupdeluxe/releases">Download do FpCupDeLuxe</a></li>
 </ol>
 </li>
 <li>
@@ -499,16 +549,39 @@
 <li>
 <p>dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
 <ul class="contains-task-list">
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Criar este documento baseado no o_que_e_pas2js.md ;</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Objetivos;</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Pre-requisitos</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Benefícios</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico desvantagens</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Exemplos</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Criar este documento baseado no <a href="http://modelo03.html">modelo03.md</a> ;</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Objetivos;</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Pre-requisitos</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Benefícios</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico desvantagens</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Exemplos</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
 </ul>
 </li>
 </ol>

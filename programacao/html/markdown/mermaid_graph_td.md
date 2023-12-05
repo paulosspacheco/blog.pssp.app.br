@@ -73,6 +73,7 @@ Esse pacote mermaid é completo porém ocupa quase 1 mg de código
 3. [Github Mermaid](https://github.com/mermaid-js/mermaid)
 4. [How to add Mermaid (Markdown) Plugin in Visual Studio Code](https://www.youtube.com/watch?v=p4lk9o5WDeY)
 5. [Como criar diagramas como código com Mermaid, GitHub e Visual Studio Code](https://www.freecodecamp.org/news/diagrams-as-code-with-mermaid-github-and-vs-code/)
+6. [Crie diagramas para transmitir informações sobre gráficos](https://docs.github.com/pt/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams)
 
 </main>
 

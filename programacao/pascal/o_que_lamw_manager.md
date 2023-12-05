@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # O que é lamw Manager
 
 1. **LAMW Manager** install the following [dependencies] tools:
@@ -25,3 +33,6 @@
 2. Notes
    1. The minimum Android API and Build Tools required by LAMW and specified in **package.json** are installed
 
+/main>
+
+[🔝🔝](#topo "Retorna ao topo")

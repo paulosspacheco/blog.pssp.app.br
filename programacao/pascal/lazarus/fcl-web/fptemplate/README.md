@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 This is the beginning of a server side web system for FPC.
 Although it is non-visual, it is geared towards use in Lazarus.
 
@@ -293,3 +301,7 @@ TFPCustomFileModule:
   but descendents can be made to implement e.g. logging, authorisation etc.
   must not be registered directly, register locations using the RegisterFileLocation 
   call.
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

@@ -1,3 +1,12 @@
+
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # RoutingApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
@@ -25,3 +34,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

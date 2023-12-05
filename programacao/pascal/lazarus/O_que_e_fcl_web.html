@@ -2,8 +2,8 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>O que &eacute; o projeto pas2js &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;pas2js&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-   
+        <title>O que &eacute; fcl&lowbar;web &lt;a href&equals;&quot;fcl&lowbar;web&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -27,7 +27,7 @@
 <main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<!-- <h1 id="o-que-é-o-projeto-pas2js----">O que é o projeto pas2js <a href="o_que_e_pas2js.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+<!-- <h1 id="o-que-é-fcl_web----">O que é fcl_web <a href="fcl_web.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
 <h2 id="1-index"><strong>1. INDEX</strong></h2>
 <hr>
 <ol>
@@ -41,13 +41,12 @@
 <li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
 <li><a href="#id_beneficios">Benefícios.</a></li>
 <li><a href="#id_desvantagens">Desvantagens.</a></li>
-<li><a href="https://gitlab.com/freepascal.org/fpc/pas2js">Repositório do projeto</a></li>
 </ol>
 </li>
 <li>
 <p><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a></p>
 <ol>
-<li><a href="#id_apiclient">Exemplo demo/apiclient</a></li>
+<li><a href="#id_Tipos_de_Aplicacoes">Tipo de aplicações  registrados no pacote lazweb</a></li>
 <li><a href="#id_assunto02">Assunto 02</a></li>
 <li><a href="#id_assunto03">Assunto 03</a></li>
 <li><a href="#id_assunto04">Assunto 04</a></li>
@@ -82,17 +81,10 @@
 <p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
 <ol>
 <li>
-<p>O <a href="https://wiki.freepascal.org/pas2js">Pas2js</a> é um transpiler Pascal para JavaScript de código aberto . Ele analisa Object Pascal e emite JavaScript. O JavaScript está atualmente no nível ECMAScript 5 e deve rodar em qualquer navegador ou no Node.js (target &quot;nodejs&quot;). Está disponível em 5 formas:</p>
-<ol>
-<li>como uma biblioteca;</li>
-<li>como um programa de linha de comando;</li>
-<li>como servidor web;</li>
-<li>como um programa node.js;</li>
-<li>como um programa em execução no navegador.</li>
-</ol>
+<p>O pacote <strong>fcl_web.lpk</strong> é distribuído e mantido pelo projeto <a href="https://www.freepascal.org/">FreePascal</a> e tem como objetivo implementar o protocolo HTTP para crianção de sites.</p>
 </li>
 <li>
-<p>Documento oficial do projeto pode ser lido <a href="https://wiki.freepascal.org/pas2js">aqui...</a></p>
+<p>O projeto Lazarus criou o pacote LazWeb.lpk com  objetivo de transformar as tenologias implementadas pelo pacote <a href="https://github.com/alrieckert/lazarus/tree/master/components/fpweb"><strong>fcl_web</strong></a> em aplicações RAD na IDE Lazarus.</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -103,7 +95,7 @@
 <p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
 <ol>
 <li>
-<p>Conhecimento da linguagem pascal, html, javascript, nodejs e tecnologias web necessárias para pode publicar uma site na nuvem.</p>
+<p>Descreva os pre-requisitos necessários para compreensão deste documento.</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -111,24 +103,11 @@
 </ol>
 </li>
 <li>
-<p><span id="id_beneficios"></span> <strong>Benefícios:</strong></p>
+<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
 <ol>
 <li>
-<p>Permitir programar com uma linguagem tipada como o pascal para construção de aplicações clientes e usar a linguagem  pascal como aplicação servidora.</p>
+<p>Descreva um resumo do que este documento pode agregar no meu conhecimento.</p>
 </li>
-<li>
-<p>As aplicações clientes web facilita a vida do usuário, porque eles tem em sua máquina o browser instalado e o browse há protege de acesso a sua máquina em dados que o mesmo não deseja compartilhar com fornecedores de software.</p>
-</li>
-<li>
-<p>Programadores pascal não precisam dominar as nuncias de uma nova linguagem para produzir aplicações web.</p>
-</li>
-<li>
-<p>É possível dentro do pascal instanciar uma classe javascript usando a palavra reservada <a href="https://gitlab.com/freepascal.org/fpc/pas2js/-/blob/main/demo/library/main.lpr">external</a>. <a href="https://wiki.freepascal.org/pas2js#Compiler">Veja mais...</a>;</p>
-</li>
-<li>
-<p>O pas2js permite criar módulos javascript usando a sintaxe library do pascal. <a href="https://wiki.freepascal.org/pas2js_modules">Veja mais...</a>;</p>
-</li>
-<li></li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
 </li>
@@ -138,7 +117,7 @@
 <p><span id="id_desvantagens"></span><strong>Desvantagens</strong>.</p>
 <ol>
 <li>
-<p>Ainda não tenho opinião formada para dar o meu parecer.</p>
+<p>Descreva um resumo do que preciso sacrificar para adquirir esse conhecimento .</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -151,51 +130,100 @@
 <p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
 <ol>
 <li>
-<p><span id=id_apiclient></span><strong>Exemplo demo/apiclient</strong></p>
+<p><span id=id_Tipos_de_Aplicacoes></span><strong>Tipo de aplicações  registrados no pacote lazweb</strong></p>
 <ol>
 <li>
-<p>O objetivo deste exemplo é demostrar a interação dos códigos escritos em pascal e o browser através do código javascript gerado pelo transpilador pas2js.</p>
-</li>
-<li>
-<p>Arquivos do projeto:</p>
+<p>Quando o pacote <a href="https://github.com/alrieckert/lazarus/tree/master/components/fpweb"><strong>LazWeb.lpk</strong></a> é instalado na IDE Lazarus, na opção <strong>Novo Projeto</strong> é disponibilizada os seguintes tipos de aplicações:</p>
 <ol>
-<li>
-<p><strong>apiclient.dpr</strong></p>
-<ol>
-<li>Arquivo de projeto principal com código pascal.</li>
+<li>fpCGI -&gt; <a href="https://en.wikipedia.org/wiki/Common_Gateway_Interface">CGI</a></li>
+<li>fpFCGI -&gt; <a href="https://en.wikipedia.org/wiki/FastCGI">FastCGI</a></li>
+<li>fpApache (requires httpd as well) -&gt; <a href="https://en.wikipedia.org/wiki/List_of_Apache_modules">Apache module</a></li>
+<li>fpHttpApp -&gt; <a href="https://en.wikipedia.org/wiki/Embedded_HTTP_server">embedded server</a></li>
+<li>microhttpapp -&gt; embedded server using <a href="https://www.gnu.org/software/libmicrohttpd/#:~:text=GNU%20libmicrohttpd%20is%20a%20small,is%20simple%2C%20expressive%20and%20fully">GNU libmicrohttp library</a>.</li>
+<li>fphttpsys -&gt; Windows system support for HTTP protocol. obs: Não achei documento deste assunto</li>
 </ol>
 </li>
 <li>
-<p><strong>Index.html</strong></p>
+<p>Para cada um desses projetos, um Módulo Web a seguir é criado por padrão:</p>
 <ol>
-<li>Arquivo html editado com editor de página html e o mesmo é obrigatório para poder executar o arquivo <strong>apiclient.js</strong> gerado pelo transpilador <strong>pas2js</strong>.</li>
+<li>
+<p><strong>WebDataModule (TFPWebModule)</strong></p>
+<ol>
+<li>Este é um módulo de manipulação de solicitação HTTP de uso geral, que pode ser usado para lidar com qualquer solicitação HTTP para qualquer tipo de dados.</li>
 </ol>
 </li>
 <li>
-<p><strong>bulma.min.css</strong></p>
+<p><strong>HTMLModule (TFPHTMLModule)</strong></p>
 <ol>
-<li>Arquivo com a formatação dos códigos .css criador com editor de .css;</li>
+<li>Este é um módulo específico de tratamento de requisições HTTP, voltado especialmente em produzir uma resposta HTML.</li>
+</ol>
+</li>
 </ol>
 </li>
 <li>
-<p><strong>apiclient.js</strong></p>
+<p>Para cada Módulo Web, os seguintes componentes são registrados:</p>
 <ol>
-<li>Arquivo javascript gerado pelo transpilador pas2js ele contém toda programação feita no arquivo <strong>apiclient.dpr</strong>.</li>
+<li>
+<p><strong>THTMLDatasetContentProducer</strong></p>
+<ol>
+<li>Cria uma tabela HTML baseada em um descendente TDataset;</li>
 </ol>
 </li>
 <li>
-<p><strong>apiclient.js.map</strong></p>
+<p><strong>THTMLSelectProducer</strong></p>
 <ol>
-<li>Um mapa de origem é usado para que possa depurar o código usando o browser. <a href="https://wiki.freepascal.org/pas2js">Veja mais...</a></li>
+<li>Cria um elemento &lt;SELECT&gt; baseado em um TStringList;</li>
 </ol>
 </li>
+<li>
+<p><strong>THTMLDatasetSelectProducer</strong></p>
+<ol>
+<li>Cria um elemento &lt;SELECT&gt; com base em um conjunto de dados (uma combinação de pesquisa);</li>
+</ol>
+</li>
+<li>
+<p><strong>THTMLEntityProducer</strong></p>
+<ol>
+<li>Cria um documento HTML ENTITY;</li>
+</ol>
+</li>
+<li>
+<p><strong>THTMLPageProducer</strong></p>
+<ol>
+<li>Cria uma página HTML usando um manipulador de eventos;</li>
+</ol>
+</li>
+<li>
+<p><strong>THTMLDataSetFormShowProducer</strong></p>
+<ol>
+<li>Cria um &lt;FORM&gt; que permite mostrar um único registro de um conjunto de dados;</li>
+</ol>
+</li>
+<li>
+<p><strong>THTMLDataSetFormEditProducer</strong></p>
+<ol>
+<li>Cria um &lt;FORM&gt; que permite editar um único registro de um conjunto de dados;</li>
+</ol>
+</li>
+<li>
+<p><strong>THTMLDataSetFormGridProducer</strong></p>
+<ol>
+<li>Cria uma série de formulários.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>O pacote <strong>lazwebextra</strong> registra adicionalmente os seguintes módulos da web e componentes:</p>
+<ol>
 <li>
 <p>..</p>
 </li>
+<li></li>
 </ol>
 </li>
 <li>
-<p><strong>Exemplo do Exemplo demo/apiclient</strong>.</p>
+<p><strong>Exemplo do Tipo de aplicações  registrados no pacote lazweb</strong>.</p>
 <ol>
 <li>
 <p>Descrição do exemplo</p>
@@ -206,7 +234,6 @@
 <li>
 <p><strong>Referências:</strong></p>
 <ol>
-<li><a href="https://code.visualstudio.com/docs/editor/debugging#_launch-configurations">Como usar o vscode para debugar o projeto</a></li>
 <li><a href="link">title</a></li>
 <li><a href="link">title</a></li>
 </ol>
@@ -471,7 +498,7 @@
 <p><a href="#1">Site oficial para produzir este documento</a></p>
 </li>
 <li>
-<p><a href="##">#</a></p>
+<p><a href="https://wiki.lazarus.freepascal.org/fpWeb_Tutorial">fpWeb Tutorial</a></p>
 </li>
 <li>
 <p><a href="##">#</a></p>
@@ -499,16 +526,39 @@
 <li>
 <p>dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
 <ul class="contains-task-list">
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Criar este documento baseado no o_que_e_pas2js.md ;</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Objetivos;</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Pre-requisitos</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Benefícios</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico desvantagens</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Exemplos</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Criar este documento baseado no fcl_web.md ;</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Objetivos;</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Pre-requisitos</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Benefícios</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico desvantagens</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Exemplos</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
 </ul>
 </li>
 </ol>

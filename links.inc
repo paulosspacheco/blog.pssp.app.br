@@ -178,6 +178,7 @@
 </div> </ul> </li>
 <li><span class="rootTree"><b>FINDTEXTINDOCUMENT</b></span> <ul> <div class="children">
 <li> <a href="/programacao/html/exemplos/FindTextInDocument/index.html" target="">FindTextInDocument  ➚ </a></li>
+<li> <a href="/programacao/html/exemplos/FindTextInDocument/README.html" target="">FindTextInDocument  ➚ </a></li>
 </div> </ul> </li>
 <li><span class="rootTree"><b>MENU</b></span> <ul> <div class="children">
 <li> <a href="/programacao/html/exemplos/menu/menu_topdown_01.html" target="">Exemplo 01 de menu topdown  ➚ </a></li>
@@ -203,6 +204,9 @@
 <li> <a href="/programacao/html/js/arrow_functions.html" target="">Modelo de documento markdown   ➚ </a></li>
 <li> <a href="/programacao/html/js/function_async.html" target="">JAVASCRIPT - Funções assíncronas  ➚ </a></li>
 <li> <a href="/programacao/html/js/index.html" target="">Linguagem javascript  ➚ </a></li>
+<li><span class="rootTree"><b>JEKYLL-TIPUE-SEARCH-MASTER</b></span> <ul> <div class="children">
+<li> <a href="/programacao/html/js/jekyll-tipue-search-master/README.html" target="">Jekyll Tipue Search  ➚ </a></li>
+</div> </ul> </li>
 <li><span class="rootTree"><b>STORK</b></span> <ul> <div class="children">
 <li> <a href="/programacao/html/js/stork/index.html" target="">Exmple do stork app - Federalist Search  ➚ </a></li>
 <li> <a href="/programacao/html/js/stork/o_que_e_stork.html" target="">O que é pacote de pesquisa de site stork   ➚ </a></li>
@@ -225,9 +229,6 @@
 <li><span class="rootTree"><b>MARKDOWN</b></span> <ul> <div class="children">
 <li> <a href="/programacao/html/markdown/dillinger.html" target="">Dillinger  ➚ </a></li>
 <li> <a href="/programacao/html/markdown/editores_markdown.html" target="">Editores que reconhecem a linguagem Markdown   ➚ </a></li>
-<li><span class="rootTree"><b>GRAPHVIZ</b></span> <ul> <div class="children">
-<li> <a href="/programacao/html/markdown/graphviz/teste_diagrama.html" target="">teste diagrama  ➚ </a></li>
-</div> </ul> </li>
 <li> <a href="/programacao/html/markdown/gratidao_x_ingratidão.html" target="">Gratidão X Ingratidão  ➚ </a></li>
 <li> <a href="/programacao/html/markdown/indexcomprimido.html" target="">Linguagem markdown  ➚ </a></li>
 <li> <a href="/programacao/html/markdown/index.html" target="">Linguagem markdown  ➚ </a></li>
@@ -373,10 +374,17 @@
 <li> <a href="/programacao/pascal/lazarus/lamw/Instalar_lamw_manager.html" target="">Como instalar LAMW Manager no linux  ➚ </a></li>
 <li> <a href="/programacao/pascal/lazarus/lamw/mensagens_ao_instalar_lamw4linux.html" target="">Copying to a temporary location  ➚ </a></li>
 </div> </ul> </li>
+<li> <a href="/programacao/pascal/lazarus/O_que_e_fcl_web.html" target="">O que é fcl_web   ➚ </a></li>
+<li> <a href="/programacao/pascal/lazarus/o_que_e_lazarus.html" target="">O que é IDE Lazarus   ➚ </a></li>
 <li><span class="rootTree"><b>PAS2JS</b></span> <ul> <div class="children">
 <li> <a href="/programacao/pascal/lazarus/pas2js/o_que_e_pas2js.html" target="">O que é o projeto pas2js   ➚ </a></li>
 </div> </ul> </li>
+<li><span class="rootTree"><b>STORK</b></span> <ul> <div class="children">
+<li> <a href="/programacao/pascal/lazarus/stork/pasdoc.html" target="">Comando para gera documento de todos os arquivo .pas da pasta ./units  ➚ </a></li>
 </div> </ul> </li>
+</div> </ul> </li>
+<li> <a href="/programacao/pascal/o_que_e_pascal.html" target="">O que é Pascal   ➚ </a></li>
+<li> <a href="/programacao/pascal/o_que_lamw_manager.html" target="">O que é lamw Manager  ➚ </a></li>
 <li> <a href="/programacao/pascal/teste.html" target="">teste.md  ➚ </a></li>
 </div> </ul> </li>
 <li><span class="rootTree"><b>PYTHON</b></span> <ul> <div class="children">

@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # Comando para gera documento de todos os arquivo .pas da pasta ./units
 
 - O documento deve ter a marca //: ou {: ou (*: para que o comentário entre no documento final.
@@ -14,3 +22,7 @@
        pasdoc --use-tipue-search --verbosity=6 --auto-link --language=br.utf8 --marker=: --write-uses-list --staronly --markdown --output=./doc  `find ./ -iname '*.pas'`
        
     ```
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

@@ -1,4 +1,12 @@
-#### Teoria sobre o Framework nodejs <a href="teoria_node_js.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
+# Teoria sobre o Framework nodejs <a href="teoria_node_js.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
 
 1. **OBJETIVOS**
 
@@ -358,3 +366,7 @@
 - [x] Estudar a opção que permite alterar o programa nodejs sem tira-lo do ar.
   - O programa nodemon reinicia o nodejs toda vês que se grava o arquivo caso o mesmo foi alterado.
   - Não uso porque o debug não funciona.
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")

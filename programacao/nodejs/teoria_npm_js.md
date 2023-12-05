@@ -1,4 +1,12 @@
-#### **Teoria sobre o Framework npm** <a href="teoria_npm_js.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
+# **Teoria sobre o Framework npm** <a href="teoria_npm_js.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a>
 
 1. **INDEX**
    1. Objetivo do pacote npm
@@ -73,3 +81,7 @@
          - [ ] Reorganizar o layout deste documento para que tenha INDEX E CONTEÚDO.
          - [ ] Escrever documento: guia completo do package.json do Node.js
          - [ ] Escrever exemplo de como instalar npm
+
+</main>
+
+[🔝🔝](#topo "Retorna ao topo")
