@@ -418,7 +418,4 @@
 <li> <a href="/templates/markdown/modelo03.html" target="">Modelo 03 de documento markdown   ➚ </a></li>
 </div> </ul> </li>
 </div> </ul> </li>
-<li><span class="rootTree"><b>TEMP</b></span> <ul> <div class="children">
-<li> <a href="/temp/Untitl.html" target="">Menu em CSS: Menu dropdown horizontal com HTML5 e CSS3  ➚ </a></li>
-</div> </ul> </li>
 <li> <a href="/tipue_results.html" target="">Pesquisa palavras ou frase no site  ➚ </a></li>

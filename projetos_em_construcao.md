@@ -1,6 +1,4 @@
-<div class="header" id="myHeader">
-  <div class="navbar" w3-include-html="/menu.inc"> </div>
-</div>
+<div class="header" id="myHeader"> <div class="navbar" w3-include-html="/menu.inc"></div></div>
 <div class="title"><script> document.write(document.title);</script></div>  
 <main>
 <!-- markdownlint-disable-next-line -->
@@ -8,20 +6,12 @@
 
 # Projetos em construção<a href="projetos_em_construcao.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
-<!--TODO: em: A fazer até 13/07/2023 -->
+<!--TODO: em: A fazer até 05/12/2023 -->
 <!-- markdownlint-disable-next-line -->
-<fieldset> <legend> <b>A fazer até 15/07/2023</b></legend>
+<fieldset> <legend> <b>A fazer até 05/12/2023</b></legend>
 
-- [ ] Implementar pesquisa em todo conteúdo do site usando [projeto stork](https://stork-search.net/).
-  - [x] [Criar página o que é stork](./programacao/html/js/stork/o_que_e_stork.html)
-  - [ ] Criar template com o pacote ejs  para criar o arquivo de configuração do stork pacote.
-
-- Criar página o que é [Eleventy](https://www.11ty.dev/docs/)
-
-- [ ] [Converter a documentação oficial do lamw de txt para markdown e html](./programacao/pascal/lazarus/lamw/doc_oficial/index.html)
-- [ ] Pensar como uma página criada em markdown pode usar o arquivo [_footer.inc_](./js/footer.inc)
-- [ ] Documentar de como criar aplicação web usando componente _fcl-web_
-- [ ] [Documentar como instalar e configurar LamW](./programacao/pascal/lazarus/lamw/instalar_configurar_lamw.html)
+- [ ] Deixar mais discreto o rodapé das páginas do site www.pssp.app.br
+- [ ] Documentar como criar aplicação web usando componente _fcl-web_
 
 </fieldset>
 
@@ -46,6 +36,4 @@
 
 </main>
 
-<!-- markdownlint-disable-next-line -->
-<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 [🔝🔝](#topo "Retorna ao topo")
