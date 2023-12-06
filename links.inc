@@ -407,7 +407,7 @@
 </div> </ul> </li>
 <li><span class="rootTree"><b>TEMPLATES</b></span> <ul> <div class="children">
 <li><span class="rootTree"><b>ESTUDO</b></span> <ul> <div class="children">
-<li> <a href="/templates/estudo/functionseta.html" target="">Minhas anotações que fiz ao estudar programação da linguagem css  ➚ </a></li>
+<li> <a href="/templates/estudo/functionseta.html" target="">Exemplo da uso da função seta (==>) em javascript  ➚ </a></li>
 <li> <a href="/templates/estudo/tgeneric.html" target="">Minhas anotações que fiz ao estudar programação da linguagem css  ➚ </a></li>
 </div> </ul> </li>
 <li><span class="rootTree"><b>MARKDOWN</b></span> <ul> <div class="children">

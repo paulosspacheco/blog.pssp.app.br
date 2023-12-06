@@ -1,68 +1,58 @@
 <!--  Exemplo de uso da class tgeneric.js-->
 <!DOCTYPE html><html lang="pt-BR">
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-    
-    
-    <title>Minhas anotações que fiz ao estudar programação da linguagem css</title>
-  
-  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="paulosspacheco">
-    <meta name="description" content="Um código html é composto de 3 linguagens quais sejam: HTML, css e javascript">
-    <meta name="keywords" content="css,html,javascript">
-  
-    
-    <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
-    <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
-
-    <script type="application/x-javascript" src="/js/generic.js"></script>
-    <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-
-    <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
-    <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
-    <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
-
-
-</head>
-
-<bodY>
-
-  <div class="header" id="myHeader">
-    <div class="navbar" w3-include-html="/menu.inc"> </div>
-  </div>
-  <div class="title"><script> document.write(document.title);</script></div>  
-  <main>
-  
-
-  <pre>
-    <script>
-        var a = [
-        "Hydrogen",
-        "Helium",
-        "Lithium",
-        "Beryl­lium"
-      ];
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
       
-     document.write('<br>');
-      var a2 = a.map(function(s){
-                                  document.write('linha <br>');
-                                  return s.length 
-                                }
-                    );
-      document.write('Tamanhos das strings em a2: '+a2+ '<br>');
-
-      var a3 = a.map( s => (s.length) );
+        
+        <title>Exemplo da uso da função seta (==>) em javascript </title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="paulosspacheco">
+        <meta name="description" content="Um código html é composto de 3 linguagens quais sejam: HTML, css e javascript">
+        <meta name="keywords" content="css,html,javascript">
       
-      document.write('<br>');
+        
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
 
-      document.write('Tamanhos das strings em a3: '+a3+ '<br>');
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
 
-    </script>
-       
-</pre>       
+    </head>
 
-</main>
+  <bodY>
 
- </body></html>
+    <div class="header" id="myHeader"> <div class="navbar" w3-include-html="/menu.inc"> </div> </div>
+    <div class="title"><script> document.write(document.title);</script></div>  
+    <main>
+      <pre>
+        <script>
+          var a = [  "Paulo",   "Sérgio",    "da",   "Silva",   "Pacheco"];
+          document.write('Matrix a = '+a+'<br>');
+          document.write('===========================================================<br>');          
+         
+          document.write('Calculando tanho de cada string da matriz a: <br>');
+          document.write('-----------------------------------------------------------<br>');          
+          var a2 = a.map(function(s){ return '<br>'+s+' = '+s.length });
+          document.write('Tamanhos das strings em a2: '+a2+ '<br>');
+
+          document.write('<br>');
+
+          document.write('Mesma tarefa acima, porém com o uso da função seta (==>): <br>');
+          document.write('-----------------------------------------------------------<br>');
+          var a3 = a.map( s => ('<br>'+s+' = '+s.length) );          
+          
+          document.write('Tamanhos das strings em a3 usando a função ==>: '+a3+ '<br>');
+
+
+        </script>       
+      </pre>       
+    </main>
+
+  </body>
+</html>
