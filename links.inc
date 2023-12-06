@@ -409,8 +409,6 @@
 <li><span class="rootTree"><b>ESTUDO</b></span> <ul> <div class="children">
 <li> <a href="/templates/estudo/functionseta.html" target="">Minhas anotações que fiz ao estudar programação da linguagem css  ➚ </a></li>
 <li> <a href="/templates/estudo/tgeneric.html" target="">Minhas anotações que fiz ao estudar programação da linguagem css  ➚ </a></li>
-<li> <a href="/templates/estudo/treeview_xhtml_ol.html" target="">Minhas anotações que fiz ao estudar programação da linguagem css  ➚ </a></li>
-<li> <a href="/templates/estudo/treeview_xhtml_ul.html" target="">Minhas anotações que fiz ao estudar programação da linguagem css  ➚ </a></li>
 </div> </ul> </li>
 <li><span class="rootTree"><b>MARKDOWN</b></span> <ul> <div class="children">
 <li> <a href="/templates/markdown/modelo01.html" target="">MODELO DE DOCUMENTO MARKDOWN DB   ➚ </a></li>

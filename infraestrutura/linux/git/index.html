@@ -14,15 +14,14 @@
 
 
     <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
-    <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaulttheme.css" rel="stylesheet" />                                                                          
   
-    <script type="application/x-javascript" src="/js/generic.js"></script>
-    <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        toggleTree();
-      });
-    </script>
+  <!-- Scripts da página -->
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function() { includeHTML(); });</script>
+  <script>document.addEventListener("DOMContentLoaded", function() { FixHeader(window, "myHeader");});</script>
+  <script>document.addEventListener("DOMContentLoaded", function() { toggleTree(); });</script>     
 
   </head>
   <body onmouseover="generic.display()">
@@ -356,15 +355,18 @@
           width="100%"
         ></iframe>
       </div>
+
+    </main>
+
+    <!-- RODAPÉ DA PÁGINA  -->
+    <div class="footer">   <script>   PrintFooter(document);   </script> </div>
+
     </div>
 
     
     
-    </main>
 
 
-    <!-- RODAPÉ DA PÁGINA  -->
-    <div class="footer">   <script>   PrintFooter(document);   </script> </div>
 
    </body>
 </html>
