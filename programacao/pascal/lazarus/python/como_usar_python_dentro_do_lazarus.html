@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Como usar python dentro do Lazarus &lt;a href&equals;&quot;como&lowbar;usar&lowbar;python&lowbar;dentro&lowbar;do&lowbar;lazarus&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="como-usar-python-dentro-do-lazarus----">Como usar python dentro do Lazarus <a href="como_usar_python_dentro_do_lazarus.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+<h2 id="1-index">1. INDEX</h2>
+<hr>
+<ol>
+<li>
+<p><a href="#id_resumo">Resumo do conteúdo</a></p>
+</li>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+<li><a href="#id_beneficios">Benefícios.</a></li>
+<li><a href="#id_desvantagens">Desvantagens.</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a></p>
+<ol>
+<li><a href="#id_Instalar_python4Laz">Instalar componente python4Laz</a></li>
+<li><a href="#id_Exemplo_captura_saida_python">Exemplo de como executar um código python e capturar a saída do python para ser visualizada no Lazarus.</a></li>
+<li><a href="#id_Exemplo_modo_console">Exemplo de uso do python no modo console demonstra como informar o nome da lib python no sistema</a></li>
+<li><a href="#id_assunto04">Componentes  Python4Laz usados para executar código python e capturar o resultado</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_referencias"><strong>Referências globais.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo">2. CONTEÚDO</h2>
+<hr>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li>
+<p><span id="id_resumo"><span><strong>Resumo do conteúdo:</strong></p>
+<ol>
+<li>Este documento descreve como instalar o pacote python4Lazarus, o objetivo desta ação, os benefícios e os malefícios de se usar python com Lazarus, bem como mostra alguns exemplos de seu uso.</li>
+</ol>
+</li>
+<li>
+<p><strong>Introdução</strong></p>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li>
+<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+<ol>
+<li>
+<p>O componente <em>python4laz</em> é um recurso que permite que o se possa aproveita todos os projetos escrito em python no lazarus, tais como Chatgpt, aprendizado de máquina, opencv etc... visto que o lazarus tem recursos RAD que facilita e muito o desenvolvimento de um software.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
+<ol>
+<li>
+<p>O python deve estar instalado antes de ser instalar o python4laz;</p>
+</li>
+<li>
+<p>Os projetos que se deseja usar no python, também deve ser instalados;</p>
+</li>
+<li>
+<p>Lazarus deve ser instalado com fpcupdeluxe;</p>
+</li>
+<li>
+<p>O pacote python4laz deve ser instalado com fpcupdeluxe.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
+<ol>
+<li>
+<p>Se tornar mais produtivo aproveitando tudo que existe hoje para python e tudo que existe el freepascal, bem como ter domínio do projeto através dps componentes TDataModule e TForm do Lazarus.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_desvantagens"></span><strong>Desvantagens</strong>.</p>
+<ol>
+<li>
+<p>O programas escritos em python são mais lentos que freepascal por ser uma linguagem interpretada;</p>
+</li>
+<li>
+<p>Os usuários do produto pode ser deparar com erros básico de sintaxe;</p>
+</li>
+<li>
+<p>Qualquer um tem acesso ao código fonte do python.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
+<ol>
+<li>
+<p><span id=id_Instalar_python4Laz></span><strong>Instalar componente python4Laz</strong></p>
+<ol>
+<li>Para se instalar o componente <em>Python4Laz</em> vamos utilizar o projeto <a href="https://gladiston.net.br/programacao/lazarus-ide/usando-fpcupdeluge-nivel-medio/">fpcupdeluxe</a> opção <em>/modules/python4laz</em>.</li>
+<li>O projeto é instalado na pasta ccr onde está instalado o lazarus e o free pascal</li>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+<p><span id=id_Exemplo_captura_saida_python></span></p>
+</li>
+<li>
+<p><strong>Exemplo de como executar um código python e capturar a saída do python para ser visualizada no Lazarus..</strong></p>
+<ol>
+<li>
+<p>Ao instalar o pacote <em>Python4Laz</em>, o sistema copia para a pasta <em>./ccr/python4laz/demos_lazarus/Python_Console</em> um exemplo de como usar o projeto. O arquivo <em>formmain.pas</em> possui uma contante de nome <em>cPyLibraryLinux</em> com o nome da <em>lib</em> python instalada no sistema; a mesma deve conter o nome da <em>lib</em>.</p>
+</li>
+<li>
+<p>Neste exemplo o nome da dll é informado na constante <em>cPyLibraryLinux</em>.</p>
+</li>
+<li>
+<p>O python instalado no Linux mint 21.2 é:</p>
+<ol>
+<li>
+<p>O nome do executável python instado:</p>
+<pre><code class="hljs language-bash">
+  <span class="hljs-comment"># Nome do executável.</span>
+  /usr/bin/python3
+
+</code></pre>
+</li>
+<li>
+<p>O nome da lib python instalado:</p>
+<pre><code class="hljs language-pascal">
+  <span class="hljs-keyword">Const</span>
+    cPyLibraryLinux: <span class="hljs-keyword">string</span> = <span class="hljs-string">'libpython3.10.so.1.0'</span>; <span class="hljs-comment">//Linux Mint 21.2 Cinnamon </span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Teste para saber se o python está configurado.</strong>.</p>
+<ol>
+<li>
+<p>Executar o projeto <em>demo</em> da pasta <em>./ccr/python4laz/demos_lazarus/Python_Console</em></p>
+</li>
+<li>
+<p>No rodapé formulário executado digite o comado python a seguir:</p>
+<pre><code class="hljs language-python">
+  print(<span class="hljs-string">"Alo mundo"</span>);
+
+</code></pre>
+</li>
+<li>
+<p><strong>Nota</strong></p>
+<ol>
+<li>Se ao executar o texto alo mundo for impresso é porque o sistema está configurado.</li>
+<li>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Exemplo_modo_console></span><strong>Exemplo de uso do python no modo console demonstra como informar o nome da lib python no sistema</strong></p>
+<ol>
+<li>
+<p>Ao instalar o pacote <em>Python4Laz</em>, o sistema copia para a pasta <em>./ccr/python4laz/demos_lazarus/Python_Thread</em> um exemplo de como executar várias tarefas python ao mesmo tempo.</p>
+</li>
+<li>
+<p>Para que o programa funcione é necessário selecionar a <em>unit Testthds</em> e alterar as propriedades abaixo:</p>
+<pre><code class="hljs language-pascal">
+  TForm1.PythonEngine1.DllName := <span class="hljs-string">'libpython3.10.so.1.0'</span>;
+  TForm1.PythonEngine1.DllPath := <span class="hljs-string">'/lib/x86_64-linux-gnu'</span>;
+
+</code></pre>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_assunto04></span><strong>Componentes <em>Python4Laz</em> usados para executar código python e capturar o resultado</strong></p>
+<ol>
+<li>
+<p>A unit <em>PythonEngine</em> contém o componente <em>PythonEngine</em> obrigatório no projeto python no Lazarus. O mesmo é usado para conectar-se a lib python instalada no sistema.</p>
+<ol>
+<li>
+<p>Exemplo de uso:</p>
+<pre><code class="hljs language-pascal">
+   <span class="hljs-keyword">const</span>
+      cPyLibraryWindows: <span class="hljs-keyword">string</span> = <span class="hljs-string">'python37.dll'</span>;
+      <span class="hljs-comment">//  cPyLibraryLinux: string = 'libpython3.8.so.1.0'; //default in Ubuntu 20.x</span>
+      cPyLibraryLinux: <span class="hljs-keyword">string</span> = <span class="hljs-string">'libpython3.10.so.1.0'</span>; <span class="hljs-comment">//Linux Mint 21.2 Cinnamon</span>
+      cPyLibraryMac: <span class="hljs-keyword">string</span> = <span class="hljs-string">'/Library/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7.dylib'</span>;
+      cPyZipWindows: <span class="hljs-keyword">string</span> = <span class="hljs-string">'python37.zip'</span>; 
+   
+   <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">TfmMain</span>.<span class="hljs-title">DoPy_InitEngine</span>;</span>
+      <span class="hljs-keyword">var</span>
+      S: <span class="hljs-keyword">string</span>;
+   <span class="hljs-keyword">begin</span>
+      S:=
+         <span class="hljs-meta">{$ifdef windows}</span> cPyLibraryWindows <span class="hljs-meta">{$endif}</span>
+         <span class="hljs-meta">{$ifdef linux}</span> cPyLibraryLinux <span class="hljs-meta">{$endif}</span>
+         <span class="hljs-meta">{$ifdef darwin}</span> cPyLibraryMac <span class="hljs-meta">{$endif}</span> ;
+
+      PythonEngine.DllPath:= ExtractFileDir(S);
+      PythonEngine.DllName:= ExtractFileName(S);
+      PythonEngine.LoadDll;
+   <span class="hljs-keyword">end</span>;                
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>..</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_referencias></span><strong>REFERÊNCIAS GLOBAIS</strong></p>
+<ol>
+<li><a href="https://www.python.org/">Site oficial para produzir este documento</a></li>
+<li><a href="https://www.python.org/downloads/">Download do python</a></li>
+<li><a href="https://pt.wikipedia.org/wiki/CPython#:~:text=CPython%20%C3%A9%20a%20implementa%C3%A7%C3%A3o%20principal,outros%20desenvolvedores%20espalhados%20pelo%20mundo.&amp;text=CPython%20%C3%A9%20um%20interpretador%20de%20bytecode.">O que é cpython</a></li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<ol>
+<li>
+<!--FIXME: Falta fazer os item abaixo: -->
+<ul class="contains-task-list">
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar este documento baseado no como_usar_python_dentro_do_lazarus.md ;</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Objetivos;</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Pre-requisitos</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Benefícios</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico desvantagens</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo</p>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar documento de como instalar o pacote python4laz;</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar documento de como configurar o ambiente python no Lazarus.</li>
+</ul>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Exemplos</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Referências</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Atualizar o histórico deste documento.</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>
