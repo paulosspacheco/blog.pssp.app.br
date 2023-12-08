@@ -1,7 +1,7 @@
 {
   "name": "blog.pssp.app.br",
   "version": "0.1.0",
-  "description": "Documentação de tudo que estudei deste o ano de 2023.",
+  "description": "Documentação de tudo que estudei deste o ano de 2018.",
   "main": "index.html",
   "directories": {
     "test": "test"
