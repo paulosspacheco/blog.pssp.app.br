@@ -2,7 +2,7 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Bancos de dados do projeto</title>
+        <title>Script do Data Base</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
@@ -28,101 +28,7 @@
 <main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<!-- <h1 id="bancos-de-dados-do-projeto">Bancos de dados do projeto</h1> -->
-<h2 id="requisitos-das-tabelas">Requisitos das tabelas</h2>
-<ol>
-<li>
-<p>Medicos</p>
-<ol>
-<li>Id</li>
-<li>Nome</li>
-<li>Telefone</li>
-<li>Telefone_da_secretaria</li>
-<li>Login</li>
-<li>Senha</li>
-</ol>
-</li>
-<li>
-<p>Serviço_de_agendas</p>
-<ol>
-<li>id</li>
-<li>Nome</li>
-<li>Login</li>
-<li>Senha</li>
-</ol>
-</li>
-<li>
-<p>Convênios</p>
-<ol>
-<li>Id</li>
-<li>Nome</li>
-<li>Login</li>
-<li>Senha</li>
-</ol>
-</li>
-<li>
-<p>clientes</p>
-<ol>
-<li>Id;</li>
-<li>Nome;</li>
-<li>Telefone_WhatsApp;</li>
-<li>e-mail</li>
-<li>Login</li>
-<li>senha</li>
-<li>Id_Convenio</li>
-</ol>
-</li>
-<li>
-<p>Integração</p>
-<ol>
-<li>id</li>
-<li>endereço_do_site</li>
-<li>login</li>
-<li>senha</li>
-<li>status // Usado para saber o se o site está conectado</li>
-</ol>
-</li>
-<li>
-<p>Expediente_do_medico_data</p>
-<ol>
-<li>id</li>
-<li>Data</li>
-</ol>
-</li>
-<li>
-<p>Expediente_do_medico_horas</p>
-<ol>
-<li>Id_Expediente_do_medico_Data</li>
-<li>Hora_inicial</li>
-<li>Hora_final</li>
-</ol>
-</li>
-<li>
-<p>Disponibilidade_do_Paciente</p>
-<ol>
-<li>Id</li>
-<li>Data</li>
-<li>Hora</li>
-</ol>
-</li>
-<li>
-<p>Agenda</p>
-<ol>
-<li>Id</li>
-<li>Id_Medico</li>
-<li>Id_Cliente</li>
-<li>Data</li>
-<li>Hora</li>
-<li>Id_Convenio</li>
-<li>Natureza_da_Interação</li>
-<li>Observações</li>
-</ol>
-</li>
-</ol>
-<h2 id="script-sql-para-criar-as-tabelas-com-base-nos-requisitos-fornecidos">Script SQL para criar as tabelas com base nos requisitos fornecidos:</h2>
-<ol>
-<li>
-<p>Script sql</p>
+<!-- <h1 id="script-do-data-base">Script do Data Base</h1> -->
 <pre><code class="hljs language-sql">
     <span class="hljs-comment">-- Tabela Medicos</span>
     <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> Medicos (
@@ -203,8 +109,6 @@
     );
 
 </code></pre>
-</li>
-</ol>
 <h2 id="programa-básico-em-python-para-realizar-operações-crud-create-read-update-delete-na-tabela-de-médicos">Programa básico em Python para realizar operações CRUD (Create, Read, Update, Delete) na tabela de Médicos</h2>
 <ol>
 <li>
