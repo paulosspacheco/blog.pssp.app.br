@@ -6,7 +6,7 @@
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
-# Programa básico em Python para realizar operações CRUD (Create, Read, Update, Delete) na tabela de Médicos
+# Cadastro de Clientes em python
 
 1. Instalação de pacotes:
 
