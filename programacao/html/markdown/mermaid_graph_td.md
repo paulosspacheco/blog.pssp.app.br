@@ -66,6 +66,17 @@ Esse pacote mermaid é completo porém ocupa quase 1 mg de código
 
 </div></code></pre>
 
+<pre><code class="language-mermaid"><div class="mermaid">
+
+flowchart LR
+
+A[Hard] -->|Text| B(Round)
+B --> C{Decision}
+C -->|One| D[Result 1]
+C -->|Two| E[Result 2]
+
+</div></code></pre>
+
 ## Referências
 
 1. [Tutoriais](https://mermaid.js.org/config/Tutorials.html)
@@ -74,6 +85,7 @@ Esse pacote mermaid é completo porém ocupa quase 1 mg de código
 4. [How to add Mermaid (Markdown) Plugin in Visual Studio Code](https://www.youtube.com/watch?v=p4lk9o5WDeY)
 5. [Como criar diagramas como código com Mermaid, GitHub e Visual Studio Code](https://www.freecodecamp.org/news/diagrams-as-code-with-mermaid-github-and-vs-code/)
 6. [Crie diagramas para transmitir informações sobre gráficos](https://docs.github.com/pt/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams)
+7. [flowchart](https://mermaid.js.org/syntax/flowchart.html)
 
 </main>
 
