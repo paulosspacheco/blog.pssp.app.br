@@ -18,7 +18,6 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
- 
     </head>
     <body class="vscode-body vscode-dark">
         <div class="header" id="myHeader">
@@ -36,6 +35,14 @@ Esse pacote mermaid é completo porém ocupa quase 1 mg de código
 <ul>
 <li>Este código implementa gráficos com a biblioteca <em>&quot;/js/mermaid.min.js&quot;</em>.</li>
 <li>Este arquivo não declara a <em>sintaxe markdown</em> para mermaid porque a instalação da extensão <em>Markdown Preview Mermaid Support</em> faz com que toda vêz que se salva um documento markdown, a biblioteca é salva, mesmo não precisando dela e o código é muito grande, por isso estou usando o código <em>mermaid.min.js</em> por ser pequeno e prática.</li>
+</ul>
+<h2 id="as-possíveis-orientações-do-fluxograma-são">As possíveis orientações do Fluxograma são:</h2>
+<ul>
+<li>TB - De cima para baixo</li>
+<li>TD - De cima para baixo/igual a de cima para baixo</li>
+<li>BT - De baixo para cima</li>
+<li>RL – Da direita para a esquerda</li>
+<li>LR - Da esquerda para a direita</li>
 </ul>
 <h2 id="exemplos-graph-td">Exemplos graph TD</h2>
 <pre><code class="hljs language-mermaid">
@@ -85,6 +92,105 @@ A[Hard] -->|Text| B(Round)
 B --> C{Decision}
 C -->|One| D[Result 1]
 C -->|Two| E[Result 2]
+
+</div></code></pre>
+<h2 id="exemplo-listas-e-markdown">Exemplo listas e markdown</h2>
+<pre><code class="language-mermaid"><div class="mermaid">
+
+flowchart TD
+    %%{init: {"flowchart": {"htmlLabels": false}} }%%
+
+      1["`
+      **1. Operadores**
+         id
+         Nome
+         Telefone`"]
+
+      2["`
+      **2. Hospitais**
+            id
+            Nome
+            Telefone`"]
+
+      3["`
+      **3. Natureza da interação**
+            id
+            nome `"]
+
+      4["`
+      **4. Médicos**
+           Id
+           Id_Operadores
+           Nome
+           Telefone
+           Telefone_da_secretaria
+           Login
+           Senha`"]
+
+      5["`
+      **5. Serviço_de_agendas**
+           id
+           Nome
+           Login
+           Senha `"]
+
+      6["`
+      **6. Convênios**
+           Id
+           Nome
+           Login
+           Senha `"]
+
+      7["`
+      **7. clientes**
+           Id;
+           Nome;
+           Telefone_WhatsApp;
+           e-mail
+           Login
+           senha
+           Id_Convenio
+           Data_disponível
+           Hora_disponível
+           `"]
+
+      8["`
+      **8. Integração**
+           id
+           endereço_do_site
+           login
+           senha
+           status `"]
+      9["`
+      **9. Expediente_do_medico_data**
+           id_medico
+           Data`"]
+
+      10["`
+      **10. Expediente_do_medico_horas**
+            Id_Medico
+            Data
+            Hora_inicial
+            Hora_final`"]
+
+      11["`
+      **11. Agenda**
+            Id
+            Id_Medico
+            Id_Cliente
+            Data
+            Hora
+            Id_Convenio
+            Id_Natureza_da_Interação
+            Observações`"]
+
+1 --> |n-1| 4
+4 --> |n-1| 9
+4 --> |n-1| 10
+4 --> |n-1| 11
+7 --> |n-1| 11
+6 --> |n-1| 11
+3 --> |n-1| 11
 
 </div></code></pre>
 <h2 id="referências">Referências</h2>

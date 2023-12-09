@@ -18,6 +18,14 @@ Esse pacote mermaid é completo porém ocupa quase 1 mg de código
 - Este código implementa gráficos com a biblioteca _"/js/mermaid.min.js"_.
 - Este arquivo não declara a _sintaxe markdown_ para mermaid porque a instalação da extensão _Markdown Preview Mermaid Support_ faz com que toda vêz que se salva um documento markdown, a biblioteca é salva, mesmo não precisando dela e o código é muito grande, por isso estou usando o código _mermaid.min.js_ por ser pequeno e prática.
 
+## As possíveis orientações do Fluxograma são:
+
+- TB - De cima para baixo
+- TD - De cima para baixo/igual a de cima para baixo
+- BT - De baixo para cima
+- RL – Da direita para a esquerda
+- LR - Da esquerda para a direita
+
 ## Exemplos graph TD
 
   ```mermaid
@@ -76,6 +84,108 @@ C -->|One| D[Result 1]
 C -->|Two| E[Result 2]
 
 </div></code></pre>
+
+## Exemplo listas e markdown
+
+<pre><code class="language-mermaid"><div class="mermaid">
+
+flowchart TD
+    %%{init: {"flowchart": {"htmlLabels": false}} }%%
+
+      1["`
+      **1. Operadores**
+         id
+         Nome
+         Telefone`"]
+
+      2["`
+      **2. Hospitais**
+            id
+            Nome
+            Telefone`"]
+
+      3["`
+      **3. Natureza da interação**
+            id
+            nome `"]
+
+      4["`
+      **4. Médicos**
+           Id
+           Id_Operadores
+           Nome
+           Telefone
+           Telefone_da_secretaria
+           Login
+           Senha`"]
+
+      5["`
+      **5. Serviço_de_agendas**
+           id
+           Nome
+           Login
+           Senha `"]
+
+      6["`
+      **6. Convênios**
+           Id
+           Nome
+           Login
+           Senha `"]
+
+      7["`
+      **7. clientes**
+           Id;
+           Nome;
+           Telefone_WhatsApp;
+           e-mail
+           Login
+           senha
+           Id_Convenio
+           Data_disponível
+           Hora_disponível
+           `"]
+
+      8["`
+      **8. Integração**
+           id
+           endereço_do_site
+           login
+           senha
+           status `"]
+      9["`
+      **9. Expediente_do_medico_data**
+           id_medico
+           Data`"]
+
+      10["`
+      **10. Expediente_do_medico_horas**
+            Id_Medico
+            Data
+            Hora_inicial
+            Hora_final`"]
+
+      11["`
+      **11. Agenda**
+            Id
+            Id_Medico
+            Id_Cliente
+            Data
+            Hora
+            Id_Convenio
+            Id_Natureza_da_Interação
+            Observações`"]
+
+1 --> |n-1| 4
+4 --> |n-1| 9
+4 --> |n-1| 10
+4 --> |n-1| 11
+7 --> |n-1| 11
+6 --> |n-1| 11
+3 --> |n-1| 11
+
+</div></code></pre>
+
 
 ## Referências
 
