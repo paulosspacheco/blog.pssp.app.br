@@ -3,7 +3,131 @@
     <head>
         <meta charset="UTF-8">
         <title>Banco de dados do projeto</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -18,6 +142,8 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
+   
+</style>
     </head>
     <body class="vscode-body vscode-dark">
         <div class="header" id="myHeader">
@@ -28,9 +154,12 @@
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 <script type="application/x-javascript" src="/js/mermaid.min.js"></script>
-<!-- <h1 id="banco-de-dados-do-projeto">Banco de dados do projeto</h1> -->
+<h1 id="banco-de-dados-do-projeto">Banco de dados do projeto</h1>
 <h2 id="cadastros-do-projeto">Cadastros do projeto</h2>
 <ol>
+<li><a href="./operadores.html">Operadores</a></li>
+<li><a href="./hospitais.html">hospitais</a>.</li>
+<li><a href="./natureza_da_iinteracao.html">Natureza da interação</a></li>
 <li><a href="./medicos.html">Medicos</a></li>
 <li><a href="./expediente_do_medico_data">Expediente_do_medico_data</a></li>
 <li><a href="./expediente_do_medico_horas.html">Expediente_do_medico_horas</a></li>
@@ -41,24 +170,161 @@
 <li><a href="./disponibilidade_do_Paciente.html">Disponibilidade_do_Paciente</a></li>
 <li><a href="./agenda.html">Agenda</a></li>
 </ol>
-<h2 id="fluxograma-do-projeto">Fluxograma do projeto</h2>
+<h2 id="diagrama-01">Diagrama 01</h2>
 <pre><code class="language-mermaid"><div class="mermaid">
 
 graph TD
 
 graph_title[Assistente Virtual]
-A[Operadores] --> B(*️⃣ Medicos)
-B --> C(*️⃣ Expediente do medico data)
-C --> D(*️⃣ Expediente do médico horas)
-D --> E(1️⃣ Clientes)
-E --> F(1️⃣ Agenda)
-B --> G(*️⃣ Convênios)
-B --> E(*️⃣ Clientes)
+
+A[Operadores] --> |1-n| B(Medicos)
+%% O operador é responsável por alimentar os arquivos necessários
+%% e que não interessa ao médico
+
+B[Medicos] --> |1-n| b(Hospitais)  
+%% Hospitais que o médico atende.
+
+B --> |1-n| C(Expediente do medico data)
+
+C --> |1-n| D(Expediente do médico horas)
+
+D --> |1-1| E(Clientes)
+
+E --> |1-n| F(Agenda)
+  %% A agenda deve conter os campos:
+    %% Id_medico
+    %% Id_Cliente
+    %% Data
+    %% Hora
+    %% Id_Natureza_da_interaçãoo
+    %% Comentário
+
+F --> |n-1| n(Natureza da interação)
+%% A Natureza da interação pode ser:
+  %% 0 - Consulta Agendada
+  %% 1 - Consulta Cancelada
+
+B --> |1-n| G(Convênios)
+
+B --> |1-n| E(Clientes)
 
 </div></code></pre>
+<h2 id="diagrama-02">Diagrama 02</h2>
+<pre><code class="language-mermaid"><div class="mermaid">
+
+flowchart TD
+    %%{init: {"flowchart": {"htmlLabels": false}} }%%
+
+      1["`
+      **1. Operadores**
+         id
+         Nome
+         Telefone`"]
+
+      2["`
+      **2. Hospitais**
+            id
+            Nome
+            Telefone`"]
+
+      3["`
+      **3. Natureza da interação**
+            id
+            nome `"]
+
+      4["`
+      **4. Médicos**
+           Id
+           Id_Operadores
+           Nome
+           Telefone
+           Telefone_da_secretaria
+           Login
+           Senha`"]
+
+      5["`
+      **5. Serviço_de_agendas**
+           id
+           Nome
+           Login
+           Senha `"]
+
+      6["`
+      **6. Convênios**
+           Id
+           Nome
+           Login
+           Senha `"]
+
+      7["`
+      **7. clientes**
+           Id;
+           Nome;
+           Telefone_WhatsApp;
+           e-mail
+           Login
+           senha
+           Id_Convenio
+           Data_disponível
+           Hora_disponível
+           `"]
+
+      8["`
+      **8. Integração**
+           id
+           endereço_do_site
+           login
+           senha
+           status `"]
+      9["`
+      **9. Expediente_do_medico_data**
+           id_medico
+           Data`"]
+
+      10["`
+      **10. Expediente_do_medico_horas**
+            Id_Medico
+            Data
+            Hora_inicial
+            Hora_final`"]
+
+      11["`
+      **11. Agenda**
+            Id
+            Id_Medico
+            Id_Cliente
+            Data
+            Hora
+            Id_Convenio
+            Id_Natureza_da_Interação
+            Observações`"]
+
+1 --> |n-1| 4
+4 --> |n-1| 9
+4 --> |n-1| 10
+4 --> |n-1| 11
+7 --> |n-1| 11
+6 --> |n-1| 11
+3 --> |n-1| 11
+
+</div></code></pre>
+<!-- Médicos["`
+    **1 - Médicos**
+          id
+          nome
+          telefone`"]
+
+    Clientes["`
+    **2 - Clientes**
+    id
+    nome
+    telefone`"]
+
+    Médicos --> Clientes -->
+<h2 id=""></h2>
 <!-- markdownlint-disable-next-line -->
 </main>
-<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+[🔝🔝](#topo "Retorna ao topo")
 
         
         
