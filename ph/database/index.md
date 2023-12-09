@@ -166,21 +166,7 @@ flowchart TD
 3 --> |n-1| 11
 
 </div></code></pre>
-<!-- Médicos["`
-    **1 - Médicos**
-          id
-          nome
-          telefone`"]
 
-    Clientes["`
-    **2 - Clientes**
-    id
-    nome
-    telefone`"]
-
-    Médicos --> Clientes -->
-
-## 
 <!-- markdownlint-disable-next-line -->
 </main>
 [🔝🔝](#topo "Retorna ao topo")
