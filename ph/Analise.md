@@ -11,91 +11,92 @@
 1. **Etapas:**
    1. Estudar como o site OpenAI pode ajudar a criar o  _Assistant API da OpenAI_.
    2. Criar cadastros necessários para o projeto:
-      1. Operadores //Pode ser a secretária virtual
+      1. operadores //Pode ser a secretária virtual
          1. id
          2. nome
          3. telefone
 
-      2. Hospitais
+      2. hospitais
          1. id
-         2. Nome
-         3. Telefone
+         2. nome
+         3. telefone
 
-      3. Natureza da interação
+      3. natureza_da_interação
          1. id
          2. nome
 
-      4. Médicos
-         1. Id
-         2. Id_Operadores
-         3. Nome
-         4. Telefone
-         5. Telefone_da_secretaria
-         6. Login
-         7. Senha
-
-      5. Serviço_de_agendas
+      4. médicos
          1. id
-         2. Nome
-         3. Login
-         4. Senha
+         2. id_operadores
+         3. nome
+         4. telefone
+         5. telefone_da_secretaria
+         6. login
+         7. senha
 
-      6. Convênios
-         1. Id
-         2. Nome
-         3. Login
-         4. Senha
+      5. serviço_de_agendas
+         1. id
+         2. nome
+         3. login
+         4. senha
 
-      7. Clientes
-         1. Id;
-         2. Nome;
-         3. Telefone_WhatsApp;
-         4. e-mail
-         5. Login
+      6. convênios
+         1. id
+         2. id_médico
+         3. nome
+         4. login
+         5. senha
+
+      7. clientes
+         1. id;
+         2. nome;
+         3. telefone_whatsApp;
+         4. e_mail
+         5. login
          6. senha
-         7. Id_Convênio
-         8. DataTime_disponível // Usado para pesquisar na agenda uma data mais próxima
-         9. Matricula_no_convênio // Número da matrícula no convênio
+         7. id_convênio
+         8. dataTime_disponível // Usado para pesquisar na agenda uma data mais próxima
+         9. matricula_no_convênio // Número da matrícula no convênio
 
-      8. Integração // Usado para ser logar 
+      8. integração // Usado para ser logar 
          1. id
          2. endereço_do_site
          3. login // Login para acessar o endereço_do_site
          4. senha // Senha para acessar o endereço_do_site
          5. status // Usado para saber o se o site está conectado
 
-      9. Expediente_do_medico_data // Chave múltipla id_medico+Data
+      9. expediente_do_medico_data // Chave múltipla id_medico+Data
          1. id_medico
-         2. DataTime
+         2. dataTime
 
-      10. Expediente_do_medico_horas // Chave múltipla id_medico+Data+Hora_inicial
-          1. Id_Medico
-          2. DataTime_inicial // Data e Hora inicial do expediente do médico
-          3. DataTime_final   // Data e Hora final do expediente do médico
+      10. expediente_do_medico_horas // Chave múltipla id_medico+Data+Hora_inicial
+          1. id_Medico
+          2. dataTime_inicial // Data e Hora inicial do expediente do médico
+          3. dataTime_final   // Data e Hora final do expediente do médico
 
-      11. Agenda
-          1. Id
-          2. Id_Medico
-          3. Id_Cliente
-          4. DataTime  //Data e hora prevista da consulta
-          5. DataTime_confirmação  //Data e hora da confirmação  da consulta
-          6. Id_Convênio
-          7. id_Natureza_da_Interação
-          8. id_Formas_de_Pagamento // Para o caso do cliente não ter convênio
-          9. DataTime
-          10. Observações
+      11. agenda
+          1. id
+          2. id_Medico
+          3. id_Cliente
+          4. dataTime  //Data e hora prevista da consulta
+          5. dataTime_confirmação  //Data e hora da confirmação  da consulta
+          6. id_convênio
+          7. id_natureza_da_interação
+          8. id_formas_de_pagamento // Para o caso do cliente não ter convênio
+          9. dataTime
+          10. observações
 
-      12. Formas_de_Pagamento
+      12. formas_de_pagamento
           1. id
           2. Nome // 0 - Dinheiro; 1 - Espécie; 2 - Convênio
 
-      13. Consulta //Usado para baixar baixar a agenda
+      13. consulta //Usado para baixar baixar a agenda
           1. id
           2. id_agenda  // Opcional
           3. if_cliente // Para o caso de não ter agenda
           4. id_medico  // Para o caso de não ter agenda
-          5. DataTime   // Data e hora da consulta
-          6. id_Convênio //Opcional
+          5. dataTime   // Data e hora da consulta
+          6. id_convênio //Opcional
           7. id_forma_de_pagamento // Para o caso do cliente não ter convênio
 
    3. Criar rotinas para:

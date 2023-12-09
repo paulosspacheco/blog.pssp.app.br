@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>An&aacute;lise do projeto ph&period;app&period;br</title>
-
+   
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -17,6 +17,7 @@
         <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
 
     </head>
     <body class="vscode-body vscode-dark">
@@ -38,7 +39,7 @@
 <p>Criar cadastros necessários para o projeto:</p>
 <ol>
 <li>
-<p>Operadores //Pode ser a secretária virtual</p>
+<p>operadores //Pode ser a secretária virtual</p>
 <ol>
 <li>id</li>
 <li>nome</li>
@@ -46,66 +47,67 @@
 </ol>
 </li>
 <li>
-<p>Hospitais</p>
+<p>hospitais</p>
 <ol>
 <li>id</li>
-<li>Nome</li>
-<li>Telefone</li>
+<li>nome</li>
+<li>telefone</li>
 </ol>
 </li>
 <li>
-<p>Natureza da interação</p>
+<p>natureza_da_interação</p>
 <ol>
 <li>id</li>
 <li>nome</li>
 </ol>
 </li>
 <li>
-<p>Médicos</p>
-<ol>
-<li>Id</li>
-<li>Id_Operadores</li>
-<li>Nome</li>
-<li>Telefone</li>
-<li>Telefone_da_secretaria</li>
-<li>Login</li>
-<li>Senha</li>
-</ol>
-</li>
-<li>
-<p>Serviço_de_agendas</p>
+<p>médicos</p>
 <ol>
 <li>id</li>
-<li>Nome</li>
-<li>Login</li>
-<li>Senha</li>
-</ol>
-</li>
-<li>
-<p>Convênios</p>
-<ol>
-<li>Id</li>
-<li>Nome</li>
-<li>Login</li>
-<li>Senha</li>
-</ol>
-</li>
-<li>
-<p>Clientes</p>
-<ol>
-<li>Id;</li>
-<li>Nome;</li>
-<li>Telefone_WhatsApp;</li>
-<li>e-mail</li>
-<li>Login</li>
+<li>id_operadores</li>
+<li>nome</li>
+<li>telefone</li>
+<li>telefone_da_secretaria</li>
+<li>login</li>
 <li>senha</li>
-<li>Id_Convênio</li>
-<li>DataTime_disponível // Usado para pesquisar na agenda uma data mais próxima</li>
-<li>Matricula_no_convênio // Número da matrícula no convênio</li>
 </ol>
 </li>
 <li>
-<p>Integração // Usado para ser logar</p>
+<p>serviço_de_agendas</p>
+<ol>
+<li>id</li>
+<li>nome</li>
+<li>login</li>
+<li>senha</li>
+</ol>
+</li>
+<li>
+<p>convênios</p>
+<ol>
+<li>id</li>
+<li>id_médico</li>
+<li>nome</li>
+<li>login</li>
+<li>senha</li>
+</ol>
+</li>
+<li>
+<p>clientes</p>
+<ol>
+<li>id;</li>
+<li>nome;</li>
+<li>telefone_whatsApp;</li>
+<li>e_mail</li>
+<li>login</li>
+<li>senha</li>
+<li>id_convênio</li>
+<li>dataTime_disponível // Usado para pesquisar na agenda uma data mais próxima</li>
+<li>matricula_no_convênio // Número da matrícula no convênio</li>
+</ol>
+</li>
+<li>
+<p>integração // Usado para ser logar</p>
 <ol>
 <li>id</li>
 <li>endereço_do_site</li>
@@ -115,51 +117,51 @@
 </ol>
 </li>
 <li>
-<p>Expediente_do_medico_data // Chave múltipla id_medico+Data</p>
+<p>expediente_do_medico_data // Chave múltipla id_medico+Data</p>
 <ol>
 <li>id_medico</li>
-<li>DataTime</li>
+<li>dataTime</li>
 </ol>
 </li>
 <li>
-<p>Expediente_do_medico_horas // Chave múltipla id_medico+Data+Hora_inicial</p>
+<p>expediente_do_medico_horas // Chave múltipla id_medico+Data+Hora_inicial</p>
 <ol>
-<li>Id_Medico</li>
-<li>DataTime_inicial // Data e Hora inicial do expediente do médico</li>
-<li>DataTime_final   // Data e Hora final do expediente do médico</li>
+<li>id_Medico</li>
+<li>dataTime_inicial // Data e Hora inicial do expediente do médico</li>
+<li>dataTime_final   // Data e Hora final do expediente do médico</li>
 </ol>
 </li>
 <li>
-<p>Agenda</p>
+<p>agenda</p>
 <ol>
-<li>Id</li>
-<li>Id_Medico</li>
-<li>Id_Cliente</li>
-<li>DataTime  //Data e hora prevista da consulta</li>
-<li>DataTime_confirmação  //Data e hora da confirmação  da consulta</li>
-<li>Id_Convênio</li>
-<li>id_Natureza_da_Interação</li>
-<li>id_Formas_de_Pagamento // Para o caso do cliente não ter convênio</li>
-<li>DataTime</li>
-<li>Observações</li>
+<li>id</li>
+<li>id_Medico</li>
+<li>id_Cliente</li>
+<li>dataTime  //Data e hora prevista da consulta</li>
+<li>dataTime_confirmação  //Data e hora da confirmação  da consulta</li>
+<li>id_convênio</li>
+<li>id_natureza_da_interação</li>
+<li>id_formas_de_pagamento // Para o caso do cliente não ter convênio</li>
+<li>dataTime</li>
+<li>observações</li>
 </ol>
 </li>
 <li>
-<p>Formas_de_Pagamento</p>
+<p>formas_de_pagamento</p>
 <ol>
 <li>id</li>
 <li>Nome // 0 - Dinheiro; 1 - Espécie; 2 - Convênio</li>
 </ol>
 </li>
 <li>
-<p>Consulta //Usado para baixar baixar a agenda</p>
+<p>consulta //Usado para baixar baixar a agenda</p>
 <ol>
 <li>id</li>
 <li>id_agenda  // Opcional</li>
 <li>if_cliente // Para o caso de não ter agenda</li>
 <li>id_medico  // Para o caso de não ter agenda</li>
-<li>DataTime   // Data e hora da consulta</li>
-<li>id_Convênio //Opcional</li>
+<li>dataTime   // Data e hora da consulta</li>
+<li>id_convênio //Opcional</li>
 <li>id_forma_de_pagamento // Para o caso do cliente não ter convênio</li>
 </ol>
 </li>

@@ -17,9 +17,9 @@
 3. [natureza da interação](./natureza_da_iinteracao.md)
 4. [medicos](./medicos.html)
 5. [serviços de agenda](./servicos_de_agenda.html)
-6. [convênios](./Convenios.html)
+6. [convênios](./convenios.html)
 7. [clientes](./clientes.index)
-8. [Integração](./Integracao.html)
+8. [Integração](./integracao.html)
 9. [Expediente_do_medico_data](./expediente_do_medico_data)
 10. [Expediente_do_medico_horas](./expediente_do_medico_horas.html)
 11. [Agenda](./agenda.html)
@@ -33,16 +33,16 @@
 flowchart TD
 
       1[("`
-      **1. Operadores**
+      **1. operadores**
          id
-         Nome
-         Telefone`")]
+         nome
+         telefone`")]
 
       2[("`
-      **2. Hospitais**
+      **2. hospitais**
             id
-            Nome
-            Telefone`")]
+            nme
+            telefone`")]
 
       3[("`
       **3. natureza da interação**
@@ -50,88 +50,88 @@ flowchart TD
             nome `")]
 
       4[("`
-      **4. Médicos**
-      Id
-      Id_Operadores
-      Nome
-      Telefone
-      Telefone_da_secretaria
-      Login
-      Senha`")]
+      **4. médicos**
+      id
+      id_operadores
+      nome
+      telefone
+      telefone_da_secretaria
+      login
+      senha`")]
 
       5[("`
-      **5. Serviço_de_agendas**
+      **5. serviço_de_agendas**
            id
-           Nome
-           Login
-           Senha `")]
+           nome
+           login
+           senha `")]
 
       6[("`
       **6. convênios**
-           Id
-           Nome
-           Login
-           Senha `")]
+           id
+           nome
+           login
+           senha `")]
 
       7[("`
       **7. clientes**
-           Id;
-           Nome;
-           Telefone_WhatsApp;
+           id;
+           nome;
+           telefone_whatsApp;
            e-mail
-           Login
+           login
            senha
-           Id_Convênio
-           DataTime_disponível
-           Matricula_no_convênio
+           id_convênio
+           dataTime_disponível
+           matricula_no_convênio
            `")]
 
       8[("`
-      **8. Integração**
+      **8. integração**
            id
            endereço_do_site
            login
            senha
            status `")]
       9[("`
-      **9. Expediente_do_medico_data**
+      **9. expediente_do_medico_data**
            id_medico
-           Data
+           data
        `")]
 
       10[("`
-      **10. Expediente_do_medico_horas**
-            Id_Medico
-            Data
-            DataTime_inicial
-            DataTime_final
+      **10. expediente_do_medico_horas**
+            id_medico
+            data
+            dataTime_inicial
+            dataTime_final
             `")]
 
       11[("`
-      **11. Agenda**
-            Id
-            Id_Medico
-            Id_Cliente
-            DataTime
-            DataTime_confirmação
-            Id_Convênio
-            Id_Natureza_da_Interação
-            Observações
+      **11. agenda**
+            id
+            id_medico
+            id_cliente
+            dataTime
+            dataTime_confirmação
+            id_convênio
+            id_natureza_da_interação
+            observações
         `")]
 
       12[("`
-      **12. Formas_de_Pagamento**
+      **12. formas_de_pagamento**
             id
-            Nome
+            nome
         `")]
 
       13[("`
-      **13. Consulta**
+      **13. consulta**
             id
             id_agenda
             if_cliente
             id_medico
-            DataTime
+            dataTime
             id_Convênio
             id_forma_de_pagamento
          `")]  
