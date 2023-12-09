@@ -10,18 +10,21 @@
 
 1. **Etapas:**
    1. Estudar como o site OpenAI pode ajudar a criar o  _Assistant API da OpenAI_.
-   2. Cadastros necessários para o projeto:
-      1. Operadores
+   2. Criar cadastros necessários para o projeto:
+      1. Operadores //Pode ser a secretária virtual
          1. id
-         2. Nome
-         3. Telefone
+         2. nome
+         3. telefone
+
       2. Hospitais
          1. id
          2. Nome
          3. Telefone
+
       3. Natureza da interação
          1. id
          2. nome
+
       4. Médicos
          1. Id
          2. Id_Operadores
@@ -43,43 +46,57 @@
          3. Login
          4. Senha
 
-      7. clientes
+      7. Clientes
          1. Id;
          2. Nome;
          3. Telefone_WhatsApp;
          4. e-mail
          5. Login
          6. senha
-         7. Id_Convenio
-         8. Data_disponível %% Usado para pesquisar na agenda uma data mais próxima
-         9. Hora_disponível %% Usado para pesquisar na agenda uma hora mais próxima
+         7. Id_Convênio
+         8. DataTime_disponível // Usado para pesquisar na agenda uma data mais próxima
+         9. Matricula_no_convênio // Número da matrícula no convênio
 
-      8. Integração
+      8. Integração // Usado para ser logar 
          1. id
          2. endereço_do_site
-         3. login
-         4. senha
+         3. login // Login para acessar o endereço_do_site
+         4. senha // Senha para acessar o endereço_do_site
          5. status // Usado para saber o se o site está conectado
 
-      9. Expediente_do_medico_data %% Chave múltipla id_medico+Data
+      9. Expediente_do_medico_data // Chave múltipla id_medico+Data
          1. id_medico
-         2. Data
+         2. DataTime
 
-      10. Expediente_do_medico_horas %% Chave múltipla id_medico+Data+Hora_inicial
+      10. Expediente_do_medico_horas // Chave múltipla id_medico+Data+Hora_inicial
           1. Id_Medico
-          2. Data
-          3. Hora_inicial
-          4. Hora_final
+          2. DataTime_inicial // Data e Hora inicial do expediente do médico
+          3. DataTime_final   // Data e Hora final do expediente do médico
 
       11. Agenda
           1. Id
           2. Id_Medico
           3. Id_Cliente
-          4. Data
-          5. Hora
-          6. Id_Convenio
+          4. DataTime  //Data e hora prevista da consulta
+          5. DataTime_confirmação  //Data e hora da confirmação  da consulta
+          6. Id_Convênio
           7. id_Natureza_da_Interação
-          8. Observações
+          8. id_Formas_de_Pagamento // Para o caso do cliente não ter convênio
+          9. DataTime
+          10. Observações
+
+      12. Formas_de_Pagamento
+          1. id
+          2. Nome // 0 - Dinheiro; 1 - Espécie; 2 - Convênio
+
+      13. Consulta //Usado para baixar baixar a agenda
+          1. id
+          2. id_agenda  // Opcional
+          3. if_cliente // Para o caso de não ter agenda
+          4. id_medico  // Para o caso de não ter agenda
+          5. DataTime   // Data e hora da consulta
+          6. id_Convênio //Opcional
+          7. id_forma_de_pagamento // Para o caso do cliente não ter convênio
 
    3. Criar rotinas para:
       1. Criar programa para coletar as informações do paciente
@@ -100,23 +117,22 @@
                1. clientes
                2. Agenda
                3. Disponibilidade_do_Paciente
-???
-  
-      1. **Confirmação de Consultas:**
+
+   4. **Confirmação de Consultas:**
          1. Utilize a _API do WhatsApp_ para enviar 
          2. Implementar a _API de voz da OpenAI_ para fazer _chamadas de voz automatizadas_ para _confirmação de consultas_.
 
-      2. **Banco de Dados de Informações Adicionais:**
+   5. **Banco de Dados de Informações Adicionais:**
          1. Criar um _banco de dados adicional_ para armazenar informações sobre _convênios_, _preços de consultas_ e _hospitais onde o médico atende_.
 
-      3. Testes e Validação:
-         1. Realizar _testes abrangentes_ para garantir o funcionamento adequado de todas as funcionalidades.
+   6. Testes e Validação:
+      1. Realizar _testes abrangentes_ para garantir o funcionamento adequado de todas as funcionalidades.
 
-      4.  **Documentação e Treinamento:**
-         1. Preparar _documentação detalhada_ e _oferecer treinamento_ para o _médico_ e a _equipe_ sobre o uso da _secretária virtual_.
+   7. **Documentação e Treinamento:**
+      1. Preparar _documentação detalhada_ e _oferecer treinamento_ para o _médico_ e a _equipe_ sobre o uso da _secretária virtual_.
 
-      5.  **Manutenção e Atualização Contínua:**
-          1. Criar um _plano de manutenção_ e _atualização_ para manter a segurança, eficiência e compatibilidade do sistema.
+   8. **Manutenção e Atualização Contínua:**
+       1. Criar um _plano de manutenção_ e _atualização_ para manter a segurança, eficiência e compatibilidade do sistema.
 
 <!-- markdownlint-disable-next-line -->
 </main>

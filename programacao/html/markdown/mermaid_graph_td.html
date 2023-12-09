@@ -98,26 +98,30 @@ C -->|Two| E[Result 2]
 <pre><code class="language-mermaid"><div class="mermaid">
 
 flowchart TD
+    %% A linha abaixo é uma diretivas%%
     %%{init: {"flowchart": {"htmlLabels": false}} }%%
 
-      1["`
+    %%Definindo estilo do gráfico%%
+    classDef default fill:#e6c07b,stroke:#333,stroke-width:4px;
+
+      1[("`
       **1. Operadores**
          id
          Nome
-         Telefone`"]
+         Telefone`")]
 
-      2["`
+      2[("`
       **2. Hospitais**
             id
             Nome
-            Telefone`"]
+            Telefone`")]
 
-      3["`
+      3[("`
       **3. Natureza da interação**
             id
-            nome `"]
+            nome `")]
 
-      4["`
+      4[("`
       **4. Médicos**
            Id
            Id_Operadores
@@ -125,23 +129,23 @@ flowchart TD
            Telefone
            Telefone_da_secretaria
            Login
-           Senha`"]
+           Senha`")]
 
-      5["`
+      5[("`
       **5. Serviço_de_agendas**
            id
            Nome
            Login
-           Senha `"]
+           Senha `")]
 
-      6["`
+      6[("`
       **6. Convênios**
            Id
            Nome
            Login
-           Senha `"]
+           Senha `")]
 
-      7["`
+      7[("`
       **7. clientes**
            Id;
            Nome;
@@ -152,28 +156,28 @@ flowchart TD
            Id_Convenio
            Data_disponível
            Hora_disponível
-           `"]
+           `")]
 
-      8["`
+      8[("`
       **8. Integração**
            id
            endereço_do_site
            login
            senha
-           status `"]
-      9["`
+           status `")]
+      9[("`
       **9. Expediente_do_medico_data**
            id_medico
-           Data`"]
+           Data`")]
 
-      10["`
+      10[("`
       **10. Expediente_do_medico_horas**
             Id_Medico
             Data
             Hora_inicial
-            Hora_final`"]
+            Hora_final`")]
 
-      11["`
+      11[("`
       **11. Agenda**
             Id
             Id_Medico
@@ -182,7 +186,7 @@ flowchart TD
             Hora
             Id_Convenio
             Id_Natureza_da_Interação
-            Observações`"]
+            Observações`")]
 
 1 --> |n-1| 4
 4 --> |n-1| 9
@@ -193,6 +197,17 @@ flowchart TD
 3 --> |n-1| 11
 
 </div></code></pre>
+<h2 id="exemplo-aplicando-estilos">Exemplo Aplicando estilos</h2>
+<pre><code class="language-mermaid"><div class="mermaid">
+
+flowchart LR
+    A:::foo & B:::bar --> C:::foobar
+    classDef foo stroke:#f00
+    classDef bar stroke:#0f0
+    classDef foobar stroke:#00f
+</div></code></pre>
+<!-- linkStyle 3 stroke:#ff3,stroke-width:1px,color:red; -->
+<!-- linkStyle 1,2,3 color:Red; -->
 <h2 id="referências">Referências</h2>
 <ol>
 <li><a href="https://mermaid.js.org/config/Tutorials.html">Tutoriais</a></li>

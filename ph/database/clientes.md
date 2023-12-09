@@ -6,7 +6,7 @@
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
-# Cadastro de Clientes em python
+# Cadastro de clientes em python
 
 1. Instalação de pacotes:
 
@@ -33,11 +33,11 @@
             host="localhost"
         )
 
-    # Função para criar a tabela Medicos
+    # Função para criar a tabela Edicos
     def criar_tabela_medicos(conexao):
         with conexao.cursor() as cursor:
             cursor.execute("""
-                CREATE TABLE IF NOT EXISTS Medicos (
+                CREATE TABLE IF NOT EXISTS Edicos (
                     Id SERIAL PRIMARY KEY,
                     Nome VARCHAR(255) NOT NULL,
                     Telefone VARCHAR(15),
@@ -52,7 +52,7 @@
     def inserir_medico(conexao, nome, telefone, telefone_secretaria, login, senha):
         with conexao.cursor() as cursor:
             cursor.execute("""
-                INSERT INTO Medicos (Nome, Telefone, Telefone_da_secretaria, Login, Senha)
+                INSERT INTO Edicos (Nome, Telefone, Telefone_da_secretaria, Login, Senha)
                 VALUES (%s, %s, %s, %s, %s) RETURNING Id;
             """, (nome, telefone, telefone_secretaria, login, senha))
             medico_id = cursor.fetchone()[0]
@@ -62,14 +62,14 @@
     # Função para buscar todos os médicos
     def buscar_medicos(conexao):
         with conexao.cursor() as cursor:
-            cursor.execute("SELECT * FROM Medicos;")
+            cursor.execute("SELECT * FROM Edicos;")
             medicos = cursor.fetchall()
         return medicos
 
     # Função para buscar um médico por ID
     def buscar_medico_por_id(conexao, medico_id):
         with conexao.cursor() as cursor:
-            cursor.execute("SELECT * FROM Medicos WHERE Id = %s;", (medico_id,))
+            cursor.execute("SELECT * FROM Edicos WHERE Id = %s;", (medico_id,))
             medico = cursor.fetchone()
         return medico
 
@@ -77,7 +77,7 @@
     def atualizar_medico(conexao, medico_id, nome, telefone, telefone_secretaria, login, senha):
         with conexao.cursor() as cursor:
             cursor.execute("""
-                UPDATE Medicos
+                UPDATE Edicos
                 SET Nome = %s, Telefone = %s, Telefone_da_secretaria = %s, Login = %s, Senha = %s
                 WHERE Id = %s;
             """, (nome, telefone, telefone_secretaria, login, senha, medico_id))
@@ -86,7 +86,7 @@
     # Função para excluir um médico por ID
     def excluir_medico(conexao, medico_id):
         with conexao.cursor() as cursor:
-            cursor.execute("DELETE FROM Medicos WHERE Id = %s;", (medico_id,))
+            cursor.execute("DELETE FROM Edicos WHERE Id = %s;", (medico_id,))
         conexao.commit()
 
     # Exemplo de uso

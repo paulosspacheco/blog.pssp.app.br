@@ -3,7 +3,131 @@
     <head>
         <meta charset="UTF-8">
         <title>An&aacute;lise do projeto ph&period;app&period;br</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -18,6 +142,8 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
+   
+</style>
     </head>
     <body class="vscode-body vscode-dark">
         <div class="header" id="myHeader">
@@ -27,7 +153,7 @@
 <main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<!-- <h1 id="análise-do-projeto-phappbr">Análise do projeto <a href="http://ph.app.br">ph.app.br</a></h1> -->
+<h1 id="análise-do-projeto-phappbr">Análise do projeto <a href="http://ph.app.br">ph.app.br</a></h1>
 <ol>
 <li><strong>Etapas:</strong>
 <ol>
@@ -35,14 +161,14 @@
 <p>Estudar como o site OpenAI pode ajudar a criar o  <em>Assistant API da OpenAI</em>.</p>
 </li>
 <li>
-<p>Cadastros necessários para o projeto:</p>
+<p>Criar cadastros necessários para o projeto:</p>
 <ol>
 <li>
-<p>Operadores</p>
+<p>Operadores //Pode ser a secretária virtual</p>
 <ol>
 <li>id</li>
-<li>Nome</li>
-<li>Telefone</li>
+<li>nome</li>
+<li>telefone</li>
 </ol>
 </li>
 <li>
@@ -91,7 +217,7 @@
 </ol>
 </li>
 <li>
-<p>clientes</p>
+<p>Clientes</p>
 <ol>
 <li>Id;</li>
 <li>Nome;</li>
@@ -99,35 +225,34 @@
 <li>e-mail</li>
 <li>Login</li>
 <li>senha</li>
-<li>Id_Convenio</li>
-<li>Data_disponível %% Usado para pesquisar na agenda uma data mais próxima</li>
-<li>Hora_disponível %% Usado para pesquisar na agenda uma hora mais próxima</li>
+<li>Id_Convênio</li>
+<li>DataTime_disponível // Usado para pesquisar na agenda uma data mais próxima</li>
+<li>Matricula_no_convênio // Número da matrícula no convênio</li>
 </ol>
 </li>
 <li>
-<p>Integração</p>
+<p>Integração // Usado para ser logar</p>
 <ol>
 <li>id</li>
 <li>endereço_do_site</li>
-<li>login</li>
-<li>senha</li>
+<li>login // Login para acessar o endereço_do_site</li>
+<li>senha // Senha para acessar o endereço_do_site</li>
 <li>status // Usado para saber o se o site está conectado</li>
 </ol>
 </li>
 <li>
-<p>Expediente_do_medico_data %% Chave múltipla id_medico+Data</p>
+<p>Expediente_do_medico_data // Chave múltipla id_medico+Data</p>
 <ol>
 <li>id_medico</li>
-<li>Data</li>
+<li>DataTime</li>
 </ol>
 </li>
 <li>
-<p>Expediente_do_medico_horas %% Chave múltipla id_medico+Data+Hora_inicial</p>
+<p>Expediente_do_medico_horas // Chave múltipla id_medico+Data+Hora_inicial</p>
 <ol>
 <li>Id_Medico</li>
-<li>Data</li>
-<li>Hora_inicial</li>
-<li>Hora_final</li>
+<li>DataTime_inicial // Data e Hora inicial do expediente do médico</li>
+<li>DataTime_final   // Data e Hora final do expediente do médico</li>
 </ol>
 </li>
 <li>
@@ -136,11 +261,32 @@
 <li>Id</li>
 <li>Id_Medico</li>
 <li>Id_Cliente</li>
-<li>Data</li>
-<li>Hora</li>
-<li>Id_Convenio</li>
+<li>DataTime  //Data e hora prevista da consulta</li>
+<li>DataTime_confirmação  //Data e hora da confirmação  da consulta</li>
+<li>Id_Convênio</li>
 <li>id_Natureza_da_Interação</li>
+<li>id_Formas_de_Pagamento // Para o caso do cliente não ter convênio</li>
+<li>DataTime</li>
 <li>Observações</li>
+</ol>
+</li>
+<li>
+<p>Formas_de_Pagamento</p>
+<ol>
+<li>id</li>
+<li>Nome // 0 - Dinheiro; 1 - Espécie; 2 - Convênio</li>
+</ol>
+</li>
+<li>
+<p>Consulta //Usado para baixar baixar a agenda</p>
+<ol>
+<li>id</li>
+<li>id_agenda  // Opcional</li>
+<li>if_cliente // Para o caso de não ter agenda</li>
+<li>id_medico  // Para o caso de não ter agenda</li>
+<li>DataTime   // Data e hora da consulta</li>
+<li>id_Convênio //Opcional</li>
+<li>id_forma_de_pagamento // Para o caso do cliente não ter convênio</li>
 </ol>
 </li>
 </ol>
@@ -148,8 +294,7 @@
 <li>
 <p>Criar rotinas para:</p>
 <ol>
-<li>
-<p>Criar programa para coletar as informações do paciente</p>
+<li>Criar programa para coletar as informações do paciente
 <ol>
 <li>
 <p>Obs?</p>
@@ -180,8 +325,9 @@
 <ol>
 <li>clientes</li>
 <li>Agenda</li>
-<li>Disponibilidade_do_Paciente
-???</li>
+<li>Disponibilidade_do_Paciente</li>
+</ol>
+</li>
 </ol>
 </li>
 </ol>
@@ -209,16 +355,14 @@
 </li>
 <li>
 <p><strong>Documentação e Treinamento:</strong></p>
-</li>
-<li>
-<p>Preparar <em>documentação detalhada</em> e <em>oferecer treinamento</em> para o <em>médico</em> e a <em>equipe</em> sobre o uso da <em>secretária virtual</em>.</p>
+<ol>
+<li>Preparar <em>documentação detalhada</em> e <em>oferecer treinamento</em> para o <em>médico</em> e a <em>equipe</em> sobre o uso da <em>secretária virtual</em>.</li>
+</ol>
 </li>
 <li>
 <p><strong>Manutenção e Atualização Contínua:</strong></p>
 <ol>
 <li>Criar um <em>plano de manutenção</em> e <em>atualização</em> para manter a segurança, eficiência e compatibilidade do sistema.</li>
-</ol>
-</li>
 </ol>
 </li>
 </ol>

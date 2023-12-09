@@ -26,11 +26,53 @@
 12. [Formas_de_Pagamento](./formas_de_pagamento.html)
 13. [Consulta](./consulta.html)
 
-## Diagrama do banco de dados do projeto
+## Diagrama 01 - Relacionamentos visão 1-->n
+
+<pre><code class="language-mermaid"><div class="mermaid">
+
+graph TD
+
+graph_title[Assistente Virtual]
+
+A[Operadores] --> |1-n| B(medicos)
+%% O operador é responsável por alimentar os arquivos necessários
+%% e que não interessa ao médico
+
+B[medicos] --> |1-n| b(Hospitais)  
+%% Hospitais que o médico atende.
+
+B --> |1-n| C(Expediente do medico data)
+
+C --> |1-n| D(Expediente do médico horas)
+
+D --> |1-1| E(clientes)
+
+E --> |1-n| F(Agenda)
+  %% A agenda deve conter os campos:
+    %% Id_medico
+    %% Id_Cliente
+    %% Data
+    %% Hora
+    %% Id_Natureza_da_interaçãoo
+    %% Comentário
+
+F --> |n-1| n(natureza da interação)
+%% A natureza da interação pode ser:
+  %% 0 - Consulta Agendada
+  %% 1 - Consulta Cancelada
+
+B --> |1-n| G(convênios)
+
+B --> |1-n| E(clientes)
+
+</div></code></pre>
+
+## Diagrama 02 - Relacionamentos visão n-->1
 
 <pre><code class="language-mermaid"><div class="mermaid">
 
 flowchart TD
+    %%{init: {"flowchart": {"htmlLabels": false}} }%%
 
       1[("`
       **1. Operadores**
@@ -144,16 +186,13 @@ flowchart TD
 6 --> |n-1| 11
 3 --> |n-1| 11
 12 --> |n-1| 13
-11 o--o |1-1| 13
+11 --> |1-1| 13
 4 --> |n-1| 13
 6 --> |n-1| 13
 7 --> |n-1| 13
 
 </div></code></pre>
 
-## Referências
-
-1. [Gráfico criado com projeto mermaid](https://mermaid.js.org/syntax/flowchart.html)
 
 <!-- markdownlint-disable-next-line -->
 </main>
