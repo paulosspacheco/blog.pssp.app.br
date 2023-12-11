@@ -3,7 +3,131 @@
     <head>
         <meta charset="UTF-8">
         <title>Banco de dados do projeto</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -18,6 +142,8 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
+   
+</style>
     </head>
     <body class="vscode-body vscode-dark">
         <div class="header" id="myHeader">
@@ -28,7 +154,7 @@
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 <script type="application/x-javascript" src="/js/mermaid.min.js"></script>
-<!-- <h1 id="banco-de-dados-do-projeto">Banco de dados do projeto</h1> -->
+<h1 id="banco-de-dados-do-projeto">Banco de dados do projeto</h1>
 <h2 id="cadastros-do-projeto">Cadastros do projeto</h2>
 <ol>
 <li><a href="./operadores.html">Operadores</a></li>
@@ -231,6 +357,423 @@ FormasDePagamento  "1" -- "0..n" Consulta
 </li>
 </ul>
 </div></code></pre>
+<h2 id="diagrama-do-projeto-que-deu-origem-ao-gráfico-acima">Diagrama do projeto que deu origem ao gráfico acima</h2>
+<pre><code class="hljs language-mermaid">
+classDiagram
+
+class Operador {
+  id: Integer
+  nome: String
+  telefone: String
+}
+
+class Hospital {
+  id: Integer
+  nome: String
+  telefone: String
+}
+
+class NaturezaDaInteracao {
+  id: Integer
+  nome: String
+}
+
+class Medico {
+  id: Integer
+  idOperador: Integer
+  nome: String
+  telefone: String
+  telefoneSecretaria: String
+  login: String
+  senha: String
+}
+
+class ServicoDeAgendas {
+  id: Integer
+  id_operador:Integer
+  nome: String
+  login: String
+  senha: String
+}
+
+class Convenio {
+  id: Integer
+  idMedico: Integer
+  nome: String
+  login: String
+  senha: String
+}
+
+class Cliente {
+  id: Integer
+  nome: String
+  telefoneWhatsapp: String
+  email: String
+  login: String
+  senha: String
+  idConvenio: Integer
+  dataTimeDisponivel: Date
+  matriculaNoConvenio: Integer
+}
+
+class Integracao {
+  id: Integer
+  enderecoDoSite: String
+  login: String
+  senha: String
+  status: Boolean
+}
+
+class ExpedienteDoMedicoData {
+  idMedico: Integer
+  dataTime: Date
+}
+
+class ExpedienteDoMedicoHoras {
+  idMedico: Integer
+  dataTimeInicial: Date
+  dataTimeFinal: Date
+}
+
+class Agenda {
+  id: Integer
+  idMedico: Integer
+  idCliente: Integer
+  dataTime: Date
+  dataTimeConfirmacao: Date
+  idConvenio: Integer
+  idNaturezaDaInteracao: Integer
+  idFormasDePagamento: Integer
+  observacoes: String
+}
+
+class FormasDePagamento {
+  id: Integer
+  nome: String
+}
+
+class Consulta {
+  id: Integer
+  idAgenda: Integer
+  Cliente: Boolean
+  idMedico: Integer
+  dataTime: Date
+  idConvenio: Integer
+  idFormasDePagamento: Integer
+}
+
+Operador &quot;1&quot; -- &quot;1..n&quot; Medico
+Hospital &quot;1&quot; -- &quot;0..n&quot; Medico
+Medico &quot;1&quot; -- &quot;1..n&quot; ExpedienteDoMedicoData
+ExpedienteDoMedicoData   &quot;1&quot; -- &quot;1..n&quot; ExpedienteDoMedicoHoras
+Medico   &quot;1&quot; -- &quot;1..n&quot; ExpedienteDoMedicoHoras
+Medico &quot;1&quot; -- &quot;1..n&quot; Agenda
+Cliente &quot;1&quot; -- &quot;1..n&quot; Agenda
+NaturezaDaInteracao  &quot;1&quot; -- &quot;1..n&quot; Agenda
+Convenio  &quot;1&quot; -- &quot;0..n&quot; Agenda
+FormasDePagamento  &quot;1&quot; -- &quot;0..n&quot; Agenda
+
+Medico &quot;1&quot; -- &quot;1..n&quot; Consulta
+Agenda &quot;1&quot; -- &quot;0..n&quot; Consulta
+Convenio &quot;1&quot; -- &quot;0..n&quot; Consulta
+FormasDePagamento  &quot;1&quot; -- &quot;0..n&quot; Consulta
+
+
+</code></pre>
+<h2 id="script-sql-postgressql-do-projeto">Script SQL PostgresSQl do projeto</h2>
+<pre><code class="hljs language-SQL"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> operador (
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  telefone <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> hospital (
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  telefone <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> natureza_da_interacao (
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> medico (
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  id_operador <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  telefone <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  telefone_secretaria <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> servico_de_agendas (
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  id_operador <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> convenio (
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> cliente (
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  telefone_whatsapp <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  email <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  id_convenio <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  data_time_disponivel <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  matricula_no_convenio <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> integracao (
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  endereco_do_site <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-keyword">status</span> <span class="hljs-built_in">BOOLEAN</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_data (
+  id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  data_time <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_horas (
+  id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  data_time_inicial <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  data_time_final <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> agenda (
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  id_cliente <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  data_time <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  data_time_confirmacao <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  id_convenio <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  id_natureza_da_interacao <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  id_formas_de_pagamento <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  observacoes <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>)
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> formas_de_pagamento (
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> consulta (
+  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  id_agenda <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  cliente <span class="hljs-built_in">BOOLEAN</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  data_time <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  id_convenio <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  id_formas_de_pagamento <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+);
+
+
+</code></pre>
+<ul>
+<li>
+<p><strong>Observações</strong>:</p>
+<ul>
+<li>Essas tabelas representam as classes do diagrama de classes, com as seguintes correspondências:
+<ul>
+<li>Operador -&gt; operador</li>
+<li>Hospital -&gt; hospital</li>
+<li>NaturezaDaInteracao -&gt; natureza_da_interacao</li>
+<li>Medico -&gt; medico</li>
+<li>ServicoDeAgendas -&gt; servico_de_agendas</li>
+<li>Convenio -&gt; convenio</li>
+<li>Cliente -&gt; cliente</li>
+<li>Integracao -&gt; integracao</li>
+<li>ExpedienteDoMedicoData -&gt; expediente_do_medico_data</li>
+<li>ExpedienteDoMedicoHoras -&gt; expediente_do_medico_horas</li>
+<li>Agenda -&gt; agenda</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="além-das-tabelas-você-também-precisará-criar-as-seguintes-chaves-estrangeiras-para-representar-as-relações-entre-as-classes">Além das tabelas, você também precisará criar as seguintes chaves estrangeiras para representar as relações entre as classes:</h2>
+<pre><code class="hljs language-sql">
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> medico
+<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_medico_operador
+<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_operador)
+<span class="hljs-keyword">REFERENCES</span> operador (<span class="hljs-keyword">id</span>);
+
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_data
+<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_expediente_do_medico_data_medico
+<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_medico)
+<span class="hljs-keyword">REFERENCES</span> medico (<span class="hljs-keyword">id</span>);
+
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_horas
+<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_expediente_do_medico_horas_medico
+<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_medico)
+<span class="hljs-keyword">REFERENCES</span> medico (<span class="hljs-keyword">id</span>);
+
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda
+<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_medico
+<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_medico)
+<span class="hljs-keyword">REFERENCES</span> medico (<span class="hljs-keyword">id</span>);
+
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda
+<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_cliente
+<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_cliente)
+<span class="hljs-keyword">REFERENCES</span> cliente (<span class="hljs-keyword">id</span>);
+
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda
+<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_natureza_da_interacao
+<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_natureza_da_interacao)
+<span class="hljs-keyword">REFERENCES</span> natureza_da_interacao (<span class="hljs-keyword">id</span>);
+
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda
+<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_formas_de_pagamento
+<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_formas_de_pagamento)
+<span class="hljs-keyword">REFERENCES</span> formas_de_pagamento (<span class="hljs-keyword">id</span>);
+
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta
+<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_agenda
+<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_agenda)
+<span class="hljs-keyword">REFERENCES</span> agenda (<span class="hljs-keyword">id</span>);
+
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta
+<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_medico
+<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_medico)
+<span class="hljs-keyword">REFERENCES</span> medico (<span class="hljs-keyword">id</span>);
+
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta
+<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_convenio
+<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_convenio)
+<span class="hljs-keyword">REFERENCES</span> convenio (<span class="hljs-keyword">id</span>);
+
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta
+<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_formas_de_pagamento
+<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_formas_de_pagamento)
+<span class="hljs-keyword">REFERENCES</span> formas_de_pagamento (<span class="hljs-keyword">id</span>);
+
+</code></pre>
+<ul>
+<li><strong>Observações</strong>:
+<ul>
+<li>Essas chaves estrangeiras garantem a integridade referencial das tabelas, o que significa que os dados nas tabelas relacionadas serão consistentes.</li>
+<li>Por exemplo, a chave estrangeira fk_medico_operador na tabela medico garante que o valor da coluna id_operador em uma linha da tabela medico sempre existirá em uma linha da tabela operador.</li>
+<li>Após criar as tabelas e as chaves estrangeiras, você poderá inserir dados nas tabelas. Os dados que você insere devem corresponder aos atributos das classes no diagrama de classes.</li>
+<li>Por exemplo, para inserir um médico na tabela medico, você precisará fornecer os valores para os seguintes atributos:
+<ul>
+<li>id (auto-incrementado)</li>
+<li>id_operador</li>
+<li>nome</li>
+<li>telefone</li>
+<li>telefone_secretaria</li>
+<li>login</li>
+<li>senha</li>
+</ul>
+</li>
+<li>Exemplos de consultas que você pode usar para trabalhar com os dados no banco de dados:
+<ul>
+<li>
+<p>Para obter uma lista de todos os médicos:</p>
+<pre><code class="hljs language-sql">
+  <span class="hljs-keyword">SELECT</span> *
+  <span class="hljs-keyword">FROM</span> medico;
+
+</code></pre>
+</li>
+<li>
+<p>Para obter uma lista de todos os médicos de um determinado hospital:</p>
+<pre><code class="hljs language-sql">
+ <span class="hljs-keyword">SELECT</span> *
+ <span class="hljs-keyword">FROM</span> medico
+ <span class="hljs-keyword">WHERE</span> id_hospital = <span class="hljs-number">1</span>;
+
+</code></pre>
+</li>
+<li>
+<p>Para obter uma lista de todas as consultas de um determinado paciente:</p>
+<pre><code class="hljs language-sql">
+ <span class="hljs-keyword">SELECT</span> *
+ <span class="hljs-keyword">FROM</span> consulta
+ <span class="hljs-keyword">WHERE</span> id_cliente = <span class="hljs-number">1</span>;
+
+</code></pre>
+</li>
+<li>
+<p>Para obter uma lista de todas as consultas de um determinado médico:</p>
+<pre><code class="hljs language-sql">
+ <span class="hljs-keyword">SELECT</span> *
+ <span class="hljs-keyword">FROM</span> consulta
+ <span class="hljs-keyword">WHERE</span> id_medico = <span class="hljs-number">1</span>;
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="ferramenta-que-pode-ser-usada-para-executar-os-scripts-acima">Ferramenta que pode ser usada para executar os scripts acima?</h2>
+<ul>
+<li>
+<p>Para executar os scripts acima usando o <em>psql</em>, você precisará conectar-se ao banco de dados PostgreSQL. Você pode fazer isso usando o comando psql:</p>
+<pre><code class="hljs language-bash">
+  psql -h &lt;host&gt; -p &lt;port&gt; -d &lt;database&gt; -U &lt;username&gt;
+
+</code></pre>
+</li>
+<li>
+<p>Por exemplo, para conectar-se ao banco de dados PostgreSQL chamado <em>mydatabase</em> no host <em>localhost</em> na porta <em>5432</em>, você usaria o seguinte comando:</p>
+<pre><code class="hljs language-bash">
+  psql -h localhost -p 5432 -d mydatabase -U myuser
+
+</code></pre>
+</li>
+<li>
+<p>Uma vez conectado ao banco de dados, você pode executar os scripts acima usando o comando \i:</p>
+<pre><code class="hljs language-bash">
+  \i create_tables.sql
+
+</code></pre>
+<ul>
+<li>Nota:
+<ul>
+<li>Este comando irá executar o script <em>create_tables</em>.sql, que criará as tabelas necessárias para o diagrama de classes.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="usando-uma-ferramenta-gui-pgadmin">Usando uma ferramenta GUI <em>pgAdmin</em></h2>
+<ul>
+<li>O <em>pgAdmin</em> é uma ferramenta de gerenciamento de banco de dados que permite criar tabelas, inserir dados, consultar dados e realizar outras tarefas administrativas.</li>
+<li>Para executar os scripts acima usando o pgAdmin, você precisará abrir o pgAdmin e conectar-se ao banco de dados PostgreSQL. Em seguida, você pode clicar com o botão direito do mouse no banco de dados e selecionar &quot;Importar&quot;. Na caixa de diálogo &quot;Importar&quot;, selecione o arquivo create_tables.sql e clique em &quot;Abrir&quot;. O pgAdmin irá então importar o script e criar as tabelas necessárias para o diagrama de classes.</li>
+<li>A escolha da ferramenta para executar os scripts acima depende de suas preferências pessoais. Se você estiver familiarizado com a linha de comando, o psql é uma boa opção. Se você preferir uma ferramenta GUI, o pgAdmin é uma boa opção.</li>
+</ul>
+<h2 id="compartilhar-o--acesso-ao-banco-de-dados">Compartilhar o  acesso ao banco de dados</h2>
+<ul>
+<li>
+<p>Conceder acesso ao banco de dados:</p>
+<pre><code class="hljs language-sql">
+  <span class="hljs-keyword">GRANT</span> <span class="hljs-keyword">ALL</span> <span class="hljs-keyword">PRIVILEGES</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">DATABASE</span> mydatabase <span class="hljs-keyword">TO</span> mypartner;
+
+</code></pre>
+<ul>
+<li>Este comando concederá ao seu parceiro todos os privilégios no banco de dados mydatabase.</li>
+<li></li>
+</ul>
+</li>
+</ul>
 <h2 id="referências">Referências</h2>
 <ol>
 <li><a href="https://mermaid.js.org/syntax/flowchart.html">Gráfico criado com projeto mermaid</a></li>
