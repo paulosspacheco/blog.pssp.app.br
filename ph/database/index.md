@@ -26,7 +26,7 @@
 12. [Formas_de_Pagamento](./formas_de_pagamento.html)
 13. [Consulta](./consulta.html)
 
-## Diagrama do banco de dados do projeto
+## Diagrama 01 do banco de dados do projeto
 
 <pre><code class="language-mermaid"><div class="mermaid">
 
@@ -93,6 +93,7 @@ flowchart TD
            login
            senha
            status `")]
+
       9[("`
       **9. expediente_do_medico_data**
            id_medico
@@ -151,6 +152,257 @@ flowchart TD
 
 </div></code></pre>
 
+## Diagrama 02 do banco de dados do projeto _ Sugestão Bard do Google
+
+<pre><code class="language-mermaid"><div class="mermaid">
+
+classDiagram
+
+class Operador {
+  id: Integer
+  nome: String
+  telefone: String
+}
+
+
+class Hospital {
+  id: Integer
+  nome: String
+  telefone: String
+}
+
+class NaturezaDaInteracao {
+  id: Integer
+  nome: String
+}
+
+class Medico {
+  id: Integer
+  idOperador: Integer
+  nome: String
+  telefone: String
+  telefoneSecretaria: String
+  login: String
+  senha: String
+}
+
+class ServicoDeAgendas {
+  id: Integer
+  nome: String
+  login: String
+  senha: String
+}
+
+class Convenio {
+  id: Integer
+  idMedico: Integer
+  nome: String
+  login: String
+  senha: String
+}
+
+class Cliente {
+  id: Integer
+  nome: String
+  telefoneWhatsapp: String
+  email: String
+  login: String
+  senha: String
+  idConvenio: Integer
+  dataTimeDisponivel: Date
+  matriculaNoConvenio: Integer
+}
+
+class Integracao {
+  id: Integer
+  enderecoDoSite: String
+  login: String
+  senha: String
+  status: Boolean
+}
+
+class ExpedienteDoMedicoData {
+  idMedico: Integer
+  dataTime: Date
+}
+
+class ExpedienteDoMedicoHoras {
+  idMedico: Integer
+  dataTimeInicial: Date
+  dataTimeFinal: Date
+}
+
+class Agenda {
+  id: Integer
+  idMedico: Integer
+  idCliente: Integer
+  dataTime: Date
+  dataTimeConfirmacao: Date
+  idConvenio: Integer
+  idNaturezaDaInteracao: Integer
+  idFormasDePagamento: Integer
+  observacoes: String
+}
+
+class FormasDePagamento {
+  id: Integer
+  nome: String
+}
+
+class Consulta {
+  id: Integer
+  idAgenda: Integer
+  Cliente: Boolean
+  idMedico: Integer
+  dataTime: Date
+  idConvenio: Integer
+  idFormasDePagamento: Integer
+}
+
+Operador "1" -- "1..n" Agenda
+Operador "1" -- "1" ServicoDeAgendas
+Hospital "1" -- "n" Medico
+Medico "1" -- "1" NaturezaDaInteracao
+Medico "1" -- "1" Convenio
+Medico "1" -- "n" ExpedienteDoMedicoData
+Medico "1" -- "n" ExpedienteDoMedicoHoras
+Convenio "1" -- "n" Agenda
+Cliente "1" -- "n" Agenda
+Cliente "1" -- "1" Integracao
+ExpedienteDoMedicoData "1" -- "1" Medico
+ExpedienteDoMedicoHoras "1" -- "1" Medico
+Agenda "1" -- "1" FormasDePagamento
+Consulta "1" -- "1" Agenda
+Consulta "0..1" -- "1" Cliente
+Consulta "1" -- "1" Medico
+
+</div></code></pre>
+
+## Diagrama 03 do banco de dados do projeto _ Sugestão Chatgpt
+
+<pre><code class="language-mermaid"><div class="mermaid">
+
+classDiagram
+
+class Operador {
+  id: Integer
+  nome: String
+  telefone: String
+}
+
+class Hospital {
+  id: Integer
+  nome: String
+  telefone: String
+}
+
+class NaturezaDaInteracao {
+  id: Integer
+  nome: String
+}
+
+class Medico {
+  id: Integer
+  idOperador: Integer
+  nome: String
+  telefone: String
+  telefoneSecretaria: String
+  login: String
+  senha: String
+}
+
+class ServicoDeAgendas {
+  id: Integer
+  nome: String
+  login: String
+  senha: String
+}
+
+class Convenio {
+  id: Integer
+  idMedico: Integer
+  nome: String
+  login: String
+  senha: String
+}
+
+class Cliente {
+  id: Integer
+  nome: String
+  telefoneWhatsapp: String
+  email: String
+  login: String
+  senha: String
+  idConvenio: Integer
+  dataTimeDisponivel: Date
+  matriculaNoConvenio: Integer
+}
+
+class Integracao {
+  id: Integer
+  enderecoDoSite: String
+  login: String
+  senha: String
+  status: Boolean
+}
+
+class ExpedienteDoMedicoData {
+  idMedico: Integer
+  dataTime: Date
+}
+
+class ExpedienteDoMedicoHoras {
+  idMedico: Integer
+  dataTimeInicial: Date
+  dataTimeFinal: Date
+}
+
+class Agenda {
+  id: Integer
+  idMedico: Integer
+  idCliente: Integer
+  dataTime: Date
+  dataTimeConfirmacao: Date
+  idConvenio: Integer
+  idNaturezaDaInteracao: Integer
+  idFormasDePagamento: Integer
+  observacoes: String
+}
+
+class FormasDePagamento {
+  id: Integer
+  nome: String
+}
+
+class Consulta {
+  id: Integer
+  idAgenda: Integer
+  isCliente: Boolean
+  idMedico: Integer
+  dataTime: Date
+  idConvenio: Integer
+  idFormasDePagamento: Integer
+}
+
+Operador "1" -- "1..n" Agenda
+Operador "1" -- "1" ServicoDeAgendas
+Hospital "1" -- "n" Medico
+Medico "1" -- "1" NaturezaDaInteracao
+Medico "1" -- "1" Convenio
+Medico "1" -- "n" ExpedienteDoMedicoData
+Medico "1" -- "n" ExpedienteDoMedicoHoras
+Convenio "1" -- "n" Agenda
+Cliente "1" -- "n" Agenda
+Cliente "1" -- "1" Integracao
+ExpedienteDoMedicoData "1" -- "1" Medico
+ExpedienteDoMedicoHoras "1" -- "1" Medico
+Agenda "1" -- "1" FormasDePagamento
+Consulta "1" -- "1" Agenda
+Consulta "0..1" -- "1" Cliente
+Consulta "1" -- "1" Medico
+
+</div></code></pre>
+
 ## Referências
 
 1. [Gráfico criado com projeto mermaid](https://mermaid.js.org/syntax/flowchart.html)
@@ -158,3 +410,4 @@ flowchart TD
 <!-- markdownlint-disable-next-line -->
 </main>
 [🔝🔝](#topo "Retorna ao topo")
+
