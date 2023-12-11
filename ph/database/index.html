@@ -45,131 +45,7 @@
 <li><a href="./formas_de_pagamento.html">Formas_de_Pagamento</a></li>
 <li><a href="./consulta.html">Consulta</a></li>
 </ol>
-<h2 id="diagrama-01-do-banco-de-dados-do-projeto">Diagrama 01 do banco de dados do projeto</h2>
-<pre><code class="language-mermaid"><div class="mermaid">
-
-flowchart TD
-
-      1[("`
-      **1. operadores**
-         id
-         nome
-         telefone`")]
-
-      2[("`
-      **2. hospitais**
-            id
-            nme
-            telefone`")]
-
-      3[("`
-      **3. natureza da interação**
-            id
-            nome `")]
-
-      4[("`
-      **4. médicos**
-      id
-      id_operadores
-      nome
-      telefone
-      telefone_da_secretaria
-      login
-      senha`")]
-
-      5[("`
-      **5. serviço_de_agendas**
-           id
-           nome
-           login
-           senha `")]
-
-      6[("`
-      **6. convênios**
-           id
-           nome
-           login
-           senha `")]
-
-      7[("`
-      **7. clientes**
-           id;
-           nome;
-           telefone_whatsApp;
-           e-mail
-           login
-           senha
-           id_convênio
-           dataTime_disponível
-           matricula_no_convênio
-           `")]
-
-      8[("`
-      **8. integração**
-           id
-           endereço_do_site
-           login
-           senha
-           status `")]
-
-      9[("`
-      **9. expediente_do_medico_data**
-           id_medico
-           data
-       `")]
-
-      10[("`
-      **10. expediente_do_medico_horas**
-            id_medico
-            data
-            dataTime_inicial
-            dataTime_final
-            `")]
-
-      11[("`
-      **11. agenda**
-            id
-            id_medico
-            id_cliente
-            dataTime
-            dataTime_confirmação
-            id_convênio
-            id_natureza_da_interação
-            observações
-        `")]
-
-      12[("`
-      **12. formas_de_pagamento**
-            id
-            nome
-        `")]
-
-      13[("`
-      **13. consulta**
-            id
-            id_agenda
-            if_cliente
-            id_medico
-            dataTime
-            id_Convênio
-            id_forma_de_pagamento
-         `")]  
-
-1 --> |n-1| 4
-4 --> |n-1| 9
-4 --> |n-1| 10
-4 --> |n-1| 11
-7 --> |n-1| 11
-6 --> |n-1| 11
-3 --> |n-1| 11
-12 --> |n-1| 13
-11 o--o |1-1| 13
-4 --> |n-1| 13
-6 --> |n-1| 13
-7 --> |n-1| 13
-
-</div></code></pre>
-<h2 id="diagrama-02-do-banco-de-dados-do-projeto-_-sugestão-bard-do-google">Diagrama 02 do banco de dados do projeto _ Sugestão Bard do Google</h2>
+<h2 id="diagrama-do-entidade-e-relacionamentos-der">Diagrama do Entidade e Relacionamentos (DER)</h2>
 <pre><code class="language-mermaid"><div class="mermaid">
 
 classDiagram
@@ -179,7 +55,6 @@ class Operador {
   nome: String
   telefone: String
 }
-
 
 class Hospital {
   id: Integer
@@ -204,6 +79,7 @@ class Medico {
 
 class ServicoDeAgendas {
   id: Integer
+  id_operador:Integer
   nome: String
   login: String
   senha: String
@@ -275,146 +151,85 @@ class Consulta {
   idFormasDePagamento: Integer
 }
 
-Operador "1" -- "1..n" Agenda
-Operador "1" -- "1" ServicoDeAgendas
-Hospital "1" -- "n" Medico
-Medico "1" -- "1" NaturezaDaInteracao
-Medico "1" -- "1" Convenio
-Medico "1" -- "n" ExpedienteDoMedicoData
-Medico "1" -- "n" ExpedienteDoMedicoHoras
-Convenio "1" -- "n" Agenda
-Cliente "1" -- "n" Agenda
-Cliente "1" -- "1" Integracao
-ExpedienteDoMedicoData "1" -- "1" Medico
-ExpedienteDoMedicoHoras "1" -- "1" Medico
-Agenda "1" -- "1" FormasDePagamento
-Consulta "1" -- "1" Agenda
-Consulta "0..1" -- "1" Cliente
-Consulta "1" -- "1" Medico
+Operador "1" -- "1..n" Medico
+Hospital "1" -- "0..n" Medico
+Medico "1" -- "1..n" ExpedienteDoMedicoData
+ExpedienteDoMedicoData   "1" -- "1..n" ExpedienteDoMedicoHoras
+Medico   "1" -- "1..n" ExpedienteDoMedicoHoras
+Medico "1" -- "1..n" Agenda
+Cliente "1" -- "1..n" Agenda
+NaturezaDaInteracao  "1" -- "1..n" Agenda
+Convenio  "1" -- "0..n" Agenda
+FormasDePagamento  "1" -- "0..n" Agenda
+
+Medico "1" -- "1..n" Consulta
+Agenda "1" -- "0..n" Consulta
+Convenio "1" -- "0..n" Consulta
+FormasDePagamento  "1" -- "0..n" Consulta
 
 </div></code></pre>
-<h2 id="diagrama-03-do-banco-de-dados-do-projeto-_-sugestão-chatgpt">Diagrama 03 do banco de dados do projeto _ Sugestão Chatgpt</h2>
-<pre><code class="language-mermaid"><div class="mermaid">
-
-classDiagram
-
-class Operador {
-  id: Integer
-  nome: String
-  telefone: String
-}
-
-class Hospital {
-  id: Integer
-  nome: String
-  telefone: String
-}
-
-class NaturezaDaInteracao {
-  id: Integer
-  nome: String
-}
-
-class Medico {
-  id: Integer
-  idOperador: Integer
-  nome: String
-  telefone: String
-  telefoneSecretaria: String
-  login: String
-  senha: String
-}
-
-class ServicoDeAgendas {
-  id: Integer
-  nome: String
-  login: String
-  senha: String
-}
-
-class Convenio {
-  id: Integer
-  idMedico: Integer
-  nome: String
-  login: String
-  senha: String
-}
-
-class Cliente {
-  id: Integer
-  nome: String
-  telefoneWhatsapp: String
-  email: String
-  login: String
-  senha: String
-  idConvenio: Integer
-  dataTimeDisponivel: Date
-  matriculaNoConvenio: Integer
-}
-
-class Integracao {
-  id: Integer
-  enderecoDoSite: String
-  login: String
-  senha: String
-  status: Boolean
-}
-
-class ExpedienteDoMedicoData {
-  idMedico: Integer
-  dataTime: Date
-}
-
-class ExpedienteDoMedicoHoras {
-  idMedico: Integer
-  dataTimeInicial: Date
-  dataTimeFinal: Date
-}
-
-class Agenda {
-  id: Integer
-  idMedico: Integer
-  idCliente: Integer
-  dataTime: Date
-  dataTimeConfirmacao: Date
-  idConvenio: Integer
-  idNaturezaDaInteracao: Integer
-  idFormasDePagamento: Integer
-  observacoes: String
-}
-
-class FormasDePagamento {
-  id: Integer
-  nome: String
-}
-
-class Consulta {
-  id: Integer
-  idAgenda: Integer
-  isCliente: Boolean
-  idMedico: Integer
-  dataTime: Date
-  idConvenio: Integer
-  idFormasDePagamento: Integer
-}
-
-Operador "1" -- "1..n" Agenda
-Operador "1" -- "1" ServicoDeAgendas
-Hospital "1" -- "n" Medico
-Medico "1" -- "1" NaturezaDaInteracao
-Medico "1" -- "1" Convenio
-Medico "1" -- "n" ExpedienteDoMedicoData
-Medico "1" -- "n" ExpedienteDoMedicoHoras
-Convenio "1" -- "n" Agenda
-Cliente "1" -- "n" Agenda
-Cliente "1" -- "1" Integracao
-ExpedienteDoMedicoData "1" -- "1" Medico
-ExpedienteDoMedicoHoras "1" -- "1" Medico
-Agenda "1" -- "1" FormasDePagamento
-Consulta "1" -- "1" Agenda
-Consulta "0..1" -- "1" Cliente
-Consulta "1" -- "1" Medico
-
+<ul>
+<li><strong>Explicação do diagrama</strong>
+<ul>
+<li>
+<p>O diagrama de entidade de relacionamento (DER) mostra as relações entre as entidades de um sistema. No caso deste diagrama, as entidades são:</p>
+<ul>
+<li>Operador</li>
+<li>Hospital</li>
+<li>NaturezaDaInteração</li>
+<li>Medico</li>
+<li>ServiçoDeAgendas</li>
+<li>Convenio</li>
+<li>Cliente</li>
+<li>Integração</li>
+<li>ExpedienteDoMedicoData</li>
+<li>ExpedienteDoMedicoHoras</li>
+<li>Agenda</li>
+<li>FormasDePagamento</li>
+<li>Consulta</li>
+</ul>
+</li>
+<li>
+<p>A simbologia usada para indicar os relacionamentos são:</p>
+<ul>
+<li>
+<p><em>1</em> : Indica o lado do relacionamento que só pode conter uma ocorrência.</p>
+</li>
+<li>
+<p><em>1..1</em> : Indica que o identificador de ambas a tabelas devem ser iguais;</p>
+<ul>
+<li>Exemplo:
+<ul>
+<li>Código da <em>agenda.idCliente</em>  é obrigatório ser igual a <em><a href="http://cliente.id">cliente.id</a></em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>1..n</em> : Indica que pelo menos <em>um</em> (1) identificador de uma das tabelas devem ser igual o identificador da outra;</p>
+<ul>
+<li>Exemplo:
+<ul>
+<li>O identificador <em>agenda.idNaturezaDaInteracao</em> é obrigatório ser igual ao identificador <em><a href="http://NaturezaDaInteracao.id">NaturezaDaInteracao.id</a></em> e <em><a href="http://NaturezaDaInteracao.id">NaturezaDaInteracao.id</a></em> pode existir mais de uma ocorrência na agenda.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>0..n</em> : Indica que o relacionamento entre as tabelas é opcional e que pode haver mais de referência de uma tabela na outra;</p>
+<ul>
+<li>Exemplo:
+<ul>
+<li>O identificador <em>Consulta.idAgenda</em> é opcional ser igual ao identificador <em><a href="http://Agenda.id">Agenda.id</a></em> porque o médico pode atender um paciente sem que o mesmo tenha sido agendado.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </div></code></pre>
 <h2 id="referências">Referências</h2>
 <ol>

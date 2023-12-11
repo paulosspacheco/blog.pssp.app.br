@@ -36,9 +36,10 @@
 
       5. serviço_de_agendas
          1. id
-         2. nome
-         3. login
-         4. senha
+         2. id_operador
+         3. nome
+         4. login
+         5. senha
 
       6. convênios
          1. id

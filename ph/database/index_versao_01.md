@@ -26,7 +26,134 @@
 12. [Formas_de_Pagamento](./formas_de_pagamento.html)
 13. [Consulta](./consulta.html)
 
-## Diagrama do Entidade e Relacionamentos (DER) 
+## Diagrama 01 do banco de dados do projeto
+
+<pre><code class="language-mermaid"><div class="mermaid">
+
+flowchart TD
+
+      1[("`
+      **1. operadores**
+         id
+         nome
+         telefone`")]
+
+      2[("`
+      **2. hospitais**
+            id
+            nme
+            telefone`")]
+
+      3[("`
+      **3. natureza da interação**
+            id
+            nome `")]
+
+      4[("`
+      **4. médicos**
+      id
+      id_operadores
+      nome
+      telefone
+      telefone_da_secretaria
+      login
+      senha`")]
+
+      5[("`
+      **5. serviço_de_agendas**
+           id
+           id_operador
+           nome
+           login
+           senha `")]
+
+      6[("`
+      **6. convênios**
+           id
+           nome
+           login
+           senha `")]
+
+      7[("`
+      **7. clientes**
+           id;
+           nome;
+           telefone_whatsApp;
+           e-mail
+           login
+           senha
+           id_convênio
+           dataTime_disponível
+           matricula_no_convênio
+           `")]
+
+      8[("`
+      **8. integração**
+           id
+           endereço_do_site
+           login
+           senha
+           status `")]
+
+      9[("`
+      **9. expediente_do_medico_data**
+           id_medico
+           data
+       `")]
+
+      10[("`
+      **10. expediente_do_medico_horas**
+            id_medico
+            data
+            dataTime_inicial
+            dataTime_final
+            `")]
+
+      11[("`
+      **11. agenda**
+            id
+            id_medico
+            id_cliente
+            dataTime
+            dataTime_confirmação
+            id_convênio
+            id_natureza_da_interação
+            observações
+        `")]
+
+      12[("`
+      **12. formas_de_pagamento**
+            id
+            nome
+        `")]
+
+      13[("`
+      **13. consulta**
+            id
+            id_agenda
+            if_cliente
+            id_medico
+            dataTime
+            id_Convênio
+            id_forma_de_pagamento
+         `")]  
+
+1 --> |n-1| 4
+4 --> |n-1| 9
+4 --> |n-1| 10
+4 --> |n-1| 11
+7 --> |n-1| 11
+6 --> |n-1| 11
+3 --> |n-1| 11
+12 --> |n-1| 13
+11 o--o |1-1| 13
+4 --> |n-1| 13
+6 --> |n-1| 13
+7 --> |n-1| 13
+
+</div></code></pre>
+
+## Diagrama 02 do banco de dados do projeto _ Sugestão Bard do Google
 
 <pre><code class="language-mermaid"><div class="mermaid">
 
@@ -149,37 +276,36 @@ Agenda "1" -- "0..n" Consulta
 Convenio "1" -- "0..n" Consulta
 FormasDePagamento  "1" -- "0..n" Consulta
 
+
+
 </div></code></pre>
 
 - **Explicação do diagrama**
   - O diagrama de entidade de relacionamento (DER) mostra as relações entre as entidades de um sistema. No caso deste diagrama, as entidades são:
     - Operador
     - Hospital
-    - NaturezaDaInteração
+    - NaturezaDaInteracao
     - Medico
-    - ServiçoDeAgendas
+    - ServicoDeAgendas
     - Convenio
     - Cliente
-    - Integração
+    - Integracao
     - ExpedienteDoMedicoData
     - ExpedienteDoMedicoHoras
     - Agenda
     - FormasDePagamento
     - Consulta
 
-  - A simbologia usada para indicar os relacionamentos são:
-    - _1_ : Indica o lado do relacionamento que só pode conter uma ocorrência.
-
-    - _1..1_ : Indica que o identificador de ambas a tabelas devem ser iguais;
-      - Exemplo:
-        - Código da _agenda.idCliente_  é obrigatório ser igual a _cliente.id_.
-
-    - _1..n_ : Indica que pelo menos _um_ (1) identificador de uma das tabelas devem ser igual o identificador da outra;
-      - Exemplo:
-        - O identificador _agenda.idNaturezaDaInteracao_ é obrigatório ser igual ao identificador _NaturezaDaInteracao.id_ e _NaturezaDaInteracao.id_ pode existir mais de uma ocorrência na agenda.
-    - _0..n_ : Indica que o relacionamento entre as tabelas é opcional e que pode haver mais de referência de uma tabela na outra;
-      - Exemplo:
-        - O identificador _Consulta.idAgenda_ é opcional ser igual ao identificador _Agenda.id_ porque o médico pode atender um paciente sem que o mesmo tenha sido agendado.
+  - As relações entre essas entidades são:
+    - Operador pode criar Agendas.
+    - Operador pode se autenticar em um ServicoDeAgendas.
+    - Hospital pode ter Medicos.
+    - Medico pode atender a Clientes.
+    - Medico pode estar associado a um ou mais Convenios.
+    - Cliente pode agendar Consultas.
+    - Cliente pode se autenticar em um Integracao.
+    - Medico pode ter Expedientes.
+    - ExpedienteDoMedicoData e ExpedienteDoMedicoHoras são chaves múltiplas
 
 </div></code></pre>
 
