@@ -3,131 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>An&aacute;lise do projeto ph&period;app&period;br</title>
-        <style>
-/* From extension vscode.github */
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-
-.vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
-	display: none;
-}
-
-/* From extension davidmwhynot.markdown-higlightjs */
-/*
-
-Atom One Dark by Daniel Gamage
-Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
-
-base:    #282c34
-mono-1:  #abb2bf
-mono-2:  #818896
-mono-3:  #5c6370
-hue-1:   #56b6c2
-hue-2:   #61aeee
-hue-3:   #c678dd
-hue-4:   #98c379
-hue-5:   #e06c75
-hue-5-2: #be5046
-hue-6:   #d19a66
-hue-6-2: #e6c07b
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #abb2bf;
-  background: #282c34;
-}
-
-.hljs-comment,
-.hljs-quote {
-  color: #5c6370;
-  font-style: italic;
-}
-
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula {
-  color: #c678dd;
-}
-
-.hljs-section,
-.hljs-name,
-.hljs-selector-tag,
-.hljs-deletion,
-.hljs-subst {
-  color: #e06c75;
-}
-
-.hljs-literal {
-  color: #56b6c2;
-}
-
-.hljs-string,
-.hljs-regexp,
-.hljs-addition,
-.hljs-attribute,
-.hljs-meta-string {
-  color: #98c379;
-}
-
-.hljs-built_in,
-.hljs-class .hljs-title {
-  color: #e6c07b;
-}
-
-.hljs-attr,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
-  color: #d19a66;
-}
-
-.hljs-symbol,
-.hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
-  color: #61aeee;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-.hljs-link {
-  text-decoration: underline;
-}
-
-</style>
-        
-        
-        <style>
-.task-list-item {
-    list-style-type: none;
-}
-
-.task-list-item-checkbox {
-    margin-left: -20px;
-    vertical-align: middle;
-    pointer-events: none;
-}
-</style>
-        <style>
+ 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -142,8 +18,7 @@ hue-6-2: #e6c07b
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
-   
-</style>
+
     </head>
     <body class="vscode-body vscode-dark">
         <div class="header" id="myHeader">
@@ -153,145 +28,147 @@ hue-6-2: #e6c07b
 <main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<h1 id="análise-do-projeto-phappbr">Análise do projeto <a href="http://ph.app.br">ph.app.br</a></h1>
+<!-- <h1 id="análise-do-projeto-phappbr">Análise do projeto <a href="http://ph.app.br">ph.app.br</a></h1> -->
 <ol>
 <li><strong>Etapas:</strong>
 <ol>
 <li>
-<p>Estudar como o site OpenAI pode ajudar a criar o  <em>Assistant API da OpenAI</em>.</p>
-</li>
-<li>
-<p>Criar cadastros necessários para o projeto:</p>
+<p>Criar banco de dados</p>
 <ol>
 <li>
 <p>operadores //Pode ser a secretária virtual</p>
 <ol>
-<li>id</li>
-<li>nome</li>
-<li>telefone</li>
+<li>id // tipo inteiro serial</li>
+<li>nome // Char com 50 posições não pode ser nulo</li>
+<li>telefone : // Char com 20 posições</li>
 </ol>
 </li>
 <li>
 <p>hospitais</p>
 <ol>
-<li>id</li>
-<li>nome</li>
-<li>telefone</li>
+<li>id // tipo inteiro serial</li>
+<li>nome // Char com 50 posições pode ser nulo</li>
+<li>telefone // Char com 20 posições pode ser nulo</li>
 </ol>
 </li>
 <li>
-<p>natureza_da_interação</p>
+<p>status_da_agenda_ou_consulta</p>
 <ol>
-<li>id</li>
-<li>nome</li>
+<li>id // tipo inteiro serial</li>
+<li>nome // Char com 20 posições pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>médicos</p>
 <ol>
-<li>id</li>
-<li>id_operadores</li>
-<li>nome</li>
-<li>telefone</li>
-<li>telefone_da_secretaria</li>
-<li>login</li>
-<li>senha</li>
+<li>id // tipo inteiro serial</li>
+<li>id_operadores //Tipo Inteiro</li>
+<li>nome // Char com 50 posições pode ser nulo</li>
+<li>telefone // Char com 25 posições pode ser nulo</li>
+<li>telefone_da_secretaria // Char com 25 posições pode ser nulo</li>
+<li>login // Char com 50 posições pode ser nulo</li>
+<li>senha // Char com 20 posições pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>serviço_de_agendas</p>
 <ol>
-<li>id</li>
-<li>id_operador</li>
-<li>nome</li>
-<li>login</li>
-<li>senha</li>
+<li>id // tipo inteiro serial</li>
+<li>id_operador // tipo inteiro</li>
+<li>nome // Char com 100 posições pode ser nulo</li>
+<li>login // Char com 50 posições pode ser nulo</li>
+<li>senha // Char com 50 posições pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>convênios</p>
 <ol>
-<li>id</li>
-<li>id_médico</li>
-<li>nome</li>
-<li>login</li>
-<li>senha</li>
+<li>id  // tipo inteiro serial</li>
+<li>id_médico // tipo inteiro</li>
+<li>nome  // Char com 50 posições pode ser nulo</li>
+<li>login // Char com 50 posições pode ser nulo</li>
+<li>senha // Char com 50 posições pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>clientes</p>
 <ol>
-<li>id;</li>
-<li>nome;</li>
-<li>telefone_whatsApp;</li>
-<li>e_mail</li>
-<li>login</li>
-<li>senha</li>
-<li>id_convênio</li>
-<li>dataTime_disponível // Usado para pesquisar na agenda uma data mais próxima</li>
-<li>matricula_no_convênio // Número da matrícula no convênio</li>
+<li>id // tipo inteiro serial</li>
+<li>nome // Char com 50 posições. Obs: Não pode ser nulo</li>
+<li>telefone_whatsApp;// Char com 25 posições. Obs: pode ser nulo</li>
+<li>e_mail // Char com 50 posições e pode ser nulo</li>
+<li>login  // Char com 50 posições e não pode ser nulo</li>
+<li>senha  // Char com 20 posições e não pode ser nulo</li>
+<li>id_convênio // tipo inteiro pode ser nulo</li>
+<li>dataTime_disponível // Tipo da data e pode ser nulo. Obs: Usado para pesquisar na agenda uma data mais próxima</li>
+<li>matricula_no_convênio // Char com 50 posições e pode ser nulo.</li>
 </ol>
 </li>
 <li>
 <p>integração // Usado para ser logar</p>
 <ol>
-<li>id</li>
-<li>endereço_do_site</li>
-<li>login // Login para acessar o endereço_do_site</li>
-<li>senha // Senha para acessar o endereço_do_site</li>
-<li>status // Usado para saber o se o site está conectado</li>
+<li>id // tipo inteiro serial</li>
+<li>endereço_do_site // Char com 255 posições e não pode ser nulo</li>
+<li>login // Char com 50 posições e não pode ser nulo. Obs: Login para acessar o endereço_do_site</li>
+<li>senha // Char com 20 posições e não pode ser nulo. Obs: Senha para acessar o endereço_do_site</li>
+<li>status // Campo lógico e não pode ser nulo Obs: Usado para saber o se o site está conectado</li>
 </ol>
 </li>
 <li>
 <p>expediente_do_medico_data // Chave múltipla id_medico+Data</p>
 <ol>
-<li>id_medico</li>
-<li>dataTime</li>
+<li>id_medico // tipo inteiro  e não pode ser nulo</li>
+<li>dataTime // tipo data e não pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>expediente_do_medico_horas // Chave múltipla id_medico+Data+Hora_inicial</p>
 <ol>
-<li>id_Medico</li>
-<li>dataTime_inicial // Data e Hora inicial do expediente do médico</li>
-<li>dataTime_final   // Data e Hora final do expediente do médico</li>
+<li>id_Medico // tipo inteiro e não pode ser nulo</li>
+<li>dataTime_inicial // Data e Hora inicial  do expediente do médico e não pode ser nulo</li>
+<li>dataTime_final   // Data e Hora final do expediente do médico e não pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>agenda</p>
 <ol>
-<li>id</li>
-<li>id_Medico</li>
-<li>id_Cliente</li>
-<li>dataTime  //Data e hora prevista da consulta</li>
-<li>dataTime_confirmação  //Data e hora da confirmação  da consulta</li>
-<li>id_convênio</li>
-<li>id_natureza_da_interação</li>
-<li>id_formas_de_pagamento // Para o caso do cliente não ter convênio</li>
-<li>dataTime</li>
-<li>observações</li>
+<li>id // tipo inteiro serial</li>
+<li>id_Medico // tipo inteiro  e não pode ser nulo</li>
+<li>id_Cliente // tipo inteiro  e não pode ser nulo</li>
+<li>dataTime  // Data e hora prevista da consulta e não pode ser nulo</li>
+<li>dataTime_confirmação // Data e hora da confirmação  da consulta e não pode ser nulo</li>
+<li>id_convênio //tipo inteiro e pode ser nulo caso id_formas_de_pagamento não for nulo.</li>
+<li>id_status_da_agenda_ou_consulta //tipo inteiro e não pode ser nulo</li>
+<li>id_formas_de_pagamento //tipo inteiro e pode ser nulo caso id_convênio não for nulo.</li>
+<li>dataTime // Data e hora em que a agenda foi criada e não pode ser nulo</li>
+<li>observações // Char com 255 posições e pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>formas_de_pagamento</p>
 <ol>
-<li>id</li>
-<li>Nome // 0 - Dinheiro; 1 - Espécie; 2 - Convênio</li>
+<li>id // tipo inteiro serialNatureza</li>
+<li>Nome // Char com 30 posições e não pode ser nulo. Obs: Pode ser: 0 - Dinheiro; 1 - Pix; 2 - Convênio; 3 - Cartão de debito; 4 - Catão de credito Mastercard; 5 - Catão de credito Visa;  etc....</li>
 </ol>
 </li>
 <li>
 <p>consulta //Usado para baixar baixar a agenda</p>
 <ol>
-<li>id</li>
-<li>id_agenda  // Opcional</li>
-<li>if_cliente // Para o caso de não ter agenda</li>
-<li>id_medico  // Para o caso de não ter agenda</li>
-<li>dataTime   // Data e hora da consulta</li>
-<li>id_convênio //Opcional</li>
-<li>id_forma_de_pagamento // Para o caso do cliente não ter convênio</li>
+<li>id // tipo inteiro serial</li>
+<li>id_agenda  // tipo inteiro e pode ser nulo. Obs: Uma consulta não é obrigado ter agenda.</li>
+<li>if_cliente // tipo inteiro e não pode ser nulo.</li>
+<li>id_medico  // tipo inteiro e não pode ser nulo.</li>
+<li>dataTime   // Data e hora da consulta e não pode ser nulo</li>
+<li>id_convênio // tipo inteiro e pode ser nulo. Obs: Uma consulta não é obrigado ter convênio</li>
+<li>id_forma_de_pagamento // tipo inteiro e pode ser nulo se id_convênio não for nulo.</li>
+<li>id_status_da_agenda_ou_consulta // tipo inteiro e não pode ser nulo</li>
+<li>Observação // Char com 255 posições e pode ser nulo</li>
 </ol>
 </li>
 </ol>
+</li>
+<li>
+<p>Estudar como o site OpenAI pode ajudar a criar o  <em>Assistant API da OpenAI</em>.</p>
 </li>
 <li>
 <p>Criar rotinas para:</p>

@@ -9,7 +9,8 @@
 # Análise do projeto ph.app.br
 
 1. **Etapas:**
-   1. Criar banco de dados
+   1. Estudar como o site OpenAI pode ajudar a criar o  _Assistant API da OpenAI_.
+   2. Criar cadastros necessários para o projeto:
       1. operadores //Pode ser a secretária virtual
          1. id // tipo inteiro serial
          2. nome // Char com 50 posições não pode ser nulo
@@ -101,7 +102,6 @@
           8. id_status_da_agenda_ou_consulta // tipo inteiro e não pode ser nulo
           9. Observação // Char com 255 posições e pode ser nulo
 
-   2. Estudar como o site OpenAI pode ajudar a criar o  _Assistant API da OpenAI_.
    3. Criar rotinas para:
       1. Criar programa para coletar as informações do paciente
          1. Obs?
