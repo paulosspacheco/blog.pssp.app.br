@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>An&aacute;lise do projeto ph&period;app&period;br</title>
- 
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -17,7 +17,6 @@
         <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
-
 
     </head>
     <body class="vscode-body vscode-dark">
@@ -33,98 +32,98 @@
 <li><strong>Etapas:</strong>
 <ol>
 <li>
-<p>Criar banco de dados</p>
+<p>Banco de dados Assistente_Virtual</p>
 <ol>
 <li>
 <p>operadores //Pode ser a secretária virtual</p>
 <ol>
-<li>id // tipo inteiro serial</li>
-<li>nome // Char com 50 posições não pode ser nulo</li>
-<li>telefone : // Char com 20 posições</li>
+<li>id // tipo Integer serial</li>
+<li>nome // String com 50 posições não pode ser nulo</li>
+<li>telefone : // String com 20 posições</li>
 </ol>
 </li>
 <li>
 <p>hospitais</p>
 <ol>
-<li>id // tipo inteiro serial</li>
-<li>nome // Char com 50 posições pode ser nulo</li>
-<li>telefone // Char com 20 posições pode ser nulo</li>
+<li>id // tipo Integer serial</li>
+<li>nome // String com 50 posições pode ser nulo</li>
+<li>telefone // String com 20 posições pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>status_da_agenda_ou_consulta</p>
 <ol>
-<li>id // tipo inteiro serial</li>
-<li>nome // Char com 20 posições pode ser nulo</li>
+<li>id // tipo Integer serial</li>
+<li>nome // String com 20 posições pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>médicos</p>
 <ol>
-<li>id // tipo inteiro serial</li>
-<li>id_operadores //Tipo Inteiro</li>
-<li>nome // Char com 50 posições pode ser nulo</li>
-<li>telefone // Char com 25 posições pode ser nulo</li>
-<li>telefone_da_secretaria // Char com 25 posições pode ser nulo</li>
-<li>login // Char com 50 posições pode ser nulo</li>
-<li>senha // Char com 20 posições pode ser nulo</li>
+<li>id // tipo Integer serial</li>
+<li>id_operadores //Tipo Integer</li>
+<li>nome // String com 50 posições pode ser nulo</li>
+<li>telefone // String com 25 posições pode ser nulo</li>
+<li>telefone_da_secretaria // String com 25 posições pode ser nulo</li>
+<li>login // String com 50 posições pode ser nulo</li>
+<li>senha // String com 20 posições pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>serviço_de_agendas</p>
 <ol>
-<li>id // tipo inteiro serial</li>
-<li>id_operador // tipo inteiro</li>
-<li>nome // Char com 100 posições pode ser nulo</li>
-<li>login // Char com 50 posições pode ser nulo</li>
-<li>senha // Char com 50 posições pode ser nulo</li>
+<li>id // tipo Integer serial</li>
+<li>id_operador // tipo Integer</li>
+<li>nome // String com 100 posições pode ser nulo</li>
+<li>login // String com 50 posições pode ser nulo</li>
+<li>senha // String com 50 posições pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>convênios</p>
 <ol>
-<li>id  // tipo inteiro serial</li>
-<li>id_médico // tipo inteiro</li>
-<li>nome  // Char com 50 posições pode ser nulo</li>
-<li>login // Char com 50 posições pode ser nulo</li>
-<li>senha // Char com 50 posições pode ser nulo</li>
+<li>id  // tipo Integer serial</li>
+<li>id_médico // tipo Integer</li>
+<li>nome  // String com 50 posições pode ser nulo</li>
+<li>login // String com 50 posições pode ser nulo</li>
+<li>senha // String com 50 posições pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>clientes</p>
 <ol>
-<li>id // tipo inteiro serial</li>
-<li>nome // Char com 50 posições. Obs: Não pode ser nulo</li>
-<li>telefone_whatsApp;// Char com 25 posições. Obs: pode ser nulo</li>
-<li>e_mail // Char com 50 posições e pode ser nulo</li>
-<li>login  // Char com 50 posições e não pode ser nulo</li>
-<li>senha  // Char com 20 posições e não pode ser nulo</li>
-<li>id_convênio // tipo inteiro pode ser nulo</li>
+<li>id // tipo Integer serial</li>
+<li>nome // String com 50 posições. Obs: Não pode ser nulo</li>
+<li>telefone_whatsApp;// String com 25 posições. Obs: pode ser nulo</li>
+<li>e_mail // String com 50 posições e pode ser nulo</li>
+<li>login  // String com 50 posições e não pode ser nulo</li>
+<li>senha  // String com 20 posições e não pode ser nulo</li>
+<li>id_convênio // tipo Integer pode ser nulo</li>
 <li>dataTime_disponível // Tipo da data e pode ser nulo. Obs: Usado para pesquisar na agenda uma data mais próxima</li>
-<li>matricula_no_convênio // Char com 50 posições e pode ser nulo.</li>
+<li>matricula_no_convênio // String com 50 posições e pode ser nulo.</li>
 </ol>
 </li>
 <li>
 <p>integração // Usado para ser logar</p>
 <ol>
-<li>id // tipo inteiro serial</li>
-<li>endereço_do_site // Char com 255 posições e não pode ser nulo</li>
-<li>login // Char com 50 posições e não pode ser nulo. Obs: Login para acessar o endereço_do_site</li>
-<li>senha // Char com 20 posições e não pode ser nulo. Obs: Senha para acessar o endereço_do_site</li>
+<li>id // tipo Integer serial</li>
+<li>endereço_do_site // String com 255 posições e não pode ser nulo</li>
+<li>login // String com 50 posições e não pode ser nulo. Obs: Login para acessar o endereço_do_site</li>
+<li>senha // String com 20 posições e não pode ser nulo. Obs: Senha para acessar o endereço_do_site</li>
 <li>status // Campo lógico e não pode ser nulo Obs: Usado para saber o se o site está conectado</li>
 </ol>
 </li>
 <li>
 <p>expediente_do_medico_data // Chave múltipla id_medico+Data</p>
 <ol>
-<li>id_medico // tipo inteiro  e não pode ser nulo</li>
+<li>id_medico // tipo Integer  e não pode ser nulo</li>
 <li>dataTime // tipo data e não pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>expediente_do_medico_horas // Chave múltipla id_medico+Data+Hora_inicial</p>
 <ol>
-<li>id_Medico // tipo inteiro e não pode ser nulo</li>
+<li>id_expediente_do_medico_data // tipo Integer e não pode ser nulo</li>
 <li>dataTime_inicial // Data e Hora inicial  do expediente do médico e não pode ser nulo</li>
 <li>dataTime_final   // Data e Hora final do expediente do médico e não pode ser nulo</li>
 </ol>
@@ -132,37 +131,37 @@
 <li>
 <p>agenda</p>
 <ol>
-<li>id // tipo inteiro serial</li>
-<li>id_Medico // tipo inteiro  e não pode ser nulo</li>
-<li>id_Cliente // tipo inteiro  e não pode ser nulo</li>
+<li>id // tipo Integer serial</li>
+<li>id_Medico // tipo Integer  e não pode ser nulo</li>
+<li>id_Cliente // tipo Integer  e não pode ser nulo</li>
 <li>dataTime  // Data e hora prevista da consulta e não pode ser nulo</li>
 <li>dataTime_confirmação // Data e hora da confirmação  da consulta e não pode ser nulo</li>
-<li>id_convênio //tipo inteiro e pode ser nulo caso id_formas_de_pagamento não for nulo.</li>
-<li>id_status_da_agenda_ou_consulta //tipo inteiro e não pode ser nulo</li>
-<li>id_formas_de_pagamento //tipo inteiro e pode ser nulo caso id_convênio não for nulo.</li>
+<li>id_convênio //tipo Integer e pode ser nulo caso id_formas_de_pagamento não for nulo.</li>
+<li>id_status_da_agenda_ou_consulta //tipo Integer e não pode ser nulo</li>
+<li>id_formas_de_pagamento //tipo Integer e pode ser nulo caso id_convênio não for nulo.</li>
 <li>dataTime // Data e hora em que a agenda foi criada e não pode ser nulo</li>
-<li>observações // Char com 255 posições e pode ser nulo</li>
+<li>observações // String com 255 posições e pode ser nulo</li>
 </ol>
 </li>
 <li>
 <p>formas_de_pagamento</p>
 <ol>
-<li>id // tipo inteiro serialNatureza</li>
-<li>Nome // Char com 30 posições e não pode ser nulo. Obs: Pode ser: 0 - Dinheiro; 1 - Pix; 2 - Convênio; 3 - Cartão de debito; 4 - Catão de credito Mastercard; 5 - Catão de credito Visa;  etc....</li>
+<li>id // tipo Integer serialNatureza</li>
+<li>Nome // String com 30 posições e não pode ser nulo. Obs: Pode ser: 0 - Dinheiro; 1 - Pix; 2 - Convênio; 3 - Cartão de debito; 4 - Catão de credito Mastercard; 5 - Catão de credito Visa;  etc....</li>
 </ol>
 </li>
 <li>
 <p>consulta //Usado para baixar baixar a agenda</p>
 <ol>
-<li>id // tipo inteiro serial</li>
-<li>id_agenda  // tipo inteiro e pode ser nulo. Obs: Uma consulta não é obrigado ter agenda.</li>
-<li>if_cliente // tipo inteiro e não pode ser nulo.</li>
-<li>id_medico  // tipo inteiro e não pode ser nulo.</li>
+<li>id // tipo Integer serial</li>
+<li>id_agenda  // tipo Integer e pode ser nulo. Obs: Uma consulta não é obrigado ter agenda.</li>
+<li>id_cliente // tipo Integer e não pode ser nulo.</li>
+<li>id_medico  // tipo Integer e não pode ser nulo.</li>
 <li>dataTime   // Data e hora da consulta e não pode ser nulo</li>
-<li>id_convênio // tipo inteiro e pode ser nulo. Obs: Uma consulta não é obrigado ter convênio</li>
-<li>id_forma_de_pagamento // tipo inteiro e pode ser nulo se id_convênio não for nulo.</li>
-<li>id_status_da_agenda_ou_consulta // tipo inteiro e não pode ser nulo</li>
-<li>Observação // Char com 255 posições e pode ser nulo</li>
+<li>id_convênio // tipo Integer e pode ser nulo. Obs: Uma consulta não é obrigado ter convênio</li>
+<li>id_forma_de_pagamento // tipo Integer e pode ser nulo se id_convênio não for nulo.</li>
+<li>id_status_da_agenda_ou_consulta // tipo Integer e não pode ser nulo</li>
+<li>Observação // String com 255 posições e pode ser nulo</li>
 </ol>
 </li>
 </ol>
