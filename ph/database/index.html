@@ -45,7 +45,7 @@
 <li><a href="./formas_de_pagamento.html">Formas_de_Pagamento</a></li>
 <li><a href="./consulta.html">Consulta</a></li>
 </ol>
-<h2 id="diagrama-do-entidade-e-relacionamentos-der-documentada">Diagrama do Entidade e Relacionamentos (DER) documentada</h2>
+<h2 id="diagrama-do-entidade-e-relacionamentos-der">Diagrama do Entidade e Relacionamentos (DER)</h2>
 <pre><code class="language-mermaid"><div class="mermaid">
 
 classDiagram
@@ -169,129 +169,6 @@ classDiagram
   medicos "1" -- "1..n" agenda : id_Medico
   
 </div></code></pre>
-<h2 id="diagrama-do-entidade-e-relacionamentos-der">Diagrama do Entidade e Relacionamentos (DER)</h2>
-<pre><code class="language-mermaid"><div class="mermaid">
-
-classDiagram
-
-class Operador {
-  id: Integer
-  nome: String
-  telefone: String
-}
-
-class Hospital {
-  id: Integer
-  nome: String
-  telefone: String
-}
-
-class NaturezaDaInteracao {
-  id: Integer
-  nome: String
-}
-
-class Medico {
-  id: Integer
-  idOperador: Integer
-  nome: String
-  telefone: String
-  telefoneSecretaria: String
-  login: String
-  senha: String
-}
-
-class ServicoDeAgendas {
-  id: Integer
-  id_operador:Integer
-  nome: String
-  login: String
-  senha: String
-}
-
-class Convenio {
-  id: Integer
-  idMedico: Integer
-  nome: String
-  login: String
-  senha: String
-}
-
-class Cliente {
-  id: Integer
-  nome: String
-  telefoneWhatsapp: String
-  email: String
-  login: String
-  senha: String
-  idConvenio: Integer
-  dataTimeDisponivel: Date
-  matriculaNoConvenio: Integer
-}
-
-class Integracao {
-  id: Integer
-  enderecoDoSite: String
-  login: String
-  senha: String
-  status: Boolean
-}
-
-class ExpedienteDoMedicoData {
-  idMedico: Integer
-  dataTime: Date
-}
-
-class ExpedienteDoMedicoHoras {
-  idMedico: Integer
-  dataTimeInicial: Date
-  dataTimeFinal: Date
-}
-
-class Agenda {
-  id: Integer
-  idMedico: Integer
-  idCliente: Integer
-  dataTime: Date
-  dataTimeConfirmacao: Date
-  idConvenio: Integer
-  idNaturezaDaInteracao: Integer
-  idFormasDePagamento: Integer
-  observacoes: String
-}
-
-class FormasDePagamento {
-  id: Integer
-  nome: String
-}
-
-class Consulta {
-  id: Integer
-  idAgenda: Integer
-  Cliente: Boolean
-  idMedico: Integer
-  dataTime: Date
-  idConvenio: Integer
-  idFormasDePagamento: Integer
-}
-
-Operador "1" -- "1..n" Medico
-Hospital "1" -- "0..n" Medico
-Medico "1" -- "1..n" ExpedienteDoMedicoData
-ExpedienteDoMedicoData   "1" -- "1..n" ExpedienteDoMedicoHoras
-Medico   "1" -- "1..n" ExpedienteDoMedicoHoras
-Medico "1" -- "1..n" Agenda
-Cliente "1" -- "1..n" Agenda
-NaturezaDaInteracao  "1" -- "1..n" Agenda
-Convenio  "1" -- "0..n" Agenda
-FormasDePagamento  "1" -- "0..n" Agenda
-
-Medico "1" -- "1..n" Consulta
-Agenda "1" -- "0..n" Consulta
-Convenio "1" -- "0..n" Consulta
-FormasDePagamento  "1" -- "0..n" Consulta
-
-</div></code></pre>
 <ul>
 <li><strong>Explicação do diagrama</strong>
 <ul>
@@ -300,7 +177,7 @@ FormasDePagamento  "1" -- "0..n" Consulta
 <ul>
 <li>Operador</li>
 <li>Hospital</li>
-<li>NaturezaDaInteração</li>
+<li>Status_da_agenda_ou_consulta</li>
 <li>Medico</li>
 <li>ServiçoDeAgendas</li>
 <li>Convenio</li>
@@ -354,312 +231,275 @@ FormasDePagamento  "1" -- "0..n" Consulta
 </ul>
 </li>
 </ul>
-</div></code></pre>
 <h2 id="diagrama-do-projeto-que-deu-origem-ao-gráfico-acima">Diagrama do projeto que deu origem ao gráfico acima</h2>
 <pre><code class="hljs language-mermaid">
-classDiagram
+    classDiagram
 
-class Operador {
-  id: Integer
-  nome: String
-  telefone: String
-}
+      class operadores {
+        +id: Integer
+        +nome: String(50) not null
+        +telefone: String(20)
+      }
 
-class Hospital {
-  id: Integer
-  nome: String
-  telefone: String
-}
+      class hospitais {
+        +id: Integer
+        +nome: String(50)
+        +telefone: String(20)
+      }
 
-class NaturezaDaInteracao {
-  id: Integer
-  nome: String
-}
+      class status_da_agenda_ou_consulta {
+        +id: Integer
+        +nome: String(20)
+      }
 
-class Medico {
-  id: Integer
-  idOperador: Integer
-  nome: String
-  telefone: String
-  telefoneSecretaria: String
-  login: String
-  senha: String
-}
+      class medicos {
+        +id: Integer
+        +id_operadores: Integer
+        +nome: String(50)
+        +telefone: String(25)
+        +telefone_da_secretaria: String(25)
+        +login: String(50)
+        +senha: String(20)
+      }
 
-class ServicoDeAgendas {
-  id: Integer
-  id_operador:Integer
-  nome: String
-  login: String
-  senha: String
-}
+      class servico_de_agendas {
+        +id: Integer
+        +id_operador: Integer
+        +nome: String(100)
+        +login: String(50)
+        +senha: String(50)
+      }
 
-class Convenio {
-  id: Integer
-  idMedico: Integer
-  nome: String
-  login: String
-  senha: String
-}
+      class convenios {
+        +id: Integer
+        +id_medico: Integer
+        +nome: String(50)
+        +login: String(50)
+        +senha: String(50)
+      }
 
-class Cliente {
-  id: Integer
-  nome: String
-  telefoneWhatsapp: String
-  email: String
-  login: String
-  senha: String
-  idConvenio: Integer
-  dataTimeDisponivel: Date
-  matriculaNoConvenio: Integer
-}
+      class clientes {
+        +id: Integer
+        +nome: String(50) not null
+        +telefone_whatsApp: String(25)
+        +e_mail: String(50)
+        +login: String(50) not null
+        +senha: String(20) not null
+        +id_convenio: Integer
+        +dataTime_disponivel: Date
+        +matricula_no_convenio: String(50)
+      }
 
-class Integracao {
-  id: Integer
-  enderecoDoSite: String
-  login: String
-  senha: String
-  status: Boolean
-}
+      class integracao {
+        +id: Integer
+        +endereco_do_site: String(255) not null
+        +login: String(50) not null
+        +senha: String(20) not null
+        +status: Boolean not null
+      }
 
-class ExpedienteDoMedicoData {
-  idMedico: Integer
-  dataTime: Date
-}
+      class expediente_do_medico_data {
+        +id_medico: Integer not null
+        +dataTime: Date not null
+      }
 
-class ExpedienteDoMedicoHoras {
-  idMedico: Integer
-  dataTimeInicial: Date
-  dataTimeFinal: Date
-}
+      class expediente_do_medico_horas {
+        +id_expediente_do_medico_data: Integer not null
+        +dataTime_inicial: DateTime not null
+        +dataTime_final: DateTime not null
+      }
 
-class Agenda {
-  id: Integer
-  idMedico: Integer
-  idCliente: Integer
-  dataTime: Date
-  dataTimeConfirmacao: Date
-  idConvenio: Integer
-  idNaturezaDaInteracao: Integer
-  idFormasDePagamento: Integer
-  observacoes: String
-}
+      class agenda {
+        +id: Integer
+        +id_Medico: Integer not null
+        +id_Cliente: Integer not null
+        +dataTime: DateTime not null
+        +dataTime_confirmacao: DateTime not null
+        +id_convenio: Integer
+        +id_status_da_agenda_ou_consulta: Integer not null
+        +id_formas_de_pagamento: Integer
+        +dataTime_criacao: DateTime not null
+        +observacoes: String(255)
+      }
 
-class FormasDePagamento {
-  id: Integer
-  nome: String
-}
+      class formas_de_pagamento {
+        +id: Integer
+        +Nome: String(30) not null
+      }
 
-class Consulta {
-  id: Integer
-  idAgenda: Integer
-  Cliente: Boolean
-  idMedico: Integer
-  dataTime: Date
-  idConvenio: Integer
-  idFormasDePagamento: Integer
-}
+      class consulta {
+        +id: Integer
+        +id_agenda: Integer
+        +id_cliente: Integer not null
+        +id_medico: Integer not null
+        +dataTime: DateTime not null
+        +id_convenio: Integer
+        +id_forma_de_pagamento: Integer
+        +id_status_da_agenda_ou_consulta: Integer not null
+        +Observacao: String(255)
+      }
 
-Operador &quot;1&quot; -- &quot;1..n&quot; Medico
-Hospital &quot;1&quot; -- &quot;0..n&quot; Medico
-Medico &quot;1&quot; -- &quot;1..n&quot; ExpedienteDoMedicoData
-ExpedienteDoMedicoData   &quot;1&quot; -- &quot;1..n&quot; ExpedienteDoMedicoHoras
-Medico   &quot;1&quot; -- &quot;1..n&quot; ExpedienteDoMedicoHoras
-Medico &quot;1&quot; -- &quot;1..n&quot; Agenda
-Cliente &quot;1&quot; -- &quot;1..n&quot; Agenda
-NaturezaDaInteracao  &quot;1&quot; -- &quot;1..n&quot; Agenda
-Convenio  &quot;1&quot; -- &quot;0..n&quot; Agenda
-FormasDePagamento  &quot;1&quot; -- &quot;0..n&quot; Agenda
+      operadores &quot;1&quot; -- &quot;1..n&quot; medicos : id_operadores  
+      medicos &quot;1&quot; -- &quot;1..n&quot; convenios : id_medico
+      clientes &quot;1&quot; -- &quot;0..n&quot; convenios : id_convenio
+      clientes &quot;1&quot; -- &quot;1..n&quot; agenda : id_Cliente
+      medicos &quot;1&quot; -- &quot;1..n&quot; expediente_do_medico_data : id_medico
+      expediente_do_medico_data &quot;1&quot; -- &quot;1..n&quot; expediente_do_medico_horas : id_expediente_do_medico_data
+      agenda &quot;1&quot; -- &quot;0..1&quot; convenios : id_convenio
+      agenda &quot;1&quot; -- &quot;0..1&quot; formas_de_pagamento : id_formas_de_pagamento
+      agenda &quot;1&quot; -- &quot;1..n&quot; status_da_agenda_ou_consulta : id_status_da_agenda_ou_consulta
+      consulta &quot;1&quot; -- &quot;0..1&quot; convenios : id_convenio
+      consulta &quot;1&quot; -- &quot;0..1&quot; formas_de_pagamento : id_forma_de_pagamento
+      consulta &quot;1&quot; -- &quot;1..n&quot; status_da_agenda_ou_consulta : id_status_da_agenda_ou_consulta
+      medicos &quot;1&quot; -- &quot;1..n&quot; agenda : id_Medico
 
-Medico &quot;1&quot; -- &quot;1..n&quot; Consulta
-Agenda &quot;1&quot; -- &quot;0..n&quot; Consulta
-Convenio &quot;1&quot; -- &quot;0..n&quot; Consulta
-FormasDePagamento  &quot;1&quot; -- &quot;0..n&quot; Consulta
+</code></pre>
+<h2 id="script-sql-postgressqlpara-criar-as-tabelas">Script SQL PostgresSQLpara criar as tabelas</h2>
+<pre><code class="hljs language-SQL">
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> operadores (
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    telefone <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">20</span>)
+  );
+
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> hospitais (
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>),
+    telefone <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">20</span>)
+  );
+
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> status_da_agenda_ou_consulta (
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">20</span>)
+  );
+
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> medicos (
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    id_operadores <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">REFERENCES</span> operadores(<span class="hljs-keyword">id</span>),
+    nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>),
+    telefone <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">25</span>),
+    telefone_da_secretaria <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">25</span>),
+    login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>),
+    senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">20</span>)
+  );
+
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> servico_de_agendas (
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    id_operador <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">REFERENCES</span> operadores(<span class="hljs-keyword">id</span>),
+    nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">100</span>),
+    login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>),
+    senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>)
+  );
+
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> convenios (
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">REFERENCES</span> medicos(<span class="hljs-keyword">id</span>),
+    nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>),
+    login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>),
+    senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>)
+  );
+
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> clientes (
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    telefone_whatsApp <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">25</span>),
+    e_mail <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>),
+    login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    id_convenio <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">REFERENCES</span> convenios(<span class="hljs-keyword">id</span>),
+    dataTime_disponivel <span class="hljs-built_in">DATE</span>,
+    matricula_no_convenio <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>)
+  );
+
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> integracao (
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    endereco_do_site <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    <span class="hljs-keyword">status</span> <span class="hljs-built_in">BOOLEAN</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+  );
+
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_data (
+    id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">REFERENCES</span> medicos(<span class="hljs-keyword">id</span>),
+    dataTime <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    PRIMARY <span class="hljs-keyword">KEY</span> (id_medico, dataTime)
+  );
+
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_horas (
+    id_expediente_do_medico_data <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">REFERENCES</span> expediente_do_medico_data(id_medico, dataTime),
+    dataTime_inicial <span class="hljs-built_in">TIMESTAMP</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    dataTime_final <span class="hljs-built_in">TIMESTAMP</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    PRIMARY <span class="hljs-keyword">KEY</span> (id_expediente_do_medico_data)
+  );
+
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> formas_de_pagamento (
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    Nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+  );
+
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> agenda (
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    id_Medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">REFERENCES</span> medicos(<span class="hljs-keyword">id</span>),
+    id_Cliente <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">REFERENCES</span> clientes(<span class="hljs-keyword">id</span>),
+    dataTime <span class="hljs-built_in">TIMESTAMP</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    dataTime_confirmacao <span class="hljs-built_in">TIMESTAMP</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    id_convenio <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">REFERENCES</span> convenios(<span class="hljs-keyword">id</span>),
+    id_status_da_agenda_ou_consulta <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">REFERENCES</span> status_da_agenda_ou_consulta(<span class="hljs-keyword">id</span>),
+    id_formas_de_pagamento <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">REFERENCES</span> formas_de_pagamento(<span class="hljs-keyword">id</span>),
+    dataTime_criacao <span class="hljs-built_in">TIMESTAMP</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    observacoes <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>)
+  );
+
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> consulta (
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    id_agenda <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">REFERENCES</span> agenda(<span class="hljs-keyword">id</span>),
+    id_cliente <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">REFERENCES</span> clientes(<span class="hljs-keyword">id</span>),
+    id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">REFERENCES</span> medicos(<span class="hljs-keyword">id</span>),
+    dataTime <span class="hljs-built_in">TIMESTAMP</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    id_convenio <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">REFERENCES</span> convenios(<span class="hljs-keyword">id</span>),
+    id_forma_de_pagamento <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">REFERENCES</span> formas_de_pagamento(<span class="hljs-keyword">id</span>),
+    id_status_da_agenda_ou_consulta <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">REFERENCES</span> status_da_agenda_ou_consulta(<span class="hljs-keyword">id</span>),
+    observacao <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>)
+  );
 
 
 </code></pre>
-<h2 id="script-sql-postgressql-do-projeto">Script SQL PostgresSQl do projeto</h2>
-<pre><code class="hljs language-SQL"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> operador (
-  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
-  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  telefone <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
-);
+<h2 id="script-sql-postgressqlpara-criar-os-relacionamentos">Script SQL PostgresSQLpara criar os relacionamentos</h2>
+<pre><code class="hljs language-SQL">
+  <span class="hljs-comment">-- Adicionando chaves estrangeiras</span>
 
-<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> hospital (
-  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
-  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  telefone <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
-);
+  <span class="hljs-comment">-- Tabela medicos</span>
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> medicos <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_medicos_operadores <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_operadores) <span class="hljs-keyword">REFERENCES</span> operadores(<span class="hljs-keyword">id</span>);
 
-<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> natureza_da_interacao (
-  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
-  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
-);
+  <span class="hljs-comment">-- Tabela servico_de_agendas</span>
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> servico_de_agendas <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_servico_de_agendas_operadores <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_operador) <span class="hljs-keyword">REFERENCES</span> operadores(<span class="hljs-keyword">id</span>);
 
-<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> medico (
-  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
-  id_operador <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  telefone <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  telefone_secretaria <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
-);
+  <span class="hljs-comment">-- Tabela convenios</span>
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> convenios <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_convenios_medicos <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_medico) <span class="hljs-keyword">REFERENCES</span> medicos(<span class="hljs-keyword">id</span>);
 
-<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> servico_de_agendas (
-  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
-  id_operador <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
-);
+  <span class="hljs-comment">-- Tabela clientes</span>
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> clientes <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_clientes_convenios <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_convenio) <span class="hljs-keyword">REFERENCES</span> convenios(<span class="hljs-keyword">id</span>);
 
-<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> convenio (
-  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
-  id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
-);
+  <span class="hljs-comment">-- Tabela expediente_do_medico_data</span>
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_data <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_expediente_do_medico_data_medicos <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_medico) <span class="hljs-keyword">REFERENCES</span> medicos(<span class="hljs-keyword">id</span>);
 
-<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> cliente (
-  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
-  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  telefone_whatsapp <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  email <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  id_convenio <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  data_time_disponivel <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  matricula_no_convenio <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
-);
+  <span class="hljs-comment">-- Tabela expediente_do_medico_horas</span>
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_horas <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_expediente_do_medico_horas_expediente_do_medico_data <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_expediente_do_medico_data) <span class="hljs-keyword">REFERENCES</span> expediente_do_medico_data(id_medico, dataTime);
 
-<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> integracao (
-  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
-  endereco_do_site <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  login <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  senha <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  <span class="hljs-keyword">status</span> <span class="hljs-built_in">BOOLEAN</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
-);
+  <span class="hljs-comment">-- Tabela agenda</span>
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_medicos <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_Medico) <span class="hljs-keyword">REFERENCES</span> medicos(<span class="hljs-keyword">id</span>);
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_clientes <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_Cliente) <span class="hljs-keyword">REFERENCES</span> clientes(<span class="hljs-keyword">id</span>);
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_convenios <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_convenio) <span class="hljs-keyword">REFERENCES</span> convenios(<span class="hljs-keyword">id</span>);
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_status_da_agenda_ou_consulta <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_status_da_agenda_ou_consulta) <span class="hljs-keyword">REFERENCES</span> status_da_agenda_ou_consulta(<span class="hljs-keyword">id</span>);
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_formas_de_pagamento <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_formas_de_pagamento) <span class="hljs-keyword">REFERENCES</span> formas_de_pagamento(<span class="hljs-keyword">id</span>);
 
-<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_data (
-  id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  data_time <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
-);
-
-<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_horas (
-  id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  data_time_inicial <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  data_time_final <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
-);
-
-<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> agenda (
-  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
-  id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  id_cliente <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  data_time <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  data_time_confirmacao <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  id_convenio <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  id_natureza_da_interacao <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  id_formas_de_pagamento <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  observacoes <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>)
-);
-
-<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> formas_de_pagamento (
-  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
-  nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
-);
-
-<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> consulta (
-  <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
-  id_agenda <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  cliente <span class="hljs-built_in">BOOLEAN</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  data_time <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  id_convenio <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-  id_formas_de_pagamento <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
-);
-
-
-</code></pre>
-<ul>
-<li>
-<p><strong>Observações</strong>:</p>
-<ul>
-<li>Essas tabelas representam as classes do diagrama de classes, com as seguintes correspondências:
-<ul>
-<li>Operador -&gt; operador</li>
-<li>Hospital -&gt; hospital</li>
-<li>NaturezaDaInteracao -&gt; natureza_da_interacao</li>
-<li>Medico -&gt; medico</li>
-<li>ServicoDeAgendas -&gt; servico_de_agendas</li>
-<li>Convenio -&gt; convenio</li>
-<li>Cliente -&gt; cliente</li>
-<li>Integracao -&gt; integracao</li>
-<li>ExpedienteDoMedicoData -&gt; expediente_do_medico_data</li>
-<li>ExpedienteDoMedicoHoras -&gt; expediente_do_medico_horas</li>
-<li>Agenda -&gt; agenda</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="além-das-tabelas-você-também-precisará-criar-as-seguintes-chaves-estrangeiras-para-representar-as-relações-entre-as-classes">Além das tabelas, você também precisará criar as seguintes chaves estrangeiras para representar as relações entre as classes:</h2>
-<pre><code class="hljs language-sql">
-<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> medico
-<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_medico_operador
-<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_operador)
-<span class="hljs-keyword">REFERENCES</span> operador (<span class="hljs-keyword">id</span>);
-
-<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_data
-<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_expediente_do_medico_data_medico
-<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_medico)
-<span class="hljs-keyword">REFERENCES</span> medico (<span class="hljs-keyword">id</span>);
-
-<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_horas
-<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_expediente_do_medico_horas_medico
-<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_medico)
-<span class="hljs-keyword">REFERENCES</span> medico (<span class="hljs-keyword">id</span>);
-
-<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda
-<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_medico
-<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_medico)
-<span class="hljs-keyword">REFERENCES</span> medico (<span class="hljs-keyword">id</span>);
-
-<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda
-<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_cliente
-<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_cliente)
-<span class="hljs-keyword">REFERENCES</span> cliente (<span class="hljs-keyword">id</span>);
-
-<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda
-<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_natureza_da_interacao
-<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_natureza_da_interacao)
-<span class="hljs-keyword">REFERENCES</span> natureza_da_interacao (<span class="hljs-keyword">id</span>);
-
-<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda
-<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_formas_de_pagamento
-<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_formas_de_pagamento)
-<span class="hljs-keyword">REFERENCES</span> formas_de_pagamento (<span class="hljs-keyword">id</span>);
-
-<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta
-<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_agenda
-<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_agenda)
-<span class="hljs-keyword">REFERENCES</span> agenda (<span class="hljs-keyword">id</span>);
-
-<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta
-<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_medico
-<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_medico)
-<span class="hljs-keyword">REFERENCES</span> medico (<span class="hljs-keyword">id</span>);
-
-<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta
-<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_convenio
-<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_convenio)
-<span class="hljs-keyword">REFERENCES</span> convenio (<span class="hljs-keyword">id</span>);
-
-<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta
-<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_formas_de_pagamento
-<span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_formas_de_pagamento)
-<span class="hljs-keyword">REFERENCES</span> formas_de_pagamento (<span class="hljs-keyword">id</span>);
+  <span class="hljs-comment">-- Tabela consulta</span>
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_agenda <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_agenda) <span class="hljs-keyword">REFERENCES</span> agenda(<span class="hljs-keyword">id</span>);
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_clientes <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_cliente) <span class="hljs-keyword">REFERENCES</span> clientes(<span class="hljs-keyword">id</span>);
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_medicos <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_medico) <span class="hljs-keyword">REFERENCES</span> medicos(<span class="hljs-keyword">id</span>);
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_convenios <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_convenio) <span class="hljs-keyword">REFERENCES</span> convenios(<span class="hljs-keyword">id</span>);
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_forma_de_pagamento <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_forma_de_pagamento) <span class="hljs-keyword">REFERENCES</span> formas_de_pagamento(<span class="hljs-keyword">id</span>);
+  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> consulta <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_consulta_status_da_agenda_ou_consulta <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_status_da_agenda_ou_consulta) <span class="hljs-keyword">REFERENCES</span> status_da_agenda_ou_consulta(<span class="hljs-keyword">id</span>);
 
 </code></pre>
 <ul>
@@ -667,6 +507,63 @@ FormasDePagamento  &quot;1&quot; -- &quot;0..n&quot; Consulta
 <ul>
 <li>Essas chaves estrangeiras garantem a integridade referencial das tabelas, o que significa que os dados nas tabelas relacionadas serão consistentes.</li>
 <li>Por exemplo, a chave estrangeira fk_medico_operador na tabela medico garante que o valor da coluna id_operador em uma linha da tabela medico sempre existirá em uma linha da tabela operador.</li>
+</ul>
+</li>
+</ul>
+<h2 id="script-sql-postgressqlpara-criar-os-índices-das-tabelas">Script SQL PostgresSQLpara criar os índices das tabelas</h2>
+<pre><code class="hljs language-SQL">
+  <span class="hljs-comment">-- Índices para a tabela operadores</span>
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_operadores_nome <span class="hljs-keyword">ON</span> operadores (nome);
+
+  <span class="hljs-comment">-- Índices para a tabela medicos</span>
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_medicos_nome <span class="hljs-keyword">ON</span> medicos (nome);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_medicos_id_operadores <span class="hljs-keyword">ON</span> medicos (id_operadores);
+
+  <span class="hljs-comment">-- Índices para a tabela servico_de_agendas</span>
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_servico_de_agendas_nome <span class="hljs-keyword">ON</span> servico_de_agendas (nome);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_servico_de_agendas_id_operador <span class="hljs-keyword">ON</span> servico_de_agendas (id_operador);
+
+  <span class="hljs-comment">-- Índices para a tabela convenios</span>
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_convenios_nome <span class="hljs-keyword">ON</span> convenios (nome);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_convenios_id_medico <span class="hljs-keyword">ON</span> convenios (id_medico);
+
+  <span class="hljs-comment">-- Índices para a tabela clientes</span>
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_clientes_nome <span class="hljs-keyword">ON</span> clientes (nome);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_clientes_login <span class="hljs-keyword">ON</span> clientes (login);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_clientes_id_convenio <span class="hljs-keyword">ON</span> clientes (id_convenio);
+
+  <span class="hljs-comment">-- Índices para a tabela expediente_do_medico_data</span>
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_expediente_do_medico_data_id_medico <span class="hljs-keyword">ON</span> expediente_do_medico_data (id_medico);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_expediente_do_medico_data_dataTime <span class="hljs-keyword">ON</span> expediente_do_medico_data (dataTime);
+
+  <span class="hljs-comment">-- Índices para a tabela expediente_do_medico_horas</span>
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_expediente_do_medico_horas_id_expediente_do_medico_data <span class="hljs-keyword">ON</span> expediente_do_medico_horas (id_expediente_do_medico_data);
+
+  <span class="hljs-comment">-- Índices para a tabela formas_de_pagamento</span>
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_formas_de_pagamento_nome <span class="hljs-keyword">ON</span> formas_de_pagamento (Nome);
+
+  <span class="hljs-comment">-- Índices para a tabela agenda</span>
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_agenda_id_Medico <span class="hljs-keyword">ON</span> agenda (id_Medico);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_agenda_id_Cliente <span class="hljs-keyword">ON</span> agenda (id_Cliente);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_agenda_dataTime <span class="hljs-keyword">ON</span> agenda (dataTime);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_agenda_id_convenio <span class="hljs-keyword">ON</span> agenda (id_convenio);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_agenda_id_status_da_agenda_ou_consulta <span class="hljs-keyword">ON</span> agenda (id_status_da_agenda_ou_consulta);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_agenda_id_formas_de_pagamento <span class="hljs-keyword">ON</span> agenda (id_formas_de_pagamento);
+
+  <span class="hljs-comment">-- Índices para a tabela consulta</span>
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_consulta_id_agenda <span class="hljs-keyword">ON</span> consulta (id_agenda);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_consulta_id_cliente <span class="hljs-keyword">ON</span> consulta (id_cliente);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_consulta_id_medico <span class="hljs-keyword">ON</span> consulta (id_medico);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_consulta_dataTime <span class="hljs-keyword">ON</span> consulta (dataTime);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_consulta_id_convenio <span class="hljs-keyword">ON</span> consulta (id_convenio);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_consulta_id_forma_de_pagamento <span class="hljs-keyword">ON</span> consulta (id_forma_de_pagamento);
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_consulta_id_status_da_agenda_ou_consulta <span class="hljs-keyword">ON</span> consulta (id_status_da_agenda_ou_consulta);
+
+
+</code></pre>
+<ul>
+<li><strong>Observações</strong>:
+<ul>
 <li>Após criar as tabelas e as chaves estrangeiras, você poderá inserir dados nas tabelas. Os dados que você insere devem corresponder aos atributos das classes no diagrama de classes.</li>
 <li>Por exemplo, para inserir um médico na tabela medico, você precisará fornecer os valores para os seguintes atributos:
 <ul>
@@ -721,7 +618,23 @@ FormasDePagamento  &quot;1&quot; -- &quot;0..n&quot; Consulta
 </ul>
 </li>
 </ul>
+<h2 id="compartilhar-o--acesso-ao-banco-de-dados">Compartilhar o  acesso ao banco de dados</h2>
+<ul>
+<li>
+<p>Conceder acesso ao banco de dados:</p>
+<pre><code class="hljs language-sql">
+  <span class="hljs-keyword">GRANT</span> <span class="hljs-keyword">ALL</span> <span class="hljs-keyword">PRIVILEGES</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">DATABASE</span> mydatabase <span class="hljs-keyword">TO</span> mypartner;
+
+</code></pre>
+<ul>
+<li>Este comando concederá ao seu parceiro todos os privilégios no banco de dados mydatabase.</li>
+</ul>
+</li>
+</ul>
 <h2 id="ferramenta-que-pode-ser-usada-para-executar-os-scripts-acima">Ferramenta que pode ser usada para executar os scripts acima?</h2>
+<ul>
+<li>
+<p><em>psql</em></p>
 <ul>
 <li>
 <p>Para executar os scripts acima usando o <em>psql</em>, você precisará conectar-se ao banco de dados PostgreSQL. Você pode fazer isso usando o comando psql:</p>
@@ -752,29 +665,49 @@ FormasDePagamento  &quot;1&quot; -- &quot;0..n&quot; Consulta
 </ul>
 </li>
 </ul>
-<h2 id="usando-uma-ferramenta-gui-pgadmin">Usando uma ferramenta GUI <em>pgAdmin</em></h2>
-<ul>
-<li>O <em>pgAdmin</em> é uma ferramenta de gerenciamento de banco de dados que permite criar tabelas, inserir dados, consultar dados e realizar outras tarefas administrativas.</li>
-<li>Para executar os scripts acima usando o pgAdmin, você precisará abrir o pgAdmin e conectar-se ao banco de dados PostgreSQL. Em seguida, você pode clicar com o botão direito do mouse no banco de dados e selecionar &quot;Importar&quot;. Na caixa de diálogo &quot;Importar&quot;, selecione o arquivo create_tables.sql e clique em &quot;Abrir&quot;. O pgAdmin irá então importar o script e criar as tabelas necessárias para o diagrama de classes.</li>
-<li>A escolha da ferramenta para executar os scripts acima depende de suas preferências pessoais. Se você estiver familiarizado com a linha de comando, o psql é uma boa opção. Se você preferir uma ferramenta GUI, o pgAdmin é uma boa opção.</li>
-</ul>
-<h2 id="compartilhar-o--acesso-ao-banco-de-dados">Compartilhar o  acesso ao banco de dados</h2>
+</li>
+<li>
+<p><em>dbeaver-ce</em></p>
 <ul>
 <li>
-<p>Conceder acesso ao banco de dados:</p>
-<pre><code class="hljs language-sql">
-  <span class="hljs-keyword">GRANT</span> <span class="hljs-keyword">ALL</span> <span class="hljs-keyword">PRIVILEGES</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">DATABASE</span> mydatabase <span class="hljs-keyword">TO</span> mypartner;
-
-</code></pre>
+<p>O <em>DBeaver Community Edition</em> (DBeaver CE) é uma ferramenta de gerenciamento de banco de dados relacional de código aberto. Ele oferece suporte a vários bancos de dados, como MySQL, PostgreSQL, SQLite, Oracle, Microsoft SQL Server, e muitos outros. O DBeaver CE é uma versão gratuita e de código aberto da ferramenta, projetada para ser usada por desenvolvedores, administradores de banco de dados e qualquer pessoa envolvida no gerenciamento e manipulação de bancos de dados.</p>
+</li>
+<li>
+<p>Principais características do DBeaver CE:</p>
 <ul>
-<li>Este comando concederá ao seu parceiro todos os privilégios no banco de dados mydatabase.</li>
-<li></li>
+<li>
+<p>Conectividade com Múltiplos Bancos de Dados: Oferece suporte a uma ampla variedade de sistemas de gerenciamento de banco de dados, permitindo que os usuários se conectem a diferentes bancos de dados a partir de uma única interface.</p>
+</li>
+<li>
+<p>Interface Gráfica Intuitiva: Possui uma interface de usuário gráfica intuitiva que facilita o desenvolvimento, gerenciamento e consulta de bancos de dados.</p>
+</li>
+<li>
+<p>Editor SQL: Inclui um editor SQL poderoso com realce de sintaxe, conclusão automática e outras funcionalidades que facilitam a escrita e execução de consultas SQL.</p>
+</li>
+<li>
+<p>Gerenciamento de Metadados: Permite a visualização e edição de metadados do banco de dados, como tabelas, índices, procedimentos armazenados, entre outros.</p>
+</li>
+<li>
+<p>Exportação e Importação de Dados: Facilita a transferência de dados entre diferentes fontes, com suporte a várias opções de exportação e importação.</p>
+</li>
+<li>
+<p>Visualização de Dados: Oferece recursos visuais para a visualização de dados, incluindo gráficos e ferramentas de exploração de dados.</p>
+</li>
+<li>
+<p>Suporte a Plugins: Permite a extensão de funcionalidades por meio de plugins, proporcionando flexibilidade para atender a diferentes necessidades.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>O DBeaver CE é uma escolha popular devido à sua versatilidade e ao fato de ser gratuito e de código aberto. No entanto, é importante observar que existem versões comerciais do DBeaver (DBeaver EE) que oferecem recursos adicionais e suporte aprimorado, mas a versão Community Edition é uma opção robusta para muitos desenvolvedores e administradores de banco de dados.</p>
+</li>
 </ul>
 </li>
 </ul>
 <h2 id="referências">Referências</h2>
 <ol>
 <li><a href="https://mermaid.js.org/syntax/flowchart.html">Gráfico criado com projeto mermaid</a></li>
+<li><a href="https://www.postgresql.org/">PostgreSQL: The World's Most Advanced Open Source</a></li>
 </ol>
 <!-- markdownlint-disable-next-line -->
 </main>
