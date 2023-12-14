@@ -3,7 +3,131 @@
     <head>
         <meta charset="UTF-8">
         <title>O que &eacute; IDE Lazarus &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;lazarus&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -18,6 +142,8 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
+   
+</style>
     </head>
     <body class="vscode-body vscode-dark">
         <div class="header" id="myHeader">
@@ -27,7 +153,7 @@
 <main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<!-- <h1 id="o-que-é-ide-lazarus----">O que é IDE Lazarus <a href="o_que_e_lazarus.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+<h1 id="o-que-é-ide-lazarus----">O que é IDE Lazarus <a href="o_que_e_lazarus.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
 <h2 id="1-index"><strong>1. INDEX</strong></h2>
 <hr>
 <ol>
@@ -81,7 +207,16 @@
 <p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
 <ol>
 <li>
-<p>Este documento foi criado com objetivo de registrar tudo que preciso lembrar sobre a IDE Lazarus e o compilador FreePascal.</p>
+<p>O Lazarus é um ambiente de desenvolvimento integrado (IDE) para programação em Pascal. Ele é utilizado principalmente para o desenvolvimento de software usando a linguagem de programação Object Pascal. O Lazarus é uma alternativa de código aberto à IDE Delphi, que é amplamente conhecida por facilitar o desenvolvimento rápido de aplicativos para Windows.</p>
+</li>
+<li>
+<p>O Lazarus é conhecido por ser multiplataforma, o que significa que os aplicativos desenvolvidos nele podem ser compilados e executados em diferentes sistemas operacionais, como Windows, Linux, macOS, entre outros. Ele utiliza o framework Free Pascal, que é um compilador Pascal de código aberto.</p>
+</li>
+<li>
+<p>Além disso, o Lazarus oferece uma interface gráfica de usuário (GUI) para facilitar o design de interfaces de usuário para aplicativos. Ele fornece ferramentas para desenvolvimento rápido e possui recursos que simplificam a criação de aplicativos visuais.</p>
+</li>
+<li>
+<p>O Lazarus é uma escolha popular para desenvolvedores que desejam criar aplicativos usando Pascal, especialmente aqueles que desejam criar software de desktop multiplataforma..</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -92,10 +227,39 @@
 <p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
 <ol>
 <li>
-<p>Conhecimento do sistema operacional onde a IDE Lazarus  e o compilador FreePascal serão instalados.</p>
+<p>Para utilizar o Lazarus, você precisa atender a certos requisitos dependendo do sistema operacional em que deseja desenvolver. Aqui estão os requisitos básicos para alguns sistemas operacionais comuns:</p>
+<ol>
+<li>Conhecer a linguagem Pascal versão turbo pascal,  Delphi ou Free pascal.</li>
+<li>Requisitos Gerais:
+<ol>
+<li>Lazarus IDE: Baixe e instale a versão mais recente do Lazarus IDE no site oficial (<a href="https://www.lazarus-ide.org/">https://www.lazarus-ide.org/</a>).</li>
+<li>Para Windows:
+<ol>
+<li>Sistema Operacional: Windows XP ou posterior.</li>
+<li>Compilador: O Lazarus geralmente usa o Free Pascal Compiler (FPC), que é incluído no pacote de instalação.</li>
+</ol>
 </li>
-<li>
-<p>Conhecimento da linguagem pascal.</p>
+<li>Para Linux:
+<ol>
+<li>Sistema Operacional: Lazarus é suportado em várias distribuições Linux. Certifique-se de atender aos requisitos específicos da sua distribuição.</li>
+<li>Compilador: O Free Pascal Compiler (FPC) também deve ser instalado. Você pode instalá-lo usando o gerenciador de pacotes da sua distribuição.</li>
+</ol>
+</li>
+<li>Para macOS:
+<ol>
+<li>Sistema Operacional: macOS 10.5 ou posterior.</li>
+<li>Xcode: Certifique-se de ter o Xcode instalado, pois ele inclui ferramentas necessárias para o desenvolvimento.</li>
+</ol>
+</li>
+<li>Para Desenvolvimento Multiplataforma:
+<ol>
+<li>Se você planeja criar aplicativos que podem ser executados em várias plataformas, é importante garantir que o código seja compatível. Evite dependências específicas do sistema operacional sempre que possível e teste seu aplicativo em diferentes sistemas para garantir a compatibilidade.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Lembre-se de verificar a documentação oficial do Lazarus para obter informações mais detalhadas e atualizadas sobre os requisitos de sistema, pois eles podem ter mudado desde a última atualização deste conhecimento.</li>
+</ol>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -106,13 +270,76 @@
 <p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
 <ol>
 <li>
-<p>O FreePascal permite criar aplicativo nativos para vários sistemas operacionais.</p>
+<p>O Lazarus oferece vários benefícios como uma IDE para o desenvolvimento de software, especialmente para projetos que utilizam a linguagem de programação Pascal. Aqui estão alguns dos benefícios associados ao uso do Lazarus:</p>
+</li>
+<li>
+<p>Código Fonte Aberto:</p>
+<ol>
+<li>Lazarus é uma IDE de código aberto, o que significa que você pode acessar, modificar e distribuir o código-fonte conforme necessário. Isso proporciona uma grande flexibilidade aos desenvolvedores.</li>
+</ol>
+</li>
+<li>
+<p>Multiplataforma:</p>
+<ol>
+<li>Permite o desenvolvimento de aplicativos que podem ser compilados e executados em diferentes sistemas operacionais, como Windows, Linux e macOS. Isso é possível devido à compatibilidade do Lazarus com o compilador Free Pascal.</li>
+</ol>
+</li>
+<li>
+<p>Compatibilidade com Delphi:</p>
+<ol>
+<li>O Lazarus é compatível com a linguagem de programação Object Pascal e compartilha muitas semelhanças com o Delphi, uma popular IDE para Pascal. Isso significa que os desenvolvedores que estão familiarizados com o Delphi podem encontrar o Lazarus mais fácil de aprender e usar.</li>
+</ol>
+</li>
+<li>
+<p>Desenvolvimento Rápido de Interfaces Gráficas:</p>
+<ol>
+<li>Oferece ferramentas gráficas para o design rápido de interfaces de usuário (GUI). Isso é particularmente útil para o desenvolvimento de aplicativos com interfaces visuais complexas.</li>
+</ol>
+</li>
+<li>
+<p>Comunidade Ativa:</p>
+<ol>
+<li>O Lazarus possui uma comunidade ativa de desenvolvedores que oferecem suporte e colaboração. Fóruns, grupos de discussão e outros recursos estão disponíveis para ajudar os desenvolvedores a superar desafios e trocar conhecimentos.</li>
+</ol>
+</li>
+<li>
+<p>Totalmente Gratuito:</p>
+<ol>
+<li>Lazarus é distribuído sob a licença GPL (General Public License), o que significa que é totalmente gratuito para uso. Isso é particularmente atraente para desenvolvedores e organizações que desejam evitar custos de licenciamento.</li>
+</ol>
+</li>
+<li>
+<p>Extensibilidade:</p>
+<ol>
+<li>Pode ser estendido com componentes e plugins adicionais para fornecer funcionalidades adicionais. Isso permite que os desenvolvedores personalizem o ambiente de desenvolvimento conforme necessário.</li>
+</ol>
+</li>
+<li>
+<p>Suporte a Banco de Dados:</p>
+<ol>
+<li>Integra facilmente com diversos bancos de dados, facilitando o desenvolvimento de aplicativos que requerem interação com sistemas de gerenciamento de banco de dados.</li>
+</ol>
+</li>
+<li>
+<p>Ferramentas de Depuração:</p>
+<ol>
+<li>Oferece ferramentas de depuração robustas para ajudar os desenvolvedores a identificar e corrigir problemas no código.</li>
+</ol>
+</li>
+<li>
+<p>Documentação Abundante:</p>
+<ol>
+<li>O Lazarus possui uma documentação abrangente que ajuda os desenvolvedores a entenderem e utilizarem eficientemente todas as funcionalidades oferecidas pela IDE.</li>
+</ol>
 </li>
 <li>
 <p>A IDE Lazarus permite criar formulários visualmente, compila-los e executa-los ao pressionar a tela f9.</p>
 </li>
 <li>
 <p>A IDE possui o programa <strong>FPDebug</strong> que permite executar o programa passo a passo pressionado a tecla F7.</p>
+</li>
+<li>
+<p>Lembrando que a escolha de uma IDE depende das necessidades específicas do desenvolvedor e do projeto em questão. O Lazarus é uma opção atraente para aqueles que buscam uma solução de desenvolvimento Pascal de código aberto e multiplataforma.</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -123,7 +350,7 @@
 <p><span id="id_desvantagens"></span><strong>Desvantagens</strong>.</p>
 <ol>
 <li>
-<p>Essa pergunta é difícil responder porque é relativa.</p>
+<p>Considerando ferramenta gráfica multiplataforma para desenvolvimento pascal não tem concorrente, por isso fica difícil relatar as desvantagens da IDE em relação a outras.</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>

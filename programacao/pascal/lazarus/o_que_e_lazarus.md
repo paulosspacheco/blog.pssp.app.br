@@ -47,25 +47,63 @@
    2. **Introdução**
 
       1. <span id="id_objetivo"><span>**Objetivo:**
-         1. Este documento foi criado com objetivo de registrar tudo que preciso lembrar sobre a IDE Lazarus e o compilador FreePascal.
+         1. O Lazarus é um ambiente de desenvolvimento integrado (IDE) para programação em Pascal. Ele é utilizado principalmente para o desenvolvimento de software usando a linguagem de programação Object Pascal. O Lazarus é uma alternativa de código aberto à IDE Delphi, que é amplamente conhecida por facilitar o desenvolvimento rápido de aplicativos para Windows.
+         2. O Lazarus é conhecido por ser multiplataforma, o que significa que os aplicativos desenvolvidos nele podem ser compilados e executados em diferentes sistemas operacionais, como Windows, Linux, macOS, entre outros. Ele utiliza o framework Free Pascal, que é um compilador Pascal de código aberto.
+         3. Além disso, o Lazarus oferece uma interface gráfica de usuário (GUI) para facilitar o design de interfaces de usuário para aplicativos. Ele fornece ferramentas para desenvolvimento rápido e possui recursos que simplificam a criação de aplicativos visuais.
+         4. O Lazarus é uma escolha popular para desenvolvedores que desejam criar aplicativos usando Pascal, especialmente aqueles que desejam criar software de desktop multiplataforma..
+
+         5. <text onclick="goBack()">[🔙]</text>
+
+      2. <span id="id_pre_requisitos"></span>**Pre-requisitos:**
+         1. Para utilizar o Lazarus, você precisa atender a certos requisitos dependendo do sistema operacional em que deseja desenvolver. Aqui estão os requisitos básicos para alguns sistemas operacionais comuns:
+            1. Conhecer a linguagem Pascal versão turbo pascal,  Delphi ou Free pascal.
+            2. Requisitos Gerais:
+               1. Lazarus IDE: Baixe e instale a versão mais recente do Lazarus IDE no site oficial (https://www.lazarus-ide.org/).
+               2. Para Windows:
+                  1. Sistema Operacional: Windows XP ou posterior.
+                  2. Compilador: O Lazarus geralmente usa o Free Pascal Compiler (FPC), que é incluído no pacote de instalação.
+               3. Para Linux:
+                  1. Sistema Operacional: Lazarus é suportado em várias distribuições Linux. Certifique-se de atender aos requisitos específicos da sua distribuição.
+                  2. Compilador: O Free Pascal Compiler (FPC) também deve ser instalado. Você pode instalá-lo usando o gerenciador de pacotes da sua distribuição.
+               4. Para macOS:
+                  1. Sistema Operacional: macOS 10.5 ou posterior.
+                  2. Xcode: Certifique-se de ter o Xcode instalado, pois ele inclui ferramentas necessárias para o desenvolvimento.
+               5. Para Desenvolvimento Multiplataforma:
+                  1. Se você planeja criar aplicativos que podem ser executados em várias plataformas, é importante garantir que o código seja compatível. Evite dependências específicas do sistema operacional sempre que possível e teste seu aplicativo em diferentes sistemas para garantir a compatibilidade.
+            3. Lembre-se de verificar a documentação oficial do Lazarus para obter informações mais detalhadas e atualizadas sobre os requisitos de sistema, pois eles podem ter mudado desde a última atualização deste conhecimento.
 
          2. <text onclick="goBack()">[🔙]</text>
 
-      2. <span id="id_pre_requisitos"></span>**Pre-requisitos:**
-         1. Conhecimento do sistema operacional onde a IDE Lazarus  e o compilador FreePascal serão instalados.
-         2. Conhecimento da linguagem pascal.
-
-         3. <text onclick="goBack()">[🔙]</text>
-
       3. <span id="id_beneficios"></span>**Benefícios:**
-         1. O FreePascal permite criar aplicativo nativos para vários sistemas operacionais.
-         2. A IDE Lazarus permite criar formulários visualmente, compila-los e executa-los ao pressionar a tela f9.
-         3. A IDE possui o programa **FPDebug** que permite executar o programa passo a passo pressionado a tecla F7.
+         1. O Lazarus oferece vários benefícios como uma IDE para o desenvolvimento de software, especialmente para projetos que utilizam a linguagem de programação Pascal. Aqui estão alguns dos benefícios associados ao uso do Lazarus:
+         2. Código Fonte Aberto:
+            1. Lazarus é uma IDE de código aberto, o que significa que você pode acessar, modificar e distribuir o código-fonte conforme necessário. Isso proporciona uma grande flexibilidade aos desenvolvedores.
+         3. Multiplataforma:
+            1. Permite o desenvolvimento de aplicativos que podem ser compilados e executados em diferentes sistemas operacionais, como Windows, Linux e macOS. Isso é possível devido à compatibilidade do Lazarus com o compilador Free Pascal.
+         4. Compatibilidade com Delphi:
+            1. O Lazarus é compatível com a linguagem de programação Object Pascal e compartilha muitas semelhanças com o Delphi, uma popular IDE para Pascal. Isso significa que os desenvolvedores que estão familiarizados com o Delphi podem encontrar o Lazarus mais fácil de aprender e usar.
+         5. Desenvolvimento Rápido de Interfaces Gráficas:
+            1. Oferece ferramentas gráficas para o design rápido de interfaces de usuário (GUI). Isso é particularmente útil para o desenvolvimento de aplicativos com interfaces visuais complexas.
+         6. Comunidade Ativa:
+            1. O Lazarus possui uma comunidade ativa de desenvolvedores que oferecem suporte e colaboração. Fóruns, grupos de discussão e outros recursos estão disponíveis para ajudar os desenvolvedores a superar desafios e trocar conhecimentos.
+         7. Totalmente Gratuito:
+            1. Lazarus é distribuído sob a licença GPL (General Public License), o que significa que é totalmente gratuito para uso. Isso é particularmente atraente para desenvolvedores e organizações que desejam evitar custos de licenciamento.
+         8. Extensibilidade:
+            1. Pode ser estendido com componentes e plugins adicionais para fornecer funcionalidades adicionais. Isso permite que os desenvolvedores personalizem o ambiente de desenvolvimento conforme necessário.
+         9. Suporte a Banco de Dados:
+            1. Integra facilmente com diversos bancos de dados, facilitando o desenvolvimento de aplicativos que requerem interação com sistemas de gerenciamento de banco de dados.
+         10. Ferramentas de Depuração:
+             1. Oferece ferramentas de depuração robustas para ajudar os desenvolvedores a identificar e corrigir problemas no código.
+         11. Documentação Abundante:
+             1. O Lazarus possui uma documentação abrangente que ajuda os desenvolvedores a entenderem e utilizarem eficientemente todas as funcionalidades oferecidas pela IDE.
+         12. A IDE Lazarus permite criar formulários visualmente, compila-los e executa-los ao pressionar a tela f9.
+         13. A IDE possui o programa **FPDebug** que permite executar o programa passo a passo pressionado a tecla F7.
+         14. Lembrando que a escolha de uma IDE depende das necessidades específicas do desenvolvedor e do projeto em questão. O Lazarus é uma opção atraente para aqueles que buscam uma solução de desenvolvimento Pascal de código aberto e multiplataforma.
 
-         4. <text onclick="goBack()">[🔙]</text>
+         15. <text onclick="goBack()">[🔙]</text>
 
       4. <span id="id_desvantagens"></span>**Desvantagens**.
-         1. Essa pergunta é difícil responder porque é relativa.
+         1. Considerando ferramenta gráfica multiplataforma para desenvolvimento pascal não tem concorrente, por isso fica difícil relatar as desvantagens da IDE em relação a outras.
 
          2. <text onclick="goBack()">[🔙]</text>
 
