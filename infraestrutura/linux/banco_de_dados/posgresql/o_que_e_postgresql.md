@@ -221,20 +221,24 @@
 **REFERÊNCIAS GLOBAIS**
    1. [Documentação do PostgreSQL 11.15](https://www.postgresql.org/docs/11/index.html)
    2. [Capítulo 24. Tarefas de manutenção de rotina do banco de dados](https://www.postgresql.org/docs/11/maintenance.html)
-   3. <text onclick="goBack()">[🔙]</text>
+   3. [Aplicativo Cliente DBeaver 22.3.2](https://dbeaver.io/2023/01/08/dbeaver-22-3-2/)
+
+   4. <text onclick="goBack()">[🔙]</text>
+
 1. <span id="id_historico"><span>
 **HISTÓRICO**
-   1. dd/mm/2021 <!--TODO: HISTÓRICO -->
-   2. dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: -->
-      - [ ] Criar este documento baseado no modelo03.md ;
-      - [ ] Escrever tópico Objetivos;
-      - [ ] Escrever tópico Pre-requisitos
-      - [ ] Escrever tópico Benefícios
-      - [ ] Escrever tópico desvantagens
-      - [ ] Escrever tópico Conteúdo
-      - [ ] Escrever tópico Exemplos
-      - [ ] Escrever tópico Referências
-      - [ ] Atualizar o histórico deste documento.
+   1. 14/12/2023 <!--TODO: HISTÓRICO -->
+   2. 14/12/2023 <!--FIXME: Falta fazer os item abaixo: -->
+      - [x] Criar este documento baseado no modelo03.md ;
+      - [x] Escrever tópico Objetivos;
+      - [x] Escrever tópico Pre-requisitos
+      - [x] Escrever tópico Benefícios
+      - [x] Escrever tópico desvantagens
+      - [x] Escrever tópico Instalar no linux Mint LMDE 4
+      - [x] Escrever tópico Aplicativos Clientes disponível do shell do linux
+      - [x] Escrever tópico Aplicativo Cliente GUI dbeaver
+      - [x] Escrever tópico Referências
+      - [x] Atualizar o histórico deste documento.
       - [ ] Testar este documento depois após uma semana de concluído.
 
       - <text onclick="goBack()">[🔙]</text>
