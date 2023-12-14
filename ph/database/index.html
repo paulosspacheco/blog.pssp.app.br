@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Banco de dados do projeto</title>
-
+   
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -17,7 +17,6 @@
         <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
-
 
     </head>
     <body class="vscode-body vscode-dark">
@@ -355,10 +354,10 @@ classDiagram
       medicos &quot;1&quot; -- &quot;1..n&quot; agenda : id_Medico
 
 </code></pre>
-<h2 id="script-sql-postgressqlpara-criar-as-tabelas">Script SQL PostgresSQLpara criar as tabelas</h2>
+<h2 id="script-sql-postgressqlpara-criar-banco-de-dados-e-tabelas">Script SQL PostgresSQLpara criar banco de dados e tabelas</h2>
 <pre><code class="hljs language-SQL">
   <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">DATABASE</span> assistente_virtual;
-  
+
   <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> operadores (
     <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
     nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
@@ -422,18 +421,19 @@ classDiagram
     <span class="hljs-keyword">status</span> <span class="hljs-built_in">BOOLEAN</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
   );
 
-  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_data (
-    id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">REFERENCES</span> medicos(<span class="hljs-keyword">id</span>),
-    dataTime <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-    PRIMARY <span class="hljs-keyword">KEY</span> (id_medico, dataTime)
-  );
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_data (
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+    id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    dataTime <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,    
+    <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_medico) <span class="hljs-keyword">REFERENCES</span> medicos(<span class="hljs-keyword">id</span>)
+);
 
-  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_horas (
-    id_expediente_do_medico_data <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">REFERENCES</span> expediente_do_medico_data(id_medico, dataTime),
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_horas (
+    id_expediente_do_medico_data <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
     dataTime_inicial <span class="hljs-built_in">TIMESTAMP</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
     dataTime_final <span class="hljs-built_in">TIMESTAMP</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
-    PRIMARY <span class="hljs-keyword">KEY</span> (id_expediente_do_medico_data)
-  );
+    <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_expediente_do_medico_data) <span class="hljs-keyword">REFERENCES</span> expediente_do_medico_data(<span class="hljs-keyword">id</span>)
+);
 
   <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> formas_de_pagamento (
     <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
@@ -465,7 +465,6 @@ classDiagram
     observacao <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>)
   );
 
-
 </code></pre>
 <h2 id="script-sql-postgressqlpara-criar-os-relacionamentos">Script SQL PostgresSQLpara criar os relacionamentos</h2>
 <pre><code class="hljs language-SQL">
@@ -483,11 +482,20 @@ classDiagram
   <span class="hljs-comment">-- Tabela clientes</span>
   <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> clientes <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_clientes_convenios <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_convenio) <span class="hljs-keyword">REFERENCES</span> convenios(<span class="hljs-keyword">id</span>);
 
-  <span class="hljs-comment">-- Tabela expediente_do_medico_data</span>
-  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_data <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_expediente_do_medico_data_medicos <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_medico) <span class="hljs-keyword">REFERENCES</span> medicos(<span class="hljs-keyword">id</span>);
+  <span class="hljs-comment">-- Criar a tabela expediente_do_medico_data</span>
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_data (
+      <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+      id_medico <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">REFERENCES</span> medicos(<span class="hljs-keyword">id</span>),
+      dataTime <span class="hljs-built_in">DATE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+  );
 
-  <span class="hljs-comment">-- Tabela expediente_do_medico_horas</span>
-  <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_horas <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_expediente_do_medico_horas_expediente_do_medico_data <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_expediente_do_medico_data) <span class="hljs-keyword">REFERENCES</span> expediente_do_medico_data(id_medico, dataTime);
+  <span class="hljs-comment">-- Criar a tabela expediente_do_medico_horas</span>
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> expediente_do_medico_horas (
+      id_expediente_do_medico_data <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+      dataTime_inicial <span class="hljs-built_in">TIMESTAMP</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+      dataTime_final <span class="hljs-built_in">TIMESTAMP</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+      <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_expediente_do_medico_data) <span class="hljs-keyword">REFERENCES</span> expediente_do_medico_data(<span class="hljs-keyword">id</span>)
+  );
 
   <span class="hljs-comment">-- Tabela agenda</span>
   <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> agenda <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> fk_agenda_medicos <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (id_Medico) <span class="hljs-keyword">REFERENCES</span> medicos(<span class="hljs-keyword">id</span>);
@@ -535,11 +543,13 @@ classDiagram
   <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_clientes_login <span class="hljs-keyword">ON</span> clientes (login);
   <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_clientes_id_convenio <span class="hljs-keyword">ON</span> clientes (id_convenio);
 
-  <span class="hljs-comment">-- Índices para a tabela expediente_do_medico_data</span>
+  <span class="hljs-comment">-- Índice para a coluna id_medico na tabela expediente_do_medico_data</span>
   <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_expediente_do_medico_data_id_medico <span class="hljs-keyword">ON</span> expediente_do_medico_data (id_medico);
+
+  <span class="hljs-comment">-- Índice para a coluna dataTime na tabela expediente_do_medico_data</span>
   <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_expediente_do_medico_data_dataTime <span class="hljs-keyword">ON</span> expediente_do_medico_data (dataTime);
 
-  <span class="hljs-comment">-- Índices para a tabela expediente_do_medico_horas</span>
+  <span class="hljs-comment">-- Índice para a coluna id_expediente_do_medico_data na tabela expediente_do_medico_horas</span>
   <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> idx_expediente_do_medico_horas_id_expediente_do_medico_data <span class="hljs-keyword">ON</span> expediente_do_medico_horas (id_expediente_do_medico_data);
 
   <span class="hljs-comment">-- Índices para a tabela formas_de_pagamento</span>

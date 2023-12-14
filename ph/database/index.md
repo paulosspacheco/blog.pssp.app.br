@@ -308,12 +308,12 @@ classDiagram
 
   ```
 
-## Script SQL PostgresSQLpara criar as tabelas
+## Script SQL PostgresSQLpara criar banco de dados e tabelas
 
   ```SQL
 
     CREATE DATABASE assistente_virtual;
-    
+  
     CREATE TABLE operadores (
       id SERIAL PRIMARY KEY,
       nome VARCHAR(50) NOT NULL,
@@ -377,18 +377,19 @@ classDiagram
       status BOOLEAN NOT NULL
     );
 
-    CREATE TABLE expediente_do_medico_data (
-      id_medico INTEGER NOT NULL REFERENCES medicos(id),
-      dataTime DATE NOT NULL,
-      PRIMARY KEY (id_medico, dataTime)
-    );
+  CREATE TABLE expediente_do_medico_data (
+      id SERIAL PRIMARY KEY,
+      id_medico INTEGER NOT NULL,
+      dataTime DATE NOT NULL,    
+      FOREIGN KEY (id_medico) REFERENCES medicos(id)
+  );
 
-    CREATE TABLE expediente_do_medico_horas (
-      id_expediente_do_medico_data INTEGER NOT NULL REFERENCES expediente_do_medico_data(id_medico, dataTime),
+  CREATE TABLE expediente_do_medico_horas (
+      id_expediente_do_medico_data INTEGER NOT NULL,
       dataTime_inicial TIMESTAMP NOT NULL,
       dataTime_final TIMESTAMP NOT NULL,
-      PRIMARY KEY (id_expediente_do_medico_data)
-    );
+      FOREIGN KEY (id_expediente_do_medico_data) REFERENCES expediente_do_medico_data(id)
+  );
 
     CREATE TABLE formas_de_pagamento (
       id SERIAL PRIMARY KEY,
@@ -420,7 +421,6 @@ classDiagram
       observacao VARCHAR(255)
     );
 
-
   ```
 
 ## Script SQL PostgresSQLpara criar os relacionamentos
@@ -441,11 +441,20 @@ classDiagram
     -- Tabela clientes
     ALTER TABLE clientes ADD CONSTRAINT fk_clientes_convenios FOREIGN KEY (id_convenio) REFERENCES convenios(id);
 
-    -- Tabela expediente_do_medico_data
-    ALTER TABLE expediente_do_medico_data ADD CONSTRAINT fk_expediente_do_medico_data_medicos FOREIGN KEY (id_medico) REFERENCES medicos(id);
+    -- Criar a tabela expediente_do_medico_data
+    CREATE TABLE expediente_do_medico_data (
+        id SERIAL PRIMARY KEY,
+        id_medico INTEGER NOT NULL REFERENCES medicos(id),
+        dataTime DATE NOT NULL
+    );
 
-    -- Tabela expediente_do_medico_horas
-    ALTER TABLE expediente_do_medico_horas ADD CONSTRAINT fk_expediente_do_medico_horas_expediente_do_medico_data FOREIGN KEY (id_expediente_do_medico_data) REFERENCES expediente_do_medico_data(id_medico, dataTime);
+    -- Criar a tabela expediente_do_medico_horas
+    CREATE TABLE expediente_do_medico_horas (
+        id_expediente_do_medico_data INTEGER NOT NULL,
+        dataTime_inicial TIMESTAMP NOT NULL,
+        dataTime_final TIMESTAMP NOT NULL,
+        FOREIGN KEY (id_expediente_do_medico_data) REFERENCES expediente_do_medico_data(id)
+    );
 
     -- Tabela agenda
     ALTER TABLE agenda ADD CONSTRAINT fk_agenda_medicos FOREIGN KEY (id_Medico) REFERENCES medicos(id);
@@ -493,11 +502,13 @@ classDiagram
     CREATE INDEX idx_clientes_login ON clientes (login);
     CREATE INDEX idx_clientes_id_convenio ON clientes (id_convenio);
 
-    -- Índices para a tabela expediente_do_medico_data
+    -- Índice para a coluna id_medico na tabela expediente_do_medico_data
     CREATE INDEX idx_expediente_do_medico_data_id_medico ON expediente_do_medico_data (id_medico);
+
+    -- Índice para a coluna dataTime na tabela expediente_do_medico_data
     CREATE INDEX idx_expediente_do_medico_data_dataTime ON expediente_do_medico_data (dataTime);
 
-    -- Índices para a tabela expediente_do_medico_horas
+    -- Índice para a coluna id_expediente_do_medico_data na tabela expediente_do_medico_horas
     CREATE INDEX idx_expediente_do_medico_horas_id_expediente_do_medico_data ON expediente_do_medico_horas (id_expediente_do_medico_data);
 
     -- Índices para a tabela formas_de_pagamento
