@@ -1,125 +1,124 @@
 <!DOCTYPE html>
-<html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>O que &eacute; banco de dados postgresql&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;postgresql&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
 
-<head>
-  <meta charset="UTF-8">
-  <title>O que &eacute; banco de dados postgresql&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;postgresql&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
 
-  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
-  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
-  <script type="application/x-javascript" src="/js/generic.js"></script>
-  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      toggleTree();
-    });
-  </script>
-
-
-</head>
-
-<body class="vscode-body vscode-dark">
-  <div class="header" id="myHeader">
-    <div class="navbar" w3-include-html="/menu.inc"> </div>
-  </div>
-  <div class="title">
-    <script>
-      document.write(document.title);
-    </script>
-  </div>
-  <main>
-    <!-- markdownlint-disable-next-line -->
-    <span id="topo"><span>
-        <!-- <h1 id="o-que-é-banco-de-dados-postgresql---">O que é banco de dados postgresql<a href="o_que_e_postgresql.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba."> ➚ </a></h1> -->
-        <h2 id="1-index"><strong>1. INDEX</strong></h2>
-        <hr>
-        <ol>
-          <li><a href="#id_resumo">Resumo do conteúdo</a></li>
-          <li><strong>Introdução</strong>
-            <ol>
-              <li><a href="#id_objetivo">Objetivo.</a></li>
-              <li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
-              <li><a href="#id_beneficios">Benefícios.</a></li>
-              <li><a href="#id_desvantagens">Desvantagens.</a></li>
-            </ol>
-          </li>
-          <li><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a>
-            <ol>
-              <li><a href="#id_assunto01">Instalar no linux Mint - Versão debian 10.</a></li>
-              <li><a href="#id_assunto02">Aplicativos Clientes disponível do shell do linux</a></li>
-            </ol>
-          </li>
-          <li><a href="#id_referencias"><strong>Referências globais.</strong></a></li>
-          <li><a href="#id_historico"><strong>Histórico.</strong></a></li>
-        </ol>
-        <h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
-        <hr>
-        <ol>
-          <li>
-            <p><span id="id_resumo"><span><strong>Resumo do conteúdo:</strong></p>
-            <ol>
-              <li>Este documento descreve passo a passo como instalar o PostgresSQL no linux Mint LMDE 4.</li>
-              <li>Faz um resumo do objetivo, dos benefícios e desvantagens do PostgresSQL.</li>
-              <li>Mostra a pasta onde o PostgresSQL mantém suas configurações.</li>
-              <li>Descreve os parâmetros para conectar-se com o Banco de Dados.</li>
-              <li>Descreve os clientes cluterdb e createdb.</li>
-            </ol>
-          </li>
-          <li>
-            <p><strong>Introdução</strong></p>
-            <ol>
-              <li>
-                <p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
-                <ol>
-                  <li>O PostgreSQL é um banco de dados livre criado pela Universidade da Califórnia em Berkeley e tem mais de 30 anos de desenvolvimento ativo.</li>
-                  <li>Sua licença é mais flexível do que a licença do mysql porque o mysql é da Oracle e o PostgreSQL é da comunidade.</li>
-                  <li>O mysql por ter sua licença restritiva a comunidade criou o MariaDB e com ele veio as incompatibilidades do projetos existentes. O Lazarus não consegue conectar-se ao mariaDB e por isso estou estudando o PostgreSQL.</li>
-                  <li><text onclick="goBack()">[🔙]</text></li>
-                </ol>
-              </li>
-              <li>
-                <p><strong>Pre-requisitos:</strong><span id="id_pre_requisitos"></span></p>
-                <ol>
-                  <li>Linguagem sql</li>
-                  <li>sistema operacional linux.</li>
-                  <li><text onclick="goBack()">[🔙]</text></li>
-                </ol>
-              </li>
-              <li>
-                <p><span id="id_beneficios"></span>
-                  <strong>Benefícios:</strong>
-                </p>
-                <ol>
-                  <li>Banco de dados cliente servidor, robusto, escalável e sua licença é BSD.</li>
-                  <li><text onclick="goBack()">[🔙]</text></li>
-                </ol>
-              </li>
-              <li>
-                <p><span id="id_desvantagens"></span><strong>Desvantagens</strong>.</p>
-                <ol>
-                  <li>Não vi desvantagem em relação ao mysql.</li>
-                  <li>Para uma aplicação mono-usuário é mais difícil de instalar e configurar. O SqLite á mais indicado para essa tarefa.</li>
-                  <li><text onclick="goBack()">[🔙]</text></li>
-                </ol>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
-            <ol>
-              <li>
-                <p><span id=id_assunto01></span>
-                  <strong>Instalar no linux Mint LMDE 4 - Versão Debian 10.</strong>
-                </p>
-                <ol>
-                  <li>
-                    <p>Código ShellScript</p>
-                    <pre><code class="hljs language-bash">  <span class="hljs-comment"># Instalar o servidor           </span>
+    </head>
+    <body class="vscode-body vscode-dark">
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="o-que-é-banco-de-dados-postgresql---">O que é banco de dados postgresql<a href="o_que_e_postgresql.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+<h2 id="1-index"><strong>1. INDEX</strong></h2>
+<hr>
+<ol>
+<li>
+<p><a href="#id_resumo">Resumo do conteúdo</a></p>
+</li>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+<li><a href="#id_beneficios">Benefícios.</a></li>
+<li><a href="#id_desvantagens">Desvantagens.</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a></p>
+<ol>
+<li><a href="#id_assunto01">Instalar postgresSQL no linux Mint - Versão debian 10.</a></li>
+<li><a href="#id_assunto02">Aplicativos Clientes disponível do shell do linux</a></li>
+<li><a href="#id_assunto03">Aplicativo Cliente GUI dbeaver</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_referencias"><strong>Referências globais.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
+<hr>
+<ol>
+<li>
+<p><span id="id_resumo"><span><strong>Resumo do conteúdo:</strong></p>
+<ol>
+<li>Este documento descreve passo a passo como instalar o PostgresSQL no linux Mint LMDE 4.</li>
+<li>Faz um resumo do objetivo, dos benefícios e desvantagens do PostgresSQL.</li>
+<li>Mostra a pasta onde o PostgresSQL mantém suas configurações.</li>
+<li>Descreve os parâmetros para conectar-se com o Banco de Dados.</li>
+<li>Descreve os clientes cluterdb e createdb.</li>
+</ol>
+</li>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li>
+<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+<ol>
+<li>O PostgreSQL é um banco de dados livre criado pela Universidade da Califórnia em Berkeley e tem mais de 30 anos de desenvolvimento ativo.</li>
+<li>Sua licença é mais flexível do que a licença do mysql porque o mysql é da Oracle e o PostgreSQL é da comunidade.</li>
+<li>O mysql por ter sua licença restritiva a comunidade criou o MariaDB e com ele veio as incompatibilidades do projetos existentes. O Lazarus não consegue conectar-se ao mariaDB e por isso estou estudando o PostgreSQL.</li>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+</li>
+<li>
+<p><strong>Pre-requisitos:</strong><span id="id_pre_requisitos"></span></p>
+<ol>
+<li>Linguagem sql</li>
+<li>sistema operacional linux.</li>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span>
+<strong>Benefícios:</strong></p>
+<ol>
+<li>Banco de dados cliente servidor, robusto, escalável e sua licença é BSD.</li>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+</li>
+<li>
+<p><span id="id_desvantagens"></span><strong>Desvantagens</strong>.</p>
+<ol>
+<li>Não vi desvantagem em relação ao mysql.</li>
+<li>Para uma aplicação mono-usuário é mais difícil de instalar e configurar. O SqLite á mais indicado para essa tarefa.</li>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
+<ol>
+<li>
+<p><span id=id_assunto01></span>
+<strong>Instalar no linux Mint LMDE 4 - Versão Debian 10.</strong></p>
+<ol>
+<li>
+<p>Código ShellScript</p>
+<pre><code class="hljs language-bash">  <span class="hljs-comment"># Instalar o servidor           </span>
   sudo apt install postgresql
 
   <span class="hljs-comment"># Instalar a aplicação cliente:</span>
@@ -127,7 +126,7 @@
 
   <span class="hljs-comment"># Client sql aceita vários bancos de dados Link: https://dbeaver.io/</span>
   <span class="hljs-comment"># https://en.wikipedia.org/wiki/DBeaver</span>
-  sudo apt install dbeaver-ce
+  <span class="hljs-comment"># [dbeaver.io/download](https://dbeaver.io/download/)</span>
 
   <span class="hljs-comment"># Facilidades adicionais para o PostgreSQL : https://www.postgresql.org/docs/11/contrib.html</span>
   <span class="hljs-comment"># Não deve ser instalado porque quero o básico do banco de dados para manter compatibilidade com os outros.</span>
@@ -158,37 +157,37 @@
  
 
 </code></pre>
-                  </li>
-                  <li>
-                    <p><strong>NOTAS</strong></p>
-                    <ol>
-                      <li>Dados para conexão com banco de de dados postgres
-                        <ol>
-                          <li><strong>DataBaseName</strong> : postgres</li>
-                          <li><strong>HostName</strong> : 127.0.0.1 # Obs: a porta 5432 não precisa informar no Lazarus quando for máquina local.</li>
-                          <li><strong>UserName</strong> : postgres</li>
-                          <li><strong>Password</strong> : masterkey</li>
-                        </ol>
-                      </li>
-                      <li>A versão Linux Mint LMDE 4 Debian cria os arquivos de configurações na pasta: <strong>/etc/postgresql/11/main</strong>
-                        <ol>
-                          <li>
-                            <p>A instalação cria o arquivo <strong>/etc/postgresql/11/main/postgresql.conf</strong> com os parâmetros básico do postgresql.</p>
-                            <ol>
-                              <li>
-                                <p>Parâmetros importantes que devem se alterados para atender a demanda:</p>
-                                <ol>
-                                  <li>
-                                    <p><strong>data_directory</strong> = '/var/lib/postgresql/11/main' Nota: Pode ser qualquer outro lugar.</p>
-                                  </li>
-                                  <li>
-                                    <p><strong>data_directory</strong> = '/home/paulosspacheco/Documentos/db/postgresql'</p>
-                                    <ol>
-                                      <li>Nota:
-                                        <ol>
-                                          <li>
-                                            <p>É necessário mover o conteúdo /var/lib/postgresql/11/main para /home/paulosspacheco/Documentos/db/postgresql usando o seguinte comando:</p>
-                                            <pre><code class="hljs language-bash">  <span class="hljs-comment"># Parar o banco de dados postgres</span>
+</li>
+<li>
+<p><strong>NOTAS</strong></p>
+<ol>
+<li>Dados para conexão com banco de de dados postgres
+<ol>
+<li><strong>DataBaseName</strong> : postgres</li>
+<li><strong>HostName</strong> : 127.0.0.1  # Obs: a porta 5432 não precisa informar no Lazarus quando for máquina local.</li>
+<li><strong>UserName</strong> : postgres</li>
+<li><strong>Password</strong> : masterkey</li>
+</ol>
+</li>
+<li>A versão Linux Mint LMDE 4 Debian cria os arquivos de configurações na pasta: <strong>/etc/postgresql/11/main</strong>
+<ol>
+<li>
+<p>A instalação cria o arquivo <strong>/etc/postgresql/11/main/postgresql.conf</strong> com os parâmetros básico do postgresql.</p>
+<ol>
+<li>
+<p>Parâmetros importantes que devem se alterados para atender a demanda:</p>
+<ol>
+<li>
+<p><strong>data_directory</strong> = '/var/lib/postgresql/11/main' Nota:  Pode ser qualquer outro lugar.</p>
+</li>
+<li>
+<p><strong>data_directory</strong> = '/home/paulosspacheco/Documentos/db/postgresql'</p>
+<ol>
+<li>Nota:
+<ol>
+<li>
+<p>É necessário mover o conteúdo /var/lib/postgresql/11/main para /home/paulosspacheco/Documentos/db/postgresql usando o seguinte comando:</p>
+<pre><code class="hljs language-bash">  <span class="hljs-comment"># Parar o banco de dados postgres</span>
   sudo systemctl stop postgresql
 
   <span class="hljs-comment"># Entrar no arquivo abaixo e trocar comentar a linha data_directory = '/var/lib/postgresql/11/main' </span>
@@ -202,93 +201,93 @@
   <span class="hljs-comment"># Iniciar o banco de dados postgres</span>
   sudo systemctl start postgresql
 </code></pre>
-                                          </li>
-                                        </ol>
-                                      </li>
-                                    </ol>
-                                  </li>
-                                  <li>
-                                    <p><strong>listen_addresses</strong> = 'localhost'</p>
-                                    <ol>
-                                      <li>what IP address(es) to listen on;</li>
-                                      <li>comma-separated list of addresses;</li>
-                                      <li>defaults to 'localhost'; use '*' for all (change requires restart)</li>
-                                    </ol>
-                                  </li>
-                                  <li>
-                                    <p><strong>port</strong> = 5432 (change requires restart)</p>
-                                  </li>
-                                </ol>
-                              </li>
-                              <li>
-                                <p>Como reiniciar o servidor postgres:</p>
-                                <pre><code class="hljs language-bash">
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>listen_addresses</strong> = 'localhost'</p>
+<ol>
+<li>what IP address(es) to listen on;</li>
+<li>comma-separated list of addresses;</li>
+<li>defaults to 'localhost'; use '*' for all (change requires restart)</li>
+</ol>
+</li>
+<li>
+<p><strong>port</strong> = 5432 (change requires restart)</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Como reiniciar o servidor postgres:</p>
+<pre><code class="hljs language-bash">
   sudo /etc/init.d/postgresql restart
 
 </code></pre>
-                              </li>
-                              <li>
-                                <p>Como parar o servidor postgres:</p>
-                                <pre><code class="hljs language-bash">
+</li>
+<li>
+<p>Como parar o servidor postgres:</p>
+<pre><code class="hljs language-bash">
   sudo /etc/init.d/postgresql stop
 
 </code></pre>
-                              </li>
-                              <li>
-                                <p>Como iniciar o servidor postgres:</p>
-                                <pre><code class="hljs language-bash">
+</li>
+<li>
+<p>Como iniciar o servidor postgres:</p>
+<pre><code class="hljs language-bash">
   sudo /etc/init.d/postgresql start
 
 </code></pre>
-                              </li>
-                            </ol>
-                          </li>
-                          <li>
-                            <p>Arquivo de log que deve ser apagado com frequência:</p>
-                            <ol>
-                              <li><strong>/var/lib/pgsql/data/pg_log</strong></li>
-                            </ol>
-                          </li>
-                        </ol>
-                      </li>
-                    </ol>
-                  </li>
-                  <li>
-                    <p><strong>Referências:</strong></p>
-                    <ol>
-                      <li><a href="https://www.youtube.com/watch?v=pqDNOGOcUks">Vídeo aula de como instalar o postgresSQL no linux</a></li>
-                      <li><a href="https://www.postgresql.org/download/linux/debian/">Como instalar outras versões no linux</a></li>
-                      <li><a href="https://www.postgresql.org/">Site oficial do PostgreSQL</a></li>
-                      <li><a href="https://www.postgresql.org/docs/14/install-post.html#INSTALL-POST-SHLIBS">Configuração pós-instalação - Bibliotecas compartilhadas</a></li>
-                      <li><a href="https://www.devmedia.com.br/instalacao-e-configuracao-do-servidor-postgresql-no-linux/26184">Manual básico para principiantes</a></li>
-                    </ol>
-                  </li>
-                  <li>
-                    <p><text onclick="goBack()">[🔙]</text></p>
-                  </li>
-                </ol>
-              </li>
-              <li>
-                <p><span id=id_assunto02></span><strong>Aplicativos Clientes disponível do shell do linux</strong></p>
-                <ol>
-                  <li>
-                    <p><a href="https://www.postgresql.org/docs/9.1/app-clusterdb.html"><strong>clusterdb</strong></a> - um <a href="https://www.postgresql.org/docs/11/creating-cluster.html">cluster</a> de banco de dados PostgreSQL.</p>
-                    <ol>
-                      <li>
-                        <p>Código ShellScript</p>
-                        <pre><code class="hljs language-bash"><span class="hljs-comment"># Para agrupar uma única tabela foo em um banco de dados chamado xyzzy :</span>
+</li>
+</ol>
+</li>
+<li>
+<p>Arquivo de log que deve ser apagado com frequência:</p>
+<ol>
+<li><strong>/var/lib/pgsql/data/pg_log</strong></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=pqDNOGOcUks">Vídeo aula de como instalar o postgresSQL no linux</a></li>
+<li><a href="https://www.postgresql.org/download/linux/debian/">Como instalar outras versões no linux</a></li>
+<li><a href="https://www.postgresql.org/">Site oficial do PostgreSQL</a></li>
+<li><a href="https://www.postgresql.org/docs/14/install-post.html#INSTALL-POST-SHLIBS">Configuração pós-instalação -  Bibliotecas compartilhadas</a></li>
+<li><a href="https://www.devmedia.com.br/instalacao-e-configuracao-do-servidor-postgresql-no-linux/26184">Manual básico para principiantes</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_assunto02></span><strong>Aplicativos Clientes disponível do shell do linux</strong></p>
+<ol>
+<li>
+<p><a href="https://www.postgresql.org/docs/9.1/app-clusterdb.html"><strong>clusterdb</strong></a> - um <a href="https://www.postgresql.org/docs/11/creating-cluster.html">cluster</a> de banco de dados PostgreSQL.</p>
+<ol>
+<li>
+<p>Código ShellScript</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># Para agrupar uma única tabela foo em um banco de dados chamado xyzzy :</span>
 clusterdb --table foo xyzzy
 
 </code></pre>
-                      </li>
-                    </ol>
-                  </li>
-                  <li>
-                    <p><a href="https://www.postgresql.org/docs/11/app-createdb.html"><strong>createdb</strong></a> - Cria um banco de dados PostgreSQL</p>
-                    <ol>
-                      <li>
-                        <p>Código ShellScript</p>
-                        <pre><code class="hljs language-bash">  <span class="hljs-comment"># conecta-se ao usuário postgres:</span>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://www.postgresql.org/docs/11/app-createdb.html"><strong>createdb</strong></a>  - Cria um banco de dados PostgreSQL</p>
+<ol>
+<li>
+<p>Código ShellScript</p>
+<pre><code class="hljs language-bash">  <span class="hljs-comment"># conecta-se ao usuário postgres:</span>
   su postgres
 
   <span class="hljs-comment"># Cria o banco de dados teste:</span>
@@ -299,90 +298,103 @@ clusterdb --table foo xyzzy
 
 
 </code></pre>
-                      </li>
-                    </ol>
-                  </li>
-                  <li>
-                    <p><text onclick="goBack()">[🔙]</text></p>
-                  </li>
-                </ol>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <p><span id=id_referencias></span>
-              <strong>REFERÊNCIAS GLOBAIS</strong>
-            </p>
-            <ol>
-              <li><a href="https://www.postgresql.org/docs/11/index.html">Documentação do PostgreSQL 11.15</a></li>
-              <li><a href="https://www.postgresql.org/docs/11/maintenance.html">Capítulo 24. Tarefas de manutenção de rotina do banco de dados</a></li>
-              <li><text onclick="goBack()">[🔙]</text></li>
-            </ol>
-          </li>
-          <li>
-            <p><span id="id_historico"><span>
-                  <strong>HISTÓRICO</strong></p>
-            <ol>
-              <li>dd/mm/2021
-                <!--TODO: HISTÓRICO -->
-              </li>
-              <li>dd/mm/2021
-                <!--FIXME: Falta fazer os item abaixo: -->
-                <ul class="contains-task-list">
-                  <li class="task-list-item enabled">
-                    <p><input class="task-list-item-checkbox" type="checkbox"> Criar este documento baseado no <a href="http://modelo03.html">modelo03.md</a> ;</p>
-                  </li>
-                  <li class="task-list-item enabled">
-                    <p><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Objetivos;</p>
-                  </li>
-                  <li class="task-list-item enabled">
-                    <p><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Pre-requisitos</p>
-                  </li>
-                  <li class="task-list-item enabled">
-                    <p><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Benefícios</p>
-                  </li>
-                  <li class="task-list-item enabled">
-                    <p><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico desvantagens</p>
-                  </li>
-                  <li class="task-list-item enabled">
-                    <p><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Conteúdo</p>
-                  </li>
-                  <li class="task-list-item enabled">
-                    <p><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Exemplos</p>
-                  </li>
-                  <li class="task-list-item enabled">
-                    <p><input class="task-list-item-checkbox" type="checkbox"> Escrever tópico Referências</p>
-                  </li>
-                  <li class="task-list-item enabled">
-                    <p><input class="task-list-item-checkbox" type="checkbox"> Atualizar o histórico deste documento.</p>
-                  </li>
-                  <li class="task-list-item enabled">
-                    <p><input class="task-list-item-checkbox" type="checkbox"> Testar este documento depois após uma semana de concluído.</p>
-                  </li>
-                  <li>
-                    <p><text onclick="goBack()">[🔙]</text></p>
-                  </li>
-                </ul>
-              </li>
-            </ol>
-          </li>
-        </ol>
-        <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
-        <script>
-          function goBack() {
-            window.history.back()
-          }
-        </script>
-  </main>
-  <!-- markdownlint-disable-next-line -->
-  <script>
-    includeHTML();
-    FixHeader(window, "myHeader");
-  </script>
-  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_assunto03></span><strong>Aplicativo Cliente GUI dbeaver</strong></p>
+<ol>
+<li>O DBeaver Community Edition (DBeaver CE) é uma ferramenta de gerenciamento de banco de dados relacional de código aberto. Ele oferece suporte a vários bancos de dados, como MySQL, PostgreSQL, SQLite, Oracle, Microsoft SQL Server, e muitos outros. O DBeaver CE é uma versão gratuita e de código aberto da ferramenta, projetada para ser usada por desenvolvedores, administradores de banco de dados e qualquer pessoa envolvida no gerenciamento e manipulação de bancos de dados.</li>
+<li>Principais características do DBeaver CE:
+<ol>
+<li>Conectividade com Múltiplos Bancos de Dados: Oferece suporte a uma ampla variedade de sistemas de gerenciamento de banco de dados, permitindo que os usuários se conectem a diferentes bancos de dados a partir de uma única interface.</li>
+<li>Interface Gráfica Intuitiva: Possui uma interface de usuário gráfica intuitiva que facilita o desenvolvimento, gerenciamento e consulta de bancos de dados.</li>
+<li>Editor SQL: Inclui um editor SQL poderoso com realce de sintaxe, conclusão automática e outras funcionalidades que facilitam a escrita e execução de consultas SQL.</li>
+<li>Gerenciamento de Metadados: Permite a visualização e edição de metadados do banco de dados, como tabelas, índices, procedimentos armazenados, entre outros.</li>
+<li>Exportação e Importação de Dados: Facilita a transferência de dados entre diferentes fontes, com suporte a várias opções de exportação e importação.</li>
+<li>Visualização de Dados: Oferece recursos visuais para a visualização de dados, incluindo gráficos e ferramentas de exploração de dados.</li>
+<li>Suporte a Plugins: Permite a extensão de funcionalidades por meio de plugins, proporcionando flexibilidade para atender a diferentes necessidades.</li>
+</ol>
+</li>
+<li>O DBeaver CE é uma escolha popular devido à sua versatilidade e ao fato de ser gratuito e de código aberto. No entanto, é importante observar que existem versões comerciais do DBeaver (DBeaver EE) que oferecem recursos adicionais e suporte aprimorado, mas a versão Community Edition é uma opção robusta para muitos desenvolvedores e administradores de banco de dados.</li>
+</ol>
+</li>
+<li>
+<p>Instalação do dbeaver</p>
+<ol>
+<li>Baixar pacote Dbeaver em <a href="https://dbeaver.io/download/">dbeaver.io</a></li>
+<li>Instalar pacote.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_referencias></span>
+<strong>REFERÊNCIAS GLOBAIS</strong></p>
+<ol>
+<li><a href="https://www.postgresql.org/docs/11/index.html">Documentação do PostgreSQL 11.15</a></li>
+<li><a href="https://www.postgresql.org/docs/11/maintenance.html">Capítulo 24. Tarefas de manutenção de rotina do banco de dados</a></li>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+</li>
+<li>
+<p><span id="id_historico"><span>
+<strong>HISTÓRICO</strong></p>
+<ol>
+<li>dd/mm/2021 <!--TODO: HISTÓRICO --></li>
+<li>dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: -->
+<ul class="contains-task-list">
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Criar este documento baseado no <a href="http://modelo03.html">modelo03.md</a> ;</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Objetivos;</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Pre-requisitos</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Benefícios</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico desvantagens</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Exemplos</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+ <script>    function goBack() {    window.history.back()}</script>
+</main>
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-
-
-</body>
-
-</html>
+        
+        
+    </body>
+    </html>

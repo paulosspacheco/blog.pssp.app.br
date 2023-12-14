@@ -19,8 +19,10 @@
    3. [Benefícios.](#id_beneficios)
    4. [Desvantagens.](#id_desvantagens)
 3. [**Conteúdo estudado.**](#id_Conteudo)
-   1. [Instalar no linux Mint - Versão debian 10.](#id_assunto01)
+   1. [Instalar postgresSQL no linux Mint - Versão debian 10.](#id_assunto01)
    2. [Aplicativos Clientes disponível do shell do linux](#id_assunto02)
+   3. [Aplicativo Cliente GUI dbeaver](#id_assunto03)
+
 4. [**Referências globais.**](#id_referencias)
 5. [**Histórico.**](#id_historico)
 
@@ -68,7 +70,7 @@
 
            # Client sql aceita vários bancos de dados Link: https://dbeaver.io/
            # https://en.wikipedia.org/wiki/DBeaver
-           sudo apt install dbeaver-ce
+           # [dbeaver.io/download](https://dbeaver.io/download/)
        
            # Facilidades adicionais para o PostgreSQL : https://www.postgresql.org/docs/11/contrib.html
            # Não deve ser instalado porque quero o básico do banco de dados para manter compatibilidade com os outros.
@@ -200,12 +202,27 @@
 
       3. <text onclick="goBack()">[🔙]</text>
 
+   3. <span id=id_assunto03></span>**Aplicativo Cliente GUI dbeaver**
+      1. O DBeaver Community Edition (DBeaver CE) é uma ferramenta de gerenciamento de banco de dados relacional de código aberto. Ele oferece suporte a vários bancos de dados, como MySQL, PostgreSQL, SQLite, Oracle, Microsoft SQL Server, e muitos outros. O DBeaver CE é uma versão gratuita e de código aberto da ferramenta, projetada para ser usada por desenvolvedores, administradores de banco de dados e qualquer pessoa envolvida no gerenciamento e manipulação de bancos de dados.
+      2. Principais características do DBeaver CE:
+         1. Conectividade com Múltiplos Bancos de Dados: Oferece suporte a uma ampla variedade de sistemas de gerenciamento de banco de dados, permitindo que os usuários se conectem a diferentes bancos de dados a partir de uma única interface.
+         2. Interface Gráfica Intuitiva: Possui uma interface de usuário gráfica intuitiva que facilita o desenvolvimento, gerenciamento e consulta de bancos de dados.
+         3. Editor SQL: Inclui um editor SQL poderoso com realce de sintaxe, conclusão automática e outras funcionalidades que facilitam a escrita e execução de consultas SQL.
+         4. Gerenciamento de Metadados: Permite a visualização e edição de metadados do banco de dados, como tabelas, índices, procedimentos armazenados, entre outros.
+         5. Exportação e Importação de Dados: Facilita a transferência de dados entre diferentes fontes, com suporte a várias opções de exportação e importação.
+         6. Visualização de Dados: Oferece recursos visuais para a visualização de dados, incluindo gráficos e ferramentas de exploração de dados.
+         7. Suporte a Plugins: Permite a extensão de funcionalidades por meio de plugins, proporcionando flexibilidade para atender a diferentes necessidades.
+      3. O DBeaver CE é uma escolha popular devido à sua versatilidade e ao fato de ser gratuito e de código aberto. No entanto, é importante observar que existem versões comerciais do DBeaver (DBeaver EE) que oferecem recursos adicionais e suporte aprimorado, mas a versão Community Edition é uma opção robusta para muitos desenvolvedores e administradores de banco de dados.
+   4. Instalação do dbeaver
+      1. Baixar pacote Dbeaver em [dbeaver.io](https://dbeaver.io/download/)
+      2. Instalar pacote.
+
 4. <span id=id_referencias></span>
 **REFERÊNCIAS GLOBAIS**
    1. [Documentação do PostgreSQL 11.15](https://www.postgresql.org/docs/11/index.html)
    2. [Capítulo 24. Tarefas de manutenção de rotina do banco de dados](https://www.postgresql.org/docs/11/maintenance.html)
    3. <text onclick="goBack()">[🔙]</text>
-5. <span id="id_historico"><span>
+1. <span id="id_historico"><span>
 **HISTÓRICO**
    1. dd/mm/2021 <!--TODO: HISTÓRICO -->
    2. dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: -->
