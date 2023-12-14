@@ -23,7 +23,7 @@
 
    3. [**Conteúdo estudado.**](#id_Conteudo)
       1. [Como instalar o Lazarus](#id_assunto01)
-      2. [Assunto 02](#id_assunto02)
+      <!-- 2. [Assunto 02](#id_assunto02)
       3. [Assunto 03](#id_assunto03)
       4. [Assunto 04](#id_assunto04)
       5. [Assunto 05](#id_assunto05)
@@ -31,7 +31,7 @@
       7. [Assunto 07](#id_assunto07)
       8. [Assunto 08](#id_assunto08)
       9. [Assunto 09](#id_assunto09)
-      10. [Assunto 10](#id_assunto10)
+      10. [Assunto 10](#id_assunto10) -->
 
    4. [**Referências globais.**](#id_referencias)
 
@@ -183,10 +183,11 @@
          4. **Referências:**
             1. [usando-como-instalador-o-fpcupdeluge-nivel-medio](https://gladiston.net.br/programacao/lazarus-ide/usando-como-instalador-o-fpcupdeluge-nivel-medio/)
             2. [Download do FpCupDeLuxe](https://github.com/LongDirtyAnimAlf/fpcupdeluxe/releases)
+            3. [Como instalar Lazarus no macos](https://wiki.freepascal.org/Installing_Lazarus_on_macOS)
 
          5. <text onclick="goBack()">[🔙]</text>
 
-      2. <span id=id_assunto02></span>**Assunto 02**
+      <!-- 2. <span id=id_assunto02></span>**Assunto 02**
          1. Descrição do conteúdo.
          2. **Exemplo do assunto 02**.
             1. Descrição do exemplo
@@ -312,7 +313,7 @@
 
           4. <text onclick="goBack()">[🔙]</text>
 
-      11. <text onclick="goBack()">[🔙]</text>
+      11. <text onclick="goBack()">[🔙]</text> -->
 
    4. <span id=id_referencias></span>**REFERÊNCIAS GLOBAIS**
       1. [Site oficial para produzir este documento](#1)
@@ -329,16 +330,16 @@
 
          - <text onclick="goBack()">[🔙]</text>
 
-      2. dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: -->
-         - [ ] Criar este documento baseado no modelo03.md ;
-         - [ ] Escrever tópico Objetivos;
-         - [ ] Escrever tópico Pre-requisitos
-         - [ ] Escrever tópico Benefícios
-         - [ ] Escrever tópico desvantagens
-         - [ ] Escrever tópico Conteúdo
-         - [ ] Escrever tópico Exemplos
-         - [ ] Escrever tópico Referências
-         - [ ] Atualizar o histórico deste documento.
+      2. 14/12/2023 <!--FIXME: Falta fazer os item abaixo: -->
+         - [x] Criar este documento baseado no modelo03.md ;
+         - [x] Escrever tópico Objetivos;
+         - [x] Escrever tópico Pre-requisitos
+         - [x] Escrever tópico Benefícios
+         - [x] Escrever tópico desvantagens
+         - [x] Escrever tópico Conteúdo
+         <!-- - [ ] Escrever tópico Exemplos -->
+         - [x] Escrever tópico Referências
+         - [x] Atualizar o histórico deste documento.
          - [ ] Testar este documento depois após uma semana de concluído.
 
          - <text onclick="goBack()">[🔙]</text>
