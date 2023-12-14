@@ -312,6 +312,8 @@ classDiagram
 
   ```SQL
 
+    CREATE DATABASE assistente_virtual;
+    
     CREATE TABLE operadores (
       id SERIAL PRIMARY KEY,
       nome VARCHAR(50) NOT NULL,

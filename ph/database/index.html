@@ -18,6 +18,7 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
+
     </head>
     <body class="vscode-body vscode-dark">
         <div class="header" id="myHeader">
@@ -356,6 +357,8 @@ classDiagram
 </code></pre>
 <h2 id="script-sql-postgressqlpara-criar-as-tabelas">Script SQL PostgresSQLpara criar as tabelas</h2>
 <pre><code class="hljs language-SQL">
+  <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">DATABASE</span> assistente_virtual;
+  
   <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> operadores (
     <span class="hljs-keyword">id</span> <span class="hljs-built_in">SERIAL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
     nome <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
