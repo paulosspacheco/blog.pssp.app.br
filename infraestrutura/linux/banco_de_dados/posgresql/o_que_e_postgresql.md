@@ -19,7 +19,7 @@
    3. [Benefícios.](#id_beneficios)
    4. [Desvantagens.](#id_desvantagens)
 3. [**Conteúdo estudado.**](#id_Conteudo)
-   1. [Instalar postgresSQL no linux Mint - Versão debian 10.](#id_assunto01)
+   1. [Instalar postgresSQL no Linux Debian ou derivados](#id_assunto01)
    2. [Aplicativos Clientes disponível do shell do linux](#id_assunto02)
    3. [Aplicativo Cliente GUI dbeaver](#id_assunto03)
 
@@ -58,7 +58,7 @@
 
 3. <span id=id_Conteudo></span>**Conteúdo estudado**
    1. <span id=id_assunto01></span>
-   **Instalar no linux Mint LMDE 4 - Versão Debian 10.**
+   **Instalar postgresSQL no Linux Debian ou derivados)**
       1. Código ShellScript
 
          ```bash
@@ -213,9 +213,29 @@
          6. Visualização de Dados: Oferece recursos visuais para a visualização de dados, incluindo gráficos e ferramentas de exploração de dados.
          7. Suporte a Plugins: Permite a extensão de funcionalidades por meio de plugins, proporcionando flexibilidade para atender a diferentes necessidades.
       3. O DBeaver CE é uma escolha popular devido à sua versatilidade e ao fato de ser gratuito e de código aberto. No entanto, é importante observar que existem versões comerciais do DBeaver (DBeaver EE) que oferecem recursos adicionais e suporte aprimorado, mas a versão Community Edition é uma opção robusta para muitos desenvolvedores e administradores de banco de dados.
-   4. Instalação do dbeaver
+   4. **Como instalar o cliente GUI PostgresSQL _dbeaver_:**
       1. Baixar pacote Dbeaver em [dbeaver.io](https://dbeaver.io/download/)
       2. Instalar pacote.
+         1. _Linux Debian ou derivados_
+            1. Baixar pacote [Linux Debian package (installer)](https://dbeaver.io/download/#:~:text=Linux%20Debian%20package%20(installer))
+
+               ```bash
+
+                  cd ~Download
+                  sudo apr install ./dbeaver-ce_23.3.0_amd64.deb
+
+               ```
+
+            2. Obs:
+               1. Observe nome do arquivo ao clicar no link para [download](https://dbeaver.io/download/#:~:text=Linux%20Debian%20package%20(installer)) porque pode mudar o número da versão.
+
+         2. _[MacOS](https://formulae.brew.sh/cask/dbeaver-community)_
+
+               ```bash
+
+                  brew install --cask dbeaver-community
+
+               ```
 
 4. <span id=id_referencias></span>
 **REFERÊNCIAS GLOBAIS**

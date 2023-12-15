@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>O que &eacute; banco de dados postgresql&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;postgresql&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-       
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -46,7 +46,7 @@
 <li>
 <p><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a></p>
 <ol>
-<li><a href="#id_assunto01">Instalar postgresSQL no linux Mint - Versão debian 10.</a></li>
+<li><a href="#id_assunto01">Instalar postgresSQL no Linux Debian ou derivados</a></li>
 <li><a href="#id_assunto02">Aplicativos Clientes disponível do shell do linux</a></li>
 <li><a href="#id_assunto03">Aplicativo Cliente GUI dbeaver</a></li>
 </ol>
@@ -114,7 +114,7 @@
 <ol>
 <li>
 <p><span id=id_assunto01></span>
-<strong>Instalar no linux Mint LMDE 4 - Versão Debian 10.</strong></p>
+<strong>Instalar postgresSQL no Linux Debian ou derivados)</strong></p>
 <ol>
 <li>
 <p>Código ShellScript</p>
@@ -325,10 +325,39 @@ clusterdb --table foo xyzzy
 </ol>
 </li>
 <li>
-<p>Instalação do dbeaver</p>
+<p><strong>Como instalar o cliente GUI PostgresSQL <em>dbeaver</em>:</strong></p>
 <ol>
 <li>Baixar pacote Dbeaver em <a href="https://dbeaver.io/download/">dbeaver.io</a></li>
-<li>Instalar pacote.</li>
+<li>Instalar pacote.
+<ol>
+<li>
+<p><em>Linux Debian ou derivados</em></p>
+<ol>
+<li>
+<p>Baixar pacote <a href="https://dbeaver.io/download/#:~:text=Linux%20Debian%20package%20(installer)">Linux Debian package (installer)</a></p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-built_in">cd</span> ~Download
+   sudo apr install ./dbeaver-ce_23.3.0_amd64.deb
+
+</code></pre>
+</li>
+<li>
+<p>Obs:</p>
+<ol>
+<li>Observe nome do arquivo ao clicar no link para <a href="https://dbeaver.io/download/#:~:text=Linux%20Debian%20package%20(installer)">download</a> porque pode mudar o número da versão.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><em><a href="https://formulae.brew.sh/cask/dbeaver-community">MacOS</a></em></p>
+<pre><code class="hljs language-bash">
+   brew install --cask dbeaver-community
+
+</code></pre>
+</li>
+</ol>
+</li>
 </ol>
 </li>
 </ol>
