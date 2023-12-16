@@ -96,6 +96,7 @@ classDiagram
   }
 
   class expediente_do_medico_data {
+    +id: Integer
     +id_medico: Integer not null
     +dataTime: Date not null
   }

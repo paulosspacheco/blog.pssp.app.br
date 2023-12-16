@@ -7,6 +7,13 @@
 # Histórico das ocorrência do Blog <a href="historico.html"  target="_blank"  title="Pressione aqui para expandir este documento em nova aba.">➚</a>
 
 <!-- markdownlint-disable-next-line -->
+<fieldset> <legend> <b>Feito em 16/12/2023</b></legend>
+
+- [x] [Criar documento sobre o 'O que é xrdp.html'](./infraestrutura/linux/xrdp/o_que_xrdp.html)
+
+</fieldset>
+
+<!-- markdownlint-disable-next-line -->
 <fieldset> <legend> <b>Feito em 27/10/2023</b></legend>
 
 - [x] [Criar documento sobre o pacote internettools do lazarus](./programacao/pascal/lazarus/internet_tools/internet_tools.html)

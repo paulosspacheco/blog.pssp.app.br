@@ -66,8 +66,9 @@
          5. status // Campo lógico e não pode ser nulo Obs: Usado para saber o se o site está conectado
 
       9. expediente_do_medico_data // Chave múltipla id_medico+Data
-         1. id_medico // tipo Integer  e não pode ser nulo
-         2. dataTime // tipo data e não pode ser nulo
+         1. id // tipo Integer serial
+         2. id_medico // tipo Integer  e não pode ser nulo
+         3. dataTime // tipo data e não pode ser nulo
 
       10. expediente_do_medico_horas // Chave múltipla id_medico+Data+Hora_inicial
           1. id_expediente_do_medico_data // tipo Integer e não pode ser nulo

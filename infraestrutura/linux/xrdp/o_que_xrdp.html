@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>O que &eacute; xrdp &lt;a href&equals;&quot;modelo01&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+
+    </head>
+    <body class="vscode-body vscode-dark">
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="o-que-é-xrdp----">O que é xrdp <a href="modelo01.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+<h2 id="1-index">1. INDEX</h2>
+<hr>
+<ol>
+<li>
+<p><a href="#id_resumo">Resumo do conteúdo</a></p>
+</li>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos para usar xrdp para usar xrdp</a></li>
+<li><a href="#id_beneficios">Benefícios do servidor de terminais xrdp do servidor de terminais xrdp</a></li>
+<li><a href="#id_desvantagens">Desvantagens.</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a></p>
+<ol>
+<li><a href="#id_como_instalar">Como instalar o xrdp no Linux Debian ou derivados</a></li>
+</ol>
+<!-- 2. [Assunto 02](#id_assunto02)
+3. [Assunto 03](#id_assunto03)
+4. [Assunto 04](#id_assunto04)
+5. [Assunto 05](#id_assunto05)
+6. [Assunto 06](#id_assunto06)
+7. [Assunto 07](#id_assunto07)
+8. [Assunto 08](#id_assunto08)
+9. [Assunto 09](#id_assunto09)
+10. [Assunto 10](#id_assunto10) -->
+</li>
+<li>
+<p><a href="#id_referencias"><strong>Referências globais.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo">2. CONTEÚDO</h2>
+<hr>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li>
+<p><span id="id_resumo"><span><strong>Resumo do conteúdo:</strong></p>
+<ol>
+<li>O projeto xrdp é uma solução versátil para acesso remoto gráfico em sistemas Linux, oferecendo uma variedade de Benefícios do servidor de terminais xrdp para administradores de sistemas, desenvolvedores e usuários que precisam gerenciar ou interagir com sistemas Linux remotamente.</li>
+<li>Este documento mostra como instalar o xrdp no sistema linux Debian e seus derivados.</li>
+</ol>
+</li>
+<li>
+<p><strong>Introdução</strong></p>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li>
+<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+<ol>
+<li>
+<p>O xrdp (Remote Desktop Protocol para Linux) é um software que permite que você faça conexões de desktop remoto para sistemas Linux. Ele usa o protocolo RDP (Remote Desktop Protocol) para permitir que usuários se conectem a uma área de trabalho remota em um sistema Linux a partir de outro dispositivo, como um computador Windows.</p>
+</li>
+<li>
+<p>O xrdp facilita a administração remota de sistemas Linux, permitindo que você gerencie o desktop de um servidor ou computador Linux a partir de outro local. Ele fornece uma interface gráfica para o usuário (GUI) remota, permitindo que você interaja com o ambiente de desktop do Linux como se estivesse fisicamente presente na máquina.</p>
+</li>
+<li>
+<p>A configuração do xrdp pode variar dependendo da distribuição Linux específica que você está usando. Geralmente, você precisará instalar o xrdp no sistema Linux que deseja acessar remotamente e, em seguida, usar um cliente RDP em outro dispositivo para estabelecer a conexão remota.</p>
+</li>
+<li>
+<p>Por exemplo, se estiver usando um sistema Windows, você pode usar o Cliente de Área de Trabalho Remota (Remote Desktop Connection) para se conectar ao desktop remoto do Linux por meio do xrdp.</p>
+</li>
+<li>
+<p>Lembre-se de que, para garantir a segurança, é importante configurar corretamente as credenciais de acesso e, se possível, usar uma conexão segura, como SSH, juntamente com o xrdp para proteger a transmissão de dados entre os dispositivos..</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos para usar xrdp:</strong></p>
+<ol>
+<li>
+<p>Ambiente de Desktop:</p>
+<ol>
+<li>O xrdp requer um ambiente de desktop instalado na máquina. Pode ser o ambiente de desktop padrão do Debian ou qualquer outro ambiente de desktop de sua escolha. Sem um ambiente de desktop, o xrdp não terá uma interface gráfica para fornecer remotamente.</li>
+</ol>
+</li>
+<li>
+<p>Conexão de Rede:</p>
+<ol>
+<li>Garanta que a máquina Debian esteja em uma rede acessível a partir do dispositivo do qual você deseja se conectar remotamente. Isso geralmente envolve configurar o firewall para permitir tráfego na porta usada pelo xrdp (por padrão, a porta 3389).</li>
+</ol>
+</li>
+<li>
+<p>Cliente RDP:</p>
+<ol>
+<li>Você precisará de um cliente RDP em seu dispositivo local para se conectar remotamente ao servidor Debian. Os sistemas Windows geralmente vêm com o &quot;Cliente de Área de Trabalho Remota&quot;. Para sistemas Linux, você pode usar o &quot;Remmina&quot; ou outros clientes RDP disponíveis.</li>
+</ol>
+</li>
+<li>
+<p>Privilégios de Administrador (Opcional):</p>
+<ol>
+<li>Para instalar o xrdp e realizar algumas configurações, você pode precisar de privilégios de administrador. Isso pode ser obtido usando o comando sudo ou entrando como usuário root.</li>
+</ol>
+</li>
+<li>
+<p>Configurações de Segurança:</p>
+<ol>
+<li>Considere as configurações de segurança, como senhas fortes, restrição de acesso à porta RDP por meio de firewall, e se possível, a implementação de SSH para uma camada adicional de segurança na comunicação.</li>
+</ol>
+</li>
+<li>
+<p>..</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span><strong>Benefícios do servidor de terminais xrdp:</strong></p>
+<ol>
+<li>
+<p>Acesso Remoto Gráfico:</p>
+<ol>
+<li>O xrdp permite que os usuários acessem remotamente o ambiente de desktop gráfico de um sistema Linux. Isso é particularmente útil para administradores de sistemas e usuários que precisam interagir com uma interface gráfica de usuário (GUI) em um servidor Linux, sem a necessidade de estar fisicamente presente no local..</li>
+</ol>
+</li>
+<li>
+<p>Compatibilidade com o Protocolo RDP:</p>
+<ol>
+<li>O xrdp usa o protocolo RDP (Remote Desktop Protocol), tornando-o compatível com clientes RDP padrão, como o &quot;Cliente de Área de Trabalho Remota&quot; no Windows. Isso facilita o acesso remoto a partir de uma variedade de sistemas operacionais.</li>
+</ol>
+</li>
+<li>
+<p>Integração com Ambientes de Desktop Linux:</p>
+<ol>
+<li>O xrdp pode ser configurado para trabalhar com diferentes ambientes de desktop Linux, como XFCE, GNOME, KDE, CINNAMON entre outros. Isso oferece flexibilidade para escolher o ambiente de desktop que melhor atenda às necessidades do usuário.</li>
+</ol>
+</li>
+<li>
+<p>Configuração e Uso Simples:</p>
+<ol>
+<li>A instalação e configuração do xrdp geralmente são simples, especialmente em distribuições Linux populares como o Debian. O xrdp é projetado para ser amigável ao usuário, tornando-o acessível mesmo para aqueles que não têm conhecimentos avançados de administração de sistemas.</li>
+</ol>
+</li>
+<li>
+<p>Segurança:</p>
+<ol>
+<li>O xrdp pode ser configurado para trabalhar com protocolos de segurança adicionais, como o SSH, proporcionando uma camada extra de proteção para as conexões remotas. Certificados SSL também podem ser usados para criptografar as comunicações, melhorando a segurança.</li>
+</ol>
+</li>
+<li>
+<p>Desempenho Adequado:</p>
+<ol>
+<li>Em muitos casos, o xrdp oferece um desempenho satisfatório para tarefas gráficas remotas, proporcionando uma experiência de usuário fluída em conexões de área de trabalho remota.</li>
+</ol>
+</li>
+<li>
+<p>Custo Zero:</p>
+<ol>
+<li>O xrdp é de código aberto e gratuito, o que significa que não há custo associado à sua instalação e uso. Isso faz com que seja uma opção econômica para implementações de acesso remoto.</li>
+</ol>
+</li>
+<li>
+<p>Multiusuário:</p>
+<ol>
+<li>O xrdp suporta conexões multiusuário, o que significa que vários usuários podem se conectar simultaneamente ao mesmo servidor e obter ambientes de desktop separados.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_desvantagens"></span><strong>Desvantagens</strong>.</p>
+<ol>
+<li>
+<p>Desempenho Gráfico:</p>
+<ol>
+<li>O desempenho gráfico pode não ser tão eficiente quanto em um ambiente local, especialmente para tarefas intensivas em gráficos ou em conexões de baixa largura de banda. O rendimento pode variar dependendo do ambiente de desktop usado.</li>
+</ol>
+</li>
+<li>
+<p>Compatibilidade com Todos os Ambientes de Desktop:</p>
+<ol>
+<li>Embora o xrdp suporte vários ambientes de desktop, a compatibilidade total com todos os ambientes pode não ser garantida. Alguns ambientes podem exigir configurações adicionais ou não funcionar tão bem quanto outros.</li>
+</ol>
+</li>
+<li>
+<p>Configuração Pode Ser Complexa:</p>
+<ol>
+<li>A configuração inicial do xrdp pode ser relativamente simples, mas em alguns casos, especialmente em ambientes complexos ou com requisitos específicos, pode ser necessário ajuste adicional e configuração.</li>
+</ol>
+</li>
+<li>
+<p>Problemas com Impressão:</p>
+<ol>
+<li>O suporte à impressão pode ser um desafio em algumas configurações do xrdp. Configurar corretamente a impressão remota pode ser mais complicado e requerer conhecimentos específicos.</li>
+</ol>
+</li>
+<li>
+<p>Segurança:</p>
+<ol>
+<li>Embora o xrdp possa ser configurado com camadas de segurança adicionais, como SSH, a segurança ainda é uma preocupação em ambientes de acesso remoto. A exposição de serviços na Internet sempre traz um risco adicional, e as práticas de segurança adequadas devem ser implementadas.</li>
+</ol>
+</li>
+<li>
+<p>Reinicialização do Serviço:</p>
+<ol>
+<li>Em alguns casos, após atualizações ou modificações na configuração, pode ser necessário reiniciar o serviço xrdp para aplicar as alterações. Isso pode resultar em interrupções temporárias no acesso remoto.</li>
+</ol>
+</li>
+<li>
+<p>Conexões Perdidas:</p>
+<ol>
+<li>Em conexões instáveis ou de baixa largura de banda, o xrdp pode apresentar desconexões ou falhas ocasionais na transmissão, o que pode levar a uma experiência do usuário menos fluida.</li>
+</ol>
+</li>
+<li>
+<p>Suporte a Dispositivos USB:</p>
+<ol>
+<li>O suporte a dispositivos USB pode não ser tão robusto quanto em ambientes locais. Alguns dispositivos podem não funcionar corretamente ou requerer configurações adicionais.</li>
+</ol>
+</li>
+<li>
+<p>Limitações do Protocolo RDP:</p>
+<ol>
+<li>O xrdp utiliza o protocolo RDP, que pode ter algumas limitações em comparação com outras tecnologias de acesso remoto, dependendo dos requisitos específicos do usuário.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol start="3">
+<li>
+<p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
+<ol>
+<li><span id=id_como_instalar></span><strong>Como instalar o xrdp no Linux Debian ou derivados</strong>
+<ol>
+<li>
+<p>Atualize o Sistema:</p>
+<ol>
+<li>
+<p>Antes de instalar qualquer pacote, é uma boa prática atualizar o sistema para garantir que você tenha as versões mais recentes dos pacotes disponíveis. Execute os seguintes comandos:</p>
+<pre><code class="hljs language-bash">
+   sudo apt update
+   sudo apt upgrade
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Instale o xrdp:</p>
+<ol>
+<li>
+<p>Use o seguinte comando para instalar o xrdp:</p>
+<pre><code class="hljs language-bash">
+   sudo apt install xrdp
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Para garantir que o xrdp seja iniciado automaticamente durante o boot, você pode usar o comando:</p>
+<pre><code class="hljs language-bash">
+   sudo systemctl <span class="hljs-built_in">enable</span> xrdp
+
+</code></pre>
+</li>
+<li>
+<p>Configure o Firewall (Opcional):</p>
+<ol>
+<li>
+<p>Se estiver usando um firewall, abra a porta 3389, que é a porta padrão para o protocolo RDP:</p>
+<pre><code class="hljs language-bash">
+   sudo ufw allow 3389/tcp
+
+</code></pre>
+</li>
+<li>
+<p><strong>Nota</strong>:</p>
+<ol>
+<li>Certifique-se de ajustar as configurações do firewall conforme necessário.</li>
+<li>Meu maior desafio foi publicar a porta 3389, porque a porta <em>WAN</em> 3389 é bloqueada no meu provedor e ninguém no provedor SMART sabe disso e por isso passei mais tempo do que é necessário para publicar o acesso ao meu computador estando fora da minha rede.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>A seguir, pode-se ajustar o arquivo de configuração:</p>
+<pre><code class="hljs language-bash">
+   sudo xed /etc/xrdp/xrdp.ini
+
+</code></pre>
+<ol>
+<li>
+<p>No final o arquivo adicione as linhas abaixo:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Defina o nível de criptografia como alto:</span>
+   encrypt_level=alto
+
+</code></pre>
+<ol>
+<li>encrypt_level=alto</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>A seguir, crie um arquivo de configuração do polkit:</p>
+<pre><code class="hljs language-bash">
+   sudo xed /etc/polkit-1/localauthority.conf.d/02-allow-colord.conf
+
+</code></pre>
+<ol>
+<li>
+<p>e insira adicione no final do arquivo o código javascript abaixo:</p>
+<pre><code class="hljs language-javascript">
+   polkit.addRule(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">action, subject</span>) </span>{
+      <span class="hljs-keyword">if</span> ((action.id == “org.freedesktop.color-manager.create-device” || action.id == “org.freedesktop.color-manager.create-profile” || action.id == “org.freedesktop.color-manager.delete-device” || action.id == “org.freedesktop.color-manager.delete-profile” || action.id == “org.freedesktop.color-manager.modify-device” || action.id == “org.freedesktop.color-manager.modify-profile”) &amp;&amp; subject.isInGroup(“{group}”))
+      {
+      <span class="hljs-keyword">return</span> polkit.Result.YES;
+      }
+   });
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Inicie o Serviço xrdp:</p>
+<ol>
+<li>
+<p>Inicie o serviço xrdp com o seguinte comando:</p>
+<pre><code class="hljs language-bash">
+   sudo service xrdp start
+
+</code></pre>
+</li>
+<li>
+<p>Se preferir, você pode usar o systemctl:</p>
+<pre><code class="hljs language-bash">
+   sudo systemctl start xrdp
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Para reiniciar <em>xrdp</em> execute o comando abaixo:</p>
+<pre><code class="hljs language-bash">
+   sudo /etc/init.d/xrdp restart
+
+</code></pre>
+</li>
+<li>
+<p>Conecte-se ao Servidor:</p>
+<ol>
+<li>Use um cliente RDP em outro dispositivo para se conectar ao servidor Debian. Utilize o &quot;Cliente de Área de Trabalho Remota&quot; no Windows ou o &quot;Remmina&quot; ou &quot;rdesktop&quot; em sistemas Linux, por exemplo.</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li>
+<p><a href="https://help.ubuntu.com/community/xrdp">xrdp no ubuntu</a></p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<!-- 2. <span id=id_assunto02></span>**Assunto 02**
+   1. Descrição do conteúdo.
+   2. **Exemplo do assunto 02**.
+      1. Descrição do exemplo
+<pre><code class="hljs">     ```ts
+     ```
+</code></pre>
+<ol start="3">
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+<li>
+<p><span id=id_assunto03></span><strong>Assunto 03</strong></p>
+<ol>
+<li>
+<p>Descrição do conteúdo.</p>
+</li>
+<li>
+<p><strong>Exemplo do assunto 03</strong>.</p>
+<ol>
+<li>
+<p>Descrição do exemplo</p>
+<pre><code class="hljs language-ts"></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_assunto04></span><strong>Assunto 04</strong></p>
+<ol>
+<li>
+<p>Descrição do conteúdo.</p>
+</li>
+<li>
+<p><strong>Exemplo do assunto 04</strong>.</p>
+<ol>
+<li>
+<p>Descrição do exemplo</p>
+<pre><code class="hljs language-ts"></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_assunto05></span><strong>Assunto 05</strong></p>
+<ol>
+<li>
+<p>Descrição do conteúdo.</p>
+</li>
+<li>
+<p><strong>Exemplo do assunto 05</strong>.</p>
+<ol>
+<li>
+<p>Descrição do exemplo</p>
+<pre><code class="hljs language-ts"></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_assunto06></span><strong>Assunto 06</strong></p>
+<ol>
+<li>
+<p>Descrição do conteúdo.</p>
+</li>
+<li>
+<p><strong>Exemplo do assunto 06</strong>.</p>
+<ol>
+<li>
+<p>Descrição do exemplo</p>
+<pre><code class="hljs language-ts"></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_assunto07></span><strong>Assunto 07</strong></p>
+<ol>
+<li>
+<p>Descrição do conteúdo.</p>
+</li>
+<li>
+<p><strong>Exemplo do assunto 07</strong>.</p>
+<ol>
+<li>
+<p>Descrição do exemplo</p>
+<pre><code class="hljs language-ts"></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_assunto08></span><strong>Assunto 08</strong></p>
+</li>
+<li>
+<p>Descrição do conteúdo.</p>
+</li>
+<li>
+<p><strong>Exemplo do assunto 08</strong>.</p>
+<ol>
+<li>
+<p>Descrição do exemplo</p>
+<pre><code class="hljs language-ts"></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+<li>
+<p><span id=id_assunto09></span><strong>Assunto 09</strong></p>
+</li>
+<li>
+<p>Descrição do conteúdo.</p>
+</li>
+<li>
+<p><strong>Exemplo do assunto 09</strong>.</p>
+<ol>
+<li>
+<p>Descrição do exemplo</p>
+<pre><code class="hljs language-ts"></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+<li>
+<p><span id=id_assunto10></span><strong>Assunto 10</strong></p>
+<ol>
+<li>
+<p>Descrição do conteúdo.</p>
+</li>
+<li>
+<p><strong>Exemplo do assunto 10</strong>.</p>
+<ol>
+<li>
+<p>Descrição do exemplo</p>
+<pre><code class="hljs language-ts"></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text> --&gt;</p>
+</li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li><span id=id_referencias></span><strong>REFERÊNCIAS GLOBAIS</strong>
+<ol>
+<li><a href="https://www.xrdp.org/">xrdp.org</a>)</li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<ol>
+<li>16/12/2023 <!--TODO: HISTÓRICO -->
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Criar este documento baseado no <a href="http://modelo03.html">modelo03.md</a> ;</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Objetivos;</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Pre-requisitos para usar xrdp</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Benefícios do servidor de terminais xrdp</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico desvantagens</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Conteúdo</li>
+</ul>
+<!-- - [ ] Escrever tópico Exemplos -->
+<ul class="contains-task-list">
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Escrever tópico Referências</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Atualizar o histórico deste documento.</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+        
+        
+    </body>
+    </html>

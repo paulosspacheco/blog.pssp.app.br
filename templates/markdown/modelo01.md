@@ -66,7 +66,7 @@ s
       2. <text onclick="goBack()">[🔙]</text>
 <!-- markdownlint-disable-next-line -->
 3. <span id=id_Conteudo></span>**Conteúdo estudado**
-<!-- markdownlint-disable-next-line -->
+
    1. <span id=id_assunto01></span>**Assunto 01**
       1. Descrição do conteúdo.
       2. **Exemplo do assunto 01**.
