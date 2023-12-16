@@ -358,6 +358,7 @@
 <!-- markdownlint-disable-next-line -->
 1. <span id=id_referencias></span>**REFERÊNCIAS GLOBAIS**
    1. [xrdp.org](https://www.xrdp.org/))
+   2. [github xrdp](https://github.com/neutrinolabs/xrdp)
 
 <!-- markdownlint-disable-next-line -->
 1. <span id="id_historico"><span>**HISTÓRICO**
