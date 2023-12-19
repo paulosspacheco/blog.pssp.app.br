@@ -208,35 +208,35 @@
       8. Inicie o Serviço xrdp:
          1. Inicie o serviço xrdp com o seguinte comando:
 
-            ```bash
+               ```bash
 
-               sudo service xrdp start
+                  sudo service xrdp start
 
-            ```
+               ```
 
          2. Se preferir, você pode usar o systemctl:
 
-            ```bash
+               ```bash
 
-               sudo systemctl start xrdp
+                  sudo systemctl start xrdp
 
-            ```
+               ```
 
       9. Para reiniciar _xrdp_ execute o comando abaixo:
 
-         ```bash
+            ```bash
 
-            sudo /etc/init.d/xrdp restart
+               sudo /etc/init.d/xrdp restart
 
-         ```
+            ```
 
       10. Como saber o status do servidor:
 
-         ```bash
+            ```bash
 
-            sudo systemctl status xrdp
+               sudo systemctl status xrdp
 
-         ```
+            ```
 
       11. Conecte-se ao Servidor:
           1. Use um cliente RDP em outro dispositivo para se conectar ao servidor Debian. Utilize o "Cliente de Área de Trabalho Remota" no Windows ou o "Remmina" ou "rdesktop" em sistemas Linux, por exemplo.
@@ -251,8 +251,9 @@
       14. **Exemplo do assunto 02**.
          1. Descrição do exemplo
 
-            ```ts
-            ```
+               ```ts
+               
+               ```
 
       15. **Referências:**
          1. [title](link)

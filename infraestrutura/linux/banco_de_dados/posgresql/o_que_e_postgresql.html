@@ -3,131 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>O que &eacute; banco de dados postgresql&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;postgresql&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-        <style>
-/* From extension vscode.github */
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
 
-.vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
-	display: none;
-}
-
-/* From extension davidmwhynot.markdown-higlightjs */
-/*
-
-Atom One Dark by Daniel Gamage
-Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
-
-base:    #282c34
-mono-1:  #abb2bf
-mono-2:  #818896
-mono-3:  #5c6370
-hue-1:   #56b6c2
-hue-2:   #61aeee
-hue-3:   #c678dd
-hue-4:   #98c379
-hue-5:   #e06c75
-hue-5-2: #be5046
-hue-6:   #d19a66
-hue-6-2: #e6c07b
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #abb2bf;
-  background: #282c34;
-}
-
-.hljs-comment,
-.hljs-quote {
-  color: #5c6370;
-  font-style: italic;
-}
-
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula {
-  color: #c678dd;
-}
-
-.hljs-section,
-.hljs-name,
-.hljs-selector-tag,
-.hljs-deletion,
-.hljs-subst {
-  color: #e06c75;
-}
-
-.hljs-literal {
-  color: #56b6c2;
-}
-
-.hljs-string,
-.hljs-regexp,
-.hljs-addition,
-.hljs-attribute,
-.hljs-meta-string {
-  color: #98c379;
-}
-
-.hljs-built_in,
-.hljs-class .hljs-title {
-  color: #e6c07b;
-}
-
-.hljs-attr,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
-  color: #d19a66;
-}
-
-.hljs-symbol,
-.hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
-  color: #61aeee;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-.hljs-link {
-  text-decoration: underline;
-}
-
-</style>
-        
-        
-        <style>
-.task-list-item {
-    list-style-type: none;
-}
-
-.task-list-item-checkbox {
-    margin-left: -20px;
-    vertical-align: middle;
-    pointer-events: none;
-}
-</style>
-        <style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -142,8 +18,6 @@ hue-6-2: #e6c07b
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
-   
-</style>
     </head>
     <body class="vscode-body vscode-dark">
         <div class="header" id="myHeader">
@@ -153,7 +27,7 @@ hue-6-2: #e6c07b
 <main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<h1 id="o-que-é-banco-de-dados-postgresql---">O que é banco de dados postgresql<a href="o_que_e_postgresql.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
+<!-- <h1 id="o-que-é-banco-de-dados-postgresql---">O que é banco de dados postgresql<a href="o_que_e_postgresql.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
 <h2 id="1-index"><strong>1. INDEX</strong></h2>
 <hr>
 <ol>
@@ -243,7 +117,7 @@ hue-6-2: #e6c07b
 <strong>Instalar postgresSQL no Linux Debian ou derivados)</strong></p>
 <ol>
 <li>
-<p>Código ShellScript</p>
+<p>Código ShellScript para instalar</p>
 <pre><code class="hljs language-bash">  <span class="hljs-comment"># Instalar o servidor           </span>
   sudo apt install postgresql
 
@@ -258,49 +132,90 @@ hue-6-2: #e6c07b
   <span class="hljs-comment"># Não deve ser instalado porque quero o básico do banco de dados para manter compatibilidade com os outros.</span>
   sudo apt install postgresql-contrib
 
+  <span class="hljs-comment"># Configure o Firewall (Opcional):</span>
+  <span class="hljs-comment">#    Se estiver usando um firewall, abra a porta 3389, que é a porta padrão para o protocolo RDP:</span>
+    sudo ufw allow 5432/tcp
+    sudo ufw reload
 
   <span class="hljs-comment"># Selecionando o usuário postgres</span>
-  sudo su postgres
+    sudo su postgres
 
   <span class="hljs-comment"># entrar no prompt do Postgres</span>
-  psql
+    psql
  
   <span class="hljs-comment"># visualizando a lista dos bancos de dados no programa psql</span>
-  \l
+    \l
 
   <span class="hljs-comment"># Definindo senha masterkey para o usuário Postgres</span>
-  \password
+    \password
 
   <span class="hljs-comment"># Para sair do programa psql</span>
-  \q
+    \q
 
   <span class="hljs-comment"># Sair do usuário postgres</span>
-  <span class="hljs-built_in">exit</span>
+    <span class="hljs-built_in">exit</span>
   
   <span class="hljs-comment"># Executar psql estando dentro do usuário corrente.</span>
-  psql -Upostgres -hlocalhost
-
- 
+    psql -Upostgres -hlocalhost
 
 </code></pre>
 </li>
 <li>
 <p><strong>NOTAS</strong></p>
 <ol>
-<li>Configurações para que o postgres seja acessado fora da rede local:
+<li>
+<p>Configurações para que o postgres seja acessado fora da rede local:</p>
 <ol>
-<li>Editar arquivo pg_hba.conf</li>
+<li>
+<p>Editar arquivo <em>/etc/postgresql/14/main/pg_hba.conf</em> e adicione a seguinte linha:</p>
+<pre><code class="hljs language-text">
+  host alls all 0.0.0.0/0 md5
+  
+</code></pre>
+</li>
+<li>
+<p><em>Nota</em></p>
+<ol>
+<li>Onde <em>0.0.0.0/0</em> é o intervalo de endereços que aceitará conexão de outros IPs que não seja <em>localhost</em>.</li>
+<li>A autenticação do cliente é controlada pelo arquivo <em>pg_hba.conf</em> veja <a href="https://pgdocptbr.sourceforge.io/pg74/client-authentication.html">mais...</a></li>
+<li><a href="https://pgdocptbr.sourceforge.io/pg74/auth-methods.html">Métodos de autenticação</a>
+<ol>
+<li>Autenticação por senha são:
+<ol>
+<li><em>md5</em>
+<ol>
+<li>Suporta senhas criptografadas armazenadas no catálogo do sistema <em>pg_shadow</em>.</li>
 </ol>
 </li>
-<li>Dados para conexão com banco de de dados postgres
+<li><em>crypt</em>
 <ol>
-<li><strong>DataBaseName</strong> : postgres</li>
-<li><strong>HostName</strong> : 127.0.0.1  # Obs: a porta 5432 não precisa informar no Lazarus quando for máquina local.</li>
-<li><strong>UserName</strong> : postgres</li>
-<li><strong>Password</strong> : masterkey</li>
+<li>semelhante ao <em>md5</em></li>
 </ol>
 </li>
-<li>A versão Linux Mint LMDE 4 Debian cria os arquivos de configurações na pasta: <strong>/etc/postgresql/14/main</strong>
+<li><em>password</em>
+<ol>
+<li>O método <em>password</em> deve ser evitado, especialmente em conexões pela Internet aberta (a menos que seja utilizado <em>SSL</em>, <em>SSH</em> ou outro método de segurança para proteger a conexão).</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Dados para conexão com banco de de dados postgres</p>
+<ol>
+<li><em>DataBaseName</em> : postgres</li>
+<li><em>HostName</em> : 127.0.0.1  # Obs: a porta 5432 não precisa informar no Lazarus quando for máquina local.</li>
+<li><em>UserName</em> : postgres</li>
+<li><em>Password</em> : masterkey</li>
+</ol>
+</li>
+<li>
+<p>A versão Linux Mint LMDE 4 Debian cria os arquivos de configurações na pasta: <strong>/etc/postgresql/14/main</strong></p>
 <ol>
 <li>
 <p>A instalação cria o arquivo <strong>/etc/postgresql/14/main/postgresql.conf</strong> com os parâmetros básico do postgresql.</p>
@@ -309,10 +224,10 @@ hue-6-2: #e6c07b
 <p>Parâmetros importantes que devem se alterados para atender a demanda:</p>
 <ol>
 <li>
-<p><strong>data_directory</strong> = '/var/lib/postgresql/14/main' Nota:  Pode ser qualquer outro lugar.</p>
+<p><em>data_directory</em> = '/var/lib/postgresql/14/main' Nota:  Pode ser qualquer outro lugar.</p>
 </li>
 <li>
-<p><strong>data_directory</strong> = '/home/paulosspacheco/Documentos/db/postgresql'</p>
+<p><em>data_directory</em> = '/home/paulosspacheco/Documentos/db/postgresql'</p>
 <ol>
 <li>Nota:
 <ol>
@@ -323,8 +238,8 @@ hue-6-2: #e6c07b
 
   <span class="hljs-comment"># Entrar no arquivo abaixo e trocar comentar a linha data_directory = '/var/lib/postgresql/14/main' </span>
   <span class="hljs-comment"># Acrescentar a linha:  data_directory = '/home/paulosspacheco/Documentos/db/postgresql'  </span>
-  <span class="hljs-comment"># Após as alterações acima salvar o arquivo /etc/postgresql/12/main/postgresql.conf</span>
-  sudo xed /etc/postgresql/12/main/postgresql.conf
+  <span class="hljs-comment"># Após as alterações acima salvar o arquivo /etc/postgresql/14/main/postgresql.conf</span>
+  sudo xed /etc/postgresql/14/main/postgresql.conf
 
   <span class="hljs-comment"># Clonar a pasta /var/lib/postgresql/14/main para a pasta /home/paulosspacheco/Documentos/db/postgresql</span>
   sudo rsync -av /var/lib/postgresql/14/main /home/paulosspacheco/Documentos/db/postgresql
@@ -338,23 +253,49 @@ hue-6-2: #e6c07b
 </ol>
 </li>
 <li>
-<p><strong>listen_addresses</strong> = 'localhost'</p>
+<p><em>listen_addresses</em> : é um parâmetro de configuração que determina qual endereço ou endereços <em>TCP/IP</em> o servidor deve escutar.:</p>
 <ol>
-<li>what IP address(es) to listen on;</li>
-<li>comma-separated list of addresses;</li>
-<li>defaults to 'localhost'; use '*' for all (change requires restart)</li>
+<li>
+<p>O padrão é '<em>localhost</em>'; use <em>'*'</em> para todos (a alteração requer reinicialização) e essa lista de endereços é separados por vírgula</p>
+<ol>
+<li><em>Exemplos</em>:
+<ol>
+<li><em>listen_addresses</em> = 'localhost';</li>
+<li><em>listen_addresses</em> = '*';</li>
+<li><em>listen_addresses</em> = 'localhost,192.168.15.2';</li>
+</ol>
+</li>
 </ol>
 </li>
 <li>
-<p><strong>port</strong> = 5432 (change requires restart)</p>
+<p>O arquivo pode ser editado usando o comando abaixo:</p>
+<pre><code class="hljs language-text">
+   sudo xed /etc/postgresql/14/main/postgresql.conf
+
+</code></pre>
+</li>
+<li>
+<p><em>Referências</em>:</p>
+<ol>
+<li><a href="https://pgpedia.info/l/listen_addresses.html#:~:text=listen_addresses%20is%20a%20configuration%20parameter,was%20added%20in%20PostgreSQL%208.0.">endereços_de_escuta</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><em>port</em> = 5432 (change requires restart)</p>
 </li>
 </ol>
 </li>
 <li>
 <p>Como reiniciar o servidor postgres:</p>
 <pre><code class="hljs language-bash">
-  sudo /etc/init.d/postgresql restart
+  <span class="hljs-comment"># comando 01</span>
+    sudo /etc/init.d/postgresql restart
 
+  <span class="hljs-comment"># ou</span>
+    sudo service postgresql restart
+    
 </code></pre>
 </li>
 <li>
@@ -505,6 +446,12 @@ clusterdb --table foo xyzzy
 </li>
 <li>
 <p><a href="https://dbeaver.io/2023/01/08/dbeaver-22-3-2/">Aplicativo Cliente DBeaver 22.3.2</a></p>
+</li>
+<li>
+<p><a href="https://pgdocptbr.sourceforge.io/pg74/client-authentication.html">Autenticação do cliente postgresSQL</a></p>
+</li>
+<li>
+<p><a href="https://acervolima.com/postgresql-metodos-de-autenticacao-de-senha/">POSTGRESQL - MÉTODOS DE AUTENTICAÇÃO DE SENHA</a></p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>

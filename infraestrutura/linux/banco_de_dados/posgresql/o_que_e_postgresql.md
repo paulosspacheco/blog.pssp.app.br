@@ -59,7 +59,7 @@
 3. <span id=id_Conteudo></span>**Conteúdo estudado**
    1. <span id=id_assunto01></span>
    **Instalar postgresSQL no Linux Debian ou derivados)**
-      1. Código ShellScript
+      1. Código ShellScript para instalar
 
          ```bash
            # Instalar o servidor           
@@ -76,45 +76,66 @@
            # Não deve ser instalado porque quero o básico do banco de dados para manter compatibilidade com os outros.
            sudo apt install postgresql-contrib
 
+           # Configure o Firewall (Opcional):
+           #    Se estiver usando um firewall, abra a porta 3389, que é a porta padrão para o protocolo RDP:
+             sudo ufw allow 5432/tcp
+             sudo ufw reload
 
            # Selecionando o usuário postgres
-           sudo su postgres
+             sudo su postgres
 
            # entrar no prompt do Postgres
-           psql
+             psql
           
            # visualizando a lista dos bancos de dados no programa psql
-           \l
+             \l
 
            # Definindo senha masterkey para o usuário Postgres
-           \password
+             \password
 
            # Para sair do programa psql
-           \q
+             \q
 
            # Sair do usuário postgres
-           exit
+             exit
            
            # Executar psql estando dentro do usuário corrente.
-           psql -Upostgres -hlocalhost
-
-          
+             psql -Upostgres -hlocalhost
 
          ```
 
       2. **NOTAS**
          1. Configurações para que o postgres seja acessado fora da rede local:
-            1. Editar arquivo pg_hba.conf
+            1. Editar arquivo _/etc/postgresql/14/main/pg_hba.conf_ e adicione a seguinte linha:
+
+                  ```text
+
+                    host alls all 0.0.0.0/0 md5
+                    
+                  ```  
+
+            2. _Nota_
+               1. Onde _0.0.0.0/0_ é o intervalo de endereços que aceitará conexão de outros IPs que não seja _localhost_.
+               2. A autenticação do cliente é controlada pelo arquivo _pg_hba.conf_ veja [mais...](https://pgdocptbr.sourceforge.io/pg74/client-authentication.html)
+               3. [Métodos de autenticação](https://pgdocptbr.sourceforge.io/pg74/auth-methods.html)
+                  1. Autenticação por senha são:
+                     1. _md5_
+                        1. Suporta senhas criptografadas armazenadas no catálogo do sistema _pg_shadow_.
+                     2. _crypt_
+                        1. semelhante ao _md5_
+                     3. _password_
+                        1. O método _password_ deve ser evitado, especialmente em conexões pela Internet aberta (a menos que seja utilizado _SSL_, _SSH_ ou outro método de segurança para proteger a conexão).
+
          2. Dados para conexão com banco de de dados postgres
-            1. **DataBaseName** : postgres
-            2. **HostName** : 127.0.0.1  # Obs: a porta 5432 não precisa informar no Lazarus quando for máquina local.
-            3. **UserName** : postgres
-            4. **Password** : masterkey
+            1. _DataBaseName_ : postgres
+            2. _HostName_ : 127.0.0.1  # Obs: a porta 5432 não precisa informar no Lazarus quando for máquina local.
+            3. _UserName_ : postgres
+            4. _Password_ : masterkey
          3. A versão Linux Mint LMDE 4 Debian cria os arquivos de configurações na pasta: **/etc/postgresql/14/main**
             1. A instalação cria o arquivo **/etc/postgresql/14/main/postgresql.conf** com os parâmetros básico do postgresql.
                1. Parâmetros importantes que devem se alterados para atender a demanda:
-                  1. **data_directory** = '/var/lib/postgresql/14/main' Nota:  Pode ser qualquer outro lugar.
-                  2. **data_directory** = '/home/paulosspacheco/Documentos/db/postgresql'  
+                  1. _data_directory_ = '/var/lib/postgresql/14/main' Nota:  Pode ser qualquer outro lugar.
+                  2. _data_directory_ = '/home/paulosspacheco/Documentos/db/postgresql'  
                      1. Nota:
                         1. É necessário mover o conteúdo /var/lib/postgresql/14/main para /home/paulosspacheco/Documentos/db/postgresql usando o seguinte comando:
 
@@ -124,8 +145,8 @@
 
                              # Entrar no arquivo abaixo e trocar comentar a linha data_directory = '/var/lib/postgresql/14/main' 
                              # Acrescentar a linha:  data_directory = '/home/paulosspacheco/Documentos/db/postgresql'  
-                             # Após as alterações acima salvar o arquivo /etc/postgresql/12/main/postgresql.conf
-                             sudo xed /etc/postgresql/12/main/postgresql.conf
+                             # Após as alterações acima salvar o arquivo /etc/postgresql/14/main/postgresql.conf
+                             sudo xed /etc/postgresql/14/main/postgresql.conf
 
                              # Clonar a pasta /var/lib/postgresql/14/main para a pasta /home/paulosspacheco/Documentos/db/postgresql
                              sudo rsync -av /var/lib/postgresql/14/main /home/paulosspacheco/Documentos/db/postgresql
@@ -134,18 +155,35 @@
                              sudo systemctl start postgresql
                            ```
 
-                  3. **listen_addresses** = 'localhost'
-                     1. what IP address(es) to listen on;
-                     2. comma-separated list of addresses;
-                     3. defaults to 'localhost'; use '*' for all (change requires restart)
-                  4. **port** = 5432 (change requires restart)
+                  3. _listen_addresses_ : é um parâmetro de configuração que determina qual endereço ou endereços _TCP/IP_ o servidor deve escutar.:
+                     1. O padrão é '_localhost_'; use _'*'_ para todos (a alteração requer reinicialização) e essa lista de endereços é separados por vírgula
+                        1. _Exemplos_:
+                           1. _listen_addresses_ = 'localhost';
+                           2. _listen_addresses_ = '*';
+                           3. _listen_addresses_ = 'localhost,192.168.15.2';
+                     2. O arquivo pode ser editado usando o comando abaixo:
+
+                           ```text
+
+                              sudo xed /etc/postgresql/14/main/postgresql.conf
+
+                           ```
+
+                     3. _Referências_:
+                        1. [endereços_de_escuta](https://pgpedia.info/l/listen_addresses.html#:~:text=listen_addresses%20is%20a%20configuration%20parameter,was%20added%20in%20PostgreSQL%208.0.)
+
+                  4. _port_ = 5432 (change requires restart)
 
                2. Como reiniciar o servidor postgres:
 
                   ```bash
 
-                    sudo /etc/init.d/postgresql restart
+                    # comando 01
+                      sudo /etc/init.d/postgresql restart
 
+                    # ou
+                      sudo service postgresql restart
+                      
                   ```
 
                3. Como parar o servidor postgres:
@@ -244,8 +282,10 @@
    1. [Documentação do PostgreSQL 11.15](https://www.postgresql.org/docs/11/index.html)
    2. [Capítulo 24. Tarefas de manutenção de rotina do banco de dados](https://www.postgresql.org/docs/11/maintenance.html)
    3. [Aplicativo Cliente DBeaver 22.3.2](https://dbeaver.io/2023/01/08/dbeaver-22-3-2/)
+   4. [Autenticação do cliente postgresSQL](https://pgdocptbr.sourceforge.io/pg74/client-authentication.html)
+   5. [POSTGRESQL - MÉTODOS DE AUTENTICAÇÃO DE SENHA](https://acervolima.com/postgresql-metodos-de-autenticacao-de-senha/)
 
-   4. <text onclick="goBack()">[🔙]</text>
+   6. <text onclick="goBack()">[🔙]</text>
 
 1. <span id="id_historico"><span>
 **HISTÓRICO**
