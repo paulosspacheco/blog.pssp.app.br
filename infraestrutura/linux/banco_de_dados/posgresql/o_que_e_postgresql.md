@@ -109,8 +109,8 @@
             1. Editar arquivo _/etc/postgresql/14/main/pg_hba.conf_ e adicione a seguinte linha:
 
                   ```text
-
-                    host alls all 0.0.0.0/0 md5
+                    
+                    host all  all 0.0.0.0/0 scram-sha-256
                     
                   ```  
 
@@ -119,12 +119,19 @@
                2. A autenticação do cliente é controlada pelo arquivo _pg_hba.conf_ veja [mais...](https://pgdocptbr.sourceforge.io/pg74/client-authentication.html)
                3. [Métodos de autenticação](https://pgdocptbr.sourceforge.io/pg74/auth-methods.html)
                   1. Autenticação por senha são:
-                     1. _md5_
+                     1. _[scram-sha-256](https://www.postgresql.org/docs/current/auth-password.html)_
+                        1. O método _scram-sha-256_ executa a autenticação SCRAM-SHA-256, conforme descrito em RFC 7677. É um esquema de desafio-resposta que evita a detecção de senhas em conexões não confiáveis ​​e oferece suporte ao armazenamento de senhas no servidor em um formato criptografado com hash que é considerado seguro.
+                     2. _md5_
                         1. Suporta senhas criptografadas armazenadas no catálogo do sistema _pg_shadow_.
-                     2. _crypt_
-                        1. semelhante ao _md5_
+                        2. O método _md5_ usa um mecanismo personalizado de resposta a desafios e menos seguro. Ele evita a detecção de senhas e evita o armazenamento de senhas no servidor em texto simples, mas não oferece proteção se um invasor conseguir roubar o hash da senha do servidor. Além disso, o algoritmo hash MD5 hoje em dia não é mais considerado seguro contra determinados ataques.
+                        3. O método _md5_ não pode ser usado com o recurso db_user_namespace.
+                        4. Para facilitar a transição do método _md5_ para o método _SCRAM_ mais recente, se _md5_ for especificado como um método em pg_hba.conf mas a senha do usuário no servidor estiver criptografada para SCRAM (veja abaixo), então a autenticação baseada em SCRAM será escolhida automaticamente.
+
                      3. _password_
-                        1. O método _password_ deve ser evitado, especialmente em conexões pela Internet aberta (a menos que seja utilizado _SSL_, _SSH_ ou outro método de segurança para proteger a conexão).
+                        1. O método _password_ envia a senha em texto não criptografado e, portanto, é vulnerável à detecção de senha “sniffing< /span>_password_ poderá ser usado com segurança. (Embora a autenticação por certificado SSL possa ser uma escolha melhor se depender do uso de SSL). ataques. Deve sempre ser evitado, se possível. Se a conexão estiver protegida por criptografia SSL, então ”.
+                  2. **Notas**:
+                     1. O cliente _dbeaver-ce_  não aceita o método _md5_, _crypt_ e _password_
+                     2. A senha de cada usuário do banco de dados é armazenada no _pg_authid_ catálogo do sistema.
 
          2. Dados para conexão com banco de de dados postgres
             1. _DataBaseName_ : postgres
@@ -151,7 +158,7 @@
                              # Clonar a pasta /var/lib/postgresql/14/main para a pasta /home/paulosspacheco/Documentos/db/postgresql
                              sudo rsync -av /var/lib/postgresql/14/main /home/paulosspacheco/Documentos/db/postgresql
 
-                             # Iniciar o banco de dados postgres
+                             # InicDocumentação → PostgreSQL 16iar o banco de dados postgres
                              sudo systemctl start postgresql
                            ```
 
@@ -211,6 +218,7 @@
          3. [Site oficial do PostgreSQL](https://www.postgresql.org/)
          4. [Configuração pós-instalação -  Bibliotecas compartilhadas](https://www.postgresql.org/docs/14/install-post.html#INSTALL-POST-SHLIBS)
          5. [Manual básico para principiantes](https://www.devmedia.com.br/instalacao-e-configuracao-do-servidor-postgresql-no-linux/26184)
+         6. [Documentação → PostgreSQL 16](https://www.postgresql.org/docs/current/auth-password.html)
 
       4. <text onclick="goBack()">[🔙]</text>
 

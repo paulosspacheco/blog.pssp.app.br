@@ -18,6 +18,7 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
+
     </head>
     <body class="vscode-body vscode-dark">
         <div class="header" id="myHeader">
@@ -168,8 +169,8 @@
 <ol>
 <li>
 <p>Editar arquivo <em>/etc/postgresql/14/main/pg_hba.conf</em> e adicione a seguinte linha:</p>
-<pre><code class="hljs language-text">
-  host alls all 0.0.0.0/0 md5
+<pre><code class="hljs language-text">  
+  host all  all 0.0.0.0/0 scram-sha-256
   
 </code></pre>
 </li>
@@ -182,21 +183,33 @@
 <ol>
 <li>Autenticação por senha são:
 <ol>
-<li><em>md5</em>
+<li>
+<p><em><a href="https://www.postgresql.org/docs/current/auth-password.html">scram-sha-256</a></em></p>
+<ol>
+<li>O método <em>scram-sha-256</em> executa a autenticação SCRAM-SHA-256, conforme descrito em RFC 7677. É um esquema de desafio-resposta que evita a detecção de senhas em conexões não confiáveis ​​e oferece suporte ao armazenamento de senhas no servidor em um formato criptografado com hash que é considerado seguro.</li>
+</ol>
+</li>
+<li>
+<p><em>md5</em></p>
 <ol>
 <li>Suporta senhas criptografadas armazenadas no catálogo do sistema <em>pg_shadow</em>.</li>
+<li>O método <em>md5</em> usa um mecanismo personalizado de resposta a desafios e menos seguro. Ele evita a detecção de senhas e evita o armazenamento de senhas no servidor em texto simples, mas não oferece proteção se um invasor conseguir roubar o hash da senha do servidor. Além disso, o algoritmo hash MD5 hoje em dia não é mais considerado seguro contra determinados ataques.</li>
+<li>O método <em>md5</em> não pode ser usado com o recurso db_user_namespace.</li>
+<li>Para facilitar a transição do método <em>md5</em> para o método <em>SCRAM</em> mais recente, se <em>md5</em> for especificado como um método em pg_hba.conf mas a senha do usuário no servidor estiver criptografada para SCRAM (veja abaixo), então a autenticação baseada em SCRAM será escolhida automaticamente.</li>
 </ol>
 </li>
-<li><em>crypt</em>
+<li>
+<p><em>password</em></p>
 <ol>
-<li>semelhante ao <em>md5</em></li>
+<li>O método <em>password</em> envia a senha em texto não criptografado e, portanto, é vulnerável à detecção de senha “sniffing&lt; /span&gt;<em>password</em> poderá ser usado com segurança. (Embora a autenticação por certificado SSL possa ser uma escolha melhor se depender do uso de SSL). ataques. Deve sempre ser evitado, se possível. Se a conexão estiver protegida por criptografia SSL, então ”.</li>
 </ol>
 </li>
-<li><em>password</em>
+</ol>
+</li>
+<li><strong>Notas</strong>:
 <ol>
-<li>O método <em>password</em> deve ser evitado, especialmente em conexões pela Internet aberta (a menos que seja utilizado <em>SSL</em>, <em>SSH</em> ou outro método de segurança para proteger a conexão).</li>
-</ol>
-</li>
+<li>O cliente <em>dbeaver-ce</em>  não aceita o método <em>md5</em>, <em>crypt</em> e <em>password</em></li>
+<li>A senha de cada usuário do banco de dados é armazenada no <em>pg_authid</em> catálogo do sistema.</li>
 </ol>
 </li>
 </ol>
@@ -244,7 +257,7 @@
   <span class="hljs-comment"># Clonar a pasta /var/lib/postgresql/14/main para a pasta /home/paulosspacheco/Documentos/db/postgresql</span>
   sudo rsync -av /var/lib/postgresql/14/main /home/paulosspacheco/Documentos/db/postgresql
 
-  <span class="hljs-comment"># Iniciar o banco de dados postgres</span>
+  <span class="hljs-comment"># InicDocumentação → PostgreSQL 16iar o banco de dados postgres</span>
   sudo systemctl start postgresql
 </code></pre>
 </li>
@@ -332,6 +345,7 @@
 <li><a href="https://www.postgresql.org/">Site oficial do PostgreSQL</a></li>
 <li><a href="https://www.postgresql.org/docs/14/install-post.html#INSTALL-POST-SHLIBS">Configuração pós-instalação -  Bibliotecas compartilhadas</a></li>
 <li><a href="https://www.devmedia.com.br/instalacao-e-configuracao-do-servidor-postgresql-no-linux/26184">Manual básico para principiantes</a></li>
+<li><a href="https://www.postgresql.org/docs/current/auth-password.html">Documentação → PostgreSQL 16</a></li>
 </ol>
 </li>
 <li>
