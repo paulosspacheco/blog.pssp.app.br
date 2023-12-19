@@ -103,30 +103,32 @@
          ```
 
       2. **NOTAS**
-         1. Dados para conexão com banco de de dados postgres
+         1. Configurações para que o postgres seja acessado fora da rede local:
+            1. Editar arquivo pg_hba.conf
+         2. Dados para conexão com banco de de dados postgres
             1. **DataBaseName** : postgres
             2. **HostName** : 127.0.0.1  # Obs: a porta 5432 não precisa informar no Lazarus quando for máquina local.
             3. **UserName** : postgres
             4. **Password** : masterkey
-         2. A versão Linux Mint LMDE 4 Debian cria os arquivos de configurações na pasta: **/etc/postgresql/11/main**
-            1. A instalação cria o arquivo **/etc/postgresql/11/main/postgresql.conf** com os parâmetros básico do postgresql.
+         3. A versão Linux Mint LMDE 4 Debian cria os arquivos de configurações na pasta: **/etc/postgresql/14/main**
+            1. A instalação cria o arquivo **/etc/postgresql/14/main/postgresql.conf** com os parâmetros básico do postgresql.
                1. Parâmetros importantes que devem se alterados para atender a demanda:
-                  1. **data_directory** = '/var/lib/postgresql/11/main' Nota:  Pode ser qualquer outro lugar.
+                  1. **data_directory** = '/var/lib/postgresql/14/main' Nota:  Pode ser qualquer outro lugar.
                   2. **data_directory** = '/home/paulosspacheco/Documentos/db/postgresql'  
                      1. Nota:
-                        1. É necessário mover o conteúdo /var/lib/postgresql/11/main para /home/paulosspacheco/Documentos/db/postgresql usando o seguinte comando:
+                        1. É necessário mover o conteúdo /var/lib/postgresql/14/main para /home/paulosspacheco/Documentos/db/postgresql usando o seguinte comando:
 
                            ```bash
                              # Parar o banco de dados postgres
                              sudo systemctl stop postgresql
 
-                             # Entrar no arquivo abaixo e trocar comentar a linha data_directory = '/var/lib/postgresql/11/main' 
+                             # Entrar no arquivo abaixo e trocar comentar a linha data_directory = '/var/lib/postgresql/14/main' 
                              # Acrescentar a linha:  data_directory = '/home/paulosspacheco/Documentos/db/postgresql'  
                              # Após as alterações acima salvar o arquivo /etc/postgresql/12/main/postgresql.conf
                              sudo xed /etc/postgresql/12/main/postgresql.conf
 
-                             # Clonar a pasta /var/lib/postgresql/11/main para a pasta /home/paulosspacheco/Documentos/db/postgresql
-                             sudo rsync -av /var/lib/postgresql/11/main /home/paulosspacheco/Documentos/db/postgresql
+                             # Clonar a pasta /var/lib/postgresql/14/main para a pasta /home/paulosspacheco/Documentos/db/postgresql
+                             sudo rsync -av /var/lib/postgresql/14/main /home/paulosspacheco/Documentos/db/postgresql
 
                              # Iniciar o banco de dados postgres
                              sudo systemctl start postgresql

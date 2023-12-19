@@ -3,7 +3,131 @@
     <head>
         <meta charset="UTF-8">
         <title>O que &eacute; banco de dados postgresql&lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;postgresql&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -18,6 +142,8 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
+   
+</style>
     </head>
     <body class="vscode-body vscode-dark">
         <div class="header" id="myHeader">
@@ -27,7 +153,7 @@
 <main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<!-- <h1 id="o-que-é-banco-de-dados-postgresql---">O que é banco de dados postgresql<a href="o_que_e_postgresql.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1> -->
+<h1 id="o-que-é-banco-de-dados-postgresql---">O que é banco de dados postgresql<a href="o_que_e_postgresql.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
 <h2 id="1-index"><strong>1. INDEX</strong></h2>
 <hr>
 <ol>
@@ -161,6 +287,11 @@
 <li>
 <p><strong>NOTAS</strong></p>
 <ol>
+<li>Configurações para que o postgres seja acessado fora da rede local:
+<ol>
+<li>Editar arquivo pg_hba.conf</li>
+</ol>
+</li>
 <li>Dados para conexão com banco de de dados postgres
 <ol>
 <li><strong>DataBaseName</strong> : postgres</li>
@@ -169,16 +300,16 @@
 <li><strong>Password</strong> : masterkey</li>
 </ol>
 </li>
-<li>A versão Linux Mint LMDE 4 Debian cria os arquivos de configurações na pasta: <strong>/etc/postgresql/11/main</strong>
+<li>A versão Linux Mint LMDE 4 Debian cria os arquivos de configurações na pasta: <strong>/etc/postgresql/14/main</strong>
 <ol>
 <li>
-<p>A instalação cria o arquivo <strong>/etc/postgresql/11/main/postgresql.conf</strong> com os parâmetros básico do postgresql.</p>
+<p>A instalação cria o arquivo <strong>/etc/postgresql/14/main/postgresql.conf</strong> com os parâmetros básico do postgresql.</p>
 <ol>
 <li>
 <p>Parâmetros importantes que devem se alterados para atender a demanda:</p>
 <ol>
 <li>
-<p><strong>data_directory</strong> = '/var/lib/postgresql/11/main' Nota:  Pode ser qualquer outro lugar.</p>
+<p><strong>data_directory</strong> = '/var/lib/postgresql/14/main' Nota:  Pode ser qualquer outro lugar.</p>
 </li>
 <li>
 <p><strong>data_directory</strong> = '/home/paulosspacheco/Documentos/db/postgresql'</p>
@@ -186,17 +317,17 @@
 <li>Nota:
 <ol>
 <li>
-<p>É necessário mover o conteúdo /var/lib/postgresql/11/main para /home/paulosspacheco/Documentos/db/postgresql usando o seguinte comando:</p>
+<p>É necessário mover o conteúdo /var/lib/postgresql/14/main para /home/paulosspacheco/Documentos/db/postgresql usando o seguinte comando:</p>
 <pre><code class="hljs language-bash">  <span class="hljs-comment"># Parar o banco de dados postgres</span>
   sudo systemctl stop postgresql
 
-  <span class="hljs-comment"># Entrar no arquivo abaixo e trocar comentar a linha data_directory = '/var/lib/postgresql/11/main' </span>
+  <span class="hljs-comment"># Entrar no arquivo abaixo e trocar comentar a linha data_directory = '/var/lib/postgresql/14/main' </span>
   <span class="hljs-comment"># Acrescentar a linha:  data_directory = '/home/paulosspacheco/Documentos/db/postgresql'  </span>
   <span class="hljs-comment"># Após as alterações acima salvar o arquivo /etc/postgresql/12/main/postgresql.conf</span>
   sudo xed /etc/postgresql/12/main/postgresql.conf
 
-  <span class="hljs-comment"># Clonar a pasta /var/lib/postgresql/11/main para a pasta /home/paulosspacheco/Documentos/db/postgresql</span>
-  sudo rsync -av /var/lib/postgresql/11/main /home/paulosspacheco/Documentos/db/postgresql
+  <span class="hljs-comment"># Clonar a pasta /var/lib/postgresql/14/main para a pasta /home/paulosspacheco/Documentos/db/postgresql</span>
+  sudo rsync -av /var/lib/postgresql/14/main /home/paulosspacheco/Documentos/db/postgresql
 
   <span class="hljs-comment"># Iniciar o banco de dados postgres</span>
   sudo systemctl start postgresql

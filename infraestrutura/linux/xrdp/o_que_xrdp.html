@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>O que &eacute; xrdp &lt;a href&equals;&quot;modelo01&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-
+ 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -17,7 +17,6 @@
         <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
-
 
     </head>
     <body class="vscode-body vscode-dark">
@@ -271,7 +270,8 @@
 <li>
 <p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
 <ol>
-<li><span id=id_como_instalar></span><strong>Como instalar o xrdp no Linux Debian ou derivados</strong>
+<li>
+<p><span id=id_como_instalar></span><strong>Como instalar o xrdp no Linux Debian ou derivados</strong></p>
 <ol>
 <li>
 <p>Atualize o Sistema:</p>
@@ -285,6 +285,14 @@
 </code></pre>
 </li>
 </ol>
+</li>
+<li>
+<p>Instale a interface gráfica de sua preferência caso não possua instalada:</p>
+<pre><code class="hljs language-bash">
+   sudo apt install tasksel
+   sudo tasksel               
+
+</code></pre>
 </li>
 <li>
 <p>Instale o xrdp:</p>
@@ -312,6 +320,7 @@
 <p>Se estiver usando um firewall, abra a porta 3389, que é a porta padrão para o protocolo RDP:</p>
 <pre><code class="hljs language-bash">
    sudo ufw allow 3389/tcp
+   sudo ufw reload
 
 </code></pre>
 </li>
@@ -392,6 +401,15 @@
 </code></pre>
 </li>
 <li>
+<p>Como saber o status do servidor:</p>
+</li>
+</ol>
+<pre><code class="hljs language-bash">
+   sudo systemctl status xrdp
+
+</code></pre>
+<ol start="11">
+<li>
 <p>Conecte-se ao Servidor:</p>
 <ol>
 <li>Use um cliente RDP em outro dispositivo para se conectar ao servidor Debian. Utilize o &quot;Cliente de Área de Trabalho Remota&quot; no Windows ou o &quot;Remmina&quot; ou &quot;rdesktop&quot; em sistemas Linux, por exemplo.</li>
@@ -412,19 +430,17 @@
 </li>
 </ol>
 <!-- 2. <span id=id_assunto02></span>**Assunto 02**
-   1. Descrição do conteúdo.
-   2. **Exemplo do assunto 02**.
+   13. Descrição do conteúdo.
+   14. **Exemplo do assunto 02**.
       1. Descrição do exemplo
 <pre><code class="hljs">     ```ts
      ```
 </code></pre>
-<ol start="3">
+<ol start="15">
 <li>
-<p><strong>Referências:</strong></p>
-<ol>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-</ol>
+<p><strong>Referências:</strong>
+1. <a href="link">title</a>
+2. <a href="link">title</a></p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -653,6 +669,7 @@
 <ol>
 <li><a href="https://www.xrdp.org/">xrdp.org</a>)</li>
 <li><a href="https://github.com/neutrinolabs/xrdp">github xrdp</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-enable-remote-desktop-protocol-using-xrdp-on-ubuntu-22-04">Como ativar o protocolo de área de trabalho remota usando xrdp no Ubuntu 22.04</a></li>
 </ol>
 </li>
 </ol>

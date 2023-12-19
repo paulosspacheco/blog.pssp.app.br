@@ -125,7 +125,16 @@
 
             ```
 
-      2. Instale o xrdp:
+      2. Instale a interface gráfica de sua preferência caso não possua instalada:
+
+            ```bash
+            
+               sudo apt install tasksel
+               sudo tasksel               
+
+            ```
+
+      3. Instale o xrdp:
          1. Use o seguinte comando para instalar o xrdp:
 
             ```bash
@@ -134,7 +143,7 @@
 
             ```
 
-      3. Para garantir que o xrdp seja iniciado automaticamente durante o boot, você pode usar o comando:
+      4. Para garantir que o xrdp seja iniciado automaticamente durante o boot, você pode usar o comando:
 
             ```bash
 
@@ -142,12 +151,13 @@
 
             ```
 
-      4. Configure o Firewall (Opcional):
+      5. Configure o Firewall (Opcional):
          1. Se estiver usando um firewall, abra a porta 3389, que é a porta padrão para o protocolo RDP:
 
             ```bash
 
                sudo ufw allow 3389/tcp
+               sudo ufw reload
 
             ```
 
@@ -155,7 +165,7 @@
             1. Certifique-se de ajustar as configurações do firewall conforme necessário.
             2. Meu maior desafio foi publicar a porta 3389, porque a porta _WAN_ 3389 é bloqueada no meu provedor e ninguém no provedor SMART sabe disso e por isso passei mais tempo do que é necessário para publicar o acesso ao meu computador estando fora da minha rede.
 
-      5. A seguir, pode-se ajustar o arquivo de configuração:
+      6. A seguir, pode-se ajustar o arquivo de configuração:
 
             ```bash
 
@@ -174,7 +184,7 @@
 
             1. encrypt_level=alto
 
-      6. A seguir, crie um arquivo de configuração do polkit:
+      7. A seguir, crie um arquivo de configuração do polkit:
 
          ```bash
 
@@ -195,7 +205,7 @@
 
             ```
 
-      7. Inicie o Serviço xrdp:
+      8. Inicie o Serviço xrdp:
          1. Inicie o serviço xrdp com o seguinte comando:
 
             ```bash
@@ -212,7 +222,7 @@
 
             ```
 
-      8. Para reiniciar _xrdp_ execute o comando abaixo:
+      9. Para reiniciar _xrdp_ execute o comando abaixo:
 
          ```bash
 
@@ -220,29 +230,37 @@
 
          ```
 
-      9. Conecte-se ao Servidor:
-         1. Use um cliente RDP em outro dispositivo para se conectar ao servidor Debian. Utilize o "Cliente de Área de Trabalho Remota" no Windows ou o "Remmina" ou "rdesktop" em sistemas Linux, por exemplo.
+      10. Como saber o status do servidor:
 
-      10. **Referências:**
+         ```bash
+
+            sudo systemctl status xrdp
+
+         ```
+
+      11. Conecte-se ao Servidor:
+          1. Use um cliente RDP em outro dispositivo para se conectar ao servidor Debian. Utilize o "Cliente de Área de Trabalho Remota" no Windows ou o "Remmina" ou "rdesktop" em sistemas Linux, por exemplo.
+
+      12. **Referências:**
           1. [xrdp no ubuntu](https://help.ubuntu.com/community/xrdp)
 
           2. <text onclick="goBack()">[🔙]</text>
 
    <!-- 2. <span id=id_assunto02></span>**Assunto 02**
-      1. Descrição do conteúdo.
-      2. **Exemplo do assunto 02**.
+      13. Descrição do conteúdo.
+      14. **Exemplo do assunto 02**.
          1. Descrição do exemplo
 
             ```ts
             ```
 
-      3. **Referências:**
+      15. **Referências:**
          1. [title](link)
          2. [title](link)
 
-      4. <text onclick="goBack()">[🔙]</text>
+      16. <text onclick="goBack()">[🔙]</text>
 
-   3. <span id=id_assunto03></span>**Assunto 03**
+   2. <span id=id_assunto03></span>**Assunto 03**
       1. Descrição do conteúdo.
       2. **Exemplo do assunto 03**.
          1. Descrição do exemplo
@@ -256,7 +274,7 @@
 
       4. <text onclick="goBack()">[🔙]</text>
 
-   4. <span id=id_assunto04></span>**Assunto 04**
+   3. <span id=id_assunto04></span>**Assunto 04**
       1. Descrição do conteúdo.
       2. **Exemplo do assunto 04**.
          1. Descrição do exemplo
@@ -270,7 +288,7 @@
 
       4. <text onclick="goBack()">[🔙]</text>
 
-   5. <span id=id_assunto05></span>**Assunto 05**
+   4. <span id=id_assunto05></span>**Assunto 05**
       1. Descrição do conteúdo.
       2. **Exemplo do assunto 05**.
          1. Descrição do exemplo
@@ -284,7 +302,7 @@
 
       4. <text onclick="goBack()">[🔙]</text>
 
-   6. <span id=id_assunto06></span>**Assunto 06**
+   5. <span id=id_assunto06></span>**Assunto 06**
       1. Descrição do conteúdo.
       2. **Exemplo do assunto 06**.
          1. Descrição do exemplo
@@ -298,7 +316,7 @@
 
       4. <text onclick="goBack()">[🔙]</text>
 
-   7. <span id=id_assunto07></span>**Assunto 07**
+   6. <span id=id_assunto07></span>**Assunto 07**
       1. Descrição do conteúdo.
       2. **Exemplo do assunto 07**.
          1. Descrição do exemplo
@@ -312,7 +330,7 @@
 
       4. <text onclick="goBack()">[🔙]</text>
 
-   8.  <span id=id_assunto08></span>**Assunto 08**
+   7.  <span id=id_assunto08></span>**Assunto 08**
       1. Descrição do conteúdo.
       2. **Exemplo do assunto 08**.
          1. Descrição do exemplo
@@ -326,7 +344,7 @@
 
       4. <text onclick="goBack()">[🔙]</text>
 
-   9.  <span id=id_assunto09></span>**Assunto 09**
+   8.  <span id=id_assunto09></span>**Assunto 09**
       1. Descrição do conteúdo.
       2. **Exemplo do assunto 09**.
          1. Descrição do exemplo
@@ -340,7 +358,7 @@
 
       4. <text onclick="goBack()">[🔙]</text>
 
-   10. <span id=id_assunto10></span>**Assunto 10**
+   9.  <span id=id_assunto10></span>**Assunto 10**
          1. Descrição do conteúdo.
          2. **Exemplo do assunto 10**.
             1. Descrição do exemplo
@@ -354,11 +372,12 @@
 
          4. <text onclick="goBack()">[🔙]</text>
 
-   11. <text onclick="goBack()">[🔙]</text> -->
+   10. <text onclick="goBack()">[🔙]</text> -->
 <!-- markdownlint-disable-next-line -->
 1. <span id=id_referencias></span>**REFERÊNCIAS GLOBAIS**
    1. [xrdp.org](https://www.xrdp.org/))
    2. [github xrdp](https://github.com/neutrinolabs/xrdp)
+   3. [Como ativar o protocolo de área de trabalho remota usando xrdp no Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-enable-remote-desktop-protocol-using-xrdp-on-ubuntu-22-04)
 
 <!-- markdownlint-disable-next-line -->
 1. <span id="id_historico"><span>**HISTÓRICO**
