@@ -8,7 +8,7 @@
 
 <script type="application/x-javascript" src="/js/mermaid.min.js"></script>
 
-# Banco de dados do projeto
+# Exemplo de diagrama mermaid
 
 ## Diagrama do Entidade e Relacionamentos (DER) 
 

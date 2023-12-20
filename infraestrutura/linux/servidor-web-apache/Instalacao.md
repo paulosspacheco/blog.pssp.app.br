@@ -18,7 +18,7 @@
       sudo apt update 
 
       # Atualiza todos os aplicativos instalados
-      sudo apt update 
+      sudo apt upgrade 
 
       # Instala o servidor Apache2 
       sudo apt install apache2 

@@ -20,7 +20,10 @@
 
     </head>
     <body class="vscode-body vscode-dark">
-        <div class="header" id="myHeader">
+        <ul>
+<li><a href="#an%C3%A1lise-do-projeto-phappbr">Análise do projeto ph.app.br</a></li>
+</ul>
+<div class="header" id="myHeader">
   <div class="navbar" w3-include-html="/menu.inc"> </div>
 </div>
 <div class="title"><script> document.write(document.title);</script></div>  
@@ -28,8 +31,16 @@
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 <!-- <h1 id="análise-do-projeto-phappbr">Análise do projeto <a href="http://ph.app.br">ph.app.br</a></h1> -->
-<ol>
-<li><strong>Etapas:</strong>
+<h2 id="index">INDEX</h2>
+<ul>
+<li><a href="#an%C3%A1lise-do-projeto-phappbr">Análise do projeto ph.app.br</a>
+<ul>
+<li><a href="#defini%C3%A7%C3%A3o-do-banco-de-dados">Definição do banco de dados</a></li>
+<li><a href="#infraestrutura-necess%C3%A1ria">Infraestrutura necessária</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="definição-do-banco-de-dados">Definição do banco de dados</h2>
 <ol>
 <li>
 <p>Banco de dados Assistente_Virtual</p>
@@ -66,7 +77,7 @@
 <li>telefone // String com 25 posições pode ser nulo</li>
 <li>telefone_da_secretaria // String com 25 posições pode ser nulo</li>
 <li>login // String com 50 posições pode ser nulo</li>
-<li>senha // String com 20 posições pode ser nulo</li>
+<li>se&gt;nha // String com 20 posições pode ser nulo</li>
 </ol>
 </li>
 <li>
@@ -242,6 +253,72 @@
 <p><strong>Manutenção e Atualização Contínua:</strong></p>
 <ol>
 <li>Criar um <em>plano de manutenção</em> e <em>atualização</em> para manter a segurança, eficiência e compatibilidade do sistema.</li>
+</ol>
+</li>
+</ol>
+<h2 id="infraestrutura-necessária">Infraestrutura necessária</h2>
+<ol>
+<li>Instalar xrdp no servidor e abrir para acesso publico</li>
+<li>Criar máquina virtual ubuntu-ph
+<ol>
+<li>
+<p>instalar xrdp e abrir acesso publico;</p>
+<ol>
+<li>Objetivo:
+<ol>
+<li>Dar manutenção de qualquer lugar.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Instalar <em>PostgresSQL</em> e abrir para acesso publico;</p>
+<ol>
+<li>Objetivo:
+<ol>
+<li>Criar o banco de dados assistente virtual.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Instalar Servidor Web Apache2 e abrir acesso publico;</p>
+<ol>
+<li>Objetivo:
+<ol>
+<li>Criar serviço <em>Rest</em> para comunicar-se com a inteligência artificial.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Instalar cliente de banco de dados <em>dbeaver-ce</em>;</p>
+<ol>
+<li>Objetivo:
+<ol>
+<li>Executar os script sql do projeto na criação e manutenção do banco de dados.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Instalar IDE Lazarus e copilador free pascal;</p>
+<ol>
+<li>Objetivo:
+<ol>
+<li>Criar programas de cadastros e relatórios das tabelas do banco de dados.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Instalar o interpretador python;</p>
+<ol>
+<li>Objetivo:
+<ol>
+<li>Criar interface de comunicação com a inteligência artificial.</li>
+</ol>
+</li>
 </ol>
 </li>
 </ol>
