@@ -2,8 +2,8 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Comandos b&aacute;sico do Shell do Linux &lt;a href&equals;&quot;comandos&lowbar;basico&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-    
+        <title>Comandos b&aacute;sico do Shell do Linux &lt;a href&equals;&quot;comandos&lowbar;basico&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -13,7 +13,10 @@
 
         <script type="application/x-javascript" src="/js/generic.js"></script>
         <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>   
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
     </head>
     <body class="vscode-body vscode-dark">
@@ -24,20 +27,15 @@
 <main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<h1 id="comandos-básico-do-shell-do-linux----">Comandos básico do Shell do Linux <a href="comandos_basico.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
+<!-- <h1 id="comandos-básico-do-shell-do-linux---">Comandos básico do Shell do Linux <a href="comandos_basico.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a></h1> -->
 <h2 id="index">INDEX</h2>
 <ol>
-<li>
-<p><a href="#id_introducao">Introdução</a></p>
-</li>
-<li>
-<p><a href="#id_Ctrl_Alt_T">Atalho para criar um terminal de comandos</a></p>
-</li>
-<li>
-<p><a href="#id_cmd_gestao_arquivo_pastas"><strong>Comandos de Gestão de Arquivos e Pastas</strong></a></p>
+<li><a href="#id_introducao">Introdução</a></li>
+<li><a href="#id_Ctrl_Alt_T">Atalho para criar um terminal de comandos</a></li>
+<li><a href="#id_cmd_gestao_arquivo_pastas"><strong>Comandos de Gestão de Arquivos e Pastas</strong></a>
 <ol>
 <li><a href="#id_ls"><em>ls</em> - Comando para listar arquivos e pastas</a></li>
-<li><a href="#id_which"><em>which</em> -  mostra o caminho completo dos comandos</a></li>
+<li><a href="#id_which"><em>which</em> - mostra o caminho completo dos comandos</a></li>
 <li><a href="#id_cd"><em>cd</em> - Comando para mover-se entre os diretórios</a></li>
 <li><a href="#id_ln"><em>ln</em> - Comando para criar links simbólico</a></li>
 <li><a href="#id_cp"><em>cp</em> - Comando para copiar arquivos ou pastas</a></li>
@@ -48,39 +46,25 @@
 <li><a href="#id_chmod"><em>chmod</em> - altera os bits do modo de arquivo</a></li>
 </ol>
 </li>
-<li>
-<p><a href="#id_cmd_ajuda_documentacao"><strong>Comandos de Ajuda e Documentação</strong></a></p>
-</li>
-<li>
-<p><a href="#id_comandos_comunicacoes"><strong>Comandos de Comunicações</strong></a></p>
-</li>
-<li>
-<p><a href="#id_Cmd_edicao_de_texto"><strong>Comandos de Edição de Texto</strong></a></p>
-</li>
-<li>
-<p><a href="#id_cmd_transferencia_arquivos"><strong>Comandos de Transferência de Arquivos</strong></a></p>
+<li><a href="#id_cmd_ajuda_documentacao"><strong>Comandos de Ajuda e Documentação</strong></a></li>
+<li><a href="#id_comandos_comunicacoes"><strong>Comandos de Comunicações</strong></a></li>
+<li><a href="#id_Cmd_edicao_de_texto"><strong>Comandos de Edição de Texto</strong></a></li>
+<li><a href="#id_cmd_transferencia_arquivos"><strong>Comandos de Transferência de Arquivos</strong></a>
 <ol>
 <li><a href="#id_cmd_rsync"><em>rsync</em> - Sincroniza de forma rápida e flexível dados entre dois computadores.</a></li>
 </ol>
 </li>
-<li>
-<p><a href="#id_cmd__noticias_Rede"><strong>Comandos de Notícias ou Rede</strong></a></p>
+<li><a href="#id_cmd__noticias_Rede"><strong>Comandos de Notícias ou Rede</strong></a>
+<ol>
+<li><a href="#id_netstat">netstat - </a></li>
+<li></li>
+</ol>
 </li>
-<li>
-<p><a href="#id_cmd_controle_processos"><strong>Comandos de Controle de Processos</strong></a></p>
-</li>
-<li>
-<p><a href="#id_cmd_informacao_estado"><strong>Comandos de Informação de Estado</strong></a></p>
-</li>
-<li>
-<p><a href="#id_cmd_processamento_texto"><strong>Comandos de Processamento de Texto</strong></a></p>
-</li>
-<li>
-<p><a href="#id_web"><strong>Web</strong></a></p>
-</li>
-<li>
-<p><a href="#id_referencias">REFERÊNCIAS</a></p>
-</li>
+<li><a href="#id_cmd_controle_processos"><strong>Comandos de Controle de Processos</strong></a></li>
+<li><a href="#id_cmd_informacao_estado"><strong>Comandos de Informação de Estado</strong></a></li>
+<li><a href="#id_cmd_processamento_texto"><strong>Comandos de Processamento de Texto</strong></a></li>
+<li><a href="#id_web"><strong>Web</strong></a></li>
+<li><a href="#id_referencias">REFERÊNCIAS</a></li>
 </ol>
 <!-- markdownlint-disable-next-line -->
 <h2 id="conteúdo">CONTEÚDO</h2>
@@ -178,7 +162,7 @@
 <li>
 <p><strong>Importante:</strong></p>
 <ul>
-<li>Os caracteres <em>&lt;&gt;|:()&amp;;#?*</em> apesar de aceitos,  normalmente precisam ser &quot;escapados&quot; com barra invertida, ou delimitados com aspas em linha de comando:</li>
+<li>Os caracteres <em>&lt;&gt;|:()&amp;;#?*</em> apesar de aceitos, normalmente precisam ser &quot;escapados&quot; com barra invertida, ou delimitados com aspas em linha de comando:</li>
 <li>Os caracteres <em>espaço em branco</em> e os <em>caracteres acentuados</em> apesar de serem permitidos, é bom evitar, porque quando o arquivo é visualizado em outro idioma, esses caracteres podem aparecer de forma errada se a página de código do gerenciador de arquivo for diferente da página de código no qual o mesmo foi criado.</li>
 <li>Apesar de permitir quase todos os caracteres, é bom usar somente os seguintes caracteres abaixo para evitar incompatibilidade quando se usa o sistema de arquivos <em>NTFS</em>:</li>
 <li>a-z</li>
@@ -231,7 +215,7 @@
 </li>
 <li>
 <!-- markdownlint-disable-next-line -->
-<p><span id='id_which'></span>  <a href="https://linux.die.net/man/1/which"><em>which</em> -  <strong>Mostra o nome do aquivo e local (pasta) onde o arquivo foi localizado</strong></a></p>
+<p><span id='id_which'></span> <a href="https://linux.die.net/man/1/which"><em>which</em> - <strong>Mostra o nome do aquivo e local (pasta) onde o arquivo foi localizado</strong></a></p>
 <ol>
 <li>
 <p>Sintaxe: $ <em>which nome_arquivo_no_path</em></p>
@@ -240,7 +224,7 @@
       <span class="hljs-comment"># Mostra o nome da pasta onde o jva está instalado.</span>
       <span class="hljs-built_in">which</span> java
       &gt; /usr/lib/jvm/java-1.11.0-openjdk-amd64/bin/java
-      
+
 </code></pre>
 <ul>
 <li><strong>Nota</strong>:
@@ -280,9 +264,9 @@
 <ol>
 <li>
 <p><strong>Sintaxe:</strong> <em>ln</em> <em>-s</em> <em>&quot;target file&quot;</em> <em>&quot;Symbolic filename&quot;</em></p>
-<pre><code class="hljs language-bash">   <span class="hljs-comment"># EXEMPLO: </span>
+<pre><code class="hljs language-bash">   <span class="hljs-comment"># EXEMPLO:</span>
 
-   <span class="hljs-comment"># Cria o link pastaRaisDoUsuarioLogado para a pasta ~/ </span>
+   <span class="hljs-comment"># Cria o link pastaRaisDoUsuarioLogado para a pasta ~/</span>
    ln -s ~/ pastaRaisDoUsuarioLogado
 
    <span class="hljs-comment"># Criar o link lib para a pasta /usr/lib</span>
@@ -298,7 +282,7 @@
 <p><strong>Notas</strong>:</p>
 <ol>
 <li>O segundo parâmetro <em>&quot;target file&quot;</em> precisa ser um nome de arquivo ou pasta válido;</li>
-<li>O terceiro parâmetro  <em>&quot;Symbolic filename&quot;</em> precisa ser um nome diferente de vazio e não pode existe um arquivo ou pasta com mesmo nome do link a ser criado;</li>
+<li>O terceiro parâmetro <em>&quot;Symbolic filename&quot;</em> precisa ser um nome diferente de vazio e não pode existe um arquivo ou pasta com mesmo nome do link a ser criado;</li>
 <li>Ao apagar um link os dados apontados por ele não será apagado;</li>
 <li>Caso o link seja copiado para uma pasta de nome diferente da pasta no qual o mesmo foi criado, esse link se torna inválido;</li>
 <li>O modo de acesso ao link criado, será: <em>leitura</em>, <em>gravação</em> e <em>execução</em> para o <em>usuário dono</em>, <em>grupo</em> e <em>outros usuários</em>, porém o modo de acesso para onde ele aponta, não é alterado.</li>
@@ -339,7 +323,7 @@
 <pre><code class="hljs language-bash">    <span class="hljs-comment"># EXEMPLOS</span>
 
     <span class="hljs-comment"># Copia o arquivo ~/.bashrc para o arquivo ~/.bashrc.txt</span>
-    cp ~/.bashrc ~/.bashrc.txt   
+    cp ~/.bashrc ~/.bashrc.txt
 
     <span class="hljs-comment"># Copia o arquivo ~/.bashrc para a pasta ~/tmp</span>
     cp ~/.bashrc ~/tmp
@@ -347,7 +331,7 @@
     <span class="hljs-comment"># copiar diretórios recursivamente</span>
     sudo cp -R /etc ~/tmp
 
-    <span class="hljs-comment"># Copia a toda a pasta /etc e subpastas para a pasta ~/tmp perguntado se </span>
+    <span class="hljs-comment"># Copia a toda a pasta /etc e subpastas para a pasta ~/tmp perguntado se</span>
     <span class="hljs-comment"># quer subscrever caso algum arquivo já exista.</span>
     <span class="hljs-comment"># Caso exista pressione y para confirmar ou enter para não gravar</span>
     sudo cp -i -R /etc ~/tmp
@@ -356,7 +340,7 @@
     cp -f ~/.bashrc ~/tmp
 
     <span class="hljs-comment"># Atualiza o diretório ~/tmp com os arquivos diferentes da pasta /etc criado depois da ultima cópia. Cópia incremental.</span>
-    <span class="hljs-comment"># Resumindo: Só será copiado os arquivos com data superior a data da cópia ou se a cópia não existe o arquivo de origem.           </span>
+    <span class="hljs-comment"># Resumindo: Só será copiado os arquivos com data superior a data da cópia ou se a cópia não existe o arquivo de origem.</span>
     sudo cp -upvR /etc ~/tmp
 
 </code></pre>
@@ -375,7 +359,7 @@
 
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Atualiza o diretório <span class="hljs-variable">$destino</span> com os arquivos diferentes da "</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"pasta <span class="hljs-variable">$origem</span> criado depois da ultima cópia."</span>
-   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Cópia incremental"</span>.               
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Cópia incremental"</span>.
    sudo cp -upvrR <span class="hljs-variable">$origem</span> <span class="hljs-variable">$destino</span>
 
 result_cp=<span class="hljs-string">"$?"</span>
@@ -388,7 +372,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li>
 <p>O exemplo de uso do script acima para copiar a pasta ~/Documentos para o destino passado pelo parâmetro 1</p>
 <pre><code class="hljs language-bash">
-   <span class="hljs-comment"># Copia a pasta Documentos para a pasta temporária na área do usuário.   </span>
+   <span class="hljs-comment"># Copia a pasta Documentos para a pasta temporária na área do usuário.</span>
    ./bkp.sk ~/Documentos ~/tmp
 
 </code></pre>
@@ -400,19 +384,19 @@ result_cp=<span class="hljs-string">"$?"</span>
    <span class="hljs-comment"># Program bkpDocs.sh</span>
    <span class="hljs-comment"># Exemplo de uso:</span>
    <span class="hljs-comment">#   ./bkpdocs.sh /PastaDestino</span>
-   
+
    origem=<span class="hljs-string">"~/Documentos"</span>
    destino=<span class="hljs-string">"<span class="hljs-variable">$1</span>"</span>
    <span class="hljs-keyword">if</span> [-z <span class="hljs-variable">$destino</span> ]; <span class="hljs-keyword">then</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"O destino precisa ser informado"</span>
    <span class="hljs-built_in">exit</span> 1
-   <span class="hljs-keyword">fi</span>  
+   <span class="hljs-keyword">fi</span>
 
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Atualiza o diretório <span class="hljs-variable">$destino</span> com os arquivos diferentes da "</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"pasta <span class="hljs-variable">$origem</span> criado depois da ultima cópia."</span>
-   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Cópia incremental"</span>.         
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Cópia incremental"</span>.
    sudo cp -upvR <span class="hljs-variable">$origem</span> <span class="hljs-variable">$destino</span>
-   
+
    result_cp=<span class="hljs-string">"$?"</span>
    <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$result_cp</span> != 0 ]; <span class="hljs-keyword">then</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Algo errado na cópia"</span>
@@ -429,7 +413,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 </li>
 <li>
 <!-- markdownlint-disable-next-line -->
-<p><span id='id_dd'></span> - <strong><a href="https://man7.org/linux/man-pages/man1/dd.1.html"><em>dd</em></a> :  Clona um dispositivo de bloco, convertendo e formatando de acordo com os operandos. <a href="https://www.linuxdescomplicado.com.br/2016/11/alguns-exemplos-de-que-o-comando-dd-pode-ser-considerado-umas-das-ferramentas-mais-versateis-do-linux.html">Veja mais...</a></strong></p>
+<p><span id='id_dd'></span> - <strong><a href="https://man7.org/linux/man-pages/man1/dd.1.html"><em>dd</em></a> : Clona um dispositivo de bloco, convertendo e formatando de acordo com os operandos. <a href="https://www.linuxdescomplicado.com.br/2016/11/alguns-exemplos-de-que-o-comando-dd-pode-ser-considerado-umas-das-ferramentas-mais-versateis-do-linux.html">Veja mais...</a></strong></p>
 <ol>
 <li>
 <p>Parâmetros:</p>
@@ -450,7 +434,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 <p>Exemplos de backup de todo o disco rígido para uma outra unidade:</p>
 <pre><code class="hljs language-bash">
   <span class="hljs-comment"># ‘if=/dev/sda‘ : representa o disco de origem a ser copiado;</span>
-  <span class="hljs-comment"># ‘of=/dev/sdb‘ : representa o disco de destino que vai receber a cópia;           </span>
+  <span class="hljs-comment"># ‘of=/dev/sdb‘ : representa o disco de destino que vai receber a cópia;</span>
   sudo dd <span class="hljs-keyword">if</span>=/dev/sda of=/dev/sdb bs=4096 conv=noerror,sync status=progress
 
 </code></pre>
@@ -458,9 +442,9 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li>
 <p>Exemplos de backup da partição <em>sda1</em> para <em>sdb1</em>:</p>
 <pre><code class="hljs language-bash">
-   <span class="hljs-comment"># Copia a partição sda1 para sdb1 mantendo a mesma formatação.            </span>
+   <span class="hljs-comment"># Copia a partição sda1 para sdb1 mantendo a mesma formatação.</span>
    sudo dd <span class="hljs-keyword">if</span>=/dev/sda1 of=/dev/sdb1 status=progress
-   
+
    <span class="hljs-comment"># Copia a partição sda1 para sdb1 usando os parâmetros 4096 e noerror,sync:</span>
    sudo dd <span class="hljs-keyword">if</span>=/dev/sda1 of=/dev/sdb1 bs=4096 conv=noerror,sync status=progress
 
@@ -469,9 +453,9 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li>
 <p>Exemplos de backup da partição <em>sda1</em> para o arquivo sda1.iso:</p>
 <pre><code class="hljs language-bash">
-   <span class="hljs-comment"># Copia a partição sda1 para sdb1 mantendo a mesma formatação.            </span>
+   <span class="hljs-comment"># Copia a partição sda1 para sdb1 mantendo a mesma formatação.</span>
    sudo dd <span class="hljs-keyword">if</span>=/dev/sda1 of=sdb1.iso status=progress
-   
+
    <span class="hljs-comment"># Copia a partição sda1 para sdb1 usando os parâmetros 4096 e noerror,sync:</span>
    sudo dd <span class="hljs-keyword">if</span>=/dev/sda1 of=sdb1.iso bs=4096 conv=noerror,sync status=progress
 
@@ -487,7 +471,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li>Para clonar uma partição não montada usa-se as opções <em>-ra</em> e <em>-p</em>. Veja o exemplo de como clonar a partição não montada <em>/dev/sdb1</em> para <em>/dev/sdb2</em>:</li>
 </ol>
 <pre><code class="hljs language-bash">
-    <span class="hljs-comment"># A opção -a copia os arquivos também além </span>
+    <span class="hljs-comment"># A opção -a copia os arquivos também além</span>
     sudo e2image -ra -p <span class="hljs-string">'/dev/sdb1'</span> <span class="hljs-string">'/dev/sdb2'</span>
 
 </code></pre>
@@ -496,7 +480,8 @@ result_cp=<span class="hljs-string">"$?"</span>
 <!-- markdownlint-disable-next-line -->
 <p><span id='id_gparted'></span> <strong><em><a href="https://gparted.org/display-doc.php%3Fname%3Dhelp-manual">gparted</a></em> - Programa usado para criar partição, pode ser usado para clonar partição de forma muito simples e visual.</strong></p>
 <ol>
-<li>Para clonar uma partição siga os seguintes passos:
+<li>
+<p>Para clonar uma partição siga os seguintes passos:</p>
 <ol>
 <li>
 <p>Instale o programa <em>gparted</em> com o comando abaixo:</p>
@@ -505,7 +490,7 @@ result_cp=<span class="hljs-string">"$?"</span>
   sudo apt update
 
   <span class="hljs-comment"># Instala o programa gparted</span>
-  sudo apt install gparted             
+  sudo apt install gparted
 
 </code></pre>
 </li>
@@ -515,7 +500,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 </ol>
 </li>
 </ol>
-<pre><code class="hljs language-bash">      
+<pre><code class="hljs language-bash">
 
 </code></pre>
 </li>
@@ -566,10 +551,10 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li>
 <p><strong>Usando o usuário logado na máquina local e no servidor com mesmo login e senha:</strong></p>
 <pre><code class="hljs language-bash">
-    <span class="hljs-comment"># sudo mount &lt;ORIGEM&gt; &lt;DESTINO&gt; </span>
+    <span class="hljs-comment"># sudo mount &lt;ORIGEM&gt; &lt;DESTINO&gt;</span>
     <span class="hljs-comment"># sudo mount host_ip:/var/nfs/share ~/LnxMint_Server_Share</span>
     sudo mount 192.168.15.3:/var/nfs/share ~/LnxMint_Server_Share
-    
+
 
 </code></pre>
 </li>
@@ -592,7 +577,8 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li>
 <p><strong>Sintaxe:</strong></p>
 <ol>
-<li><em>chmod</em> <em>-R</em> <em>ZZZ</em> (+ ou - pu) <em>YYY</em> ./
+<li>
+<p><em>chmod</em> <em>-R</em> <em>ZZZ</em> (+ ou - pu) <em>YYY</em> ./</p>
 <ol>
 <li>
 <p><em>-R</em> significa:</p>
@@ -625,17 +611,17 @@ result_cp=<span class="hljs-string">"$?"</span>
 <p><strong>Exemplo:</strong></p>
 <pre><code class="hljs language-bash">
    <span class="hljs-comment"># Permite que usuários, grupo e outros executem, leem  e gravem todos arquivos da pasta.</span>
-   sudo chmod -R ugo+xrw ./ 
+   sudo chmod -R ugo+xrw ./
 
    <span class="hljs-comment"># Não permite em todos arquivos da pasta, que usuários, grupo e outros executem e gravem os arquivos .</span>
-   sudo chmod -R ugo-xw ./ 
+   sudo chmod -R ugo-xw ./
 
    <span class="hljs-comment"># Permite em todos arquivos da pasta e subpastas que outros usuários só podem ler os arquivos.</span>
-   sudo chmod -R o=r ./                
+   sudo chmod -R o=r ./
 
    <span class="hljs-comment"># Permite em todos arquivos da pasta e subpastas que grupo de usuários só podem ler e gravar os arquivos.</span>
-   sudo chmod -R g=rw ./                               
-                
+   sudo chmod -R g=rw ./
+
 </code></pre>
 </li>
 </ol>
@@ -658,7 +644,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 </li>
 <li>
 <p><em>chgrp</em>: Mudar o grupo de um arquivo ou diretório</p>
-<pre><code class="hljs language-bash"> 
+<pre><code class="hljs language-bash">
 </code></pre>
 </li>
 <li>
@@ -819,8 +805,8 @@ result_cp=<span class="hljs-string">"$?"</span>
 <p>find ./ -type d -iname 'NomeDaPasta'</p>
 <pre><code class="hljs language-bash">
    <span class="hljs-comment"># find &lt;startingdirectory&gt; &lt;opções&gt; &lt;termo de busca&gt;</span>
-   find ./ -<span class="hljs-built_in">type</span> d -iname <span class="hljs-string">'shell'</span> 
-    
+   find ./ -<span class="hljs-built_in">type</span> d -iname <span class="hljs-string">'shell'</span>
+
 </code></pre>
 </li>
 </ol>
@@ -840,7 +826,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 <p>No final do arquivo adicionar a linha a seguir:</p>
 <pre><code class="hljs language-bash">
    <span class="hljs-built_in">alias</span> finddir=<span class="hljs-string">"find './' -type d -iname"</span>
-        
+
 </code></pre>
 </li>
 </ol>
@@ -1092,14 +1078,14 @@ result_cp=<span class="hljs-string">"$?"</span>
 </ol>
 <pre><code class="hljs language-bash">
    <span class="hljs-comment"># Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/</span>
-   <span class="hljs-comment"># -a = -rlptgoD                      </span>
+   <span class="hljs-comment"># -a = -rlptgoD</span>
    rsync -zahui --progress ~/original/* ~/duplicate/
 
    <span class="hljs-comment"># Copia todas as pastas do local ~/original/* para a pasta ~/duplicate/</span>
    <span class="hljs-comment"># -a = -rlptgoD</span>
    <span class="hljs-comment"># -R = Copia deve ter o nome original e não o nome relativo</span>
    <span class="hljs-comment"># --delete : Exclui arquivos no diretório de destino se eles não existirem no diretório de origem.</span>
-   rsync -zaRhui --progress --delete ~/original/* ~/duplicate/                    
+   rsync -zaRhui --progress --delete ~/original/* ~/duplicate/
 
 </code></pre>
 </li>
@@ -1123,14 +1109,14 @@ result_cp=<span class="hljs-string">"$?"</span>
    <span class="hljs-keyword">if</span> [ -z destino ]; <span class="hljs-keyword">then</span>
       <span class="hljs-built_in">echo</span> <span class="hljs-string">"O destino precisa ser informado"</span>
       <span class="hljs-built_in">exit</span> 1
-   <span class="hljs-keyword">fi</span>  
+   <span class="hljs-keyword">fi</span>
    <span class="hljs-built_in">echo</span> .
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Origem..: <span class="hljs-variable">$destino</span>"</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Destino.: <span class="hljs-variable">$origem</span>"</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Exessão.: <span class="hljs-variable">$except</span>"</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Nota....: Copia para o DESTINO, somente os arquivos diferentes, ou os que a data de ORIGEM seja inferior a data de DESTINO."</span>
    <span class="hljs-built_in">echo</span> .
-   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Cópia incremental"</span>.         
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">"Cópia incremental"</span>.
    sudo rsync --exclude-from=<span class="hljs-variable">$except</span> --delete -arRvhui --progress <span class="hljs-variable">$origem_invisivel</span> <span class="hljs-variable">$destino</span>
    sudo rsync --exclude-from=<span class="hljs-variable">$except</span> --delete -arRvhui --progress <span class="hljs-variable">$origem</span> <span class="hljs-variable">$destino</span>
    result_cp=<span class="hljs-string">"$?"</span>
@@ -1166,13 +1152,41 @@ result_cp=<span class="hljs-string">"$?"</span>
 </ol>
 </li>
 <li>
-<!-- markdownlint-disable-next-line -->
 <p><span id='id_cmd__noticias_Rede'></span><strong>Comandos de Notícias ou Rede</strong></p>
 <ol>
 <li>
-<p><em>netstat</em>: Mostra o estado da rede</p>
+<p><span id='id_netstat'></span> <em>netstat</em>: Imprime conexões de rede, tabelas de roteamento, estatísticas de interface, conexões mascaradas e associações multicast.</p>
+<ol>
+<li>
+<p><strong>Exemplo:</strong></p>
 <pre><code class="hljs language-bash">
+   netstat -an | grep :80
+   netstat -an | grep :8080
+
 </code></pre>
+</li>
+<li>
+<p><strong>Notas:</strong></p>
+<ol>
+<li><em>netstat -a</em>
+<ol>
+<li>Mostre o estado de todos os soquetes; normalmente os soquetes usados pelos processos do servidor não são mostrados.</li>
+</ol>
+</li>
+<li><em>netstat -n</em>
+<ol>
+<li>Não resolva endereços numéricos e números de porta em nomes.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Referência:</p>
+<ol>
+<li><a href="https://linux.die.net/man/8/netstat">netstat(8) - página de manual do Linux</a></li>
+</ol>
+</li>
+</ol>
 </li>
 <li>
 <p><em>rsh</em>: Um shell em outros sistemas UNIX</p>
@@ -1231,7 +1245,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 </code></pre>
 </li>
 <li>
-<p><em>htop</em>  : A mesma finalidade o top ao listar os processos ativos, porém contém mais recursos, podendo até matar um processo.</p>
+<p><em>htop</em> : A mesma finalidade o top ao listar os processos ativos, porém contém mais recursos, podendo até matar um processo.</p>
 <pre><code class="hljs language-bash">
    htop
 

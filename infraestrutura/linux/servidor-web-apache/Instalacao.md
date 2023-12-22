@@ -37,6 +37,43 @@
 
    ```
 
+   1. _Notas:_
+      1. Para que o site seja executado em uma rede pública é necessário seguir os seguintes passos:
+         1. Entrar no router e fazer o redirecionamento da porta _WAN 80_ para _LAN 80_;
+            1. Obs 1: Se a porta 80 for bloqueada no provedor é preciso pedir para abrir;
+            2. Obs 2: Tive dificuldade, porque mesmo depois da porta aberta, eu não pude publica-la porque o router usava a porta 80.
+      2. Entrar no arquivo abaixo e trocar a linha _Listem 80_ para _Listem 0.0.0.0:80_;
+
+            ```bash
+
+               sudo xed /etc/apache2/ports.conf
+ 
+              
+            ```
+
+         1. **Nota:**
+            1. Trocar  Listen 80 para Listen 0.0.0.0:80 e salvar o arquivo.
+            2. Caso a porta 80 não possa ser publicada usar outra porta que possa.
+
+      3. Teste para saber se aporta 80 está escutando localmente:
+
+           ```bash
+
+              netstat -an | grep :80
+
+           ```
+
+      4. Teste para saber se a porta _80_ está escutando publicamente:
+
+           ```bash
+
+              sudo paping 45.160.125.12 -p 80 -c 4
+
+           ```
+
+         1. _Nota_
+            1. paping é um software do google e pode ser obtido no endereço: [paping](https://code.google.com/archive/p/paping/wikis)
+
 2. **Ao instalar o pacote [Apache2](https://httpd.apache.org/ABOUT_APACHE.html), o instalador aciona o [systemd](https://en.wikipedia.org/wiki/Systemd) para iniciar e habilitar automaticamente o serviço [apache2](https://httpd.apache.org/ABOUT_APACHE.html). Você pode verificar se o serviço [apache2](https://httpd.apache.org/ABOUT_APACHE.html) está ativo(em execução) e ativado usando os seguintes comandos:**
 
     ```powershell
@@ -82,7 +119,7 @@
 
       ```sh
          
-         127.0.0.1	localhost
+         127.0.0.1 localhost
 
       ```
 
@@ -92,6 +129,7 @@
 2. [Servidor Apache - Wikipedia](https://pt.wikipedia.org/wiki/Servidor_Apache)
 3. [**/etc/hosts**](https://linuxhandbook.com/etc-hosts-file/)
 4. [**systemd**](https://en.wikipedia.org/wiki/Systemd)
+5. [Network address translation](https://pt.m.wikipedia.org/wiki/Network_address_translation)
 
 </main>
 

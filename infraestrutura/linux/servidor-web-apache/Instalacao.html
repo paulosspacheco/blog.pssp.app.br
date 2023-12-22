@@ -3,131 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Como instalar o Servidor Web Apache2 no Linux Debian ou seus derivados  &lt;a href&equals;&quot;Instalacao&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot;&gt;  &#x279a; &lt;&sol;a&gt;</title>
-        <style>
-/* From extension vscode.github */
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-
-.vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
-	display: none;
-}
-
-/* From extension davidmwhynot.markdown-higlightjs */
-/*
-
-Atom One Dark by Daniel Gamage
-Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
-
-base:    #282c34
-mono-1:  #abb2bf
-mono-2:  #818896
-mono-3:  #5c6370
-hue-1:   #56b6c2
-hue-2:   #61aeee
-hue-3:   #c678dd
-hue-4:   #98c379
-hue-5:   #e06c75
-hue-5-2: #be5046
-hue-6:   #d19a66
-hue-6-2: #e6c07b
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #abb2bf;
-  background: #282c34;
-}
-
-.hljs-comment,
-.hljs-quote {
-  color: #5c6370;
-  font-style: italic;
-}
-
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula {
-  color: #c678dd;
-}
-
-.hljs-section,
-.hljs-name,
-.hljs-selector-tag,
-.hljs-deletion,
-.hljs-subst {
-  color: #e06c75;
-}
-
-.hljs-literal {
-  color: #56b6c2;
-}
-
-.hljs-string,
-.hljs-regexp,
-.hljs-addition,
-.hljs-attribute,
-.hljs-meta-string {
-  color: #98c379;
-}
-
-.hljs-built_in,
-.hljs-class .hljs-title {
-  color: #e6c07b;
-}
-
-.hljs-attr,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
-  color: #d19a66;
-}
-
-.hljs-symbol,
-.hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
-  color: #61aeee;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-.hljs-link {
-  text-decoration: underline;
-}
-
-</style>
-        
-        
-        <style>
-.task-list-item {
-    list-style-type: none;
-}
-
-.task-list-item-checkbox {
-    margin-left: -20px;
-    vertical-align: middle;
-    pointer-events: none;
-}
-</style>
-        <style>
+  
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -142,8 +18,6 @@ hue-6-2: #e6c07b
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
-   
-</style>
     </head>
     <body class="vscode-body vscode-dark">
         <div class="header" id="myHeader">
@@ -153,7 +27,7 @@ hue-6-2: #e6c07b
 <main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<h1 id="como-instalar-o-servidor-web-apache2-no-linux-debian-ou-seus-derivados-----">Como instalar o Servidor Web Apache2 no Linux Debian ou seus derivados  <a href="Instalacao.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h1>
+<!-- <h1 id="como-instalar-o-servidor-web-apache2-no-linux-debian-ou-seus-derivados-----">Como instalar o Servidor Web Apache2 no Linux Debian ou seus derivados  <a href="Instalacao.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba.">  ➚ </a></h1> -->
 <ol>
 <li>
 <p><strong>Pressione as teclas <em>CTRL+ALT+T</em> para entrar no terminal e digite:</strong></p>
@@ -182,6 +56,60 @@ hue-6-2: #e6c07b
    sudo apachectl configtest           
 
 </code></pre>
+<ol>
+<li><em>Notas:</em>
+<ol>
+<li>
+<p>Para que o site seja executado em uma rede pública é necessário seguir os seguintes passos:</p>
+<ol>
+<li>Entrar no router e fazer o redirecionamento da porta <em>WAN 80</em> para <em>LAN 80</em>;
+<ol>
+<li>Obs 1: Se a porta 80 for bloqueada no provedor é preciso pedir para abrir;</li>
+<li>Obs 2: Tive dificuldade, porque mesmo depois da porta aberta, eu não pude publica-la porque o router usava a porta 80.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Entrar no arquivo abaixo e trocar a linha <em>Listem 80</em> para <em>Listem 0.0.0.0:80</em>;</p>
+<pre><code class="hljs language-bash">
+   sudo xed /etc/apache2/ports.conf
+
+  
+</code></pre>
+<ol>
+<li><strong>Nota:</strong>
+<ol>
+<li>Trocar  Listen 80 para Listen 0.0.0.0:80 e salvar o arquivo.</li>
+<li>Caso a porta 80 não possa ser publicada usar outra porta que possa.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Teste para saber se aporta 80 está escutando localmente:</p>
+<pre><code class="hljs language-bash">
+   netstat -an | grep :80
+
+</code></pre>
+</li>
+<li>
+<p>Teste para saber se a porta <em>80</em> está escutando publicamente:</p>
+<pre><code class="hljs language-bash">
+   sudo paping 45.160.125.12 -p 80 -c 4
+
+</code></pre>
+<ol>
+<li><em>Nota</em>
+<ol>
+<li>paping é um software do google e pode ser obtido no endereço: <a href="https://code.google.com/archive/p/paping/wikis">paping</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 </li>
 <li>
 <p><strong>Ao instalar o pacote <a href="https://httpd.apache.org/ABOUT_APACHE.html">Apache2</a>, o instalador aciona o <a href="https://en.wikipedia.org/wiki/Systemd">systemd</a> para iniciar e habilitar automaticamente o serviço <a href="https://httpd.apache.org/ABOUT_APACHE.html">apache2</a>. Você pode verificar se o serviço <a href="https://httpd.apache.org/ABOUT_APACHE.html">apache2</a> está ativo(em execução) e ativado usando os seguintes comandos:</strong></p>
@@ -232,7 +160,7 @@ hue-6-2: #e6c07b
 <li>
 <p>Ao instalar o Apache ele adiciona ao arquivo <a href="https://linuxhandbook.com/etc-hosts-file/">/etc/hosts</a> a seguinte linha:</p>
 <pre><code class="hljs language-sh">   
-   127.0.0.1	localhost
+   127.0.0.1 localhost
 
 </code></pre>
 </li>
@@ -245,6 +173,7 @@ hue-6-2: #e6c07b
 <li><a href="https://pt.wikipedia.org/wiki/Servidor_Apache">Servidor Apache - Wikipedia</a></li>
 <li><a href="https://linuxhandbook.com/etc-hosts-file/"><strong>/etc/hosts</strong></a></li>
 <li><a href="https://en.wikipedia.org/wiki/Systemd"><strong>systemd</strong></a></li>
+<li><a href="https://pt.m.wikipedia.org/wiki/Network_address_translation">Network address translation</a></li>
 </ol>
 </main>
 <!-- markdownlint-disable-next-line -->
