@@ -29,7 +29,7 @@
 7. [**Comandos de Transferência de Arquivos**](#id_cmd_transferencia_arquivos)
    1. [_rsync_ - Sincroniza de forma rápida e flexível dados entre dois computadores.](#id_cmd_rsync)
 8. [**Comandos de Notícias ou Rede**](#id_cmd__noticias_Rede)
-   1. [netstat - ](#id_netstat)
+   1. [netstat - Imprime conexões de rede, tabelas de roteamento, estatísticas de interface, conexões mascaradas e associações multicast.](#id_netstat)
    2.
 9. [**Comandos de Controle de Processos**](#id_cmd_controle_processos)
 10. [**Comandos de Informação de Estado**](#id_cmd_informacao_estado)
