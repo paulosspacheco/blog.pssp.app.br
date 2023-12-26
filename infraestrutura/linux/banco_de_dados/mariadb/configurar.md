@@ -6,7 +6,7 @@
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
-# _CONFIGURAÇÃO DO MARIADB_<a href="configurar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a><span id="topo"><span>
+# CONFIGURAÇÕES DO MARIADB<a href="configurar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a><span id="topo"><span>
 
 ## _**INDEX**_<span id="topo_Index"><span>
 

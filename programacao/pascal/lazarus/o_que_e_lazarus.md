@@ -22,7 +22,7 @@
       4. [Desvantagens.](#id_desvantagens)
 
    3. [**Conteúdo estudado.**](#id_Conteudo)
-      1. [Como instalar o Lazarus](#id_assunto01)
+      1. [Como instalar o Lazarus](#id_install)
       <!-- 2. [Assunto 02](#id_assunto02)
       3. [Assunto 03](#id_assunto03)
       4. [Assunto 04](#id_assunto04)
@@ -108,8 +108,19 @@
          2. <text onclick="goBack()">[🔙]</text>
 
    3. <span id=id_Conteudo></span>**Conteúdo estudado**
-      1. <span id=id_assunto01></span>**Como instalar o Lazarus e FreePascal**
-         1. Instalar o aplicativo **FPCupDeLuxe** no Linux Debian ou derivados.
+      1. <span id=id_install></span>**Como instalar o Lazarus e FreePascal**
+         1. É importante que o Lazarus seja instalado para que todos os usuários possa utiliza-lo. Para que isso seja possível, deve-se criar uma pasta de nome _lazarus_ dentro da pasta _/usr/local_, em seguida da direito de acesso a todos os usuários:
+            1. Exemplo:
+
+               ```bash
+
+                  sudo mkdir /usr/local/lazarus
+                  sudo chmod -R ugo+rxw /usr/local/lazarus
+
+
+               ```
+
+         2. Instalar o aplicativo **FPCupDeLuxe** no Linux Debian ou derivados.
             1. Instalando as dependências:
 
                ```sh
@@ -128,23 +139,23 @@
 
                ```
 
-            2. Criar pasta **~/Download/FpCupDeLuxe**
+            2. Criar pasta **/usr/local/lazarus/fpcupdeluxe**
 
                  ```sh
 
-                   mkdir ~/Downloads/FpCupDeLuxe
+                    mkdir -o /usr/local/lazarus/fpcupdeluxe
                    
                  ```
 
-            3. Baixar o programa **FpCupDeLuxe** para a pasta **~/Downloads/FpCupDeLuxea** :
+            3. Baixar o programa **FpCupDeLuxe** para a pasta **/usr/local/lazarus/fpcupdeluxe** :
                1. [Download do FpCupDeLuxe](https://github.com/LongDirtyAnimAlf/fpcupdeluxe/releases).
 
             4. Executar programa  **fpcupdeluxe-x86_64-linux**
 
                ```sh
 
-                cd ~/Downloads/FpCupDeLuxe
-                ./fpcupdeluxe-x86_64-linux
+                  cd /usr/local/lazarus/fpcupdeluxe
+                  ./fpcupdeluxe-x86_64-linux
                    
 
                ```

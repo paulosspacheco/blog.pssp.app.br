@@ -46,7 +46,7 @@
 <li>
 <p><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a></p>
 <ol>
-<li><a href="#id_assunto01">Como instalar o Lazarus</a></li>
+<li><a href="#id_install">Como instalar o Lazarus</a></li>
 </ol>
 <!-- 2. [Assunto 02](#id_assunto02)
 3. [Assunto 03](#id_assunto03)
@@ -236,8 +236,22 @@
 <li>
 <p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
 <ol>
-<li><span id=id_assunto01></span><strong>Como instalar o Lazarus e FreePascal</strong>
+<li><span id=id_install></span><strong>Como instalar o Lazarus e FreePascal</strong>
 <ol>
+<li>
+<p>É importante que o Lazarus seja instalado para que todos os usuários possa utiliza-lo. Para que isso seja possível, deve-se criar uma pasta de nome <em>lazarus</em> dentro da pasta <em>/usr/local</em>, em seguida da direito de acesso a todos os usuários:</p>
+<ol>
+<li>
+<p>Exemplo:</p>
+<pre><code class="hljs language-bash">
+   sudo mkdir /usr/<span class="hljs-built_in">local</span>/lazarus
+   sudo chmod -R ugo+rxw /usr/<span class="hljs-built_in">local</span>/lazarus
+
+
+</code></pre>
+</li>
+</ol>
+</li>
 <li>
 <p>Instalar o aplicativo <strong>FPCupDeLuxe</strong> no Linux Debian ou derivados.</p>
 <ol>
@@ -259,14 +273,14 @@
 </code></pre>
 </li>
 <li>
-<p>Criar pasta <strong>~/Download/FpCupDeLuxe</strong></p>
+<p>Criar pasta <strong>/usr/local/lazarus/fpcupdeluxe</strong></p>
 <pre><code class="hljs language-sh">
-  mkdir ~/Downloads/FpCupDeLuxe
+   mkdir -o /usr/<span class="hljs-built_in">local</span>/lazarus/fpcupdeluxe
   
 </code></pre>
 </li>
 <li>
-<p>Baixar o programa <strong>FpCupDeLuxe</strong> para a pasta <strong>~/Downloads/FpCupDeLuxea</strong> :</p>
+<p>Baixar o programa <strong>FpCupDeLuxe</strong> para a pasta <strong>/usr/local/lazarus/fpcupdeluxe</strong> :</p>
 <ol>
 <li><a href="https://github.com/LongDirtyAnimAlf/fpcupdeluxe/releases">Download do FpCupDeLuxe</a>.</li>
 </ol>
@@ -274,8 +288,8 @@
 <li>
 <p>Executar programa  <strong>fpcupdeluxe-x86_64-linux</strong></p>
 <pre><code class="hljs language-sh">
- <span class="hljs-built_in">cd</span> ~/Downloads/FpCupDeLuxe
- ./fpcupdeluxe-x86_64-linux
+   <span class="hljs-built_in">cd</span> /usr/<span class="hljs-built_in">local</span>/lazarus/fpcupdeluxe
+   ./fpcupdeluxe-x86_64-linux
     
 
 </code></pre>

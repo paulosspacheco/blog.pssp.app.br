@@ -129,9 +129,16 @@ function FixHeader(window, id) {
 
 
 function PrintFooter(document) {
- document.write('Autor: '+document.querySelector('meta[name="author"]').content);
+
+ if (document.querySelector('meta[name="author"]')!==null) {
+   document.write('Autor: '+document.querySelector('meta[name="author"]').content);
+ }  
+ if (document.querySelector('meta[name="createDate"]')!==null) {
   document.write(' | Data da criação: '+document.querySelector('meta[name="createDate"]').content);
+ }
+ if (document.querySelector('meta[name="createDateUpdate"]')!==null) { 
   document.write(' | Data da atualização: '+document.querySelector('meta[name="createDateUpdate"]').content);
+ }
 }
 
 function PrintFooterMarkdown(document,author,createDate,createDateUpdate) {

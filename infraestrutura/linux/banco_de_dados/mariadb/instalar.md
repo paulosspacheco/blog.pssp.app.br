@@ -6,7 +6,7 @@
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
-# COMO INSTALAR DO BANCO DE DADOS MARIADB <a href="instalar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+# COMO INSTALAR O BANCO DE DADOS MARIADB <a href="instalar.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## **INDEX**<span id="topo_Index"><span>
 

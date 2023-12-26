@@ -96,6 +96,14 @@
 
             ```
 
+         3. O passo seguinte é criar um _link_ para a _dll_ '_libpython3.10.so.1.0_' na pasta do projeto _ccr/python4laz/demos_lazarus/Python_Console/demo_;
+
+            ```bash
+
+               ln -s /lib/python3.10/config-3.10-x86_64-linux-gnu/libpython3.10.so libpython3.10.so
+
+            ```
+
       4. **Teste para saber se o python está configurado.**.
          1. Executar o projeto _demo_ da pasta _./ccr/python4laz/demos_lazarus/Python_Console_
          2. No rodapé formulário executado digite o comado python a seguir:
