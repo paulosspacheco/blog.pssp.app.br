@@ -32,18 +32,68 @@
 <span id="topo"><span>
 <!-- <h1 id="análise-do-projeto-phappbr">Análise do projeto <a href="http://ph.app.br">ph.app.br</a></h1> -->
 <h2 id="index">INDEX</h2>
-<ul>
-<li><a href="#an%C3%A1lise-do-projeto-phappbr">Análise do projeto ph.app.br</a>
-<ul>
-<li><a href="#defini%C3%A7%C3%A3o-do-banco-de-dados">Definição do banco de dados</a></li>
+<ol>
 <li><a href="#infraestrutura-necess%C3%A1ria">Infraestrutura necessária</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="definição-do-banco-de-dados">Definição do banco de dados</h2>
+<li><a href="#defini%C3%A7%C3%A3o-do-banco-de-dados-assistente_virtual">Definição do banco de dados Assistente_Virtual</a></li>
+<li><a href="#estudar-como-o-site-openai-pode-ajudar-a-criar-o--assistant-api-da-openai">Estudar como o site OpenAI pode ajudar a criar o  <em>Assistant API da OpenAI</em>.</a></li>
+<li><a href="#criar-apis-comunica%C3%A7%C3%A3o-com-o-banco-de-dados">Criar apis comunicação com o banco de dados</a></li>
+<li><a href="#banco-de-dados-de-informa%C3%A7%C3%B5es-adicionais">Banco de Dados de Informações Adicionais:</a></li>
+<li><a href="#testes-e-valida%C3%A7%C3%A3o">Testes e Validação:</a></li>
+<li><a href="#documenta%C3%A7%C3%A3o-e-treinamento">Documentação e Treinamento:</a></li>
+<li><a href="#manuten%C3%A7%C3%A3o-e-atualiza%C3%A7%C3%A3o-cont%C3%ADnua">Manutenção e Atualização Contínua:</a></li>
+</ol>
+<h2 id="infraestrutura-necessária">Infraestrutura necessária</h2>
+<ol>
+<li><strong>Criar máquina virtual <em>LinuxMint-ph</em> com tudo que precisamos para o projeto;</strong>
 <ol>
 <li>
-<p>Banco de dados Assistente_Virtual</p>
+<p>Criar usuário <em>phdemelo</em> e dar permissões de administrador; ✅</p>
+<ol>
+<li>adm</li>
+<li>cdrom</li>
+<li>dip</li>
+<li>lpadmin</li>
+<li>phpaulo</li>
+<li>plugdev</li>
+<li>sambashare</li>
+<li>sudo</li>
+<li>xrdp</li>
+</ol>
+</li>
+<li>
+<p>Instalar <em>xrdp</em> e abrir para acesso publico para poder operar quando não estivermos próximo ao servidor. ✅</p>
+</li>
+<li>
+<p>Ao tentar compartilhar para acesso publico tive que contratar um <em>IP fixo</em> <em>45.160.125.12</em> e contratar o plano <em>300 mega</em> da Smart Soluções; ✅</p>
+</li>
+<li>
+<p>Instalar <em>PostgresSQL</em> e abrir para acesso publico; ✅</p>
+</li>
+<li>
+<p>Criar o banco de dados <em>assistente_virtual</em>; ✅</p>
+</li>
+<li>
+<p>Fazer backup do banco de dados <em>assistente_virtual</em>.</p>
+</li>
+<li>
+<p>Instalar cliente de banco de dados <em>dbeaver-ce</em> para executar os script sql do projeto na criação e manutenção do banco de dados. ✅</p>
+</li>
+<li>
+<p>Instalar <em>Servidor Web Apache2</em> e abrir para acesso publico para poder publicar os <em>Serviço Rest</em> para que a IA tenha acesso;</p>
+</li>
+<li>
+<p>Instalar <em>IDE Lazarus</em> e o compilador <em>free pascal</em> para criar programas de cadastros e relatórios das tabelas do banco de dados. ✅</p>
+</li>
+<li>
+<p>Criar <em>Serviço Rest</em> para comunicar-se com a inteligência artificial.</p>
+</li>
+<li>
+<p>Instalar o interpretador <em>python</em> para estudo do Paulo Henrique;</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="definição-do-banco-de-dados-assistente_virtual">Definição do banco de dados Assistente_Virtual</h2>
 <ol>
 <li>
 <p>operadores //Pode ser a secretária virtual</p>
@@ -177,14 +227,75 @@
 </ol>
 </li>
 </ol>
-</li>
-<li>
-<p>Estudar como o site OpenAI pode ajudar a criar o  <em>Assistant API da OpenAI</em>.</p>
-</li>
-<li>
-<p>Criar rotinas para:</p>
+<h2 id="estudar-como-o-site-openai-pode-ajudar-a-criar-o--assistant-api-da-openai">Estudar como o <a href="https://platform.openai.com/docs/overview">site OpenAI</a> pode ajudar a criar o  <em>Assistant API da OpenAI</em>.</h2>
 <ol>
-<li>Criar programa para coletar as informações do paciente
+<li>
+<p>Checar se é possível comunicar-se com a IA usando o compilador free pascal; ✅</p>
+<ol>
+<li><em>Nota</em>:
+<ol>
+<li>Projeto <em>CHATGPT</em> criado por <em>Marcelo Maurin Martins</em> e está disponível no <a href="https://github.com/marcelomaurin/CHATGPT">github</a>;</li>
+<li>Projeto <a href="https://github.com/HemulGM/DelphiOpenAI">DelphiOpenAI</a> criado por HemulGM com licença <em>MIT</em>.
+<ol>
+<li><a href="https://github.com/HemulGM/DelphiOpenAI/blob/main/README.html">Readme do projeto</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>A IA precisa de <em><a href="https://platform.openai.com/docs/api-reference/authentication">chave de autenticação</a></em> onde a mesma pode ser adquirida <a href="https://platform.openai.com/api-keys"><em>aqui</em></a>;</p>
+</li>
+<li>
+<p>A <em>IA</em> precisa de <em>serviços rest</em>  para comunicar-se com o banco de dados, onde os mesmos devem ser publicados na <em>IA</em>.</p>
+<ol>
+<li>Nota:
+<ol>
+<li>Como registrar esses serviços na IA <em>CHATGPT</em>?
+<ol>
+<li>ll</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="https://platform.openai.com/docs/quickstart/developer-quickstart">developer-quickstart</a></li>
+<li><a href="https://platform.openai.com/docs/api-reference/introduction">Introduction API OpenAi</a></li>
+<li><a href="https://platform.openai.com/docs/quickstart/developer-quickstart">Developer-quickstart</a></li>
+<li><a href="https://platform.openai.com/docs/libraries/python-library">python-library</a></li>
+<li><a href="https://platform.openai.com/docs/libraries/typescript-javascript-library">typescript-javascript-library</a></li>
+<li><a href="https://community.openai.com/">community.openai.com</a></li>
+<li><a href="https://platform.openai.com/docs/quickstart/step-1-setup-curl">step-1-setup-curl</a></li>
+<li><a href="https://help.openai.com/en/articles/6684216-adding-your-api-client-to-the-community-libraries-page">Adding your API client to the Community Libraries page</a></li>
+<li><a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api">Melhores práticas para engenharia imediata com API OpenAI</a></li>
+<li><a href="https://platform.openai.com/docs/api-reference/completions/create">Referência da API - Solicitar corpo</a></li>
+<li><a href="https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken">Como contar tokens com tiktoken</a></li>
+<li><a href="https://github.com/HemulGM/DelphiOpenAI">DelphiOpenAI</a></li>
+<li><a href="https://github.com/uhub/awesome-chatgpt">incrível-chatgpt</a>
+<ol>
+<li>Obs:
+<ol>
+<li>Esse documento mostrou-me:
+<ol>
+<li>Biblioteca <a href="https://github.com/HemulGM/DelphiOpenAI">DelphiOpenAI</a> completa para comunicação com <em>chatgpt</em>,</li>
+<li><a href="https://github.com/f/awesome-chatgpt-prompts">Dicas sobre chatgpt-prompts</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="criar-apis-comunicação-com-o-banco-de-dados">Criar apis comunicação com o banco de dados</h2>
+<ol>
+<li><strong>Criar programa para coletar as informações do paciente</strong>
 <ol>
 <li>
 <p>Obs?</p>
@@ -220,109 +331,29 @@
 </li>
 </ol>
 </li>
-</ol>
-</li>
-</ol>
-</li>
 <li>
-<p><strong>Confirmação de Consultas:</strong></p>
-<ol>
-<li>Utilize a <em>API do WhatsApp</em> para enviar</li>
-<li>Implementar a <em>API de voz da OpenAI</em> para fazer <em>chamadas de voz automatizadas</em> para <em>confirmação de consultas</em>.</li>
+<p><strong>Confirmação de Consultas:</strong>
+1. Utilize a <em>API do WhatsApp</em> para enviar
+2. Implementar a <em>API de voz da OpenAI</em> para fazer <em>chamadas de voz automatizadas</em> para <em>confirmação de consultas</em>.</p>
+</li>
 </ol>
 </li>
-<li>
-<p><strong>Banco de Dados de Informações Adicionais:</strong></p>
+</ol>
+<h2 id="banco-de-dados-de-informações-adicionais">Banco de Dados de Informações Adicionais:</h2>
 <ol>
 <li>Criar um <em>banco de dados adicional</em> para armazenar informações sobre <em>convênios</em>, <em>preços de consultas</em> e <em>hospitais onde o médico atende</em>.</li>
 </ol>
-</li>
-<li>
-<p>Testes e Validação:</p>
+<h2 id="testes-e-validação">Testes e Validação:</h2>
 <ol>
 <li>Realizar <em>testes abrangentes</em> para garantir o funcionamento adequado de todas as funcionalidades.</li>
 </ol>
-</li>
-<li>
-<p><strong>Documentação e Treinamento:</strong></p>
+<h2 id="documentação-e-treinamento">Documentação e Treinamento:</h2>
 <ol>
 <li>Preparar <em>documentação detalhada</em> e <em>oferecer treinamento</em> para o <em>médico</em> e a <em>equipe</em> sobre o uso da <em>secretária virtual</em>.</li>
 </ol>
-</li>
-<li>
-<p><strong>Manutenção e Atualização Contínua:</strong></p>
+<h2 id="manutenção-e-atualização-contínua">Manutenção e Atualização Contínua:</h2>
 <ol>
 <li>Criar um <em>plano de manutenção</em> e <em>atualização</em> para manter a segurança, eficiência e compatibilidade do sistema.</li>
-</ol>
-</li>
-</ol>
-<h2 id="infraestrutura-necessária">Infraestrutura necessária</h2>
-<ol>
-<li>Instalar xrdp no servidor e abrir para acesso publico</li>
-<li>Criar máquina virtual ubuntu-ph
-<ol>
-<li>
-<p>instalar xrdp e abrir acesso publico;</p>
-<ol>
-<li>Objetivo:
-<ol>
-<li>Dar manutenção de qualquer lugar.</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>Instalar <em>PostgresSQL</em> e abrir para acesso publico;</p>
-<ol>
-<li>Objetivo:
-<ol>
-<li>Criar o banco de dados assistente virtual.</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>Instalar Servidor Web Apache2 e abrir acesso publico;</p>
-<ol>
-<li>Objetivo:
-<ol>
-<li>Criar serviço <em>Rest</em> para comunicar-se com a inteligência artificial.</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>Instalar cliente de banco de dados <em>dbeaver-ce</em>;</p>
-<ol>
-<li>Objetivo:
-<ol>
-<li>Executar os script sql do projeto na criação e manutenção do banco de dados.</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>Instalar IDE Lazarus e copilador free pascal;</p>
-<ol>
-<li>Objetivo:
-<ol>
-<li>Criar programas de cadastros e relatórios das tabelas do banco de dados.</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>Instalar o interpretador python;</p>
-<ol>
-<li>Objetivo:
-<ol>
-<li>Criar interface de comunicação com a inteligência artificial.</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
 </ol>
 <!-- markdownlint-disable-next-line -->
 </main>

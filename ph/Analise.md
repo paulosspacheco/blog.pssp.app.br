@@ -11,168 +11,218 @@
 
 ## INDEX
 
-- [Análise do projeto ph.app.br](#análise-do-projeto-phappbr)
-  - [Definição do banco de dados](#definição-do-banco-de-dados)
-  - [Infraestrutura necessária](#infraestrutura-necessária)
-
-## Definição do banco de dados
-
- 1. Banco de dados Assistente_Virtual
-    1. operadores //Pode ser a secretária virtual
-       1. id // tipo Integer serial
-       2. nome // String com 50 posições não pode ser nulo
-       3. telefone : // String com 20 posições
-
-    2. hospitais
-       1. id // tipo Integer serial
-       2. nome // String com 50 posições pode ser nulo
-       3. telefone // String com 20 posições pode ser nulo
-
-    3. status_da_agenda_ou_consulta
-       1. id // tipo Integer serial
-       2. nome // String com 20 posições pode ser nulo
-
-    4. médicos
-       1. id // tipo Integer serial
-       2. id_operadores //Tipo Integer
-       3. nome // String com 50 posições pode ser nulo
-       4. telefone // String com 25 posições pode ser nulo
-       5. telefone_da_secretaria // String com 25 posições pode ser nulo
-       6. login // String com 50 posições pode ser nulo
-       7. se>nha // String com 20 posições pode ser nulo
-
-    5. serviço_de_agendas
-       1. id // tipo Integer serial
-       2. id_operador // tipo Integer
-       3. nome // String com 100 posições pode ser nulo
-       4. login // String com 50 posições pode ser nulo
-       5. senha // String com 50 posições pode ser nulo
-
-    6. convênios
-       1. id  // tipo Integer serial
-       2. id_médico // tipo Integer
-       3. nome  // String com 50 posições pode ser nulo
-       4. login // String com 50 posições pode ser nulo
-       5. senha // String com 50 posições pode ser nulo
-
-    7. clientes
-       1. id // tipo Integer serial
-       2. nome // String com 50 posições. Obs: Não pode ser nulo
-       3. telefone_whatsApp;// String com 25 posições. Obs: pode ser nulo
-       4. e_mail // String com 50 posições e pode ser nulo
-       5. login  // String com 50 posições e não pode ser nulo
-       6. senha  // String com 20 posições e não pode ser nulo
-       7. id_convênio // tipo Integer pode ser nulo
-       8. dataTime_disponível // Tipo da data e pode ser nulo. Obs: Usado para pesquisar na agenda uma data mais próxima
-       9. matricula_no_convênio // String com 50 posições e pode ser nulo.
-
-    8. integração // Usado para ser logar
-       1. id // tipo Integer serial
-       2. endereço_do_site // String com 255 posições e não pode ser nulo
-       3. login // String com 50 posições e não pode ser nulo. Obs: Login para acessar o endereço_do_site
-       4. senha // String com 20 posições e não pode ser nulo. Obs: Senha para acessar o endereço_do_site
-       5. status // Campo lógico e não pode ser nulo Obs: Usado para saber o se o site está conectado
-
-    9. expediente_do_medico_data // Chave múltipla id_medico+Data
-       1. id // tipo Integer serial
-       2. id_medico // tipo Integer  e não pode ser nulo
-       3. dataTime // tipo data e não pode ser nulo
-
-    10. expediente_do_medico_horas // Chave múltipla id_medico+Data+Hora_inicial
-        1. id_expediente_do_medico_data // tipo Integer e não pode ser nulo
-        2. dataTime_inicial // Data e Hora inicial  do expediente do médico e não pode ser nulo
-        3. dataTime_final   // Data e Hora final do expediente do médico e não pode ser nulo
-
-    11. agenda
-        1. id // tipo Integer serial
-        2. id_Medico // tipo Integer  e não pode ser nulo
-        3. id_Cliente // tipo Integer  e não pode ser nulo
-        4. dataTime  // Data e hora prevista da consulta e não pode ser nulo
-        5. dataTime_confirmação // Data e hora da confirmação  da consulta e não pode ser nulo
-        6. id_convênio //tipo Integer e pode ser nulo caso id_formas_de_pagamento não for nulo.
-        7. id_status_da_agenda_ou_consulta //tipo Integer e não pode ser nulo
-        8. id_formas_de_pagamento //tipo Integer e pode ser nulo caso id_convênio não for nulo.
-        9. dataTime // Data e hora em que a agenda foi criada e não pode ser nulo
-        10. observações // String com 255 posições e pode ser nulo
-
-    12. formas_de_pagamento
-        1. id // tipo Integer serialNatureza
-        2. Nome // String com 30 posições e não pode ser nulo. Obs: Pode ser: 0 - Dinheiro; 1 - Pix; 2 - Convênio; 3 - Cartão de debito; 4 - Catão de credito Mastercard; 5 - Catão de credito Visa;  etc....
-
-    13. consulta //Usado para baixar baixar a agenda
-        1. id // tipo Integer serial
-        2. id_agenda  // tipo Integer e pode ser nulo. Obs: Uma consulta não é obrigado ter agenda.
-        3. id_cliente // tipo Integer e não pode ser nulo.
-        4. id_medico  // tipo Integer e não pode ser nulo.
-        5. dataTime   // Data e hora da consulta e não pode ser nulo
-        6. id_convênio // tipo Integer e pode ser nulo. Obs: Uma consulta não é obrigado ter convênio
-        7. id_forma_de_pagamento // tipo Integer e pode ser nulo se id_convênio não for nulo.
-        8. id_status_da_agenda_ou_consulta // tipo Integer e não pode ser nulo
-        9. Observação // String com 255 posições e pode ser nulo
-
- 2. Estudar como o site OpenAI pode ajudar a criar o  _Assistant API da OpenAI_.
- 3. Criar rotinas para:
-    1. Criar programa para coletar as informações do paciente
-       1. Obs?
-          1. Quais textos utilizar para interagir com o cliente no WhatsApp?
-             1. Podemos usar a IA para textos humanizados.
-             2. Outras forma é fazer perguntas e o cliente responde com o número da opção.
-
-       2. Cadastros necessários para comunicar-se com os clientes:
-          1. Medico
-          2. Convênio
-          3. Serviço_de_agendas
-          4. Integração
-          5. Expediente_do_medico_data
-          6. Expediente_do_medico_horas
-       3. Criar programa para confirmações de consultas.
-          1. Cadastros atualizados aqui:
-             1. clientes
-             2. Agenda
-             3. Disponibilidade_do_Paciente
-
- 4. **Confirmação de Consultas:**
-       1. Utilize a _API do WhatsApp_ para enviar 
-       2. Implementar a _API de voz da OpenAI_ para fazer _chamadas de voz automatizadas_ para _confirmação de consultas_.
-
- 5. **Banco de Dados de Informações Adicionais:**
-       1. Criar um _banco de dados adicional_ para armazenar informações sobre _convênios_, _preços de consultas_ e _hospitais onde o médico atende_.
-
- 6. Testes e Validação:
-    1. Realizar _testes abrangentes_ para garantir o funcionamento adequado de todas as funcionalidades.
-
- 7. **Documentação e Treinamento:**
-    1. Preparar _documentação detalhada_ e _oferecer treinamento_ para o _médico_ e a _equipe_ sobre o uso da _secretária virtual_.
-
- 8. **Manutenção e Atualização Contínua:**
-     1. Criar um _plano de manutenção_ e _atualização_ para manter a segurança, eficiência e compatibilidade do sistema.
+1. [Infraestrutura necessária](#infraestrutura-necessária)
+2. [Definição do banco de dados Assistente\_Virtual](#definição-do-banco-de-dados-assistente_virtual)
+3. [Estudar como o site OpenAI pode ajudar a criar o  _Assistant API da OpenAI_.](#estudar-como-o-site-openai-pode-ajudar-a-criar-o--assistant-api-da-openai)
+4. [Criar apis comunicação com o banco de dados](#criar-apis-comunicação-com-o-banco-de-dados)
+5. [Banco de Dados de Informações Adicionais:](#banco-de-dados-de-informações-adicionais)
+6. [Testes e Validação:](#testes-e-validação)
+7. [Documentação e Treinamento:](#documentação-e-treinamento)
+8. [Manutenção e Atualização Contínua:](#manutenção-e-atualização-contínua)
 
 ## Infraestrutura necessária
+  
+1. **Criar máquina virtual _LinuxMint-ph_ com tudo que precisamos para o projeto;**
+   1. Criar usuário _phdemelo_ e dar permissões de administrador; ✅
+      1. adm
+      2. cdrom
+      3. dip
+      4. lpadmin
+      5. phpaulo
+      6. plugdev
+      7. sambashare
+      8. sudo
+      9. xrdp
 
-1. Instalar xrdp no servidor e abrir para acesso publico
-2. Criar máquina virtual ubuntu-ph
-   1. instalar xrdp e abrir acesso publico;
-      1. Objetivo:
-         1. Dar manutenção de qualquer lugar.
+   2. Instalar _xrdp_ e abrir para acesso publico para poder operar quando não estivermos próximo ao servidor. ✅
 
-   2. Instalar _PostgresSQL_ e abrir para acesso publico;
-      1. Objetivo:
-         1. Criar o banco de dados assistente virtual.
+   3. Ao tentar compartilhar para acesso publico tive que contratar um _IP fixo_ _45.160.125.12_ e contratar o plano _300 mega_ da Smart Soluções; ✅
 
-   3. Instalar Servidor Web Apache2 e abrir acesso publico;
-      1. Objetivo:
-         1. Criar serviço _Rest_ para comunicar-se com a inteligência artificial.
+   4. Instalar _PostgresSQL_ e abrir para acesso publico; ✅
 
-   4. Instalar cliente de banco de dados _dbeaver-ce_;
-      1. Objetivo:
-         1. Executar os script sql do projeto na criação e manutenção do banco de dados.
+   5. Criar o banco de dados _assistente_virtual_; ✅
 
-   5. Instalar IDE Lazarus e copilador free pascal;
-      1. Objetivo:
-         1. Criar programas de cadastros e relatórios das tabelas do banco de dados.
-   6. Instalar o interpretador python;
-      1. Objetivo:
-         1. Criar interface de comunicação com a inteligência artificial.
+   6. Fazer backup do banco de dados _assistente_virtual_.
+
+   7. Instalar cliente de banco de dados _dbeaver-ce_ para executar os script sql do projeto na criação e manutenção do banco de dados. ✅
+
+   8. Instalar _Servidor Web Apache2_ e abrir para acesso publico para poder publicar os _Serviço Rest_ para que a IA tenha acesso;
+
+   9. Instalar _IDE Lazarus_ e o compilador _free pascal_ para criar programas de cadastros e relatórios das tabelas do banco de dados. ✅
+
+   10. Criar _Serviço Rest_ para comunicar-se com a inteligência artificial.
+
+   11. Instalar o interpretador _python_ para estudo do Paulo Henrique;
+
+## Definição do banco de dados Assistente_Virtual
+
+ 
+1. operadores //Pode ser a secretária virtual
+   1. id // tipo Integer serial
+   2. nome // String com 50 posições não pode ser nulo
+   3. telefone : // String com 20 posições
+
+2. hospitais
+   1. id // tipo Integer serial
+   2. nome // String com 50 posições pode ser nulo
+   3. telefone // String com 20 posições pode ser nulo
+
+3. status_da_agenda_ou_consulta
+   1. id // tipo Integer serial
+   2. nome // String com 20 posições pode ser nulo
+
+4. médicos
+   1. id // tipo Integer serial
+   2. id_operadores //Tipo Integer
+   3. nome // String com 50 posições pode ser nulo
+   4. telefone // String com 25 posições pode ser nulo
+   5. telefone_da_secretaria // String com 25 posições pode ser nulo
+   6. login // String com 50 posições pode ser nulo
+   7. se>nha // String com 20 posições pode ser nulo
+
+5. serviço_de_agendas
+   1. id // tipo Integer serial
+   2. id_operador // tipo Integer
+   3. nome // String com 100 posições pode ser nulo
+   4. login // String com 50 posições pode ser nulo
+   5. senha // String com 50 posições pode ser nulo
+
+6. convênios
+   1. id  // tipo Integer serial
+   2. id_médico // tipo Integer
+   3. nome  // String com 50 posições pode ser nulo
+   4. login // String com 50 posições pode ser nulo
+   5. senha // String com 50 posições pode ser nulo
+
+7. clientes
+   1. id // tipo Integer serial
+   2. nome // String com 50 posições. Obs: Não pode ser nulo
+   3. telefone_whatsApp;// String com 25 posições. Obs: pode ser nulo
+   4. e_mail // String com 50 posições e pode ser nulo
+   5. login  // String com 50 posições e não pode ser nulo
+   6. senha  // String com 20 posições e não pode ser nulo
+   7. id_convênio // tipo Integer pode ser nulo
+   8. dataTime_disponível // Tipo da data e pode ser nulo. Obs: Usado para pesquisar na agenda uma data mais próxima
+   9. matricula_no_convênio // String com 50 posições e pode ser nulo.
+
+8. integração // Usado para ser logar
+   1. id // tipo Integer serial
+   2. endereço_do_site // String com 255 posições e não pode ser nulo
+   3. login // String com 50 posições e não pode ser nulo. Obs: Login para acessar o endereço_do_site
+   4. senha // String com 20 posições e não pode ser nulo. Obs: Senha para acessar o endereço_do_site
+   5. status // Campo lógico e não pode ser nulo Obs: Usado para saber o se o site está conectado
+
+9. expediente_do_medico_data // Chave múltipla id_medico+Data
+   1. id // tipo Integer serial
+   2. id_medico // tipo Integer  e não pode ser nulo
+   3. dataTime // tipo data e não pode ser nulo
+
+10. expediente_do_medico_horas // Chave múltipla id_medico+Data+Hora_inicial
+    1. id_expediente_do_medico_data // tipo Integer e não pode ser nulo
+    2. dataTime_inicial // Data e Hora inicial  do expediente do médico e não pode ser nulo
+    3. dataTime_final   // Data e Hora final do expediente do médico e não pode ser nulo
+
+11. agenda
+    1. id // tipo Integer serial
+    2. id_Medico // tipo Integer  e não pode ser nulo
+    3. id_Cliente // tipo Integer  e não pode ser nulo
+    4. dataTime  // Data e hora prevista da consulta e não pode ser nulo
+    5. dataTime_confirmação // Data e hora da confirmação  da consulta e não pode ser nulo
+    6. id_convênio //tipo Integer e pode ser nulo caso id_formas_de_pagamento não for nulo.
+    7. id_status_da_agenda_ou_consulta //tipo Integer e não pode ser nulo
+    8. id_formas_de_pagamento //tipo Integer e pode ser nulo caso id_convênio não for nulo.
+    9. dataTime // Data e hora em que a agenda foi criada e não pode ser nulo
+    10. observações // String com 255 posições e pode ser nulo
+
+12. formas_de_pagamento
+    1. id // tipo Integer serialNatureza
+    2. Nome // String com 30 posições e não pode ser nulo. Obs: Pode ser: 0 - Dinheiro; 1 - Pix; 2 - Convênio; 3 - Cartão de debito; 4 - Catão de credito Mastercard; 5 - Catão de credito Visa;  etc....
+
+13. consulta //Usado para baixar baixar a agenda
+    1. id // tipo Integer serial
+    2. id_agenda  // tipo Integer e pode ser nulo. Obs: Uma consulta não é obrigado ter agenda.
+    3. id_cliente // tipo Integer e não pode ser nulo.
+    4. id_medico  // tipo Integer e não pode ser nulo.
+    5. dataTime   // Data e hora da consulta e não pode ser nulo
+    6. id_convênio // tipo Integer e pode ser nulo. Obs: Uma consulta não é obrigado ter convênio
+    7. id_forma_de_pagamento // tipo Integer e pode ser nulo se id_convênio não for nulo.
+    8. id_status_da_agenda_ou_consulta // tipo Integer e não pode ser nulo
+    9. Observação // String com 255 posições e pode ser nulo
+
+## Estudar como o [site OpenAI](https://platform.openai.com/docs/overview) pode ajudar a criar o  _Assistant API da OpenAI_.
+
+ 1. Checar se é possível comunicar-se com a IA usando o compilador free pascal; ✅
+    1. _Nota_:
+       1. Projeto _CHATGPT_ criado por _Marcelo Maurin Martins_ e está disponível no [github](https://github.com/marcelomaurin/CHATGPT);
+       2. Projeto [DelphiOpenAI](https://github.com/HemulGM/DelphiOpenAI) criado por HemulGM com licença _MIT_.
+          1. [Readme do projeto](https://github.com/HemulGM/DelphiOpenAI/blob/main/README.md)
+
+ 2. A IA precisa de _[chave de autenticação](https://platform.openai.com/docs/api-reference/authentication)_ onde a mesma pode ser adquirida [_aqui_](https://platform.openai.com/api-keys);
+
+ 3. A _IA_ precisa de _serviços rest_  para comunicar-se com o banco de dados, onde os mesmos devem ser publicados na _IA_.
+    1. Nota:
+       1. Como registrar esses serviços na IA _CHATGPT_?
+          1. ll
+
+ 4. **Referências:**
+    1. [developer-quickstart](https://platform.openai.com/docs/quickstart/developer-quickstart)
+    2. [Introduction API OpenAi](https://platform.openai.com/docs/api-reference/introduction)
+    3. [Developer-quickstart](https://platform.openai.com/docs/quickstart/developer-quickstart)
+    4. [python-library](https://platform.openai.com/docs/libraries/python-library)
+    5. [typescript-javascript-library](https://platform.openai.com/docs/libraries/typescript-javascript-library)
+    6. [community.openai.com](https://community.openai.com/)
+    7. [step-1-setup-curl](https://platform.openai.com/docs/quickstart/step-1-setup-curl)
+    8. [Adding your API client to the Community Libraries page](https://help.openai.com/en/articles/6684216-adding-your-api-client-to-the-community-libraries-page)
+    9. [Melhores práticas para engenharia imediata com API OpenAI](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api)
+    10. [Referência da API - Solicitar corpo](https://platform.openai.com/docs/api-reference/completions/create)
+    11. [Como contar tokens com tiktoken](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken)
+    12. [DelphiOpenAI](https://github.com/HemulGM/DelphiOpenAI)
+    13. [incrível-chatgpt](https://github.com/uhub/awesome-chatgpt)
+        1. Obs:
+           1. Esse documento mostrou-me:
+              1. Biblioteca [DelphiOpenAI](https://github.com/HemulGM/DelphiOpenAI) completa para comunicação com _chatgpt_,
+              2. [Dicas sobre chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts)
+
+## Criar apis comunicação com o banco de dados
+
+1. **Criar programa para coletar as informações do paciente**
+   1. Obs?
+      1. Quais textos utilizar para interagir com o cliente no WhatsApp?
+         1. Podemos usar a IA para textos humanizados.
+         2. Outras forma é fazer perguntas e o cliente responde com o número da opção.
+
+   2. Cadastros necessários para comunicar-se com os clientes:
+      1. Medico
+      2. Convênio
+      3. Serviço_de_agendas
+      4. Integração
+      5. Expediente_do_medico_data
+      6. Expediente_do_medico_horas
+   3. Criar programa para confirmações de consultas.
+      1. Cadastros atualizados aqui:
+         1. clientes
+         2. Agenda
+         3. Disponibilidade_do_Paciente
+
+   4. **Confirmação de Consultas:**
+          1. Utilize a _API do WhatsApp_ para enviar 
+          2. Implementar a _API de voz da OpenAI_ para fazer _chamadas de voz automatizadas_ para _confirmação de consultas_.
+
+## Banco de Dados de Informações Adicionais:
+
+ 1. Criar um _banco de dados adicional_ para armazenar informações sobre _convênios_, _preços de consultas_ e _hospitais onde o médico atende_.
+
+## Testes e Validação:
+
+ 1. Realizar _testes abrangentes_ para garantir o funcionamento adequado de todas as funcionalidades.
+
+## Documentação e Treinamento:
+
+ 1. Preparar _documentação detalhada_ e _oferecer treinamento_ para o _médico_ e a _equipe_ sobre o uso da _secretária virtual_.
+
+## Manutenção e Atualização Contínua:
+
+1. Criar um _plano de manutenção_ e _atualização_ para manter a segurança, eficiência e compatibilidade do sistema.
 
 <!-- markdownlint-disable-next-line -->
 </main>

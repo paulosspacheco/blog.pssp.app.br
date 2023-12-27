@@ -126,7 +126,7 @@ classDiagram
   }
 
   operadores "1" -- "1..n" medicos : id_operadores  
-  medicos "1" -- "1..n" convenios : id_medico
+  medicos "0" -- "1..n" convenios : id_medico
   clientes "1" -- "0..n" convenios : id_convenio
   clientes "1" -- "1..n" agenda : id_Cliente
   medicos "1" -- "1..n" expediente_do_medico_data : id_medico
@@ -282,7 +282,7 @@ classDiagram
       }
 
       operadores "1" -- "1..n" medicos : id_operadores  
-      medicos "1" -- "1..n" convenios : id_medico
+      medicos "0" -- "1..n" convenios : id_medico
       clientes "1" -- "0..n" convenios : id_convenio
       clientes "1" -- "1..n" agenda : id_Cliente
       medicos "1" -- "1..n" expediente_do_medico_data : id_medico
