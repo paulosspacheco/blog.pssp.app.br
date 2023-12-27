@@ -41,6 +41,7 @@
    4. Instalar _PostgresSQL_ e abrir para acesso publico; ✅
 
    5. Criar o banco de dados _assistente_virtual_; ✅
+      1. Criar documento: [Como trocar a senha do banco _postgreSQL_ no linux caso se esqueça?](http://127.0.0.1:5502/infraestrutura/linux/banco_de_dados/posgresql/o_que_e_postgresql.html#id_assunto04)
 
    6. Fazer backup do banco de dados _assistente_virtual_.
 
@@ -48,7 +49,7 @@
 
    8. Instalar _Servidor Web Apache2_ e abrir para acesso publico para poder publicar os _Serviço Rest_ para que a IA tenha acesso;
 
-   9. Instalar _IDE Lazarus_ e o compilador _free pascal_ para criar programas de cadastros e relatórios das tabelas do banco de dados. ✅
+   9.  Instalar _IDE Lazarus_ e o compilador _free pascal_ para criar programas de cadastros e relatórios das tabelas do banco de dados. ✅
 
    10. Criar _Serviço Rest_ para comunicar-se com a inteligência artificial.
 
@@ -159,10 +160,70 @@
 
  2. A IA precisa de _[chave de autenticação](https://platform.openai.com/docs/api-reference/authentication)_ onde a mesma pode ser adquirida [_aqui_](https://platform.openai.com/api-keys);
 
- 3. A _IA_ precisa de _serviços rest_  para comunicar-se com o banco de dados, onde os mesmos devem ser publicados na _IA_.
-    1. Nota:
-       1. Como registrar esses serviços na IA _CHATGPT_?
-          1. ll
+ 3. A _IA_ comunica-se com o programa por meio de prompts, usando a linguagem _JSON_ para receber um pedido do usuário e a resposta é retornada com outro _JSON_ com dados que o programa precisa para continuar o diálogo.
+    1. Exemplo 01:
+       1. Vamos criar algumas especificações de função para fazer interface com uma _API climática hipotética_.
+          1. Passaremos essas especificações de função para a _API_ de conclusões de bate-papo para gerar argumentos de função que sigam a especificação.
+
+            ```json
+
+               tools = [
+                  {
+                     "type": "function",
+                     "function": {
+                           "name": "get_current_weather",
+                           "description": "Obtenha o clima atual",
+                           "parameters": {
+                              "type": "object",
+                              "properties": {
+                                 "location": {
+                                       "type": "string",
+                                       "description": "A cidade e o estado, por ex. São Francisco, Califórnia",
+                                 },
+                                 "format": {
+                                       "type": "string",
+                                       "enum": ["celsius", "fahrenheit"],
+                                       "description": "A unidade de temperatura a ser usada. Inferir isso a partir da localização dos usuários.",
+                                 },
+                              },
+                              "required": ["location", "format"],
+                           },
+                     }
+                  },
+                  {
+                     "type": "function",
+                     "function": {
+                           "name": "get_n_day_weather_forecast",
+                           "description": "Obtenha uma previsão do tempo para N dias",
+                           "parameters": {
+                              "type": "object",
+                              "properties": {
+                                 "location": {
+                                       "type": "string",
+                                       "description": "A cidade e o estado, por ex. São Francisco, Califórnia",
+                                 },
+                                 "format": {
+                                       "type": "string",
+                                       "enum": ["celsius", "fahrenheit"],
+                                       "description": "A unidade de temperatura a ser usada. Inferir isso a partir da localização dos usuários.",
+                                 },
+                                 "num_days": {
+                                       "type": "integer",
+                                       "description": "O número de dias para previsão",
+                                 }
+                              },
+                              "required": ["location", "format", "num_days"]
+                           },
+                     }
+                  },
+               ] 
+
+            ```
+
+    2. Exemplos:
+       1. Linguagem python:
+          1. [Como chamar funções com modelos de chat](https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models)
+          2. 
 
  4. **Referências:**
     1. [developer-quickstart](https://platform.openai.com/docs/quickstart/developer-quickstart)

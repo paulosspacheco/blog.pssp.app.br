@@ -46,9 +46,10 @@
 <li>
 <p><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a></p>
 <ol>
-<li><a href="#id_assunto01">Instalar postgresSQL no Linux Debian ou derivados</a></li>
+<li><a href="#id_assunto01">Instalar postgreSQL no Linux Debian ou derivados</a></li>
 <li><a href="#id_assunto02">Aplicativos Clientes disponível do shell do linux</a></li>
 <li><a href="#id_assunto03">Aplicativo Cliente GUI dbeaver</a></li>
+<li><a href="#id_assunto04">Como trocar a senha do banco postgreSQL no linux caso se esqueça?</a></li>
 </ol>
 </li>
 <li>
@@ -64,9 +65,9 @@
 <li>
 <p><span id="id_resumo"><span><strong>Resumo do conteúdo:</strong></p>
 <ol>
-<li>Este documento descreve passo a passo como instalar o PostgresSQL no linux Mint LMDE 4.</li>
-<li>Faz um resumo do objetivo, dos benefícios e desvantagens do PostgresSQL.</li>
-<li>Mostra a pasta onde o PostgresSQL mantém suas configurações.</li>
+<li>Este documento descreve passo a passo como instalar o postgreSQL no linux Mint LMDE 4.</li>
+<li>Faz um resumo do objetivo, dos benefícios e desvantagens do postgreSQL.</li>
+<li>Mostra a pasta onde o postgreSQL mantém suas configurações.</li>
 <li>Descreve os parâmetros para conectar-se com o Banco de Dados.</li>
 <li>Descreve os clientes cluterdb e createdb.</li>
 </ol>
@@ -114,7 +115,7 @@
 <ol>
 <li>
 <p><span id=id_assunto01></span>
-<strong>Instalar postgresSQL no Linux Debian ou derivados)</strong></p>
+<strong>Instalar postgreSQL no Linux Debian ou derivados)</strong></p>
 <ol>
 <li>
 <p><strong>Código ShellScript para instalar</strong></p>
@@ -268,7 +269,7 @@
    <span class="hljs-comment"># Parar o banco de dados postgres</span>
      sudo systemctl stop postgresql
 
-   <span class="hljs-comment"># Edita o arquivo postgressql.conf   </span>
+   <span class="hljs-comment"># Edita o arquivo postgreSQL.conf   </span>
      sudo xed /etc/postgresql/14/main/postgresql.conf
 
    <span class="hljs-comment"># Inicia o banco de dados postgres</span>
@@ -379,7 +380,7 @@
 <p><strong>Referências:</strong></p>
 <ol>
 <li>
-<p><a href="https://www.youtube.com/watch?v=pqDNOGOcUks">Vídeo aula de como instalar o postgresSQL no linux</a></p>
+<p><a href="https://www.youtube.com/watch?v=pqDNOGOcUks">Vídeo aula de como instalar o postgreSQL no linux</a></p>
 </li>
 <li>
 <p><a href="https://www.postgresql.org/download/linux/debian/">Como instalar outras versões no linux</a></p>
@@ -443,8 +444,11 @@ clusterdb --table foo xyzzy
 <li>
 <p><span id=id_assunto03></span><strong>Aplicativo Cliente GUI dbeaver</strong></p>
 <ol>
-<li>O DBeaver Community Edition (DBeaver CE) é uma ferramenta de gerenciamento de banco de dados relacional de código aberto. Ele oferece suporte a vários bancos de dados, como MySQL, PostgreSQL, SQLite, Oracle, Microsoft SQL Server, e muitos outros. O DBeaver CE é uma versão gratuita e de código aberto da ferramenta, projetada para ser usada por desenvolvedores, administradores de banco de dados e qualquer pessoa envolvida no gerenciamento e manipulação de bancos de dados.</li>
-<li>Principais características do DBeaver CE:
+<li>
+<p>O DBeaver Community Edition (DBeaver CE) é uma ferramenta de gerenciamento de banco de dados relacional de código aberto. Ele oferece suporte a vários bancos de dados, como MySQL, PostgreSQL, SQLite, Oracle, Microsoft SQL Server, e muitos outros. O DBeaver CE é uma versão gratuita e de código aberto da ferramenta, projetada para ser usada por desenvolvedores, administradores de banco de dados e qualquer pessoa envolvida no gerenciamento e manipulação de bancos de dados.</p>
+</li>
+<li>
+<p>Principais características do DBeaver CE:</p>
 <ol>
 <li>Conectividade com Múltiplos Bancos de Dados: Oferece suporte a uma ampla variedade de sistemas de gerenciamento de banco de dados, permitindo que os usuários se conectem a diferentes bancos de dados a partir de uma única interface.</li>
 <li>Interface Gráfica Intuitiva: Possui uma interface de usuário gráfica intuitiva que facilita o desenvolvimento, gerenciamento e consulta de bancos de dados.</li>
@@ -455,11 +459,11 @@ clusterdb --table foo xyzzy
 <li>Suporte a Plugins: Permite a extensão de funcionalidades por meio de plugins, proporcionando flexibilidade para atender a diferentes necessidades.</li>
 </ol>
 </li>
-<li>O DBeaver CE é uma escolha popular devido à sua versatilidade e ao fato de ser gratuito e de código aberto. No entanto, é importante observar que existem versões comerciais do DBeaver (DBeaver EE) que oferecem recursos adicionais e suporte aprimorado, mas a versão Community Edition é uma opção robusta para muitos desenvolvedores e administradores de banco de dados.</li>
-</ol>
+<li>
+<p>O DBeaver CE é uma escolha popular devido à sua versatilidade e ao fato de ser gratuito e de código aberto. No entanto, é importante observar que existem versões comerciais do DBeaver (DBeaver EE) que oferecem recursos adicionais e suporte aprimorado, mas a versão Community Edition é uma opção robusta para muitos desenvolvedores e administradores de banco de dados.</p>
 </li>
 <li>
-<p><strong>Como instalar o cliente GUI PostgresSQL <em>dbeaver</em>:</strong></p>
+<p><strong>Como instalar o cliente GUI postgreSQL <em>dbeaver</em>:</strong></p>
 <ol>
 <li>Baixar pacote Dbeaver em <a href="https://dbeaver.io/download/">dbeaver.io</a></li>
 <li>Instalar pacote.
@@ -497,6 +501,79 @@ clusterdb --table foo xyzzy
 </ol>
 </li>
 <li>
+<p><span id=id_assunto04></span><strong>Como trocar a senha do banco <em>postgreSQL</em> no linux caso se esqueça?</strong></p>
+<ol>
+<li>
+<p>Passo 01:</p>
+<ol>
+<li>
+<p>Mudar o tipo de acesso no arquivo <em>pg_hba.conf</em>:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Parar o banco de dados postgres</span>
+   sudo systemctl stop postgresql
+
+   sudo xed /etc/postgresql/14/main/pg_hba.conf
+
+   <span class="hljs-comment"># Procurar  a linha  host all  all localhost scram-sha-256 e troque para</span>
+   <span class="hljs-comment"># host all  all localhost trust</span>
+      
+   <span class="hljs-comment"># Inicia o banco de dados postgres</span>
+   sudo systemctl start postgresql                
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Passo 02</p>
+<ol>
+<li>
+<p>Entrar no usuário postgres, executar programa  <em>psql</em> e alterar a senha;</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># logar-se ao usuário postgres: </span>
+     sudo su postgres
+
+   <span class="hljs-comment"># Executar cliente psql:</span>
+     psql -U postgres;
+
+   <span class="hljs-comment"># Alterar a senha:</span>
+     ALTER ROLE postgres PASSWORD <span class="hljs-string">'nova senha'</span>;
+
+   <span class="hljs-comment"># Sair do cliente psql</span>
+   \q
+
+   <span class="hljs-comment"># sair do usuário postgres</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Passo 03:</p>
+<ol>
+<li>
+<p>Retornar ao tipo de acesso original no arquivo <em>pg_hba.conf</em>:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Parar o banco de dados postgres</span>
+   sudo systemctl stop postgresql
+
+   sudo xed /etc/postgresql/14/main/pg_hba.conf
+
+   <span class="hljs-comment"># Procurar  a linha host all  all localhost trust  e troque para</span>
+   <span class="hljs-comment"># host all  all localhost scram-sha-256</span>
+      
+   <span class="hljs-comment"># Inicia o banco de dados postgres</span>
+   sudo systemctl start postgresql                
+   
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
 <p><span id=id_referencias></span>
 <strong>REFERÊNCIAS GLOBAIS</strong></p>
 <ol>
@@ -510,7 +587,7 @@ clusterdb --table foo xyzzy
 <p><a href="https://dbeaver.io/2023/01/08/dbeaver-22-3-2/">Aplicativo Cliente DBeaver 22.3.2</a></p>
 </li>
 <li>
-<p><a href="https://pgdocptbr.sourceforge.io/pg74/client-authentication.html">Autenticação do cliente postgresSQL</a></p>
+<p><a href="https://pgdocptbr.sourceforge.io/pg74/client-authentication.html">Autenticação do cliente postgreSQL</a></p>
 </li>
 <li>
 <p><a href="https://acervolima.com/postgresql-metodos-de-autenticacao-de-senha/">POSTGRESQL - MÉTODOS DE AUTENTICAÇÃO DE SENHA</a></p>
