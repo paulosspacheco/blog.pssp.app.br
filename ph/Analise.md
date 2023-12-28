@@ -9,16 +9,15 @@
 
 # Análise do projeto ph.app.br
 
-## INDEX
-
-1. [Infraestrutura necessária](#infraestrutura-necessária)
-2. [Definição do banco de dados Assistente\_Virtual](#definição-do-banco-de-dados-assistente_virtual)
-3. [Estudar como o site OpenAI pode ajudar a criar o  _Assistant API da OpenAI_.](#estudar-como-o-site-openai-pode-ajudar-a-criar-o--assistant-api-da-openai)
-4. [Criar apis comunicação com o banco de dados](#criar-apis-comunicação-com-o-banco-de-dados)
-5. [Banco de Dados de Informações Adicionais:](#banco-de-dados-de-informações-adicionais)
-6. [Testes e Validação:](#testes-e-validação)
-7. [Documentação e Treinamento:](#documentação-e-treinamento)
-8. [Manutenção e Atualização Contínua:](#manutenção-e-atualização-contínua)
+- [Análise do projeto ph.app.br](#análise-do-projeto-phappbr)
+  - [Infraestrutura necessária](#infraestrutura-necessária)
+  - [Definição do banco de dados Assistente\_Virtual](#definição-do-banco-de-dados-assistente_virtual)
+  - [Estudar como o site OpenAI pode ajudar a criar o  _Assistant API da OpenAI_](#estudar-como-o-site-openai-pode-ajudar-a-criar-o--assistant-api-da-openai)
+  - [Criar API de comunicação com o banco de dados](#criar-api-de-comunicação-com-o-banco-de-dados)
+  - [Banco de Dados de Informações Adicionais](#banco-de-dados-de-informações-adicionais)
+  - [Testes e Validação:](#testes-e-validação)
+  - [Documentação e Treinamento:](#documentação-e-treinamento)
+  - [Manutenção e Atualização Contínua:](#manutenção-e-atualização-contínua)
 
 ## Infraestrutura necessária
   
@@ -49,15 +48,15 @@
 
    8. Instalar _Servidor Web Apache2_ e abrir para acesso publico para poder publicar os _Serviço Rest_ para que a IA tenha acesso;
 
-   9.  Instalar _IDE Lazarus_ e o compilador _free pascal_ para criar programas de cadastros e relatórios das tabelas do banco de dados. ✅
+   9. Instalar _IDE Lazarus_ e o compilador _free pascal_ para criar programas de cadastros e relatórios das tabelas do banco de dados. ✅
 
    10. Criar _Serviço Rest_ para comunicar-se com a inteligência artificial.
 
    11. Instalar o interpretador _python_ para estudo do Paulo Henrique;
+   12. Compartilhar a pasta _user/local/Lazarus_ para que eu possa usar na minha máquina a mesma versão do Lazarus que vou usar na máquina do Paulo Henrique.
 
 ## Definição do banco de dados Assistente_Virtual
 
- 
 1. operadores //Pode ser a secretária virtual
    1. id // tipo Integer serial
    2. nome // String com 50 posições não pode ser nulo
@@ -150,7 +149,7 @@
     8. id_status_da_agenda_ou_consulta // tipo Integer e não pode ser nulo
     9. Observação // String com 255 posições e pode ser nulo
 
-## Estudar como o [site OpenAI](https://platform.openai.com/docs/overview) pode ajudar a criar o  _Assistant API da OpenAI_.
+## Estudar como o [site OpenAI](https://platform.openai.com/docs/overview) pode ajudar a criar o  _Assistant API da OpenAI_
 
  1. Checar se é possível comunicar-se com a IA usando o compilador free pascal; ✅
     1. _Nota_:
@@ -226,27 +225,60 @@
           2. 
 
  4. **Referências:**
-    1. [developer-quickstart](https://platform.openai.com/docs/quickstart/developer-quickstart)
-    2. [Introduction API OpenAi](https://platform.openai.com/docs/api-reference/introduction)
-    3. [Developer-quickstart](https://platform.openai.com/docs/quickstart/developer-quickstart)
-    4. [python-library](https://platform.openai.com/docs/libraries/python-library)
-    5. [typescript-javascript-library](https://platform.openai.com/docs/libraries/typescript-javascript-library)
-    6. [community.openai.com](https://community.openai.com/)
-    7. [step-1-setup-curl](https://platform.openai.com/docs/quickstart/step-1-setup-curl)
-    8. [Adding your API client to the Community Libraries page](https://help.openai.com/en/articles/6684216-adding-your-api-client-to-the-community-libraries-page)
-    9. [Melhores práticas para engenharia imediata com API OpenAI](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api)
-    10. [Referência da API - Solicitar corpo](https://platform.openai.com/docs/api-reference/completions/create)
-    11. [Como contar tokens com tiktoken](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken)
-    12. [DelphiOpenAI](https://github.com/HemulGM/DelphiOpenAI)
-    13. [incrível-chatgpt](https://github.com/uhub/awesome-chatgpt)
+    1. [api-reference](https://platform.openai.com/docs/api-reference)
+    2. [developer-quickstart](https://platform.openai.com/docs/quickstart/developer-quickstart)
+    3. [Introduction API OpenAi](https://platform.openai.com/docs/api-reference/introduction)
+    4. [Developer-quickstart](https://platform.openai.com/docs/quickstart/developer-quickstart)
+    5. [python-library](https://platform.openai.com/docs/libraries/python-library)
+    6. [typescript-javascript-library](https://platform.openai.com/docs/libraries/typescript-javascript-library)
+    7. [community.openai.com](https://community.openai.com/)
+    8. [step-1-setup-curl](https://platform.openai.com/docs/quickstart/step-1-setup-curl)
+    9. [Adding your API client to the Community Libraries page](https://help.openai.com/en/articles/6684216-adding-your-api-client-to-the-community-libraries-page)
+    10. [Melhores práticas para engenharia imediata com API OpenAI](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api)
+    11. [Referência da API - Solicitar corpo](https://platform.openai.com/docs/api-reference/completions/create)
+    12. [Como contar tokens com tiktoken](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken)
+    13. [DelphiOpenAI](https://github.com/HemulGM/DelphiOpenAI)
+    14. [incrível-chatgpt](https://github.com/uhub/awesome-chatgpt)
         1. Obs:
            1. Esse documento mostrou-me:
               1. Biblioteca [DelphiOpenAI](https://github.com/HemulGM/DelphiOpenAI) completa para comunicação com _chatgpt_,
               2. [Dicas sobre chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts)
+    15. .
 
-## Criar apis comunicação com o banco de dados
+## Criar API de comunicação com o banco de dados
 
-1. **Criar programa para coletar as informações do paciente**
+1. **Tecnologias usadas no projeto**:
+   1. Linguagem free pascal
+      1. IDE Lazarus
+      2. Pacotes
+         1. LCL
+            1. Para edição de formulários gráficos
+         2. fcl-web
+            1. Para comunicação com protocolo HTTP
+         3. Maricarai
+            1. Para criação de formulários LCL e HTML
+         4. CHATGPT-main
+            1. Usado para comunicação com chatgpt
+   2. Linguagem javascript
+      1. Editor VsCode
+         1. Usado para editar o javascript que vou usar na IDE Lazaros
+   3. Objeto JSON
+      1. Editor VsCode
+         1. Usado para editar o JSON que vou usar na IDE Lazaros
+   4. Python
+      1. Editor VsCode
+         1. Só prendendo usar essa linguagem caso não consiga fazer com pascal.
+
+2. Criar projeto AVM.lpi onde A=Assistente, V=Virtual para M=Médicos
+   1. Na unit Main criar as classes abaixo:
+      1. TForm_main
+         1. Class Panel;
+         2. Class Menu;
+         3. OnEventLogin;
+         4. OnEvent????
+   2. Criar menu de opções
+   3. 
+3. **Criar programa para coletar as informações do paciente**
    1. Obs?
       1. Quais textos utilizar para interagir com o cliente no WhatsApp?
          1. Podemos usar a IA para textos humanizados.
@@ -269,7 +301,7 @@
           1. Utilize a _API do WhatsApp_ para enviar 
           2. Implementar a _API de voz da OpenAI_ para fazer _chamadas de voz automatizadas_ para _confirmação de consultas_.
 
-## Banco de Dados de Informações Adicionais:
+## Banco de Dados de Informações Adicionais
 
  1. Criar um _banco de dados adicional_ para armazenar informações sobre _convênios_, _preços de consultas_ e _hospitais onde o médico atende_.
 

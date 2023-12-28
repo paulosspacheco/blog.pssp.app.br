@@ -45,7 +45,7 @@
 
    ```sh
 
-      sudo ls -l /var/nfs/share 
+      sudo ls -la /var/nfs/share 
 
    ```
 

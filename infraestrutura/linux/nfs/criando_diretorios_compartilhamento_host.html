@@ -13,7 +13,10 @@
 
         <script type="application/x-javascript" src="/js/generic.js"></script>
         <script type="application/x-javascript" src="/js/tgeneric.js"></script>
-        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();});</script>   
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
     </head>
     <body class="vscode-body vscode-dark">
@@ -61,7 +64,7 @@
 <li>
 <p>Checando o modo de acesso da pasta <em>/var/nfs/share</em> com o comando <em><a href="https://man7.org/linux/man-pages/man1/ls.1.html">ls</a></em>:</p>
 <pre><code class="hljs language-sh">
-   sudo ls -l /var/nfs/share 
+   sudo ls -la /var/nfs/share 
 
 </code></pre>
 </li>

@@ -25,8 +25,8 @@
       # Sintaxe das linhas no arquivo /etc/exports: 
       # patas_a_ser_compartilhada ip_cliente(share_option1,...,share_optionN)     
 
-      /var/nfs/share 192.168.15.0(rw,sync,no_subtree_check)
-      /home          192.168.15.0(rw,sync,no_root_squash,no_subtree_check)
+      /var/nfs/share client_ip(rw,sync,no_subtree_check)
+      /home          client_ip(rw,sync,no_root_squash,no_subtree_check)
         
 
     ```

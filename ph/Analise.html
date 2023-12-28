@@ -31,17 +31,20 @@
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 <!-- <h1 id="análise-do-projeto-phappbr">Análise do projeto <a href="http://ph.app.br">ph.app.br</a></h1> -->
-<h2 id="index">INDEX</h2>
-<ol>
+<ul>
+<li><a href="#an%C3%A1lise-do-projeto-phappbr">Análise do projeto ph.app.br</a>
+<ul>
 <li><a href="#infraestrutura-necess%C3%A1ria">Infraestrutura necessária</a></li>
 <li><a href="#defini%C3%A7%C3%A3o-do-banco-de-dados-assistente_virtual">Definição do banco de dados Assistente_Virtual</a></li>
-<li><a href="#estudar-como-o-site-openai-pode-ajudar-a-criar-o--assistant-api-da-openai">Estudar como o site OpenAI pode ajudar a criar o  <em>Assistant API da OpenAI</em>.</a></li>
-<li><a href="#criar-apis-comunica%C3%A7%C3%A3o-com-o-banco-de-dados">Criar apis comunicação com o banco de dados</a></li>
-<li><a href="#banco-de-dados-de-informa%C3%A7%C3%B5es-adicionais">Banco de Dados de Informações Adicionais:</a></li>
+<li><a href="#estudar-como-o-site-openai-pode-ajudar-a-criar-o--assistant-api-da-openai">Estudar como o site OpenAI pode ajudar a criar o  <em>Assistant API da OpenAI</em></a></li>
+<li><a href="#criar-api-de-comunica%C3%A7%C3%A3o-com-o-banco-de-dados">Criar API de comunicação com o banco de dados</a></li>
+<li><a href="#banco-de-dados-de-informa%C3%A7%C3%B5es-adicionais">Banco de Dados de Informações Adicionais</a></li>
 <li><a href="#testes-e-valida%C3%A7%C3%A3o">Testes e Validação:</a></li>
 <li><a href="#documenta%C3%A7%C3%A3o-e-treinamento">Documentação e Treinamento:</a></li>
 <li><a href="#manuten%C3%A7%C3%A3o-e-atualiza%C3%A7%C3%A3o-cont%C3%ADnua">Manutenção e Atualização Contínua:</a></li>
-</ol>
+</ul>
+</li>
+</ul>
 <h2 id="infraestrutura-necessária">Infraestrutura necessária</h2>
 <ol>
 <li><strong>Criar máquina virtual <em>LinuxMint-ph</em> com tudo que precisamos para o projeto;</strong>
@@ -92,6 +95,9 @@
 </li>
 <li>
 <p>Instalar o interpretador <em>python</em> para estudo do Paulo Henrique;</p>
+</li>
+<li>
+<p>Compartilhar a pasta <em>user/local/Lazarus</em> para que eu possa usar na minha máquina a mesma versão do Lazarus que vou usar na máquina do Paulo Henrique.</p>
 </li>
 </ol>
 </li>
@@ -230,7 +236,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="estudar-como-o-site-openai-pode-ajudar-a-criar-o--assistant-api-da-openai">Estudar como o <a href="https://platform.openai.com/docs/overview">site OpenAI</a> pode ajudar a criar o  <em>Assistant API da OpenAI</em>.</h2>
+<h2 id="estudar-como-o-site-openai-pode-ajudar-a-criar-o--assistant-api-da-openai">Estudar como o <a href="https://platform.openai.com/docs/overview">site OpenAI</a> pode ajudar a criar o  <em>Assistant API da OpenAI</em></h2>
 <ol>
 <li>
 <p>Checar se é possível comunicar-se com a IA usando o compilador free pascal; ✅</p>
@@ -333,6 +339,7 @@
 <li>
 <p><strong>Referências:</strong></p>
 <ol>
+<li><a href="https://platform.openai.com/docs/api-reference">api-reference</a></li>
 <li><a href="https://platform.openai.com/docs/quickstart/developer-quickstart">developer-quickstart</a></li>
 <li><a href="https://platform.openai.com/docs/api-reference/introduction">Introduction API OpenAi</a></li>
 <li><a href="https://platform.openai.com/docs/quickstart/developer-quickstart">Developer-quickstart</a></li>
@@ -359,12 +366,94 @@
 </li>
 </ol>
 </li>
+<li>.</li>
 </ol>
 </li>
 </ol>
-<h2 id="criar-apis-comunicação-com-o-banco-de-dados">Criar apis comunicação com o banco de dados</h2>
+<h2 id="criar-api-de-comunicação-com-o-banco-de-dados">Criar API de comunicação com o banco de dados</h2>
 <ol>
-<li><strong>Criar programa para coletar as informações do paciente</strong>
+<li>
+<p><strong>Tecnologias usadas no projeto</strong>:</p>
+<ol>
+<li>Linguagem free pascal
+<ol>
+<li>IDE Lazarus</li>
+<li>Pacotes
+<ol>
+<li>LCL
+<ol>
+<li>Para edição de formulários gráficos</li>
+</ol>
+</li>
+<li>fcl-web
+<ol>
+<li>Para comunicação com protocolo HTTP</li>
+</ol>
+</li>
+<li>Maricarai
+<ol>
+<li>Para criação de formulários LCL e HTML</li>
+</ol>
+</li>
+<li>CHATGPT-main
+<ol>
+<li>Usado para comunicação com chatgpt</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Linguagem javascript
+<ol>
+<li>Editor VsCode
+<ol>
+<li>Usado para editar o javascript que vou usar na IDE Lazaros</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Objeto JSON
+<ol>
+<li>Editor VsCode
+<ol>
+<li>Usado para editar o JSON que vou usar na IDE Lazaros</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Python
+<ol>
+<li>Editor VsCode
+<ol>
+<li>Só prendendo usar essa linguagem caso não consiga fazer com pascal.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Criar projeto AVM.lpi onde A=Assistente, V=Virtual para M=Médicos</p>
+<ol>
+<li>Na unit Main criar as classes abaixo:
+<ol>
+<li>TForm_main
+<ol>
+<li>Class Panel;</li>
+<li>Class Menu;</li>
+<li>OnEventLogin;</li>
+<li>OnEvent????</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Criar menu de opções</li>
+<li></li>
+</ol>
+</li>
+<li>
+<p><strong>Criar programa para coletar as informações do paciente</strong></p>
 <ol>
 <li>
 <p>Obs?</p>
@@ -408,7 +497,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="banco-de-dados-de-informações-adicionais">Banco de Dados de Informações Adicionais:</h2>
+<h2 id="banco-de-dados-de-informações-adicionais">Banco de Dados de Informações Adicionais</h2>
 <ol>
 <li>Criar um <em>banco de dados adicional</em> para armazenar informações sobre <em>convênios</em>, <em>preços de consultas</em> e <em>hospitais onde o médico atende</em>.</li>
 </ol>
