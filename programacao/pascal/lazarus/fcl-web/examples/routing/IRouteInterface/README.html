@@ -1,70 +1,195 @@
 <!DOCTYPE html>
-<html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exemplo de servidor http escrito em Lazarus</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
 
-  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
-  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
 
-  <script type="application/x-javascript" src="/js/generic.js"></script>
-  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      includeHTML();
-    });
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      FixHeader(window, "myHeader");
-    });
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      toggleTree();
-    });
-  </script>
+*/
 
-</head>
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
 
-<body class="vscode-body vscode-dark">
-  <div class="header" id="myHeader">
-    <div class="navbar" w3-include-html="/menu.inc"> </div>
-  </div>
-  <div class="title">
-    <script>
-      document.write(document.title);
-    </script>
-  </div>
-  <main>
-    <!-- markdownlint-disable-next-line -->
-    <span id="topo"><span>
-        <p>This demo demonstrates the routing mechanism of fpWeb.</p>
-        <p>It can be run as a CGI or as a HTTP standalone server program.</p>
-        <p>In order to get a correct set of routes in the demo, demorouting.ini file
-          must be configured correctly and placed next to the binary.</p>
-        <p>There is a different section for each type of binary: (CGI or Standalone)</p>
-        <p>Each section needs at least the BaseURL key, this is the URL where the
-          application can be reached.</p>
-        <p>Example:</p>
-        <p>[CGI]
-          ; Assuming the demo is in cgi-bin
-          BaseURL=http://localhost/cgi-bin/demorouting.cgi</p>
-        <p>[Standalone]
-          Port=8080
-          ; Optional, the following is the default.
-          ;BaseURL=http://localhost:8080/</p>
-  </main>
-  <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
 
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
 
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
 
-</body>
+.hljs-literal {
+  color: #56b6c2;
+}
 
-</html>
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+        
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+    </head>
+    <body class="vscode-body vscode-dark">
+        <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<h1 id="exemplo-de-servidor-http-escrito-em-lazarus">Exemplo de servidor http escrito em Lazarus</h1>
+<ul>
+<li>
+<p>Esta demonstração demonstra o mecanismo de roteamento do fpWeb.</p>
+</li>
+<li>
+<p>Ele pode ser executado como um CGI ou como um programa de servidor HTTP independente.</p>
+</li>
+<li>
+<p>Para obter um conjunto correto de rotas na demonstração, usamos o arquivo demo routing.ini deve ser configurado corretamente e colocado próximo ao binário.</p>
+</li>
+<li>
+<p>Existe uma seção diferente para cada tipo de binário: (CGI ou Standalone).</p>
+</li>
+<li>
+<p>Cada seção precisa de pelo menos a chave <em>BaseURL</em>, esta é a <em>URL</em> onde o aplicativo pode ser alcançado.</p>
+</li>
+<li>
+<p>Example:</p>
+<pre><code class="hljs language-init">  ; arquivo sample.ini
+
+  [CGI]
+  ; Assuming the demo is in cgi-bin
+  BaseURL=http://localhost/cgi-bin/demorouting.cgi
+
+  [Standalone]
+  Port=8080
+  ; Optional, the following is the default.
+  ;BaseURL=http://localhost:8080/
+
+</code></pre>
+</li>
+</ul>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+        
+        
+    </body>
+    </html>

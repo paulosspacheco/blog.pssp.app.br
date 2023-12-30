@@ -24,16 +24,15 @@
       <Unit2>
         <Filename Value="../includes/rotas.inc"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="35"/>
-        <CursorPos Y="49"/>
+        <CursorPos X="50" Y="63"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="../includes/rotas_h.inc"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <TopLine Value="10"/>
         <CursorPos X="33" Y="23"/>

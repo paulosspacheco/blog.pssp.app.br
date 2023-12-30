@@ -45,17 +45,15 @@ begin
     L.Add('<bodY>');
     L.Add('<H1>'+ATitle+'</H1>');
     L.Add('<A HREF="#routes">Jump to routes overview</A>');
-
     if (Length(RouteParams)>0) then
-    begin
+      begin
       L.Add('<H2>Routing parameters:</H2>');
       L.Add('<table>');
       L.Add('<tr><th>Param</th><th>Value</th></tr>');
       for S in RouteParams do
         L.Add('<tr><td>'+S+'</th><th>'+ARequest.RouteParams[S]+'</th></tr>');
       L.Add('</table>');
-    end;
-
+      end;
 //    DumpRequest(ARequest,L,False);
     DumpRoutes(L,ARequest.URL);
     L.Add(' </body>');

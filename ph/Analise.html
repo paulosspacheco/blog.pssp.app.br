@@ -94,10 +94,10 @@
 <p>Criar <em>Serviço Rest</em> para comunicar-se com a inteligência artificial.</p>
 </li>
 <li>
-<p>Instalar o interpretador <em>python</em> para estudo do Paulo Henrique;</p>
+<p>Instalar o interpretador <em>python</em> para estudo do Paulo Henrique; ✅</p>
 </li>
 <li>
-<p>Compartilhar a pasta <em>user/local/Lazarus</em> para que eu possa usar na minha máquina a mesma versão do Lazarus que vou usar na máquina do Paulo Henrique.</p>
+<p>Compartilhar a pasta <em>user/local/Lazarus</em> para que eu possa usar na minha máquina a mesma versão do Lazarus que vou usar na máquina do Paulo Henrique. ✅</p>
 </li>
 </ol>
 </li>
@@ -434,21 +434,110 @@
 </ol>
 </li>
 <li>
-<p>Criar projeto AVM.lpi onde A=Assistente, V=Virtual para M=Médicos</p>
+<p><strong>Criar pasta <em>avm</em> onde <em>A</em>=Assistente, <em>V</em>=Virtual e <em>M</em>=Médicos</strong></p>
 <ol>
-<li>Na unit Main criar as classes abaixo:
+<li>Criar pasta <em>avm/dm</em> onde <em>D</em>=Data e <em>M</em>=module
 <ol>
-<li>TForm_main
+<li>Nesta pasta deve ser registrada todo processamento que não dependa de componentes visuais;
+<ol>
+<li>Criar datamodule <em>DM_operador</em> para consultas para incluir, alterar e excluir a tabela de operadores;</li>
+<li>Criar datamodule  <em>DM_hospitais</em> para consultas para incluir, alterar e excluir a tabela de hospitais;</li>
+<li>Criar datamodule  <em>DM_status_da_agenda_ou_consulta</em> para consultas para incluir, alterar e excluir a tabela de status_da_agenda_ou_consulta;</li>
+<li>Criar datamodule  <em>DM_medicos</em> para consultas para incluir, alterar e excluir a tabela de médicos;</li>
+<li>Criar datamodule  <em>DM_serviço_de_agendas</em> para consultas para incluir, alterar e excluir a tabela de serviço_de_agendas;</li>
+<li>Criar datamodule  <em>DM_convenios</em> para consultas para incluir, alterar e excluir a tabela de convênios;</li>
+<li>Criar datamodule  <em>DM_clientes</em> para consultas para incluir, alterar e excluir a tabela de clientes;</li>
+<li>Criar datamodule  <em>DM_integracao</em>  para consultas para incluir, alterar e excluir a tabela de integração ;</li>
+<li>Criar datamodule  <em>DM_expediente_do_medico_data</em>  para consultas para incluir, alterar e excluir a tabela de expediente_do_medico_data ;</li>
+<li>Criar datamodule  <em>DM_expediente_do_medico_horas</em> para consultas para incluir, alterar e excluir a tabela de expediente_do_medico_horas;</li>
+<li>Criar datamodule  <em>DM_agenda</em> para consultas para incluir, alterar e excluir a tabela de agenda;</li>
+<li>Criar datamodule  <em>DM_formas_de_pagamento</em> para consultas para incluir, alterar e excluir a tabela de formas_de_pagamento;</li>
+<li>Criar datamodule  <em>DM_consulta</em>  para consultas para incluir, alterar e excluir a tabela de consulta;</li>
+<li>Criar datamodule <em>DM_Main</em> para concentrar todos os datamodule do projeto;</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Criar pasta <em>lcl</em> onde <em>L</em>=Lazarus, <em>C</em>=Component e <em>L</em>=Library</strong></p>
+<ol>
+<li>Criar pasta <em>avm/lcl</em>
+<ol>
+<li>Criar projeto de nome <em>avm_lcl</em>;</li>
+<li>Criar pasta <em>avm/lcl/units</em>
+<ol>
+<li>Nesta pasta deve ficar todos os formulários que dependem do pacote <em>lcl</em>
+<ol>
+<li>
+<p>Criar formulário <em>TForm_Main</em> para edição de todos os formulário do projeto:</p>
+</li>
+<li>
+<p>Criar formulário <em>TForm_model</em> para o modelo básico de um formulário <em>CRUD</em> que possa ser herdado;</p>
+<ol>
+<li>Adicionar os componentes: (obs: Checar se posso aproveitar o form básico que criei para o gcic vcl.)
 <ol>
 <li>Class Panel;</li>
 <li>Class Menu;</li>
 <li>OnEventLogin;</li>
 <li>OnEvent????</li>
-</ol>
-</li>
-</ol>
-</li>
 <li>Criar menu de opções</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Criar formulário modelo básico de um formulário crud mestre/detalhe que possa ser herdado;</p>
+<ol>
+<li>Pensar....</li>
+</ol>
+</li>
+<li>
+<p>Criar formulário _TForm_operado_r edição da tabela de operadores;</p>
+</li>
+<li>
+<p>Criar formulário <em>TForm_hospitais</em> edição da tabela de hospitais;</p>
+</li>
+<li>
+<p>Criar formulário <em>TForm_status_da_agenda_ou_consulta</em> edição da tabela de status_da_agenda_ou_consulta;</p>
+</li>
+<li>
+<p>Criar formulário <em>TForm_medicos</em> edição da tabela de médicos;</p>
+</li>
+<li>
+<p>Criar formulário <em>TForm_serviço_de_agendas</em> edição da tabela de serviço_de_agendas;</p>
+</li>
+<li>
+<p>Criar formulário <em>TForm_convenios</em> edição da tabela de convênios;</p>
+</li>
+<li>
+<p>Criar formulário <em>TForm_clientes</em> edição da tabela de clientes;</p>
+</li>
+<li>
+<p>Criar formulário <em>TForm_integracao</em>  edição da tabela de integração ;</p>
+</li>
+<li>
+<p>Criar formulário <em>TForm_expediente_do_medico_data</em>  edição da tabela de expediente_do_medico_data ;</p>
+</li>
+<li>
+<p>Criar formulário <em>TForm_expediente_do_medico_horas</em> edição da tabela de expediente_do_medico_horas;</p>
+</li>
+<li>
+<p>Criar formulário <em>TForm_agenda</em> edição da tabela de agenda;</p>
+</li>
+<li>
+<p>Criar formulário <em>TForm_formas_de_pagamento</em> edição da tabela de formas_de_pagamento;</p>
+</li>
+<li>
+<p>Criar formulário <em>TForm_consulta</em>  edição da tabela de consulta;</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
 <li></li>
 </ol>
 </li>

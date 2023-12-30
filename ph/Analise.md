@@ -52,8 +52,9 @@
 
    10. Criar _Serviço Rest_ para comunicar-se com a inteligência artificial.
 
-   11. Instalar o interpretador _python_ para estudo do Paulo Henrique;
-   12. Compartilhar a pasta _user/local/Lazarus_ para que eu possa usar na minha máquina a mesma versão do Lazarus que vou usar na máquina do Paulo Henrique.
+   11. Instalar o interpretador _python_ para estudo do Paulo Henrique; ✅
+
+   12. Compartilhar a pasta _user/local/Lazarus_ para que eu possa usar na minha máquina a mesma versão do Lazarus que vou usar na máquina do Paulo Henrique. ✅
 
 ## Definição do banco de dados Assistente_Virtual
 
@@ -269,16 +270,55 @@
       1. Editor VsCode
          1. Só prendendo usar essa linguagem caso não consiga fazer com pascal.
 
-2. Criar projeto AVM.lpi onde A=Assistente, V=Virtual para M=Médicos
-   1. Na unit Main criar as classes abaixo:
-      1. TForm_main
-         1. Class Panel;
-         2. Class Menu;
-         3. OnEventLogin;
-         4. OnEvent????
-   2. Criar menu de opções
-   3. 
-3. **Criar programa para coletar as informações do paciente**
+2. **Criar pasta _avm_ onde _A_=Assistente, _V_=Virtual e _M_=Médicos**
+   1. Criar pasta _avm/dm_ onde _D_=Data e _M_=module
+      1. Nesta pasta deve ser registrada todo processamento que não dependa de componentes visuais;
+         1. Criar datamodule _DM_operador_ para consultas para incluir, alterar e excluir a tabela de operadores;
+         2. Criar datamodule  _DM_hospitais_ para consultas para incluir, alterar e excluir a tabela de hospitais;
+         3. Criar datamodule  _DM_status_da_agenda_ou_consulta_ para consultas para incluir, alterar e excluir a tabela de status_da_agenda_ou_consulta;
+         4. Criar datamodule  _DM_medicos_ para consultas para incluir, alterar e excluir a tabela de médicos;
+         5. Criar datamodule  _DM_serviço_de_agendas_ para consultas para incluir, alterar e excluir a tabela de serviço_de_agendas;
+         6. Criar datamodule  _DM_convenios_ para consultas para incluir, alterar e excluir a tabela de convênios;
+         7. Criar datamodule  _DM_clientes_ para consultas para incluir, alterar e excluir a tabela de clientes;
+         8. Criar datamodule  _DM_integracao_  para consultas para incluir, alterar e excluir a tabela de integração ;
+         9. Criar datamodule  _DM_expediente_do_medico_data_  para consultas para incluir, alterar e excluir a tabela de expediente_do_medico_data ;
+         10. Criar datamodule  _DM_expediente_do_medico_horas_ para consultas para incluir, alterar e excluir a tabela de expediente_do_medico_horas;
+         11. Criar datamodule  _DM_agenda_ para consultas para incluir, alterar e excluir a tabela de agenda;
+         12. Criar datamodule  _DM_formas_de_pagamento_ para consultas para incluir, alterar e excluir a tabela de formas_de_pagamento;
+         13. Criar datamodule  _DM_consulta_  para consultas para incluir, alterar e excluir a tabela de consulta;
+         14. Criar datamodule _DM_Main_ para concentrar todos os datamodule do projeto;
+
+3. **Criar pasta _lcl_ onde _L_=Lazarus, _C_=Component e _L_=Library**
+   1. Criar pasta _avm/lcl_
+      1. Criar projeto de nome _avm_lcl_;
+      2. Criar pasta _avm/lcl/units_
+         1. Nesta pasta deve ficar todos os formulários que dependem do pacote _lcl_
+            1. Criar formulário _TForm_Main_ para edição de todos os formulário do projeto:
+            2. Criar formulário _TForm_model_ para o modelo básico de um formulário _CRUD_ que possa ser herdado;
+               1. Adicionar os componentes: (obs: Checar se posso aproveitar o form básico que criei para o gcic vcl.)
+                  1. Class Panel;
+                  2. Class Menu;
+                  3. OnEventLogin;
+                  4. OnEvent????
+                  5. Criar menu de opções
+
+            3. Criar formulário modelo básico de um formulário crud mestre/detalhe que possa ser herdado;
+               1. Pensar....
+            4. Criar formulário _TForm_operado_r edição da tabela de operadores;
+            5. Criar formulário _TForm_hospitais_ edição da tabela de hospitais;
+            6. Criar formulário _TForm_status_da_agenda_ou_consulta_ edição da tabela de status_da_agenda_ou_consulta;
+            7. Criar formulário _TForm_medicos_ edição da tabela de médicos;
+            8. Criar formulário _TForm_serviço_de_agendas_ edição da tabela de serviço_de_agendas;
+            9. Criar formulário _TForm_convenios_ edição da tabela de convênios;
+            10. Criar formulário _TForm_clientes_ edição da tabela de clientes;
+            11. Criar formulário _TForm_integracao_  edição da tabela de integração ;
+            12. Criar formulário _TForm_expediente_do_medico_data_  edição da tabela de expediente_do_medico_data ;
+            13. Criar formulário _TForm_expediente_do_medico_horas_ edição da tabela de expediente_do_medico_horas;
+            14. Criar formulário _TForm_agenda_ edição da tabela de agenda;
+            15. Criar formulário _TForm_formas_de_pagamento_ edição da tabela de formas_de_pagamento;
+            16. Criar formulário _TForm_consulta_  edição da tabela de consulta;
+   2. 
+4. **Criar programa para coletar as informações do paciente**
    1. Obs?
       1. Quais textos utilizar para interagir com o cliente no WhatsApp?
          1. Podemos usar a IA para textos humanizados.
