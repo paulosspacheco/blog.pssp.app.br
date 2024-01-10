@@ -35,7 +35,18 @@
 10. [**Comandos de Informação de Estado**](#id_cmd_informacao_estado)
 11. [**Comandos de Processamento de Texto**](#id_cmd_processamento_texto)
 12. [**Web**](#id_web)
-13. [REFERÊNCIAS](#id_referencias)
+    1. [html2ps - Conversor de html para ps](#id_html2ps)
+    2. [latex2html - Conversor de LaTeX para html](#id_latex2html)
+    3. [lynx - Navegador web baseado em modo de texto](#id_lynx)
+    4. [Chromium - É um projeto de navegador web de código aberto desenvolvido pela Google](#id_Chromium)
+    5. [sitecopy - Aplicação que nos permite manter fácil e remotamente web sites](#id_sitecopy)
+    6. [weblint - Verificador de sintaxes e de estilos html](#id_weblint)
+13. [Comandos para manutenção de hardware](#id_cmd_hardware)
+    1. [stress-ng - Stressando MEM, DISCO e CPU](#id_stress_ng)
+    2. [cinnamon-settings info:  Mostra as informações do sistema operacional e de hardware na _interface gráfica cinnamon_](#id_cinnamon_settings_info).
+    3. [free - Mostra no console a quantidade de memória instalada.](#id_free)
+    4. [memtester - teste de memória](#id_memtester)
+14. [REFERÊNCIAS](#id_referencias)
 
 <!-- markdownlint-disable-next-line -->
 
@@ -1346,16 +1357,146 @@
 
 13. <!-- markdownlint-disable-next-line -->
     <span id='id_web'></span>**Web**
-    1. _html2ps_: Conversor de html para ps
-    2. _latex2html_: Conversor de LaTeX para html
-    3. _lynx_: Navegador web baseado em modo de texto, ou seja, é um web browser que nos permite abrir todo o tipo de páginas visualizando apenas os textos elinks, não vendo assim as imagens, e sendo por isso bastante rápido, mas requere prática para ser manuseado
-    4. _Chromium_ é um projeto de navegador web de código aberto desenvolvido pela Google, no qual o Google Chrome baseia o seu código-fonte.
-    5. [sitecopy](https://linux.die.net/man/1/sitecopy): Aplicação que nos permite manter fácil e remotamente web sites
-    6. _weblint_: Verificador de sintaxes e de estilos html
+    1. <!-- markdownlint-disable-next-line -->
+       <span id='id_html2ps'></span>
+       _html2ps_: Conversor de html para [ps](https://www.adobe.com/br/creativecloud/file-types/image/vector/ps-file.html#:~:text=PS%20vem%20de%20PostScript%2C%20um,abri%2Dlo%20em%20um%20aplicativo.)
+    2. <!-- markdownlint-disable-next-line -->
+       <span id='id_latex2html'></span>
+       _latex2html_: Conversor de LaTeX para html
+    3. <!-- markdownlint-disable-next-line -->
+       <span id='id_lynx'></span>
+       _lynx_: Navegador web baseado em modo de texto, ou seja, é um web browser que nos permite abrir todo o tipo de páginas visualizando apenas os textos elinks, não vendo assim as imagens, e sendo por isso bastante rápido, mas requere prática para ser manuseado
+    4. <!-- markdownlint-disable-next-line -->
+       <span id='id_Chromium'></span>
+       _Chromium_ é um projeto de navegador web de código aberto desenvolvido pela Google, no qual o Google Chrome baseia o seu código-fonte.
+    5. <!-- markdownlint-disable-next-line -->
+       <span id='id_sitecopy'></span>
+       [sitecopy](https://linux.die.net/man/1/sitecopy): Aplicação que nos permite manter fácil e remotamente web sites
+    6. <!-- markdownlint-disable-next-line -->
+       <span id='id_weblint'></span>
+       _weblint_: Verificador de sintaxes e de estilos html
 
-   <!-- markdownlint-disable-next-line -->
+14. <!-- markdownlint-disable-next-line -->
+    <span id='id_cmd_hardware'></span>**Comandos para manutenção de hardware**
+    1. <!-- markdownlint-disable-next-line -->
+       <span id='id_stress_ng'></span>_[stress-ng](https://manpages.debian.org/jessie/stress-ng/stress-ng.1)_ :  Estressando MEM, DISCO e CPU
+       1. Com a ferramenta Stress-ng podemos literalmente realizar o Stress de alguns recursos do seu servidor, sendo eles: Cpu, memória e disco. Com o Stress-ng podemos estressar nosso servidor afim de descobrir o quanto de carga ele aguentará sem perder a performance. É possível fazer testes isolados nos componentes informados, para a analise de desempenho ser mais assertiva.
+          1. O stress-ng criado para fazer uma máquina trabalhar com alto consumo para simular problemas de hardware como excedentes térmicos, bem como erros do sistema operacional que ocorrem apenas quando um sistema é golpeado com força.
 
-14. <span id='id_referencias'></span>**REFERÊNCIAS**
+       2. INSTALANDO STRESS-NG
+
+          ```bash
+
+             sudo apt update
+             sudo apt install stress-ng           
+
+          ```
+
+       3. Exemplo de uso:
+          1. Recomendado pelo desenvolvedor do projeto:
+             1. O comando abaixo é bem completo, o que cada opção faz está documentado no comando _stress-ng -h_
+
+                ```bash
+
+                   sudo stress-ng --cpu 1 --vm 1 --hdd 1 --fork 1 --switch 1 --timeout 10 --metrics
+
+                ```
+
+             2. Executar 8 tarefas de memória virtual que combinados usam 80% da memória disponível por 1 hora. Assim, cada tarefa usa 10% da memória disponível:
+
+                ```bash
+
+                   sudo stress-ng --vm 8 --vm-bytes 80% -t 1h
+
+                ```
+
+             3. Executa por 60 segundos com 4 tarefas de CPU, 2 tarefas IO e 1 node usando 1G de memória virtual:
+
+                ```bash
+
+                   sudo stress-ng --cpu 4 --io 2 --vm 1 --vm-bytes 1G --timeout 60s
+
+                ```
+
+             4. Executa 2 instâncias das tarefas de IO combinados usando um total de 10% do espaço disponível no sistema de arquivos por 10 minutos. Cada tarefa utilizará 5% do espaço disponível no sistema de arquivos:
+
+                ```bash
+
+                   sudo stress-ng --iomix 2 --iomix-bytes 10% -t 10m
+
+                ```
+
+             5. Com este comando é possível medir as latências de agendamento em tempo real criadas pelo workers do disco rígido. O comando usa um relógio de alta resolução em nanossegundos para medir as latências durante o sleeps de 10.000 nanossegundos. No final de 1 minuto de tensão, a distribuição de latência com intervalos de 2500 ns será exibida. OBS: deve ser executado com privilégios de superusuário para permitir que o agendamento em tempo real obtenha medidas precisas:
+
+                ```bash
+
+                   sudo stress-ng --cyclic 1 --cyclic-dist 2500 --cyclic-method clock_ns --cyclic-prio 100--cyclic-sleep 10000 --hdd 0 -t 1m
+
+                ```
+
+    2. <!-- markdownlint-disable-next-line -->
+       <span id='id_cinnamon_settings_info'></span> _[cinnamon-settings info](https://linuxcommandlibrary.com/man/cinnamon-settings)_:  Mostra as informações do sistema operacional e de hardware na _interface gráfica cinnamon_.
+        1. Este comando pode ser encontrado no menu de opções do cinnamon com o nome de _Informações do Sistema_ ou pode ser executado  pelo console da seguinte forma:
+
+             ```bash
+
+                cinnamon-settings info
+
+             ```
+
+           1. Nota : Este comando não pode ser executado como root porque o root não pode executar o browser da web.
+
+    3. <!-- markdownlint-disable-next-line -->
+       <span id='id_free'></span>
+       _[free](https://man7.org/linux/man-pages/man1/free.1.html)_ - Mostra no console a quantidade de memória instalada.
+
+         ```bash
+
+            free -m
+
+         ```
+
+    4. <!-- markdownlint-disable-next-line -->
+       <span id='id_memtester'></span>
+       _[memtester](https://linux.die.net/man/8/memtester)_ - teste de memória
+
+         ```bash
+
+            # Checa o tamanho da memória para saber o total de memória a ser testada.
+            free -m
+                           total       usada       livre    compart.  buff/cache  disponível
+               Mem.:        7883        2575        1945         186        3363        4826
+               Swap:           0           0           0
+
+            # Testa uma vez o total de memória.
+            memtester 7883 1
+               Loop 1/1:
+               Stuck Address       : ok         
+               Random Value        : ok
+               Compare XOR         : ok
+               Compare SUB         : ok
+               Compare MUL         : ok
+               Compare DIV         : ok
+               Compare OR          : ok
+               Compare AND         : ok
+               Sequential Increment: ok
+               Solid Bits          : ok         
+               Block Sequential    : ok         
+               Checkerboard        : ok         
+               Bit Spread          : ok         
+               Bit Flip            : ok         
+               Walking Ones        : ok         
+               Walking Zeroes      : ok         
+               8-bit Writes        : ok
+               16-bit Writes       : ok
+
+               Done.
+
+
+         ```
+
+15. <!-- markdownlint-disable-next-line -->
+    <span id='id_referencias'></span>**REFERÊNCIAS**
     1. [Manual Linux](https://man7.org/linux/man-pages/man1/ln.1.html)
     2. <https://www.hostinger.com.br/tutoriais/como-criar-link-simbolico-linux/>
     3. <https://canaltech.com.br/linux/aprenda-a-usar-links-simbolicos-e-hardlinks-no-linux/>
@@ -1364,6 +1505,7 @@
     6. [Comandos Importantes Linux](https://www.devmedia.com.br/comandos-importantes-linux/23893)
     7. [10 exemplos do comando rsync para backup e sincronismo de arquivos no Linux](http://www.bosontreinamentos.com.br/linux/10-exemplos-do-comando-rsync-para-backup-e-sincronismo-de-arquivos-no-linux/)
     8. [rsync_options](https://ss64.com/bash/rsync_options.html)
+    9. [Estressando MEM, DISCO e CPU com Stress-ng (Debian9)](https://blog.ironlinux.com.br/estressando-mem-disco-e-cpu-com-stress-ng-debian9/)
 
 <!-- markdownlint-disable-next-line -->
 

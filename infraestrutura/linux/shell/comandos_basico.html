@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Comandos b&aacute;sico do Shell do Linux &lt;a href&equals;&quot;comandos&lowbar;basico&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Comandos b&aacute;sico do Shell do Linux &lt;a href&equals;&quot;comandos&lowbar;basico&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
+
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
@@ -18,9 +19,9 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <div class="header" id="myHeader">
+        </head>
+        <body class="vscode-body vscode-dark">
+            <div class="header" id="myHeader">
   <div class="navbar" w3-include-html="/menu.inc"> </div>
 </div>
 <div class="title"><script> document.write(document.title);</script></div>  
@@ -63,7 +64,24 @@
 <li><a href="#id_cmd_controle_processos"><strong>Comandos de Controle de Processos</strong></a></li>
 <li><a href="#id_cmd_informacao_estado"><strong>Comandos de Informação de Estado</strong></a></li>
 <li><a href="#id_cmd_processamento_texto"><strong>Comandos de Processamento de Texto</strong></a></li>
-<li><a href="#id_web"><strong>Web</strong></a></li>
+<li><a href="#id_web"><strong>Web</strong></a>
+<ol>
+<li><a href="#id_html2ps">html2ps - Conversor de html para ps</a></li>
+<li><a href="#id_latex2html">latex2html - Conversor de LaTeX para html</a></li>
+<li><a href="#id_lynx">lynx - Navegador web baseado em modo de texto</a></li>
+<li><a href="#id_Chromium">Chromium - É um projeto de navegador web de código aberto desenvolvido pela Google</a></li>
+<li><a href="#id_sitecopy">sitecopy - Aplicação que nos permite manter fácil e remotamente web sites</a></li>
+<li><a href="#id_weblint">weblint - Verificador de sintaxes e de estilos html</a></li>
+</ol>
+</li>
+<li><a href="#id_cmd_hardware">Comandos para manutenção de hardware</a>
+<ol>
+<li><a href="#id_stress_ng">stress-ng - Stressando MEM, DISCO e CPU</a></li>
+<li><a href="#id_cinnamon_settings_info">cinnamon-settings info:  Mostra as informações do sistema operacional e de hardware na <em>interface gráfica cinnamon</em></a>.</li>
+<li><a href="#id_free">free - Mostra no console a quantidade de memória instalada.</a></li>
+<li><a href="#id_memtester">memtester - teste de memória</a></li>
+</ol>
+</li>
 <li><a href="#id_referencias">REFERÊNCIAS</a></li>
 </ol>
 <!-- markdownlint-disable-next-line -->
@@ -1451,18 +1469,168 @@ result_cp=<span class="hljs-string">"$?"</span>
 <!-- markdownlint-disable-next-line -->
 <p><span id='id_web'></span><strong>Web</strong></p>
 <ol>
-<li><em>html2ps</em>: Conversor de html para ps</li>
-<li><em>latex2html</em>: Conversor de LaTeX para html</li>
-<li><em>lynx</em>: Navegador web baseado em modo de texto, ou seja, é um web browser que nos permite abrir todo o tipo de páginas visualizando apenas os textos elinks, não vendo assim as imagens, e sendo por isso bastante rápido, mas requere prática para ser manuseado</li>
-<li><em>Chromium</em> é um projeto de navegador web de código aberto desenvolvido pela Google, no qual o Google Chrome baseia o seu código-fonte.</li>
-<li><a href="https://linux.die.net/man/1/sitecopy">sitecopy</a>: Aplicação que nos permite manter fácil e remotamente web sites</li>
-<li><em>weblint</em>: Verificador de sintaxes e de estilos html</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<span id='id_html2ps'></span>
+<em>html2ps</em>: Conversor de html para <a href="https://www.adobe.com/br/creativecloud/file-types/image/vector/ps-file.html#:~:text=PS%20vem%20de%20PostScript%2C%20um,abri%2Dlo%20em%20um%20aplicativo.">ps</a></li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<span id='id_latex2html'></span>
+<em>latex2html</em>: Conversor de LaTeX para html</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<span id='id_lynx'></span>
+<em>lynx</em>: Navegador web baseado em modo de texto, ou seja, é um web browser que nos permite abrir todo o tipo de páginas visualizando apenas os textos elinks, não vendo assim as imagens, e sendo por isso bastante rápido, mas requere prática para ser manuseado</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<span id='id_Chromium'></span>
+<em>Chromium</em> é um projeto de navegador web de código aberto desenvolvido pela Google, no qual o Google Chrome baseia o seu código-fonte.</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<span id='id_sitecopy'></span>
+<a href="https://linux.die.net/man/1/sitecopy">sitecopy</a>: Aplicação que nos permite manter fácil e remotamente web sites</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<span id='id_weblint'></span>
+<em>weblint</em>: Verificador de sintaxes e de estilos html</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_cmd_hardware'></span><strong>Comandos para manutenção de hardware</strong></p>
+<ol>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_stress_ng'></span><em><a href="https://manpages.debian.org/jessie/stress-ng/stress-ng.1">stress-ng</a></em> :  Estressando MEM, DISCO e CPU</p>
+<ol>
+<li>
+<p>Com a ferramenta Stress-ng podemos literalmente realizar o Stress de alguns recursos do seu servidor, sendo eles: Cpu, memória e disco. Com o Stress-ng podemos estressar nosso servidor afim de descobrir o quanto de carga ele aguentará sem perder a performance. É possível fazer testes isolados nos componentes informados, para a analise de desempenho ser mais assertiva.</p>
+<ol>
+<li>O stress-ng criado para fazer uma máquina trabalhar com alto consumo para simular problemas de hardware como excedentes térmicos, bem como erros do sistema operacional que ocorrem apenas quando um sistema é golpeado com força.</li>
+</ol>
+</li>
+<li>
+<p>INSTALANDO STRESS-NG</p>
+<pre><code class="hljs language-bash">
+   sudo apt update
+   sudo apt install stress-ng           
+
+</code></pre>
+</li>
+<li>
+<p>Exemplo de uso:</p>
+<ol>
+<li>Recomendado pelo desenvolvedor do projeto:
+<ol>
+<li>
+<p>O comando abaixo é bem completo, o que cada opção faz está documentado no comando <em>stress-ng -h</em></p>
+<pre><code class="hljs language-bash">
+   sudo stress-ng --cpu 1 --vm 1 --hdd 1 --fork 1 --switch 1 --timeout 10 --metrics
+
+</code></pre>
+</li>
+<li>
+<p>Executar 8 tarefas de memória virtual que combinados usam 80% da memória disponível por 1 hora. Assim, cada tarefa usa 10% da memória disponível:</p>
+<pre><code class="hljs language-bash">
+   sudo stress-ng --vm 8 --vm-bytes 80% -t 1h
+
+</code></pre>
+</li>
+<li>
+<p>Executa por 60 segundos com 4 tarefas de CPU, 2 tarefas IO e 1 node usando 1G de memória virtual:</p>
+<pre><code class="hljs language-bash">
+   sudo stress-ng --cpu 4 --io 2 --vm 1 --vm-bytes 1G --timeout 60s
+
+</code></pre>
+</li>
+<li>
+<p>Executa 2 instâncias das tarefas de IO combinados usando um total de 10% do espaço disponível no sistema de arquivos por 10 minutos. Cada tarefa utilizará 5% do espaço disponível no sistema de arquivos:</p>
+<pre><code class="hljs language-bash">
+   sudo stress-ng --iomix 2 --iomix-bytes 10% -t 10m
+
+</code></pre>
+</li>
+<li>
+<p>Com este comando é possível medir as latências de agendamento em tempo real criadas pelo workers do disco rígido. O comando usa um relógio de alta resolução em nanossegundos para medir as latências durante o sleeps de 10.000 nanossegundos. No final de 1 minuto de tensão, a distribuição de latência com intervalos de 2500 ns será exibida. OBS: deve ser executado com privilégios de superusuário para permitir que o agendamento em tempo real obtenha medidas precisas:</p>
+<pre><code class="hljs language-bash">
+   sudo stress-ng --cyclic 1 --cyclic-dist 2500 --cyclic-method clock_ns --cyclic-prio 100--cyclic-sleep 10000 --hdd 0 -t 1m
+
+</code></pre>
+</li>
 </ol>
 </li>
 </ol>
-   <!-- markdownlint-disable-next-line -->
-<ol start="14">
-<li><span id='id_referencias'></span><strong>REFERÊNCIAS</strong>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_cinnamon_settings_info'></span> <em><a href="https://linuxcommandlibrary.com/man/cinnamon-settings">cinnamon-settings info</a></em>:  Mostra as informações do sistema operacional e de hardware na <em>interface gráfica cinnamon</em>.</p>
+<ol>
+<li>
+<p>Este comando pode ser encontrado no menu de opções do cinnamon com o nome de <em>Informações do Sistema</em> ou pode ser executado  pelo console da seguinte forma:</p>
+<pre><code class="hljs language-bash">
+   cinnamon-settings info
+
+</code></pre>
+<ol>
+<li>Nota : Este comando não pode ser executado como root porque o root não pode executar o browser da web.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_free'></span>
+<em><a href="https://man7.org/linux/man-pages/man1/free.1.html">free</a></em> - Mostra no console a quantidade de memória instalada.</p>
+<pre><code class="hljs language-bash">
+   free -m
+
+</code></pre>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_memtester'></span>
+<em><a href="https://linux.die.net/man/8/memtester">memtester</a></em> - teste de memória</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Checa o tamanho da memória para saber o total de memória a ser testada.</span>
+   free -m
+                  total       usada       livre    compart.  buff/cache  disponível
+      Mem.:        7883        2575        1945         186        3363        4826
+      Swap:           0           0           0
+
+   <span class="hljs-comment"># Testa uma vez o total de memória.</span>
+   memtester 7883 1
+      Loop 1/1:
+      Stuck Address       : ok         
+      Random Value        : ok
+      Compare XOR         : ok
+      Compare SUB         : ok
+      Compare MUL         : ok
+      Compare DIV         : ok
+      Compare OR          : ok
+      Compare AND         : ok
+      Sequential Increment: ok
+      Solid Bits          : ok         
+      Block Sequential    : ok         
+      Checkerboard        : ok         
+      Bit Spread          : ok         
+      Bit Flip            : ok         
+      Walking Ones        : ok         
+      Walking Zeroes      : ok         
+      8-bit Writes        : ok
+      16-bit Writes       : ok
+
+      Done.
+
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
+<p><span id='id_referencias'></span><strong>REFERÊNCIAS</strong></p>
 <ol>
 <li><a href="https://man7.org/linux/man-pages/man1/ln.1.html">Manual Linux</a></li>
 <li><a href="https://www.hostinger.com.br/tutoriais/como-criar-link-simbolico-linux/">https://www.hostinger.com.br/tutoriais/como-criar-link-simbolico-linux/</a></li>
@@ -1472,6 +1640,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 <li><a href="https://www.devmedia.com.br/comandos-importantes-linux/23893">Comandos Importantes Linux</a></li>
 <li><a href="http://www.bosontreinamentos.com.br/linux/10-exemplos-do-comando-rsync-para-backup-e-sincronismo-de-arquivos-no-linux/">10 exemplos do comando rsync para backup e sincronismo de arquivos no Linux</a></li>
 <li><a href="https://ss64.com/bash/rsync_options.html">rsync_options</a></li>
+<li><a href="https://blog.ironlinux.com.br/estressando-mem-disco-e-cpu-com-stress-ng-debian9/">Estressando MEM, DISCO e CPU com Stress-ng (Debian9)</a></li>
 </ol>
 </li>
 </ol>
@@ -1524,7 +1693,7 @@ result_cp=<span class="hljs-string">"$?"</span>
 <script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
-        
-    </body>
-    </html>
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

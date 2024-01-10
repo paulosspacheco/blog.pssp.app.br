@@ -271,22 +271,23 @@
          1. Só prendendo usar essa linguagem caso não consiga fazer com pascal.
 
 2. **Criar pasta _avm_ onde _A_=Assistente, _V_=Virtual e _M_=Médicos**
-   1. Criar pasta _avm/dm_ onde _D_=Data e _M_=module
+   1. Criar pasta _avm/dm_ onde _D_=Data e _M_=module ✅  
       1. Nesta pasta deve ser registrada todo processamento que não dependa de componentes visuais;
-         1. Criar datamodule _DM_operador_ para consultas para incluir, alterar e excluir a tabela de operadores;
-         2. Criar datamodule  _DM_hospitais_ para consultas para incluir, alterar e excluir a tabela de hospitais;
-         3. Criar datamodule  _DM_status_da_agenda_ou_consulta_ para consultas para incluir, alterar e excluir a tabela de status_da_agenda_ou_consulta;
-         4. Criar datamodule  _DM_medicos_ para consultas para incluir, alterar e excluir a tabela de médicos;
-         5. Criar datamodule  _DM_serviço_de_agendas_ para consultas para incluir, alterar e excluir a tabela de serviço_de_agendas;
-         6. Criar datamodule  _DM_convenios_ para consultas para incluir, alterar e excluir a tabela de convênios;
-         7. Criar datamodule  _DM_clientes_ para consultas para incluir, alterar e excluir a tabela de clientes;
-         8. Criar datamodule  _DM_integracao_  para consultas para incluir, alterar e excluir a tabela de integração ;
-         9. Criar datamodule  _DM_expediente_do_medico_data_  para consultas para incluir, alterar e excluir a tabela de expediente_do_medico_data ;
-         10. Criar datamodule  _DM_expediente_do_medico_horas_ para consultas para incluir, alterar e excluir a tabela de expediente_do_medico_horas;
-         11. Criar datamodule  _DM_agenda_ para consultas para incluir, alterar e excluir a tabela de agenda;
-         12. Criar datamodule  _DM_formas_de_pagamento_ para consultas para incluir, alterar e excluir a tabela de formas_de_pagamento;
-         13. Criar datamodule  _DM_consulta_  para consultas para incluir, alterar e excluir a tabela de consulta;
-         14. Criar datamodule _DM_Main_ para concentrar todos os datamodule do projeto;
+         1. Criar datamodule _DM_Connections_ para concentrar as conexões com o banco de dados;
+         2. Criar datamodule _DM_operador_ para consultas para incluir, alterar e excluir a tabela de operadores;
+         3. Criar datamodule  _DM_hospitais_ para consultas para incluir, alterar e excluir a tabela de hospitais;
+         4. Criar datamodule  _DM_status_da_agenda_ou_consulta_ para consultas para incluir, alterar e excluir a tabela de status_da_agenda_ou_consulta;
+         5. Criar datamodule  _DM_medicos_ para consultas para incluir, alterar e excluir a tabela de médicos;
+         6. Criar datamodule  _DM_serviço_de_agendas_ para consultas para incluir, alterar e excluir a tabela de serviço_de_agendas;
+         7. Criar datamodule  _DM_convenios_ para consultas para incluir, alterar e excluir a tabela de convênios;
+         8. Criar datamodule  _DM_clientes_ para consultas para incluir, alterar e excluir a tabela de clientes;
+         9. Criar datamodule  _DM_integracao_  para consultas para incluir, alterar e excluir a tabela de integração ;
+         10. Criar datamodule  _DM_expediente_do_medico_data_  para consultas para incluir, alterar e excluir a tabela de expediente_do_medico_data ;
+         11. Criar datamodule  _DM_expediente_do_medico_horas_ para consultas para incluir, alterar e excluir a tabela de expediente_do_medico_horas;
+         12. Criar datamodule  _DM_agenda_ para consultas para incluir, alterar e excluir a tabela de agenda;
+         13. Criar datamodule  _DM_formas_de_pagamento_ para consultas para incluir, alterar e excluir a tabela de formas_de_pagamento;
+         14. Criar datamodule  _DM_consulta_  para consultas para incluir, alterar e excluir a tabela de consulta;
+         15. Criar datamodule _DM_Main_ para concentrar todos os datamodule do projeto;
 
 3. **Criar pasta _lcl_ onde _L_=Lazarus, _C_=Component e _L_=Library**
    1. Criar pasta _avm/lcl_
