@@ -47,6 +47,8 @@
 
 ## Resposta do chatgpt
 
+- Nota: Chatgpt 3.5 não respondeu.
+
 <!-- markdownlint-disable-next-line -->
 <script>  includeHTML(); FixHeader(window,"myHeader"); </script>
 [🔝🔝](#topo "Retorna ao topo")
