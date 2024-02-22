@@ -235,6 +235,8 @@ hue-6-2: #e6c07b
 <ol>
 <li>id // tipo Integer serial</li>
 <li>nome // String com 50 posições não pode ser nulo</li>
+<li>login // String com 50 posições <a href="mailto:paulosspacheco@yahoo.com.br">paulosspacheco@yahoo.com.br</a></li>
+<li>password // String com 50 posições</li>
 <li>telefone : // String com 20 posições</li>
 </ol>
 </li>
@@ -566,21 +568,89 @@ hue-6-2: #e6c07b
 <ol>
 <li>Nesta pasta deve ser registrada todo processamento que não dependa de componentes visuais;
 <ol>
-<li>Criar datamodule <em>DM_Connections</em> para concentrar as conexões com o banco de dados;</li>
-<li>Criar datamodule <em>DM_operador</em> para consultas para incluir, alterar e excluir a tabela de operadores;</li>
-<li>Criar datamodule  <em>DM_hospitais</em> para consultas para incluir, alterar e excluir a tabela de hospitais;</li>
-<li>Criar datamodule  <em>DM_status_da_agenda_ou_consulta</em> para consultas para incluir, alterar e excluir a tabela de status_da_agenda_ou_consulta;</li>
-<li>Criar datamodule  <em>DM_medicos</em> para consultas para incluir, alterar e excluir a tabela de médicos;</li>
-<li>Criar datamodule  <em>DM_serviço_de_agendas</em> para consultas para incluir, alterar e excluir a tabela de serviço_de_agendas;</li>
-<li>Criar datamodule  <em>DM_convenios</em> para consultas para incluir, alterar e excluir a tabela de convênios;</li>
-<li>Criar datamodule  <em>DM_clientes</em> para consultas para incluir, alterar e excluir a tabela de clientes;</li>
-<li>Criar datamodule  <em>DM_integracao</em>  para consultas para incluir, alterar e excluir a tabela de integração ;</li>
-<li>Criar datamodule  <em>DM_expediente_do_medico_data</em>  para consultas para incluir, alterar e excluir a tabela de expediente_do_medico_data ;</li>
-<li>Criar datamodule  <em>DM_expediente_do_medico_horas</em> para consultas para incluir, alterar e excluir a tabela de expediente_do_medico_horas;</li>
-<li>Criar datamodule  <em>DM_agenda</em> para consultas para incluir, alterar e excluir a tabela de agenda;</li>
-<li>Criar datamodule  <em>DM_formas_de_pagamento</em> para consultas para incluir, alterar e excluir a tabela de formas_de_pagamento;</li>
-<li>Criar datamodule  <em>DM_consulta</em>  para consultas para incluir, alterar e excluir a tabela de consulta;</li>
-<li>Criar datamodule <em>DM_Main</em> para concentrar todos os datamodule do projeto;</li>
+<li>
+<p>Criar datamodule <em>DM_Connections</em> para concentrar as conexões com o banco de dados;</p>
+<ol>
+<li>Este módulo deve deve conter os seguintes componentes com suas respectivas propriedades definidas abaixo:
+<ol>
+<li><em>SQLTransaction1</em> - Este componente é usado para definir o banco de dados a ser usado; ✅
+<ol>
+<li>Name: 'SQLConnector1'; ✅</li>
+<li>ConnectorType : 'PostGresSQL'; ✅</li>
+<li>DataBaseName : 'assistente_virtual'; ✅
+<ol>
+<li>Nota: O nome do database é sensível as letras maiúsculas e minusculas. ✅</li>
+</ol>
+</li>
+<li>HostName:'45.160.125.12'; ✅</li>
+<li>UserName: postgres; ✅</li>
+<li>Password:'masterkey'; ✅</li>
+<li>LoginPrompt : 'true';  ✅
+<ol>
+<li>Nota : Usado parar informa ao programa se o formulário pedindo o username e password deve ser executado;</li>
+</ol>
+</li>
+<li>Transaction : 'SQLTransaction1'; ✅</li>
+</ol>
+</li>
+<li><em>SQLTransaction1</em> - Transação na qual um TSQLQuery é tratado;
+<ol>
+<li>Name : 'SQLTransaction1';</li>
+<li>DataBase: 'SQLConnector1';</li>
+</ol>
+</li>
+<li><em>SQLQuery1</em> - Classe para lidar com comandos SQL (com ou sem conjunto de resultados);
+<ol>
+<li>Name : SQLQuery1;</li>
+<li></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Criar datamodule <em>DM_operador</em> para consultas para incluir, alterar e excluir a tabela de operadores;</p>
+</li>
+<li>
+<p>Criar datamodule  <em>DM_hospitais</em> para consultas para incluir, alterar e excluir a tabela de hospitais;</p>
+</li>
+<li>
+<p>Criar datamodule  <em>DM_status_da_agenda_ou_consulta</em> para consultas para incluir, alterar e excluir a tabela de status_da_agenda_ou_consulta;</p>
+</li>
+<li>
+<p>Criar datamodule  <em>DM_medicos</em> para consultas para incluir, alterar e excluir a tabela de médicos;</p>
+</li>
+<li>
+<p>Criar datamodule  <em>DM_serviço_de_agendas</em> para consultas para incluir, alterar e excluir a tabela de serviço_de_agendas;</p>
+</li>
+<li>
+<p>Criar datamodule  <em>DM_convenios</em> para consultas para incluir, alterar e excluir a tabela de convênios;</p>
+</li>
+<li>
+<p>Criar datamodule  <em>DM_clientes</em> para consultas para incluir, alterar e excluir a tabela de clientes;</p>
+</li>
+<li>
+<p>Criar datamodule  <em>DM_integracao</em>  para consultas para incluir, alterar e excluir a tabela de integração ;</p>
+</li>
+<li>
+<p>Criar datamodule  <em>DM_expediente_do_medico_data</em>  para consultas para incluir, alterar e excluir a tabela de expediente_do_medico_data ;</p>
+</li>
+<li>
+<p>Criar datamodule  <em>DM_expediente_do_medico_horas</em> para consultas para incluir, alterar e excluir a tabela de expediente_do_medico_horas;</p>
+</li>
+<li>
+<p>Criar datamodule  <em>DM_agenda</em> para consultas para incluir, alterar e excluir a tabela de agenda;</p>
+</li>
+<li>
+<p>Criar datamodule  <em>DM_formas_de_pagamento</em> para consultas para incluir, alterar e excluir a tabela de formas_de_pagamento;</p>
+</li>
+<li>
+<p>Criar datamodule  <em>DM_consulta</em>  para consultas para incluir, alterar e excluir a tabela de consulta;</p>
+</li>
+<li>
+<p>Criar datamodule <em>DM_Main</em> para concentrar todos os datamodule do projeto;</p>
+</li>
 </ol>
 </li>
 </ol>

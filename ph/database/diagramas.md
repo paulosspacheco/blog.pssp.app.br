@@ -23,6 +23,8 @@ classDiagram
   class operadores {
     +id: Integer
     +nome: String(50) not null
+    +login: String(50) not null
+    +password: String(50) not null
     +telefone: String(20)
   }
 
@@ -180,6 +182,8 @@ classDiagram
       class operadores {
         +id: Integer
         +nome: String(50) not null
+        +login: String(50) not null
+        +password: String(50) not null        
         +telefone: String(20)
       }
 

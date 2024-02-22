@@ -61,7 +61,9 @@
 1. operadores //Pode ser a secretária virtual
    1. id // tipo Integer serial
    2. nome // String com 50 posições não pode ser nulo
-   3. telefone : // String com 20 posições
+   3. login // String com 50 posições paulosspacheco@yahoo.com.br
+   4. password // String com 50 posições
+   5. telefone : // String com 20 posições
 
 2. hospitais
    1. id // tipo Integer serial
@@ -274,6 +276,25 @@
    1. Criar pasta _avm/dm_ onde _D_=Data e _M_=module ✅  
       1. Nesta pasta deve ser registrada todo processamento que não dependa de componentes visuais;
          1. Criar datamodule _DM_Connections_ para concentrar as conexões com o banco de dados;
+            1. Este módulo deve deve conter os seguintes componentes com suas respectivas propriedades definidas abaixo:
+               1. _SQLTransaction1_ - Este componente é usado para definir o banco de dados a ser usado; ✅
+                  1. Name: 'SQLConnector1'; ✅
+                  2. ConnectorType : 'PostGresSQL'; ✅
+                  3. DataBaseName : 'assistente_virtual'; ✅
+                     1. Nota: O nome do database é sensível as letras maiúsculas e minusculas. ✅
+                  4. HostName:'45.160.125.12'; ✅
+                  5. UserName: postgres; ✅
+                  6. Password:'masterkey'; ✅
+                  7. LoginPrompt : 'true';  ✅
+                     1. Nota : Usado parar informa ao programa se o formulário pedindo o username e password deve ser executado;
+                  8. Transaction : 'SQLTransaction1'; ✅
+               2. _SQLTransaction1_ - Transação na qual um TSQLQuery é tratado;
+                  1. Name : 'SQLTransaction1';
+                  2. DataBase: 'SQLConnector1';
+               3. _SQLQuery1_ - Classe para lidar com comandos SQL (com ou sem conjunto de resultados);
+                  1. Name : SQLQuery1;
+                  2. 
+
          2. Criar datamodule _DM_operador_ para consultas para incluir, alterar e excluir a tabela de operadores;
          3. Criar datamodule  _DM_hospitais_ para consultas para incluir, alterar e excluir a tabela de hospitais;
          4. Criar datamodule  _DM_status_da_agenda_ou_consulta_ para consultas para incluir, alterar e excluir a tabela de status_da_agenda_ou_consulta;

@@ -35,4 +35,3 @@
 <!-- markdownlint-disable-next-line -->
 </main>
 [🔝🔝](#topo "Retorna ao topo")
-

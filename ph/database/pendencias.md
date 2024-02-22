@@ -10,9 +10,8 @@
 
 # Pendências da pasta database
 
-1. No arquivo [diagramas.md](./diagramas.md) foi alterado o relacionamento emtre médico e convênio, alterar no bancos de dados.
+1. No arquivo [diagramas.md](./diagramas.md) foi alterado o relacionamento entre médico e convênio, alterar no bancos de dados.
 2. ???
-
 
 <!-- markdownlint-disable-next-line -->
 </main>

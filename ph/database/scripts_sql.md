@@ -27,6 +27,8 @@
     CREATE TABLE operadores (
       id SERIAL PRIMARY KEY,
       nome VARCHAR(50) NOT NULL,
+      login: VARCHAR(50) not null
+      password: VARCHAR(50) not null        
       telefone VARCHAR(20)
     );
 
