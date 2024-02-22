@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+
+<span id="topo"><span>
+
 # Qual a sabedoria atras de provérbios 29:11?
 
 ## **Resposta do Gemini**
@@ -30,5 +38,8 @@
       6. Seja humilde e receptivo: Aprenda com seus erros e esteja aberto a feedbacks.
       7. **Ao seguir esses princípios, podemos cultivar a sabedoria em nossas vidas e colher os frutos de uma vida mais tranquila, frutífera e significativa.**
 
-## Resposta do chatgpt
+Resposta do chatgpt
 
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")
