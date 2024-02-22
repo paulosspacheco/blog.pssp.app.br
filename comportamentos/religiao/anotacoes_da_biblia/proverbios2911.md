@@ -38,6 +38,14 @@
       6. Seja humilde e receptivo: Aprenda com seus erros e esteja aberto a feedbacks.
       7. **Ao seguir esses princípios, podemos cultivar a sabedoria em nossas vidas e colher os frutos de uma vida mais tranquila, frutífera e significativa.**
 
+## Resposta do Capilot
+
+1. O provérbio 29:11 nos ensina uma valiosa lição sobre sabedoria e autocontrole. Ele diz:
+   1. “O tolo revela todo o seu pensamento, mas o sábio o guarda até o fim.”
+   2. Em outras palavras, um tolo expressa suas emoções e pensamentos impulsivamente, sem considerar as consequências. Por outro lado, um sábio é capaz de controlar suas palavras e ações, escolhendo quando e como compartilhar seus pensamentos.
+   3. Essa sabedoria nos lembra da importância de pensar antes de falar e agir. Às vezes, manter silêncio e refletir antes de expressar nossos sentimentos pode evitar conflitos e problemas desnecessários. Portanto, a virtude está em saber quando falar e quando permanecer em silêncio, exercendo autocontrole e discernimento
+
+
 Resposta do chatgpt
 
 <!-- markdownlint-disable-next-line -->
