@@ -377,8 +377,9 @@
 <!-- markdownlint-disable-next-line -->
 1. <span id=id_referencias></span>**REFERÊNCIAS GLOBAIS**
    1. [xrdp.org](https://www.xrdp.org/))
-   2. [github xrdp](https://github.com/neutrinolabs/xrdp)
-   3. [Como ativar o protocolo de área de trabalho remota usando xrdp no Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-enable-remote-desktop-protocol-using-xrdp-on-ubuntu-22-04)
+   2. [Notas de versão para xrdp v0.9.24 (30/12/2023)](https://github.com/neutrinolabs/xrdp/releases)
+   3. [github xrdp](https://github.com/neutrinolabs/xrdp)
+   4. [Como ativar o protocolo de área de trabalho remota usando xrdp no Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-enable-remote-desktop-protocol-using-xrdp-on-ubuntu-22-04)
 
 <!-- markdownlint-disable-next-line -->
 1. <span id="id_historico"><span>**HISTÓRICO**
