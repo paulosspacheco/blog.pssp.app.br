@@ -86,27 +86,23 @@ classDiagram
   }
 
   class expediente_do_medico_data {
-    +id: Integer
     +id_medico: Integer not null
-    +dataTime: Date not null
+    +data: Date not null
+    +hora_inicial: timestamp not null
+    +hora_final: timestamp not null
   }
 
-  class expediente_do_medico_horas {
-    +id_expediente_do_medico_data: Integer not null
-    +dataTime_inicial: DateTime not null
-    +dataTime_final: DateTime not null
-  }
-
-  class agenda {
+  class agenda {  
     +id: Integer
     +id_Medico: Integer not null
     +id_Cliente: Integer not null
-    +dataTime: DateTime not null
-    +dataTime_confirmacao: DateTime not null
+    +data: timestamp not null
+    +hora: timestamp not null
+    +data_confirmacao: timestamp not null
     +id_convenio: Integer
     +id_status_da_agenda_ou_consulta: Integer not null
     +id_formas_de_pagamento: Integer
-    +dataTime_criacao: DateTime not null
+    +dataTime_criacao: timestamp not null
     +observacoes: String(255)
   }
 
@@ -120,7 +116,7 @@ classDiagram
     +id_agenda: Integer
     +id_cliente: Integer not null
     +id_medico: Integer not null
-    +dataTime: DateTime not null
+    +dataTime: timestamp not null
     +id_convenio: Integer
     +id_forma_de_pagamento: Integer
     +id_status_da_agenda_ou_consulta: Integer not null
@@ -131,8 +127,8 @@ classDiagram
   medicos "0" -- "1..n" convenios : id_medico
   clientes "1" -- "0..n" convenios : id_convenio
   clientes "1" -- "1..n" agenda : id_Cliente
-  medicos "1" -- "1..n" expediente_do_medico_data : id_medico
-  expediente_do_medico_data "1" -- "1..n" expediente_do_medico_horas : id_expediente_do_medico_data
+  medicos "1" -- "0..n" expediente_do_medico_data : id_medico
+  expediente_do_medico_data "1" -- "1..n" medicos : id_medico
   agenda "1" -- "0..1" convenios : id_convenio
   agenda "1" -- "0..1" formas_de_pagamento : id_formas_de_pagamento
   agenda "1" -- "1..n" status_da_agenda_ou_consulta : id_status_da_agenda_ou_consulta
@@ -154,7 +150,6 @@ classDiagram
     - Cliente
     - Integração
     - ExpedienteDoMedicoData
-    - ExpedienteDoMedicoHoras
     - Agenda
     - FormasDePagamento
     - Consulta
@@ -246,25 +241,22 @@ classDiagram
 
       class expediente_do_medico_data {
         +id_medico: Integer not null
-        +dataTime: Date not null
+        +data: Date not null
+        +hora_inicial: timestamp not null
+        +hora_final: timestamp not null              
       }
-
-      class expediente_do_medico_horas {
-        +id_expediente_do_medico_data: Integer not null
-        +dataTime_inicial: DateTime not null
-        +dataTime_final: DateTime not null
-      }
-
+      
       class agenda {
         +id: Integer
         +id_Medico: Integer not null
         +id_Cliente: Integer not null
-        +dataTime: DateTime not null
-        +dataTime_confirmacao: DateTime not null
+        +data: timestamp not null
+        +hora: timestamp not null
+        +data_confirmacao: timestamp not null
         +id_convenio: Integer
         +id_status_da_agenda_ou_consulta: Integer not null
         +id_formas_de_pagamento: Integer
-        +dataTime_criacao: DateTime not null
+        +dataTime_criacao: timestamp not null
         +observacoes: String(255)
       }
 
@@ -278,12 +270,30 @@ classDiagram
         +id_agenda: Integer
         +id_cliente: Integer not null
         +id_medico: Integer not null
-        +dataTime: DateTime not null
+        +dataTime: timestamp not null
         +id_convenio: Integer
         +id_forma_de_pagamento: Integer
         +id_status_da_agenda_ou_consulta: Integer not null
         +Observacao: String(255)
       }
+
+     class dm_xtable {
+        +id:integer
+        +nome String(50)
+        +endereco String(255)    
+        +cnpj String(18)  
+        +cpf String(14)
+        +cep String(10)
+        +valor_SMALLINT SMALLINT
+        +valor_Integer Integer
+        +valor_FLOAT8 DOUBLE
+        +Data_1 timestamp 
+        +hora_1 timestamp    
+        +hora_2 timestamp
+     }  
+);
+
+
 
       operadores "1" -- "1..n" medicos : id_operadores  
       medicos "0" -- "1..n" convenios : id_medico

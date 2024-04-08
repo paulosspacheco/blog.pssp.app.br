@@ -22,116 +22,157 @@
 
   ```SQL
 
-    CREATE DATABASE assistente_virtual;
+CREATE DATABASE assistente_virtual;
+
+-- Criação das tabelas
+
+CREATE TABLE operadores (
+  id INTEGER PRIMARY KEY,
+  nome VARCHAR(50) NOT NULL,
+  login VARCHAR(50) NOT NULL,
+  password VARCHAR(50) NOT NULL,
+  telefone VARCHAR(20),
+  UNIQUE (login) -- índice único para login
+);
+
+CREATE TABLE hospitais (
+  id INTEGER PRIMARY KEY,
+  nome VARCHAR(50),
+  telefone VARCHAR(20)
+);
+
+CREATE TABLE status_da_agenda_ou_consulta (
+  id INTEGER PRIMARY KEY,
+  nome VARCHAR(20)
+);
+
+CREATE TABLE medicos (
+  id INTEGER PRIMARY KEY,
+  id_operadores INTEGER,
+  nome VARCHAR(50),
+  telefone VARCHAR(25),
+  telefone_da_secretaria VARCHAR(25),
+  login VARCHAR(50),
+  senha VARCHAR(20),
+  FOREIGN KEY (id_operadores) REFERENCES operadores(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE servico_de_agendas (
+  id INTEGER PRIMARY KEY,
+  id_operador INTEGER,
+  nome VARCHAR(100),
+  login VARCHAR(50),
+  senha VARCHAR(50),
+  FOREIGN KEY (id_operador) REFERENCES operadores(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE convenios (
+  id INTEGER PRIMARY KEY,
+  id_medico INTEGER,
+  nome VARCHAR(50),
+  login VARCHAR(50),
+  senha VARCHAR(50),
+  FOREIGN KEY (id_medico) REFERENCES medicos(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE clientes (
+  id INTEGER PRIMARY KEY,
+  nome VARCHAR(50) NOT NULL,
+  telefone_whatsApp VARCHAR(25),
+  e_mail VARCHAR(50),
+  login VARCHAR(50) NOT NULL,
+  senha VARCHAR(20) NOT NULL,
+  id_convenio INTEGER,
+  dataTime TIMESTAMP, 
+  matricula_no_convenio VARCHAR(50),
+  FOREIGN KEY (id_convenio) REFERENCES convenios(id) ON DELETE RESTRICT,
+  UNIQUE (login) -- índice único para login
+);
+
+CREATE TABLE integracao (
+  id INTEGER PRIMARY KEY,
+  endereco_do_site VARCHAR(255) NOT NULL,
+  login VARCHAR(50) NOT NULL,
+  senha VARCHAR(20) NOT NULL,
+  status BOOLEAN NOT NULL
+);
+
+CREATE TABLE expediente_do_medico_data (
+  id_medico INTEGER NOT NULL,
+  data TIMESTAMP NOT NULL, -- data e hora com timestamp
+  hora_inicial TIMESTAMP NOT NULL, -- hora inicial com timestamp
+  hora_final TIMESTAMP NOT NULL, -- hora final com timestamp
+  FOREIGN KEY (id_medico) REFERENCES medicos(id) ON DELETE RESTRICT,
+  PRIMARY KEY (id_medico, data, hora_inicial) -- chave primária composta
+);
+
+CREATE TABLE formas_de_pagamento (
+  id INTEGER PRIMARY KEY,
+  Nome VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE agenda (
+  id INTEGER PRIMARY KEY,
+  id_Medico INTEGER NOT NULL,
+  id_Cliente INTEGER NOT NULL,
+  dataTime TIMESTAMP NOT NULL, -- data e hora com timestamp
+  dataTime_confirmacao TIMESTAMP NOT NULL, -- confirmação com timestamp
+  id_convenio INTEGER,
+  id_status_da_agenda_ou_consulta INTEGER NOT NULL,
+  id_formas_de_pagamento INTEGER,
+  dataTime_criacao TIMESTAMP NOT NULL, -- criação com timestamp
+  observacoes VARCHAR(255),
+  FOREIGN KEY (id_Medico) REFERENCES medicos(id) ON DELETE RESTRICT,
+  FOREIGN KEY (id_Cliente) REFERENCES clientes(id) ON DELETE RESTRICT,
+  FOREIGN KEY (id_convenio) REFERENCES convenios(id) ON DELETE RESTRICT,
+  FOREIGN KEY (id_status_da_agenda_ou_consulta) REFERENCES status_da_agenda_ou_consulta(id) ON DELETE RESTRICT,
+  FOREIGN KEY (id_formas_de_pagamento) REFERENCES formas_de_pagamento(id) ON DELETE RESTRICT
+);
+
+
+
+CREATE TABLE consulta (
+  id INTEGER PRIMARY KEY,
+  id_agenda INTEGER,
+  id_cliente INTEGER NOT NULL,
+  id_medico INTEGER NOT NULL,
+  dataTime TIMESTAMP NOT NULL, -- data e hora com timestamp
+  id_convenio INTEGER,
+  id_forma_de_pagamento   INTEGER,
+  id_status_da_agenda_ou_consulta INTEGER NOT NULL,
+  Observacao VARCHAR(255),
+  FOREIGN KEY (id_agenda) REFERENCES agenda(id) ON DELETE RESTRICT,
+  FOREIGN KEY (id_cliente) REFERENCES clientes(id) ON DELETE RESTRICT,
+  FOREIGN KEY (id_medico) REFERENCES medicos(id) ON DELETE RESTRICT,
+  FOREIGN KEY (id_convenio) REFERENCES convenios(id) ON DELETE RESTRICT,
+  FOREIGN KEY (id_forma_de_pagamento) REFERENCES formas_de_pagamento(id) ON DELETE RESTRICT
+);
+
+-- Observações:
+-- * Adapte o script de acordo com o seu dialeto PostgreSQL.
+-- * As colunas "dataTime_disponivel" e "Observacao" na tabela "clientes" possuem
+--   caracteres especiais. Verifique se a sua configuração de codificação de caracteres
+--   está correta para evitar erros ao inserir dados.
   
-    CREATE TABLE operadores (
-      id SERIAL PRIMARY KEY,
-      nome VARCHAR(50) NOT NULL,
-      login: VARCHAR(50) not null
-      password: VARCHAR(50) not null        
-      telefone VARCHAR(20)
-    );
 
-    CREATE TABLE hospitais (
-      id SERIAL PRIMARY KEY,
-      nome VARCHAR(50),
-      telefone VARCHAR(20)
-    );
+-- A tabela __dm_xtable__ é usada para testes do modelo de Tb_Table.pas
 
-    CREATE TABLE status_da_agenda_ou_consulta (
-      id SERIAL PRIMARY KEY,
-      nome VARCHAR(20)
-    );
 
-    CREATE TABLE medicos (
-      id SERIAL PRIMARY KEY,
-      id_operadores INTEGER REFERENCES operadores(id),
-      nome VARCHAR(50),
-      telefone VARCHAR(25),
-      telefone_da_secretaria VARCHAR(25),
-      login VARCHAR(50),
-      senha VARCHAR(20)
-    );
+CREATE TABLE __dm_xtable__ (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
+    endereco VARCHAR(50),    
+    cnpj VARCHAR(18),  
+    cpf VARCHAR(14), 
+    cep VARCHAR(10),        
+    valor_SMALLINT SMALLINT,
+    valor_Integer Integer,
+    valor_FLOAT8 DOUBLE PRECISION,
+    Data_1 TIMESTAMP, 
+    hora_1 TIMESTAMP,    
+    hora_2 TIMESTAMP
+);
 
-    CREATE TABLE servico_de_agendas (
-      id SERIAL PRIMARY KEY,
-      id_operador INTEGER REFERENCES operadores(id),
-      nome VARCHAR(100),
-      login VARCHAR(50),
-      senha VARCHAR(50)
-    );
-
-    CREATE TABLE convenios (
-      id SERIAL PRIMARY KEY,
-      id_medico INTEGER REFERENCES medicos(id),
-      nome VARCHAR(50),
-      login VARCHAR(50),
-      senha VARCHAR(50)
-    );
-
-    CREATE TABLE clientes (
-      id SERIAL PRIMARY KEY,
-      nome VARCHAR(50) NOT NULL,
-      telefone_whatsApp VARCHAR(25),
-      e_mail VARCHAR(50),
-      login VARCHAR(50) NOT NULL,
-      senha VARCHAR(20) NOT NULL,
-      id_convenio INTEGER REFERENCES convenios(id),
-      dataTime_disponivel DATE,
-      matricula_no_convenio VARCHAR(50)
-    );
-
-    CREATE TABLE integracao (
-      id SERIAL PRIMARY KEY,
-      endereco_do_site VARCHAR(255) NOT NULL,
-      login VARCHAR(50) NOT NULL,
-      senha VARCHAR(20) NOT NULL,
-      status BOOLEAN NOT NULL
-    );
-
-  CREATE TABLE expediente_do_medico_data (
-      id SERIAL PRIMARY KEY,
-      id_medico INTEGER NOT NULL,
-      dataTime DATE NOT NULL,    
-      FOREIGN KEY (id_medico) REFERENCES medicos(id)
-  );
-
-  CREATE TABLE expediente_do_medico_horas (
-      id_expediente_do_medico_data INTEGER NOT NULL,
-      dataTime_inicial TIMESTAMP NOT NULL,
-      dataTime_final TIMESTAMP NOT NULL,
-      FOREIGN KEY (id_expediente_do_medico_data) REFERENCES expediente_do_medico_data(id)
-  );
-
-    CREATE TABLE formas_de_pagamento (
-      id SERIAL PRIMARY KEY,
-      Nome VARCHAR(30) NOT NULL
-    );
-
-    CREATE TABLE agenda (
-      id SERIAL PRIMARY KEY,
-      id_Medico INTEGER NOT NULL REFERENCES medicos(id),
-      id_Cliente INTEGER NOT NULL REFERENCES clientes(id),
-      dataTime TIMESTAMP NOT NULL,
-      dataTime_confirmacao TIMESTAMP NOT NULL,
-      id_convenio INTEGER REFERENCES convenios(id),
-      id_status_da_agenda_ou_consulta INTEGER NOT NULL REFERENCES status_da_agenda_ou_consulta(id),
-      id_formas_de_pagamento INTEGER REFERENCES formas_de_pagamento(id),
-      dataTime_criacao TIMESTAMP NOT NULL,
-      observacoes VARCHAR(255)
-    );
-
-    CREATE TABLE consulta (
-      id SERIAL PRIMARY KEY,
-      id_agenda INTEGER REFERENCES agenda(id),
-      id_cliente INTEGER NOT NULL REFERENCES clientes(id),
-      id_medico INTEGER NOT NULL REFERENCES medicos(id),
-      dataTime TIMESTAMP NOT NULL,
-      id_convenio INTEGER REFERENCES convenios(id),
-      id_forma_de_pagamento INTEGER REFERENCES formas_de_pagamento(id),
-      id_status_da_agenda_ou_consulta INTEGER NOT NULL REFERENCES status_da_agenda_ou_consulta(id),
-      observacao VARCHAR(255)
-    );
 
   ```
 
@@ -152,22 +193,7 @@
 
     -- Tabela clientes
     ALTER TABLE clientes ADD CONSTRAINT fk_clientes_convenios FOREIGN KEY (id_convenio) REFERENCES convenios(id);
-
-    -- Criar a tabela expediente_do_medico_data
-    CREATE TABLE expediente_do_medico_data (
-        id SERIAL PRIMARY KEY,
-        id_medico INTEGER NOT NULL REFERENCES medicos(id),
-        dataTime DATE NOT NULL
-    );
-
-    -- Criar a tabela expediente_do_medico_horas
-    CREATE TABLE expediente_do_medico_horas (
-        id_expediente_do_medico_data INTEGER NOT NULL,
-        dataTime_inicial TIMESTAMP NOT NULL,
-        dataTime_final TIMESTAMP NOT NULL,
-        FOREIGN KEY (id_expediente_do_medico_data) REFERENCES expediente_do_medico_data(id)
-    );
-
+ 
     -- Tabela agenda
     ALTER TABLE agenda ADD CONSTRAINT fk_agenda_medicos FOREIGN KEY (id_Medico) REFERENCES medicos(id);
     ALTER TABLE agenda ADD CONSTRAINT fk_agenda_clientes FOREIGN KEY (id_Cliente) REFERENCES clientes(id);
