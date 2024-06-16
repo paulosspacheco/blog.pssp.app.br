@@ -1,3 +1,11 @@
+<div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
 # O que é Estoicismo?
 
 O Estoicismo é uma escola de filosofia que se originou na Grécia Antiga por volta do século III a.C. Fundada por Zenão de Cítio, essa corrente filosófica é conhecida por sua ênfase na ética como o principal foco do conhecimento humano e na busca pela virtude como o caminho para a felicidade e a tranquilidade.
@@ -47,3 +55,8 @@ O Estoicismo é uma escola de filosofia que se originou na Grécia Antiga por vo
 
 O Estoicismo, embora antigo, continua a influenciar muitas pessoas hoje, especialmente em contextos de desenvolvimento pessoal e resiliência emocional.
 
+</main>
+
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+[🔝🔝](#topo "Retorna ao topo")
