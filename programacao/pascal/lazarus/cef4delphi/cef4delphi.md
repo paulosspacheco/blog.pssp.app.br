@@ -6,7 +6,7 @@
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 
-# Como instalar pacote cef4delphi no lazarus <a href="cef4delphi.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
+# Como instalar pacote [cef4delphi](https://github.com/salvadordf/CEF4Delphi) no lazarus <a href="cef4delphi.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a>
 
 ## 1. INDEX
 
@@ -22,15 +22,8 @@
 
 3. [**Conteúdo estudado.**](#id_Conteudo)
    1. [Passo a Passo para Instalação do Cef4Delphi](#id_assunto01)
-   2. [Assunto 02](#id_assunto02)
-   3. [Assunto 03](#id_assunto03)
-   4. [Assunto 04](#id_assunto04)
-   5. [Assunto 05](#id_assunto05)
-   6. [Assunto 06](#id_assunto06)
-   7. [Assunto 07](#id_assunto07)
-   8. [Assunto 08](#id_assunto08)
-   9. [Assunto 09](#id_assunto09)
-   10. [Assunto 10](#id_assunto10)
+   2. [CEF é o anacrônico de Chromium Embedded Framework, é uma interface para o Chromium em outras aplicações.](#id_assunto02)
+
 
 4. [**Referências globais.**](#id_referencias)
 
@@ -81,7 +74,8 @@ s
               cd ~/lazarus/ccr
 
               # Baixar a versão mais recente no github
-              git clone git@github.com:salvadordf/CEF4Delphi.git
+              # git clone git@github.com:salvadordf/CEF4Delphi.git
+              git clone https://gitlab.com/salvadordf/CEF4Delphi.git
 
             ```
 
@@ -93,13 +87,13 @@ s
                cd ~/lazarus/ccr
 
                # Baixar a versão recomendada pelo projeto cef4delphi
-               wget https://cef-builds.spotifycdn.com/cef_binary_122.1.13%2Bgde5b724%2Bchromium-122.0.6261.130_linux64.tar.bz2
+               wget https://cef-builds.spotifycdn.com/cef_binary_123.0.8%2Bg43f22da%2Bchromium-123.0.6312.46_linux64.tar.bz2
 
                # Descompactar arquivo acima baixado
-               tar -jxvf cef_binary_121.3.15+g4d3b0b4+chromium-121.0.6167.184_linux64.tar.bz2
+               tar -jxvf https://cef-builds.spotifycdn.com/cef_binary_123.0.8%2Bg43f22da%2Bchromium-123.0.6312.46_linux64.tar.bz2
 
                # Copiar o executável do projeto acima para a pasta criada pelo comando git clone git@github.com:salvadordf/CEF4Delphi.git
-               cd ./cef_binary_121.3.15+g4d3b0b4+chromium-121.0.6167.184_linux64
+               cd ./https://cef-builds.spotifycdn.com/cef_binary_123.0.8%2Bg43f22da%2Bchromium-123.0.6312.46_linux64.tar.bz2
                cp -af ./Release/*.* ../CEF4Delphi-121.0.6167.184/bin
                cp -af ./Resources/*.* ../CEF4Delphi-121.0.6167.184/bin
 
@@ -118,33 +112,21 @@ s
                1. Selecionar arquivo ~/lazarus/ccr/CEF4Delphi-121.0.6167.184/demos/Lazarus_Linux_GTK2/MiniBrowser/MiniBrowser.lpi
             2. Selecionar opção /Executar/Executar.
 
-         2. Notas:
-            1. Executando no modo gráfico dentro da IDE o programa diz que existe arquivo ausente.
-            2. Executando no modo console gera o seguinte erro:
-
-               ```bash
-
-                   (MiniBrowser:38711): Gtk-ERROR **: 11:27:09.620: GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported
-                  [0100/000000.735234:WARNING:sandbox_linux.cc(418)] InitializeSandbox() called with multiple threads in process gpu-process.
-                  Trace/breakpoint trap (imagem do núcleo gravada)
-
-
-               ```
-
-               1. Tentativa de corrigir:
-                  1. Baixar executáveis cef do[ link](https://cef-builds.spotifycdn.com/index.html#linux64) para ver se dar certo
-            3. ,,
+         2. .
 
       3. **Referências:**
-         1. [CEF4Delphi é um projeto de código aberto criado por Salvador Díaz Fau](https://www.briskbard.com/index.php?lang=en&pageid=cef)
-         2. [github](https://github.com/salvadordf/CEF4Delphi)
+         1. .
 
       4. <text onclick="goBack()">[🔙]</text>
 
-   2. <span id=id_assunto02></span>**Assunto 02**
+   2. <span id=id_assunto02></span>**CEF é o anacrônico de Chromium Embedded Framework, é uma interface para o Chromium em outras aplicações.**
       1. Descrição do conteúdo.
-      2. **Exemplo do assunto 02**.
-         1. Descrição do exemplo
+      2. **Exemplo do CEF é o anacrônico de Chromium Embedded Framework, é uma interface para o Chromium em outras aplicações.**.
+         1. [Instalação CEF no Linux](https://maurinsoft.com.br/instalacao-cef-no-linux/):
+            1. Link para instalação: [Link](https://maurinsoft.com.br/instalacao-cef-no-linux/)
+            2. Baixe os repositórios dos projetos no seguinte repositório GIT:
+               1. [Baixar do repositório CEF](https://bitbucket.org/%7Bdc443723-7652-4c63-b340-033e522146db%7D/)
+               2. 
 
             ```ts
             ```
@@ -155,126 +137,15 @@ s
 
       4. <text onclick="goBack()">[🔙]</text>
 
-   3. <span id=id_assunto03></span>**Assunto 03**
-      1. Descrição do conteúdo.
-      2. **Exemplo do assunto 03**.
-         1. Descrição do exemplo
-
-            ```ts
-            ```
-
-      3. **Referências:**
-         1. [title](link)
-         2. [title](link)
-
-      4. <text onclick="goBack()">[🔙]</text>
-
-   4. <span id=id_assunto04></span>**Assunto 04**
-      1. Descrição do conteúdo.
-      2. **Exemplo do assunto 04**.
-         1. Descrição do exemplo
-
-            ```ts
-            ```
-
-      3. **Referências:**
-         1. [title](link)
-         2. [title](link)
-
-      4. <text onclick="goBack()">[🔙]</text>
-
-   5. <span id=id_assunto05></span>**Assunto 05**
-      1. Descrição do conteúdo.
-      2. **Exemplo do assunto 05**.
-         1. Descrição do exemplo
-
-            ```ts
-            ```
-
-      3. **Referências:**
-         1. [title](link)
-         2. [title](link)
-
-      4. <text onclick="goBack()">[🔙]</text>
-
-   6. <span id=id_assunto06></span>**Assunto 06**
-      1. Descrição do conteúdo.
-      2. **Exemplo do assunto 06**.
-         1. Descrição do exemplo
-
-            ```ts
-            ```
-
-      3. **Referências:**
-         1. [title](link)
-         2. [title](link)
-
-      4. <text onclick="goBack()">[🔙]</text>
-
-   7. <span id=id_assunto07></span>**Assunto 07**
-      1. Descrição do conteúdo.
-      2. **Exemplo do assunto 07**.
-         1. Descrição do exemplo
-
-            ```ts
-            ```
-
-      3. **Referências:**
-         1. [title](link)
-         2. [title](link)
-
-      4. <text onclick="goBack()">[🔙]</text>
-
-   8. <span id=id_assunto08></span>**Assunto 08**
-      1. Descrição do conteúdo.
-      2. **Exemplo do assunto 08**.
-         1. Descrição do exemplo
-
-            ```ts
-            ```
-
-      3. **Referências:**
-         1. [title](link)
-         2. [title](link)
-
-      4. <text onclick="goBack()">[🔙]</text>
-
-   9. <span id=id_assunto09></span>**Assunto 09**
-      1. Descrição do conteúdo.
-      2. **Exemplo do assunto 09**.
-         1. Descrição do exemplo
-
-            ```ts
-            ```
-
-      3. **Referências:**
-         1. [title](link)
-         2. [title](link)
-
-      4. <text onclick="goBack()">[🔙]</text>
-
-   10. <span id=id_assunto10></span>**Assunto 10**
-         1. Descrição do conteúdo.
-         2. **Exemplo do assunto 10**.
-            1. Descrição do exemplo
-
-               ```ts
-               ```
-
-         3. **Referências:**
-            1. [title](link)
-            2. [title](link)
-
-         4. <text onclick="goBack()">[🔙]</text>
-
-   11. <text onclick="goBack()">[🔙]</text>
+   3.  <text onclick="goBack()">[🔙]</text>
 <!-- markdownlint-disable-next-line -->
 1. <span id=id_referencias></span>**REFERÊNCIAS GLOBAIS**
-   1. [Site oficial para produzir este documento](#1)
-   2. [CEF4Delphi é um projeto de código aberto criado por Salvador Díaz Fau ](https://www.briskbard.com/index.php?lang=en&pageid=cef)
-   3. [#](##)
-   4. [#](##)
+   1. [Readme cef4delphi](https://github.com/salvadordf/CEF4Delphi)
+   2. [Site oficial para produzir este documento](#1)
+   3. [CEF4Delphi é um projeto de código aberto criado por Salvador Díaz Fau ](https://www.briskbard.com/index.php?lang=en&pageid=cef)
+   4. [Instalação CEF no Linux](https://maurinsoft.com.br/instalacao-cef-no-linux/)
    5. [#](##)
+   6. [#](##)
 <!-- markdownlint-disable-next-line -->
    1. <text onclick="goBack()">[🔙]</text>
 <!-- markdownlint-disable-next-line -->

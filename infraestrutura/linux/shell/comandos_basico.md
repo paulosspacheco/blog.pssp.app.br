@@ -26,27 +26,35 @@
 4. [**Comandos de Ajuda e Documentação**](#id_cmd_ajuda_documentacao)
 5. [**Comandos de Comunicações**](#id_comandos_comunicacoes)
 6. [**Comandos de Edição de Texto**](#id_Cmd_edicao_de_texto)
-7. [**Comandos de Transferência de Arquivos**](#id_cmd_transferencia_arquivos)
+
+7. [**Exibição ou Impressão de Arquivos**](#id_exibicao_impressao_arquivos)
+   1. [cat - Mostra o conteúdo de um arquivo, como o comando type do MD-DOS](#id_cat)
+
+8. [**Comandos de Transferência de Arquivos**](#id_cmd_transferencia_arquivos)
    1. [_rsync_ - Sincroniza de forma rápida e flexível dados entre dois computadores.](#id_cmd_rsync)
-8. [**Comandos de Notícias ou Rede**](#id_cmd__noticias_Rede)
+9. [**Comandos de Notícias ou Rede**](#id_cmd__noticias_Rede)
    1. [netstat - Imprime conexões de rede, tabelas de roteamento, estatísticas de interface, conexões mascaradas e associações multicast.](#id_netstat)
    2.
-9. [**Comandos de Controle de Processos**](#id_cmd_controle_processos)
-10. [**Comandos de Informação de Estado**](#id_cmd_informacao_estado)
-11. [**Comandos de Processamento de Texto**](#id_cmd_processamento_texto)
-12. [**Web**](#id_web)
+10. [**Comandos de Controle de Processos**](#id_cmd_controle_processos)
+11. [**Comandos de Informação de Estado**](#id_cmd_informacao_estado)
+12. [**Comandos de Processamento de Texto**](#id_cmd_processamento_texto)
+13. [**Web**](#id_web)
     1. [html2ps - Conversor de html para ps](#id_html2ps)
     2. [latex2html - Conversor de LaTeX para html](#id_latex2html)
     3. [lynx - Navegador web baseado em modo de texto](#id_lynx)
     4. [Chromium - É um projeto de navegador web de código aberto desenvolvido pela Google](#id_Chromium)
     5. [sitecopy - Aplicação que nos permite manter fácil e remotamente web sites](#id_sitecopy)
     6. [weblint - Verificador de sintaxes e de estilos html](#id_weblint)
-13. [Comandos para manutenção de hardware](#id_cmd_hardware)
+
+14. [Comandos para manutenção de hardware](#id_cmd_hardware)
     1. [stress-ng - Stressando MEM, DISCO e CPU](#id_stress_ng)
     2. [cinnamon-settings info:  Mostra as informações do sistema operacional e de hardware na _interface gráfica cinnamon_](#id_cinnamon_settings_info).
     3. [free - Mostra no console a quantidade de memória instalada.](#id_free)
     4. [memtester - teste de memória](#id_memtester)
-14. [REFERÊNCIAS](#id_referencias)
+15. [Pasta do Linux](#id_pastas)
+    1. [Para que serve a pasta ~/.local/share no Linux?](#id_local_share)
+    2. ,
+16. [REFERÊNCIAS](#id_referencias)
 
 <!-- markdownlint-disable-next-line -->
 
@@ -842,15 +850,36 @@
 
 7. <!-- markdownlint-disable-next-line -->
 
-   <span id='id_exibicao_impressao_arquivos'></span>**Exibição ou Impressão de Arquivos**
+   <span id='id_exibicao_impressao_arquivos'>>**Exibição ou Impressão de Arquivos**
 
-   1. _cat_: Mostra o conteúdo de um arquivo, como o comando type do MD-DOS, e é muito usado também para concatenar arquivos, como por exemplo fazendo _cat a.txt b.txt > c.txt_ para juntar o arquivo _a.txt_ e _b.txt_ num único de nome _c.txt_
+   1. <span id='id_cat'></span> _cat_: Mostra o conteúdo de um arquivo, como o comando type do MD-DOS.
+      1. Exemplo 01
+         1. concatenar nome de arquivos arquivos:
 
-      ```bash
+            ```bash
 
-        cat a.txt b.txt > c.txt
+            cat a.txt b.txt > c.txt
 
-      ```
+            ```
+
+      2. Exemplo 02
+         1. O comando abaixo realiza uma série de operações com texto. Vou explicar cada parte em notas abaixo:
+
+               ```bash
+                  # Move-se para a pasta /var/lib/dpkg/triggers/                
+                  cd /var/lib/dpkg/triggers/
+                  
+                  cat File | cut -d" " -f 2 | uniq -c
+
+               ```
+
+            1. Notas
+               1. _cat File_: Isso basicamente imprime o conteúdo do arquivo chamado "File" no terminal. O comando cat é usado para concatenar e exibir arquivos de texto.
+               2. _cut -d" " -f 2_: Este comando corta o texto usando o espaço como delimitador (-d" ") e seleciona o segundo campo (-f 2). Portanto, ele extrai o segundo item de cada linha do texto.
+               3. _uniq -c_: Este comando remove linhas duplicadas consecutivas do texto e conta quantas vezes cada linha única aparece. O flag -c exibe o número de ocorrências de cada linha única.
+               4. Assim, juntando todas as partes, o comando completo faz o seguinte:
+                  1. Lê o conteúdo do arquivo "File".
+                  2. Extrai o segundo campo de cada linha (presumivelmente as linhas estão separadas por espaços).
 
    2. _fold_: Encurta, ou seja, faz um fold das linhas longas para caberem no dispositivo de output
 
@@ -894,7 +923,7 @@
 
       ```
 
-   9. _page_: Funciona de forma parecida com o comando more, mas exibe os ecrãs de forma invertida ao comando more
+   9.  _page_: Funciona de forma parecida com o comando more, mas exibe os ecrãs de forma invertida ao comando more
 
       ```bash
 
@@ -1496,6 +1525,11 @@
          ```
 
 15. <!-- markdownlint-disable-next-line -->
+    <span id='id_pastas'></span>**PASTAS DO LINUX**
+    1. <!-- markdownlint-disable-next-line -->
+       <span id='id_local_share'></span>Para que serve a pasta _~/.local/share_ no Linux?
+        1. A pasta _~/.local/share_ no Linux é uma localização onde aplicativos podem armazenar dados específicos do usuário. Isso pode incluir configurações, caches, e outros dados que são específicos para cada usuário do sistema. Muitos aplicativos usam essa pasta para manter dados que não são essenciais para o funcionamento do aplicativo, mas que podem melhorar a experiência do usuário ou acelerar o desempenho do aplicativo ao armazenar informações em cache. Por exemplo, navegadores da web muitas vezes armazenam caches de páginas da web nessa pasta para que as páginas possam ser carregadas mais rapidamente quando acessadas novamente. Além disso, alguns aplicativos podem armazenar configurações do usuário nessa pasta para personalizar o comportamento do aplicativo para cada usuário. Em resumo, a pasta _~/.local/share_ é usada por aplicativos no Linux para armazenar dados específicos do usuário que não se encaixam em outras categorias, como configurações ou caches.
+16. <!-- markdownlint-disable-next-line -->
     <span id='id_referencias'></span>**REFERÊNCIAS**
     1. [Manual Linux](https://man7.org/linux/man-pages/man1/ln.1.html)
     2. <https://www.hostinger.com.br/tutoriais/como-criar-link-simbolico-linux/>
@@ -1512,6 +1546,9 @@
 #### **HISTÓRICO** <span id='id_historico'></span>
 
 <!--TODO: HISTÓRICO -->
+
+- _23/04/2024_
+  - Escrever o texto para que serve a pasta _~/.local/share_ no Linux?
 
 - _23/05/2023 a 25/05/2023_
 

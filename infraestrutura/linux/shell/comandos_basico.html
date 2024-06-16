@@ -4,7 +4,6 @@
             <meta charset="UTF-8">
             <title>Comandos b&aacute;sico do Shell do Linux &lt;a href&equals;&quot;comandos&lowbar;basico&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt; &#x279a; &lt;&sol;a&gt;</title>
 
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -19,8 +18,9 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
+
         </head>
-        <body class="vscode-body vscode-dark">
+        <body class="vscode-body vscode-light">
             <div class="header" id="myHeader">
   <div class="navbar" w3-include-html="/menu.inc"> </div>
 </div>
@@ -28,12 +28,17 @@
 <main>
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
-<!-- <h1 id="comandos-básico-do-shell-do-linux---">Comandos básico do Shell do Linux <a href="comandos_basico.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a></h1> -->
+<h1 id="comandos-básico-do-shell-do-linux---">Comandos básico do Shell do Linux <a href="comandos_basico.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." > ➚ </a></h1>
 <h2 id="index">INDEX</h2>
 <ol>
-<li><a href="#id_introducao">Introdução</a></li>
-<li><a href="#id_Ctrl_Alt_T">Atalho para criar um terminal de comandos</a></li>
-<li><a href="#id_cmd_gestao_arquivo_pastas"><strong>Comandos de Gestão de Arquivos e Pastas</strong></a>
+<li>
+<p><a href="#id_introducao">Introdução</a></p>
+</li>
+<li>
+<p><a href="#id_Ctrl_Alt_T">Atalho para criar um terminal de comandos</a></p>
+</li>
+<li>
+<p><a href="#id_cmd_gestao_arquivo_pastas"><strong>Comandos de Gestão de Arquivos e Pastas</strong></a></p>
 <ol>
 <li><a href="#id_ls"><em>ls</em> - Comando para listar arquivos e pastas</a></li>
 <li><a href="#id_which"><em>which</em> - mostra o caminho completo dos comandos</a></li>
@@ -47,24 +52,45 @@
 <li><a href="#id_chmod"><em>chmod</em> - altera os bits do modo de arquivo</a></li>
 </ol>
 </li>
-<li><a href="#id_cmd_ajuda_documentacao"><strong>Comandos de Ajuda e Documentação</strong></a></li>
-<li><a href="#id_comandos_comunicacoes"><strong>Comandos de Comunicações</strong></a></li>
-<li><a href="#id_Cmd_edicao_de_texto"><strong>Comandos de Edição de Texto</strong></a></li>
-<li><a href="#id_cmd_transferencia_arquivos"><strong>Comandos de Transferência de Arquivos</strong></a>
+<li>
+<p><a href="#id_cmd_ajuda_documentacao"><strong>Comandos de Ajuda e Documentação</strong></a></p>
+</li>
+<li>
+<p><a href="#id_comandos_comunicacoes"><strong>Comandos de Comunicações</strong></a></p>
+</li>
+<li>
+<p><a href="#id_Cmd_edicao_de_texto"><strong>Comandos de Edição de Texto</strong></a></p>
+</li>
+<li>
+<p><a href="#id_exibicao_impressao_arquivos"><strong>Exibição ou Impressão de Arquivos</strong></a></p>
+<ol>
+<li><a href="#id_cat">cat - Mostra o conteúdo de um arquivo, como o comando type do MD-DOS</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_cmd_transferencia_arquivos"><strong>Comandos de Transferência de Arquivos</strong></a></p>
 <ol>
 <li><a href="#id_cmd_rsync"><em>rsync</em> - Sincroniza de forma rápida e flexível dados entre dois computadores.</a></li>
 </ol>
 </li>
-<li><a href="#id_cmd__noticias_Rede"><strong>Comandos de Notícias ou Rede</strong></a>
+<li>
+<p><a href="#id_cmd__noticias_Rede"><strong>Comandos de Notícias ou Rede</strong></a></p>
 <ol>
 <li><a href="#id_netstat">netstat - Imprime conexões de rede, tabelas de roteamento, estatísticas de interface, conexões mascaradas e associações multicast.</a></li>
 <li></li>
 </ol>
 </li>
-<li><a href="#id_cmd_controle_processos"><strong>Comandos de Controle de Processos</strong></a></li>
-<li><a href="#id_cmd_informacao_estado"><strong>Comandos de Informação de Estado</strong></a></li>
-<li><a href="#id_cmd_processamento_texto"><strong>Comandos de Processamento de Texto</strong></a></li>
-<li><a href="#id_web"><strong>Web</strong></a>
+<li>
+<p><a href="#id_cmd_controle_processos"><strong>Comandos de Controle de Processos</strong></a></p>
+</li>
+<li>
+<p><a href="#id_cmd_informacao_estado"><strong>Comandos de Informação de Estado</strong></a></p>
+</li>
+<li>
+<p><a href="#id_cmd_processamento_texto"><strong>Comandos de Processamento de Texto</strong></a></p>
+</li>
+<li>
+<p><a href="#id_web"><strong>Web</strong></a></p>
 <ol>
 <li><a href="#id_html2ps">html2ps - Conversor de html para ps</a></li>
 <li><a href="#id_latex2html">latex2html - Conversor de LaTeX para html</a></li>
@@ -74,7 +100,8 @@
 <li><a href="#id_weblint">weblint - Verificador de sintaxes e de estilos html</a></li>
 </ol>
 </li>
-<li><a href="#id_cmd_hardware">Comandos para manutenção de hardware</a>
+<li>
+<p><a href="#id_cmd_hardware">Comandos para manutenção de hardware</a></p>
 <ol>
 <li><a href="#id_stress_ng">stress-ng - Stressando MEM, DISCO e CPU</a></li>
 <li><a href="#id_cinnamon_settings_info">cinnamon-settings info:  Mostra as informações do sistema operacional e de hardware na <em>interface gráfica cinnamon</em></a>.</li>
@@ -82,7 +109,16 @@
 <li><a href="#id_memtester">memtester - teste de memória</a></li>
 </ol>
 </li>
-<li><a href="#id_referencias">REFERÊNCIAS</a></li>
+<li>
+<p><a href="#id_pastas">Pasta do Linux</a></p>
+<ol>
+<li><a href="#id_local_share">Para que serve a pasta ~/.local/share no Linux?</a></li>
+<li>,</li>
+</ol>
+</li>
+<li>
+<p><a href="#id_referencias">REFERÊNCIAS</a></p>
+</li>
 </ol>
 <!-- markdownlint-disable-next-line -->
 <h2 id="conteúdo">CONTEÚDO</h2>
@@ -96,7 +132,7 @@
 </li>
 <li>
 <p>A estrutura do sistema de arquivos do Linux é definida por um padrão de mercado chamado Filesystem Hierarchy Standard ou FHS, criado pela comunidade Linux em 1994 e mantida pela Linux Foundation. Atualmente a FHS está na versão 3.0. As distribuições não são obrigadas a seguir este padrão, mas elas entendem a importância da localização dos arquivos e diretórios padronizados. <a href="https://www.certificacaolinux.com.br/diretorios-e-arquivos/">Veja mais...</a></p>
-<p><img src="./img/nome_das_pastas_linux.jpeg" alt="Resumo das estrutura de pastas do linux"></p>
+<p><img src="file:////home/paulosspacheco/blog.pssp.app.br/infraestrutura/linux/shell/img/nome_das_pastas_linux.jpeg" alt="Resumo das estrutura de pastas do linux"></p>
 </li>
 <li>
 <p>Para compreender a expressão <em>nome do arquivo fonte</em> ou <em>nome do arquivo destino</em> é necessário seguir a sintaxe de nome de arquivo para a arquitetura linux.</p>
@@ -962,14 +998,53 @@ result_cp=<span class="hljs-string">"$?"</span>
 </li>
 <li>
 <!-- markdownlint-disable-next-line -->
-<p><span id='id_exibicao_impressao_arquivos'></span><strong>Exibição ou Impressão de Arquivos</strong></p>
+<p><span id='id_exibicao_impressao_arquivos'>&gt;<strong>Exibição ou Impressão de Arquivos</strong></p>
 <ol>
 <li>
-<p><em>cat</em>: Mostra o conteúdo de um arquivo, como o comando type do MD-DOS, e é muito usado também para concatenar arquivos, como por exemplo fazendo <em>cat a.txt b.txt &gt; c.txt</em> para juntar o arquivo <em>a.txt</em> e <em>b.txt</em> num único de nome <em>c.txt</em></p>
+<p><span id='id_cat'></span> <em>cat</em>: Mostra o conteúdo de um arquivo, como o comando type do MD-DOS.</p>
+<ol>
+<li>
+<p>Exemplo 01</p>
+<ol>
+<li>
+<p>concatenar nome de arquivos arquivos:</p>
 <pre><code class="hljs language-bash">
-  cat a.txt b.txt &gt; c.txt
+cat a.txt b.txt &gt; c.txt
 
 </code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Exemplo 02</p>
+<ol>
+<li>
+<p>O comando abaixo realiza uma série de operações com texto. Vou explicar cada parte em notas abaixo:</p>
+<pre><code class="hljs language-bash">   <span class="hljs-comment"># Move-se para a pasta /var/lib/dpkg/triggers/                </span>
+   <span class="hljs-built_in">cd</span> /var/lib/dpkg/triggers/
+   
+   cat File | cut -d<span class="hljs-string">" "</span> -f 2 | uniq -c
+
+</code></pre>
+<ol>
+<li>Notas
+<ol>
+<li><em>cat File</em>: Isso basicamente imprime o conteúdo do arquivo chamado &quot;File&quot; no terminal. O comando cat é usado para concatenar e exibir arquivos de texto.</li>
+<li><em>cut -d&quot; &quot; -f 2</em>: Este comando corta o texto usando o espaço como delimitador (-d&quot; &quot;) e seleciona o segundo campo (-f 2). Portanto, ele extrai o segundo item de cada linha do texto.</li>
+<li><em>uniq -c</em>: Este comando remove linhas duplicadas consecutivas do texto e conta quantas vezes cada linha única aparece. O flag -c exibe o número de ocorrências de cada linha única.</li>
+<li>Assim, juntando todas as partes, o comando completo faz o seguinte:
+<ol>
+<li>Lê o conteúdo do arquivo &quot;File&quot;.</li>
+<li>Extrai o segundo campo de cada linha (presumivelmente as linhas estão separadas por espaços).</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 </li>
 <li>
 <p><em>fold</em>: Encurta, ou seja, faz um fold das linhas longas para caberem no dispositivo de output</p>
@@ -1008,9 +1083,11 @@ result_cp=<span class="hljs-string">"$?"</span>
 </li>
 <li>
 <p><em>page</em>: Funciona de forma parecida com o comando more, mas exibe os ecrãs de forma invertida ao comando more</p>
+</li>
+</ol>
 <pre><code class="hljs language-bash">
 </code></pre>
-</li>
+<ol start="10">
 <li>
 <p><em>pr</em>: Pagina um arquivo para posterior impressão</p>
 <pre><code class="hljs language-bash">
@@ -1630,6 +1707,19 @@ result_cp=<span class="hljs-string">"$?"</span>
 </li>
 <li>
 <!-- markdownlint-disable-next-line -->
+<p><span id='id_pastas'></span><strong>PASTAS DO LINUX</strong></p>
+<ol>
+<li>
+<!-- markdownlint-disable-next-line -->
+<span id='id_local_share'></span>Para que serve a pasta <em>~/.local/share</em> no Linux?
+<ol>
+<li>A pasta <em>~/.local/share</em> no Linux é uma localização onde aplicativos podem armazenar dados específicos do usuário. Isso pode incluir configurações, caches, e outros dados que são específicos para cada usuário do sistema. Muitos aplicativos usam essa pasta para manter dados que não são essenciais para o funcionamento do aplicativo, mas que podem melhorar a experiência do usuário ou acelerar o desempenho do aplicativo ao armazenar informações em cache. Por exemplo, navegadores da web muitas vezes armazenam caches de páginas da web nessa pasta para que as páginas possam ser carregadas mais rapidamente quando acessadas novamente. Além disso, alguns aplicativos podem armazenar configurações do usuário nessa pasta para personalizar o comportamento do aplicativo para cada usuário. Em resumo, a pasta <em>~/.local/share</em> é usada por aplicativos no Linux para armazenar dados específicos do usuário que não se encaixam em outras categorias, como configurações ou caches.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<!-- markdownlint-disable-next-line -->
 <p><span id='id_referencias'></span><strong>REFERÊNCIAS</strong></p>
 <ol>
 <li><a href="https://man7.org/linux/man-pages/man1/ln.1.html">Manual Linux</a></li>
@@ -1648,6 +1738,12 @@ result_cp=<span class="hljs-string">"$?"</span>
 <h4 id="histórico-"><strong>HISTÓRICO</strong> <span id='id_historico'></span></h4>
 <!--TODO: HISTÓRICO -->
 <ul>
+<li>
+<p><em>23/04/2024</em></p>
+<ul>
+<li>Escrever o texto para que serve a pasta <em>~/.local/share</em> no Linux?</li>
+</ul>
+</li>
 <li>
 <p><em>23/05/2023 a 25/05/2023</em></p>
 <ul class="contains-task-list">

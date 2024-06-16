@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>O que &eacute; protocolo samba</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<h1 id="o-que-é-protocolo-samba">O que é protocolo samba</h1>
+<ol>
+<li>Referências
+<ol>
+<li><a href="https://paulosspacheco.blogspot.com/2020/06/instalando-e-configurando-o-servidor.html">Instalando e Configurando o Servidor Samba no Linux Debian - versão 24/06/2020</a></li>
+</ol>
+</li>
+</ol>
+<h2 id="arquivo-de-configuração">Arquivo de configuração</h2>
+<blockquote>
+<p>Sample configuration file for the Samba suite for Debian GNU/Linux.</p>
+<p>This is the main Samba configuration file. You should read the
+smb.conf(5) manual page in order to understand the options listed
+here. Samba has a huge number of configurable options most of which
+are not shown in this example</p>
+<p>Some options that are often worth tuning have been included as
+commented-out examples in this file.</p>
+<ul>
+<li>When such options are commented with &quot;&gt;&gt;&quot;, the proposed setting
+differs from the default Samba behaviour</li>
+<li>When commented with &quot;&gt;&quot;, the proposed setting is the default
+behaviour of Samba but the option is considered important
+enough to be mentioned here</li>
+</ul>
+<p>NOTE: Whenever you modify this file you should run the command
+&quot;testparm&quot; to check that you have not made any basic syntactic
+errors.</p>
+</blockquote>
+<blockquote>
+<p>======================= Global Settings =======================</p>
+</blockquote>
+<p>[global]</p>
+<blockquote>
+<blockquote>
+<p>Browsing/Identification &gt;&gt;&gt;</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Change this to the workgroup/NT-domain name your Samba server will part of
+workgroup = itms</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Networking &gt;&gt;&gt;&gt;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The specific set of interfaces / networks to bind to
+This can be either the interface name or an IP address/netmask&gt;&gt;
+interface names are normally preferred</p>
+<blockquote>
+<p>interfaces = 127.0.0.0/8 eth0</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Only bind to the named interfaces and/or networks&gt;&gt; you must use the
+'interfaces' option above to use this.
+It is recommended that you enable this feature if your Samba machine is
+not protected by a firewall or is a firewall itself.  However, this
+option cannot handle dynamic or non-broadcast interfaces correctly.</p>
+<blockquote>
+<p>bind interfaces only = yes</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Debugging/Accounting &gt;&gt;&gt;&gt;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>This tells Samba to use a separate log file for each machine
+that connects
+log file = /var/log/samba/log.%m</p>
+</blockquote>
+<blockquote>
+<p>Cap the size of the individual log files (in KiB).
+max log size = 1000</p>
+</blockquote>
+<blockquote>
+<p>We want Samba to only log to /var/log/samba/log.{smbd,nmbd}.
+Append syslog@1 if you want important messages to be sent to syslog too.
+logging = file</p>
+</blockquote>
+<blockquote>
+<p>Do something sensible when Samba crashes: mail the admin a backtrace
+panic action = /usr/share/samba/panic-action %d</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Authentication &gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Server role. Defines in which mode Samba will operate. Possible
+values are &quot;standalone server&quot;, &quot;member server&quot;, &quot;classic primary
+domain controller&quot;, &quot;classic backup domain controller&quot;, &quot;active
+directory domain controller&quot;.</p>
+<p>Most people will want &quot;standalone server&quot; or &quot;member server&quot;.
+Running as &quot;active directory domain controller&quot; will require first
+running &quot;samba-tool domain provision&quot; to wipe databases and create a
+new domain.
+server role = standalone server</p>
+</blockquote>
+<p>obey pam restrictions = yes</p>
+<blockquote>
+<p>This boolean parameter controls whether Samba attempts to sync the Unix
+password with the SMB password when the encrypted SMB password in the
+passdb is changed.
+unix password sync = yes</p>
+</blockquote>
+<blockquote>
+<p>For Unix password sync to work on a Debian GNU/Linux system, the following
+parameters must be set (thanks to Ian Kahan &lt;<a href="mailto:kahan@informatik.tu-muenchen.de">kahan@informatik.tu-muenchen.de</a> for
+sending the correct chat script for the passwd program in Debian Sarge).
+passwd program = /usr/bin/passwd %u
+passwd chat = <em>Enter\snew\s</em>\spassword:* %n\n <em>Retype\snew\s</em>\spassword:* %n\n <em>password\supdated\ssuccessfully</em> .</p>
+</blockquote>
+<blockquote>
+<p>This boolean controls whether PAM will be used for password changes
+when requested by an SMB client instead of the program listed in
+'passwd program'. The default is 'no'.
+pam password change = yes</p>
+</blockquote>
+<blockquote>
+<p>This option controls how unsuccessful authentication attempts are mapped
+to anonymous connections
+map to guest = bad user</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Domains &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The following settings only takes effect if 'server role = classic
+primary domain controller', 'server role = classic backup domain controller'
+or 'domain logons' is set</p>
+</blockquote>
+<blockquote>
+<p>It specifies the location of the user's
+profile directory from the client point of view) The following
+required a [profiles] share to be setup on the samba server (see
+below)</p>
+<blockquote>
+<p>logon path = \%N\profiles%U
+Another common choice is storing the profile in the user's home directory
+(this is Samba's default)
+logon path = \%N%U\profile</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The following setting only takes effect if 'domain logons' is set
+It specifies the location of a user's home directory (from the client
+point of view)</p>
+<blockquote>
+<p>logon drive = H:
+logon home = \%N%U</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>The following setting only takes effect if 'domain logons' is set
+It specifies the script to run during logon. The script must be stored
+in the [netlogon] share
+NOTE: Must be store in 'DOS' file format convention</p>
+<blockquote>
+<p>logon script = logon.cmd</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>This allows Unix users to be created on the domain controller via the SAMR
+RPC pipe.  The example command creates a user account with a disabled Unix
+password&gt;&gt; please adapt to your needs</p>
+<blockquote>
+<p>add user script = /usr/sbin/useradd --create-home %u</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>This allows machine accounts to be created on the domain controller via the
+SAMR RPC pipe.<br>
+The following assumes a &quot;machines&quot; group exists on the system</p>
+<blockquote>
+<p>add machine script  = /usr/sbin/useradd -g machines -c &quot;%u machine account&quot; -d /var/lib/samba -s /bin/false %u</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>This allows Unix groups to be created on the domain controller via the SAMR
+RPC pipe.</p>
+<blockquote>
+<p>add group script = /usr/sbin/addgroup --force-badname %g</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Misc &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Using the following line enables you to customise your configuration
+on a per machine basis. The %m gets replaced with the netbios name
+of the machine that is connecting</p>
+<blockquote>
+<p>include = /home/samba/etc/smb.conf.%m</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Some defaults for winbind (make sure you're not using the ranges
+for something else.)</p>
+<blockquote>
+<p>idmap config * :              backend = tdb
+idmap config * :              range   = 3000-7999
+idmap config YOURDOMAINHERE : backend = tdb
+idmap config YOURDOMAINHERE : range   = 100000-999999
+template shell = /bin/bash</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Setup usershare options to enable non-root users to share folders
+with the net usershare command.</p>
+</blockquote>
+<blockquote>
+<p>Maximum number of usershare. 0 means that usershare is disabled.
+usershare max shares = 100</p>
+</blockquote>
+<blockquote>
+<p>Allow users who've been granted usershare privileges to create
+public shares, not just authenticated ones
+usershare allow guests = yes</p>
+</blockquote>
+<blockquote>
+<p>======================= Share Definitions =======================</p>
+</blockquote>
+<p>[homes]
+comment = Home Directories
+browseable = no</p>
+<blockquote>
+<p>By default, the home directories are exported read-only. Change the
+next parameter to 'no' if you want to be able to write to them.
+read only = yes</p>
+</blockquote>
+<blockquote>
+<p>File creation mask is set to 0700 for security reasons. If you want to
+create files with group=rw permissions, set next parameter to 0775.
+create mask = 0700</p>
+</blockquote>
+<blockquote>
+<p>Directory creation mask is set to 0700 for security reasons. If you want to
+create dirs. with group=rw permissions, set next parameter to 0775.
+directory mask = 0700</p>
+</blockquote>
+<blockquote>
+<p>By default, \server\username shares can be connected to by anyone
+with access to the samba server.
+The following parameter makes sure that only &quot;username&quot; can connect
+to \server\username
+This might need tweaking when using external authentication schemes
+valid users = %S</p>
+</blockquote>
+<blockquote>
+<p>Un-comment the following and create the netlogon directory for Domain Logons
+(you need to configure Samba to act as a domain controller too.)</p>
+<blockquote>
+<p>[netlogon]
+comment = Network Logon Service
+path = /home/samba/netlogon
+guest ok = yes
+read only = yes</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Un-comment the following and create the profiles directory to store
+users profiles (see the &quot;logon path&quot; option above)
+(you need to configure Samba to act as a domain controller too.)
+The path below should be writable by all users so that their
+profile directory may be created the first time they log on</p>
+<blockquote>
+<p>[profiles]
+comment = Users profiles
+path = /home/samba/profiles
+guest ok = no
+browseable = no
+create mask = 0600
+directory mask = 0700</p>
+</blockquote>
+</blockquote>
+<p>[printers]
+comment = All Printers
+browseable = no
+path = /var/tmp
+printable = yes
+guest ok = no
+read only = yes
+create mask = 0700</p>
+<blockquote>
+<p>Windows clients look for this share name as a source of downloadable
+printer drivers
+[print$]
+comment = Printer Drivers
+path = /var/lib/samba/printers
+browseable = yes
+read only = yes
+guest ok = no
+Uncomment to allow remote administration of Windows print drivers.
+You may need to replace 'lpadmin' with the name of the group your
+admin users are members of.
+Please note that you also need to set appropriate Unix permissions
+to the drivers directory for these users to have write rights in it</p>
+<blockquote>
+<p>write list = root, @lpadmin</p>
+</blockquote>
+</blockquote>
+<!-- markdownlint-disable-next-line -->
+<script>  includeHTML(); FixHeader(window,"myHeader"); </script>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

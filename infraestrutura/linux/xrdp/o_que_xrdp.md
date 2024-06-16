@@ -177,12 +177,12 @@
 
             ```bash
 
-               # Defina o nível de criptografia como alto:
-               encrypt_level=alto
+               # Defina o nível de criptografia como:  crypt_level=[low|medium|high|fips]:
+               crypt_level=medium
 
             ```
 
-            1. encrypt_level=alto
+            1. crypt_level=medium
 
       7. A seguir, crie um arquivo de configuração do polkit:
 
@@ -380,6 +380,7 @@
    2. [Notas de versão para xrdp v0.9.24 (30/12/2023)](https://github.com/neutrinolabs/xrdp/releases)
    3. [github xrdp](https://github.com/neutrinolabs/xrdp)
    4. [Como ativar o protocolo de área de trabalho remota usando xrdp no Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-enable-remote-desktop-protocol-using-xrdp-on-ubuntu-22-04)
+   5. [Config do xrdp](https://manpages.ubuntu.com/manpages/focal/en/man5/xrdp.ini.5.html)
 
 <!-- markdownlint-disable-next-line -->
 1. <span id="id_historico"><span>**HISTÓRICO**

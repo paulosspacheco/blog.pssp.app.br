@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Como instalar pacote &lbrack;cef4delphi&rbrack;&lpar;https&colon;&sol;&sol;github&period;com&sol;salvadordf&sol;CEF4Delphi&rpar; no lazarus &lt;a href&equals;&quot;cef4delphi&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+ 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+
+        </head>
+        <body class="vscode-body vscode-dark">
+            <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<h1 id="como-instalar-pacote-cef4delphi-no-lazarus----">Como instalar pacote <a href="https://github.com/salvadordf/CEF4Delphi">cef4delphi</a> no lazarus <a href="cef4delphi.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
+<h2 id="1-index">1. INDEX</h2>
+<hr>
+<ol>
+<li>
+<p><a href="#id_resumo">Resumo do conteúdo</a></p>
+</li>
+<li>
+<p><strong>Introdução</strong></p>
+<ol>
+<li><a href="#id_objetivo">Objetivo.</a></li>
+<li><a href="#id_pre_requisitos">Pre-requisitos.</a></li>
+<li><a href="#id_beneficios">Benefícios.</a></li>
+<li><a href="#id_desvantagens">Desvantagens.</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a></p>
+<ol>
+<li><a href="#id_assunto01">Passo a Passo para Instalação do Cef4Delphi</a></li>
+<li><a href="#id_assunto02">CEF é o anacrônico de Chromium Embedded Framework, é uma interface para o Chromium em outras aplicações.</a></li>
+</ol>
+</li>
+<li>
+<p><a href="#id_referencias"><strong>Referências globais.</strong></a></p>
+</li>
+<li>
+<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
+</li>
+</ol>
+<h2 id="2-conteúdo">2. CONTEÚDO</h2>
+<hr>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li>
+<p><span id="id_resumo"><span><strong>Resumo do conteúdo:</strong></p>
+<ol>
+<li>Descreve um resumo de como foi feito esse documento com as facilidade encontradas para produzi-lo e dificuldade encontrada.</li>
+</ol>
+</li>
+<li>
+<p><strong>Introdução</strong></p>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li>
+<p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
+<ol>
+<li>
+<p>Este documento descreve passo a passo como testar os exemplos que acompanha o projeto <a href="https://www.briskbard.com/index.php?lang=en&amp;pageid=cef">cef4Delphi</a>.</p>
+</li>
+<li>
+<p>Preciso deste projeto porque o projeto  <a href="https://github.com/OpenSourceCommunityBrasil/WBotCE/blob/main/README.md">WBotCE</a> usado para comunicação com <a href="https://www.whatsapp.com/?lang=pt_BR">WhatsApp</a> depende do cef4Delphi.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
+<ol>
+<li>
+<p>Linux ou Windows</p>
+</li>
+<li>
+<p>No Linux usar pacote <a href="https://cef-builds.spotifycdn.com/cef_binary_122.1.13%2Bgde5b724%2Bchromium-122.0.6261.130_linux64.tar.bz2">cef_binary_121.3.15+g4d3b0b4+chromium-121.0.6167.184_linux64</a>.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text>
+s</p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_beneficios"></span><strong>Benefícios:</strong></p>
+<ol>
+<li>
+<p>Este projeto permite criar interagir com páginas html dentro de um programa Lazarus ou Delphi sem necessidade de usar o browser externo.</p>
+</li>
+<li>
+<p>Comunicação com o aplicativo WhatsApp usado no projeto Assistente Virtual para Médicos.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id="id_desvantagens"></span><strong>Desvantagens</strong>.</p>
+<ol>
+<li>
+<p>Estou tendo muita dificuldade para fazer funcionar e até momento não sei porque.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li>
+<p><span id=id_Conteudo></span><strong>Conteúdo estudado</strong></p>
+<ol>
+<li>
+<p><span id=id_assunto01></span><strong>Passo a Passo para Instalação do Cef4Delphi</strong></p>
+<ol>
+<li>
+<p>Instalação do projeto Cef4Delphi.</p>
+<ol>
+<li>
+<p>Baixe a versão mais recente do CEF4Delphi no GitHub:</p>
+<pre><code class="hljs language-bash">
+  <span class="hljs-comment"># Selecione a pasta lazarus/ccr</span>
+  <span class="hljs-built_in">cd</span> ~/lazarus/ccr
+
+  <span class="hljs-comment"># Baixar a versão mais recente no github</span>
+  <span class="hljs-comment"># git clone git@github.com:salvadordf/CEF4Delphi.git</span>
+  git <span class="hljs-built_in">clone</span> https://gitlab.com/salvadordf/CEF4Delphi.git
+
+</code></pre>
+</li>
+<li>
+<p>Baixar a versão do executável compilado em c do projeto CEF:</p>
+<pre><code class="hljs language-bash">
+   <span class="hljs-comment"># Selecione a pasta lazarus/ccr</span>
+   <span class="hljs-built_in">cd</span> ~/lazarus/ccr
+
+   <span class="hljs-comment"># Baixar a versão recomendada pelo projeto cef4delphi</span>
+   wget https://cef-builds.spotifycdn.com/cef_binary_123.0.8%2Bg43f22da%2Bchromium-123.0.6312.46_linux64.tar.bz2
+
+   <span class="hljs-comment"># Descompactar arquivo acima baixado</span>
+   tar -jxvf https://cef-builds.spotifycdn.com/cef_binary_123.0.8%2Bg43f22da%2Bchromium-123.0.6312.46_linux64.tar.bz2
+
+   <span class="hljs-comment"># Copiar o executável do projeto acima para a pasta criada pelo comando git clone git@github.com:salvadordf/CEF4Delphi.git</span>
+   <span class="hljs-built_in">cd</span> ./https://cef-builds.spotifycdn.com/cef_binary_123.0.8%2Bg43f22da%2Bchromium-123.0.6312.46_linux64.tar.bz2
+   cp -af ./Release/*.* ../CEF4Delphi-121.0.6167.184/bin
+   cp -af ./Resources/*.* ../CEF4Delphi-121.0.6167.184/bin
+
+</code></pre>
+</li>
+<li>
+<p>Instalar pacote cef4delphi_lazarus.lpk</p>
+<ol>
+<li>Entrar na ide Lazarus</li>
+<li>Selecionar a opção /Pacotes/Abri arquivo do pacote (.lpk)</li>
+<li>Seleciona a pasta ~/lazarus/ccr/CEF4Delphi-121.0.6167.184/packages</li>
+<li>Selecionar o pacote cef4delphi_lazarus.lpk</li>
+<li>Pressione no botão Instalar.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Teste para checar se está funcionando:</p>
+<ol>
+<li>
+<p>Entrar na IDE Lazarus</p>
+<ol>
+<li>Selecionar a opção /project/abrir projeto...
+<ol>
+<li>Selecionar arquivo ~/lazarus/ccr/CEF4Delphi-121.0.6167.184/demos/Lazarus_Linux_GTK2/MiniBrowser/MiniBrowser.lpi</li>
+</ol>
+</li>
+<li>Selecionar opção /Executar/Executar.</li>
+</ol>
+</li>
+<li>
+<p>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li>.</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><span id=id_assunto02></span><strong>CEF é o anacrônico de Chromium Embedded Framework, é uma interface para o Chromium em outras aplicações.</strong></p>
+<ol>
+<li>
+<p>Descrição do conteúdo.</p>
+</li>
+<li>
+<p><strong>Exemplo do CEF é o anacrônico de Chromium Embedded Framework, é uma interface para o Chromium em outras aplicações.</strong>.</p>
+<ol>
+<li>
+<p><a href="https://maurinsoft.com.br/instalacao-cef-no-linux/">Instalação CEF no Linux</a>:</p>
+<ol>
+<li>Link para instalação: <a href="https://maurinsoft.com.br/instalacao-cef-no-linux/">Link</a></li>
+<li>Baixe os repositórios dos projetos no seguinte repositório GIT:
+<ol>
+<li><a href="https://bitbucket.org/%7Bdc443723-7652-4c63-b340-033e522146db%7D/">Baixar do repositório CEF</a></li>
+<li></li>
+</ol>
+</li>
+</ol>
+<pre><code class="hljs language-ts"></code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Referências:</strong></p>
+<ol>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li><span id=id_referencias></span><strong>REFERÊNCIAS GLOBAIS</strong>
+<ol>
+<li><a href="https://github.com/salvadordf/CEF4Delphi">Readme cef4delphi</a></li>
+<li><a href="#1">Site oficial para produzir este documento</a></li>
+<li><a href="https://www.briskbard.com/index.php?lang=en&amp;pageid=cef">CEF4Delphi é um projeto de código aberto criado por Salvador Díaz Fau </a></li>
+<li><a href="https://maurinsoft.com.br/instalacao-cef-no-linux/">Instalação CEF no Linux</a></li>
+<li><a href="##">#</a></li>
+<li><a href="##">#</a></li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li><text onclick="goBack()">[🔙]</text></li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<ol>
+<li>
+<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
+<ol>
+<li>dd/mm/2021 <!--TODO: HISTÓRICO --></li>
+</ol>
+</li>
+</ol>
+<!-- markdownlint-disable-next-line -->
+<pre><code class="hljs">  - &lt;text onclick=&quot;goBack()&quot;&gt;[🔙]&lt;/text&gt;
+</code></pre>
+<ol>
+<li>dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: -->
+<ul class="contains-task-list">
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Criar este documento baseado no <a href="http://modelo03.html">modelo03.md</a> ;</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Objetivos;</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Pre-requisitos</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Benefícios</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico desvantagens</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Exemplos</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</p>
+</li>
+<li>
+<p><text onclick="goBack()">[🔙]</text></p>
+</li>
+</ul>
+</li>
+</ol>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+            
+            
+        </body>
+        </html>

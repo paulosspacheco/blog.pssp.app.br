@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Quick Links</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+            
+        
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-dark">
+            <p>The Chromium Embedded Framework (CEF) is a simple framework for embedding Chromium-based browsers in other applications.</p>
+<h1 id="quick-links">Quick Links</h1>
+<ul>
+<li>Project Page - <a href="https://bitbucket.org/chromiumembedded/cef">https://bitbucket.org/chromiumembedded/cef</a></li>
+<li>Tutorial - <a href="https://bitbucket.org/chromiumembedded/cef/wiki/Tutorial">https://bitbucket.org/chromiumembedded/cef/wiki/Tutorial</a></li>
+<li>General Usage - <a href="https://bitbucket.org/chromiumembedded/cef/wiki/GeneralUsage">https://bitbucket.org/chromiumembedded/cef/wiki/GeneralUsage</a></li>
+<li>Master Build Quick-Start - <a href="https://bitbucket.org/chromiumembedded/cef/wiki/MasterBuildQuickStart">https://bitbucket.org/chromiumembedded/cef/wiki/MasterBuildQuickStart</a></li>
+<li>Branches and Building - <a href="https://bitbucket.org/chromiumembedded/cef/wiki/BranchesAndBuilding">https://bitbucket.org/chromiumembedded/cef/wiki/BranchesAndBuilding</a></li>
+<li>Announcements - <a href="https://groups.google.com/forum/#!forum/cef-announce">https://groups.google.com/forum/#!forum/cef-announce</a></li>
+<li>Support Forum - <a href="http://www.magpcss.org/ceforum/">http://www.magpcss.org/ceforum/</a></li>
+<li>Issue Tracker - <a href="https://github.com/chromiumembedded/cef/issues">https://github.com/chromiumembedded/cef/issues</a></li>
+<li>C++ API Docs - <a href="https://cef-builds.spotifycdn.com/docs/stable.html">Stable release docs</a> / <a href="https://cef-builds.spotifycdn.com/docs/beta.html">Beta release docs</a></li>
+<li>Downloads - <a href="https://cef-builds.spotifycdn.com/index.html">https://cef-builds.spotifycdn.com/index.html</a></li>
+<li>Donations - <a href="http://www.magpcss.org/ceforum/donate.php">http://www.magpcss.org/ceforum/donate.php</a></li>
+</ul>
+<h1 id="introduction">Introduction</h1>
+<p>CEF is a BSD-licensed open source project founded by Marshall Greenblatt in 2008 and based on the <a href="http://www.chromium.org/Home">Google Chromium</a> project. Unlike the Chromium project itself, which focuses mainly on Google Chrome application development, CEF focuses on facilitating embedded browser use cases in third-party applications. CEF insulates the user from the underlying Chromium and Blink code complexity by offering production-quality stable APIs, release branches tracking specific Chromium releases, and binary distributions. Most features in CEF have default implementations that provide rich functionality while requiring little or no integration work from the user. There are currently over 100 million installed instances of CEF around the world embedded in products from a wide range of companies and industries. A partial list of companies and products using CEF is available on the <a href="http://en.wikipedia.org/wiki/Chromium_Embedded_Framework#Applications_using_CEF">CEF Wikipedia page</a>. Some use cases for CEF include:</p>
+<ul>
+<li>Embedding an HTML5-compliant Web browser control in an existing native application.</li>
+<li>Creating a light-weight native “shell” application that hosts a user interface developed primarily using Web technologies.</li>
+<li>Rendering Web content “off-screen” in applications that have their own custom drawing frameworks.</li>
+<li>Acting as a host for automated testing of existing Web properties and applications.</li>
+</ul>
+<p>CEF supports a wide range of programming languages and operating systems and can be easily integrated into both new and existing applications. It was designed from the ground up with both performance and ease of use in mind. The base framework includes C and C++ programming interfaces exposed via native libraries that insulate the host application from Chromium and Blink implementation details. It provides close integration between the browser and the host application including support for custom plugins, protocols, JavaScript objects and JavaScript extensions. The host application can optionally control resource loading, navigation, context menus, printing and more, while taking advantage of the same performance and HTML5 technologies available in the Google Chrome Web browser.</p>
+<p>Numerous individuals and organizations contribute time and resources to support CEF development, but more involvement from the community is always welcome. This includes support for both the core CEF project and external projects that integrate CEF with additional programming languages and frameworks (see the &quot;External Projects&quot; section below). If you are interested in donating time to help with CEF development please see the &quot;Helping Out&quot; section below. If you are interested in donating money to support general CEF development and infrastructure efforts please visit the <a href="http://www.magpcss.org/ceforum/donate.php">CEF Donations</a> page.</p>
+<h1 id="getting-started">Getting Started</h1>
+<p>Users new to CEF development should start by reading the <a href="https://bitbucket.org/chromiumembedded/cef/wiki/Tutorial">Tutorial</a> Wiki page for an overview of CEF usage and then proceed to the <a href="https://bitbucket.org/chromiumembedded/cef/wiki/GeneralUsage">GeneralUsage</a> Wiki page for a more in-depth discussion or architectural and usage issues. Complete API documentation is available <a href="https://cef-builds.spotifycdn.com/docs/stable.html">here</a>. CEF support and related discussion is available on the <a href="http://www.magpcss.org/ceforum/">CEF Forum</a>.</p>
+<h1 id="binary-distributions">Binary Distributions</h1>
+<p>Binary distributions, which include all files necessary to build a CEF-based application, are available on the <a href="https://cef-builds.spotifycdn.com/index.html">Downloads</a> page. Binary distributions are stand-alone and do not require the download of CEF or Chromium source code. Symbol files for debugging binary distributions of libcef can also be downloaded from the above links.</p>
+<h1 id="source-distributions">Source Distributions</h1>
+<p>The CEF project is an extension of the Chromium project. CEF maintains development and release branches that track Chromium branches. CEF source code can be downloaded, built and packaged manually or with automated tools. Visit the <a href="https://bitbucket.org/chromiumembedded/cef/wiki/BranchesAndBuilding">BranchesAndBuilding</a> Wiki page for more information.</p>
+<h1 id="external-projects">External Projects</h1>
+<p>The base CEF framework includes support for the C and C++ programming languages. Thanks to the hard work of external maintainers CEF can integrate with a number of other programming languages and frameworks. These external projects are not maintained by CEF so please contact the respective project maintainer if you have any questions or issues.</p>
+<ul>
+<li>.Net (CEF3) - <a href="https://github.com/cefsharp/CefSharp">https://github.com/cefsharp/CefSharp</a></li>
+<li>.Net (CEF1) - <a href="https://bitbucket.org/fddima/cefglue">https://bitbucket.org/fddima/cefglue</a></li>
+<li>.Net/Mono (CEF3) - <a href="https://gitlab.com/xiliumhq/chromiumembedded/cefglue">https://gitlab.com/xiliumhq/chromiumembedded/cefglue</a></li>
+<li>Delphi - <a href="https://github.com/hgourvest/dcef3">https://github.com/hgourvest/dcef3</a></li>
+<li>Delphi - <a href="https://github.com/salvadordf/CEF4Delphi">https://github.com/salvadordf/CEF4Delphi</a></li>
+<li>Go - <a href="https://github.com/CzarekTomczak/cef2go">https://github.com/CzarekTomczak/cef2go</a></li>
+<li>Go - <a href="https://github.com/energye/energy">https://github.com/energye/energy</a></li>
+<li>Java - <a href="https://bitbucket.org/chromiumembedded/java-cef">https://bitbucket.org/chromiumembedded/java-cef</a></li>
+<li>Python - <a href="http://code.google.com/p/cefpython/">http://code.google.com/p/cefpython/</a></li>
+</ul>
+<p>If you're the maintainer of a project not listed above and would like your project listed here please either post to the <a href="http://www.magpcss.org/ceforum/">CEF Forum</a> or contact Marshall directly.</p>
+<h1 id="helping-out">Helping Out</h1>
+<p>CEF is still very much a work in progress. Some ways that you can help out:</p>
+<p>- Vote for issues in the <a href="https://github.com/chromiumembedded/cef/issues">CEF issue tracker</a> that are important to you. This helps with development prioritization.</p>
+<p>- Report any bugs that you find or feature requests that are important to you. Make sure to first search for existing issues before creating new ones. Please use the <a href="http://magpcss.org/ceforum">CEF Forum</a> and not the issue tracker for usage questions. Each CEF issue should:</p>
+<ul>
+<li>Include the CEF revision or binary distribution version.</li>
+<li>Include information about your OS and compiler version.</li>
+<li>If the issue is a bug please provide detailed reproduction information.</li>
+<li>If the issue is a feature please describe why the feature is beneficial.</li>
+</ul>
+<p>- Write unit tests for new or existing functionality.</p>
+<p>- Pull requests and patches are welcome. View open issues in the <a href="https://github.com/chromiumembedded/cef/issues">CEF issue tracker</a> or search for TODO(cef) in the source code for ideas.</p>
+<p>If you would like to contribute source code changes to CEF please follow the below guidelines:</p>
+<p>- Create or find an appropriate issue for each distinct bug, feature or change.</p>
+<p>- Submit a <a href="https://bitbucket.org/chromiumembedded/cef/wiki/ContributingWithGit">pull request</a> or create a patch with your changes and attach it to the CEF issue. Changes should:</p>
+<ul>
+<li>Be submitted against the current <a href="https://bitbucket.org/chromiumembedded/cef/src/?at=master">CEF master branch</a> unless explicitly fixing a bug in a CEF release branch.</li>
+<li>Follow the style of existing CEF source files. In general CEF uses the <a href="https://chromium.googlesource.com/chromium/src/+/master/styleguide/c++/c++.html">Chromium C++ style guide</a>.</li>
+<li>Include new or modified unit tests as appropriate to the functionality.</li>
+<li>Not include unnecessary or unrelated changes.</li>
+</ul>
+
+            
+            
+        </body>
+        </html>
