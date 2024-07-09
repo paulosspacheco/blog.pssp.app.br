@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>SINTAXE DE RECURSOS DO TEMPLATE MARICARAI</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="sintaxe-de-recursos-do-template-maricarai">SINTAXE DE RECURSOS DO TEMPLATE MARICARAI</h1>
+<ol>
+<li>
+<p><strong>Códigos de Controles</strong></p>
+<ol>
+<li>^A = Zera todos os campos</li>
+<li>'~'  = switch tString-literals on/off</li>
+<li>^B = Indica que os caracteres seguintes contem o nome do campo</li>
+<li>^ = A sequência a seguir é o hint do campo.</li>
+<li>^C = O campo corrente possuem uma lista de opções do mesmo tipo.</li>
+<li>^D = use o próximo char como um delimiter de campo</li>
+<li>^E = Campos do tipo enumerado.</li>
+<li>^F = Usado para criar restrições e relacionamentos</li>
+<li>^G = Usada para concatenar duas listas do tipo PSItem.</li>
+<li>^H = Campo escondido</li>
+<li>^I = link to chain of TSItem Templates</li>
+<li>^J = Retorno do carro</li>
+<li>^k = Os caracteres após ^k é capturado no campo TDmxFieldRec.Default</li>
+<li>\K = K maiúsculo tipo FldRadioButton.</li>
+<li>\k = k minusculo tipo FldDbRadioButton.</li>
+<li>^P = Usado para controlar o flag do tipo de campo</li>
+<li>^R = campo somente de leitura</li>
+<li>^S = &quot; salte &quot; campo (cursor saltar  em cima disto)</li>
+<li>^U = o limite superior do campo (Somente 1 a 255)</li>
+<li>^V = Em caso de omissão use o tString apos ^V</li>
+<li>^X = campo de BOOLEAN especial</li>
+<li>^Z = zera se este campo está vazio</li>
+<li>^L = Link para uma URL ou actionItens</li>
+<li>^U = Informar um limite superior <a href="%5EU">para</a> campos do tipo byte.</li>
+</ol>
+</li>
+<li>
+<p><strong>Delimitadores de campos:</strong></p>
+<ol>
+<li>#0 = delimiter de campo técnico (não exibe)</li>
+<li>\ = exibe como um espaço</li>
+<li>| = exibe como<strong>Tipos de campos:</strong> uma linha vertical sólida (#179)</li>
+</ol>
+</li>
+<li>
+<p><strong>Tipos de campos:</strong></p>
+<ol>
+<li>
+<p><strong>Campo string com tamanho da string no byte 0:</strong></p>
+<ol>
+<li>
+<p><strong>Const fldStr = 'S';</strong></p>
+<ol>
+<li>O caractere <em>S</em> informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>S</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo <em>ShortString</em> que só aceita caracteres maiúsculas.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+    <span class="hljs-keyword">Resourcestring</span>
+
+     ~Nome:    ~<span class="hljs-string">'\SSSSSSSSSSSSSSSSSSSS'</span> <span class="hljs-comment">//Campo com 20 caracteres maiúsculas</span>
+     ~Endereço:~<span class="hljs-string">'\SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS'</span> <span class="hljs-comment">//Campo com 40 caracteres maiúsculas</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldstr_Lowcase = 's';</strong></p>
+<ol>
+<li>O caractere <em>s</em> informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>s</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo ShortString que só aceita caractere minúscula.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+    <span class="hljs-keyword">Resourcestring</span>
+
+     ~Nome:    ~<span class="hljs-string">'\ssssssssssssssssssss'</span> <span class="hljs-comment">//Campo com 20 caracteres minúsculas </span>
+     ~Endereço:~<span class="hljs-string">'\ssssssssssssssssssssssssssssssssssssssss'</span> <span class="hljs-comment">//Campo com 40 caractere minúsculas</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldSTRNUM = '#'</strong></p>
+<ol>
+<li>O caractere <em>#</em> usado na máscara do template e informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>#</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo ShortString que só aceita caracteres numéricos.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">   
+   <span class="hljs-keyword">Resourcestring</span>
+
+    ~Telefone: ~\(##) # ####-#### <span class="hljs-comment">//85 9 9702 4498</span>
+    ~Cep:      ~\## #### ###
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Campo string com tamanho da string limitado pelo caractere <em>0 (zero)</em> no fim da string.</strong></p>
+<ol>
+<li>
+<p><strong>Const fldAnsiChar = 'C'</strong></p>
+<ol>
+<li>O caractere <strong>c</strong> usado na máscara do Template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres 'C' após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo AnsiString que só aceita caracteres maiúsculos.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+       <span class="hljs-keyword">Resourcestring</span>
+
+    ~Nome:    ~<span class="hljs-string">'\CCCCCCCCCCCCCCCCCCCC'</span> <span class="hljs-comment">//Campo com 20 caracteres maiúsculas</span>
+    ~Endereço:~<span class="hljs-string">'\CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC'</span> <span class="hljs-comment">//Campo com 40 caractere maiúsculas</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldAnsiChar_LowCase =  'c'</strong></p>
+<ol>
+<li>O caractere <strong>c</strong> usado na máscara do Template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <strong>c</strong> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo AnsiString que só aceita caractere minúsculo.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+   <span class="hljs-keyword">Resourcestring</span>
+
+    ~Nome:    ~<span class="hljs-string">'\cccccccccccccccccccc'</span> <span class="hljs-comment">//Campo com 20 caracteres minúsculas</span>
+    ~Endereço:~<span class="hljs-string">'\cccccccccccccccccccccccccccccccccccccccc'</span> <span class="hljs-comment">//Campo com 40 caractere minúsculas</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldAnsiCharNUM = '0'</strong></p>
+<ol>
+<li>Usado na máscara do Template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>0</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo AnsiString que só aceita caractere numérico [<em>'0'..'9']</em>.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+   <span class="hljs-keyword">Resourcestring</span>
+
+     ~telefone :~\(<span class="hljs-number">00</span>) <span class="hljs-number">0</span> <span class="hljs-number">0000</span>-<span class="hljs-number">0000</span><span class="hljs-string">' //85 9 9702 4498
+
+</span></code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldAnsiCharVAL = 'N'</strong>;</p>
+<ol>
+<li>O caractere <em>N</em> usado na máscara do template informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>0</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo AnsiString  que só aceita caractere numérico <em>['0'..'9']</em> com formatação dbase.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+    <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~telefone :~\(NN) N NNNN-NNNN'</span> <span class="hljs-comment">//85 9 9702 4498</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldBYTE = 'B'</strong>;</p>
+<ol>
+<li>
+<p>O caractere <em>B</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>B</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo byte e só pode receber valor na faixa <em>[0..255]</em>.</p>
+<ol>
+<li><strong>EXEMPLO</strong></li>
+</ol>
+<pre><code class="hljs language-pascal">
+    <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~idade :~\BBB'</span> <span class="hljs-comment">//Os três dígitos estarão em um buffer de 1 byte;</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldSHORTINT =  'J'</strong>;</p>
+<ol>
+<li>
+<p>O caractere <em>J</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>J</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo byte e só pode receber valor na faixa <em>[-128 a 127]</em>, usado quando precisamos de um tipo byte com valores negativos.</p>
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+    <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~Tempo de vida ou de morte:~\JJJ'</span> <span class="hljs-comment">//Os três dígitos estarão em um buffer de 1 byte;</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldSmallWORD = 'W'</strong></p>
+<ol>
+<li>
+<p>O caractere <em>W</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>W</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo word curto e só pode receber valor na faixa <em>[0 a 65535]</em>.</p>
+</li>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+    <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~idade :~\WW,WWW'</span> <span class="hljs-comment">//Os cinco dígitos estarão em um buffer de 2 bytes;</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldSmallInt = 'I'</strong>;</p>
+<ol>
+<li>
+<p>O caractere <em>I</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>I</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo Inteiro curto (2 bytes) e só pode receber valor na faixa <em>[-32.768 a 32.767]</em>.</p>
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+    <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~Tipo small int :~\II,III'</span> <span class="hljs-comment">//Os cinco dígitos estarão em um buffer de 2 bytes;</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldLONGINT = 'L'</strong>;</p>
+<ol>
+<li>
+<p>O caractere <em>L</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>L</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo Inteiro longo (4 bytes) e só pode receber valor na faixa <em>[ -2.147.483.648 a 2.147.483.647]</em>.</p>
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+    <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~Tipo longint :~\LLL,LLL'</span> <span class="hljs-comment">//Os seis dígitos estarão em um buffer de 4 bytes;</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldRealNum = 'R'</strong>;</p>
+<ol>
+<li>O caractere <em>R</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>R</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo double (8 bytes) e pode receber valores positivos e negativos.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+    <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~Patrimônio liquido :~\RRR,RRR,RRR.RR'</span> <span class="hljs-comment">//Os 11 dígitos estarão em um buffer de 8 bytes;</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldRealNum_Positivo = 'r'</strong>;</p>
+<ol>
+<li>O caractere _r usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>r</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo double (8 bytes) e só pode receber valores positivos.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+    <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~Patrimônio liquido :~\RRR,RRR,RRR.RR'</span> <span class="hljs-comment">//Os 11 dígitos estarão em um buffer de 8 bytes;</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldBoolean = 'X'</strong>;</p>
+<ol>
+<li>
+<p>O caractere <em>X</em> usado na máscara do Template, informa ao componente <strong>TUiDmxScroller</strong> que o campo é do tipo  byte e só pode ter dois valores.</p>
+<ol>
+<li><strong>NOTA</strong>
+<ol>
+<li>Valores possíveis:
+<ol>
+<li>0 - False; não</li>
+<li>1 = True;  sim</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>A forma de editá-los deve ser com o componente checkbox.</li>
+</ol>
+</li>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+   <span class="hljs-keyword">Resourcestring</span>
+
+     <span class="hljs-string">'~Aceita os termos do contrato~\X ^Bfld_ceita_contrato^Aceita os termos do contrato?'</span>;   
+
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const FldRadioButton = 'K'</strong>; //Maiúscula</p>
+<ol>
+<li>O caractere <em>K</em> (maiúsculo) usado na máscara do Template, , informa ao componente <strong>TUiDmxScroller</strong> que é um campo tipo TCluster e é representado no template por  um controle TRadioButton
+<ol>
+<li><strong>NOTAS</strong>
+<ol>
+<li>
+<p>Um Template pode conter vários campos do tipo cluster e o mesmo é identificado após a sequencia <strong>\Kx</strong>, onde <em>x</em> indica que a informação pertence ao campo <em>x</em>,</p>
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+  <span class="hljs-keyword">Resourcestring</span>  
+
+    ~ SEXO ~
+    ~  ~\Ka Masculino
+    ~  ~\Ka Feminino
+    ~  ~\Ka Indefinido
+    ~  ESTADO CIVIL
+    ~  ~\Kb Solteiro
+    ~  ~\Kb Casado
+    ~  ~\Kb Divorciado
+    
+</code></pre>
+</li>
+<li>
+<p><strong>NOTA</strong></p>
+<ol>
+<li>Os campos <em>cluster</em> possuem o mesmo número do campo e na primeira ocorrência contém o nome do campo na lista <em>pDmxFieldRec</em>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+            
+            
+        </body>
+        </html>
