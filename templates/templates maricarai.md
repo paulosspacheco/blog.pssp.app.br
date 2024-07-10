@@ -125,7 +125,8 @@
 
                ```
 
-      5. **Const fldBYTE = 'B'**;
+   3. **Campos do tipo inteiro**
+      1. **Const fldBYTE = 'B'**;
          1. O caractere _B_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _B_ após o caractere **"\\"** representa no buffer do formulário um tipo byte e só pode receber valor na faixa _[0..255]_.
             1. **EXEMPLO**
 
@@ -137,7 +138,7 @@
 
             ```
 
-      6. **Const fldSHORTINT =  'J'**;
+      2. **Const fldSHORTINT =  'J'**;
          1. O caractere _J_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _J_ após o caractere **"\\"** representa no buffer do formulário um tipo byte e só pode receber valor na faixa _[-128 a 127]_, usado quando precisamos de um tipo byte com valores negativos.
 
             1. **EXEMPLO**
@@ -150,7 +151,7 @@
 
                ```
 
-      7. **Const fldSmallWORD = 'W'**
+      3. **Const fldSmallWORD = 'W'**
             1. O caractere _W_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _W_ após o caractere **"\\"** representa no buffer do formulário um tipo word curto e só pode receber valor na faixa _[0 a 65535]_.
                1. **EXEMPLO**
 
@@ -162,7 +163,7 @@
 
                   ```
 
-      8. **Const fldSmallInt = 'I'**;
+      4. **Const fldSmallInt = 'I'**;
          1. O caractere _I_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _I_ após o caractere **"\\"** representa no buffer do formulário um tipo Inteiro curto (2 bytes) e só pode receber valor na faixa _[-32.768 a 32.767]_.
 
             1. **EXEMPLO**
@@ -175,34 +176,86 @@
 
                ```
 
-      9. **Const fldLONGINT = 'L'**;
+      5. **Const fldLONGINT = 'L'**;
          1. O caractere _L_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _L_ após o caractere **"\\"** representa no buffer do formulário um tipo Inteiro longo (4 bytes) e só pode receber valor na faixa _[ -2.147.483.648 a 2.147.483.647]_.
-
             1. **EXEMPLO**
 
                   ```pascal
-      
-                      Resourcestring
+
+                        Resourcestring
 
                         '~Tipo longint :~\LLL,LLL' //Os seis dígitos estarão em um buffer de 4 bytes;
 
                   ```
 
-      10. **Const fldRealNum = 'R'**;
-          1. O caractere _R_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _R_ após o caractere **"\\"** representa no buffer do formulário um tipo double (8 bytes) e pode receber valores positivos e negativos.
-             1. **EXEMPLO**
+      6. **Const fldBoolean = 'X'**;
+         1. O caractere _X_ usado na máscara do template, informa ao componente **TUiDmxScroller** que o campo é do tipo  byte e só pode ter dois valores.
+               1. **NOTAS**
+                  1. Valores possíveis:
+                     1. 0 = False
+                     2. 1 = True
+                     3. A forma de editá-los deve ser com o componente checkbox.
+
+               2. **EXEMPLO**
+
+                     ```pascal
+
+                        Resourcestring
+
+                          '~Aceita os termos do contrato~\X ^Bfld_ceita_contrato^Aceita os termos do contrato?';   
+
+                     ```
+
+      7. **Const FldRadioButton = 'K'**; //Maiúscula
+         1. O caractere _K_ (maiúsculo) usado na máscara do Template, , informa ao componente **TUiDmxScroller** que é um campo tipo TCluster e é representado no template por  um controle TRadioButton.
+            1. Um Template pode conter vários campos do tipo cluster e o mesmo é identificado após a sequencia **\\Kx**, onde _x_ indica que a informação pertence ao campo _x_,
+               1. **EXEMPLO**
+
+                  ```pascal
+
+                  Resourcestring  
+                     ~ SEXO ~
+                     ~  ~\Ka Masculino
+                     ~  ~\Ka Feminino
+                     ~  ~\Ka Indefinido
+                     ~  ESTADO CIVIL
+                     ~  ~\Kb Solteiro
+                     ~  ~\Kb Casado
+                     ~  ~\Kb Divorciado
+                  
+                  ```
+
+            2. **NOTA**
+               1. Os campos _cluster_ possuem o mesmo número do campo e na primeira ocorrência contém o nome do campo na lista _pDmxFieldRec_.
+
+   4. **Campos do tipo Real**
+      1. **fldExtended       = 'E'**;
+         1. O caractere _E_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _E_ após o caractere **"\\"** representa no buffer do formulário um tipo Extended (10 bytes) e pode receber valores positivos e negativos.
+            1. **EXEMPLO**
 
                ```pascal
 
                      Resourcestring
 
-                     '~Patrimônio liquido :~\RRR,RRR,RRR.RR' //Os 11 dígitos estarão em um buffer de 8 bytes;
+                     '~Patrimônio liquido do grupo :~\EEE,EEE,EEE,EEE.EE' //Os 14 dígitos estarão em um buffer de 10 bytes;
+
+               ```
+
+      2. **Const fldRealNum = 'R'**;
+         1. O caractere _R_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _R_ após o caractere **"\\"** representa no buffer do formulário um tipo double (8 bytes) e pode receber valores positivos e negativos.
+            1. **EXEMPLO**
+
+               ```pascal
+
+                     Resourcestring
+
+                     '~         Patrimônio liquido :~\RRR,RRR,RRR.RR' //Os 11 dígitos estarão em um buffer de 8 bytes;
 
                ```
   
-      11. **Const fldRealNum_Positivo = 'r'**;
-          1. O caractere _r usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _r_ após o caractere **"\\"** representa no buffer do formulário um tipo double (8 bytes) e só pode receber valores positivos.
-             1. **EXEMPLO**
+      3. **Const fldRealNum_Positivo = 'r'**;
+         1. O caractere _r_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _r_ após o caractere **"\\"** representa no buffer do formulário um tipo double (8 bytes) e só pode receber valores positivos.
+            1. **EXEMPLO**
 
                ```pascal
 
@@ -212,45 +265,50 @@
 
                ```
 
-      12. **Const fldBoolean = 'X'**;
-          1. O caractere _X_ usado na máscara do template, informa ao componente **TUiDmxScroller** que o campo é do tipo  byte e só pode ter dois valores.
-             1. **NOTAS**
-                1. Valores possíveis:
-                   1. 0 = False
-                   2. 1 = True
-                2. A forma de editá-los deve ser com o componente checkbox.
-
-          2. **EXEMPLO**
+      4. **Const fldReal4 = 'O'**;
+         1. O caractere _O_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _O_ após o caractere **"\\"** representa no buffer do formulário um tipo single (4 bytes) e só pode receber valores positivos.
+            1. **EXEMPLO**
 
                ```pascal
 
-                  Resourcestring
+                     Resourcestring
 
-                    '~Aceita os termos do contrato~\X ^Bfld_ceita_contrato^Aceita os termos do contrato?';   
+                     '~Salário :~\OO,OOO.OO' //Os 7 dígitos estarão em um buffer de 4 bytes;
 
                ```
 
-      13. **Const FldRadioButton = 'K'**; //Maiúscula
-          1. O caractere _K_ (maiúsculo) usado na máscara do Template, , informa ao componente **TUiDmxScroller** que é um campo tipo TCluster e é representado no template por  um controle TRadioButton
-             1. **NOTAS**
-                1. Um Template pode conter vários campos do tipo cluster e o mesmo é identificado após a sequencia **\\Kx**, onde _x_ indica que a informação pertence ao campo _x_,
+      5. **fldReal4Positivo  = 'o'**;
+         1. O caractere _o_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _o_ após o caractere **"\\"** representa no buffer do formulário um tipo single (4 bytes) e pode receber valores positivos e negativos.
+            1. **EXEMPLO**
 
-                   1. **EXEMPLO**
+               ```pascal
 
-                        ```pascal
+                     Resourcestring
 
-                          Resourcestring  
+                     '~Patrimônio liquido :~\oo,ooo.oo' //Os 7 dígitos estarão em um buffer de 4 bytes;
 
-                            ~ SEXO ~
-                            ~  ~\Ka Masculino
-                            ~  ~\Ka Feminino
-                            ~  ~\Ka Indefinido
-                            ~  ESTADO CIVIL
-                            ~  ~\Kb Solteiro
-                            ~  ~\Kb Casado
-                            ~  ~\Kb Divorciado
-                            
-                        ```
+               ```
+  
+      6. **fldReal4P = 'P'**;
+         1. O caractere _P_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _P_ após o caractere **"\\"** representa no buffer do formulário um tipo single (4 bytes) com a seguinte característica: Ao ler compo do arquivo o resultado é multiplicado por 100 e ao gravar é dividido 100 usado para campos relativos e pode conter valores positivos e negativos.
+            1. **EXEMPLO**
 
-                   2. **NOTA**
-                      1. Os campos _cluster_ possuem o mesmo número do campo e na primeira ocorrência contém o nome do campo na lista _pDmxFieldRec_.
+               ```pascal
+
+                     Resourcestring
+
+                     '~Valor percentual :~\PPP.PP' //Os 5 dígitos estarão em um buffer de 4 bytes;
+
+               ```
+
+      7. **fldReal4PPositivo = 'p'**;
+         1. O caractere _p_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _p_ após o caractere **"\\"** representa no buffer do formulário um tipo single (4 bytes) com a seguinte característica: Ao ler compo do arquivo o resultado é multiplicado por 100 e ao gravar é dividido 100 usado para campos relativos e só pode conter valores positivos.
+            1. **EXEMPLO**
+
+               ```pascal
+
+                     Resourcestring
+
+                     '~Valor percentual :~\ppp.pp' //Os 5 dígitos estarão em um buffer de 4 bytes;
+
+               ```

@@ -203,6 +203,11 @@
 </li>
 </ol>
 </li>
+</ol>
+</li>
+<li>
+<p><strong>Campos do tipo inteiro</strong></p>
+<ol>
 <li>
 <p><strong>Const fldBYTE = 'B'</strong>;</p>
 <ol>
@@ -279,13 +284,12 @@
 <li>
 <p><strong>Const fldLONGINT = 'L'</strong>;</p>
 <ol>
-<li>
-<p>O caractere <em>L</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>L</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo Inteiro longo (4 bytes) e só pode receber valor na faixa <em>[ -2.147.483.648 a 2.147.483.647]</em>.</p>
+<li>O caractere <em>L</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>L</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo Inteiro longo (4 bytes) e só pode receber valor na faixa <em>[ -2.147.483.648 a 2.147.483.647]</em>.
 <ol>
 <li>
 <p><strong>EXEMPLO</strong></p>
 <pre><code class="hljs language-pascal">
-    <span class="hljs-keyword">Resourcestring</span>
+      <span class="hljs-keyword">Resourcestring</span>
 
       <span class="hljs-string">'~Tipo longint :~\LLL,LLL'</span> <span class="hljs-comment">//Os seis dígitos estarão em um buffer de 4 bytes;</span>
 
@@ -296,53 +300,17 @@
 </ol>
 </li>
 <li>
-<p><strong>Const fldRealNum = 'R'</strong>;</p>
-<ol>
-<li>
-<p>O caractere <em>R</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>R</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo double (8 bytes) e pode receber valores positivos e negativos.</p>
-<ol>
-<li><strong>EXEMPLO</strong></li>
-</ol>
-<pre><code class="hljs language-pascal">
-      <span class="hljs-keyword">Resourcestring</span>
-
-      <span class="hljs-string">'~Patrimônio liquido :~\RRR,RRR,RRR.RR'</span> <span class="hljs-comment">//Os 11 dígitos estarão em um buffer de 8 bytes;</span>
-
-</code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Const fldRealNum_Positivo = 'r'</strong>;</p>
-<ol>
-<li>
-<p>O caractere _r usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>r</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo double (8 bytes) e só pode receber valores positivos.</p>
-<ol>
-<li><strong>EXEMPLO</strong></li>
-</ol>
-<pre><code class="hljs language-pascal">
-      <span class="hljs-keyword">Resourcestring</span>
-
-      <span class="hljs-string">'~Patrimônio liquido :~\RRR,RRR,RRR.RR'</span> <span class="hljs-comment">//Os 11 dígitos estarão em um buffer de 8 bytes;</span>
-
-</code></pre>
-</li>
-</ol>
-</li>
-<li>
 <p><strong>Const fldBoolean = 'X'</strong>;</p>
 <ol>
-<li>
-<p>O caractere <em>X</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que o campo é do tipo  byte e só pode ter dois valores.</p>
+<li>O caractere <em>X</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que o campo é do tipo  byte e só pode ter dois valores.
 <ol>
-<li><strong>NOTAS</strong>
+<li>
+<p><strong>NOTAS</strong></p>
 <ol>
 <li>Valores possíveis:
 <ol>
 <li>0 = False</li>
 <li>1 = True</li>
-</ol>
-</li>
 <li>A forma de editá-los deve ser com o componente checkbox.</li>
 </ol>
 </li>
@@ -359,12 +327,12 @@
 </li>
 </ol>
 </li>
+</ol>
+</li>
 <li>
 <p><strong>Const FldRadioButton = 'K'</strong>; //Maiúscula</p>
 <ol>
-<li>O caractere <em>K</em> (maiúsculo) usado na máscara do Template, , informa ao componente <strong>TUiDmxScroller</strong> que é um campo tipo TCluster e é representado no template por  um controle TRadioButton
-<ol>
-<li><strong>NOTAS</strong>
+<li>O caractere <em>K</em> (maiúsculo) usado na máscara do Template, , informa ao componente <strong>TUiDmxScroller</strong> que é um campo tipo TCluster e é representado no template por  um controle TRadioButton.
 <ol>
 <li>
 <p>Um Template pode conter vários campos do tipo cluster e o mesmo é identificado após a sequencia <strong>\Kx</strong>, onde <em>x</em> indica que a informação pertence ao campo <em>x</em>,</p>
@@ -372,18 +340,19 @@
 <li>
 <p><strong>EXEMPLO</strong></p>
 <pre><code class="hljs language-pascal">
-  <span class="hljs-keyword">Resourcestring</span>  
+<span class="hljs-keyword">Resourcestring</span>  
+   ~ SEXO ~
+   ~  ~\Ka Masculino
+   ~  ~\Ka Feminino
+   ~  ~\Ka Indefinido
+   ~  ESTADO CIVIL
+   ~  ~\Kb Solteiro
+   ~  ~\Kb Casado
+   ~  ~\Kb Divorciado
 
-    ~ SEXO ~
-    ~  ~\Ka Masculino
-    ~  ~\Ka Feminino
-    ~  ~\Ka Indefinido
-    ~  ESTADO CIVIL
-    ~  ~\Kb Solteiro
-    ~  ~\Kb Casado
-    ~  ~\Kb Divorciado
-    
 </code></pre>
+</li>
+</ol>
 </li>
 <li>
 <p><strong>NOTA</strong></p>
@@ -394,6 +363,133 @@
 </ol>
 </li>
 </ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Campos do tipo Real</strong></p>
+<ol>
+<li>
+<p><strong>fldExtended       = 'E'</strong>;</p>
+<ol>
+<li>O caractere <em>E</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>E</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo Extended (10 bytes) e pode receber valores positivos e negativos.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+      <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~Patrimônio liquido do grupo :~\EEE,EEE,EEE,EEE.EE'</span> <span class="hljs-comment">//Os 14 dígitos estarão em um buffer de 10 bytes;</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldRealNum = 'R'</strong>;</p>
+<ol>
+<li>O caractere <em>R</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>R</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo double (8 bytes) e pode receber valores positivos e negativos.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+      <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~         Patrimônio liquido :~\RRR,RRR,RRR.RR'</span> <span class="hljs-comment">//Os 11 dígitos estarão em um buffer de 8 bytes;</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldRealNum_Positivo = 'r'</strong>;</p>
+<ol>
+<li>O caractere <em>r</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>r</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo double (8 bytes) e só pode receber valores positivos.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+      <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~Patrimônio liquido :~\RRR,RRR,RRR.RR'</span> <span class="hljs-comment">//Os 11 dígitos estarão em um buffer de 8 bytes;</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Const fldReal4 = 'O'</strong>;</p>
+<ol>
+<li>O caractere <em>O</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>O</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo single (4 bytes) e só pode receber valores positivos.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+      <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~Salário :~\OO,OOO.OO'</span> <span class="hljs-comment">//Os 7 dígitos estarão em um buffer de 4 bytes;</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>fldReal4Positivo  = 'o'</strong>;</p>
+<ol>
+<li>O caractere <em>o</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>o</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo single (4 bytes) e pode receber valores positivos e negativos.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+      <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~Patrimônio liquido :~\oo,ooo.oo'</span> <span class="hljs-comment">//Os 7 dígitos estarão em um buffer de 4 bytes;</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>fldReal4P = 'P'</strong>;</p>
+<ol>
+<li>O caractere <em>P</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>P</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo single (4 bytes) com a seguinte característica: Ao ler compo do arquivo o resultado é multiplicado por 100 e ao gravar é dividido 100 usado para campos relativos e pode conter valores positivos e negativos.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+      <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~Valor percentual :~\PPP.PP'</span> <span class="hljs-comment">//Os 5 dígitos estarão em um buffer de 4 bytes;</span>
+
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>fldReal4PPositivo = 'p'</strong>;</p>
+<ol>
+<li>O caractere <em>p</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>p</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo single (4 bytes) com a seguinte característica: Ao ler compo do arquivo o resultado é multiplicado por 100 e ao gravar é dividido 100 usado para campos relativos e só pode conter valores positivos.
+<ol>
+<li>
+<p><strong>EXEMPLO</strong></p>
+<pre><code class="hljs language-pascal">
+      <span class="hljs-keyword">Resourcestring</span>
+
+      <span class="hljs-string">'~Valor percentual :~\ppp.pp'</span> <span class="hljs-comment">//Os 5 dígitos estarão em um buffer de 4 bytes;</span>
+
+</code></pre>
 </li>
 </ol>
 </li>
