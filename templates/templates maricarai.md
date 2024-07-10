@@ -1,30 +1,32 @@
 # SINTAXE DE RECURSOS DO TEMPLATE MARICARAI
 
 1. **Códigos de Controles**
-   1. ^A = Zera todos os campos
-   2. '~'  = switch tString-literals on/off
-   3. ^B = Indica que os caracteres seguintes contem o nome do campo
-   4. ^ = A sequência a seguir é o hint do campo.
-   5. ^C = O campo corrente possuem uma lista de opções do mesmo tipo.
-   6. ^D = use o próximo char como um delimiter de campo
-   7. ^E = Campos do tipo enumerado.
-   8. ^F = Usado para criar restrições e relacionamentos
-   9. ^G = Usada para concatenar duas listas do tipo PSItem.
-   10. ^H = Campo escondido
-   11. ^I = link to chain of TSItem Templates
-   12. ^J = Retorno do carro
-   13. ^k = Os caracteres após ^k é capturado no campo TDmxFieldRec.Default
-   14. \K = K maiúsculo tipo FldRadioButton.
-   15. \k = k minusculo tipo FldDbRadioButton.
-   16. ^P = Usado para controlar o flag do tipo de campo
-   17. ^R = campo somente de leitura
-   18. ^S = " salte " campo (cursor saltar  em cima disto)
-   19. ^U = o limite superior do campo (Somente 1 a 255)
-   20. ^V = Em caso de omissão use o tString apos ^V
-   21. ^X = campo de BOOLEAN especial
-   22. ^Z = zera se este campo está vazio
-   23. ^L = Link para uma URL ou actionItens
-   24. ^U = Informar um limite superior [para](^U) campos do tipo byte.
+   1. _~_ switch tString-literals on/off
+   2. _^A_ Zera todos os campos
+   3. _^B_ Indica que os caracteres seguintes contém o nome do campo
+   4. _^C_ O campo corrente possui uma lista de opções do mesmo tipo.
+   5. _^D_ Use o próximo caractere como um delimiter de campo
+   6. _^E_ Campo do tipo enumerado.
+   7. _^F_ Usado para criar restrições e relacionamentos
+   8. _^G_ Usada para concatenar duas listas do tipo PSItem.
+   9. _^H_ Campo escondido
+   10. _^I_ Link para cadeia de template pSItem
+   11. _^J_ Retorno do carro
+   12. _^k_ Os caracteres após ^k é capturado no campo TDmxFieldRec.Default
+   13. _\\k_ k minusculo tipo FldDbRadioButton.
+   14. _\\K_ K maiúsculo tipo FldRadioButton.
+   15. _^L_ Link para uma URL ou actionItens
+   16. _^M_ Fim da linha
+   17. _^N_ A sequência a seguir é o hint do campo.
+   18. _^O_ Campo fldBLOb
+   19. _^P_ Usado para controlar o flag do tipo de campo
+   20. _^R_ Campo somente de leitura
+   21. _^S_ Salte campo para o próximo campo de acesso normal
+   22. _^T_ O campo é um botão de ação
+   23. _^U_ Informar um limite superior campos do tipo byte. Faixa: [0..255]
+   24. _^V_ Se o campo for numérico, preencha com '#0'(AccNormal) se for alfanumérico, preencha com ' ' AccNormal
+   25. _^X_ Campo de BOOLEAN especial
+   26. _^Z_ Zera se este campo está vazio
 
 2. **Delimitadores de campos:**
    1. #0 = delimiter de campo técnico (não exibe)
@@ -77,27 +79,27 @@
          1. O caractere **c** usado na máscara do Template, informa ao componente **TUiDmxScroller** que a sequência de caracteres 'C' após o caractere **"\\"** representa no buffer do formulário um tipo AnsiString que só aceita caracteres maiúsculos.
             1. **EXEMPLO**
 
-                ```pascal
+               ```pascal
 
-                       Resourcestring
+                     Resourcestring
 
-                    ~Nome:    ~'\CCCCCCCCCCCCCCCCCCCC' //Campo com 20 caracteres maiúsculas
-                    ~Endereço:~'\CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC' //Campo com 40 caractere maiúsculas
+                  ~Nome:    ~'\CCCCCCCCCCCCCCCCCCCC' //Campo com 20 caracteres maiúsculas
+                  ~Endereço:~'\CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC' //Campo com 40 caractere maiúsculas
 
-                ```
+               ```
 
       2. **Const fldAnsiChar_LowCase =  'c'**
          1. O caractere **c** usado na máscara do Template, informa ao componente **TUiDmxScroller** que a sequência de caracteres **c** após o caractere **"\\"** representa no buffer do formulário um tipo AnsiString que só aceita caractere minúsculo.
             1. **EXEMPLO**
 
-                ```pascal
+               ```pascal
 
-                   Resourcestring
+                  Resourcestring
 
-                    ~Nome:    ~'\cccccccccccccccccccc' //Campo com 20 caracteres minúsculas
-                    ~Endereço:~'\cccccccccccccccccccccccccccccccccccccccc' //Campo com 40 caractere minúsculas
+                  ~Nome:    ~'\cccccccccccccccccccc' //Campo com 20 caracteres minúsculas
+                  ~Endereço:~'\cccccccccccccccccccccccccccccccccccccccc' //Campo com 40 caractere minúsculas
 
-                ```
+               ```
 
       3. **Const fldAnsiCharNUM = '0'**
          1. Usado na máscara do Template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _0_ após o caractere **"\\"** representa no buffer do formulário um tipo AnsiString que só aceita caractere numérico [_'0'..'9']_.
@@ -107,7 +109,7 @@
 
                   Resourcestring
 
-                    ~telefone :~\(00) 0 0000-0000' //85 9 9702 4498
+                     ~telefone :~\(00) 0 0000-0000' //85 9 9702 4498
 
                ```
 
@@ -115,13 +117,13 @@
          1. O caractere _N_ usado na máscara do template informa ao componente **TUiDmxScroller** que a sequência de caracteres _0_ após o caractere **"\\"** representa no buffer do formulário um tipo AnsiString  que só aceita caractere numérico _['0'..'9']_ com formatação dbase.
             1. **EXEMPLO**
 
-                ```pascal
+               ```pascal
 
-                    Resourcestring
+                  Resourcestring
 
-                      '~telefone :~\(NN) N NNNN-NNNN' //85 9 9702 4498
+                     '~telefone :~\(NN) N NNNN-NNNN' //85 9 9702 4498
 
-                ```
+               ```
 
       5. **Const fldBYTE = 'B'**;
          1. O caractere _B_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _B_ após o caractere **"\\"** representa no buffer do formulário um tipo byte e só pode receber valor na faixa _[0..255]_.
@@ -129,7 +131,7 @@
 
             ```pascal
 
-                Resourcestring
+                  Resourcestring
 
                   '~idade :~\BBB' //Os três dígitos estarão em um buffer de 1 byte;
 
@@ -140,22 +142,21 @@
 
             1. **EXEMPLO**
 
-                  ```pascal
-      
-                      Resourcestring
+               ```pascal
 
-                        '~Tempo de vida ou de morte:~\JJJ' //Os três dígitos estarão em um buffer de 1 byte;
+                     Resourcestring
 
-                  ```
+                     '~Tempo de vida ou de morte:~\JJJ' //Os três dígitos estarão em um buffer de 1 byte;
+
+               ```
 
       7. **Const fldSmallWORD = 'W'**
             1. O caractere _W_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _W_ após o caractere **"\\"** representa no buffer do formulário um tipo word curto e só pode receber valor na faixa _[0 a 65535]_.
-
-            1. **EXEMPLO**
+               1. **EXEMPLO**
 
                   ```pascal
-      
-                      Resourcestring
+
+                        Resourcestring
 
                         '~idade :~\WW,WWW' //Os cinco dígitos estarão em um buffer de 2 bytes;
 
@@ -166,13 +167,13 @@
 
             1. **EXEMPLO**
 
-                  ```pascal
-      
-                      Resourcestring
+               ```pascal
 
-                        '~Tipo small int :~\II,III' //Os cinco dígitos estarão em um buffer de 2 bytes;
+                     Resourcestring
 
-                  ```
+                     '~Tipo small int :~\II,III' //Os cinco dígitos estarão em um buffer de 2 bytes;
+
+               ```
 
       9. **Const fldLONGINT = 'L'**;
          1. O caractere _L_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _L_ após o caractere **"\\"** representa no buffer do formulário um tipo Inteiro longo (4 bytes) e só pode receber valor na faixa _[ -2.147.483.648 a 2.147.483.647]_.
@@ -191,33 +192,33 @@
           1. O caractere _R_ usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _R_ após o caractere **"\\"** representa no buffer do formulário um tipo double (8 bytes) e pode receber valores positivos e negativos.
              1. **EXEMPLO**
 
-                  ```pascal
-      
-                      Resourcestring
+               ```pascal
 
-                        '~Patrimônio liquido :~\RRR,RRR,RRR.RR' //Os 11 dígitos estarão em um buffer de 8 bytes;
+                     Resourcestring
 
-                  ```
+                     '~Patrimônio liquido :~\RRR,RRR,RRR.RR' //Os 11 dígitos estarão em um buffer de 8 bytes;
+
+               ```
   
       11. **Const fldRealNum_Positivo = 'r'**;
           1. O caractere _r usado na máscara do template, informa ao componente **TUiDmxScroller** que a sequência de caracteres _r_ após o caractere **"\\"** representa no buffer do formulário um tipo double (8 bytes) e só pode receber valores positivos.
              1. **EXEMPLO**
 
-                  ```pascal
-      
-                      Resourcestring
+               ```pascal
 
-                        '~Patrimônio liquido :~\RRR,RRR,RRR.RR' //Os 11 dígitos estarão em um buffer de 8 bytes;
+                     Resourcestring
 
-                  ```
+                     '~Patrimônio liquido :~\RRR,RRR,RRR.RR' //Os 11 dígitos estarão em um buffer de 8 bytes;
+
+               ```
 
       12. **Const fldBoolean = 'X'**;
-          1. O caractere _X_ usado na máscara do Template, informa ao componente **TUiDmxScroller** que o campo é do tipo  byte e só pode ter dois valores.
-             1. **NOTA**
+          1. O caractere _X_ usado na máscara do template, informa ao componente **TUiDmxScroller** que o campo é do tipo  byte e só pode ter dois valores.
+             1. **NOTAS**
                 1. Valores possíveis:
-                   1. 0 - False; não
-                   2. 1 = True;  sim
-             2. A forma de editá-los deve ser com o componente checkbox.
+                   1. 0 = False
+                   2. 1 = True
+                2. A forma de editá-los deve ser com o componente checkbox.
 
           2. **EXEMPLO**
 

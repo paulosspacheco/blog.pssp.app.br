@@ -25,30 +25,32 @@
 <li>
 <p><strong>Códigos de Controles</strong></p>
 <ol>
-<li>^A = Zera todos os campos</li>
-<li>'~'  = switch tString-literals on/off</li>
-<li>^B = Indica que os caracteres seguintes contem o nome do campo</li>
-<li>^ = A sequência a seguir é o hint do campo.</li>
-<li>^C = O campo corrente possuem uma lista de opções do mesmo tipo.</li>
-<li>^D = use o próximo char como um delimiter de campo</li>
-<li>^E = Campos do tipo enumerado.</li>
-<li>^F = Usado para criar restrições e relacionamentos</li>
-<li>^G = Usada para concatenar duas listas do tipo PSItem.</li>
-<li>^H = Campo escondido</li>
-<li>^I = link to chain of TSItem Templates</li>
-<li>^J = Retorno do carro</li>
-<li>^k = Os caracteres após ^k é capturado no campo TDmxFieldRec.Default</li>
-<li>\K = K maiúsculo tipo FldRadioButton.</li>
-<li>\k = k minusculo tipo FldDbRadioButton.</li>
-<li>^P = Usado para controlar o flag do tipo de campo</li>
-<li>^R = campo somente de leitura</li>
-<li>^S = &quot; salte &quot; campo (cursor saltar  em cima disto)</li>
-<li>^U = o limite superior do campo (Somente 1 a 255)</li>
-<li>^V = Em caso de omissão use o tString apos ^V</li>
-<li>^X = campo de BOOLEAN especial</li>
-<li>^Z = zera se este campo está vazio</li>
-<li>^L = Link para uma URL ou actionItens</li>
-<li>^U = Informar um limite superior <a href="%5EU">para</a> campos do tipo byte.</li>
+<li><em>~</em> switch tString-literals on/off</li>
+<li><em>^A</em> Zera todos os campos</li>
+<li><em>^B</em> Indica que os caracteres seguintes contém o nome do campo</li>
+<li><em>^C</em> O campo corrente possui uma lista de opções do mesmo tipo.</li>
+<li><em>^D</em> Use o próximo caractere como um delimiter de campo</li>
+<li><em>^E</em> Campo do tipo enumerado.</li>
+<li><em>^F</em> Usado para criar restrições e relacionamentos</li>
+<li><em>^G</em> Usada para concatenar duas listas do tipo PSItem.</li>
+<li><em>^H</em> Campo escondido</li>
+<li><em>^I</em> Link para cadeia de template pSItem</li>
+<li><em>^J</em> Retorno do carro</li>
+<li><em>^k</em> Os caracteres após ^k é capturado no campo TDmxFieldRec.Default</li>
+<li><em>\k</em> k minusculo tipo FldDbRadioButton.</li>
+<li><em>\K</em> K maiúsculo tipo FldRadioButton.</li>
+<li><em>^L</em> Link para uma URL ou actionItens</li>
+<li><em>^M</em> Fim da linha</li>
+<li><em>^N</em> A sequência a seguir é o hint do campo.</li>
+<li><em>^O</em> Campo fldBLOb</li>
+<li><em>^P</em> Usado para controlar o flag do tipo de campo</li>
+<li><em>^R</em> Campo somente de leitura</li>
+<li><em>^S</em> Salte campo para o próximo campo de acesso normal</li>
+<li><em>^T</em> O campo é um botão de ação</li>
+<li><em>^U</em> Informar um limite superior campos do tipo byte. Faixa: [0..255]</li>
+<li><em>^V</em> Se o campo for numérico, preencha com '#0'(AccNormal) se for alfanumérico, preencha com ' ' AccNormal</li>
+<li><em>^X</em> Campo de BOOLEAN especial</li>
+<li><em>^Z</em> Zera se este campo está vazio</li>
 </ol>
 </li>
 <li>
@@ -135,10 +137,10 @@
 <li>
 <p><strong>EXEMPLO</strong></p>
 <pre><code class="hljs language-pascal">
-       <span class="hljs-keyword">Resourcestring</span>
+      <span class="hljs-keyword">Resourcestring</span>
 
-    ~Nome:    ~<span class="hljs-string">'\CCCCCCCCCCCCCCCCCCCC'</span> <span class="hljs-comment">//Campo com 20 caracteres maiúsculas</span>
-    ~Endereço:~<span class="hljs-string">'\CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC'</span> <span class="hljs-comment">//Campo com 40 caractere maiúsculas</span>
+   ~Nome:    ~<span class="hljs-string">'\CCCCCCCCCCCCCCCCCCCC'</span> <span class="hljs-comment">//Campo com 20 caracteres maiúsculas</span>
+   ~Endereço:~<span class="hljs-string">'\CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC'</span> <span class="hljs-comment">//Campo com 40 caractere maiúsculas</span>
 
 </code></pre>
 </li>
@@ -156,8 +158,8 @@
 <pre><code class="hljs language-pascal">
    <span class="hljs-keyword">Resourcestring</span>
 
-    ~Nome:    ~<span class="hljs-string">'\cccccccccccccccccccc'</span> <span class="hljs-comment">//Campo com 20 caracteres minúsculas</span>
-    ~Endereço:~<span class="hljs-string">'\cccccccccccccccccccccccccccccccccccccccc'</span> <span class="hljs-comment">//Campo com 40 caractere minúsculas</span>
+   ~Nome:    ~<span class="hljs-string">'\cccccccccccccccccccc'</span> <span class="hljs-comment">//Campo com 20 caracteres minúsculas</span>
+   ~Endereço:~<span class="hljs-string">'\cccccccccccccccccccccccccccccccccccccccc'</span> <span class="hljs-comment">//Campo com 40 caractere minúsculas</span>
 
 </code></pre>
 </li>
@@ -175,7 +177,7 @@
 <pre><code class="hljs language-pascal">
    <span class="hljs-keyword">Resourcestring</span>
 
-     ~telefone :~\(<span class="hljs-number">00</span>) <span class="hljs-number">0</span> <span class="hljs-number">0000</span>-<span class="hljs-number">0000</span><span class="hljs-string">' //85 9 9702 4498
+      ~telefone :~\(<span class="hljs-number">00</span>) <span class="hljs-number">0</span> <span class="hljs-number">0000</span>-<span class="hljs-number">0000</span><span class="hljs-string">' //85 9 9702 4498
 
 </span></code></pre>
 </li>
@@ -191,7 +193,7 @@
 <li>
 <p><strong>EXEMPLO</strong></p>
 <pre><code class="hljs language-pascal">
-    <span class="hljs-keyword">Resourcestring</span>
+   <span class="hljs-keyword">Resourcestring</span>
 
       <span class="hljs-string">'~telefone :~\(NN) N NNNN-NNNN'</span> <span class="hljs-comment">//85 9 9702 4498</span>
 
@@ -210,7 +212,7 @@
 <li><strong>EXEMPLO</strong></li>
 </ol>
 <pre><code class="hljs language-pascal">
-    <span class="hljs-keyword">Resourcestring</span>
+      <span class="hljs-keyword">Resourcestring</span>
 
       <span class="hljs-string">'~idade :~\BBB'</span> <span class="hljs-comment">//Os três dígitos estarão em um buffer de 1 byte;</span>
 
@@ -227,7 +229,7 @@
 <li>
 <p><strong>EXEMPLO</strong></p>
 <pre><code class="hljs language-pascal">
-    <span class="hljs-keyword">Resourcestring</span>
+      <span class="hljs-keyword">Resourcestring</span>
 
       <span class="hljs-string">'~Tempo de vida ou de morte:~\JJJ'</span> <span class="hljs-comment">//Os três dígitos estarão em um buffer de 1 byte;</span>
 
@@ -240,17 +242,18 @@
 <li>
 <p><strong>Const fldSmallWORD = 'W'</strong></p>
 <ol>
-<li>
-<p>O caractere <em>W</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>W</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo word curto e só pode receber valor na faixa <em>[0 a 65535]</em>.</p>
-</li>
+<li>O caractere <em>W</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>W</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo word curto e só pode receber valor na faixa <em>[0 a 65535]</em>.
+<ol>
 <li>
 <p><strong>EXEMPLO</strong></p>
 <pre><code class="hljs language-pascal">
-    <span class="hljs-keyword">Resourcestring</span>
+      <span class="hljs-keyword">Resourcestring</span>
 
       <span class="hljs-string">'~idade :~\WW,WWW'</span> <span class="hljs-comment">//Os cinco dígitos estarão em um buffer de 2 bytes;</span>
 
 </code></pre>
+</li>
+</ol>
 </li>
 </ol>
 </li>
@@ -263,7 +266,7 @@
 <li>
 <p><strong>EXEMPLO</strong></p>
 <pre><code class="hljs language-pascal">
-    <span class="hljs-keyword">Resourcestring</span>
+      <span class="hljs-keyword">Resourcestring</span>
 
       <span class="hljs-string">'~Tipo small int :~\II,III'</span> <span class="hljs-comment">//Os cinco dígitos estarão em um buffer de 2 bytes;</span>
 
@@ -295,36 +298,34 @@
 <li>
 <p><strong>Const fldRealNum = 'R'</strong>;</p>
 <ol>
-<li>O caractere <em>R</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>R</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo double (8 bytes) e pode receber valores positivos e negativos.
-<ol>
 <li>
-<p><strong>EXEMPLO</strong></p>
+<p>O caractere <em>R</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>R</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo double (8 bytes) e pode receber valores positivos e negativos.</p>
+<ol>
+<li><strong>EXEMPLO</strong></li>
+</ol>
 <pre><code class="hljs language-pascal">
-    <span class="hljs-keyword">Resourcestring</span>
+      <span class="hljs-keyword">Resourcestring</span>
 
       <span class="hljs-string">'~Patrimônio liquido :~\RRR,RRR,RRR.RR'</span> <span class="hljs-comment">//Os 11 dígitos estarão em um buffer de 8 bytes;</span>
 
 </code></pre>
-</li>
-</ol>
 </li>
 </ol>
 </li>
 <li>
 <p><strong>Const fldRealNum_Positivo = 'r'</strong>;</p>
 <ol>
-<li>O caractere _r usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>r</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo double (8 bytes) e só pode receber valores positivos.
-<ol>
 <li>
-<p><strong>EXEMPLO</strong></p>
+<p>O caractere _r usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que a sequência de caracteres <em>r</em> após o caractere <strong>&quot;\&quot;</strong> representa no buffer do formulário um tipo double (8 bytes) e só pode receber valores positivos.</p>
+<ol>
+<li><strong>EXEMPLO</strong></li>
+</ol>
 <pre><code class="hljs language-pascal">
-    <span class="hljs-keyword">Resourcestring</span>
+      <span class="hljs-keyword">Resourcestring</span>
 
       <span class="hljs-string">'~Patrimônio liquido :~\RRR,RRR,RRR.RR'</span> <span class="hljs-comment">//Os 11 dígitos estarão em um buffer de 8 bytes;</span>
 
 </code></pre>
-</li>
-</ol>
 </li>
 </ol>
 </li>
@@ -332,19 +333,19 @@
 <p><strong>Const fldBoolean = 'X'</strong>;</p>
 <ol>
 <li>
-<p>O caractere <em>X</em> usado na máscara do Template, informa ao componente <strong>TUiDmxScroller</strong> que o campo é do tipo  byte e só pode ter dois valores.</p>
+<p>O caractere <em>X</em> usado na máscara do template, informa ao componente <strong>TUiDmxScroller</strong> que o campo é do tipo  byte e só pode ter dois valores.</p>
 <ol>
-<li><strong>NOTA</strong>
+<li><strong>NOTAS</strong>
 <ol>
 <li>Valores possíveis:
 <ol>
-<li>0 - False; não</li>
-<li>1 = True;  sim</li>
-</ol>
-</li>
+<li>0 = False</li>
+<li>1 = True</li>
 </ol>
 </li>
 <li>A forma de editá-los deve ser com o componente checkbox.</li>
+</ol>
+</li>
 </ol>
 </li>
 <li>
