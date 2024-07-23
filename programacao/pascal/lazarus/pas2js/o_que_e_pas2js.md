@@ -58,7 +58,7 @@
          3. <text onclick="goBack()">[🔙]</text>
 
       2. <span id="id_pre_requisitos"></span>**Pre-requisitos:**
-         1. Conhecimento da linguagem pascal, html, javascript, nodejs e tecnologias web necessárias para pode publicar uma site na nuvem.
+         1. Conhecimento da linguagem pascal, html, javascript, nodejs e tecnologias web necessárias para pode publicar um site na nuvem.
 
          2. <text onclick="goBack()">[🔙]</text>
 
@@ -73,7 +73,8 @@
 
          5. O pas2js permite criar módulos javascript usando a sintaxe library do pascal. [Veja mais...](https://wiki.freepascal.org/pas2js_modules);
 
-         6. 
+         6. É possível criar aplicações Progressive Web Application ([PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)).
+            1. Uma aplicação pwa pode ser executada com aparência da interface da plataforma no qual ele está executando, tais como um desktop Linux, desktop Windows, com um app android, etc...
 
          7. <text onclick="goBack()">[🔙]</text>
 
@@ -247,7 +248,7 @@
 
    4. <span id=id_referencias></span>**REFERÊNCIAS GLOBAIS**
       1. [Site oficial para produzir este documento](#1)
-      2. [#](##)
+      2. [LAZARUS + Pas2JS no Linux | Web dev com freepascal e Lazarus](https://www.youtube.com/watch?v=M1Lqog-kfr0) 
       3. [#](##)
       4. [#](##)
       5. [#](##)

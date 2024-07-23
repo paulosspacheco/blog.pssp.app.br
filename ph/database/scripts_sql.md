@@ -250,8 +250,9 @@ CREATE TABLE IF NOT exists exemplo_tipos_dados (
 
 -- "__dm_xtable__" definition
 
-CREATE TABLE IF NOT exists __dm_xtable__ (
-    Id serial primary key,
+CREATE TABLE IF NOT exists __dm_xtable__ (                          
+    id serial primary key,
+    id_operadores integer,    
     nome varchar(50),
     endereco varchar(50),
     cnpj varchar(18),
@@ -260,12 +261,43 @@ CREATE TABLE IF NOT exists __dm_xtable__ (
     valor_smallint int2,
     valor_integer integer,
     valor_float8 float8,
-    data_1 date,
-    hora_1 time,
-    hora_2 time,
-    data_2 date
+    dd_mm_yy date,
+    dd_mm_yyyy date,
+    dd_mm_yy_hh_nn timeStamp,    
+    dd_mm_yy_hh_nn_ss timeStamp,
+    dd_mm_yyyy_hh_nn timeStamp,
+    dd_mm_yyyy_hh_nn_ss timeStamp,
+    hh_nn time,
+    hh_nn_ss time,    
+    sexo varchar(15),        -- Indefinido; Masculino; Feminino
+    estado_civil varchar(15), -- Amigado, Solteiro; Casado; Divorciado;
+    ativo varchar(5)         -- False; True        
+            
     --CONSTRAINT "__dm_xtable___pkey" PRIMARY KEY (id)
-);    
+);
+
+COMMENT ON TABLE __dm_xtable__ IS 'Tabela que demonstra o uso dos tipos de dados do projeto maricarai';
+COMMENT ON COLUMN __dm_xtable__.id IS '\LLLLLL';
+COMMENT ON COLUMN __dm_xtable__.Id_Operadores IS '\LLLLLL';
+COMMENT ON COLUMN __dm_xtable__.nome IS '\ssssssssssssssssssssssssssssssssssssssssssssssssss';
+COMMENT ON COLUMN __dm_xtable__.endereco IS '\ssssssssssssssssssssssssssssssssssssssssssssssssss';
+COMMENT ON COLUMN __dm_xtable__.cnpj IS '\##.###.###/####-##';
+COMMENT ON COLUMN __dm_xtable__.cpf IS '\###.###.###-##';
+COMMENT ON COLUMN __dm_xtable__.cep IS '\##.###.###';
+COMMENT ON COLUMN __dm_xtable__.valor_smallint IS '\IIIII';
+COMMENT ON COLUMN __dm_xtable__.valor_integer IS '\LLLLLLLL';
+COMMENT ON COLUMN __dm_xtable__.valor_float8 IS '\RRR,RRR,RRR.RR';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yy IS 'Ddd/mm/yy';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yyyy IS 'Ddd/mm/yyyy';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yy_hh_nn IS 'Ddd/mm/yy hh:nn';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yy_hh_nn_ss IS 'Ddd/mm/yy hh:nn:ss';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yyyy_hh_nn IS 'Ddd/mm/yyyy hh:nn';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yyyy_hh_nn_ss IS 'Ddd/mm/yyyy hh:nn:ss';
+COMMENT ON COLUMN __dm_xtable__.hh_nn IS 'Dhh:nn';
+COMMENT ON COLUMN __dm_xtable__.hh_nn_ss IS 'Dhh:nn:ss';
+COMMENT ON COLUMN __dm_xtable__.sexo IS '\sssssssssssssss';
+COMMENT ON COLUMN __dm_xtable__.estado_civil IS '\sssssssssssssss';
+COMMENT ON COLUMN __dm_xtable__.ativo IS '\sssss';
 
 
 

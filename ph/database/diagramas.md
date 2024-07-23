@@ -286,10 +286,19 @@ classDiagram
         +cep String(10)
         +valor_SMALLINT SMALLINT
         +valor_Integer Integer
-        +valor_FLOAT8 DOUBLE
-        +Data_1 timestamp 
-        +hora_1 timestamp    
-        +hora_2 timestamp
+        +valor_FLOAT8 DOUBLE        
+        +dd_mm_yy date
+        +dd_mm_yyyy date
+        +dd_mm_yy_hh_nn timeStamp    
+        +dd_mm_yy_hh_nn_ss timeStamp
+        +dd_mm_yyyy_hh_nn timeStamp
+        +dd_mm_yyyy_hh_nn_ss timeStamp
+        +hh_nn time
+        +hh_nn_ss time
+        +sexo string(15)         
+        +EstadoCivil string(15)  
+        +Status string(5)        
+            
      }  
 );
 
