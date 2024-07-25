@@ -227,29 +227,32 @@ CREATE TABLE IF NOT exists integracao (
 );
 
 
--- exemplo_tipos_dados definition
 
-CREATE TABLE IF NOT exists exemplo_tipos_dados (
-    Id serial primary key,
-    id_produto integer,
-    nome_produto varchar(255),
-    preco_unitario numeric(10, 2),
-    quantidade_estoque int2,
-    data_fabricacao date ,
-    hora_ultima_venda time,
-    data_hora_registro timestamp,
-    descricao text ,
-    imagem_produto bytea ,
-    categoria_produto varchar(50),
-    endereco_ip cidr ,
-    dados_usuario json ,
-    uuid_produto uuid
-    --CONSTRAINT exemplo_tipos_dados_pkey PRIMARY KEY (id_produto)
-);
+-- "__dm_xtable__" Usada para testar os tipos de dados o ORM
 
 
--- "__dm_xtable__" definition
 
+  ```
+
+- **Observações**:
+  - Essas chaves estrangeiras garantem a integridade referencial das tabelas, o que significa que os dados nas tabelas relacionadas serão consistentes.
+  - Por exemplo, a chave estrangeira fk_medico_operador na tabela medico garante que o valor da coluna id_operador em uma linha da tabela medico sempre existirá em uma linha da tabela operador.
+
+## Script SQL PostgresSQL para criar os índices das tabelas
+
+
+-- "__dm_xtable__" Usada para testar os tipos de dados o ORM
+
+COMMENT ON TABLE __dm_xtable__ IS 'Tabela que demonstra o uso dos tipos de dados do projeto maricarai';
+COMMENT ON COLUMN __dm_xtable__.id IS '\LLLLLL';
+COMMENT ON COLUMN __dm_xtable__.Id_Operadores IS '\LLLLLL';
+COMMENT ON COLUMN __dm_xtable__.nome IS '\ssssssssssssssssssssssssssssssssssssssssssssssssss';
+COMMENT ON COLUMN __dm_xtable__.endereco IS '\ssssssssssssssssssssssssssssssssssssssssssssssssss';
+COMMENT ON COLUMN __dm_xtable__.cnpj IS '\##.###.###/####-##';
+COMMENT ON COLUMN __dm_xtable__.cpf IS '\###.###.###-##';
+COMMENT ON COLUMN __dm_xtable__.cep IS '\##.###.###';
+COMMENT ON COLUMN __dm_xtable__.valor_smallint IS '\IIIII';
+COMMENT ON COL
 CREATE TABLE IF NOT exists __dm_xtable__ (                          
     id serial primary key,
     id_operadores integer,    
@@ -298,6 +301,41 @@ COMMENT ON COLUMN __dm_xtable__.hh_nn_ss IS 'Dhh:nn:ss';
 COMMENT ON COLUMN __dm_xtable__.sexo IS '\sssssssssssssss';
 COMMENT ON COLUMN __dm_xtable__.estado_civil IS '\sssssssssssssss';
 COMMENT ON COLUMN __dm_xtable__.ativo IS '\sssss';
+UMN __dm_xtable__.valor_integer IS '\LLLLLLLL';
+COMMENT ON COLUMN __dm_xtable__.valor_float8 IS '\RRR,RRR,RRR.RR';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yy IS 'Ddd/mm/yy';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yyyy IS 'Ddd/mm/yyyy';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yy_hh_nn IS 'Ddd/mm/yy hh:nn';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yy_hh_nn_ss IS 'Ddd/mm/yy hh:nn:ss';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yyyy_hh_nn IS 'Ddd/mm/yyyy hh:nn';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yyyy_hh_nn_ss IS 'Ddd/mm/yyyy hh:nn:ss';
+COMMENT ON COLUMN __dm_xtable__.hh_nn IS 'Dhh:nn';
+COMMENT ON COLUMN __dm_xtable__.hh_nn_ss IS 'Dhh:nn:ss';
+COMMENT ON COLUMN __dm_xtable__.sexo IS '\sssssssssssssss';
+COMMENT ON COLUMN __dm_xtable__.estado_civil IS '\sssssssssssssss';
+COMMENT ON COLUMN __dm_xtable__.ativo IS '\sssss';
+UMN __dm_xtable__.dd_mm_yyyy IS 'Ddd/mm/yyyy';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yy_hh_nn IS 'Ddd/mm/yy hh:nn';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yy_hh_nn_ss IS 'Ddd/mm/yy hh:nn:ss';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yyyy_hh_nn IS 'Ddd/mm/yyyy hh:nn';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yyyy_hh_nn_ss IS 'Ddd/mm/yyyy hh:nn:ss';
+COMMENT ON COLUMN __dm_xtable__.hh_nn IS 'Dhh:nn';
+COMMENT ON COLUMN __dm_xtable__.hh_nn_ss IS 'Dhh:nn:ss';
+COMMENT ON COLUMN __dm_xtable__.sexo IS '\sssssssssssssss';
+COMMENT ON COLUMN __dm_xtable__.estado_civil IS '\sssssssssssssss';
+COMMENT ON COLUMN __dm_xtable__.ativo IS '\sssss';
+UMN __dm_xtable__.valor_float8 IS '\RRR,RRR,RRR.RR';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yy IS 'Ddd/mm/yy';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yyyy IS 'Ddd/mm/yyyy';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yy_hh_nn IS 'Ddd/mm/yy hh:nn';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yy_hh_nn_ss IS 'Ddd/mm/yy hh:nn:ss';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yyyy_hh_nn IS 'Ddd/mm/yyyy hh:nn';
+COMMENT ON COLUMN __dm_xtable__.dd_mm_yyyy_hh_nn_ss IS 'Ddd/mm/yyyy hh:nn:ss';
+COMMENT ON COLUMN __dm_xtable__.hh_nn IS 'Dhh:nn';
+COMMENT ON COLUMN __dm_xtable__.hh_nn_ss IS 'Dhh:nn:ss';
+COMMENT ON COLUMN __dm_xtable__.sexo IS '\sssssssssssssss';
+COMMENT ON COLUMN __dm_xtable__.estado_civil IS '\sssssssssssssss';
+COMMENT ON COLUMN __dm_xtable__.ativo IS '\sssss';
 
 
 
@@ -308,6 +346,12 @@ COMMENT ON COLUMN __dm_xtable__.ativo IS '\sssss';
   - Por exemplo, a chave estrangeira fk_medico_operador na tabela medico garante que o valor da coluna id_operador em uma linha da tabela medico sempre existirá em uma linha da tabela operador.
 
 ## Script SQL PostgresSQL para criar os índices das tabelas
+
+  ```SQL
+
+  ```
+
+- **Observações**:
 
   ```SQL
 
