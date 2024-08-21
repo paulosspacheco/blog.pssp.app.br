@@ -1,6 +1,6 @@
 <map version="freeplane 1.7.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="TMi_rtl_WebModule" FOLDED="false" ID="ID_191153586" CREATED="1724172285497" MODIFIED="1724245495380" ICON_SIZE="36.0 pt" LINK="menuitem:_ExternalImageAddAction" STYLE="oval" TEXT_ALIGN="RIGHT">
+<node TEXT="TMi_rtl_WebModule" FOLDED="false" ID="ID_191153586" CREATED="1724172285497" MODIFIED="1724244859158" ICON_SIZE="36.0 pt" LINK="menuitem:_ExternalImageAddAction" STYLE="oval">
 <font SIZE="22"/>
 <hook NAME="MapStyle" layout="OUTLINE">
     <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_icon_for_attributes="true" show_note_icons="true" fit_to_viewport="false"/>
@@ -99,6 +99,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <node TEXT="navigation actions" POSITION="right" ID="ID_273436263" CREATED="1724172285502" MODIFIED="1724179219428" HGAP_QUANTITY="91.26829627750192 pt" VSHIFT_QUANTITY="-30.731708746733723 pt">
 <edge COLOR="#007c7c"/>
