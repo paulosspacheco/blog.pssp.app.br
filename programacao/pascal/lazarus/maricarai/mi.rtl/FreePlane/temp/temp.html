@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <style type="text/css">
+      <!--
+        body { font-family: SansSerif; font-size: 10pt; color: #000000; text-align: left }
+        p { margin-top: 0 }
+      -->
+    </style>
+    
+  </head>
+  <body>
+    <ul>
+      <li>
+        Recebe a chave enviada pelo cliente;
+      </li>
+      <li>
+        &#160;- Checa se o evento onLocate foi iniciado;
+      </li>
+      <li>
+        &#160;&#160;&#160;&#160;- Se sim:
+      </li>
+      <li>
+        &#160;&#160;&#160;&#160;&#160;&#160;- Executa onLocate com par&#226;metros recibos,
+      </li>
+      <li>
+        &#160;&#160;&#160;&#160;- Se n&#227;o:
+      </li>
+      <li>
+        &#160;&#160;&#160;&#160;&#160;&#160;- Executa m&#233;todo locate com os par&#226;metros recebidos;
+      </li>
+      <li>
+        - Checa se o registro foi localizado:
+      </li>
+      <li>
+        &#160;&#160;- Se sim:
+      </li>
+      <li>
+        &#160;&#160;&#160;&#160;-&#160;&#160;Retorna para o cliente todos os campos 
+        do&#160;&#160;TDmxScroller_form.JSONObject.
+      </li>
+      <li>
+        - Se n&#227;o:
+      </li>
+      <li>
+        &#160;&#160;- Retorna o json: {&quot;error&quot;:&quot;Usu&#225;rio n&#227;o encontrado&quot;}
+      </li>
+    </ul>
+  </body>
+</html>
