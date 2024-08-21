@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title></title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p>This is the beginning of a server side web system for FPC.
+Although it is non-visual, it is geared towards use in Lazarus.</p>
+<p>NOTE: the template support (fptemplate unit) was moved to
+fcl-base. See the fcl-base/texts/fptemplate.txt file.</p>
+<p>Architecture:</p>
+<h2 id="httpprotocol">httpprotocol:</h2>
+<p>Mostly standard HTTP header definitions, and some auxiliary routines.</p>
+<h2 id="httpdefs">httpdefs</h2>
+<p>contains the basic HTTP system definitions:
+header field names
+TCookie(s):
+collection with cookies in web request
+TUploadedFile(s):
+collection with uploaded files in request
+THTTPHeader:<br>
+Class describes HTTP Request/Response headers.
+it has properties for all possible HTTP headers, including cookies
+TRequest:
+Descendent of THTTPHeader, describes client request.
+Contains uploaded files.
+TResponse:
+describes the web server response. Includes headers and contents.
+TCustomSession:
+Base for all session components.</p>
+<h2 id="httproute">httproute</h2>
+<p>The old Delphi style routing worked with Datamodules only. The pattern was
+strictly /modulename/actionname or through query variables: ?module=xyz&amp;Action=nmo</p>
+<p>This old routing is still available by setting the LegacyRouting property of
+webhandler or webapplication (custweb) to true. (the new routing described
+below is then disabled)</p>
+<p>The new routing is more flexible in 3 ways.</p>
+<ul>
+<li>
+<p>It is no longer required to use datamodules, but this is still supported.
+There are now 4 methods that can be used to register a route:</p>
+<ul>
+<li>
+<p>Using a callback procedure
+TRouteCallback = Procedure(ARequest: TRequest; AResponse);</p>
+</li>
+<li>
+<p>Using a callback event:
+TRouteEvent = Procedure(ARequest: TRequest; AResponse) of object;</p>
+</li>
+<li>
+<p>Using an interface
+IRouteInterface = Interface ['{10115353-10BA-4B00-FDA5-80B69AC4CAD0}']
+Procedure HandleRequest(ARequest : TRequest; AResponse : TResponse);
+end;
+Note that this is a CORBA interface, so no reference counting.</p>
+</li>
+<li>
+<p>Using a router object:
+TRouteObject = Class(TObject,IRouteInterface)
+Public
+Procedure HandleRequest(ARequest : TRequest; AResponse : TResponse); virtual; abstract;
+end;
+TRouteObjectClass = Class of TRouteObject;
+The object class needs to be registered. The router will instantiate the
+object and release it once the request was handled.</p>
+</li>
+</ul>
+<p>More methods can be added, if need be.
+All routes are registered using the HTTPRouter.RegisterRoute method.
+it is overloaded to accept any of the above parameters.</p>
+</li>
+<li>
+<p>The router can now match more complex, parametrized routes.</p>
+<p>A route is the path part of an URL; query parameters are not examined.</p>
+<p>/path1/path2/path3/path4</p>
+<p>In these paths, parameters and wildcards are recognized:
+:param means that it will match any request with a single part in this location
+*paramm means that it will match any request with zero or more path parts in this location</p>
+<p>examples:</p>
+<p>/path1<br>
+/REST/:Resource/:ID
+/REST/:Resource
+/*/something
+/*path/somethiingelse
+/*path</p>
+<p>The parameters will be added to TRequest, they are available in the (new) RouteParams array property of TRequest.</p>
+<p>Paths are matched case sensitively by default, and the first matching pattern is used.</p>
+<p>HTTP Modules are registered in the router using classname/* or defaultmodulename/*</p>
+</li>
+<li>
+<p>A set of methods can be added to the route registration (default is to  accept all methods).
+The router will  match the request method. If the method does not match, it will raise an
+exception which will result in a 405 HTTP error.</p>
+</li>
+</ul>
+<h2 id="fphttp">fphttp:</h2>
+<p>Basic web system components/classes</p>
+<p>TCustomHTTPModule:
+Abstract TDataModule descendant, which processes a webrequest
+and prepares a response.
+TModuleFactory/TModuleItem:
+Module registration and creation system.
+TCustomWebAction(s):
+Webactions.
+RegisterHTTPModule():
+routine registers a module with the web system.
+THTTPContentProducer :
+abstract HTTP producer component.</p>
+<p>The idea is that the URL relative to the server is taken and parsed as
+follows
+<a href="http://www.server.org/Path1/Path2">http://www.server.org/Path1/Path2</a></p>
+<p>Path1 determines which module in the system is created to handle the
+request. (the factory is queried)
+Path2 determines which web action inside the module is used to handle the
+request. (implemented in TWebModule, see fpweb)</p>
+<h2 id="websession">websession</h2>
+<p>Implements basic session support.</p>
+<p>TSessionHTTPModule:<br>
+TCustomHTTPModule descendent with session support.
+TIniWebSession:
+TCustomSession descendent which stores session variables in inifiles.
+TFPWebSession:<br>
+TIniWebSession descendent for use in fpweb. Uses cookies to store session info.
+GetDefaultSession() :
+returns default session object.</p>
+<h2 id="fptemplate">fptemplate</h2>
+<p>Unit which implements template support.</p>
+<p>TTemplateParser:
+Template parse object. Does the actual parsing and replacing. Delimiters
+are configurable. Standard variables can be specified, callbacks for unknown
+values can be set.</p>
+<p>TFPCustomTemplate:
+TPersistent for use in components. Allows properties to configure the
+TTemplateParser. Supports streams, template and template files.</p>
+<h2 id="fpweb">fpweb</h2>
+<p>Actual usable implementation of TCustomHTTPModule.</p>
+<p>TFPWebAction(s):
+Web actions with template support.
+TCustomFPWebModule:
+Descends from TSessionHTTPModule, implements WebActions and has template support.
+TFPWebModule:
+published TCustomFPWebModule properties for use in Lazarus.</p>
+<h2 id="fphtml">fphtml</h2>
+<p>This creates web modules specialized in creating HTML content.</p>
+<p>THTMLContentProducer:
+Descendent of THTTPContentProducer which produces HTML
+THTMLCustomDatasetContentProducer:
+Descendent of THTTPContentProducer which produces HTML from datasets.
+THTMLDatasetContentProducer:
+Descendent of THTMLCustomDatasetContentProducer which publishes some
+properties.
+THTMLSelectProducer:
+Produces a combo box.
+THTMLDatasetSelectProducer
+Produces a combo box bases on values in a dataset.
+TCustomHTMLModule:
+TCustomHTTPModule descendent which produces HTML content only.</p>
+<p>Note that classes for HTML document creation come from package fcl-xml.</p>
+<h2 id="fpdatasetform">fpdatasetform</h2>
+<p>This contains classes which allow to create complicated HTML/forms
+based on a TDataset.</p>
+<p>THTMLDatasetFormProducer
+Creates an edit form for a TDataset record.
+Complicated table layouts are possible.</p>
+<p>THTMLDatasetFormGridProducer
+Creates a grid with data from a TDataset
+Complicated table formatting is possible.</p>
+<h2 id="custcgi">custcgi:</h2>
+<p>CGI application base class. It knows nothing of the fp
+HTTP module system.</p>
+<p>TCustomCGIApplication :
+TCustomApplication descendent which handles a CGI request.
+No instance of this class is created, this is done in fpcgi.</p>
+<p>TCGIRequest:
+TRequest descendent which retrieves content from the CGI
+environment.</p>
+<p>TCGIResponse:
+TResponse descendent which returns content to the CGI environment.</p>
+<h2 id="fpcgi">fpcgi:</h2>
+<p>Standard CGI application instance.</p>
+<p>TCGIApplication:
+TCustomCGIApplication descendent which uses the fpWeb system
+to create a TCustomHTTPModuleClass to handle the request.</p>
+<p>It contains an Application instance which handles everything.</p>
+<h2 id="fpapache">fpApache:</h2>
+<p>Apache Module support.</p>
+<p>TCustomApacheApplication:
+Uses fpweb to create TCustomHTTPModuleClass instances to
+handle the request.</p>
+<h2 id="fphttpclient">fphttpclient:</h2>
+<p>HTTP Protocol client component</p>
+<p>TFPCustomHTTPClient:
+A component which can be used to communicate with a HTTP Server. It can
+execute HTTP GET and POST methods out of the box, but can be used to execute
+other HTTP methods as well. It works using the ssockets unit of FPC, so no
+third-party package to handle the socket communication is needed.</p>
+<p>The class contains class methods, which allow to execute get/post methods in a really
+simple, one-command way.</p>
+<p>A demo application for this class exists.</p>
+<h2 id="fphttpserver">fphttpserver:</h2>
+<p>TFPCustomHttpServer:
+A Component which can be used to create a simple HTTP Server. All requests
+are routed through a OnRequest handler. The request and responses are
+modeled using the fpWeb TRequest and TResponse objects from httpdefs. The
+class itself does not serve files. The OnRequest handler must be
+implemented to actually serve files or respond to requests.
+It can work threaded or non-threaded.
+It works using the ssockets unit of FPC, so no third-party package to
+handle the socket communication is needed.</p>
+<p>A demo application for this class exists.</p>
+<h2 id="custhttpapp">custhttpapp:</h2>
+<p>Integration of TFPCustomHttpServer in a TWebApplication.</p>
+<p>TFPHTTPServerHandler:
+A TWebHandler descendant which implements a stand-alone HTTP server. It
+uses the TFPCustomHttpServer  component to implement the server.</p>
+<p>TCustomHTTPApplication:
+A descendent of TCustomWebApplication which serves as an application
+object for stand-alone HTTP applications. It can be used as a parent
+component for standalone HTTP application objects.</p>
+<h2 id="fphttpapp">fphttpApp:</h2>
+<p>THTTPApplication:
+A descendent of TCustomHTTPApplication. It does nothing except expose
+properties which exist in TCustomHTTPApplication. A global instance of
+this class is defined in fphttpApp. Use this unit and class if you want a
+simple standalone http server application for test purposes.</p>
+<p>A demo application for this class exists.</p>
+<h2 id="fpwebfile">fpwebfile:</h2>
+<p>Used to implement file serving.</p>
+<p>TFPCustomFileModule:
+TFPCustomHTTPModule descendant which will serve files. Can be used as-is,
+but descendents can be made to implement e.g. logging, authorisation etc.
+must not be registered directly, register locations using the RegisterFileLocation
+call.</p>
+
+            
+            
+        </body>
+        </html>

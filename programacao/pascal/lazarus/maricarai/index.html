@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Framework Maricarai</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<h1 id="framework-maricarai">Framework Maricarai</h1>
+<h2 id="1-criação-das-regras-no-negócios">1. Criação das regras no negócios</h2>
+<ol>
+<li>
+<p><strong>Resumo</strong>:</p>
+<ol>
+<li>O projeto maricarai tem como finalidade mapear as tabelas de um banco de dados, bem como realizar todos os cálculos que envolvem a tabela, assim como coletar as informações em uma lista de textos com uma sintaxe específica básica, capaz de fornecer informações necessárias para que os componentes geradores de formulários  possam fazer críticas no tipo de dados de entrada, nas faixas de valores válidos para o campo, bem como informações para que se possa criar campos do tipo CheckBox, comboBox, radioButton, LookupComboBox e options (semelhante  a comboBox, porém o conteúdo possa ser de qualquer tipo de dados).</li>
+<li>O módulo onde se descreve o projeto, também faz os cálculos necessários nas tabelas do banco de dados, bem como a descrição das telas usadas nos formulários, não dependem do módulo gerador de formulários.</li>
+<li>Os componentes usado para mapear as tabelas, descreve como será os formulários na visual abstrata. A interface visual abstrata deve ser implementada na plataforma destino, por exemplo:  aplicações LCL, WEB, ou mobile.</li>
+</ol>
+</li>
+<li>
+<p><strong>Componentes necessários</strong>:</p>
+<ol>
+<li>TMiDataModule
+<ol>
+<li>Este contêiner é usado para concentrar todos os componentes necessários para as regras do negócio onde os eventos dos mesmos possam ser criados visualmente.</li>
+</ol>
+</li>
+<li>TMiConnectionsDb
+<ol>
+<li>Este contêiner é usado para concentrar os componentes necessários para conectar-se ao banco de dados onde os mesmos serão necessários no contêiner TMiDataModule.</li>
+</ol>
+</li>
+<li>TDmxScroller_Form é usado para:
+<ol>
+<li>Mapear os campos banco de dados;</li>
+<li>O mapeamento é realizado através do evento onGetTemplate onde o mesmo retorna um template com a definição dos controles dos formulários.
+<ol>
+<li>Cada controle tem uma sintaxe própria onde os caracteres abaixo tem o seguinte significado:
+<ol>
+<li>'<em>~</em>'
+<ol>
+<li>Marcador de início e fim do texto usado para criar controles de formulários LCL, ou WEB ou javascript etc...
+<ol>
+<li>Exemplo:
+<ol>
+<li>~Nome do Aluno~</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><em>'S' 's'</em> (tipo ShortString):
+<ol>
+<li>Os caracteres <em>'S'</em> ou <em>'s'</em> encontrado após o caractere <em>\</em> representa uma posição na string do tipo <em>shortString</em>.
+<ol>
+<li>Exemplo:
+<ol>
+<li><em>'\Ssssssssss'</em>
+<ol>
+<li>Representa um string com 10 letras sendo que a primeira é maiúscula e as restantes são minusculas.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><em>'C' 'c'</em> (tipo ansiString):
+<ol>
+<li>Os caracteres <em>'C'</em> ou <em>'c'</em> encontrado após o caractere <em>\</em> representa uma posição na string do tipo <em>ansiString</em>.
+<ol>
+<li>Exemplo:
+<ol>
+<li><em>\Cccccccccc</em>
+<ol>
+<li>Representa um tipo ansiString com 10 letras sendo que a primeira é maiúscula e as restantes são minusculas.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><em>'j'</em> (tipo ShotInt)
+<ol>
+<li>O caractere <em>'J'</em> encontrado após o caractere <em>\</em> representa 3 caractere  na  mascara do tipo <em>ShotInt</em>.
+<ol>
+<li>Exemplo:
+<ol>
+<li><em>'\JJJ'</em>
+<ol>
+<li>Representa uma posição na memória e 3 posições na mascara de entrada de dados, cujo a faixa de valores permitidos é <em>-127</em> a <em>+127</em>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><em>'B'</em> (tipo byte)
+<ol>
+<li>Os caracteres <em>'B'</em> encontrado após o caractere <em>\</em> representa um caractere  a  mascara do tipo <em>byte</em>.
+<ol>
+<li>Exemplo:
+<ol>
+<li><em>'\BBB'</em>
+<ol>
+<li>Representa uma posição na memória e 3 posições na mascara de entrada de dados, cujo o maior valor permitido é <em>255</em>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><em>'I'</em> (tipo smallInt)
+<ol>
+<li>Os caracteres <em>'I'</em> encontrado após o caractere <em>\</em> representa um caractere  na  mascara do tipo <em>smallInt</em>.
+<ol>
+<li>Exemplo:
+<ol>
+<li><em>'\II,III'</em>
+<ol>
+<li>Representa duas posição na memória e 5 posições na mascara de entrada de dados, cujo a faixa de valores permitidos é <em>-32768</em> a <em>+32767</em>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><em>'W'</em> (tipo smallWord)
+<ol>
+<li>Os caracteres <em>'W'</em> encontrado após o caractere <em>\</em> representa um caractere  na  mascara do tipo <em>smallWord</em>.
+<ol>
+<li>Exemplo:
+<ol>
+<li><em>'\WW,WWW'</em>
+<ol>
+<li>Representa duas posição na memória e 5 posições na mascara de entrada de dados, cujo a faixa de valores permitidos é <em>0</em> a <em>65535</em>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Capturar os rótulos e tipos de controles que será usado no formulário de entrada de dados;</li>
+<li></li>
+</ol>
+</li>
+<li></li>
+<li></li>
+</ol>
+</li>
+</ol>
+<h2 id="o-preciso-fazer-para-que-o-produto-gere-formulários-lcl">O preciso fazer para que o produto gere formulários LCL?</h2>
+<ul>
+<li></li>
+</ul>
+<h2 id="o-preciso-fazer-para-que-o-produto-gere-formulários-html-dinâmicos">O preciso fazer para que o produto gere formulários html dinâmicos?</h2>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+            
+            
+        </body>
+        </html>

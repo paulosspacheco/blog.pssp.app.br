@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Application</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>CRUD Application</h1>
+        
+        <form id="createForm">
+            <h3>Create User</h3>
+            <div class="form-group">
+                <label for="createLogin">Login</label>
+                <input type="text" id="createLogin" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="createNome">Name</label>
+                <input type="text" id="createNome" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Create User</button>
+            <p id="statusCreateResult"></p>
+        </form>
+
+        <form id="getForm">
+            <h3>Get User</h3>
+            <div class="form-group">
+                <label for="getId">User ID</label>
+                <input type="text" id="getId" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Get User</button>
+            <div id="getUserResult"></div>
+        </form>
+
+        <form id="updateForm">
+            <h3>Update User</h3>
+            <div class="form-group">
+                <label for="updateId">User ID</label>
+                <input type="text" id="updateId" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="updateLogin">Login</label>
+                <input type="text" id="updateLogin" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="updateNome">Name</label>
+                <input type="text" id="updateNome" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Update User</button>
+            <p id="statusUpdateResult"></p>
+        </form>
+
+        <form id="deleteForm">
+            <h3>Delete User</h3>
+            <div class="form-group">
+                <label for="deleteId">User ID</label>
+                <input type="text" id="deleteId" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Delete User</button>
+            <p id="statusDeleteResult"></p>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="app.js"></script> <!-- Supondo que o JavaScript esteja salvo em app.js -->
+</body>
+</html>

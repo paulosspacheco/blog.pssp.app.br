@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>api rest</title>
+     
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<h1 id="api-rest">api rest</h1>
+<h2 id="o-que-é-api-rest-stateless">O que é api rest stateless</h2>
+<ol>
+<li>O conceito de &quot;stateless&quot; em uma API REST significa que cada chamada da API deve ser independente e não deve depender de chamadas anteriores. Em outras palavras, o servidor não mantém nenhum estado de cliente entre as requisições. Cada requisição do cliente deve conter todas as informações necessárias para o servidor entender e processar essa requisição.</li>
+</ol>
+<h2 id="significado-de-stateless">Significado de Stateless</h2>
+<ol>
+<li><em>Independência de Requisições</em>: Cada requisição é autossuficiente e deve incluir todas as informações necessárias para o processamento.</li>
+<li><em>Escalabilidade</em>: Facilita a escalabilidade horizontal (adicionando mais servidores) porque qualquer servidor pode atender qualquer requisição sem a necessidade de compartilhamento de estado.</li>
+<li><em>Simplicidade</em>: Reduz a complexidade do servidor, pois não precisa gerenciar o estado das sessões de clientes.</li>
+</ol>
+<h1 id="como-implementar-uma-api-stateless">Como Implementar uma API Stateless</h1>
+<ol>
+<li><em>Autenticação</em>:
+<ol>
+<li>Utilize tokens, como JSON Web Tokens (JWT), que são enviados em cada requisição, geralmente através do cabeçalho Authorization: Bearer &lt;token&gt;.</li>
+</ol>
+</li>
+<li><em>Mensagens Completas</em>:
+<ol>
+<li>As requisições devem conter todas as informações necessárias, como parâmetros, cabeçalhos, e corpo da mensagem (payload).</li>
+</ol>
+</li>
+<li><em>Idempotência</em>:
+<ol>
+<li>As operações devem ser <em>idempotentes</em> quando possível, especialmente para métodos HTTP como GET, PUT, DELETE.</li>
+<li><em>Obs</em>:
+<ol>
+<li>Idempotência é um conceito fundamental em sistemas distribuídos e APIs REST. Refere-se à propriedade de certas operações que podem ser executadas múltiplas vezes sem alterar o resultado além da primeira aplicação. Em outras palavras, uma operação idempotente produzirá o mesmo efeito, independentemente de quantas vezes for executada.
+<ol>
+<li>Características da Idempotência:
+<ol>
+<li>Repetição Segura: Executar a mesma operação várias vezes não altera o estado do sistema após a primeira execução.</li>
+<li>Consistência: Garante que a operação produz um resultado consistente e previsível.</li>
+<li>Facilita Recuperação de Falhas: Em casos de falha na comunicação, a operação pode ser repetida sem preocupação de efeitos colaterais adversos.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="exemplo-prático-usando-free-pascal">Exemplo Prático Usando Free Pascal</h2>
+<ol>
+<li>
+<p>Exemplo simples de como se implementar uma API REST stateless usando FPWeb.</p>
+<pre><code class="hljs language-pascal">
+     <span class="hljs-keyword">program</span> StatelessAPI;
+
+     <span class="hljs-meta">{$mode objfpc}</span><span class="hljs-meta">{$H+}</span>
+
+     <span class="hljs-keyword">uses</span>
+       fphttpapp, fpweb, HTTPDefs;
+
+     <span class="hljs-keyword">type</span>
+       <span class="hljs-title">TMyRESTModule</span> = <span class="hljs-keyword">class</span>(TFPWebModule)
+         <span class="hljs-keyword">private</span>
+           <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">HandleGetRequest</span><span class="hljs-params">(Sender: TObject; ARequest: TRequest; AResponse: TResponse; <span class="hljs-keyword">var</span> Handled: Boolean)</span>;</span>
+         <span class="hljs-keyword">public</span>
+       <span class="hljs-keyword">end</span>;
+
+     <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">TMyRESTModule</span>.<span class="hljs-title">HandleGetRequest</span><span class="hljs-params">(Sender: TObject; ARequest: TRequest; AResponse: TResponse; <span class="hljs-keyword">var</span> Handled: Boolean)</span>;</span>
+       <span class="hljs-keyword">var</span>
+         authToken: <span class="hljs-keyword">string</span>;
+     <span class="hljs-keyword">begin</span>
+         <span class="hljs-comment">// Check for authorization token in the request header</span>
+         authToken := ARequest.GetHeader(<span class="hljs-string">'Authorization'</span>);
+         <span class="hljs-keyword">if</span> authToken = <span class="hljs-string">'Bearer mysecrettoken'</span> <span class="hljs-keyword">then</span>
+         <span class="hljs-keyword">begin</span>
+             AResponse.ContentType := <span class="hljs-string">'application/json'</span>;
+             AResponse.Contents.Text := <span class="hljs-string">'{"message": "Hello, World!"}'</span>;
+         <span class="hljs-keyword">end</span>
+         <span class="hljs-keyword">else</span>
+         <span class="hljs-keyword">begin</span>
+             AResponse.Code := <span class="hljs-number">401</span>; <span class="hljs-comment">// Unauthorized</span>
+             AResponse.Contents.Text := <span class="hljs-string">'{"error": "Unauthorized"}'</span>;
+         <span class="hljs-keyword">end</span>;
+         Handled := True;
+     <span class="hljs-keyword">end</span>;
+
+     <span class="hljs-keyword">var</span>
+       Application: TFPHTTPApplication;
+       Module: TMyRESTModule;
+
+     <span class="hljs-keyword">begin</span>
+         Application := TFPHTTPApplication.Create(<span class="hljs-keyword">nil</span>);
+         <span class="hljs-keyword">try</span>
+             Module := TMyRESTModule.Create(<span class="hljs-keyword">nil</span>);
+             Module.OnRequest := @Module.HandleGetRequest;
+             Application.Initialize;
+             Application.Run;
+         <span class="hljs-keyword">finally</span>
+             Application.Free;
+         <span class="hljs-keyword">end</span>;
+     <span class="hljs-keyword">end</span>.
+
+</code></pre>
+</li>
+</ol>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>
