@@ -3,7 +3,7 @@
         <head>
             <meta charset="UTF-8">
             <title>Diagramas do projeto</title>
-  
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -18,9 +18,8 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
-
         </head>
-        <body class="vscode-body vscode-dark">
+        <body class="vscode-body vscode-light">
             <div class="header" id="myHeader">
   <div class="navbar" w3-include-html="/menu.inc"> </div>
 </div>
@@ -339,10 +338,19 @@ classDiagram
         +cep String(10)
         +valor_SMALLINT SMALLINT
         +valor_Integer Integer
-        +valor_FLOAT8 DOUBLE
-        +Data_1 timestamp 
-        +hora_1 timestamp    
-        +hora_2 timestamp
+        +valor_FLOAT8 DOUBLE        
+        +dd_mm_yy date
+        +dd_mm_yyyy date
+        +dd_mm_yy_hh_nn timeStamp    
+        +dd_mm_yy_hh_nn_ss timeStamp
+        +dd_mm_yyyy_hh_nn timeStamp
+        +dd_mm_yyyy_hh_nn_ss timeStamp
+        +hh_nn time
+        +hh_nn_ss time
+        +sexo string(15)         
+        +EstadoCivil string(15)  
+        +Status string(5)        
+            
      }  
 );
 
@@ -370,7 +378,7 @@ classDiagram
 </ol>
 <!-- markdownlint-disable-next-line -->
 </main>
-[🔝🔝](#topo "Retorna ao topo")
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
             
             

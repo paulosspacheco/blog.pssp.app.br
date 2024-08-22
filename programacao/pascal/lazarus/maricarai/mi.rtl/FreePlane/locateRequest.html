@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>An&aacute;lise de uso da requisi&ccedil;&atilde;o TMi&lowbar;rtl&lowbar;WebModule&period;CmlocateRequest&lpar;&rpar; do Servidor REST API e uma Aplica&ccedil;&atilde;o Cliente</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+   
+      </style>
+
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<script type="application/x-javascript" src="/js/mermaid.min.js"></script>
+<!-- <h1 id="análise-de-uso-da-requisição-tmi_rtl_webmodulecmlocaterequest-do-servidor-rest-api-e-uma-aplicação-cliente">Análise de uso da requisição TMi_rtl_WebModule.CmlocateRequest() do Servidor REST API e uma Aplicação Cliente</h1> -->
+<ul>
+<li><strong>Tópicos</strong>
+<ul>
+<li><a href="#vis%C3%A3o-geral">Visão Geral</a></li>
+<li><a href="#arquitetura">Arquitetura</a></li>
+<li><a href="#fluxo-de-opera%C3%A7%C3%A3o">Fluxo de Operação</a></li>
+<li><a href="#diagramas-de-sequ%C3%AAncia">Diagramas de sequência</a>
+<ul>
+<li><a href="#fluxo-de-dados-da-pesquisa">Fluxo de Dados da pesquisa</a></li>
+</ul>
+</li>
+<li><a href="#considera%C3%A7%C3%B5es">Considerações</a>
+<ul>
+<li><a href="#explica%C3%A7%C3%A3o">Explicação</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="visão-geral">Visão Geral</h2>
+<p>Este documento descreve a interação entre uma aplicação cliente e um servidor REST API para localizar e exibir registros. O fluxo é iniciado quando o usuário pressiona um botão na aplicação cliente para realizar uma pesquisa.</p>
+<h2 id="arquitetura">Arquitetura</h2>
+<ul>
+<li><strong>Servidor REST API</strong>: Fornece o serviço de localização de registros.</li>
+<li><strong>Aplicação Cliente</strong>: Interage com o usuário e faz requisições ao servidor para localizar registros.</li>
+</ul>
+<h2 id="fluxo-de-operação">Fluxo de Operação</h2>
+<ol>
+<li>
+<p><strong>Usuário Pressiona o Botão Localizar</strong></p>
+<ul>
+<li>O usuário pressiona o botão &quot;Localizar&quot; na aplicação cliente.</li>
+</ul>
+</li>
+<li>
+<p><strong>Aplicação Cliente Exibe Formulário de Pesquisa</strong></p>
+<ul>
+<li>A aplicação cliente exibe um formulário para o usuário inserir os dados da pesquisa. O formulário coleta as informações necessárias para a pesquisa, como o termo de pesquisa ou identificador do registro.</li>
+</ul>
+</li>
+<li>
+<p>Aplicação Cliente Requisita o Método Localizar no Servidor</p>
+<ul>
+<li>
+<p>Após o usuário enviar o formulário, a aplicação cliente faz uma requisição HTTP POST ao servidor REST API com os dados da pesquisa.</p>
+</li>
+<li>
+<p>Exemplo de Requisição:</p>
+<pre><code class="hljs language-text">
+   POST /api/localizar
+   Content-Type: application/json
+
+   {
+   &quot;termo&quot;: &quot;valor pesquisado&quot;
+   }
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Servidor REST API Processa a Requisição</p>
+<ul>
+<li>
+<p>O servidor REST API processa a requisição e localiza o registro correspondente. O servidor então responde com os dados do registro encontrado.</p>
+</li>
+<li>
+<p>Exemplo de Resposta:</p>
+</li>
+</ul>
+<pre><code class="hljs language-text">
+     HTTP/1.1 200 OK
+     Content-Type: application/json
+
+     {
+     &quot;id&quot;: 123,
+     &quot;nome&quot;: &quot;Registro Encontrado&quot;,
+     &quot;descricao&quot;: &quot;Descrição do registro encontrado.&quot;
+     }
+
+</code></pre>
+</li>
+<li>
+<p>Aplicação Cliente Exibe o Resultado</p>
+<ul>
+<li>A aplicação cliente recebe a resposta do servidor e exibe as informações do registro encontrado na interface do usuário.</li>
+</ul>
+<pre><code class="hljs language-text">     Resultado da Pesquisa:
+     - ID: 123
+     - Nome: Registro Encontrado
+     - Descrição: Descrição do registro encontrado.
+
+</code></pre>
+</li>
+</ol>
+<h2 id="diagramas-de-sequência">Diagramas de sequência</h2>
+<h3 id="fluxo-de-dados-da-pesquisa">Fluxo de Dados da pesquisa</h3>
+<pre><code class="language-mermaid"><div class="mermaid">
+
+sequenceDiagram
+    participant Client as Aplicação Cliente
+    participant Form_pesquisa as Formulário de Pesquisa
+    participant Form_Edicao as Formulário de Edição
+    participant Server as Servidor REST API
+
+    Client->>+Form_pesquisa: Solicita os campos chaves da pesquisa
+    Form_pesquisa->>Form_pesquisa: Usuário insere dados para pesquisa
+    Form_pesquisa->>-Client: Campos chaves editados
+    Client->>+Server: Requisita método LocateRequest(json)
+    Server->>Server: Processa a requisição
+    Server-->>-Client: Retorna o registro encontrado
+    Client->>Form_Edicao: Exibe os campos do json da resposta
+
+</div></code></pre>
+<h2 id="considerações">Considerações</h2>
+<ul>
+<li>Certifique-se de que o servidor REST API está configurado corretamente para lidar com requisições CORS, se necessário.</li>
+<li>A aplicação cliente deve validar os dados do formulário antes de enviá-los para o servidor.</li>
+<li>A resposta do servidor deve ser tratada para lidar com possíveis erros ou registros não encontrados.</li>
+</ul>
+<h3 id="explicação">Explicação</h3>
+<p>sequenceDiagram</p>
+<ul>
+<li><strong>Visão Geral</strong>: Descreve o propósito do documento e as partes envolvidas.</li>
+<li><strong>Fluxo de Operação</strong>: Detalha o processo passo a passo desde o acionamento do botão até a exibição dos resultados.</li>
+<li><strong>Diagramas</strong>: Um diagrama de sequência Mermaid mostra a interação entre o cliente e o servidor.</li>
+</ul>
+<!-- markdownlint-disable-next-line -->
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+            
+            
+        </body>
+        </html>
