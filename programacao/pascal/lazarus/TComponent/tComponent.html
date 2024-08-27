@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Class base TComponent</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+        <body class="vscode-body vscode-light">
+            <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<!-- <h1 id="class-base-tcomponent">Class base TComponent</h1> -->
+<ul>
+<li>
+<p>O componente TComponent é a classe base para todos os componentes no Free Pascal e Lazarus, e também em outras plataformas como o Delphi. Ele oferece uma infraestrutura essencial para a criação e gerenciamento de componentes, permitindo que eles sejam organizados em hierarquias, sejam persistidos em arquivos, notificados sobre eventos importantes, e gerenciados de forma automatizada. A seguir está uma descrição detalhada dos principais aspectos do TComponent:</p>
+<ul>
+<li>
+<p><strong>Principais Propriedades</strong>:</p>
+<ul>
+<li>
+<p><em>Owner</em>:</p>
+<ul>
+<li>Um componente TComponent pode ter um proprietário, que também é um TComponent. O proprietário é responsável por liberar a memória dos componentes que possui quando ele próprio é destruído.</li>
+</ul>
+</li>
+<li>
+<p><em>Name</em>:</p>
+<ul>
+<li>Nome único do componente no contexto do seu proprietário. Este nome é frequentemente usado para identificar componentes em arquivos de projeto (como .lfm).</li>
+</ul>
+</li>
+<li>
+<p><em>Tag</em>:</p>
+<ul>
+<li>Uma propriedade inteira que pode ser usada para armazenar qualquer valor desejado. É comumente usada para armazenar informações adicionais que o desenvolvedor deseja associar ao componente.</li>
+</ul>
+</li>
+<li>
+<p><em>Components</em>:</p>
+<ul>
+<li>Lista de componentes filhos que este componente possui.</li>
+</ul>
+</li>
+<li>
+<p><em>ComponentCount</em>:</p>
+<ul>
+<li>O número de componentes filhos que este componente possui.</li>
+</ul>
+</li>
+<li>
+<p><em>ComponentState</em>:</p>
+<ul>
+<li>Indica o estado atual do componente (por exemplo, se está carregando, se foi destruído, etc.).</li>
+</ul>
+</li>
+<li>
+<p><em>ComponentStyle</em>:</p>
+<ul>
+<li>Define o estilo do componente, determinando como ele se comporta em tempo de design e em tempo de execução.</li>
+</ul>
+</li>
+<li>
+<p><em>DesignInfo</em>:</p>
+<ul>
+<li>Informações usadas em tempo de design, como a posição do componente em um designer visual.</li>
+</ul>
+</li>
+<li>
+<p><em>VCLComObject</em>:</p>
+<ul>
+<li>Usado internamente para integração com a biblioteca de componentes visuais (VCL) no Windows.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Principais Métodos</strong>:</p>
+<ul>
+<li>
+<p><em>Create(AOwner: TComponent)</em>:</p>
+<ul>
+<li>Construtor que inicializa o componente e, se fornecido, atribui um proprietário ao componente.</li>
+</ul>
+</li>
+<li>
+<p><em>Destroy</em>:</p>
+<ul>
+<li>Destrutor que libera recursos associados ao componente.</li>
+</ul>
+</li>
+<li>
+<p><em>InsertComponent(AComponent: TComponent)</em>:</p>
+<ul>
+<li>Insere um componente filho na lista de componentes filhos.</li>
+</ul>
+</li>
+<li>
+<p><em>RemoveComponent(AComponent: TComponent)</em>:</p>
+<ul>
+<li>Remove um componente filho da lista de componentes filhos.</li>
+</ul>
+</li>
+<li>
+<p><em>FindComponent(const AName: string)</em>:</p>
+<ul>
+<li>Busca um componente filho pelo nome.</li>
+</ul>
+</li>
+<li>
+<p><em>Notification(AComponent: TComponent; Operation: TOperation)</em>:</p>
+<ul>
+<li>Notifica o componente sobre operações (por exemplo, inserção ou remoção de outros componentes).</li>
+</ul>
+</li>
+<li>
+<p><em>FreeNotification(AComponent: TComponent)</em>:</p>
+<ul>
+<li>Configura o componente para ser notificado quando outro componente for destruído.</li>
+</ul>
+</li>
+<li>
+<p><em>RemoveFreeNotification(AComponent: TComponent)</em>:</p>
+<ul>
+<li>Remove a notificação configurada anteriormente.</li>
+</ul>
+</li>
+<li>
+<p><em>ExecuteAction(Action: TBasicAction)</em>:</p>
+<ul>
+<li>Permite que o componente responda a uma ação executada.</li>
+</ul>
+</li>
+<li>
+<p><em>UpdateAction(Action: TBasicAction)</em>:</p>
+<ul>
+<li>Atualiza o estado da ação de acordo com o estado do componente.</li>
+</ul>
+</li>
+<li>
+<p><em>GetEnumerator</em>:</p>
+<ul>
+<li>Retorna um enumerador para iterar sobre os componentes filhos.</li>
+</ul>
+</li>
+<li>
+<p><em>WriteState(Writer: TWriter)</em>:</p>
+<ul>
+<li>Escreve o estado do componente para um fluxo, geralmente usado durante a persistência do componente em arquivos.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Interface Implementations</strong>:</p>
+<ul>
+<li><em>IUnknown / IInterfaceComponentReference</em>:
+<ul>
+<li>Suporte para a contagem de referências e para a obtenção de uma interface para o componente, importante para a compatibilidade COM e outras funcionalidades avançadas.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Métodos Protegidos</strong>:</p>
+<ul>
+<li><em>ChangeName(const NewName: TComponentName)</em>:
+<ul>
+<li>Altera o nome do componente, com verificações para garantir que o novo nome seja válido.</li>
+</ul>
+</li>
+<li><em>DefineProperties(Filer: TFiler)</em>: Define as propriedades que serão lidas ou escritas pelo TFiler, usado durante a persistência.</li>
+<li><em>GetOwner</em>:
+<ul>
+<li>Retorna o objeto que possui o componente, herdado de TPersistent.</li>
+</ul>
+</li>
+<li><em>Loaded / Loading</em>:
+<ul>
+<li>Chamados quando o componente é carregado de um fluxo ou arquivo, permitindo inicializações adicionais.</li>
+</ul>
+</li>
+<li><em>ReadState(Reader: TReader)</em>:
+<ul>
+<li>Lê o estado do componente a partir de um fluxo, permitindo que ele seja restaurado a partir de um arquivo.</li>
+</ul>
+</li>
+<li><em>SetName(const NewName: TComponentName)</em>:
+<ul>
+<li>Método virtual que define o nome do componente.</li>
+</ul>
+</li>
+<li><em>SetParentComponent(Value: TComponent)</em>:
+<ul>
+<li>Define o componente pai em uma hierarquia visual.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Em resumo, <em>TComponent</em> é o bloco de construção fundamental para a criação de componentes reutilizáveis no ambiente Free Pascal, fornecendo uma vasta gama de funcionalidades para gerenciamento de memória, persistência, e interação entre componentes.</p>
+</li>
+</ul>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+            
+            
+        </body>
+        </html>

@@ -90,6 +90,7 @@ Este documento descreve a interação entre uma aplicação cliente e um servido
 
 ### Fluxo de Dados da pesquisa
 
+---
 <pre><code class="language-mermaid"><div class="mermaid">
 
 sequenceDiagram
@@ -107,6 +108,8 @@ sequenceDiagram
     Client->>Form_Edicao: Exibe os campos do json da resposta
 
 </div></code></pre>
+
+---
 
 ## Considerações
 
