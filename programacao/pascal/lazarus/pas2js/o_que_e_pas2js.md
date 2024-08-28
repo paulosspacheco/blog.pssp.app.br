@@ -45,12 +45,12 @@
          2. <text onclick="goBack()">[🔙]</text>
 
       3. <span id="id_beneficios"></span> **Benefícios:**
-         1. Permitir criar páginas html dinâmicas (usando código java script) com pouca linha de código em uma linguagem criada para ensinar programação para iniciantes.
-         2. Pas2js pode ser integrado na IDE Lazarus, na qual permite criar aplicações RAD de fácil gerenciamento do projeto.
-         3. Com _Pas2js_ criando programa para o browser e o pacote _Fpweb_ usado no servidor, pode-se criar aplicação completa para web.
-         4. Os programadores pascal não precisam dominar as nuanceas de uma nova linguagem não tipada r de difícil entendimento para produzir aplicações web.
+         1. Permitir criar páginas html dinâmicas (usando código java script) com poucas linhas de código (comparada do código gerado) em uma linguagem (pascal) criada por um professor (Niklaus Wirth) com o propósito de ensinar programação de computadores para iniciantes.
+         2. O Pas2js pode ser integrado na IDE Lazarus, na qual permite criar aplicações RAD de fácil gerenciamento do projeto.
+         3. Com Pas2js criando programa para o browser e o pacote Fpweb usado no servidor, pode-se criar aplicação completa para web.
+         4. Os programadores pascal não precisam dominar as nuanceas de uma nova linguagem não tipada  de difícil entendimento para produzir aplicações web.
          5. É possível dentro do pascal instanciar uma classe javascript usando a palavra reservada [external](https://gitlab.com/freepascal.org/fpc/pas2js/-/blob/main/demo/library/main.lpr). [Veja mais...](https://wiki.freepascal.org/pas2js#Compiler);
-         6. O pas2js permite criar módulos javascript usando a sintaxe library do pascal. [Veja mais...](https://wiki.freepascal.org/pas2js_modules);
+         6. O pas2js permite criar módulos javascript usando a sintaxe da linguagem pascal. [Veja mais...](https://wiki.freepascal.org/pas2js_modules);
          7. É possível criar aplicações Progressive Web Application ([PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)).
             1. Uma aplicação _PWA_ pode ser executada com aparência da interface da plataforma no qual ele está executando, tais como um desktop Linux, desktop Windows, com um app android, etc...
 
