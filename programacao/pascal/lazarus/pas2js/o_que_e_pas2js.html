@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>O que &eacute; o projeto pas2js &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;pas2js&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
-   
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>O que &eacute; o projeto pas2js &lt;a href&equals;&quot;o&lowbar;que&lowbar;e&lowbar;pas2js&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description"   content="" />
         <meta name="keywords" content="" />
@@ -18,9 +18,9 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
-    </head>
-    <body class="vscode-body vscode-dark">
-        <div class="header" id="myHeader">
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="header" id="myHeader">
   <div class="navbar" w3-include-html="/menu.inc"> </div>
 </div>
 <div class="title"><script> document.write(document.title);</script></div>  
@@ -44,29 +44,7 @@
 <li><a href="https://gitlab.com/freepascal.org/fpc/pas2js">Repositório do projeto</a></li>
 </ol>
 </li>
-<li>
-<p><a href="#id_Conteudo"><strong>Conteúdo estudado.</strong></a></p>
-<ol>
-<li><a href="#id_apiclient">Exemplo demo/apiclient</a></li>
-<li><a href="#id_assunto02">Assunto 02</a></li>
-<li><a href="#id_assunto03">Assunto 03</a></li>
-<li><a href="#id_assunto04">Assunto 04</a></li>
-<li><a href="#id_assunto05">Assunto 05</a></li>
-<li><a href="#id_assunto06">Assunto 06</a></li>
-<li><a href="#id_assunto07">Assunto 07</a></li>
-<li><a href="#id_assunto08">Assunto 08</a></li>
-<li><a href="#id_assunto09">Assunto 09</a></li>
-<li><a href="#id_assunto10">Assunto 10</a></li>
 </ol>
-</li>
-<li>
-<p><a href="#id_referencias"><strong>Referências globais.</strong></a></p>
-</li>
-<li>
-<p><a href="#id_historico"><strong>Histórico.</strong></a></p>
-</li>
-</ol>
-<h2 id="2-conteúdo"><strong>2. CONTEÚDO</strong></h2>
 <hr>
 <ol>
 <li>
@@ -82,7 +60,7 @@
 <p><span id="id_objetivo"><span><strong>Objetivo:</strong></p>
 <ol>
 <li>
-<p>O <a href="https://wiki.freepascal.org/pas2js">Pas2js</a> é um transpiler Pascal para JavaScript de código aberto . Ele analisa Object Pascal e emite JavaScript. O JavaScript está atualmente no nível ECMAScript 5 e deve rodar em qualquer navegador ou no Node.js (target &quot;nodejs&quot;). Está disponível em 5 formas:</p>
+<p>O <a href="https://wiki.freepascal.org/pas2js">Pas2js</a> é um transpiler Pascal para JavaScript de código aberto. Ele transforma o código pascal em código JavaScript. O JavaScript gerado está atualmente no nível ECMAScript 5 e deve rodar em qualquer navegador ou no Node.js. Está disponível em 5 formas:</p>
 <ol>
 <li>como uma biblioteca;</li>
 <li>como um programa de linha de comando;</li>
@@ -103,7 +81,7 @@
 <p><span id="id_pre_requisitos"></span><strong>Pre-requisitos:</strong></p>
 <ol>
 <li>
-<p>Conhecimento da linguagem pascal, html, javascript, nodejs e tecnologias web necessárias para pode publicar uma site na nuvem.</p>
+<p>Conhecimento da linguagem pascal, html, javascript, nodejs e tecnologias web necessárias para poder publicar o site criado com pas2js na web.</p>
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
@@ -114,13 +92,16 @@
 <p><span id="id_beneficios"></span> <strong>Benefícios:</strong></p>
 <ol>
 <li>
-<p>Permitir programar com uma linguagem tipada como o pascal para construção de aplicações clientes e usar a linguagem  pascal como aplicação servidora.</p>
+<p>Permitir criar páginas html dinâmicas (usando código java script) com pouca linha de código em uma linguagem criada para ensinar programação para iniciantes.</p>
 </li>
 <li>
-<p>As aplicações clientes web facilita a vida do usuário, porque eles tem em sua máquina o browser instalado e o browse há protege de acesso a sua máquina em dados que o mesmo não deseja compartilhar com fornecedores de software.</p>
+<p>Pas2js pode ser integrado na IDE Lazarus, na qual permite criar aplicações RAD de fácil gerenciamento do projeto.</p>
 </li>
 <li>
-<p>Programadores pascal não precisam dominar as nuncias de uma nova linguagem para produzir aplicações web.</p>
+<p>Com <em>Pas2js</em> criando programa para o browser e o pacote <em>Fpweb</em> usado no servidor, pode-se criar aplicação completa para web.</p>
+</li>
+<li>
+<p>Os programadores pascal não precisam dominar as nuanceas de uma nova linguagem não tipada r de difícil entendimento para produzir aplicações web.</p>
 </li>
 <li>
 <p>É possível dentro do pascal instanciar uma classe javascript usando a palavra reservada <a href="https://gitlab.com/freepascal.org/fpc/pas2js/-/blob/main/demo/library/main.lpr">external</a>. <a href="https://wiki.freepascal.org/pas2js#Compiler">Veja mais...</a>;</p>
@@ -128,7 +109,12 @@
 <li>
 <p>O pas2js permite criar módulos javascript usando a sintaxe library do pascal. <a href="https://wiki.freepascal.org/pas2js_modules">Veja mais...</a>;</p>
 </li>
-<li></li>
+<li>
+<p>É possível criar aplicações Progressive Web Application (<a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps">PWA</a>).</p>
+<ol>
+<li>Uma aplicação <em>PWA</em> pode ser executada com aparência da interface da plataforma no qual ele está executando, tais como um desktop Linux, desktop Windows, com um app android, etc...</li>
+</ol>
+</li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
 </li>
@@ -195,15 +181,6 @@
 </ol>
 </li>
 <li>
-<p><strong>Exemplo do Exemplo demo/apiclient</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
-</ol>
-</li>
-<li>
 <p><strong>Referências:</strong></p>
 <ol>
 <li><a href="https://code.visualstudio.com/docs/editor/debugging#_launch-configurations">Como usar o vscode para debugar o projeto</a></li>
@@ -216,21 +193,15 @@
 </li>
 </ol>
 </li>
-<li>
-<p><span id=id_assunto02></span><strong>Assunto 02</strong></p>
-<ol>
-<li>
-<p>Descrição do conteúdo.</p>
-</li>
-<li>
-<p><strong>Exemplo do assunto 02</strong>.</p>
-<ol>
-<li>
-<p>Descrição do exemplo</p>
-<pre><code class="hljs language-ts"></code></pre>
-</li>
 </ol>
-</li>
+<!-- 2. <span id=id_assunto02></span>**Assunto 02**
+   5. Descrição do conteúdo.
+   6. **Exemplo do assunto 02**.
+      1. Descrição do exemplo
+<pre><code class="hljs">     ```ts
+     ```
+</code></pre>
+<ol start="7">
 <li>
 <p><strong>Referências:</strong></p>
 <ol>
@@ -240,8 +211,6 @@
 </li>
 <li>
 <p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
 </li>
 <li>
 <p><span id=id_assunto03></span><strong>Assunto 03</strong></p>
@@ -460,64 +429,22 @@
 </ol>
 </li>
 <li>
-<p><text onclick="goBack()">[🔙]</text></p>
+<p><text onclick="goBack()">[🔙]</text> --&gt;</p>
 </li>
 </ol>
 </li>
 <li>
 <p><span id=id_referencias></span><strong>REFERÊNCIAS GLOBAIS</strong></p>
 <ol>
-<li>
-<p><a href="#1">Site oficial para produzir este documento</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><a href="##">#</a></p>
-</li>
-<li>
-<p><text onclick="goBack()">[🔙]</text></p>
-</li>
-</ol>
-</li>
-<li>
-<p><span id="id_historico"><span><strong>HISTÓRICO</strong></p>
-<ol>
-<li>
-<p>dd/mm/2021 <!--TODO: HISTÓRICO --></p>
-<ul>
-<li><text onclick="goBack()">[🔙]</text></li>
-</ul>
-</li>
-<li>
-<p>dd/mm/2021 <!--FIXME: Falta fazer os item abaixo: --></p>
-<ul class="contains-task-list">
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Criar este documento baseado no o_que_e_pas2js.md ;</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Objetivos;</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Pre-requisitos</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Benefícios</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico desvantagens</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Conteúdo</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Exemplos</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Escrever tópico Referências</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Atualizar o histórico deste documento.</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Testar este documento depois após uma semana de concluído.</li>
-</ul>
-</li>
+<li><a href="#1">Site oficial para produzir este documento</a></li>
+<li><a href="https://www.youtube.com/watch?v=M1Lqog-kfr0">LAZARUS + Pas2JS no Linux | Web dev com freepascal e Lazarus</a></li>
 </ol>
 </li>
 </ol>
 </main>
 <p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
 
-        
-        
-    </body>
-    </html>
+            
+            
+        </body>
+        </html>
