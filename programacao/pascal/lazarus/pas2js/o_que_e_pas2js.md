@@ -24,7 +24,7 @@
 ---
 
    1. <span id="id_resumo"><span>**Resumo do conteúdo:**
-      1. Descreve um resumo de como foi feito esse documento com as facilidade encontradas para produzi-lo e dificuldade encontrada.
+      1. Essa página contém uma breve descrição do que é o projeto pas2js.
 
    2. **Introdução**
 
@@ -84,144 +84,9 @@
             6. ..
 
          3. **Referências:**
-            1. [Como usar o vscode para debugar o projeto](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)
-            2. [title](link)
-            3. [title](link)
-
-         4. <text onclick="goBack()">[🔙]</text>
-
-      <!-- 2. <span id=id_assunto02></span>**Assunto 02**
-         5. Descrição do conteúdo.
-         6. **Exemplo do assunto 02**.
-            1. Descrição do exemplo
-
-               ```ts
-               ```
-
-         7. **Referências:**
-            1. [title](link)
-            2. [title](link)
-
-         8. <text onclick="goBack()">[🔙]</text>
-
-      2. <span id=id_assunto03></span>**Assunto 03**
-         1. Descrição do conteúdo.
-         2. **Exemplo do assunto 03**.
-            1. Descrição do exemplo
-
-               ```ts
-               ```
-
-         3. **Referências:**
-            1. [title](link)
-            2. [title](link)
-
-         4. <text onclick="goBack()">[🔙]</text>
-
-      3. <span id=id_assunto04></span>**Assunto 04**
-         1. Descrição do conteúdo.
-         2. **Exemplo do assunto 04**.
-            1. Descrição do exemplo
-
-               ```ts
-               ```
-
-         3. **Referências:**
-            1. [title](link)
-            2. [title](link)
-
-         4. <text onclick="goBack()">[🔙]</text>
-
-      4. <span id=id_assunto05></span>**Assunto 05**
-         1. Descrição do conteúdo.
-         2. **Exemplo do assunto 05**.
-            1. Descrição do exemplo
-
-               ```ts
-               ```
-
-         3. **Referências:**
-            1. [title](link)
-            2. [title](link)
-
-         4. <text onclick="goBack()">[🔙]</text>
-
-      5. <span id=id_assunto06></span>**Assunto 06**
-         1. Descrição do conteúdo.
-         2. **Exemplo do assunto 06**.
-            1. Descrição do exemplo
-
-               ```ts
-               ```
-
-         3. **Referências:**
-            1. [title](link)
-            2. [title](link)
-
-         4. <text onclick="goBack()">[🔙]</text>
-
-      6. <span id=id_assunto07></span>**Assunto 07**
-         1. Descrição do conteúdo.
-         2. **Exemplo do assunto 07**.
-            1. Descrição do exemplo
-
-               ```ts
-               ```
-
-         3. **Referências:**
-            1. [title](link)
-            2. [title](link)
-
-         4. <text onclick="goBack()">[🔙]</text>
-
-      7. <span id=id_assunto08></span>**Assunto 08**
-         1. Descrição do conteúdo.
-         2. **Exemplo do assunto 08**.
-            1. Descrição do exemplo
-
-               ```ts
-               ```
-
-         3. **Referências:**
-            1. [title](link)
-            2. [title](link)
-
-         4. <text onclick="goBack()">[🔙]</text>
-
-      8. <span id=id_assunto09></span>**Assunto 09**
-         1. Descrição do conteúdo.
-         2. **Exemplo do assunto 09**.
-            1. Descrição do exemplo
-
-               ```ts
-               ```
-
-         3. **Referências:**
-            1. [title](link)
-            2. [title](link)
-
-         4. <text onclick="goBack()">[🔙]</text>
-
-      9.  <span id=id_assunto10></span>**Assunto 10**
-          1. Descrição do conteúdo.
-          2. **Exemplo do assunto 10**.
-             1. Descrição do exemplo
-
-                  ```ts
-                  ```
-
-          3. **Referências:**
-             1. [title](link)
-             2. [title](link)
-
-          4. <text onclick="goBack()">[🔙]</text>
-
-      10. <text onclick="goBack()">[🔙]</text> -->
-
-   4. <span id=id_referencias></span>**REFERÊNCIAS GLOBAIS**
-      1. [Site oficial para produzir este documento](#1)
-      2. [LAZARUS + Pas2JS no Linux | Web dev com freepascal e Lazarus](https://www.youtube.com/watch?v=M1Lqog-kfr0)
-
+            1. [Wiki Pas2JS](https://wiki.freepascal.org/pas2js)
+            2. [wiki.freepascal.org](https://wiki.freepascal.org/Components_and_Code_examples)
+  
 </main>
 
 [🔝🔝](#topo "Retorna ao topo")

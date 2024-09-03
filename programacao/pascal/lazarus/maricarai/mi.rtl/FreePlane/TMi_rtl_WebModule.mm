@@ -84,7 +84,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="15" RULE="ON_BRANCH_CREATION"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="16" RULE="ON_BRANCH_CREATION"/>
 <hook NAME="accessories/plugins/AutomaticLayout.properties" VALUE="ALL"/>
 <edge COLOR="#ffffff"/>
 <richcontent TYPE="DETAILS">
@@ -99,7 +99,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node TEXT="navigation actions" POSITION="right" ID="ID_273436263" CREATED="1724172285502" MODIFIED="1724179219428" HGAP_QUANTITY="91.26829627750192 pt" VSHIFT_QUANTITY="-30.731708746733723 pt">
 <edge COLOR="#007c7c"/>
@@ -649,7 +648,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="CmRefresh &#x2705;" ID="ID_154515991" CREATED="1724173204117" MODIFIED="1724195238509"><richcontent TYPE="DETAILS" HIDDEN="true">
+<node TEXT="CmRefresh &#x2705;" ID="ID_154515991" CREATED="1724173204117" MODIFIED="1724195238509"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -706,6 +705,33 @@
     </p>
   </body>
 </html>
+</richcontent>
+</node>
+</node>
+<node TEXT="LCL TActionList" POSITION="right" ID="ID_1229797910" CREATED="1724852665506" MODIFIED="1724853197092">
+<edge COLOR="#00ffff"/>
+<node TEXT="OnCreateForm" ID="ID_24439278" CREATED="1724852706802" MODIFIED="1724853115419"><richcontent TYPE="DETAILS">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Retorna uma p&#225;gina html para o servidor.
+    </p>
+    <p>
+      &#160;- Notas
+    </p>
+    <p>
+      &#160;&#160;&#160;- Caso a p&#225;gina nomeDaTablea.html n&#227;o exista a p&#225;gina deve ser&#160; criada dinamicamente.
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;- Caso seja aplica&#231;&#227;o LCL esse recurso n&#227;o estar&#225; dispon&#237;vel porque a aplica&#231;&#227;o deve sr compilada antes de interagir com o servidor.
+    </p>
+  </body>
+</html>
+
 </richcontent>
 </node>
 </node>

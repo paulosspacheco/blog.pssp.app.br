@@ -10,18 +10,18 @@
 
 # Análise de uso da requisição TMi_rtl_WebModule.CmlocateRequest() do Servidor REST API e uma Aplicação Cliente
 
-- **Tópicos**
+- [Análise de uso da requisição TMi\_rtl\_WebModule.CmlocateRequest() do Servidor REST API e uma Aplicação Cliente](#análise-de-uso-da-requisição-tmi_rtl_webmodulecmlocaterequest-do-servidor-rest-api-e-uma-aplicação-cliente)
   - [Visão Geral](#visão-geral)
   - [Arquitetura](#arquitetura)
   - [Fluxo de Operação](#fluxo-de-operação)
   - [Diagramas de sequência](#diagramas-de-sequência)
-    - [Fluxo de Dados da pesquisa](#fluxo-de-dados-da-pesquisa)
+    - [Diagrama de sequência com a interação entre o browser, usuário e servidor](#diagrama-de-sequência-com-a-interação-entre-o-browser-usuário-e-servidor)
   - [Considerações](#considerações)
     - [Explicação](#explicação)
 
 ## Visão Geral
 
-Este documento descreve a interação entre uma aplicação cliente e um servidor REST API para localizar e exibir registros. O fluxo é iniciado quando o usuário pressiona um botão na aplicação cliente para realizar uma pesquisa.
+Este documento descreve a interação entre uma aplicação cliente e um servidor REST API para localizar e exibir registros. O fluxo é iniciado quando o usuário solicitar um formulário em seguida pressiona o botão na aplicação cliente para realizar uma pesquisa.
 
 ## Arquitetura
 
@@ -88,24 +88,28 @@ Este documento descreve a interação entre uma aplicação cliente e um servido
 
 ## Diagramas de sequência
 
-### Fluxo de Dados da pesquisa
+### Diagrama de sequência com a interação entre o browser, usuário e servidor
 
 ---
 <pre><code class="language-mermaid"><div class="mermaid">
 
+---
+config:
+ theme: neo-dark
+---
 sequenceDiagram
-    participant Client as Aplicação Cliente
-    participant Form_pesquisa as Formulário de Pesquisa
-    participant Form_Edicao as Formulário de Edição
-    participant Server as Servidor REST API
-
-    Client->>+Form_pesquisa: Solicita os campos chaves da pesquisa
-    Form_pesquisa->>Form_pesquisa: Usuário insere dados para pesquisa
-    Form_pesquisa->>-Client: Campos chaves editados
-    Client->>+Server: Requisita método LocateRequest(json)
-    Server->>Server: Processa a requisição
-    Server-->>-Client: Retorna o registro encontrado
-    Client->>Form_Edicao: Exibe os campos do json da resposta
+    participant B as Browser
+    participant U as Usuário
+    participant S as Servidor API
+    U->>B  : Usuário requisita formulário associado a url digita pelo usuário.
+    B->>S  : O Browser pede para o servidor o formulário (envia a url passada pelo cliente).
+    S-->>B : Formulário retornado para o browser
+    U->>B  : Usuário Pressiona Botão Localizar
+    B->>U  : Qual o Id do registro?
+    U->>B  : Usuário retorna o número do registro
+    B->>S  : Browser pede para o servidor localizar o registro número x.
+    S-->>B : Servidor retorno o json com os campos do registro
+    B->>U  : Browser retorna o formulário preenchido com os dados do servidor
 
 </div></code></pre>
 
