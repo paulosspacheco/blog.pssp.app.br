@@ -53,7 +53,7 @@
 
 ## Qual termo contrário a ideponente?
 
-1. O termo oposto a _idempotente_ é não idempotente. Em computação, uma operação _não idempotente_ é aquela em que a repetição da operação com os mesmos parâmetros pode causar efe
+1. O termo oposto a idempotente é _não idempotente_. Em computação, uma operação não idempotente é aquela em que a repetição da operação com os mesmos parâmetros pode causar efeitos diferentes a cada vez que é realizada.
 
 2. No contexto dos verbos HTTP:
    1. _POST_ é o exemplo mais comum de uma operação _não idempotente_. Por exemplo, enviar a mesma requisição POST várias vezes pode criar vários novos recursos, cada um diferente, resultando em um estado diferente do servidor a cada repetição.
