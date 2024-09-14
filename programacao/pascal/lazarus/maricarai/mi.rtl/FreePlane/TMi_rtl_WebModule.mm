@@ -102,7 +102,7 @@
 </richcontent>
 <node TEXT="navigation actions" POSITION="right" ID="ID_273436263" CREATED="1724172285502" MODIFIED="1724179219428" HGAP_QUANTITY="91.26829627750192 pt" VSHIFT_QUANTITY="-30.731708746733723 pt">
 <edge COLOR="#007c7c"/>
-<node TEXT="CmlocateRequest &#x2705;" ID="ID_588194298" CREATED="1724172285502" MODIFIED="1724240315479" HGAP_QUANTITY="15.756097642670499 pt" VSHIFT_QUANTITY="-12.292683498693489 pt"><richcontent TYPE="DETAILS">
+<node TEXT="CmlocateRequest &#x2705;" ID="ID_588194298" CREATED="1724172285502" MODIFIED="1725533849609" HGAP_QUANTITY="15.756097642670499 pt" VSHIFT_QUANTITY="-12.292683498693489 pt"><richcontent TYPE="DETAILS">
 
 <html>
   <head>
@@ -111,21 +111,6 @@
   <body>
     <p>
       Recebe a chave enviada pelo cliente;
-    </p>
-    <p>
-      &#160;- Checa se o evento onLocate foi iniciado;
-    </p>
-    <p>
-      &#160;&#160;&#160;&#160;- Se sim:
-    </p>
-    <p>
-      &#160;&#160;&#160;&#160;&#160;&#160;- Executa onLocate com par&#226;metros recibos,
-    </p>
-    <p>
-      &#160;&#160;&#160;&#160;- Se n&#227;o:
-    </p>
-    <p>
-      &#160;&#160;&#160;&#160;&#160;&#160;- Executa m&#233;todo locate com os par&#226;metros recebidos;
     </p>
     <p>
       - Checa se o registro foi localizado:
@@ -144,6 +129,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node TEXT="CmGoBofRequest" ID="ID_1104103844" CREATED="1724172285503" MODIFIED="1724238705058"><richcontent TYPE="DETAILS">
@@ -731,7 +717,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
