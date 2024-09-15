@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Texto com as mudanças que estão sendo realizada neste push.
+TextoCommit="$1"
+
+# Verifica se o texto do commit foi passado como argumento
+if [ -z "$TextoCommit" ]; then
+   echo "Parâmetro deve ser texto diferente de nulo"
+   exit 1
+fi
+
+
+# Associa o repositório remoto ao repositório local.
+if ! git remote | grep -q origin; then
+    git remote add origin git@github.com:paulosspacheco/blog.pssp.app.br.git
+fi
+
+# Renomeie o branch  atual para main
+# O comando branch -M não precisa ser feito a todo momento, porque o git sempre envia para
+# o ultimo ramo selecionando.
+CURRENT_BRANCH=$(git branch --show-current)
+if [ "$CURRENT_BRANCH" != "main" ]; then
+    git branch -M main
+fi
+
+
+
+# Atualiza o repositório local com os dados do repositório remoto
+#    Você está fazendo um git pull para sincronizar as alterações antes de realizar o commit. Isso pode causar conflitos se houver mudanças conflitantes no #repositório remoto. É recomendável verificar o estado antes de fazer o git pull e, se necessário, resolver conflitos manualmente. Como prática, o pull #é normalmente feito antes de começar a fazer mudanças locais.
+#git pull
+
+
+# Este comando pode ser executado várias vezes antes de um commit.  
+    git add .
+
+# Use o <msg> fornecido como a mensagem de confirmação. 
+# Adiciona automaticamente todos os arquivos modificados e excluídos (mas não novos arquivos)
+    git commit -m "$TextoCommit"
+
+# Envia as alterações locais para o repositório remoto.
+    git push -u origin main
+
+
+# imprime o status atual do repositório
+ git status  
+
+
+
