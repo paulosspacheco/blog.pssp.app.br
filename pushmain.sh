@@ -3,9 +3,10 @@
 # Texto com as mudanças que estão sendo realizada neste push.
 TextoCommit="$1"
 
-if [$TextoCommit -eq ""]; then
+# Verifica se o texto do commit foi passado como argumento
+if [ -z "$TextoCommit" ]; then
    echo "Parâmetro deve ser texto diferente de nulo"
-   exit
+   exit 1
 fi
 
 
