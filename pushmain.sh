@@ -29,7 +29,8 @@ git pull
     git commit -a -m "$TextoCommit"
 
 # Envia as alterações locais para o repositório remoto.
-    git push -u origin main                  
+#    git push -u origin main
+    git push -u origin versão-2024-09-15
 
 # imprime o status atual do repositório
  git status  
