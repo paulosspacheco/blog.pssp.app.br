@@ -16,7 +16,8 @@ fi
 # Renomeie o branch  atual para main
 # O comando branch -M não precisa ser feito a todo momento, porque o git sempre envia para
 # o ultimo ramo selecionando.
-    git branch -M main  
+#    git branch -M main
+    git branch -M master
 
 # Atualiza o repositório local com os dados do repositório remoto
 git pull
@@ -29,8 +30,8 @@ git pull
     git commit -a -m "$TextoCommit"
 
 # Envia as alterações locais para o repositório remoto.
-#    git push -u origin main
-    git push -u origin versão-2024-09-15
+    git push -u origin main
+
 
 # imprime o status atual do repositório
  git status  
