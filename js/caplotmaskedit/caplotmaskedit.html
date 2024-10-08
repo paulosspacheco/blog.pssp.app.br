@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máscara Flexível para Diferentes Tipos</title>
+    <style>
+        input {
+            font-size: 16px;
+            padding: 5px;
+            width: 250px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <label for="cpf">CPF: </label>
+    <input type="text" id="cpf" placeholder="000.000.000-00" oninput="applyMask(this, 'cpf')" maxlength="14" /><br/><br/>
+
+    <label for="cnpj">CNPJ: </label>
+    <input type="text" id="cnpj" placeholder="00.000.000/0000-00" oninput="applyMask(this, 'cnpj')" maxlength="18" /><br/><br/>
+
+    <label for="placa">Placa: </label>
+    <input type="text" id="placa" placeholder="AAA-9A99" oninput="applyMask(this, 'placa')" maxlength="8" /><br/><br/>
+
+    <label for="real">Valor Real: </label>
+    <input type="text" id="real" placeholder="0,00" oninput="applyMask(this, 'real')" /><br/><br/>
+
+    <label for="inteiro1byte">Número Inteiro (1 byte): </label>
+    <input type="text" id="inteiro1byte" placeholder="0" oninput="applyMask(this, 'inteiro', 1)" /><br/><br/>
+
+    <label for="inteiro2bytes">Número Inteiro (2 bytes): </label>
+    <input type="text" id="inteiro2bytes" placeholder="0" oninput="applyMask(this, 'inteiro', 2)" /><br/><br/>
+
+    <label for="inteiro4bytes">Número Inteiro (4 bytes): </label>
+    <input type="text" id="inteiro4bytes" placeholder="0" oninput="applyMask(this, 'inteiro', 4)" /><br/><br/>
+
+    <label for="inteiro6bytes">Número Inteiro (6 bytes): </label>
+    <input type="text" id="inteiro6bytes" placeholder="0" oninput="applyMask(this, 'inteiro', 6)" /><br/><br/>
+
+    <label for="inteiro8bytes">Número Inteiro (8 bytes): </label>
+    <input type="text" id="inteiro8bytes" placeholder="0" oninput="applyMask(this, 'inteiro', 8)" /><br/><br/>
+
+    <script>
+        function applyMask(input, type, byteSize) {
+            let value = input.value.replace(/[^A-Za-z0-9-]/g, ''); // Remove tudo que não é letra, número ou sinal de menos
+            let isNegative = false;
+
+            // Verifica se o número é negativo
+            if (value.startsWith('-')) {
+                isNegative = true;
+                value = value.substring(1); // Remove o sinal de menos temporariamente para formatar o número
+            }
+
+            let maskedValue = '';
+
+            switch(type) {
+                case 'cpf':
+                    maskedValue = value.replace(/(\d{3})(\d)/, '$1.$2')
+                                       .replace(/(\d{3})(\d)/, '$1.$2')
+                                       .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+                    break;
+
+                case 'cnpj':
+                    maskedValue = value.replace(/(\d{2})(\d)/, '$1.$2')
+                                       .replace(/(\d{3})(\d)/, '$1.$2')
+                                       .replace(/(\d{3})(\d)/, '$1/$2')
+                                       .replace(/(\d{4})(\d{1,2})$/, '$1-$2');
+                    break;
+
+                case 'placa':
+                    // Aplica a máscara AAA-9A99
+                    maskedValue = value.replace(/^([A-Za-z]{3})(\d)/, '$1-$2')
+                                       .replace(/(\d{1})([A-Za-z]{1})/, '$1$2')
+                                       .replace(/(\w{1})(\d{2})$/, '$1$2');
+                    break;
+
+                case 'real':
+                    value = (parseInt(value, 10) / 100).toFixed(2); // Converte para número decimal
+                    maskedValue = value.replace('.', ',')           // Troca ponto por vírgula
+                                       .replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // Adiciona separador de milhar
+                    break;
+
+                case 'inteiro':
+                    // Definir as faixas de valor para os tipos inteiros
+                    let maxValues = {
+                        1: 127, // 1 byte
+                        2: 32767, // 2 bytes
+                        4: 2147483647, // 4 bytes
+                        6: 140737488355327, // 6 bytes
+                        8: 9223372036854775807 // 8 bytes
+                    };
+
+                    let minValues = {
+                        1: -128, // 1 byte
+                        2: -32768, // 2 bytes
+                        4: -2147483648, // 4 bytes
+                        6: -140737488355328, // 6 bytes
+                        8: -9223372036854775808 // 8 bytes
+                    };
+
+                    // Converte o valor para número para comparação de faixa
+                    let numericValue = parseInt(value, 10);
+
+                    // Verifica se o valor está dentro da faixa permitida
+                    if ((isNegative && numericValue < minValues[byteSize]) || (!isNegative && numericValue > maxValues[byteSize])) {
+                        input.value = input.value.slice(0, -1); // Remove o último caractere inválido
+                    } else {
+                        input.value = (isNegative ? '-' : '') + numericValue; // Atualiza o valor sem separador de milhar
+                    }
+                    return; // Sai da função para evitar formatação adicional
+            }
+
+            input.value = maskedValue; // Atualiza o valor formatado para os outros tipos (CPF, CNPJ, Placa, Real)
+        }
+    </script>
+
+</body>
+</html>

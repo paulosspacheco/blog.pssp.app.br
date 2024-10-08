@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Máscara</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 300px;
+        }
+        button {
+            padding: 8px 12px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Teste de Máscara</h1>
+    <label for="inputString">String:</label><br>
+    <input type="text" id="inputString" placeholder="Insira a string"><br>
+    
+    <label for="inputMask">Máscara:</label><br>
+    <input type="text" id="inputMask" placeholder="Insira a máscara"><br>
+    
+    <button id="applyMask">Aplicar Máscara</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        class ObjectsMethods {
+            static addMask(s, aMask) {
+                let result = '';
+
+                if (aMask.charAt(0) === 'F') { // Substitua 'F' pela constante FldDateTime correta
+                    // Aqui você deve implementar a formatação de data e hora se necessário
+                    result = s;
+                } else {
+                    const lenS = s.length;
+                    let posS = 0;
+                    const len_aMask = aMask.length;
+
+                    for (let i = 0; i < len_aMask; i++) {
+                        const maskChar = aMask.charAt(i);
+
+                        switch (maskChar) {
+                            case 's':
+                            case 'S':
+                            case 'A': // fldAnsiChar
+                            case 'a': // fldAnsiChar_Lowcase
+                            case 'V': // fldAnsiCharVAL
+                            case 'N': // fldSTRNUM
+                            case 'S': // fldSTR
+                            case 'R': // fldSTR_Lowcase
+                            case 'F': // fldRealNum
+                            case '4': // fldReal4
+                            case 'P': // fldReal4P
+                            case 'P': // fldRealNum_Positivo
+                            case 'E': // fldExtended
+                            case 'E': // fldENum
+                            case 'B': // fldBOOLEAN
+                            case 'Y': // fldBYTE
+                            case 'H': // fldSHORTINT
+                            case 'W': // fldSmallWORD
+                            case 'I': // fldSmallInt
+                            case 'L': // fldLONGINT
+                            case 'R': // FldRadioButton
+                                posS++;
+                                if (posS <= lenS) {
+                                    result += s.charAt(posS - 1); // Ajuste para zero-indexed
+                                }
+                                break;
+                            default:
+                                if (maskChar === ' ') {
+                                    result += '_'; // Inserir o caractere conforme necessário
+                                } else {
+                                    result += maskChar; // Adiciona o caractere da máscara
+                                }
+                                break;
+                        }
+                    }
+                }
+
+                return result;
+            }
+        }
+
+        document.getElementById('applyMask').addEventListener('click', () => {
+            const inputString = document.getElementById('inputString').value;
+            const inputMask = document.getElementById('inputMask').value;
+            const maskedValue = ObjectsMethods.addMask(inputString, inputMask);
+            document.getElementById('result').innerText = `Resultado: ${maskedValue}`;
+        });
+    </script>
+
+</body>
+</html>

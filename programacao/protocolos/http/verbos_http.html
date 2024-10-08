@@ -18,6 +18,7 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
+
         </head>
         <body class="vscode-body vscode-light">
             <div class="header" id="myHeader">
@@ -39,35 +40,38 @@
 </ul>
 </li>
 </ul>
-<!-- <h1 id="verbos-ou-métodos-http">VERBOS OU MÉTODOS HTTP</h1> -->
+<h1 id="verbos-ou-métodos-http">VERBOS OU MÉTODOS HTTP</h1>
 <h2 id="os-verbos-http-também-conhecidos-como-métodos-http-são-comandos-que-indicam-a-ação-desejada-a-ser-realizada-em-um-recurso-na-web-aqui-estão-os-principais-verbos-http">Os verbos HTTP, também conhecidos como métodos HTTP, são comandos que indicam a ação desejada a ser realizada em um recurso na web. Aqui estão os principais verbos HTTP</h2>
 <ol>
 <li>
-<p><em>GET</em>: Solicita a recuperação de um recurso. Não deve alterar o estado do servidor, sendo considerado um método seguro e idempotente.</p>
+<p><em><a href="https://httpwg.org/specs/rfc9110.html#GET">GET</a></em>: Solicita a recuperação de um recurso. Não deve alterar o estado do servidor, sendo considerado um método seguro e idempotente.</p>
 </li>
 <li>
-<p><em>POST</em>: Envia dados ao servidor para criar ou modificar um recurso. É utilizado principalmente para enviar formulários ou dados de uma aplicação para o servidor.</p>
+<p><em><a href="https://httpwg.org/specs/rfc9110.html#POST">POST</a></em>: Envia dados ao servidor para criar ou modificar um recurso. É utilizado principalmente para enviar formulários ou dados de uma aplicação para o servidor.</p>
 </li>
 <li>
-<p><em>PUT</em>: Atualiza ou cria um recurso em uma URL específica. É idempotente, o que significa que várias requisições PUT com os mesmos dados não devem alterar o estado do recurso além da primeira requisição.</p>
+<p><em><a href="https://httpwg.org/specs/rfc9110.html#PUT">PUT</a></em>: Atualiza ou cria um recurso em uma URL específica. É idempotente, o que significa que várias requisições PUT com os mesmos dados não devem alterar o estado do recurso além da primeira requisição.</p>
 </li>
 <li>
-<p><em>DELETE</em>: Remove um recurso identificado pela URL. Como PUT, é idempotente.</p>
+<p><em><a href="https://httpwg.org/specs/rfc9110.html#DELETE">DELETE</a></em>: Remove um recurso identificado pela URL. Como PUT, é idempotente.</p>
 </li>
 <li>
 <p><em>PATCH</em>: Aplica modificações parciais a um recurso. Diferente do PUT, que substitui o recurso completo, o PATCH altera apenas os campos fornecidos.</p>
 </li>
 <li>
-<p><em>HEAD</em>: Solicita as mesmas informações que o GET, mas sem o corpo da resposta. É utilizado para obter metadados, como cabeçalhos HTTP.</p>
+<p><em><a href="https://httpwg.org/specs/rfc9110.html#HEAD">HEAD</a></em>: Solicita as mesmas informações que o GET, mas sem o corpo da resposta. É utilizado para obter metadados, como cabeçalhos HTTP.</p>
 </li>
 <li>
-<p><em>OPTIONS</em>: Retorna os métodos HTTP suportados por um recurso. Útil para verificar quais operações são permitidas em um endpoint.</p>
+<p><em><a href="https://httpwg.org/specs/rfc9110.html#OPTIONS">OPTIONS</a></em>: Retorna os métodos HTTP suportados por um recurso. Útil para verificar quais operações são permitidas em um endpoint.</p>
 </li>
 <li>
 <p><em>TRACE</em>: Realiza um loopback de uma mensagem de solicitação para fins de teste e diagnóstico, retornando a requisição ao cliente.</p>
 </li>
 <li>
-<p><em>CONNECT</em>: Estabelece um túnel para o servidor identificado pela URL de destino. É usado principalmente para conectar o cliente a um servidor proxy, especialmente para comunicações seguras via HTTPS.</p>
+<p><em><a href="https://httpwg.org/specs/rfc9110.html#CONNECT">CONNECT</a></em>: Estabelece um túnel para o servidor identificado pela URL de destino. É usado principalmente para conectar o cliente a um servidor proxy, especialmente para comunicações seguras via HTTPS.</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods#browser_compatibility">Compatibilidade dos browsers</a></p>
 </li>
 </ol>
 <h2 id="o-que-é-indepotente">O que é indepotente?</h2>

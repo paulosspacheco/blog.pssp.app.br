@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Entrada Compacto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        input {
+            padding: 4px;
+            font-size: 14px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin: 0;
+        }
+        legend {
+            font-size: 12px;
+            padding: 0 5px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 18px; margin-bottom: 10px;">Formulário de Entrada Compacto</h1>
+    <form id="formattedInputForm">
+        <fieldset>
+            <legend>Placa padrão antigo</legend>
+            <input type="text" data-mask="SS-####" data-mask-type="#" placeholder="Placa padrão antigo"/>
+        </fieldset>
+
+        <fieldset>
+            <legend>Placa padrão Mercosul</legend>
+            <input type="text" data-mask="SSS-#S##" data-mask-type="#" placeholder="Placa padrão Mercosul"/>
+        </fieldset>
+
+        <fieldset>
+            <legend>CPF</legend>
+            <input type="text" data-mask="###.###.###-##" data-mask-type="#" placeholder="CPF"/>
+        </fieldset>
+
+        <fieldset>
+            <legend>CEP</legend>
+            <input type="text" data-mask="##.###-###" data-mask-type="#" placeholder="CEP"/>
+        </fieldset>
+
+        <fieldset>
+            <legend>Valor relativo (positivo)</legend>
+            <input type="text" data-mask="ppp,pp" data-mask-type="p" placeholder="Valor relativo (positivo)"/>
+        </fieldset>
+
+        <fieldset>
+            <legend>Valor relativo (positivo e negativo)</legend>
+            <input type="text" data-mask="PPP,PP" data-mask-type="P" placeholder="Valor relativo (positivo e negativo)"/>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Valor (positivo)</legend>
+            <input type="text" data-mask="R.RRR,RR" data-mask-type="R" placeholder="Valor (positivo)"/>
+        </fieldset>
+
+        <fieldset>
+            <legend>Valor (positivo/negativo)</legend>
+            <input type="text" data-mask="r.rrr,rr" data-mask-type="r" placeholder="Valor (positivo/negativo)"/>
+        </fieldset>
+
+        <fieldset>
+            <legend>Valor Byte (0 a 254)</legend>
+            <input type="text" id="byteInput" data-mask="BBB" data-mask-type="B" placeholder="Valor Byte (0 a 254)" />
+        </fieldset>
+
+        <fieldset>
+            <legend>ShortInt (-126 a +127)</legend>
+            <input type="text" id="ShotIntInput" data-mask="JJJ" data-mask-type="J" placeholder="ShortInt (-126 a +127)" />
+        </fieldset>
+
+        <fieldset>
+            <legend>Valor SmallInt (-32,768 a 32,767)</legend>
+            <input type="text" id="SmallIntInput" data-mask="II.III" data-mask-type="I" placeholder="Valor SmallInt ( -32,768 a 32,767)" />
+        </fieldset>
+
+        <fieldset>
+            <legend>Valor SmallWord (0 a +65,535)</legend>
+            <input type="text" id="SmallWordInput" data-mask="WW.WWW" data-mask-type="W" placeholder="Valor SmallWord (0 a +65,535)" />
+        </fieldset>
+
+        <fieldset>
+            <legend>Valor Longint (-2,147,483,648 a +2,147,483,647)</legend>
+            <input type="text" id="LongIntInput" data-mask="L.LLL.LLL,LLL" data-mask-type="L" placeholder="Valor Longint (-2,147,483,648 a +2,147,483,647)" />
+        </fieldset>
+
+        <fieldset>
+            <legend>Valor Single (-99.999,99 a +99.999,99)</legend>
+            <input type="text" id="fldReal4Input" data-mask="OO.OOO,OO" data-mask-type="O" placeholder="Valor Single (-99.999,99 a +99.999,99)" />
+        </fieldset>
+
+        <fieldset>
+            <legend>Valor Single Positive (0 a +99.999,99)</legend>
+            <input type="text" id="fldReal4PositivoInput" data-mask="ooo.ooo,oo" data-mask-type="o" placeholder="Valor Single Positive (0 a +99.999,99)" />
+        </fieldset>
+    </form>
+
+    <script type="module">
+        import { MiFormattedInput } from './MiFormattedInput.js';
+
+        // Função para inicializar todos os campos com máscara
+        function initializeFormattedInputs() {
+            const inputElements = document.querySelectorAll('[data-mask]');
+            inputElements.forEach(inputElement => new MiFormattedInput(inputElement));
+        }
+
+        // Inicializa quando a página estiver carregada
+        document.addEventListener('DOMContentLoaded', initializeFormattedInputs);
+    </script>
+</body>
+</html>

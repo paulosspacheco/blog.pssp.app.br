@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Masks Example</title>
+    <script>
+        class FormattedInput {
+            constructor(inputElement) {
+                this.inputElement = inputElement;
+                this.mask = inputElement.dataset.mask;
+                this.maskType = inputElement.dataset.maskType;
+
+                // Adiciona o evento para formatar enquanto o usuário digita
+                this.inputElement.addEventListener('input', this.formatInput.bind(this));
+            }
+
+            formatInput(event) {
+                let inputValue = event.target.value;
+
+                // Aplica a formatação de acordo com o tipo de máscara
+                switch (this.maskType) {
+                    case 'generic':
+                        event.target.value = MiConsts.formatValue(inputValue, this.mask);
+                        inputValue = event.target.value;
+                        break;
+                    case 'r':  // Monetário (positivo)
+                        event.target.value = MiConsts.formatValue(inputValue, this.mask);
+                        break;
+                    case 'R':  // Monetário (positivo e negativo)
+                        event.target.value = MiConsts.formatValue(inputValue, this.mask);
+                        break;
+                    case 'B':  // Byte (0 a 254)
+                        event.target.value = this.clampValue(inputValue, 0, 254);
+                        break;
+                    case 'J':  // ShortInt (-126 a +127)
+                        event.target.value = this.clampValue(inputValue, -126, 127);
+                        break;
+                    case 'I':  // SmallInt (-32,768 a 32,767)
+                        event.target.value = this.clampValue(inputValue, -32768, 32767);
+                        break;
+                    case 'W':  // SmallWord (0 a +65,535)
+                        event.target.value = this.clampValue(inputValue, 0, 65535);
+                        break;
+                    case 'L':  // LongInt (-2,147,483,648 a +2,147,483,647)
+                        event.target.value = this.clampValue(inputValue, -2147483648, 2147483647);
+                        break;
+                    default:
+                        event.target.value = inputValue;
+                }
+            }
+
+            // Função para garantir que o valor esteja dentro do intervalo especificado
+            clampValue(value, min, max) {
+                let numericValue = parseInt(value.replace(/\D/g, ''), 10);
+                if (isNaN(numericValue)) return '';
+                return Math.max(min, Math.min(numericValue, max)).toString();
+            }
+        }
+
+        // Função para inicializar todos os campos com máscara
+        function initializeFormattedInputs() {
+            const inputElements = document.querySelectorAll('[data-mask]');
+            inputElements.forEach(inputElement => new FormattedInput(inputElement));
+        }
+
+        // Inicializa quando a página estiver carregada
+        document.addEventListener('DOMContentLoaded', initializeFormattedInputs);
+
+// mi_consts.js
+// Classe com as constantes do projeto
+
+class MiConsts {
+    constructor() {
+        this.state = 0; // Inicializa o estado como 0
+    }
+    
+    // Mapas de bits usados para controle de estado
+    static Mb_Bit00 = 0x0001;  // 0
+    static Mb_Bit01 = 0x0002;  // 1
+    static Mb_Bit02 = 0x0004;  // 2
+    static Mb_Bit03 = 0x0008;  // 3
+    static Mb_Bit04 = 0x0010;  // 4
+    static Mb_Bit05 = 0x0020;  // 5
+    static Mb_Bit06 = 0x0040;  // 6
+    static Mb_Bit07 = 0x0080;  // 7
+    static Mb_Bit08 = 0x0100;  // 8
+    static Mb_Bit09 = 0x0200;  // 9
+    static Mb_Bit10 = 0x0400;  // A
+    static Mb_Bit11 = 0x0800;  // B
+    static Mb_Bit12 = 0x1000;  // C
+    static Mb_Bit13 = 0x2000;  // D
+    static Mb_Bit14 = 0x4000;  // E
+    static Mb_Bit15 = 0x8000;  // F
+    static Mb_Bit16 = 0x10000; // 10
+    static Mb_Bit17 = 0x20000; // 11
+    static Mb_Bit18 = 0x40000; // 12
+    static Mb_Bit19 = 0x80000; // 13
+    static Mb_Bit20 = 0x100000; // 14
+    static Mb_Bit21 = 0x200000; // 15
+    static Mb_Bit22 = 0x400000; // 16
+    static Mb_Bit23 = 0x800000; // 17
+    static Mb_Bit24 = 0x1000000; // 18
+    static Mb_Bit25 = 0x2000000; // 19
+    static Mb_Bit26 = 0x4000000; // 1A
+    static Mb_Bit27 = 0x8000000; // 1B
+    static Mb_Bit28 = 0x10000000; // 1C
+    static Mb_Bit29 = 0x20000000; // 1D
+    static Mb_Bit30 = 0x40000000; // 1E
+    static Mb_Bit31 = 0x80000000; // 1F    
+
+
+    // Definindo as constantes para os estados
+    static Mb_St_Focused = MiConsts.Mb_Bit00;
+    static Mb_St_Creating = MiConsts.Mb_Bit01;
+    static Mb_St_Creating_Index = MiConsts.Mb_Bit02;
+    static Mb_St_Indexing = MiConsts.Mb_Bit03;
+    static Mb_St_Creating_Relating = MiConsts.Mb_Bit04;
+    static Mb_St_Related = MiConsts.Mb_Bit05;
+    static Mb_St_Active = MiConsts.Mb_Bit06;
+    static Mb_St_Edit = MiConsts.Mb_Bit07;
+    static Mb_St_Locked = MiConsts.Mb_Bit08;
+    static Mb_St_AddRec = MiConsts.Mb_Bit09;
+    static Mb_St_UpdateRec = MiConsts.Mb_Bit10;
+    static Mb_St_DeleteRec = MiConsts.Mb_Bit11;
+    static Mb_St_Report = MiConsts.Mb_Bit12;
+    static Mb_St_Synchronizing = MiConsts.Mb_Bit13;
+    static Mb_St_NonCriticIfActiveCommands = MiConsts.Mb_Bit14;
+    static Mb_OnCalcRecord = MiConsts.Mb_Bit15;
+    static Mb_Destroying = MiConsts.Mb_Bit16;
+    static Mb_St_Creating_Template = MiConsts.Mb_Bit17;
+    static Mb_St_DB_Connecting = MiConsts.Mb_Bit18;
+    static Mb_St_Insert = MiConsts.Mb_Bit19;
+    static Mb_St_Browse = MiConsts.Mb_Bit20;
+    static Mb_St_ControlsEnabled = MiConsts.Mb_Bit21;
+
+    // Método para definir o estado e retornar o estado anterior
+    setState(stateBit, enable) {
+        // Verifica se o estado desejado já está ativado (estado anterior)
+        let result = (this.state & stateBit) !== 0;
+
+        // Atualiza o estado com base na variável enable
+        if (enable) {
+            this.state |= stateBit; // Ativa o estado
+        } else {
+            this.state &= ~stateBit; // Desativa o estado
+        }
+
+        // Retorna o estado anterior (se o bit estava ativado ou não)
+        return result;
+    }
+
+
+    // Método para obter o estado
+    getState(stateBit) {
+        return (this.state & stateBit) !== 0; // Retorna verdadeiro se o bit estiver ativo
+    }
+
+    //Implementação da função format value
+
+    // Definindo as constantes como propriedades estáticas da classe
+    static DecimalSeparator = '.';
+    static showDecimalSeparator = ',';
+
+    static fldAnsiChar = 'C';
+    static fldAnsiCharAlfa = 'c';
+    static fldAnsiCharNum = 'N';
+    static fldAnsiCharNumPositive = '0';
+    static fldStrNumber = '#';
+    static fldStr = 'S';
+    static fldStrAlfa = 's';
+    static fldExtended = 'E';
+    static fldDouble = 'R';
+    static fldReal4 = 'O';
+    static fldReal4Positivo = 'o';
+    static fldReal4P = 'P';
+    static fldReal4PPositivo = 'p';
+    static fldDoublePositive = 'r';
+    static fldBoolean = 'X';
+    static fldByte = 'B';
+    static fldShortInt = 'J';
+    static fldSmallWord = 'W';
+    static fldSmallInt = 'I';
+    static fldLongInt = 'L';
+    static fldRadioButton = 'K';
+    static fldDateTime = 'D';
+
+    static isDateTime(aTemplate) {
+        // Função simulada para converter a máscara (substituindo MaskEdit_to_Mask do Pascal)
+        function maskEditToMask(template) {
+            const MASK_INVALID = 'MASK_INVALID';
+            
+            // Aqui você precisa implementar a lógica que valida o template como uma máscara de data/hora
+            // Por exemplo, se o template for válido, retorna um valor diferente de MASK_INVALID
+            // Caso contrário, retorna MASK_INVALID
+            
+            // Exemplo simples de validação (você deve ajustar conforme a lógica de maskEditToMask do seu sistema):
+            const validMaskRegex = /^\d{2}\/\d{2}\/\d{4}\s\d{2}:\d{2}:\d{2}$/; // Exemplo de máscara para "dd/MM/yyyy HH:mm:ss"
+            
+            if (validMaskRegex.test(template)) {
+            return 'VALID_MASK'; // Se for válida, retorna uma máscara qualquer
+            } else {
+            return MASK_INVALID;
+            }
+        }
+        
+        return maskEditToMask(aTemplate) !== 'MASK_INVALID';
+    }
+    
+
+    static TypeFld(aTemplate) {
+        let i, j;       
+
+        if (this.isDateTime(aTemplate)) {            
+            return miconsts.FldDateTime;
+        } else {
+            for (i = 0; i < aTemplate.length; i++) {
+                // Verifica se o caractere não é de formatação ou separação de campo
+                if (![' ', 'z', 'Z', '\0'].includes(aTemplate[i])) {
+                    switch (aTemplate[i]) {
+                        case MiConsts.fldStrNumber:
+                        case MiConsts.fldStrAlfa:
+                        case MiConsts.fldStr:                            
+                            return aTemplate[i];
+
+                        case MiConsts.fldAnsiChar:
+                        case MiConsts.fldAnsiCharAlfa:
+                        case MiConsts.fldAnsiCharNumPositive:
+                        case MiConsts.fldAnsiCharNum:                            
+                            return aTemplate[i];
+
+                        case MiConsts.FldOperador:
+                        // case MiConsts.^X:
+                        case MiConsts.fldBoolean:
+                        case MiConsts.fldByte:
+                        case MiConsts.fldShortInt:                            
+                            return aTemplate[i];
+
+                        case MiConsts.fldSmallWord:                            
+                            return aTemplate[i];
+
+                        case MiConsts.fldSmallInt:                            
+                            return aTemplate[i];
+
+                        case MiConsts.CharExecAction:
+                        case MiConsts.fldAPPEND:
+                        case MiConsts.fldSItems:
+                        case MiConsts.FldDateTime:
+                        case MiConsts.fldLHora:
+                        case MiConsts.fld_LHora:                            
+                            return aTemplate[i];
+
+                        case MiConsts.fldENum:
+                        case MiConsts.fldENum_db:
+                        case MiConsts.fldLongInt:                            
+                            return aTemplate[i];
+
+                        case MiConsts.fldDouble:
+                        case MiConsts.fldDoublePositive:                            
+                            return aTemplate[i];
+
+                        case MiConsts.fldReal4:
+                        case MiConsts.fldReal4Positivo:
+                        case MiConsts.fldReal4P:
+                        case MiConsts.fldReal4PPositivo:                            
+                            return aTemplate[i];
+
+                        case MiConsts.fldExtended:                            
+                            return aTemplate[i];
+
+                        case MiConsts.FldRadioButton:
+                            return aTemplate[i];
+
+                        case MiConsts.FldMemo:
+                        case MiConsts.fldBLOb:                            
+                            return aTemplate[i];
+
+                        case MiConsts.CharShowPassword:
+                        case MiConsts.fldZEROMOD:
+                        case MiConsts.fldCONTRACTION:
+                        case MiConsts.fldHexValue:                            
+                            return aTemplate[i];
+
+                        default:
+                            return '\0'; // Tipo indefinido
+                    }
+                }
+            }
+            return '\0'; // Tipo indefinido
+    }
+        }
+    
+    // Função auxiliar para simular sizeof
+    static sizeOf(type) {
+        const sizes = {
+            'TDateTime': 8,
+            'byte': 1,
+            'SmallWord': 2,
+            'SmallInt': 2,
+            'Longint': 4,
+            'TRealNum': 8,
+            'Real': 4,
+            'Extended': 10
+        };
+        return sizes[type] || 0;
+    }
+
+    static isNumberReal(aTemplate) {
+        const type = MiConsts.TypeFld(aTemplate);
+        switch (type) {
+            case MiConsts.fldExtended:
+            case MiConsts.fldDouble:
+            case MiConsts.fldDoublePositive:
+            case MiConsts.fldReal4Positivo:
+            case MiConsts.fldReal4PPositivo:
+            case MiConsts.fldReal4:
+            case MiConsts.fldReal4P:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    static isNumberInteger(aTemplate) {
+        const type = MiConsts.TypeFld(aTemplate);
+        switch (type) {
+            case MiConsts.fldByte:
+            case MiConsts.fldShortInt:
+            case MiConsts.fldSmallWord:
+            case MiConsts.fldSmallInt:
+            case MiConsts.fldLongInt:
+            case MiConsts.fldHexValue:
+            case MiConsts.fldENum:
+            case MiConsts.fldENum_db:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    static isNumber(aTemplate) {
+        return MiConsts.isNumberInteger(aTemplate) || MiConsts.isNumberReal(aTemplate);
+    }
+ 
+    static deleteMaskValid(s, validSet) {
+        /**
+         * Inclui um conjunto de caracteres a tString
+         *
+         * Exemplo:
+         * S := '"Paulo.Sergio Idade: 1958"';
+         * DeleteMaskValid(S, ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']);
+         *
+         * Resultado: 1958
+         */
+        let result = '';
+        
+        for (let i = 0; i < s.length; i++) {
+            if (validSet.includes(s[i])) {
+                result += s[i];
+            }
+        }
+
+        return result;
+    }
+
+
+    static deleteMask(s, aMask) {
+        /**
+         * Mask1: ssssssssssssssss    Obs: Cada posição com s ou S aceita [#0..#255] e ignora os dígitos da máscara.
+         * Mask2: (##) # #### ####    Obs: Cada posição com # aceita ['0'..'9'] e ignora os dígitos da máscara.
+         *
+         * Nota:
+         * Se S não tem máscara, o que fazer?
+         */
+        function deleteMaskGeneric() {
+            return deleteMask(s, ['-', '.', '/', '(', ')', '[', ']']);
+        }
+
+        function deleteMask(s, invalidSet) {
+            let result = '';
+            for (let i = 0; i < s.length; i++) {
+                if (!invalidSet.includes(s[i])) {
+                    result += s[i];
+                }
+            }
+            return result;
+        }
+
+        let result = '';
+        if (MiConsts.isNumber(aMask)) {
+            result = MiConsts.deleteMaskValid(s, 
+                     [...Array(10).keys()].map(i => i.toString()).concat(MiConsts.showDecimalSeparator));
+        } else {
+            result = deleteMaskGeneric();
+        }
+
+        return result;
+    }
+
+
+    
+    // Método formatValue agora acessa as propriedades estáticas     
+    static formatValue(aValue, aMask) {
+
+
+        // Função auxiliar para formatar a string com zeros
+        const formatComZero = (s, mask) => {
+            let posVirgula = mask.indexOf(MiConsts.showDecimalSeparator);
+            let pi = 0;
+            let pf = 0;
+            let nPontos = 0;
+
+            for (let char of mask) {
+                if (char === MiConsts.ThousandSeparator) {
+                    nPontos++;
+                }
+            }
+
+            if (posVirgula !== -1) {
+                pi = posVirgula - nPontos;
+
+                for (let i = posVirgula; i < mask.length; i++) {
+                    if ([MiConsts.fldExtended, 
+                         MiConsts.fldReal4, 
+                         MiConsts.fldDouble, 
+                         MiConsts.fldDoublePositive].includes(mask[i])) {
+                        pf++;
+                    }
+                }
+
+                // Preenche com zeros a parte fracionária
+                let sPF = s.substring(posVirgula);
+                while (sPF.length < pf) {
+                    sPF += '0';
+                }
+                s = s.substring(0, pi) + MiConsts.showDecimalSeparator + sPF;
+            } else {
+                pi = mask.length - nPontos;
+            }
+            return s;
+        };
+
+
+      let result = '';          
+      let s = '';
+      aValue = MiConsts.deleteMask(aValue,aMask);     
+      
+      if (aMask[0] === MiConsts.FldDateTime) {
+          result = aValue; // Processamento de DateTime omitido
+      } else {
+          // Checa se a máscara é número relativo
+          if (aMask.includes(MiConsts.fldReal4P) || 
+              aMask.includes(MiConsts.fldReal4PPositivo)) {
+              
+              // Certifique-se de que aValue é um número antes de multiplicar
+              
+              s = (Number(aValue) * 100).toFixed(2);
+              
+              if (s.includes(MiConsts.showDecimalSeparator)) {
+                  s = s.replace(MiConsts.showDecimalSeparator, MiConsts.DecimalSeparator);
+              }
+          } else {
+              s = String(aValue);
+          }
+          
+          s = MiConsts.deleteMask(s, aMask); // Assumindo a existência de uma função deleteMask equivalente
+
+          if (MiConsts.isNumberReal(aMask)) {
+              s = formatComZero(s, aMask);
+          }
+
+          let LenS = s.length;
+          let Len_aMask = aMask.length;
+  
+          // Gera a máscara
+          for (let i = Len_aMask - 1; i >= 0; i--) {
+              switch (aMask[i]) {
+                  case MiConsts.fldDouble:
+                  case MiConsts.fldDoublePositive:
+                  case MiConsts.fldReal4:
+                  case MiConsts.fldReal4Positivo:
+                  case MiConsts.fldReal4P:
+                  case MiConsts.fldReal4PPositivo:
+                  case MiConsts.fldExtended:
+                  case MiConsts.fldENum:
+                  case MiConsts.fldENum_db:
+                  case MiConsts.fldBoolean:
+                  case MiConsts.fldByte:
+                  case MiConsts.fldShortInt:
+                  case MiConsts.fldSmallWord:
+                  case MiConsts.fldSmallInt:
+                  case MiConsts.fldLongInt:
+                  case MiConsts.FldRadioButton:
+                      if (LenS >= 1) {
+                          if ([MiConsts.fldDouble, 
+                               MiConsts.fldReal4, 
+                               MiConsts.fldReal4P, 
+                               MiConsts.fldReal4PPositivo, 
+                               MiConsts.fldDoublePositive, 
+                               MiConsts.fldExtended].includes(aMask[i])) {
+                                   if (s[LenS - 1] === MiConsts.DecimalSeparator) {
+                                       LenS--;
+                                  }
+                                  result = s[LenS - 1] + result;
+                               } 
+                          else {
+                              result = s[LenS - 1] + result;
+                          }
+                      }
+                      else {
+                        return result;
+                      }
+                      LenS--;
+                      break;
+
+                  case MiConsts.fldAnsiChar:
+                  case MiConsts.fldAnsiCharAlfa:
+                  case MiConsts.fldAnsiCharNum:
+                  case MiConsts.fldAnsiCharNumPositive:
+                  case MiConsts.fldStrNumber:                    
+                  case MiConsts.fldStrAlfa:
+                    if (LenS >= 1) {
+                        result = s[LenS - 1] + result;                        
+                    }
+                    else {
+                        return result;
+                      }
+
+                    LenS--;
+                    break;
+                      
+                  case MiConsts.fldStr:
+                      if (LenS >= 1) {
+                          result = s[LenS - 1].toUpperCase() + result;
+                      }
+                      else {
+                        return result;
+                      }
+                      LenS--;
+                      break;
+                  default:
+                    if (LenS > 0) {
+                        result = aMask[i] + result;
+                        if (MiConsts.isNumberReal(aMask) && aMask[i] === MiConsts.showDecimalSeparator) {
+                            LenS--;
+                        }                      
+                    }
+                    else {
+                        return result;
+                      }
+
+                    break;
+              }
+          }
+      }      
+      return result;
+  }
+           
+
+
+}
+        
+        
+    </script>
+</head>
+<body>
+    <form>
+        <!-- Máscara para CPF -->
+        <input type="text" data-mask="###.###.###-##" data-mask-type="#" placeholder="CPF"/>
+
+        <!-- Máscara para CEP -->
+        <input type="text" data-mask="##.###-###" data-mask-type="#" placeholder="CEP"/>
+
+        <!-- Máscara para valores monetários positivos -->
+        <input type="text" data-mask="R$ R.RRR,RR" data-mask-type="R" placeholder="Valor (positivo)"/>
+
+        <!-- Máscara para valores monetários positivos e negativos -->
+        <input type="text" data-mask="R$ r.rrr,rr" data-mask-type="r" placeholder="Valor (positivo/negativo)"/>
+
+        <!-- Máscara para Byte -->
+        <input type="text" id="byteInput" data-mask="BBB" data-mask-type="B" placeholder="Valor Byte (0 a 254)" />
+
+        <!-- Máscara para ShortInt -->
+        <input type="text" id="ShotIntInput" data-mask="000" data-mask-type="J" placeholder="ShortInt (-126 a +127)" />
+
+        <!-- Máscara para SmallInt -->
+        <input type="text" id="SmallIntInput" data-mask="II.III" data-mask-type="I" placeholder="Valor SmallInt ( -32,768 a 32,767)" />
+
+        <!-- Máscara para SmallWord -->
+        <input type="text" id="SmallWordInput" data-mask="WW.WWW" data-mask-type="W" placeholder="Valor SmallWord (0 a +65,535)" />
+
+        <!-- Máscara para LongInt -->
+        <input type="text" id="LongIntInput" data-mask="L.LLL.LLL,LLL" data-mask-type="L" placeholder="Valor Longint (-2,147,483,648 a +2,147,483,647)" />
+    </form>
+</body>
+</html>

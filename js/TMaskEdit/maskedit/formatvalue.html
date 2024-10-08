@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatador de Valor</title>
+    <script type="module">
+        // Supondo que MiConsts esteja sendo importado de um arquivo JS separado
+        import { MiConsts } from './mi_consts.js';
+
+        // Função para atualizar o campo de saída com o valor formatado
+        function updateFormattedValue() {
+            const valueInput = document.getElementById('valueInput').value;
+            const maskInput = document.getElementById('maskInput').value;
+            const outputField = document.getElementById('outputField');
+
+            try {
+                // Chama o método MiConsts.formatValue(valor, máscara)
+                const formattedValue = MiConsts.formatValue(valueInput, maskInput);
+                outputField.value = formattedValue;
+            } catch (error) {
+                outputField.value = 'Erro: ' + error.message;
+            }
+        }
+
+        // Garantir que o evento de clique seja associado após o carregamento do DOM
+        window.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('formatButton');
+            button.addEventListener('click', updateFormattedValue);
+        });
+    </script>
+</head>
+<body>
+    <h1>Formatador de Valores</h1>
+
+    <!-- Campo para entrada do valor -->
+    <label for="valueInput">Valor:</label>
+    <input type="text" id="valueInput" placeholder="Digite o valor">
+
+    <br><br>
+
+    <!-- Campo para entrada da máscara -->
+    <label for="maskInput">Máscara:</label>
+    <input type="text" id="maskInput" placeholder="Digite a máscara">
+
+    <br><br>
+
+    <!-- Botão para mostrar o valor formatado -->
+    <button id="formatButton">Mostrar Resultado</button>
+
+    <br><br>
+
+    <!-- Campo para saída do valor formatado -->
+    <label for="outputField">Valor Formatado:</label>
+    <input type="text" id="outputField" readonly>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Masks Example</title>
+    <script>
+        class FormattedInput {
+            constructor(inputElement) {
+                this.inputElement = inputElement;
+                this.mask = inputElement.dataset.mask;
+                this.maskType = inputElement.dataset.maskType;
+
+                // Adiciona o evento para formatar enquanto o usuário digita
+                this.inputElement.addEventListener('input', this.formatInput.bind(this));
+            }
+
+            formatInput(event) {
+                let inputValue = event.target.value;
+
+                // Aplica a formatação de acordo com o tipo de máscara
+                switch (this.maskType) {
+                    case '#':
+                        event.target.value = MiConsts.formatValue(inputValue, this.mask);
+                        inputValue = event.target.value;
+                        break;
+                    case 'r':  // Monetário (positivo)
+                        event.target.value = MiConsts.formatValue(inputValue, this.mask);
+                        break;
+                    case 'R':  // Monetário (positivo e negativo)
+                        event.target.value = MiConsts.formatValue(inputValue,this.mask);
+                        break;
+                    case 'O':  // LongInt (-99.999,99 a +99.999,99)                        
+                        event.target.value = MiConsts.formatValue(inputValue, this.mask);                        
+                        break;
+                    case 'o':  // LongInt (0 a +99.999,99)
+                        event.target.value = MiConsts.formatValue(inputValue, this.mask);                        
+                        break;
+                    case 'B':  // Byte (0 a 254)
+                        //event.target.value = MiConsts.formatValue(inputValue, 0, 254);
+                        event.target.value = MiConsts.formatValue(MiConsts.rangeValueInteger(inputValue, 0, 254), this.mask);
+                        break;
+                    case 'J':  // ShortInt (-126 a +127)
+                        event.target.value = MiConsts.formatValue(MiConsts.rangeValueInteger(inputValue,-126, 127), this.mask);
+                        break;
+                    case 'I':  // SmallInt (-32,768 a 32,767)
+                        event.target.value = MiConsts.formatValue(MiConsts.rangeValueInteger(inputValue,-32768, 32767), this.mask);
+                        break;
+                    case 'W':  // SmallWord (0 a +65,535)
+                        event.target.value = MiConsts.formatValue(MiConsts.rangeValueInteger(inputValue,0,65535), this.mask);
+                        break;
+                    case 'L':  // LongInt (-2.147.483.648 a +2.147.483.647)
+                        event.target.value = MiConsts.formatValue(MiConsts.rangeValueInteger(inputValue,-2147483648,2147483647), this.mask);
+                        break;
+                    default:
+                        event.target.value = inputValue;
+                }
+            }
+        }
+
+        // Função para inicializar todos os campos com máscara
+        function initializeFormattedInputs() {
+            const inputElements = document.querySelectorAll('[data-mask]');
+            inputElements.forEach(inputElement => new FormattedInput(inputElement));
+        }
+
+        // Inicializa quando a página estiver carregada
+        document.addEventListener('DOMContentLoaded', initializeFormattedInputs);  
+        
+    </script>
+</head>
+<body>
+    <form>
+        <!-- Placa de veículo automotores antiga-->
+        <input type="text" data-mask="SS-####" data-mask-type="#" placeholder="Placa padrão antigo"/>
+
+        <!-- Placa de veículo automotores padrão Mercosul-->
+        <input type="text" data-mask="SSS-#S##" data-mask-type="#" placeholder="Placa padrão Mercosul"/>
+
+        <!-- Máscara para CPF -->
+        <input type="text" data-mask="###.###.###-##" data-mask-type="#" placeholder="CPF"/>
+
+        <!-- Máscara para CEP -->
+        <input type="text" data-mask="##.###-###" data-mask-type="#" placeholder="CEP"/>
+
+        <!-- Máscara para valores monetários positivos -->
+        <input type="text" data-mask="R.RRR,RR" data-mask-type="R" placeholder="Valor (positivo)"/>
+
+        <!-- Máscara para valores monetários positivos e negativos -->
+        <input type="text" data-mask="r.rrr,rr" data-mask-type="r" placeholder="Valor (positivo/negativo)"/>
+
+        <!-- Máscara para Byte -->
+        <input type="text" id="byteInput" data-mask="BBB" data-mask-type="B" placeholder="Valor Byte (0 a 254)" />
+
+        <!-- Máscara para ShortInt -->
+        <input type="text" id="ShotIntInput" data-mask="JJJ" data-mask-type="J" placeholder="ShortInt (-126 a +127)" />
+
+        <!-- Máscara para SmallInt -->
+        <input type="text" id="SmallIntInput" data-mask="II.III" data-mask-type="I" placeholder="Valor SmallInt ( -32,768 a 32,767)" />
+
+        <!-- Máscara para SmallWord -->
+        <input type="text" id="SmallWordInput" data-mask="WW.WWW" data-mask-type="W" placeholder="Valor SmallWord (0 a +65,535)" />
+
+        <!-- Máscara para LongInt -->
+        <input type="text" id="LongIntInput" data-mask="L.LLL.LLL,LLL" data-mask-type="L" placeholder="Valor Longint (-2,147,483,648 a +2,147,483,647)" />
+
+        <!-- Máscara para real positivo e negativo 4 bytes -->
+        <input type="text" id="fldReal4Input" data-mask="OO.OOO,OO" data-mask-type="O" placeholder="Valor Single (-99.999,99 a +99.999,99)" />
+
+        <!-- Máscara para real 4 bytes -->
+        <input type="text" id="fldReal4PositivoInput" data-mask="ooo.ooo,oo" data-mask-type="o" placeholder="Valor Single Positive (0 a +99.999,99)" />
+
+    </form>
+</body>
+</html>
+
