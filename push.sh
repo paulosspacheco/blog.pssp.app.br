@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Atualiza o github criando o controle de versão.
+
 #Cria o mapa do site
 create_tipuesearch
 
