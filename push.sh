@@ -40,8 +40,11 @@ fi
 # Define a versão inicial como desejado
 INITIAL_VERSION="v0.207.0-$VERSION_TYPE"
 
-# Tenta obter a última tag que segue o formato especificado
-LAST_TAG=$(git tag --sort=-v:refname | grep -E "^v[0-9]+\.[0-9]+\.[0-9]+-$VERSION_TYPE$" | head -n 1)
+# Extrai a versão principal e secundária do INITIAL_VERSION (ex: "0.207")
+MAIN_VERSION_PREFIX=$(echo "$INITIAL_VERSION" | sed -E 's/^v([0-9]+\.[0-9]+)\..*/\1/')
+
+# Tenta obter a última tag que segue o padrão v0.207.X-Alpha
+LAST_TAG=$(git tag --sort=-v:refname | grep -E "^v${MAIN_VERSION_PREFIX}\.[0-9]+-$VERSION_TYPE$" | head -n 1)
 
 # Se não houver uma última tag no formato esperado, usa a INITIAL_VERSION como ponto de partida
 if [ -z "$LAST_TAG" ]; then
