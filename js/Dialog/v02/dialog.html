@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste UiDmxScrollerForm</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        /*@import url('/css/color_tons_de_lilas_claro.css');*/
+
+        html, body {
+            height: 100%; /* Garante que o body ocupe toda a altura da janela */
+            margin: 0; /* Remove margens do body */
+        }            
+
+        .inputBox-dialog-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Cor do fundo com transparência */
+            z-index: 1000; /* Coloca o overlay acima de outros elementos */
+            display: none; /* Inicialmente oculto */
+        }
+
+        .inputBox-dialog {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            display: none;
+
+            /* Define largura e altura máximas da caixa de diálogo */
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+
+            /* Permite que o conteúdo se expanda verticalmente se necessário */
+            overflow: hidden;
+        }
+
+
+        .inputBox-dialog-header {
+            font-size: 1.2em; /* Tamanho da fonte do cabeçalho */
+            margin-bottom: 15px; /* Espaçamento inferior */
+        }      
+
+
+        .inputBox-container {
+            /* Usa 100% da largura e altura do pai sem ultrapassar */
+            width: 100%;
+            height: 100%;
+
+            /* Flexível para rolagem interna quando o conteúdo é maior */
+            display: flex;
+            flex-direction: column;
+
+            /* Reduz as margens e adição de borda para visualização */
+            margin: 0;
+            border: 1px solid #ccc;
+
+            /* Rolagem apenas vertical */
+            overflow-y: auto;
+            overflow-x: hidden; /* Opcional: oculta rolagem horizontal */
+
+            /* Estilo de posicionamento relativo para possíveis conteúdos internos */
+            position: relative;
+        }
+
+        .inputBox-table-title {
+            height: 30px; /* Altura fixa do título */
+            background-color: #f1f1f1; /* Cor de fundo do título */
+            display: flex;
+            align-items: center; /* Centraliza verticalmente o texto */
+            padding-left: 10px; /* Espaço à esquerda */
+            font-weight: bold; /* Deixa o título em negrito */
+            border-bottom: 1px solid #ccc; /* Linha inferior para separação */
+        }
+
+        .inputBox-table-container {
+            flex: 1; /* Faz a tabela ocupar o espaço restante */
+            overflow-y: auto; /* Permite rolagem vertical na tabela */
+            overflow-x: auto; /* Permite rolagem horizontal se necessário */
+            padding: 5px; /* Espaço interno para evitar que o conteúdo fique colado nas bordas */
+        }
+
+        .inputBox-table-container table {
+            width: 100%; /* A tabela ocupa toda a largura disponível do contêiner */
+        }
+
+        .inputBox-footer-panel {                
+            height: 30px; /* A altura do painel para os botões */
+            background-color: #f1f1f1; /* Cor de fundo do painel */
+            display: flex; /* Para alinhar os botões horizontalmente */
+            justify-content: flex-end; /* Alinha os botões à direita */
+            /* padding: 10px; /* Espaçamento interno */
+            border-top: 1px solid #ccc; /* Linha superior para separação */
+        </style>                
+    </head>
+
+<body>
+    <div id="formContainer1"></div>
+
+    <div id="formContainer2"></div>    
+
+    <script type="module">
+        import { UiDmxScrollerForm } from './js/UiDmxScrollerForm.js';
+
+        // Define o título e o template do formulário
+        const title = 'Teste UiDmxScrollerForm';
+        const template = `
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+
+            `;
+
+        // Método estático para criar o formulário
+        Dialog.ShowModal(title, template);
+
+    </script>
+</body>
+</html>
+
+<!--         const template = `
+            ~Nome do Aluno:~\\ssssssssssssssssssssssssssss  ^Bnome_do_aluno 
+            ~Número:     ~\\sssssss            ^Bnumero       
+            ~Número:     ~\\sssssss            ^Bnumero 
+            ~Endereço:     ~\\ssssssssssssssssssssssssssssss^Bendereco      
+            ~Nome da Mãe:~\\sssssssssssssssssss^Bnome_da_mae               
+            \\     
+        `;
+ -->
