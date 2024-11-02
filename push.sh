@@ -37,31 +37,30 @@ if git diff-index --quiet HEAD --; then
     exit 0
 fi
 
-# Define a versão inicial da Tag.
+# Define a versão inicial como desejado
 INITIAL_VERSION="v0.207.0-$VERSION_TYPE"
 
-# Incrementa a versão com base na tag anterior
-# Aqui garantimos que só peguemos as tags que seguem o padrão esperado.
+# Tenta obter a última tag que segue o formato especificado
 LAST_TAG=$(git tag --sort=-v:refname | grep -E "^v[0-9]+\.[0-9]+\.[0-9]+-$VERSION_TYPE$" | head -n 1)
 
-# Se não houver uma última tag, usa a versão inicial
+# Se não houver uma última tag no formato esperado, usa a INITIAL_VERSION como ponto de partida
 if [ -z "$LAST_TAG" ]; then
     NEW_TAG="$INITIAL_VERSION"
 else
-    # Extrai os componentes da versão
+    # Extrai os componentes da versão a partir da última tag encontrada
     IFS='.' read -ra PARTS <<< "${LAST_TAG//v/}"
     MAJOR=${PARTS[0]}
     MINOR=${PARTS[1]}
-    PATCH=${PARTS[2]%-*}  # Remove qualquer sufixo da tag (como -Alpha)
+    PATCH=${PARTS[2]%-*}  # Remove o sufixo (ex: -Alpha)
 
-    # Incrementa o patch
+    # Incrementa o patch mantendo o padrão de formatação
     PATCH=$((PATCH + 1))
 
-    # Nova tag
+    # Nova tag com o incremento
     NEW_TAG="v${MAJOR}.${MINOR}.${PATCH}-$VERSION_TYPE"
 fi
 
-# Verifica se a tag já existe
+# Verifica se a nova tag já existe
 if git rev-parse "$NEW_TAG" >/dev/null 2>&1; then
     echo "A tag $NEW_TAG já existe. Nada a ser feito."
     exit 0
