@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diálogo Modal com Retorno de Dados</title>
+</head>
+<body>
+    <h1>Exemplo de Diálogo Modal com Funções Procedurais</h1>
+    <button onclick="executarDialogo()">Abrir Diálogo</button>
+
+    <!-- Estrutura da caixa de diálogo -->
+    <dialog id="meuDialogo">
+        <form id="formularioDialogo" method="dialog">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <br><br>
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required>
+            <br><br>
+            <menu>
+                <button type="button" onclick="procedimentoCancelarDialogo()">Cancelar</button>
+                <button type="button" onclick="procedimentoConfirmarDialogo()">Confirmar</button>
+            </menu>
+        </form>
+    </dialog>
+
+    <script>
+        // Variáveis globais para controle do diálogo e função de retorno
+        var dialogo;
+        var resolverDialogo;
+        var rejeitarDialogo;
+
+        // Procedimento para inicializar o diálogo e exibir modal
+        function abrirDialogo() {
+            dialogo = document.getElementById('meuDialogo');
+            dialogo.showModal();
+        }
+
+        // Função principal que retorna uma promessa com os dados do formulário
+        function executarDialogo() {
+            return chamarDialogo()
+                .then(tratarDadosDialogo)
+                .catch(tratarErroDialogo);
+        }
+
+        // Função para configurar a promessa e chamar o diálogo
+        function chamarDialogo() {
+            return new Promise(function (resolve, reject) {
+                resolverDialogo = resolve;
+                rejeitarDialogo = reject;
+                abrirDialogo();
+            });
+        }
+
+        // Procedimento para confirmar e resolver a promessa com os dados do formulário
+        function procedimentoConfirmarDialogo() {
+            if (document.getElementById('formularioDialogo').checkValidity()) {
+                var dados = coletarDadosDialogo();
+                fecharDialogo();
+                resolverDialogo(dados);
+            } else {
+                document.getElementById('formularioDialogo').reportValidity();
+            }
+        }
+
+        // Procedimento para cancelar o diálogo e rejeitar a promessa
+        function procedimentoCancelarDialogo() {
+            fecharDialogo();
+            rejeitarDialogo('Dialogo cancelado pelo usuario');
+        }
+
+        // Procedimento para coletar os dados do formulário em um objeto
+        function coletarDadosDialogo() {
+            var nome = document.getElementById('nome').value;
+            var idade = document.getElementById('idade').value;
+            return { nome: nome, idade: idade };
+        }
+
+        // Procedimento para fechar o diálogo
+        function fecharDialogo() {
+            dialogo.close();
+        }
+
+        // Procedimento para tratar os dados quando o diálogo for confirmado
+        function tratarDadosDialogo(dados) {
+            console.log('Dados capturados:', dados);
+        }
+
+        // Procedimento para tratar o erro quando o diálogo for cancelado
+        function tratarErroDialogo(erro) {
+            console.log('Erro:', erro);
+        }
+    </script>
+</body>
+</html>

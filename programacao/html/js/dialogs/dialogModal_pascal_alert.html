@@ -1,0 +1,131 @@
+<!-- 
+Para que a função executarDialogo() retorne os dados diretamente e seja possível exibir esses dados com alert(), 
+precisamos ajustar o fluxo para que executarDialogo() seja uma função síncrona que aguarde a promessa. Vamos usar 
+async e await para isso, tornando possível retornar o JSON diretamente e exibir o resultado com alert.
+
+Aqui está a versão ajustada do código: 
+
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diálogo Modal com Retorno de Dados</title>
+</head>
+<body>
+    <h1>Exemplo de Diálogo Modal com Retorno de Dados</h1>
+    <button onclick="abrirDialogoEExibirDados()">Abrir Diálogo</button>
+
+    <!-- Estrutura da caixa de diálogo -->
+    <dialog id="meuDialogo">
+        <form id="formularioDialogo" method="dialog">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <br><br>
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required>
+            <br><br>
+            <menu>
+                <button type="button" onclick="procedimentoCancelarDialogo()">Cancelar</button>
+                <button type="button" onclick="procedimentoConfirmarDialogo()">Confirmar</button>
+            </menu>
+        </form>
+    </dialog>
+
+    <script>
+        // Variáveis globais para controle do diálogo e função de retorno
+        var dialogo;
+        var resolverDialogo;
+        var rejeitarDialogo;
+
+        // Procedimento para abrir o diálogo
+        function abrirDialogo() {
+            dialogo = document.getElementById('meuDialogo');
+            dialogo.showModal();
+        }
+
+        function handleDialog(resolve, reject) {
+            resolverDialogo = resolve;
+            rejeitarDialogo = reject;
+            abrirDialogo();
+        }
+
+        // Função que configura a promessa e chama o diálogo        
+        function chamarDialogo() {
+            return new Promise(handleDialog);
+        }
+
+        // Função principal para exibir o diálogo e obter os dados preenchidos
+        async function executarDialogo() {
+            const dados = await chamarDialogo();
+            return dados;
+        }
+
+        // Procedimento para coletar os dados do formulário em um objeto
+        function coletarDadosDialogo() {
+            var nome = document.getElementById('nome').value;
+            var idade = document.getElementById('idade').value;
+            return { nome: nome, idade: idade };
+        }
+
+        // Procedimento para fechar o diálogo
+        function fecharDialogo() {
+            dialogo.close();
+        }
+
+        // Procedimento para confirmar e resolver a promessa com os dados do formulário
+        function procedimentoConfirmarDialogo() {
+            if (document.getElementById('formularioDialogo').checkValidity()) {
+                var dados = coletarDadosDialogo();
+                fecharDialogo();
+                resolverDialogo(dados);
+            } else {
+                document.getElementById('formularioDialogo').reportValidity();
+            }
+        }
+
+        // Procedimento para cancelar o diálogo e rejeitar a promessa
+        function procedimentoCancelarDialogo() {
+            fecharDialogo();
+            rejeitarDialogo('Diálogo cancelado pelo usuário');
+        }
+
+
+
+        // Função para abrir o diálogo e exibir os dados com alert
+        async function abrirDialogoEExibirDados() {
+            try {
+                var dados = await executarDialogo();
+                alert('Dados capturados:\nNome: ' + dados.nome + '\nIdade: ' + dados.idade);
+            } catch (erro) {
+                alert('Erro: ' + erro);
+            }
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+
+Explicação das Alterações
+Função executarDialogo:
+
+executarDialogo agora é assíncrona (usando async). Ela aguarda a conclusão de chamarDialogo, retornando os dados 
+diretamente quando o usuário confirma.
+
+Função abrirDialogoEExibirDados:
+
+Essa função, que é chamada ao clicar no botão "Abrir Diálogo", utiliza await para esperar os dados retornados 
+de executarDialogo.
+Com os dados retornados, exibe um alert com o conteúdo preenchido no formulário.
+Controle de Fluxo:
+
+resolverDialogo é chamado somente ao confirmar, retornando os dados do formulário para executarDialogo.
+rejeitarDialogo é invocado ao cancelar, permitindo tratar o cancelamento como erro.
+Com isso, o diálogo abre, e ao confirmar, o alert exibe o JSON com os dados nome e idade. Caso o diálogo seja 
+cancelado, uma mensagem de erro é exibida.
+
+
+ChatGPT pode cometer erros. Considere verificar informações importantes.
+-->

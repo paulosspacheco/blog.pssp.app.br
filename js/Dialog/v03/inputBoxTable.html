@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Box Example</title>
+    
+    <!-- <link rel="stylesheet" href="./css/MiEditForm.css">      -->
+    <script type="module" defer>
+        import { InputBox } from './js/inputBoxTable.js'; // Importando a classe InputBox
+
+        // Usar o evento DOMContentLoaded para garantir que o DOM esteja pronto
+        document.addEventListener('DOMContentLoaded', () => {
+            // Título e template para o InputBox
+            const title = 'Formulário de Exemplo';            
+                                   
+            const inputBoxTemplate =   
+            `
+            ~Nome do Aluno:~\\ssssssssssssssssssssssssssss  ^Bnome_do_aluno ~Número:     ~\\sssssss            ^Bnumero       ~Número:     ~\\sssssss            ^Bnumero 
+            ~Endereço:     ~\\ssssssssssssssssssssssssssssss^Bendereco      ~nome da mãe:~\\sssssssssssssssssss^Bnome_da_mae               \\     
+            `;
+                    
+            // const inputBoxTemplate = 
+            // `
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            // ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            // `;
+            
+        
+
+
+            //const inputBox = new InputBox('Cadastro',inputBoxTemplate); // Exemplo de template com dois campos
+            //inputBox.showInputBox(); // Mostrar a caixa de entrada
+
+            // Chamar o método estático inputBox
+            InputBox.inputBox(title, inputBoxTemplate).then(result => {
+                console.log("Resultado final:", result); // Exibe o JSON no console
+            });              
+            
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

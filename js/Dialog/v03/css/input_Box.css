@@ -1,0 +1,291 @@
+/* input_Box.css */
+
+/* @import url('./color_tons_de_cinza.css'); */
+/* @import url('./color_tons_dark.css'); */
+/* @import url('./color_tons_de_dark_claro.css'); */
+/* @import url('./color_tons_de_azul_ceu.css'); */
+/* @import url('./color_tons_de_verde_claro.css'); */
+/* @import url('./color_tons_amarelo.css'); */
+@import url('./color_tons_de_lilas_claro.css');
+
+/* Estilo para o overlay da caixa de diálogo */
+.inputBox-dialog-overlay {
+    right: 0;
+    bottom: 0;
+    top: 0; /* Fica no topo da tela */
+    left: 0; /* Fica à esquerda */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */    
+    background-color: var(--overlay-bg-color);/* Fundo semitransparente */
+    position: fixed; /* Fica fixo na tela */
+    /* background: rgba(0, 0, 0, 0.5); Fundo semi-transparente */
+    display: flex; /* Para centralizar o conteúdo */
+    align-items: center; /* Alinhamento vertical */
+    justify-content: center; /* Alinhamento horizontal */    
+    z-index: 1000; /* Coloca o overlay acima de outros elementos */    
+}
+
+/* Estilo para a caixa de diálogo */
+.inputBox-dialog-box {
+    max-width: 600px; /* Define a largura máxima da caixa de diálogo, evitando que ela ultrapasse 600 pixels de largura.*/
+    width: 100%; /*Define que a caixa de diálogo ocupará 100% da largura do contêiner pai, até o limite de max-width. */                
+    overflow: hidden; /* Garante que o conteúdo que exceder o contêiner principal seja ocultado. */
+    overflow-y: auto; /* Permite a rolagem vertical, útil se o conteúdo ultrapassar a altura máxima definida. */
+    overflow-x: auto; /* Permite a rolagem horizontal, evitando o corte de conteúdo em dispositivos menores.*/    
+    max-height: 80vh; /* Limita a altura máxima da caixa de diálogo a 80% da altura da tela do usuário. */
+    padding: 20px;    /* Adiciona espaçamento interno, garantindo que o conteúdo tenha espaço nas bordas. */    
+    border-radius: 5px; /* Arredonda levemente os cantos da caixa para um visual mais suave. */
+    background-color: var(--dialog-box-bg-color);/* Define a cor de fundo como branco, garantindo um fundo limpo e claro. */
+    color: var(--dialog-box-text-color);    
+    box-shadow: var(--dialog-box-shadow);/*Adiciona uma sombra suave ao redor da caixa, proporcionando um efeito de elevação.*/        
+}
+
+/* Estilo para o contêiner de campos */
+.inputBox-dialog-form-fields {
+    align-items: center;              /* Alinha os itens verticalmente ao centro */   
+    gap: 10px;                        /* Espaçamento entre as linhas */    
+    max-height: 60vh;                /* Limita a altura máxima do contêiner de campos */
+    overflow-y: auto;                 /* Permite rolagem vertical */    
+    overflow-x: auto; /* Permite rolagem horizontal */
+    white-space: nowrap; /* Impede a quebra de linha */
+    display: flex;
+    flex-direction: column; /* Organiza as linhas verticalmente */
+    font-size: 12px; /* Tamanho da fonte em pixels */    
+}
+
+/* Estilo para a linha de campos */
+.inputBox-dialog-form-row {
+    display: grid; /* Usando grid para alinhar rótulos e entradas */
+    /* grid-template-columns: auto 1fr; 2 colunas: auto para o rótulo e 1fr para o input */
+    margin-bottom: 15px; /* Espaçamento entre as linhas de campos */
+    align-items: center;              /* Alinha os itens verticalmente ao centro */    
+    /* display: flex; */
+    justify-content: space-between;
+    width: 100%; /* Garante que cada linha ocupe toda a largura disponível */    
+    display: grid;    
+    grid-template-columns: auto minmax(min-content, 1fr);    
+    gap: 10px;    
+}
+
+
+/* Estilo para os rótulos */
+.inputBox-dialog-form-row label {
+    font-weight: bold; /* Rótulos em negrito */
+    margin-right: 10px; /* Margem à direita dos rótulos */
+    min-width: 50px; /* Largura mínima para os labels */    
+}
+
+/* Alinhamento do texto dos labels */
+.inputBox-dialog-form-row label.align-right {
+    text-align: right;
+    margin-right: 5px; /* Margem direita para alinhamento */
+}
+
+.inputBox-dialog-form-row label.align-left {
+    text-align: left;
+    margin-right: 5px;
+}
+
+.inputBox-dialog-form-row label.hidden {
+    visibility: hidden; /* Torna o label invisível também */
+}
+
+/* Estilo para os campos de entrada */
+.inputBox-dialog-form-row input {
+    padding: 8px; /* – Adiciona espaçamento interno ao redor do conteúdo do campo, aumentando a área clicável e melhorando a usabilidade. */    
+    border-radius: 4px; /* – Adiciona bordas levemente arredondadas, proporcionando um visual mais suave e moderno. */
+    /* width: 100%; – Faz com que o campo ocupe toda a largura do contêiner pai, adaptando-se bem ao layout do formulário. */
+    box-sizing: border-box; /* – Inclui o padding e a border no cálculo da largura total do campo, evitando que o campo extrapole o contêiner */
+    flex-shrink: 0; /* Esta propriedade impede que o campo de entrada (input) reduza seu tamanho quando o contêiner flexível possui pouco espaço disponível. Mantém o tamanho dos campos estável, mesmo em layouts adaptáveis. */        
+    /* min-width: 150px;     */
+    width: fit-content; /* Expande conforme o conteúdo */    
+    max-width: 200px;    /* Limita o crescimento a 200px ou ajuste conforme necessário */    
+    min-width: 50px;     /* Define uma largura mínima confortável */    
+}
+
+/* Estilo para o container de cada campo */
+.inputBox-dialog-form-row div {
+    display: flex; /* Configura o contêiner como um elemento flexível, permitindo melhor controle sobre o alinhamento e espaçamento dos itens internos. */
+    align-items: center; /*Centraliza verticalmente os elementos dentro do contêiner, mantendo a harmonia visual entre rótulos e campos de entrada.*/
+    margin-right: 10px; /* Adiciona um espaçamento à direita entre os contêineres de cada campo, facilitando a organização e espaçamento uniforme dos elementos no layout do formulário. */
+}
+
+/* Campo invisível */
+.inputBox-dialog-form-row input.hidden {
+    visibility: hidden; /* Campo invisível, mas ocupa espaço */
+    width: 1px; /* Mantém largura mínima para alinhamento */
+}
+
+
+.align-left {
+    text-align: left; /* Alinhamento à esquerda */
+}
+
+.align-right {
+    text-align: right; /* Alinhamento à direita */
+}
+
+.align-right {
+    text-align: right; /* Alinhamento à direita */
+}
+
+/* Div para limitar o tamanho da área visível da tabela */
+.inputBox-table-container {
+    width: 100%;
+    max-width: 1500px; /* Limite máximo */
+    height: 800px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+/* Estilo para o contêiner de botões */
+.inputBox-dialog-button-container {
+    display: flex; /* Usado para alinhar os botões em linha */
+    justify-content: space-between; /* Espaço entre os botões */
+    margin-top: 10px; /* Espaçamento acima dos botões */
+}
+
+.inputBox-dialog-button {
+    padding: 10px 15px;
+    margin-left: 10px; /* Espaçamento entre os botões */
+}
+
+/* Estilo para o título */
+.inputBox-dialog-box h2 {
+    margin: 0 0 15px; /* Define uma margem de 15 pixels abaixo do título, eliminando margens superiores e laterais para criar um espaçamento adequado entre o título e os elementos subsequentes. */
+    font-size: 20px; /* Define o tamanho da fonte do título para 20 pixels, tornando-o destacável e fácil de ler. */
+    text-align: center; /* Centraliza o texto do título dentro do contêiner, criando um visual harmonioso e centralizado. */
+}
+
+.inputBox-table {
+    border-collapse: collapse;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+/* Estilos para th e td dentro da tabela com a classe inputBox-table */
+.inputBox-table th, 
+.inputBox-table td {
+    border: none;
+    padding: 8px;
+    text-align: left;
+    overflow: hidden;
+}
+
+/* Estilo para os labels e inputs dentro da tabela */
+.inputBox-table label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inputBox-table input {
+    box-sizing: border-box;
+    overflow: auto;
+    white-space: nowrap;
+    width: 100%; /* Ajusta a largura do input para preencher a célula */
+}
+
+/* Classes de alinhamento */
+.align-left {
+    text-align: left;
+}
+.align-center {
+    text-align: center;
+}
+.align-right {
+    text-align: right;
+}
+
+
+/*VERSÃO QUE FUCIONA NO inputBoxTable*/
+
+.inputBox-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor do fundo com transparência */
+    z-index: 1000; /* Coloca o overlay acima de outros elementos */
+    display: none; /* Inicialmente oculto */
+}
+
+.inputBox-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    display: none;
+
+    /* Define largura e altura máximas da caixa de diálogo */
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+
+    /* Permite que o conteúdo se expanda verticalmente se necessário */
+    overflow: hidden;
+}
+
+
+.inputBox-dialog-header {
+    font-size: 1.2em; /* Tamanho da fonte do cabeçalho */
+    margin-bottom: 15px; /* Espaçamento inferior */
+}      
+
+
+.inputBox-container {
+    /* Usa 100% da largura e altura do pai sem ultrapassar */
+    width: 100%;
+    height: 100%;
+
+    /* Flexível para rolagem interna quando o conteúdo é maior */
+    display: flex;
+    flex-direction: column;
+
+    /* Reduz as margens e adição de borda para visualização */
+    margin: 0;
+    border: 1px solid #ccc;
+
+    /* Rolagem apenas vertical */
+    overflow-y: auto;
+    overflow-x: hidden; /* Opcional: oculta rolagem horizontal */
+
+    /* Estilo de posicionamento relativo para possíveis conteúdos internos */
+    position: relative;
+}
+
+.inputBox-table-title {
+    height: 30px; /* Altura fixa do título */
+    background-color: #f1f1f1; /* Cor de fundo do título */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o texto */
+    padding-left: 10px; /* Espaço à esquerda */
+    font-weight: bold; /* Deixa o título em negrito */
+    border-bottom: 1px solid #ccc; /* Linha inferior para separação */
+}
+
+.inputBox-table-container {
+    flex: 1; /* Faz a tabela ocupar o espaço restante */
+    overflow-y: auto; /* Permite rolagem vertical na tabela */
+    overflow-x: auto; /* Permite rolagem horizontal se necessário */
+    padding: 5px; /* Espaço interno para evitar que o conteúdo fique colado nas bordas */
+}
+
+.inputBox-table-container table {
+    width: 100%; /* A tabela ocupa toda a largura disponível do contêiner */
+}
+
+.inputBox-footer-panel {                
+    height: 30px; /* A altura do painel para os botões */
+    background-color: #f1f1f1; /* Cor de fundo do painel */
+    display: flex; /* Para alinhar os botões horizontalmente */
+    justify-content: flex-end; /* Alinha os botões à direita */
+    /* padding: 10px; /* Espaçamento interno */
+    border-top: 1px solid #ccc; /* Linha superior para separação */
+}

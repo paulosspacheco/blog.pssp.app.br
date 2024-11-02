@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa de Diálogo Modal com Retorno de Dados</title>
+</head>
+<body>
+    <h1>Exemplo de Diálogo Modal</h1>
+    <button onclick="openDialog()">Abrir Diálogo</button>
+
+    <!-- Estrutura da caixa de diálogo -->
+    <dialog id="myDialog">
+        <form id="dialogForm" method="dialog">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="age">Idade:</label>
+            <input type="number" id="age" name="age" required>
+            <br><br>
+            <menu>
+                <button type="button" onclick="closeDialog()">Cancelar</button>
+                <button type="button" onclick="confirmDialog()">Confirmar</button>
+            </menu>
+        </form>
+    </dialog>
+
+    <script>
+        // Função para abrir o modal
+        function openDialog() {
+            const dialog = document.getElementById('myDialog');
+            dialog.showModal();
+        }
+
+        // Função para fechar o modal
+        function closeDialog() {
+            const dialog = document.getElementById('myDialog');
+            dialog.close();
+        }
+
+        // Função para confirmar e validar os dados antes de fechar
+        function confirmDialog() {
+            const form = document.getElementById('dialogForm');
+            // Verifica se o formulário é válido
+            if (form.checkValidity()) {
+                // Coleta os dados
+                const name = document.getElementById('name').value;
+                const age = document.getElementById('age').value;
+
+                // Retorna os dados como um objeto JSON
+                const data = { name, age };
+                console.log('Dados capturados:', data);
+
+                // Fecha o modal após a confirmação
+                closeDialog();
+            } else {
+                // Mostra mensagens de erro se o formulário for inválido
+                form.reportValidity();
+            }
+        }
+    </script>
+</body>
+</html>
