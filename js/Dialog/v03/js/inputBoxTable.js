@@ -1,5 +1,3 @@
-import { MiMethods } from './MiMethods.js';
-
 export class InputBox {
     constructor(title, template) {
         this.fields = [];
@@ -11,10 +9,12 @@ export class InputBox {
         this.font = "16px Arial"; // Fonte usada para calcular a largura média de caractere                
 
         // Adiciona os estilos
-        //MiMethods.addStyles('textos css');
+        this.addStyles();
         
-        
-        MiMethods.includeCSS('link[href="../css/input_Box.css"]');
+        // Inclui o CSS dinamicamente no documento, verificando se já está presente
+        // if (!document.querySelector('link[href="../css/input_Box.css"]')) {
+        //     this.includeCSS('../css/input_Box.css');
+        // }
 
 
         // Processa o template
@@ -28,6 +28,127 @@ export class InputBox {
         window.addEventListener("resize", this.adjustTableFontSize.bind(this));
         window.addEventListener("load", this.adjustTableFontSize.bind(this));
     }
+
+    // Método para incluir CSS
+    includeCSS(href) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        document.head.appendChild(link);
+    }    
+           
+    addStyles() {
+        const style = document.createElement('style');
+        style.textContent = `
+
+            /* input_Box.css */
+
+            /* @import url('./color_tons_de_cinza.css'); */
+            /* @import url('./color_tons_dark.css'); */
+            /* @import url('./color_tons_de_dark_claro.css'); */
+            /* @import url('./color_tons_de_azul_ceu.css'); */
+            /* @import url('./color_tons_de_verde_claro.css'); */
+            /* @import url('./color_tons_amarelo.css'); */
+            @import url('../css/color_tons_de_lilas_claro.css');
+
+            html, body {
+                height: 100%; /* Garante que o body ocupe toda a altura da janela */
+                margin: 0; /* Remove margens do body */
+            }            
+
+            .inputBox-dialog-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.5); /* Cor do fundo com transparência */
+                z-index: 1000; /* Coloca o overlay acima de outros elementos */
+                display: none; /* Inicialmente oculto */
+            }
+
+            .inputBox-dialog {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                z-index: 1001;
+                display: none;
+
+                /* Define largura e altura máximas da caixa de diálogo */
+                width: 90%;
+                max-width: 800px;
+                max-height: 90vh;
+
+                /* Permite que o conteúdo se expanda verticalmente se necessário */
+                overflow: hidden;
+            }
+
+
+            .inputBox-dialog-header {
+                font-size: 1.2em; /* Tamanho da fonte do cabeçalho */
+                margin-bottom: 15px; /* Espaçamento inferior */
+            }      
+
+
+            .inputBox-container {
+                /* Usa 100% da largura e altura do pai sem ultrapassar */
+                width: 100%;
+                height: 100%;
+
+                /* Flexível para rolagem interna quando o conteúdo é maior */
+                display: flex;
+                flex-direction: column;
+
+                /* Reduz as margens e adição de borda para visualização */
+                margin: 0;
+                border: 1px solid #ccc;
+
+                /* Rolagem apenas vertical */
+                overflow-y: auto;
+                overflow-x: hidden; /* Opcional: oculta rolagem horizontal */
+
+                /* Estilo de posicionamento relativo para possíveis conteúdos internos */
+                position: relative;
+            }
+
+            .inputBox-table-title {
+                height: 30px; /* Altura fixa do título */
+                background-color: #f1f1f1; /* Cor de fundo do título */
+                display: flex;
+                align-items: center; /* Centraliza verticalmente o texto */
+                padding-left: 10px; /* Espaço à esquerda */
+                font-weight: bold; /* Deixa o título em negrito */
+                border-bottom: 1px solid #ccc; /* Linha inferior para separação */
+            }
+
+            .inputBox-table-container {
+                flex: 1; /* Faz a tabela ocupar o espaço restante */
+                overflow-y: auto; /* Permite rolagem vertical na tabela */
+                overflow-x: auto; /* Permite rolagem horizontal se necessário */
+                padding: 5px; /* Espaço interno para evitar que o conteúdo fique colado nas bordas */
+            }
+
+            .inputBox-table-container table {
+                width: 100%; /* A tabela ocupa toda a largura disponível do contêiner */
+            }
+
+            .inputBox-footer-panel {                
+                height: 30px; /* A altura do painel para os botões */
+                background-color: #f1f1f1; /* Cor de fundo do painel */
+                display: flex; /* Para alinhar os botões horizontalmente */
+                justify-content: flex-end; /* Alinha os botões à direita */
+                /* padding: 10px; /* Espaçamento interno */
+                border-top: 1px solid #ccc; /* Linha superior para separação */
+            }
+
+                `;
+        document.head.appendChild(style);
+    }
+    
 
     // Método `parseTemplate`
     parseTemplate(template) {
@@ -135,6 +256,38 @@ export class InputBox {
     //   this.addFieldsToTable();        
     }
 
+    // Método para calcular a largura de um texto em pixels
+    getTextWidth(text, fontSize) {
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        context.font = `${fontSize}px Arial`;
+        return context.measureText(text).width;
+    }
+
+    // Método para calcular a largura média de um caractere
+    textWidthChar(aFont) {
+        // Função auxiliar para verificar se a fonte é monoespaçada
+        function isMonoSpaced(aFont, context) {
+            context.font = aFont;
+            const widthA = context.measureText("W").width;
+            const widthB = context.measureText("b").width;
+            return widthA === widthB;
+        }
+
+        // Criando um elemento <canvas> para cálculos de largura de texto
+        const canvasElement = document.createElement('canvas');
+        const context = canvasElement.getContext("2d");
+        context.font = aFont;
+
+
+        if (!isMonoSpaced(aFont, context)) {
+            const sampleText = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            const totalWidth = context.measureText(sampleText).width;
+            return totalWidth / sampleText.length;
+        } else {
+            return context.measureText("A").width;
+        }
+    }
 
     adjustTableFontSize() {
         const containerWidth = this.tableContainer.clientWidth;
@@ -157,6 +310,193 @@ export class InputBox {
         inputs.forEach(input => {
             input.style.fontSize = fontSize; // Aplica o mesmo tamanho de fonte aos inputs
         });
+    }
+
+    // Método para criar uma caixa de diálogo com base no array this.fields
+    showInputBox() {
+        // Criação do inputBox-overlay da caixa de diálogo
+        const overlay = document.createElement('div');
+        overlay.className = 'inputBox-dialog-overlay';
+    
+        // Criação da caixa de diálogo
+        const form = document.createElement('div');
+        form.className = 'inputBox-dialog-box'; // Caixa de diálogo
+    
+        // Configura o título
+        const titleElement = document.createElement('h2');
+        titleElement.innerText = this.title;
+        form.appendChild(titleElement);
+    
+        // Cria uma tabela para os campos de entrada
+        const table = document.createElement('table');
+        table.className = 'inputBox-table'; // Classe para estilos da tabela
+    
+        // Adiciona os campos à tabela
+        this.fields.forEach(line => {
+            const row = document.createElement('tr'); // Cria uma nova linha para cada campo
+            line.forEach(field => {
+                const cell = document.createElement('td'); // Cria uma nova célula
+    
+                const label = document.createElement('label');
+                label.innerText = field.label;
+                cell.appendChild(label);
+    
+                if (field.maxLength > 0) {                                
+                    const input = document.createElement('input');
+                    input.type = 'text'; // Tipo de entrada
+
+                    // Calcular a largura do input com base no maxLength
+                    const estimatedCharWidth = this.textWidthChar(this.font);                   
+                    const padding = 20; // Padding adicional
+                    const width = field.maxLength * estimatedCharWidth + padding;    
+                    input.style.width = `${width}px`;
+                    input.maxLength = field.maxLength; // Define o maxlength do input                  
+                    input.style.textAlign = field.align; // Alinhamento do texto no campo
+                    
+                    input.name = field.name; // Nome do campo
+                    input.id = field.id; // ID do campo
+                    input.style.textAlign = field.align; // Alinhamento do texto no campo
+                    cell.appendChild(input);
+                }
+                    
+                row.appendChild(cell); // Adiciona a célula à linha
+            });
+            table.appendChild(row); // Adiciona a linha à tabela
+        });
+    
+        // Adiciona a tabela ao formulário
+        form.appendChild(table);
+    
+        // Cria o container de botões
+        const buttonContainer = document.createElement('div');
+        buttonContainer.className = 'inputBox-dialog-button-container';
+    
+        // Cria o botão "OK"
+        const okButton = document.createElement('button');
+        okButton.innerText = 'OK';
+        okButton.className = 'inputBox-dialog-button'; // Classe para estilos do botão
+        okButton.onclick = () => {
+            this.getValues();
+            document.body.removeChild(overlay); // Remove o overlay
+        };
+    
+        // Cria o botão "Cancelar"
+        const cancelButton = document.createElement('button');
+        cancelButton.innerText = 'Cancelar';
+        cancelButton.className = 'inputBox-dialog-button'; // Classe para estilos do botão
+        cancelButton.onclick = () => {
+            document.body.removeChild(overlay); // Remove o overlay
+        };
+    
+        // Adiciona os botões ao container
+        buttonContainer.appendChild(okButton);
+        buttonContainer.appendChild(cancelButton);
+    
+        // Adiciona o container de botões ao formulário
+        form.appendChild(buttonContainer);
+    
+        // Adiciona a caixa de diálogo ao overlay
+        overlay.appendChild(form);
+    
+        // Adiciona o overlay ao corpo do documento
+        document.body.appendChild(overlay);
+    }
+
+    // Método para criar uma caixa de diálogo com base no array this.fields
+    showInputBox2() {
+        
+        // Criação do overlay da caixa de diálogo
+        const overlay = document.createElement('div');
+        overlay.className = 'inputBox-dialog-overlay';
+
+        // Criação da caixa de diálogo
+        const form = document.createElement('div');
+        form.className = 'inputBox-dialog-box'; // Caixa de diálogo
+
+        // Configura o título
+        const titleElement = document.createElement('h2');
+        titleElement.innerText = this.title;
+        form.appendChild(titleElement);
+
+        // Cria uma tabela para os campos de entrada
+        const table = document.createElement('table');
+        table.className = 'inputBox-table'; // Classe para estilos da tabela
+
+        // Adiciona os campos à tabela
+        this.fields.forEach(line => {
+            const row = document.createElement('tr'); // Cria uma nova linha para cada campo
+            line.forEach(field => {
+                // Cria uma célula para o label
+                const labelCell = document.createElement('td');
+                const label = document.createElement('label');
+                label.innerText = field.label;
+                labelCell.appendChild(label);
+                row.appendChild(labelCell); // Adiciona a célula do label à linha
+
+                // Cria uma célula para o input
+                const inputCell = document.createElement('td');
+
+                if (field.maxLength > 0) {                
+                    const input = document.createElement('input');
+                    input.type = 'text'; // Tipo de entrada
+                    
+
+                    // Calcular a largura do input com base no maxLength                   
+                    const estimatedCharWidth = this.textWidthChar(this.font);                   
+                    const padding = 20; // Padding adicional
+                    const width = field.maxLength * estimatedCharWidth + padding;    
+                    input.style.width = `${width}px`;
+                    input.maxLength = field.maxLength; // Define o maxlength do input                  
+                    input.style.textAlign = field.align; // Alinhamento do texto no campo
+
+                    input.name = field.name; // Nome do campo
+                    input.id = field.id; // ID do campo
+                    
+
+                    inputCell.appendChild(input);
+                }
+
+                row.appendChild(inputCell); // Adiciona a célula do input à linha
+            });
+            table.appendChild(row); // Adiciona a linha à tabela
+        });
+
+        // Adiciona a tabela ao formulário
+        form.appendChild(table);
+
+        // Cria o container de botões
+        const buttonContainer = document.createElement('div');
+        buttonContainer.className = 'inputBox-dialog-button-container';
+
+        // Cria o botão "OK"
+        const okButton = document.createElement('button');
+        okButton.innerText = 'OK';
+        okButton.className = 'inputBox-dialog-button'; // Classe para estilos do botão
+        okButton.onclick = () => {
+            this.getValues();
+            document.body.removeChild(overlay); // Remove o overlay
+        };
+
+        // Cria o botão "Cancelar"
+        const cancelButton = document.createElement('button');
+        cancelButton.innerText = 'Cancelar';
+        cancelButton.className = 'inputBox-dialog-button'; // Classe para estilos do botão
+        cancelButton.onclick = () => {
+            document.body.removeChild(overlay); // Remove o overlay
+        };
+
+        // Adiciona os botões ao container
+        buttonContainer.appendChild(okButton);
+        buttonContainer.appendChild(cancelButton);
+
+        // Adiciona o container de botões ao formulário
+        form.appendChild(buttonContainer);
+
+        // Adiciona a caixa de diálogo ao overlay
+        overlay.appendChild(form);
+
+        // Adiciona o overlay ao corpo do documento
+        document.body.appendChild(overlay);
     }
 
 
@@ -365,7 +705,11 @@ export class InputBox {
         return new Promise((resolve) => {
             const inputBoxInstance = new InputBox(title, template);
             inputBoxInstance.showDialog();
-
+            //   inputBoxInstance.addFieldsToTable(document.body,() =>inputBoxInstance.GetPainelOkCancel());
+            
+            
+            //inputBoxInstance.showInputBox(resolve);            
+            //inputBoxInstance.showInputBox2(resolve);
         });
     }
 
