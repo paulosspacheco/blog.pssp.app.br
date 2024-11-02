@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Atualiza o GitHub criando o controle de versão.
+# Atualiza o github criando o controle de versão.
 
-# Função para criar o mapa do site
+#Cria o mapa do site
 create_tipuesearch
 
-# Texto com as mudanças que estão sendo realizadas neste push
+# Texto com as mudanças que estão sendo realizadas neste push.
 TextoCommit="$1"
 
 # Verifica se o texto do commit foi passado como argumento
@@ -18,7 +18,7 @@ fi
 VERSION_TYPE="Alpha"
 
 # Nome do repositório GitHub (formato: usuario/repositorio)
-REPO_NAME="paulosspacheco/blog.pssp.app.br"
+REPO_NAME="paulosspacheco/blog.pssp.app.br.git"
 
 # Verifica se o repositório remoto já está associado
 if ! git remote | grep -q origin; then
@@ -44,7 +44,6 @@ INITIAL_VERSION="v0.207.0-$VERSION_TYPE"
 # Aqui garantimos que só peguemos as tags que seguem o padrão esperado.
 LAST_TAG=$(git tag --sort=-v:refname | grep -E "^v[0-9]+\.[0-9]+\.[0-9]+-$VERSION_TYPE$" | head -n 1)
 
-# Se não houver uma última tag, usa a versão inicial
 if [ -z "$LAST_TAG" ]; then
     NEW_TAG="$INITIAL_VERSION"
 else
@@ -59,12 +58,6 @@ else
 
     # Nova tag
     NEW_TAG="v${MAJOR}.${MINOR}.${PATCH}-$VERSION_TYPE"
-fi
-
-# Verifica se a tag já existe
-if git rev-parse "$NEW_TAG" >/dev/null 2>&1; then
-    echo "A tag $NEW_TAG já existe. Nada a ser feito."
-    exit 0
 fi
 
 # Exibe as informações sobre o que será feito
