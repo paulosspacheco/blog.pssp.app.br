@@ -37,7 +37,7 @@ if git diff-index --quiet HEAD --; then
     exit 0
 fi
 
-# Define a versão inicial
+# Define a versão inicial da Tag.
 INITIAL_VERSION="v0.207.0-$VERSION_TYPE"
 
 # Incrementa a versão com base na tag anterior
