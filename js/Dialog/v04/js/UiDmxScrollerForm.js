@@ -289,12 +289,7 @@ export class UiDmxScrollerForm extends UiDmxScroller {
         const formInstance = new UiDmxScrollerForm(title, template);
         return formInstance.addFieldsToTable(targetContainer, getPanel);
     }
-
-    // Método estático createForm
-    // static createForm(title, template) {
-    //     const formInstance = new UiDmxScrollerForm(title, template);
-    //     return formInstance.addFieldsToTable();
-    // }    
+ 
     
 
 }

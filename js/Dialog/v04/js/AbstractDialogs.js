@@ -5,21 +5,24 @@ import { UiDmxScrollerForm } from './UiDmxScrollerForm.js';
 
 export  default class AbstractDialogs extends UiDmxScrollerForm {
 
+        
     constructor(title, template) {
+        
         super(title, template); // Chama o construtor da classe pai     
 
         if (this.constructor === AbstractDialogs) {
             throw new Error("Cannot instantiate an abstract class.");
         }
 
+        this.resolveDialog = null;
+        this.rejectDialog = null;
         this.form = null;
         //this.createForm();
 
         this.dialog = null;
         this.createDialog();
         
-        this.resolveDialog = null;
-        this.rejectDialog = null;
+
 
         this.setupEventListeners();
     }

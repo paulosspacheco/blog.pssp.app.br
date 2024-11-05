@@ -21,8 +21,6 @@ export default class Dialog extends AbstractDialogs {
      */
     constructor(title, template) {
         super(title, template); // Chama o construtor da classe pai                       
-
-       
     }
 
     // Método que adiciona um contêiner de campos a um diálogo modal
@@ -91,9 +89,6 @@ export default class Dialog extends AbstractDialogs {
      * Fecha o diálogo modal.
      */
     // closeDialog() {
-    //     this.dialog.close();
-    // }
-    // closeDialog() {
     //     if (this.dialog) {
     //         // Remove o diálogo e o overlay do DOM
     //         const overlay = document.getElementById('inputBox-dialog-overlay');
@@ -104,16 +99,29 @@ export default class Dialog extends AbstractDialogs {
     
     //         this.dialog.remove();  // Remove o diálogo do DOM
     //         this.dialog = null;    // Remove a referência para evitar reutilização sem recriação
+
+    //         this.Dialog.currentInstance = null; // Reseta a instância            
     //     }
     // }
     
     closeDialog() {
-        this.dialog.style.display = 'none';
-        const overlay = document.getElementById('inputBox-dialog-overlay');
-        if (overlay) {
-            overlay.style.display = 'none';
+        if (this.dialog) {
+            // Remove o diálogo e o overlay do DOM
+            const overlay = document.getElementById('inputBox-dialog-overlay');
+            
+            if (overlay) {
+                overlay.remove();  // Remove o overlay do DOM
+            }
+    
+            this.dialog.remove();  // Remove o diálogo do DOM
+            this.dialog = null;    // Remove a referência para evitar reutilização sem recriação
+    
+            // Acessa a propriedade estática usando o nome da classe
+            Dialog.currentInstance = null; // Reseta a instância            
         }
     }
+    
+    
     
 
     // Função para validar os campos
@@ -180,29 +188,30 @@ export default class Dialog extends AbstractDialogs {
     // }
     submit() {
         if (this.form.checkValidity()) {
-            const data = this.collectDialogData();
+            Dialog.showModalResult = this.collectDialogData();
+            console.log(Dialog.showModalResult); // Verifique o que está sendo passado            
             this.closeDialog();
-            console.log(data); // Verifique o que está sendo passado
+            
     
-            try {
-                // Verifica se resolveDialog é uma função e se retorna uma promessa
-                if (typeof this.resolveDialog === 'function') {
-                    const result = this.resolveDialog(data);
+            // try {
+            //     // Verifica se resolveDialog é uma função e se retorna uma promessa
+            //     if (typeof this.resolveDialog === 'function') {
+            //         const result = this.resolveDialog(data);
                     
-                    // Verifica se o resultado é uma promessa
-                    if (result instanceof Promise) {
-                        result.catch(error => {
-                            console.error("Erro ao resolver o diálogo:", error);
-                        });
-                    } else {
-                        console.warn("resolveDialog não retornou uma promessa.");
-                    }
-                } else {
-                    console.error("resolveDialog não é uma função válida.");
-                }
-            } catch (error) {
-                console.error("Erro inesperado ao chamar resolveDialog:", error);
-            }
+            //         // Verifica se o resultado é uma promessa
+            //         if (result instanceof Promise) {
+            //             result.catch(error => {
+            //                 console.error("Erro ao resolver o diálogo:", error);
+            //             });
+            //         } else {
+            //             console.warn("resolveDialog não retornou uma promessa.");
+            //         }
+            //     } else {
+            //         console.error("resolveDialog não é uma função válida.");
+            //     }
+            // } catch (error) {
+            //     console.error("Erro inesperado ao chamar resolveDialog:", error);
+            // }
         } else {
             this.form.reportValidity();
         }
@@ -215,6 +224,7 @@ export default class Dialog extends AbstractDialogs {
      * Fecha o diálogo e rejeita a promessa associada ao diálogo com uma mensagem de cancelamento.
      */
     cancel() {
+        Dialog.showModalResult = null;
         this.closeDialog();
         this.rejectDialog('Dialog canceled by user');
     }
@@ -337,11 +347,6 @@ export default class Dialog extends AbstractDialogs {
     /**
      * Abre o diálogo modal.
      */
-    // static showModal(title, template) {
-    //     const dialogInstance = new Dialog(title, template);
-    //     return dialogInstance.openDialog();      
-    // }
-
     static showModal(title, template) {
         if (Dialog.currentInstance) {
             console.warn("Dialog is already open.");
@@ -350,8 +355,38 @@ export default class Dialog extends AbstractDialogs {
     
         const dialogInstance = new Dialog(title, template);
         Dialog.currentInstance = dialogInstance; // Armazena a instância atual
-
+        
     }
     
+    /**
+     * Abre o diálogo modal e espera que o usuário interaja com ele.
+     * 
+     * @returns {Promise<Object>} - Uma promessa que resolve com os dados inseridos ou rejeita com um erro.
+     */
+    // static showModal(title, template) {
+    //     return new Promise((resolve, reject) => {
+    //         const dialog = new Dialog(title, template);
+    //         dialog.createDialog();
+
+    //         // Configura os ouvintes de eventos para os botões
+    //         dialog.setupEventListeners();
+
+    //         // Define o que acontece quando o diálogo é confirmado
+    //         dialog.resolveDialog = (data) => {
+    //             resolve(data); // Resolve a promessa com os dados coletados
+    //             dialog.closeDialog(); // Fecha o diálogo
+    //         };
+
+    //         // Define o que acontece quando o diálogo é cancelado
+    //         dialog.rejectDialog = (message) => {
+    //             reject(message); // Rejeita a promessa com a mensagem de cancelamento
+    //             dialog.closeDialog(); // Fecha o diálogo
+    //         };
+
+    //         // Abre o diálogo
+    //         dialog.addFieldsToDialog();
+    //     });
+    // }
+
 
 }

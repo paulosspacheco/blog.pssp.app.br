@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste da classe default Dialog</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        html, body {
+            height: 100%; 
+            margin: 0; 
+        }            
+
+        .inputBox-dialog-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: 1000; 
+            display: none; 
+        }
+
+        .inputBox-dialog {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white; 
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            display: none;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow: hidden;
+        }
+
+        .inputBox-dialog-header {
+            font-size: 1.2em; 
+            margin-bottom: 15px; 
+        }      
+
+        .inputBox-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            border: 1px solid #ccc;
+            overflow-y: auto;
+            overflow-x: hidden; 
+            position: relative;
+        }
+
+        .inputBox-table-title {
+            height: 30px; 
+            background-color: #f1f1f1; 
+            display: flex;
+            align-items: center; 
+            padding-left: 10px; 
+            font-weight: bold; 
+            border-bottom: 1px solid #ccc; 
+        }
+
+        .inputBox-table-container {
+            flex: 1; 
+            overflow-y: auto; 
+            overflow-x: auto; 
+            padding: 5px; 
+        }
+
+        .inputBox-table-container table {
+            width: 100%; 
+        }
+
+        .inputBox-footer-panel {                
+            height: 30px; 
+            background-color: #f1f1f1; 
+            display: flex; 
+            justify-content: flex-end; 
+            border-top: 1px solid #ccc; 
+        }
+    </style>                
+</head>
+
+<body>
+    <h1>Example of Modal Dialog with Data Return</h1>
+    <button id="openDialogBtn">Open Dialog</button>
+
+    <script type="module">
+        import myDialog from './js/Dialogs.js';
+
+        const title = 'Teste da classe default Dialog';  
+
+        const template = `
+            Nome do Aluno: \\ssssssssssssssssssssssssssss  ^Bnome_do_aluno 
+            Número: \\sssssss            ^Bnumero       
+            Endereço: \\ssssssssssssssssssssssssssssss^Bendereco      
+            Nome da Mãe: \\sssssssssssssssssss^Bnome_da_mae               
+            \\     
+        `;
+
+        // Função assíncrona para abrir o diálogo
+        async function openDialog() {
+            try {
+                const dialogData = await myDialog.showModal(title, template);
+                console.log('Dados capturados:', dialogData);
+            } catch (error) {
+                console.error('Erro:', error);
+            }
+        }
+
+        // Adiciona evento ao botão
+        document.getElementById('openDialogBtn').addEventListener('click', openDialog);
+    </script>
+    
+</body>
+</html>

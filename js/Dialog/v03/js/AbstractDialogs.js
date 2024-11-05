@@ -5,7 +5,11 @@ import { UiDmxScrollerForm } from './UiDmxScrollerForm.js';
 
 export  default class AbstractDialogs extends UiDmxScrollerForm {
 
+    // Define a propriedade estática currentInstance
+    static currentInstance = null;        
+    static showModalResult = null;
     constructor(title, template) {
+        
         super(title, template); // Chama o construtor da classe pai     
 
         if (this.constructor === AbstractDialogs) {

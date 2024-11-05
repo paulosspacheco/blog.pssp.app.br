@@ -103,8 +103,7 @@
             justify-content: flex-end; /* Alinha os botões à direita */
             /* padding: 10px; /* Espaçamento interno */
             border-top: 1px solid #ccc; /* Linha superior para separação */
-        }
-           
+        }   
         </style>                
     </head>
 
@@ -159,10 +158,8 @@
             `;
 
         // Método estático para criar o formulário
-        UiDmxScrollerForm.createForm(title, template, document.getElementById('formContainer1'));
+        Dialog.ShowModal(title, template);
 
-        // Método estático para criar o formulário
-        UiDmxScrollerForm.createForm(title, template, document.getElementById('formContainer2'));        
     </script>
 </body>
 </html>
