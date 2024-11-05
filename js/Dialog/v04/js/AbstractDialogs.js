@@ -59,17 +59,7 @@ export  default class AbstractDialogs extends UiDmxScrollerForm {
         this.rejectDialog = reject;
         this.openDialog();
     }
-
-    // handleDialog(resolve, reject) {
-    //     try {
-    //         // Suponha que `getValues` colete os dados de um formulário ou campos de entrada
-    //         const values = this.getValues();
-    //         resolve(values); // Resolve a Promise com os dados coletados
-    //     } catch (error) {
-    //         reject(error); // Rejeita a Promise se algo falhar
-    //     }
-    // }
-
+    
     // Método para lidar com o envio do formulário
     submit() {
         // Lógica para lidar com o envio
@@ -89,10 +79,6 @@ export  default class AbstractDialogs extends UiDmxScrollerForm {
         return new Promise((resolve, reject) => this.handleDialog(resolve, reject));
     }
     
-    // async executeDialog() {
-    //     const data = await this.callDialog();
-    //     return data;
-    // }
     async executeDialog() {
         try {
             const data = await this.callDialog();

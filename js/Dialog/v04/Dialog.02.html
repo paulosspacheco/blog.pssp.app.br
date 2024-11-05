@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste UiDmxScrollerForm</title>
+    <title>Teste Dialog</title>
 
     <style>
         body {
@@ -103,8 +103,10 @@
             justify-content: flex-end; /* Alinha os botões à direita */
             /* padding: 10px; /* Espaçamento interno */
             border-top: 1px solid #ccc; /* Linha superior para separação */
-        }   
-        </style>                
+        }
+           
+        </style>      
+
     </head>
 
 <body>
@@ -113,10 +115,10 @@
     <div id="formContainer2"></div>    
 
     <script type="module">
-        import { UiDmxScrollerForm } from './js/UiDmxScrollerForm.js';
+        import MyDialog from './js/Dialogs.js';
 
         // Define o título e o template do formulário
-        const title = 'Teste UiDmxScrollerForm';
+        const title = 'Teste Dialog';
         const template = `
         ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
         ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
@@ -158,7 +160,7 @@
             `;
 
         // Método estático para criar o formulário
-        Dialog.ShowModal(title, template);
+        MyDialog.showModal(title, template);
 
     </script>
 </body>

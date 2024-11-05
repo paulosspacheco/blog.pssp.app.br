@@ -1,5 +1,6 @@
-import { MiMethods } from './MiMethods.js';
+//UiDmxScroller.js
 
+import { MiMethods } from './MiMethods.js';
 
 // Classe UiDmxScroller que herda de MiMethods
 export class UiDmxScroller extends MiMethods {
@@ -186,13 +187,10 @@ export class UiDmxScroller extends MiMethods {
                 this.fields.push(currentLine);
             }
         });
-
-      // Adiciona as linhas à tabela
-    //   this.addFieldsToTable();        
+   
     }
 
     // Método para coletar os valores dos campos de entrada
-      
     getValues() {
         // Verificação final para garantir que `values` é um JSON válido
         try {
@@ -213,35 +211,12 @@ export class UiDmxScroller extends MiMethods {
             });
     
             JSON.stringify(values); // Validação extra do JSON            
-            console.log(values);            
+            // console.log(values);            
             return values;
         } catch (error) {
             console.error("Erro ao converter values para JSON:", error);
             return null;
         }
-    }
-
-    // Versão que pega os valores direto no document
-    // getValues() {
-    //     try {
-    //         const values = {};
-    //         this.fields.forEach(line => {
-    //             line.forEach(field => {
-    //                 const input = document.getElementById(field.id);
-    //                 if (input) {
-    //                     values[field.name] = input.value;
-    //                 }
-    //             });
-    //         });
-            
-    //         console.log("Valores coletados em getValues:", values);
-    //         return values;
-    //     } catch (error) {
-    //         console.error("Erro ao converter values para JSON:", error);
-    //         return null;
-    //     }
-    // }
-       
-
+    }   
 }
 

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Documenta&ccedil;&atilde;o da Classe &DiacriticalGrave;AbstractDialogs&DiacriticalGrave;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="documentação-da-classe-abstractdialogs">Documentação da Classe <code>AbstractDialogs</code></h1>
+<ul>
+<li><a href="#documenta%C3%A7%C3%A3o-da-classe-abstractdialogs">Documentação da Classe <code>AbstractDialogs</code></a>
+<ul>
+<li><a href="#estrutura-da-classe">Estrutura da Classe</a>
+<ul>
+<li><a href="#construtor">Construtor</a></li>
+<li><a href="#m%C3%A9todos-abstratos">Métodos Abstratos</a></li>
+<li><a href="#m%C3%A9todos-de-inst%C3%A2ncia">Métodos de Instância</a></li>
+</ul>
+</li>
+<li><a href="#exemplo-de-uso">Exemplo de Uso</a></li>
+<li><a href="#considera%C3%A7%C3%B5es-finais">Considerações Finais</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>A classe <code>AbstractDialogs</code> é uma classe abstrata que estende a classe <code>UiDmxScrollerForm</code>. Ela fornece uma estrutura básica para a criação de diálogos em uma interface de usuário, definindo métodos que devem ser implementados por subclasses.</p>
+<h2 id="estrutura-da-classe">Estrutura da Classe</h2>
+<h3 id="construtor">Construtor</h3>
+<pre><code class="hljs language-javascript">
+  <span class="hljs-keyword">constructor</span>(title, template)
+
+</code></pre>
+<ul>
+<li>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>title</code>: O título do diálogo.</li>
+<li><code>template</code>: O template a ser utilizado no diálogo.</li>
+</ul>
+</li>
+<li>
+<p><strong>Exceções:</strong></p>
+<ul>
+<li>Lança um erro se tentar instanciar a classe <code>AbstractDialogs</code> diretamente.</li>
+</ul>
+</li>
+</ul>
+<h3 id="métodos-abstratos">Métodos Abstratos</h3>
+<p>A classe define os seguintes métodos que devem ser implementados por subclasses:</p>
+<ul>
+<li>
+<p><code>createForm()</code></p>
+<ul>
+<li><strong>Descrição:</strong> Método que deve ser implementado para criar o formulário do diálogo.</li>
+<li><strong>Exceções:</strong> Lança um erro se não for implementado.</li>
+</ul>
+</li>
+<li>
+<p><code>createDialog()</code></p>
+<ul>
+<li><strong>Descrição:</strong> Método que deve ser implementado para criar o diálogo.</li>
+<li><strong>Exceções:</strong> Lança um erro se não for implementado.</li>
+</ul>
+</li>
+<li>
+<p><code>setupEventListeners()</code></p>
+<ul>
+<li><strong>Descrição:</strong> Método que deve ser implementado para configurar os ouvintes de eventos do diálogo.</li>
+<li><strong>Exceções:</strong> Lança um erro se não for implementado.</li>
+</ul>
+</li>
+<li>
+<p><code>openDialog()</code></p>
+<ul>
+<li><strong>Descrição:</strong> Método que deve ser implementado para abrir o diálogo.</li>
+<li><strong>Exceções:</strong> Lança um erro se não for implementado.</li>
+</ul>
+</li>
+<li>
+<p><code>collectDialogData()</code></p>
+<ul>
+<li><strong>Descrição:</strong> Método que deve ser implementado para coletar os dados do diálogo.</li>
+<li><strong>Exceções:</strong> Lança um erro se não for implementado.</li>
+</ul>
+</li>
+<li>
+<p><code>closeDialog()</code></p>
+<ul>
+<li><strong>Descrição:</strong> Método que deve ser implementado para fechar o diálogo.</li>
+<li><strong>Exceções:</strong> Lança um erro se não for implementado.</li>
+</ul>
+</li>
+<li>
+<p><code>submit()</code></p>
+<ul>
+<li><strong>Descrição:</strong> Método para lidar com o envio do formulário.</li>
+<li><strong>Exceções:</strong> Lança um erro se não for implementado.</li>
+</ul>
+</li>
+<li>
+<p><code>cancel()</code></p>
+<ul>
+<li><strong>Descrição:</strong> Método para lidar com o cancelamento do formulário.</li>
+<li><strong>Exceções:</strong> Lança um erro se não for implementado.</li>
+</ul>
+</li>
+</ul>
+<h3 id="métodos-de-instância">Métodos de Instância</h3>
+<ul>
+<li>
+<p><code>handleDialog(resolve, reject)</code></p>
+<ul>
+<li><strong>Descrição:</strong> Configura as funções de resolução e rejeição do diálogo e chama o método <code>openDialog()</code>.</li>
+</ul>
+</li>
+<li>
+<p><code>callDialog()</code></p>
+<ul>
+<li><strong>Descrição:</strong> Retorna uma nova <code>Promise</code> que chama <code>handleDialog</code>.</li>
+</ul>
+</li>
+<li>
+<p><code>async executeDialog()</code></p>
+<ul>
+<li><strong>Descrição:</strong> Executa o diálogo e coleta os dados, retornando-os como um objeto JSON.</li>
+<li><strong>Retorno:</strong> Retorna os dados coletados ou <code>null</code> em caso de erro.</li>
+</ul>
+</li>
+<li>
+<p><code>async openDialogAndDisplayData()</code></p>
+<ul>
+<li><strong>Descrição:</strong> Abre o diálogo e exibe os dados coletados em um alerta.</li>
+<li><strong>Tratamento de Erros:</strong> Exibe um alerta com a mensagem de erro, se ocorrer.</li>
+</ul>
+</li>
+</ul>
+<h2 id="exemplo-de-uso">Exemplo de Uso</h2>
+<p>Para usar a classe <code>AbstractDialogs</code>, você deve criar uma subclasse que implemente os métodos abstratos definidos. Aqui está um exemplo de como uma subclasse poderia ser definida:</p>
+<pre><code class="hljs language-javascript">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyDialog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractDialogs</span> </span>{
+        createForm() {
+            <span class="hljs-comment">// Implementação do formulário</span>
+        }
+
+        createDialog() {
+            <span class="hljs-comment">// Implementação do diálogo</span>
+        }
+
+        setupEventListeners() {
+            <span class="hljs-comment">// Implementação dos ouvintes de eventos</span>
+        }
+
+        openDialog() {
+            <span class="hljs-comment">// Implementação para abrir o diálogo</span>
+        }
+
+        collectDialogData() {
+            <span class="hljs-comment">// Implementação para coletar os dados do diálogo</span>
+        }
+
+        closeDialog() {
+            <span class="hljs-comment">// Implementação para fechar o diálogo</span>
+        }
+
+        submit() {
+            <span class="hljs-comment">// Implementação para enviar o formulário</span>
+        }
+
+        cancel() {
+            <span class="hljs-comment">// Implementação para cancelar o formulário</span>
+        }
+    }
+</code></pre>
+<h2 id="considerações-finais">Considerações Finais</h2>
+<p>A classe <code>AbstractDialogs</code> serve como um ponto de partida para a criação de diálogos personalizados em aplicações que utilizam a classe <code>UiDmxScrollerForm</code>. É importante implementar todos os métodos abstratos para garantir o funcionamento adequado da classe.</p>
+
+            
+            
+        </body>
+        </html>

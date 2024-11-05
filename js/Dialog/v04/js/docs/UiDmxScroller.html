@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Classe UiDmxScroller</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="classe-uidmxscroller">Classe UiDmxScroller</h1>
+<ul>
+<li><a href="#classe-uidmxscroller">Classe UiDmxScroller</a>
+<ul>
+<li><a href="#construtor">Construtor</a>
+<ul>
+<li><a href="#constructortitle-template"><code>constructor(title, template)</code></a>
+<ul>
+<li><a href="#par%C3%A2metros">Parâmetros</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#m%C3%A9todos">Métodos</a>
+<ul>
+<li><a href="#includecss"><code>includeCSS()</code></a>
+<ul>
+<li><a href="#classes-css-utilizadas">Classes CSS utilizadas</a></li>
+</ul>
+</li>
+<li><a href="#adjusttablefontsizecontainer"><code>adjustTableFontSize(container)</code></a>
+<ul>
+<li><a href="#par%C3%A2metros-1">Parâmetros</a></li>
+</ul>
+</li>
+<li><a href="#parsetemplatetemplate"><code>parseTemplate(template)</code></a>
+<ul>
+<li><a href="#par%C3%A2metros-2">Parâmetros</a></li>
+</ul>
+</li>
+<li><a href="#getvalues"><code>getValues()</code></a>
+<ul>
+<li><a href="#retorno">Retorno</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#exemplo-de-uso">Exemplo de Uso</a></li>
+<li><a href="#refer%C3%AAncias">Referências</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>A classe <code>UiDmxScroller</code> herda de <code>MiMethods</code> e é responsável por criar uma interface de entrada baseada em uma tabela. Ela permite a personalização do tamanho da fonte e a coleta de valores de campos de entrada.</p>
+<h2 id="construtor">Construtor</h2>
+<h3 id="constructortitle-template"><code>constructor(title, template)</code></h3>
+<pre><code class="hljs language-javascript">
+    <span class="hljs-keyword">constructor</span>(title, template)
+
+</code></pre>
+<h4 id="parâmetros">Parâmetros</h4>
+<ul>
+<li><code>title</code> (String): O título da interface.</li>
+<li><code>template</code> (String): Um template que define a estrutura dos campos de entrada.</li>
+</ul>
+<h2 id="métodos">Métodos</h2>
+<h3 id="includecss"><code>includeCSS()</code></h3>
+<p>Este método é virtual e pode ser redefinido nas classes filhas. Ele inclui o CSS necessário para a estilização da caixa de diálogo de entrada.</p>
+<h4 id="classes-css-utilizadas">Classes CSS utilizadas</h4>
+<ol>
+<li><strong><code>.inputBox-dialog-overlay</code></strong>: Define o overlay que cobre a tela quando a caixa de diálogo está ativa, com fundo semi-transparente e oculto por padrão.</li>
+<li><strong><code>.inputBox-dialog</code></strong>: Estiliza a caixa de diálogo centralizada na tela, com fundo branco, bordas arredondadas e sombra. Controla a largura e altura máximas da caixa.</li>
+<li><strong><code>.inputBox-dialog-header</code></strong>: Estiliza o cabeçalho da caixa de diálogo, definindo o tamanho da fonte e espaçamento inferior.</li>
+<li><strong><code>.inputBox-container</code></strong>: Um contêiner flexível que ocupa toda a largura e altura disponíveis, permitindo rolagem vertical quando o conteúdo excede o tamanho da caixa.</li>
+<li><strong><code>.inputBox-table-title</code></strong>: Estiliza a linha de título da tabela, com altura fixa, cor de fundo e centralização do texto.</li>
+<li><strong><code>.inputBox-table-container</code></strong>: Contêiner que permite que a tabela ocupe o espaço restante, com rolagem vertical e horizontal.</li>
+<li><strong><code>.inputBox-footer-panel</code></strong>: Estiliza o painel do rodapé, definindo altura, cor de fundo e alinhamento dos botões.</li>
+</ol>
+<h3 id="adjusttablefontsizecontainer"><code>adjustTableFontSize(container)</code></h3>
+<p>Ajusta o tamanho da fonte da tabela com base na largura do contêiner fornecido.</p>
+<h4 id="parâmetros-1">Parâmetros</h4>
+<ul>
+<li><code>container</code> (HTMLElement): O contêiner cujas dimensões serão utilizadas para ajustar o tamanho da fonte.</li>
+</ul>
+<h3 id="parsetemplatetemplate"><code>parseTemplate(template)</code></h3>
+<p>Analisa o <a href="./UiDmxScroller.getTemplate.html">template</a> fornecido e coleta os campos de entrada definidos.</p>
+<h4 id="parâmetros-2">Parâmetros</h4>
+<ul>
+<li>
+<p><code>template</code> (String): Um template que define a estrutura dos campos de entrada, onde cada linha pode conter labels e campos.</p>
+<ul>
+<li><code>Exemplo</code></li>
+</ul>
+<pre><code class="hljs language-javascript">        <span class="hljs-keyword">const</span> template = <span class="hljs-string">`
+            ~Nome do Aluno:~ \\ssssssssssssssssssssssssssss  ^Bnome_do_aluno 
+            ~Número~:        \\sssssss            ^Bnumero       
+            ~Endereço~:      \\ssssssssssssssssssssssssssssss^Bendereco      
+            ~Nome da Mãe~:   \\sssssssssssssssssss^Bnome_da_mae                           
+        `</span>;
+
+
+</code></pre>
+</li>
+</ul>
+<h3 id="getvalues"><code>getValues()</code></h3>
+<p>Coleta os valores dos campos de entrada e os retorna como um objeto JSON.</p>
+<h4 id="retorno">Retorno</h4>
+<ul>
+<li>(Object|null): Um objeto contendo os valores dos campos de entrada, ou <code>null</code> em caso de erro.</li>
+</ul>
+<h2 id="exemplo-de-uso">Exemplo de Uso</h2>
+<pre><code class="hljs language-javascript">
+    <span class="hljs-keyword">const</span> template = <span class="hljs-string">`
+        ~Nome do Aluno:~ \\ssssssssssssssssssssssssssss  ^Bnome_do_aluno 
+        ~Número~:        \\sssssss            ^Bnumero       
+        ~Endereço~:      \\ssssssssssssssssssssssssssssss^Bendereco      
+        ~Nome da Mãe~:   \\sssssssssssssssssss^Bnome_da_mae                           
+    `</span>;
+
+    <span class="hljs-keyword">const</span> scroller = <span class="hljs-keyword">new</span> UiDmxScroller(<span class="hljs-string">"Meu Título"</span>,template);
+    <span class="hljs-keyword">const</span> values = scroller.getValues();
+    <span class="hljs-built_in">console</span>.log(values);
+
+</code></pre>
+<h2 id="referências">Referências</h2>
+<ul>
+<li><a href="../UiDmxScroller.js">código fonte</a></li>
+</ul>
+
+            
+            
+        </body>
+        </html>

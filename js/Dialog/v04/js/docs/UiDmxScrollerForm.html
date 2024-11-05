@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Classe UiDmxScrollerForm</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="classe-uidmxscrollerform">Classe UiDmxScrollerForm</h1>
+<ul>
+<li><a href="#classe-uidmxscrollerform">Classe UiDmxScrollerForm</a>
+<ul>
+<li><a href="#construtor">Construtor</a>
+<ul>
+<li><a href="#constructortitle-template"><code>constructor(title, template)</code></a>
+<ul>
+<li><a href="#par%C3%A2metros">Parâmetros</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#m%C3%A9todos">Métodos</a>
+<ul>
+<li><a href="#submit"><code>submit()</code></a></li>
+<li><a href="#cancel"><code>cancel()</code></a></li>
+<li><a href="#getpainel"><code>getPainel()</code></a>
+<ul>
+<li><a href="#retorno">Retorno</a></li>
+</ul>
+</li>
+<li><a href="#addfieldstotabletargetcontainer--documentbody-getpanel--null"><code>addFieldsToTable(targetContainer = document.body, getPanel = null)</code></a>
+<ul>
+<li><a href="#descri%C3%A7%C3%A3o">Descrição</a></li>
+<li><a href="#par%C3%A2metros-1">Parâmetros</a></li>
+<li><a href="#retorno-1">Retorno</a></li>
+<li><a href="#exce%C3%A7%C3%B5es">Exceções</a></li>
+<li><a href="#exemplo-de-uso-b%C3%A1sico">Exemplo de Uso básico</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#detalhes-de-implementa%C3%A7%C3%A3o-da-classe-uidmxscrollerform">Detalhes de Implementação da Classe UiDmxScrollerForm</a>
+<ul>
+<li><a href="#1-cria%C3%A7%C3%A3o-do-cont%C3%AAiner">1. Criação do Contêiner</a></li>
+<li><a href="#2-t%C3%ADtulo-da-tabela">2. Título da Tabela</a></li>
+<li><a href="#3-tabela-de-entrada">3. Tabela de Entrada</a></li>
+<li><a href="#4-rodap%C3%A9-do-formul%C3%A1rio">4. Rodapé do Formulário</a></li>
+<li><a href="#5-adi%C3%A7%C3%A3o-ao-dom">5. Adição ao DOM</a></li>
+<li><a href="#6-estilos-css">6. Estilos CSS</a></li>
+<li><a href="#7-observa%C3%A7%C3%B5es-importantes">7. Observações Importantes</a></li>
+</ul>
+</li>
+<li><a href="#refer%C3%AAncias">Referências</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>A classe <code>UiDmxScrollerForm</code> herda de <code>UiDmxScroller</code> e é responsável por criar um formulário dinâmico que permite a coleta de dados através de campos de entrada em uma tabela.</p>
+<h2 id="construtor">Construtor</h2>
+<h3 id="constructortitle-template"><code>constructor(title, template)</code></h3>
+<h4 id="parâmetros">Parâmetros</h4>
+<ul>
+<li><code>title</code> (String): O título do formulário.</li>
+<li><code>template</code> (String): Um template que define a estrutura dos campos de entrada.</li>
+</ul>
+<h2 id="métodos">Métodos</h2>
+<h3 id="submit"><code>submit()</code></h3>
+<p>Lida com o envio do formulário. Este método pode ser personalizado para processar os dados conforme necessário.</p>
+<h3 id="cancel"><code>cancel()</code></h3>
+<p>Lida com o cancelamento do formulário. Este método pode ser personalizado para limpar o formulário ou fechar o diálogo.</p>
+<h3 id="getpainel"><code>getPainel()</code></h3>
+<p>Cria e retorna um painel com botões para enviar e cancelar o formulário.</p>
+<h4 id="retorno">Retorno</h4>
+<ul>
+<li>(HTMLElement): Um elemento de painel contendo os botões &quot;Enviar&quot; e &quot;Cancelar&quot;.</li>
+</ul>
+<h3 id="addfieldstotabletargetcontainer--documentbody-getpanel--null"><code>addFieldsToTable(targetContainer = document.body, getPanel = null)</code></h3>
+<h4 id="descrição">Descrição</h4>
+<p>O método <code>addFieldsToTable</code> cria um contêiner de tabela dinâmico no DOM, contendo campos de entrada conforme especificado. Ele permite a adição de um rodapé opcional através de um painel, caso um método de obtenção de painel seja fornecido.</p>
+<h4 id="parâmetros-1">Parâmetros</h4>
+<ul>
+<li><strong>targetContainer</strong> (<code>HTMLElement</code>): O contêiner de destino onde o novo contêiner será adicionado. Por padrão, é o corpo do documento (<code>document.body</code>).</li>
+<li><strong>getPanel</strong> (<code>function</code> | <code>null</code>): Um método opcional que retorna um painel a ser adicionado ao contêiner. Se não for fornecido, o método <code>getPainel</code> da instância é chamado.</li>
+</ul>
+<h4 id="retorno-1">Retorno</h4>
+<ul>
+<li>(HTMLElement): Retorna o <code>HTMLElement</code> do contêiner criado que contém a tabela e os campos de entrada.</li>
+</ul>
+<h4 id="exceções">Exceções</h4>
+<ul>
+<li>Não lança exceções específicas, mas pode falhar se o <code>targetContainer</code> não for um <code>HTMLElement</code> válido.</li>
+</ul>
+<h4 id="exemplo-de-uso-básico">Exemplo de Uso básico</h4>
+<pre><code class="hljs language-javascript">
+    &lt;body&gt;
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"formContainer1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        
+
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="javascript">
+            <span class="hljs-keyword">import</span> { UiDmxScrollerForm } <span class="hljs-keyword">from</span> <span class="hljs-string">'./js/UiDmxScrollerForm.js'</span>;
+
+            <span class="hljs-comment">// Define o título e o template do formulário</span>
+
+            <span class="hljs-keyword">const</span> title = <span class="hljs-string">'Teste UiDmxScrollerForm'</span>;
+
+            <span class="hljs-keyword">const</span> template = <span class="hljs-string">`
+            ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+            ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
+
+                `</span>;
+
+            <span class="hljs-comment">// Método estático para criar o formulário</span>
+            UiDmxScrollerForm.createForm(title, template, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'formContainer1'</span>));
+
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+    &lt;<span class="hljs-regexp">/body&gt;
+
+
+</span></code></pre>
+<h2 id="detalhes-de-implementação-da-classe-uidmxscrollerform">Detalhes de Implementação da Classe UiDmxScrollerForm</h2>
+<p>A classe <code>UiDmxScrollerForm</code> implementa um formulário dinâmico que permite a coleta de dados através de campos de entrada em uma tabela. Abaixo estão os detalhes de implementação que descrevem como a classe funciona internamente.</p>
+<h3 id="1-criação-do-contêiner">1. Criação do Contêiner</h3>
+<ul>
+<li>Um elemento <code>&lt;form&gt;</code> é criado como o contêiner principal, que contém todos os elementos do formulário, incluindo a tabela de entrada.</li>
+</ul>
+<h3 id="2-título-da-tabela">2. Título da Tabela</h3>
+<ul>
+<li>Um título é adicionado ao contêiner, definido pela propriedade <code>title</code> da instância. Este título é exibido na parte superior da tabela.</li>
+</ul>
+<h3 id="3-tabela-de-entrada">3. Tabela de Entrada</h3>
+<ul>
+<li>Uma tabela é criada, onde cada linha corresponde a um conjunto de campos definidos na propriedade <code>fields</code>.</li>
+<li>Para cada campo, um rótulo (<code>label</code>) e um campo de entrada (<code>input</code>) são criados:
+<ul>
+<li>O rótulo é associado ao campo de entrada correspondente.</li>
+<li>O campo de entrada é estilizado com base na propriedade <code>maxLength</code>, que determina o número máximo de caracteres que o usuário pode inserir.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-rodapé-do-formulário">4. Rodapé do Formulário</h3>
+<ul>
+<li>Se um método <code>getPanel</code> for fornecido, o painel correspondente (contendo botões de ação) é adicionado ao contêiner principal.</li>
+<li>Caso contrário, o método <code>getPainel</code> da instância é chamado para obter um painel padrão com botões &quot;Enviar&quot; e &quot;Cancelar&quot;.</li>
+</ul>
+<h3 id="5-adição-ao-dom">5. Adição ao DOM</h3>
+<ul>
+<li>O contêiner do formulário é anexado ao <code>targetContainer</code> especificado, que pode ser qualquer elemento HTML no qual você deseja que o formulário apareça.</li>
+</ul>
+<h3 id="6-estilos-css">6. Estilos CSS</h3>
+<ul>
+<li>A classe <code>inputBox-container</code> é utilizada para estilizar o contêiner externo do formulário.</li>
+<li>A classe <code>inputBox-table-title</code> é utilizada para estilizar o título da tabela.</li>
+<li>A classe <code>inputBox-table-container</code> é utilizada para estilizar o contêiner da tabela.</li>
+</ul>
+<h3 id="7-observações-importantes">7. Observações Importantes</h3>
+<ul>
+<li>Certifique-se de que os campos definidos na propriedade <code>fields</code> contenham as propriedades necessárias, como <code>label</code>, <code>align</code>, <code>id</code>, <code>name</code> e <code>maxLength</code>.</li>
+<li>A largura do campo de entrada é calculada com base no número máximo de caracteres permitidos e na largura estimada de cada caractere, garantindo que o layout do formulário seja responsivo e visualmente agradável.</li>
+</ul>
+<h2 id="referências">Referências</h2>
+<ul>
+<li><a href="../UiDmxScrollerForm.js">Código fonte</a></li>
+</ul>
+
+            
+            
+        </body>
+        </html>

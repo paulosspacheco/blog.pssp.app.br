@@ -40,10 +40,10 @@ export default class Dialog extends AbstractDialogs {
     
         this.dialog.innerHTML = '';
     
-        const header = document.createElement('div');
-        header.className = 'inputBox-dialog-header';
-        header.textContent = 'Seu Título Aqui';
-        this.dialog.appendChild(header);
+        // const header = document.createElement('div');
+        // header.className = 'inputBox-dialog-header';
+        // header.textContent = 'Seu Título Aqui';
+        // this.dialog.appendChild(header);
     
         if (this.form == null){
             this.form = this.addFieldsToTable(this.dialog, () => this.getPainel());         
@@ -186,15 +186,6 @@ export default class Dialog extends AbstractDialogs {
     
         return footerPanel;
     }
-
-    async openDialog() {
-        try {
-            const data = await this.executeDialog();
-            alert(`Captured data:\nName: ${data.name}\nAge: ${data.age}`);
-        } catch (error) {
-            alert('Error: ' + error);
-        }
-    }
         
     /**
      * Abre o diálogo modal.
@@ -213,10 +204,17 @@ export default class Dialog extends AbstractDialogs {
             if (overlay) {
                 overlay.style.display = 'block'; // Torna o overlay visível
             }
-            
-            
-  
         });
     }    
 
+}
+
+// Função assíncrona para abrir o diálogo forma modal
+export async function showModal(title, template) {
+    try {
+        const dialogData = await Dialog.showModal(title, template);
+        return dialogData;        
+    } catch (error) {
+        console.error('Erro:', error);
+    }
 }

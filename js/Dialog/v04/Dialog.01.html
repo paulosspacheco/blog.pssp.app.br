@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste UiDmxScrollerForm</title>
+    <title>Teste da classe default Dialog</title>
 
     <style>
         body {
@@ -105,50 +105,49 @@
             border-top: 1px solid #ccc; /* Linha superior para separação */
         }
            
-        </style>                
-    </head>
+        </style>      
+    
+
+
+</head>
 
 <body>
-    <div id="formContainer1"></div>
+    <h1>Example of Modal Dialog with Data Return</h1>
+    <button id="openDialogBtn">Open Dialog</button>
 
-    <div id="formContainer2"></div>    
+    <!-- Div para mostrar os dados capturados -->
+    <div id="output" class="output"></div>    
 
     <script type="module">
-        import { UiDmxScrollerForm } from './js/UiDmxScrollerForm.js';
+        import Dialog from './js/Dialogs.js';
+        //import {showModal} from './js/Dialogs.js';        
 
-        // Define o título e o template do formulário
-        const title = 'Teste UiDmxScrollerForm';
+        const title = 'Teste da classe default Dialog';  
+
         const template = `
-        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
-        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
-        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
-        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
-        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
-        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
-        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
-        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
-        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
-        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
-        ~ Nome do Aluno:~\\ssssssssssssssssssssssssssss^Bnome_do_aluno   \\ \\   ~ Idade:~\\sss^Bidade    ~Altura:~\\sss^Baltura 
-        ~      Endereço:~\\sssssssssssssssssssssssssssssssssss^Bendereco \\ \\   ~ Altura:~\\sss^Baltura  ~Altura:~\\sss^Baltura 
+            ~Nome do Aluno:~ \\ssssssssssssssssssssssssssss  ^Bnome_do_aluno 
+            ~Número~:        \\sssssss            ^Bnumero       
+            ~Endereço~:      \\ssssssssssssssssssssssssssssss^Bendereco      
+            ~Nome da Mãe~:   \\sssssssssssssssssss^Bnome_da_mae                           
+        `;
+
+
+        async function openDialog() {
+            try {
+                const dialogData = await Dialog.showModal(title, template);
+                console.log('Dados capturados:', dialogData);
+                
+                // Atualiza a div de saída com os dados capturados
+                document.getElementById('output').innerText = 'Dados capturados: ' + JSON.stringify(dialogData);
+            } catch (error) {
+                console.error('Erro:', error);
+            }
+        }        
         
-            `;
 
-        // Método estático para criar o formulário
-        UiDmxScrollerForm.createForm(title, template, document.getElementById('formContainer1'));
-
-        // Método estático para criar o formulário
-        UiDmxScrollerForm.createForm(title, template, document.getElementById('formContainer2'));        
+        // Adiciona evento ao botão
+        document.getElementById('openDialogBtn').addEventListener('click', openDialog);
     </script>
+    
 </body>
 </html>
-
-<!--         const template = `
-            ~Nome do Aluno:~\\ssssssssssssssssssssssssssss  ^Bnome_do_aluno 
-            ~Número:     ~\\sssssss            ^Bnumero       
-            ~Número:     ~\\sssssss            ^Bnumero 
-            ~Endereço:     ~\\ssssssssssssssssssssssssssssss^Bendereco      
-            ~Nome da Mãe:~\\sssssssssssssssssss^Bnome_da_mae               
-            \\     
-        `;
- -->

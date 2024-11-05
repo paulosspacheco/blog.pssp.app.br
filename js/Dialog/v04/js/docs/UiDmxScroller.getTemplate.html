@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Documenta&ccedil;&atilde;o do Interpretador de Template</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="documentação-do-interpretador-de-template">Documentação do Interpretador de Template</h1>
+<ul>
+<li><a href="#documenta%C3%A7%C3%A3o-do-interpretador-de-template">Documentação do Interpretador de Template</a>
+<ul>
+<li><a href="#introdu%C3%A7%C3%A3o">Introdução</a></li>
+<li><a href="#estrutura-do-template">Estrutura do Template</a>
+<ul>
+<li><a href="#delimitadores">Delimitadores</a></li>
+<li><a href="#alinhamento-do-label">Alinhamento do Label</a></li>
+<li><a href="#campos-de-entrada">Campos de Entrada</a></li>
+</ul>
+</li>
+<li><a href="#funcionamento-do-m%C3%A9todo-parsetemplate">Funcionamento do Método <code>parseTemplate</code></a></li>
+<li><a href="#exemplo-de-template">Exemplo de Template</a>
+<ul>
+<li><a href="#interpreta%C3%A7%C3%A3o-do-exemplo">Interpretação do Exemplo</a></li>
+</ul>
+</li>
+<li><a href="#conclus%C3%A3o">Conclusão</a></li>
+<li><a href="#refer%C3%AAncias">Referências</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="introdução">Introdução</h2>
+<p>Este documento fornece uma descrição detalhada da linguagem usada no método <code>parseTemplate</code>, que é um interpretador de templates. O método analisa um template de texto e extrai informações estruturadas a partir dele, organizando-as em um formato que pode ser utilizado posteriormente.</p>
+<h2 id="estrutura-do-template">Estrutura do Template</h2>
+<p>O template é composto por linhas de texto, onde cada linha pode conter labels e campos de entrada. A sintaxe do template é definida pelos seguintes elementos:</p>
+<h3 id="delimitadores">Delimitadores</h3>
+<ul>
+<li>
+<p><strong><code>~</code></strong>: Este caractere é usado para alternar entre a definição de um label e a entrada de um campo. Quando um <code>~</code> é encontrado, o interpretador alterna o estado de &quot;label&quot; para &quot;valor&quot; e vice-versa.</p>
+</li>
+<li>
+<p><strong><code>\</code></strong>: Este caractere é utilizado para indicar o início de um campo de entrada. Após a barra invertida, o interpretador espera encontrar a quantidade de caracteres que o campo deve suportar, seguida pela definição do campo.</p>
+</li>
+<li>
+<p><strong><code>^B</code></strong>: Este conjunto de caracteres indica o término da definição do tamanho do campo e o início do nome do campo. O nome do campo é extraído até o próximo espaço ou o final da linha.</p>
+</li>
+</ul>
+<h3 id="alinhamento-do-label">Alinhamento do Label</h3>
+<p>Os labels podem ter um alinhamento definido com base nos caracteres <code>:</code>:</p>
+<ul>
+<li><strong><code>:label:</code></strong>: O label é centralizado.</li>
+<li><strong><code>:label</code></strong>: O label é alinhado à esquerda.</li>
+<li><strong><code>label:</code></strong>: O label é alinhado à direita.</li>
+</ul>
+<h3 id="campos-de-entrada">Campos de Entrada</h3>
+<p>Os campos de entrada são definidos após a barra invertida e podem incluir:</p>
+<ul>
+<li>Um número de caracteres <code>s</code> que define o comprimento máximo do campo.</li>
+<li>Um nome de campo que é extraído após o delimitador <code>^B</code>.</li>
+</ul>
+<h2 id="funcionamento-do-método-parsetemplate">Funcionamento do Método <code>parseTemplate</code></h2>
+<p>O método <code>parseTemplate</code> processa o template da seguinte forma:</p>
+<ol>
+<li>
+<p><strong>Divisão em Linhas</strong>: O template é dividido em linhas com base no caractere de nova linha (<code>\n</code>).</p>
+</li>
+<li>
+<p><strong>Iteração sobre as Linhas</strong>: Cada linha é analisada individualmente. Linhas vazias são ignoradas.</p>
+</li>
+<li>
+<p><strong>Processamento de Caracteres</strong>:</p>
+<ul>
+<li>O método percorre cada caractere da linha, alterando entre estados de label e valor conforme necessário.</li>
+<li>Quando um <code>\</code> é encontrado, ele verifica a quantidade de caracteres <code>s</code> que seguem, que determina o comprimento máximo do campo.</li>
+<li>O nome do campo é extraído após o delimitador <code>^B</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adição de Campos</strong>: Quando um label e um campo são definidos, eles são adicionados a uma estrutura de dados (<code>currentLine</code>), que é então armazenada em um array (<code>this.fields</code>).</p>
+</li>
+<li>
+<p><strong>Reset de Variáveis</strong>: Após processar uma linha, as variáveis são redefinidas para garantir que os dados da próxima linha sejam processados corretamente.</p>
+</li>
+</ol>
+<h2 id="exemplo-de-template">Exemplo de Template</h2>
+<pre><code class="hljs language-plaintext">    ~   Nome:~ \ssssssssssssssssssssssssssssss^B nomeCompleto
+    ~  Idade: ~ \ss^B idadeUsuario
+    ~ Cidade: ~ \sssssssssssssss^B cidadeUsuario
+</code></pre>
+<h3 id="interpretação-do-exemplo">Interpretação do Exemplo</h3>
+<ul>
+<li>
+<p>Linha 1: ~ Nome: ~ \ssssssssssssssssssssssssssssss^B nomeCompleto</p>
+<ul>
+<li>Define um campo de entrada para &quot;Nome&quot; onde o rótulo Nome é alinhado pela direita.
+<ul>
+<li>O campo deve ter um comprimento máximo de 30 caracteres.</li>
+<li>O nome do campo será referenciado como nomeCompleto.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Linha 2: ~ Idade:~ \ss^B idadeUsuario</p>
+<ul>
+<li>Define um campo para &quot;Idade&quot; onde o rótulo Idade é alinhado pela direita.
+<ul>
+<li>O campo deve ter um comprimento máximo de 2 caracteres.</li>
+<li>O nome do campo será referenciado como idadeUsuario.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Linha 3: ~ Cidade ~ \sssssssssssssss^B cidadeUsuario</p>
+<ul>
+<li>Define um campo para &quot;Cidade&quot; onde o rótulo Cidade é alinhado pela direita.
+<ul>
+<li>O campo deve ter um comprimento máximo de 15 caracteres.</li>
+<li>O nome do campo será referenciado como cidadeUsuario.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="conclusão">Conclusão</h2>
+<p>O método parseTemplate é uma ferramenta poderosa para interpretar templates de texto, permitindo a definição de labels e campos de entrada de forma estruturada. A sintaxe é projetada para ser simples e intuitiva, facilitando a criação de templates personalizáveis. Esta documentação serve como um guia para entender e utilizar a linguagem do interpretador de templates.</p>
+<h2 id="referências">Referências</h2>
+<ul>
+<li><a href="../UiDmxScroller.js">código fonte</a></li>
+</ul>
+
+            
+            
+        </body>
+        </html>
