@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 100%; /* Permite que o corpo ocupe toda a largura */
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        textarea {
+            width: 100%; /* O textarea ocupa toda a largura disponível */
+            height: 200px; /* Altura fixa do textarea */
+            margin-top: 10px;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 14px;
+            white-space: pre; /* Permite que o texto seja exibido como está */
+            overflow-x: auto; /* Adiciona rolagem horizontal */
+            overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+            resize: vertical; /* Permite redimensionar verticalmente */
+            box-sizing: border-box; /* Inclui padding e borda na largura total */
+        }
+    </style>
+</head>
+<body>
+    <h1>Gerador de Template</h1>
+    <button id="generateButton">Gerar Template</button>
+    <textarea id="output" readonly></textarea>
+
+    <script>
+        class Example {
+            static jsonToTemplate(jsonData) {
+                let data;
+
+                // Tenta analisar o JSON e captura erros
+                try {
+                    data = JSON.parse(jsonData);
+                } catch (error) {
+                    console.error("Erro ao analisar JSON:", error);
+                    return "Erro: JSON inválido. Por favor, verifique a sintaxe.";
+                }
+
+                // Verifica se os dados são um array
+                if (!Array.isArray(data)) {
+                    return "Erro: Os dados devem ser um array.";
+                }
+
+                const resultLines = [];
+
+                data.forEach((row, rowIndex) => {
+                    // Verifica se cada linha é um array
+                    if (!Array.isArray(row)) {
+                        console.error(`Erro na linha ${rowIndex}: Esperado um array.`);
+                        return;
+                    }
+
+                    // Gera uma linha única para cada matriz de campos
+                    const template = row.map((field, fieldIndex) => {
+                        // Verifica se cada campo tem as propriedades necessárias
+                        if (typeof field.rotulo !== 'string' || 
+                            typeof field.size !== 'number' || 
+                            typeof field.fieldName !== 'string' ||
+                            typeof field.type !== 'string') {
+                            console.error(`Erro na linha ${rowIndex}, campo ${fieldIndex}: Estrutura do campo inválida.`, field);
+                            return "Erro: Campo inválido.";
+                        }
+
+                        // Gera a linha formatada usando field.type
+                        const spaces = field.type.repeat(field.size); // Usa field.type para gerar os espaços
+                        return `~${field.rotulo}:~ \\${spaces} ^B${field.fieldName}`;
+                    }).join(' '); // Usa um espaço para separar os campos na mesma linha
+
+                    resultLines.push(template);
+                });
+
+                return resultLines.join('\n'); // Retorna todas as linhas unidas
+            }
+        }
+
+        // Estrutura do JSON com a nova propriedade 'type'
+        const jsom = [
+        [
+            {
+                rotulo: "Nome do Aluno", // Label
+                size: 30,               // Tamanho do espaço
+                fieldName: "nome_do_aluno", // Nome do campo
+                type: "s"               // Tipo do campo (usando 's' para string)
+            },
+            {
+                rotulo: "Número", 
+                size: 7, 
+                fieldName: "numero",
+                type: "n"               // Tipo do campo (usando 'n' para number)
+            },
+            {
+                rotulo: "Endereço", 
+                size: 30, 
+                fieldName: "endereco",
+                type: "s"               // Tipo do campo (usando 's' para string)
+            },
+            {
+                rotulo: "Nome da Mãe", 
+                size: 20, 
+                fieldName: "nome_da_mae",
+                
+                type: "s"               // Tipo do campo (usando 's' para string)
+            }
+        ],
+        [
+        {
+            rotulo: "Nome do Aluno", // Label
+            size: 30,               // Tamanho do espaço
+            fieldName: "nome_do_aluno", // Nome do campo
+            type: "s"               // Tipo do campo (usando 's' para string)
+        },
+        {
+            rotulo: "Número", 
+            size: 7, 
+            fieldName: "numero",
+            type: "n"               // Tipo do campo (usando 'n' para number)
+        },
+        {
+            rotulo: "Endereço", 
+            size: 30, 
+            fieldName: "endereco",
+            type: "s"               // Tipo do campo (usando 's' para string)
+        },
+        {
+            rotulo: "Nome da Mãe", 
+            size: 20, 
+            fieldName: "nome_da_mae",
+            
+            type: "s"               // Tipo do campo (usando 's' para string)
+        }
+       ],
+
+       [
+       {
+           rotulo: "Nome do Aluno", // Label
+           size: 30,               // Tamanho do espaço
+           fieldName: "nome_do_aluno", // Nome do campo
+           type: "s"               // Tipo do campo (usando 's' para string)
+       },
+       {
+           rotulo: "Número", 
+           size: 7, 
+           fieldName: "numero",
+           type: "n"               // Tipo do campo (usando 'n' para number)
+       },
+       {
+           rotulo: "Endereço", 
+           size: 30, 
+           fieldName: "endereco",
+           type: "s"               // Tipo do campo (usando 's' para string)
+       },
+       {
+           rotulo: "Nome da Mãe", 
+           size: 20, 
+           fieldName: "nome_da_mae",
+           
+           type: "s"               // Tipo do campo (usando 's' para string)
+       }
+     ]
+
+
+        
+        ];
+
+        // Converte jsom para uma string JSON
+        const jsonData = JSON.stringify(jsom);
+
+        document.getElementById("generateButton").addEventListener("click", function() {
+            const result = Example.jsonToTemplate(jsonData);
+            document.getElementById("output").value = result;
+        });
+    </script>
+</body>
+</html>                

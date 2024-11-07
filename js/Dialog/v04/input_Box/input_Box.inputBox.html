@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste InputBox</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h1>Teste do InputBox</h1>
+    <button id="showInputBoxBtn">Mostrar InputBox</button>
+
+    <script type="module">
+        import { InputBox } from './js/input_Box.js'; // Certifique-se de que o caminho esteja correto
+            const title = 'Formulário de Exemplo';            
+            
+// const inputBoxTemplate = 
+//             `
+//              ~Nome do Aluno:~\\ssssssssssssssssssssssssssss  ^Bnome_do_aluno ~Número:     ~\\sssssss            ^Bnumero           
+//              ~Endereço:     ~\\ssssssssssssssssssssssssssssss^Bendereco      ~nome da mãe:~\\sssssssssssssssssss^Bnome_da_mae
+//                              \\                                              ~Idade:      ~\\sss^Bidade                                           
+//             `;
+            
+
+            const inputBoxTemplate = 
+            `
+             ~Nome do Aluno:~\\ssssssssssssssssssssssssssss  ^Bnome_do_aluno
+            `;
+
+            // Chamar o método estático inputBox
+            InputBox.inputBox(title, inputBoxTemplate).then(result => {
+                console.log("Resultado final:", result); // Exibe o JSON no console
+            });              
+    </script>
+</body>
+</html>

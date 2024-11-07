@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Geração de Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+        button {
+            margin-top: 10px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap; /* Mantém a formatação do texto */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Gerador de Template a partir de JSON</h1>
+
+<h2>Insira o JSON:</h2>
+<textarea id="jsonInput">
+[
+    [
+        {
+          "rotulo": "rotulo1",
+          "size": 5,
+          "fieldName": "fieldName1",
+          "tipo": "s"
+        },
+        {
+          "rotulo": "rotulo2",
+          "size": 3,
+          "fieldName": "fieldName2",
+          "tipo": "i"
+        }
+    ],
+    [
+        {
+          "rotulo": "rotulo1",
+          "size": 5,
+          "fieldName": "fieldName1",
+          "tipo": "s"
+        },
+        {
+          "rotulo": "rotulo2",
+          "size": 3,
+          "fieldName": "fieldName2",
+          "tipo": "i"
+        }
+    ]
+]
+</textarea>
+
+<button onclick="generateAndDisplayTemplate()">Gerar Template</button>
+
+<h2>Resultado:</h2>
+<pre id="resultOutput"></pre>
+
+<script>
+
+    function generateTemplate(jsonData) {
+        let data;
+    
+        // Tenta analisar o JSON e captura erros
+        try {
+            data = JSON.parse(jsonData);
+        } catch (error) {
+            console.error("Erro ao analisar JSON:", error);
+            return "Erro: JSON inválido. Por favor, verifique a sintaxe.";
+        }
+    
+        // Verifica se os dados são um array
+        if (!Array.isArray(data)) {
+            return "Erro: Os dados devem ser um array.";
+        }
+    
+        const resultLines = [];
+    
+        data.forEach((row, rowIndex) => {
+            // Verifica se cada linha é um array
+            if (!Array.isArray(row)) {
+                console.error(`Erro na linha ${rowIndex}: Esperado um array.`);
+                return;
+            }
+    
+            const template = row.map((field, fieldIndex) => {
+                // Verifica se cada campo tem as propriedades necessárias
+                if (typeof field.rotulo !== 'string' || 
+                    typeof field.size !== 'number' || 
+                    typeof field.fieldName !== 'string') {
+                    console.error(`Erro na linha ${rowIndex}, campo ${fieldIndex}: Estrutura do campo inválida.`, field);
+                    return "Erro: Campo inválido.";
+                }
+    
+                // Modificado para incluir duas barras invertidas
+                return `~${field.rotulo}~\\\\${'s'.repeat(field.size)}^B${field.fieldName}`;
+            }).join(' ');
+    
+            resultLines.push(template);
+        });
+    
+        return resultLines.join('\n');
+    }
+
+function generateAndDisplayTemplate() {
+    const jsonInput = document.getElementById('jsonInput').value;
+    const output = generateTemplate(jsonInput);
+    document.getElementById('resultOutput').textContent = output;
+}
+</script>
+
+</body>
+</html>

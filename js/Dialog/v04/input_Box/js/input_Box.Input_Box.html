@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>export class InputBox</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="export-class-inputbox">export class InputBox</h1>
+<ul>
+<li><a href="#export-class-inputbox">export class InputBox</a>
+<ul>
+<li><a href="#construtor">Construtor</a></li>
+<li><a href="#m%C3%A9todo-parsetemplate">Método <code>parseTemplate</code></a></li>
+<li><a href="#m%C3%A9todo-onokbuttonclick">Método <code>onOkButtonClick</code></a></li>
+<li><a href="#m%C3%A9todo-showinputbox">Método <code>showInputBox</code></a></li>
+<li><a href="#m%C3%A9todo-inputbox">Método <code>inputBox</code></a></li>
+<li><a href="#refer%C3%AAncias">REFERÊNCIAS</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="construtor">Construtor</h2>
+<ul>
+<li>
+<p><strong>Descrição</strong></p>
+<ul>
+<li>O construtor da classe <code>InputBox</code> inicializa uma instância para criar uma caixa de entrada com campos definidos em um modelo de texto.</li>
+<li>Ao criar uma nova instância de InputBox, o construtor executa as seguintes operações:
+<ol>
+<li>Inicialização dos Campos: A propriedade fields é definida como uma lista vazia ([]), que será preenchida posteriormente com os campos processados pelo método parseTemplate.</li>
+<li>Armazenamento do Título: Atribui o valor de title ao atributo title da instância, para ser exibido no cabeçalho da caixa de entrada.</li>
+<li>Processamento do Modelo (template): O modelo é dividido em linhas, e o método parseTemplate é chamado para processá-las, populando fields com os dados dos campos.</li>
+<li>Inclusão Dinâmica de CSS: Verifica se o arquivo de estilo input_Box.css já está incluído no documento. Caso não esteja, ele é adicionado dinamicamente com o método includeCSS da classe MiMethods.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Parâmetros</strong></p>
+<ol>
+<li>
+<p>title (string): Define o título da caixa de entrada. Este valor é armazenado na propriedade title.</p>
+</li>
+<li>
+<p>template (string): Modelo de texto contendo a lista de campos, onde cada linha representa um campo de entrada.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Sintaxe</strong></p>
+<pre><code class="hljs language-javascript">
+   <span class="hljs-keyword">const</span> title = <span class="hljs-string">'Cadastro'</span>;
+   <span class="hljs-keyword">const</span> template = 
+      <span class="hljs-string">`
+      ~Nome do Aluno:~\\ssssssssssssssssssssssssssss  ^Bnome_do_aluno ~Número:     ~\\sssssss^Bnumero
+      ~Endereço:     ~\\ssssssssssssssssssssssssssssss^Bendereco      ~nome da mãe:~\\sssssssssssssssssss^Bnome_da_mae
+                      \\                                              ~Idade:      ~\\sss^Bidade
+      `</span>;
+
+   <span class="hljs-keyword">const</span> inputBox = <span class="hljs-keyword">new</span> InputBox(title, template);<span class="hljs-comment">//Executa constructor(title, template)</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Observações</strong></p>
+<ul>
+<li>O arquivo CSS <code>input_Box.css</code> precisa estar localizado no caminho relativo <code>../css/input_Box.css</code>.</li>
+<li>O método <code>parseTemplate</code> é responsável por interpretar o template e adicionar os campos à propriedade fields.</li>
+<li>O método <code>MiMethods.includeCSS</code> deve estar implementado no projeto para permitir a inclusão dinâmica do CSS.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="método-parsetemplate">Método <code>parseTemplate</code></h2>
+<ul>
+<li><strong>Descrição:</strong></li>
+</ul>
+<p>Este método analisa uma string de template e extrai informações sobre os campos a serem preenchidos, construindo uma estrutura de dados que descreve cada campo.</p>
+<ul>
+<li>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>template</code> (string): A string de template a ser analisada.</li>
+</ul>
+</li>
+<li>
+<p><strong>Retorno:</strong></p>
+<ul>
+<li>Um array de arrays, onde cada array interno representa uma linha do template e contém objetos que descrevem os campos daquela linha.</li>
+</ul>
+</li>
+<li>
+<p><strong>Estrutura de Dados de Retorno:</strong></p>
+<ul>
+<li>Cada objeto dentro do array de linhas possui as seguintes propriedades:
+<ul>
+<li><code>label</code> (string): O rótulo do campo.</li>
+<li><code>maxLength</code> (number): O tamanho máximo do valor do campo.</li>
+<li><code>align</code> (string): O alinhamento do campo ('left', 'right' ou 'center').</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Lógica do Método:</strong></p>
+<ol>
+<li><strong>Divisão em Linhas:</strong> A string de template é dividida em linhas para facilitar a análise.</li>
+<li><strong>Análise de Caracteres:</strong> Cada caractere da linha é analisado:
+<ul>
+<li><code>~</code>: Alterna entre a definição do rótulo e do valor.</li>
+<li><code>\</code>: Indica o início de um campo e o número de caracteres que ele pode conter.</li>
+<li>Outros caracteres: São adicionados ao rótulo se estivermos dentro de uma seção de rótulo.</li>
+</ul>
+</li>
+<li><strong>Construção da Estrutura de Dados:</strong> À medida que os campos são identificados, seus detalhes são adicionados a um objeto e este objeto é adicionado ao array de linhas.</li>
+<li><strong>Alinhamento:</strong> O alinhamento do campo é determinado pela presença de dois pontos (<code>:</code>) no rótulo.</li>
+</ol>
+</li>
+<li>
+<p><strong>Exemplo de Uso:</strong></p>
+<pre><code class="hljs language-javascript">
+   <span class="hljs-keyword">const</span> inputBoxTemplate = 
+      <span class="hljs-string">`
+      ~Nome do Aluno:~\\ssssssssssssssssssssssssssss  ^Bnome_do_aluno ~Número:     ~\\sssssss^Bnumero
+      ~Endereço:     ~\\ssssssssssssssssssssssssssssss^Bendereco      ~nome da mãe:~\\sssssssssssssssssss^Bnome_da_mae
+                      \\                                              ~Idade:      ~\\sss^Bidade
+      `</span>;
+
+   <span class="hljs-keyword">const</span> parser = <span class="hljs-keyword">new</span> Parser(); <span class="hljs-comment">// Assumindo que 'Parser' é a classe que contém este método</span>
+   parser.parseTemplate(inputBoxTemplate);
+
+   <span class="hljs-built_in">console</span>.log(parser.fields);
+   
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="método-onokbuttonclick">Método <code>onOkButtonClick</code></h2>
+<ul>
+<li>
+<p><strong>Descrição</strong></p>
+<ul>
+<li>Este método, <code>onOkButtonClick</code>, pertence a uma classe JavaScript (não nomeada no exemplo) e é usado para coletar os valores dos campos em um formulário estruturado, organizar os dados em um objeto e retornar esses valores quando o botão &quot;OK&quot; é clicado. O método fecha a caixa de diálogo (representada pelo <code>overlay</code>) e resolve uma promessa com os dados coletados.</li>
+</ul>
+</li>
+<li>
+<p><strong>Assinatura do Método</strong></p>
+<pre><code class="hljs language-javascript">   onOkButtonClick(overlay, resolve)
+</code></pre>
+</li>
+<li>
+<p><strong>Parâmetros</strong></p>
+<ul>
+<li><strong>overlay</strong>: Elemento do tipo <code>HTMLDivElement</code>, que representa a camada de sobreposição (caixa de diálogo) a ser removida da página ao concluir a coleta dos dados.</li>
+<li><strong>resolve</strong>: Função de callback para resolver uma promessa com os valores coletados dos campos do formulário.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fluxo de Execução</strong></p>
+<ol>
+<li>
+<p><strong>Inicialização de <code>inputValues</code></strong>: Um objeto vazio é criado para armazenar os valores dos campos do formulário, onde a chave será o <code>name</code> do campo e o valor será o valor do campo.</p>
+</li>
+<li>
+<p><strong>Função <code>processField</code></strong>:</p>
+<ul>
+<li>Recebe um campo, índice da linha e índice do campo como parâmetros.</li>
+<li>Define um <code>id</code> padrão para o campo caso ele não tenha um <code>id</code> definido.</li>
+<li>Obtém o elemento <code>input</code> correspondente no DOM.</li>
+<li>Se o campo existe e possui um <code>name</code> definido, armazena o valor no objeto <code>inputValues</code> com a chave sendo o <code>name</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Função <code>processLine</code></strong>:</p>
+<ul>
+<li>Recebe uma linha de campos e seu índice, então itera sobre os campos chamando <code>processField</code> para processar cada um deles.</li>
+</ul>
+</li>
+<li>
+<p><strong>Iteração sobre as linhas</strong>:</p>
+<ul>
+<li>Utiliza <code>this.fields</code> (assumido como uma matriz de linhas do formulário), iterando sobre cada linha e chamando <code>processLine</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fechamento e Resolução</strong>:</p>
+<ul>
+<li>Remove o elemento <code>overlay</code> do DOM.</li>
+<li>Chama <code>resolve(inputValues)</code> para retornar os valores coletados.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Exemplo de Uso</strong></p>
+<ul>
+<li>Este método é tipicamente chamado quando um botão de confirmação (como &quot;OK&quot;) é pressionado em uma caixa de diálogo. Pode ser utilizado em contextos onde a coleta e envio dos dados do formulário são essenciais para a próxima etapa do fluxo.</li>
+</ul>
+</li>
+<li>
+<p><strong>Exemplo de Código</strong></p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">// Exemplo de chamada ao método onOkButtonClick:</span>
+<span class="hljs-keyword">const</span> overlay = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'div'</span>); <span class="hljs-comment">// Exemplo de elemento de sobreposição</span>
+<span class="hljs-keyword">const</span> fields = [
+   [{ <span class="hljs-attr">id</span>: <span class="hljs-string">'campo1'</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'nome'</span> }],
+   [{ <span class="hljs-attr">id</span>: <span class="hljs-string">'campo2'</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'email'</span> }]
+];
+
+<span class="hljs-keyword">const</span> myClassInstance = <span class="hljs-keyword">new</span> MyClass(fields); <span class="hljs-comment">// Presume-se que a classe contenha o método onOkButtonClick</span>
+
+myClassInstance.onOkButtonClick(overlay, (data) =&gt; {
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Dados coletados:'</span>, data);
+});
+</code></pre>
+</li>
+<li>
+<p>Considerações Adicionais</p>
+<ul>
+<li><strong>Modularidade</strong>: A divisão em funções auxiliares (<code>processField</code> e <code>processLine</code>) torna o código mais modular e facilita a manutenção.</li>
+<li><strong>Flexibilidade do Campo</strong>: O método garante que cada campo tenha um <code>id</code> e um <code>name</code>, proporcionando mais flexibilidade na estrutura de dados e evitando erros de referência.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="método-showinputbox">Método <code>showInputBox</code></h2>
+<ul>
+<li>
+<p>Cria uma caixa de diálogo com base no array de campos <code>this.fields</code>, exibindo um formulário dinâmico com os campos especificados. Esse método é útil para coletar dados do usuário e possui botões de confirmação e cancelamento.</p>
+</li>
+<li>
+<p><strong>Descrição</strong></p>
+<ul>
+<li>
+<p>O método <code>showInputBox</code> cria uma sobreposição (<code>overlay</code>) com uma caixa de diálogo contendo:</p>
+<ol>
+<li>Um título.</li>
+<li>Campos dinâmicos definidos no array <code>this.fields</code>.</li>
+<li>Botões de confirmação (&quot;OK&quot;) e cancelamento (&quot;Cancelar&quot;).</li>
+</ol>
+</li>
+<li>
+<p>Quando o usuário confirma (clicando em &quot;OK&quot;), a função <code>resolve</code> é chamada para capturar os dados. Ao cancelar, a função retorna <code>null</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Parâmetros</strong></p>
+<ul>
+<li><strong>resolve</strong>: <code>Function</code> — Função que recebe o resultado da interação do usuário com a caixa de diálogo. Resolve com os dados preenchidos se &quot;OK&quot; for clicado, ou <code>null</code> se &quot;Cancelar&quot; for escolhido.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fluxo de Execução</strong></p>
+<ol>
+<li><strong>Criação do overlay</strong>: Uma <code>div</code> de sobreposição (<code>overlay</code>) é criada para bloquear a interface de fundo enquanto a caixa de diálogo é exibida.</li>
+<li><strong>Construção da caixa de diálogo</strong>:
+<ul>
+<li>Cria o elemento <code>form</code> com a classe <code>inputBox-dialog-box</code> para estilização da caixa de diálogo.</li>
+</ul>
+</li>
+<li><strong>Configuração do título</strong>:
+<ul>
+<li>O título do diálogo é inserido no elemento <code>h2</code>, utilizando o valor <code>this.title</code>.</li>
+</ul>
+</li>
+<li><strong>Instanciação do contêiner de campos</strong>:
+<ul>
+<li>Um objeto <code>FormFieldsContainer</code> é criado para gerenciar os campos de entrada.</li>
+<li>Para cada elemento em <code>this.fields</code>, adiciona uma linha de campo no contêiner.</li>
+<li>Ajusta a largura das colunas com <code>adjustColumnWidths</code>.</li>
+</ul>
+</li>
+<li><strong>Adição de botões de controle</strong>:
+<ul>
+<li>Cria uma <code>div</code> para conter os botões.</li>
+<li>Cria um botão <strong>OK</strong>:
+<ul>
+<li>Ao clicar, chama o método <code>onOkButtonClick</code> que remove o <code>overlay</code> e chama <code>resolve</code> com os dados preenchidos.</li>
+</ul>
+</li>
+<li>Cria um botão <strong>Cancelar</strong>:
+<ul>
+<li>Ao clicar, remove o <code>overlay</code> e chama <code>resolve</code> com <code>null</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Adição à árvore DOM</strong>:
+<ul>
+<li>Insere o contêiner de campos e o contêiner de botões na caixa de diálogo <code>form</code>.</li>
+<li>Insere o formulário na sobreposição <code>overlay</code> e o adiciona ao <code>body</code> da página.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Estilização</strong></p>
+<ul>
+<li><strong>Classes CSS utilizadas</strong>:
+<ul>
+<li><code>inputBox-dialog-overlay</code>: para a sobreposição de fundo.</li>
+<li><code>inputBox-dialog-box</code>: para a caixa de diálogo.</li>
+<li><code>inputBox-dialog-button-container</code>: para o contêiner dos botões.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Ver Também</strong></p>
+<ul>
+<li>Método <code>onOkButtonClick</code>: Processa a confirmação do usuário.</li>
+<li>Classe <code>FormFieldsContainer</code>: Manipula e estrutura os campos de entrada na caixa de diálogo.</li>
+</ul>
+</li>
+<li>
+<p><strong>Exceções</strong></p>
+<ul>
+<li>Nenhuma exceção específica é tratada neste método. A remoção do <code>overlay</code> e a resolução de <code>resolve</code> garantem que o diálogo sempre será descartado corretamente.</li>
+</ul>
+</li>
+<li>
+<p><strong>Exemplo de Uso</strong></p>
+<pre><code class="hljs language-javascript">   <span class="hljs-keyword">const</span> dialog = <span class="hljs-keyword">new</span> MyDialogClass(fieldsArray, title);
+   dialog.showInputBox(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (result !== <span class="hljs-literal">null</span>) {
+         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Dados recebidos:"</span>, result);
+      } <span class="hljs-keyword">else</span> {
+         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Usuário cancelou a entrada de dados."</span>);
+      }
+   });
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="método-inputbox">Método <code>inputBox</code></h2>
+<p><strong>Descrição:</strong></p>
+<p>Este método estático cria uma nova instância de <code>InputBox</code> e exibe uma caixa de diálogo para entrada de dados, retornando uma <code>Promise</code> que é resolvida com os valores de entrada fornecidos pelo usuário.</p>
+<p><strong>Parâmetros:</strong></p>
+<ol>
+<li><code>title</code> (string): O título que será exibido na caixa de diálogo.</li>
+<li><code>template</code> (string): O template que define os campos a serem preenchidos na entrada de dados.</li>
+</ol>
+<p><strong>Retorno:</strong></p>
+<p>Uma <code>Promise</code> que é resolvida com um objeto contendo os valores de entrada do usuário quando ele clica no botão &quot;OK&quot; ou <code>null</code> se o usuário cancelar a operação.</p>
+<p><strong>Lógica do Método:</strong></p>
+<ol>
+<li>
+<p><strong>Criação da Instância:</strong>
+Cria uma nova instância da classe <code>InputBox</code>, passando o <code>title</code> e o <code>template</code> como argumentos.</p>
+</li>
+<li>
+<p><strong>Exibição da Caixa de Diálogo:</strong>
+Chama o método <code>showInputBox</code> da instância de <code>InputBox</code>, passando a função <code>resolve</code> para que os valores de entrada possam ser retornados quando o usuário interagir com a caixa.</p>
+</li>
+</ol>
+<p><strong>Exemplo de Uso:</strong></p>
+<pre><code class="hljs language-javascript">
+   InputBox.inputBox(<span class="hljs-string">'Título da Entrada'</span>, <span class="hljs-string">'Template de Campos'</span>).then(<span class="hljs-function">(<span class="hljs-params">inputValues</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (inputValues) {
+         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Valores de entrada:'</span>, inputValues);
+      } <span class="hljs-keyword">else</span> {
+         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Entrada cancelada pelo usuário.'</span>);
+      }
+   });
+
+</code></pre>
+<hr>
+<h2 id="referências">REFERÊNCIAS</h2>
+<ol>
+<li><a href="https://chatgpt.com/share/6720ced6-5818-8004-a79c-255ef4562a56">Chatgpt</a></li>
+<li><a href="./input_Box.js">Código fonte</a></li>
+</ol>
+
+            
+            
+        </body>
+        </html>

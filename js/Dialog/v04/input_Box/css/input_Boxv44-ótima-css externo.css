@@ -1,4 +1,4 @@
-/* input_Box.css */
+
 
 /* @import url('./color_tons_de_cinza.css'); */
 /* @import url('./color_tons_dark.css'); */
@@ -7,6 +7,7 @@
 /* @import url('./color_tons_de_verde_claro.css'); */
 /* @import url('./color_tons_amarelo.css'); */
 @import url('./color_tons_de_lilas_claro.css');
+
 
 /* Estilo para o overlay da caixa de diálogo */
 .inputBox-dialog-overlay {
@@ -28,7 +29,7 @@
 /* Estilo para a caixa de diálogo */
 .inputBox-dialog-box {
     max-width: 600px; /* Define a largura máxima da caixa de diálogo, evitando que ela ultrapasse 600 pixels de largura.*/
-    width: 100%; /*Define que a caixa de diálogo ocupará 100% da largura do contêiner pai, até o limite de max-width. */                
+    width: 100%; /*Define que a caixa de diálogo ocupará 100% da largura do contêiner pai, até o limite de `max-width`. */                
     overflow: hidden; /* Garante que o conteúdo que exceder o contêiner principal seja ocultado. */
     overflow-y: auto; /* Permite a rolagem vertical, útil se o conteúdo ultrapassar a altura máxima definida. */
     overflow-x: auto; /* Permite a rolagem horizontal, evitando o corte de conteúdo em dispositivos menores.*/    
@@ -56,17 +57,17 @@
 /* Estilo para a linha de campos */
 .inputBox-dialog-form-row {
     display: grid; /* Usando grid para alinhar rótulos e entradas */
-    /* grid-template-columns: auto 1fr; 2 colunas: auto para o rótulo e 1fr para o input */
+    grid-template-columns: auto 1fr; /* 2 colunas: auto para o rótulo e 1fr para o input */
+    /* align-items: center; Alinha verticalmente no centro */
     margin-bottom: 15px; /* Espaçamento entre as linhas de campos */
+    /* display: contents; Permite que o grid funcione corretamente dentro de cada linha     */
+    /* display: flex;                    Coloca os campos em linha */
+    /* justify-content: space-between;   Distribui espaço entre rótulos e inputs */
     align-items: center;              /* Alinha os itens verticalmente ao centro */    
-    /* display: flex; */
+    display: flex;
     justify-content: space-between;
     width: 100%; /* Garante que cada linha ocupe toda a largura disponível */    
-    display: grid;    
-    grid-template-columns: auto minmax(min-content, 1fr);    
-    gap: 10px;    
 }
-
 
 /* Estilo para os rótulos */
 .inputBox-dialog-form-row label {
@@ -94,13 +95,9 @@
 .inputBox-dialog-form-row input {
     padding: 8px; /* – Adiciona espaçamento interno ao redor do conteúdo do campo, aumentando a área clicável e melhorando a usabilidade. */    
     border-radius: 4px; /* – Adiciona bordas levemente arredondadas, proporcionando um visual mais suave e moderno. */
-    /* width: 100%; – Faz com que o campo ocupe toda a largura do contêiner pai, adaptando-se bem ao layout do formulário. */
-    box-sizing: border-box; /* – Inclui o padding e a border no cálculo da largura total do campo, evitando que o campo extrapole o contêiner */
+    width: 100%; /* – Faz com que o campo ocupe toda a largura do contêiner pai, adaptando-se bem ao layout do formulário. */
+    box-sizing: border-box; /* – Inclui o `padding` e a `border` no cálculo da largura total do campo, evitando que o campo extrapole o contêiner */
     flex-shrink: 0; /* Esta propriedade impede que o campo de entrada (input) reduza seu tamanho quando o contêiner flexível possui pouco espaço disponível. Mantém o tamanho dos campos estável, mesmo em layouts adaptáveis. */        
-    /* min-width: 150px;     */
-    width: fit-content; /* Expande conforme o conteúdo */    
-    max-width: 200px;    /* Limita o crescimento a 200px ou ajuste conforme necessário */    
-    min-width: 50px;     /* Define uma largura mínima confortável */    
 }
 
 /* Estilo para o container de cada campo */
@@ -129,26 +126,11 @@
     text-align: right; /* Alinhamento à direita */
 }
 
-/* Div para limitar o tamanho da área visível da tabela */
-.inputBox-table-container {
-    width: 100%;
-    max-width: 1500px; /* Limite máximo */
-    height: 800px;
-    overflow: auto;
-    border: 1px solid #ccc;
-    margin-top: 20px;
-}
-
 /* Estilo para o contêiner de botões */
 .inputBox-dialog-button-container {
     display: flex; /* Usado para alinhar os botões em linha */
     justify-content: space-between; /* Espaço entre os botões */
     margin-top: 10px; /* Espaçamento acima dos botões */
-}
-
-.inputBox-dialog-button {
-    padding: 10px 15px;
-    margin-left: 10px; /* Espaçamento entre os botões */
 }
 
 /* Estilo para o título */
@@ -158,42 +140,7 @@
     text-align: center; /* Centraliza o texto do título dentro do contêiner, criando um visual harmonioso e centralizado. */
 }
 
-.inputBox-table {
-    border-collapse: collapse;
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: auto;
-}
 
-/* Estilos para th e td dentro da tabela com a classe inputBox-table */
-.inputBox-table th, 
-.inputBox-table td {
-    border: none;
-    padding: 8px;
-    text-align: left;
-    overflow: hidden;
-}
 
-/* Estilo para os labels e inputs dentro da tabela */
-.inputBox-table label {
-    display: block;
-    margin-bottom: 5px;
-}
 
-.inputBox-table input {
-    box-sizing: border-box;
-    overflow: auto;
-    white-space: nowrap;
-    width: 100%; /* Ajusta a largura do input para preencher a célula */
-}
 
-/* Classes de alinhamento */
-.align-left {
-    text-align: left;
-}
-.align-center {
-    text-align: center;
-}
-.align-right {
-    text-align: right;
-}

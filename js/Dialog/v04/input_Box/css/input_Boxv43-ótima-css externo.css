@@ -1,0 +1,245 @@
+/* Estilo para o overlay da caixa de diálogo */
+.inputBox-dialog-overlay {
+    position: fixed; /* Fixa o overlay na tela */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    display: flex; /* Usado para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    z-index: 1000; /* Coloca o overlay acima de outros elementos */
+}
+
+
+
+/* Estilo para a caixa de diálogo */
+.inputBox-dialog-box {
+    max-width: 600px;                /* Define a largura máxima do formulário */
+    overflow-y: auto;                /* Permite a rolagem vertical se o conteúdo exceder a altura */
+    overflow-x: auto;
+    max-height: 80vh;                /* Limita a altura máxima da caixa de diálogo */
+    padding: 20px;                   /* Adiciona algum espaço interno */
+    border: 1px solid #ccc;          /* Adiciona uma borda ao redor da caixa de diálogo */
+    border-radius: 5px;              /* Arredonda os cantos da borda */
+    background-color: white;          /* Define a cor de fundo */
+}
+
+/* Estilo para o título */
+.inputBox-dialog-box h2 {
+    margin: 0 0 15px; /* Margem embaixo do título */
+    font-size: 20px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto do título */
+}
+
+/* Estilo para a linha de campos */
+.inputBox-dialog-form-row {
+    display: grid; /* Usando grid para alinhar rótulos e entradas */
+    grid-template-columns: auto 1fr; /* 2 colunas: auto para o rótulo e 1fr para o input */
+    align-items: center; /* Alinha verticalmente no centro */
+    margin-bottom: 15px; /* Espaçamento entre as linhas de campos */
+}
+
+
+/* Estilo para os rótulos */
+.inputBox-dialog-form-row label {
+    font-weight: bold; /* Rótulos em negrito */
+    margin-right: 10px; /* Margem à direita dos rótulos */
+}
+
+
+/* Estilo para os campos de entrada */
+.inputBox-dialog-form-row input {
+    padding: 8px; /* Espaçamento interno nos campos de entrada */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 4px; /* Bordas arredondadas nos campos */
+    width: 100%; /* Largura total do contêiner */
+    box-sizing: border-box; /* Inclui padding e border no cálculo de largura */
+}
+
+/* Estilo para o contêiner de botões */
+.inputBox-dialog-button-container {
+    display: flex; /* Usado para alinhar os botões em linha */
+    justify-content: space-between; /* Espaço entre os botões */
+    margin-top: 20px; /* Espaçamento acima dos botões */
+}
+
+/* Estilo para os botões */
+.inputBox-dialog-button-container button {
+    padding: 10px 15px; /* Espaçamento interno dos botões */
+    border: none; /* Remove a borda padrão */
+    border-radius: 4px; /* Bordas arredondadas nos botões */
+    cursor: pointer; /* Cursor em forma de ponteiro ao passar sobre o botão */
+    transition: background-color 0.3s; /* Transição suave para a mudança de cor de fundo */
+}
+
+/* Efeito de hover nos botões */
+.inputBox-dialog-button-container button:hover {
+    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para o botão OK */
+.inputBox-dialog-button-container button:nth-child(1) {
+    background-color: #4CAF50; /* Verde */
+    color: white; /* Texto branco */
+}
+
+/* Estilo para o botão Cancelar */
+.inputBox-dialog-button-container button:nth-child(2) {
+    background-color: #f44336; /* Vermelho */
+    color: white; /* Texto branco */
+}
+
+/* Efeito de hover específico para o botão OK */
+.inputBox-dialog-button-container button:nth-child(1):hover {
+    background-color: #45a049; /* Verde escuro ao passar o mouse */
+}
+
+/* Efeito de hover específico para o botão Cancelar */
+.inputBox-dialog-button-container button:nth-child(2):hover {
+    background-color: #e53935; /* Vermelho escuro ao passar o mouse */
+}
+
+/* Estilo para o contêiner de campos */
+.inputBox-dialog-form-fields {
+    display: grid;                    /* Define o contêiner como grid */
+    gap: 10px;                        /* Espaçamento entre as colunas */
+    align-items: center;              /* Alinha os itens verticalmente ao centro */
+    overflow-x: auto;                 /* Adiciona rolagem horizontal se necessário */
+    max-height: 60vh;                /* Limita a altura máxima do contêiner de campos */
+}
+
+.inputBox-dialog-form-row {
+    display: contents; /* Permite que o grid funcione corretamente dentro de cada linha */
+}
+
+.align-left {
+    text-align: left; /* Alinhamento à esquerda */
+}
+
+.align-right {
+    text-align: right; /* Alinhamento à direita */
+}
+
+/* Estilizando rótulos e inputs */
+label {
+    white-space: nowrap; /* Impede quebra de linha nos rótulos */
+}
+
+input {
+    width: 100%; /* Os inputs ocuparão toda a largura da coluna */
+    box-sizing: border-box; /* Garante que o padding e border estejam dentro da largura definida */
+}
+
+/* Estilo geral para o contêiner do overlay */
+.inputBox-dialog-overlay {
+    position: fixed; /* Fica fixo na tela */
+    top: 0; /* Fica no topo da tela */
+    left: 0; /* Fica à esquerda */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    display: flex; /* Para centralizar o conteúdo */
+    align-items: center; /* Alinhamento vertical */
+    justify-content: center; /* Alinhamento horizontal */
+}
+
+.inputBox-dialog-box {
+    background: white; /* Fundo branco */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    max-width: 600px; /* Largura máxima do formulário */
+    width: 100%; /* Largura total disponível */
+    overflow: hidden; /* Para não permitir transbordar conteúdo */
+}
+
+
+/* Estilo para a caixa de diálogo */
+.inputBox-dialog-box {
+    max-width: 600px;                /* Define a largura máxima do formulário */
+    overflow-y: auto;                /* Permite a rolagem vertical se o conteúdo exceder a altura */
+    max-height: 80vh;                /* Limita a altura máxima da caixa de diálogo */
+    padding: 20px;                   /* Adiciona algum espaço interno */
+    border: 1px solid #ccc;          /* Adiciona uma borda ao redor da caixa de diálogo */
+    border-radius: 5px;              /* Arredonda os cantos da borda */
+    background-color: white;          /* Define a cor de fundo */
+}
+
+/* Estilo para o contêiner de campos */
+.inputBox-dialog-form-fields {
+    display: flex;                    /* Define o contêiner como flexível */
+    flex-direction: column;           /* Coloca os campos em colunas */
+    gap: 10px;                        /* Espaçamento entre as linhas */
+    max-height: 60vh;                /* Limita a altura máxima do contêiner de campos */
+    overflow-y: auto;                 /* Permite rolagem vertical */
+}
+
+/* Estilo para cada linha de campos */
+.inputBox-dialog-form-row {
+    display: flex;                    /* Coloca os campos em linha */
+    justify-content: space-between;   /* Distribui espaço entre rótulos e inputs */
+    align-items: center;              /* Alinha os itens verticalmente ao centro */
+}
+
+/* Estilo para os campos de entrada */
+.inputField {
+    flex: 1;                          /* Faz com que o campo de entrada ocupe o espaço restante */
+    margin-left: 10px;                /* Espaçamento entre o rótulo e o campo */
+    box-sizing: border-box;           /* Para cálculo correto da largura */
+}
+
+/* Estilo para o contêiner principal */
+.inputBox-dialog-form-fields {
+    overflow-x: auto; /* Permite rolagem horizontal */
+    white-space: nowrap; /* Impede a quebra de linha */
+    display: flex;
+    flex-direction: column; /* Organiza as linhas verticalmente */
+    font-size: 12px; /* Tamanho da fonte em pixels */
+}
+
+/* Estilo para cada linha de campos */
+.inputBox-dialog-form-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Garante que cada linha ocupe toda a largura disponível */
+}
+
+/* Estilo para o container de cada campo */
+.inputBox-dialog-form-row div {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Espaçamento entre campos */
+}
+
+/* Estilo para os labels */
+.inputBox-dialog-form-row label {
+    min-width: 50px; /* Largura mínima para os labels */
+}
+
+/* Alinhamento do texto dos labels */
+.inputBox-dialog-form-row label.align-right {
+    text-align: right;
+    margin-right: 5px; /* Margem direita para alinhamento */
+}
+
+.inputBox-dialog-form-row label.align-left {
+    text-align: left;
+    margin-right: 5px;
+}
+
+/* Estilo para os inputs */
+.inputBox-dialog-form-row input {
+    flex-shrink: 0; /* Evita que o input encolha */
+}
+
+/* Campo invisível */
+.inputBox-dialog-form-row input.hidden {
+    visibility: hidden; /* Campo invisível, mas ocupa espaço */
+    width: 1px; /* Mantém largura mínima para alinhamento */
+}
+
+.inputBox-dialog-form-row label.hidden {
+    visibility: hidden; /* Torna o label invisível também */
+}

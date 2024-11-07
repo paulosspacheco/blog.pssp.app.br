@@ -1,0 +1,64 @@
+.inputBox-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.inputBox-dialog-box {
+    width: auto; /* Permite que a largura se ajuste ao conteúdo */
+    min-width: 300px; /* Largura mínima para garantir espaço suficiente */
+    max-width: 90%; /* Permite que a caixa se ajuste em telas menores */
+
+    min-height: 200px; /* Altura mínima para garantir espaço para o conteúdo e botões */        
+    padding: 20px; /* Espaçamento interno para deixar a interface mais limpa */
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;    
+    overflow: auto; /* Para permitir rolagem se o conteúdo for muito grande */    
+    display: flex;
+    flex-direction: column; /* Garante que os filhos sejam empilhados verticalmente */    
+}
+
+.inputBox-dialog-form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;    
+}
+
+.inputBox-dialog-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Espaçamento acima dos botões */
+    gap: 10px; /* Espaçamento de 10px entre os botões */
+}
+
+.inputBox-dialog-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre as linhas do formulário */
+    
+    max-height: 400px; /* Defina a altura máxima do contêiner de campos */
+    overflow-y: auto; /* Permite rolagem vertical se o conteúdo exceder a altura máxima */
+}
+
+.inputBox-dialog-box h2 {
+    margin: 0; /* Remove margens padrão */
+    padding: 10px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    font-size: 1.5em; /* Tamanho da fonte do título */
+    background-color: #f0f0f0; /* Cor de fundo do título */
+    border-bottom: 1px solid #ccc; /* Linha inferior para separação */
+    border-radius: 4px 4px 0 0; /* Bordas arredondadas no topo */
+}
+
+
