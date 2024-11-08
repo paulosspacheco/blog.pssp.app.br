@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Projeto para criar aplica&ccedil;&otilde;es clientes do servidor &sol;&bsol;&sol;&bsol;ar&sol;&bsol;carai</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="projeto-para-criar-aplicações-clientes-do-servidor-arcarai">Projeto para criar aplicações clientes do servidor //\ar/\carai</h1>
+<h2 id="objetivo"><strong>Objetivo</strong>.</h2>
+<ul>
+<li>Desenvolver aplicativos clientes http para as seguintes estruturas de framework:
+<ul>
+<li>FreePascal - LCL
+<ul>
+<li>Implementado.</li>
+</ul>
+</li>
+<li>JavaScript.
+<ul>
+<li>Implementado parcialmente.</li>
+</ul>
+</li>
+<li>HTML dinâmico.
+<ul>
+<li>Implementado.</li>
+</ul>
+</li>
+<li>VueJs.
+<ul>
+<li>Não implementado.</li>
+</ul>
+</li>
+<li>Angularjs.
+<ul>
+<li>Não implementado.</li>
+</ul>
+</li>
+<li>Reactjs.
+<ul>
+<li>Não implementado.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="datamodules">DataModules.</h2>
+<ul>
+<li><strong>TCreateClientes</strong>
+<ul>
+<li>
+<p><strong>Objetivo</strong>.</p>
+<ul>
+<li>Contêm os parâmetros necessários para criar as aplicações clientes, bem como a definição da tela e do banco de dados usados para salvar os parâmetros para cada aplicação configurada.</li>
+</ul>
+</li>
+<li>
+<p><strong>Eventos</strong>:</p>
+<ul>
+<li><strong>DmxScroller_Form1AddTemplate</strong>.
+<ul>
+<li>
+<p>Objetivo.</p>
+<ul>
+<li>Definição dos recursos usados para desenhar os formulários, bem como mapeamento dos campos do banco de dados.
+<ul>
+<li>Nota:
+<ul>
+<li>Os dados deste template serão armazenados no arquivo com nome do DataModule com a extensão (.json).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Descrição do formulário.</p>
+<ul>
+<li>
+<p>Número sequencial gerado automaticamente.</p>
+<ul>
+<li>FieldName = id.</li>
+</ul>
+</li>
+<li>
+<p>Tipo de aplicação.</p>
+<ul>
+<li>FieldName = typApp.
+<ul>
+<li>Valores possíveis.
+<ol>
+<li>App LCL : sim.</li>
+<li>App Javascript: não.</li>
+<li>App Dynamic_html:sim.</li>
+<li>App VueJS: não.</li>
+<li>App AngularJS: não.</li>
+<li>App ReactJS: não.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Nome da pasta root das aplicações clientes.</p>
+<ul>
+<li>FieldName = PathRoot</li>
+<li>Botão selecionar pasta</li>
+<li>Obs: O padrão é a pasta do executável da aplicação servidora.</li>
+</ul>
+</li>
+<li>
+<p>Nome da subpasta da aplicação cliente usada para gerar a aplicação.</p>
+<ul>
+<li>
+<p>FieldName = PathClient</p>
+</li>
+<li>
+<p><strong>Exemplo de árvore gerada</strong>:</p>
+<pre><code class="hljs language-txt">  .                  
+  ├── lcl  
+  │   └── templates  
+  │        ├── mi.rtl.web.module.dfm
+  │        ├── mi.rtl.web.module.pas                        
+  │        ├── mi.rtl.web.module.form.dfm                        
+  │        └── mi.rtl.web.module.form.pas
+  ├── dynamic_html
+  │   ├── css  
+  │   │   ├── color_tons_amarelo.css  
+  │   │   ├── color_tons_dark.css  
+  │   │   ├── color_tons_de_azul_ceu.css  
+  │   │   ├── color_tons_de_cinza.css  
+  │   │   ├── color_tons_de_dark_claro.css  
+  │   │   ├── color_tons_de_lilas_claro.css  
+  │   │   ├── color_tons_de_verde_claro.css                  
+  │   │   ├── MiEditForm.css                                                  
+  │   │   └── MiUiDmxScroller.css  
+  │   ├── js  
+  │   │   ├── MiMessageBox.js  
+  │   │   ├── MiThemeDialog.js  
+  │   │   ├── MiConsts.js  
+  │   │   │   └── MiMethods.js                  
+  │   │   │       ├── MiUiDmxScroller.js                 
+  │   │   │       │   ├── MiUiDmxScrollerForm.js  
+  │   │   │       │   ├── MiUiDmxScrollerForm.MiAbstractDialogs.js                  
+  │   │   │       │   └── MiUiDmxScrollerForm.MiDialogs.js                  
+  │   │   │       ├── MiDates.js  
+  │   │   │       ├── MiMaskEdit.js  
+  │   │   │       └── MiEditForm.js 
+  │   ├── templates  
+  │   │   └──  MiEditForm.html  
+  │   └── Tmi_rtl_web_module.form.html  
+  
+</code></pre>
+</li>
+<li>
+<p>Nome do arquivo destino do código gerado.</p>
+<ul>
+<li>O nome do arquivo destino será o mesmo nome do WebModule server com a extensão compatível com a aplicação destino.
+<ul>
+<li>Exemplo:<br>
+- Módulo servidor:<br>
+- Classe <strong>Tmi_rtl_web_module</strong> representa um serviço do servidor.
+- O arquivo cliente a ser gerado para o módulo servidor <strong>Tmi_rtl_web_module</strong> é:<br>
+- <strong>Tmi_rtl_web_module.pas</strong> se app FreePascal - LCL.
+- <strong>Tmi_rtl_web_module.js</strong> se app javascript.
+- <strong>Tmi_rtl_web_module.html</strong> se app HTML dinâmico.<br>
+- <strong>Tmi_rtl_web_module.vue</strong> se App VueJS.<br>
+- <strong>Tmi_rtl_web_module</strong> App AngularJS.
+- Tmi_rtl_web_module.module.ts: Configuração do módulo principal da aplicação.
+- Tmi_rtl_web_module.component.ts: Componente raiz da aplicação.
+- Tmi_rtl_web_module.component.html: Template do componente raiz.
+- Tmi_rtl_web_module.component.js: O transpilador Ângula gera o javascript a partir do Typescript
+- Tmi_rtl_web_module.service.ts: Serviço para fazer chamadas HTTP para a API RESTful.
+- <strong>Tmi_rtl_web_module.jsx</strong> App ReactJS.</li>
+<li><strong>Notas</strong>:
+<ul>
+<li>A versão de lançamento do projeto maricarai vai gerar aplicações clientes somente para LCL e HTML dinâmico.</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Botões de ações</p>
+<ul>
+<li>Novo</li>
+<li>Gravar</li>
+<li>Excluir</li>
+<li>Localizar</li>
+<li>Gerar aplicação.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+            
+        </body>
+        </html>

@@ -3,7 +3,7 @@
 ## **Objetivo**.
 
 - Desenvolver aplicativos clientes http para as seguintes estruturas de framework:  
-  - FreePascal - LCL  
+  - FreePascal \- LCL  
     - Implementado.  
   - JavaScript.  
     - Implementado parcialmente.  
@@ -26,9 +26,9 @@
     - OnAddTemplate.  
       - DmxScroller_Form1AddTemplate.  
         - Objetivo.  
-          - Definição dos recursos usados para desenhar os formulários bem como mapeamento dos campos do banco de dados.
+          - Definição dos recursos usados para desenhar os formulário bem como mapeamento dos campos do banco de dados.
             - Nota:
-              - Os dados deste template serão armazenados no arquivo com nome do DataModule com a extensão .Json_.  
+              - Os dados deste template será armazenada no arquivo com nome do DataModule com a extensão _.Json_.  
 
         - Campos.  
           - Id = Número sequencial gerado automáticamente.  
@@ -110,4 +110,3 @@
                   - A versão de lançamento do projeto maricarai vai gerar aplicações clientes somente para LCL e HTML dinâmico.
                   -  
             - 
-

@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Projeto para criar aplica&ccedil;&otilde;es clientes das aplica&ccedil;&otilde;es servidoras geradas pelo framework &sol;&bsol;&sol;&bsol;ar&sol;&bsol;carai</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<script type="application/x-javascript" src="/js/mermaid.min.js"></script>
+<h1 id="projeto-para-criar-aplicações-clientes-das-aplicações-servidoras-geradas-pelo-framework-arcarai">Projeto para criar aplicações clientes das aplicações servidoras geradas pelo framework //\ar/\carai</h1>
+<ul>
+<li><a href="#projeto-para-criar-aplica%C3%A7%C3%B5es-clientes-das-aplica%C3%A7%C3%B5es-servidoras-geradas-pelo-framework-arcarai">Projeto para criar aplicações clientes das aplicações servidoras geradas pelo framework //\ar/\carai</a>
+<ul>
+<li><a href="#introdu%C3%A7%C3%A3o">Introdução</a></li>
+<li><a href="#objetivo"><strong>Objetivo</strong>.</a></li>
+<li><a href="#diagrama-do-projeto">Diagrama do projeto</a></li>
+<li><a href="#unit-datamodules">Unit DataModules</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="introdução">Introdução</h2>
+<p>O projeto /\ar/\carai visa desenvolver um gerador de aplicações clientes que interagem com serviços de backend, utilizando um framework flexível e modular. Com a crescente demanda por soluções que integrem diferentes tecnologias e plataformas, este projeto se propõe a facilitar a criação de aplicações clientes em diversas estruturas de framework, como Free Pascal - LCL, JavaScript, HTML dinâmico, Vue.js, AngularJS e ReactJS.</p>
+<p>A principal motivação por trás deste projeto é a necessidade de simplificar o processo de desenvolvimento de aplicações que se conectam a serviços de backend, permitindo que desenvolvedores criem rapidamente interfaces de usuário que se comunicam de forma eficiente com APIs. O gerador de aplicações clientes oferece uma interface intuitiva para configuração e personalização, permitindo que os usuários definam parâmetros essenciais, como o protocolo de comunicação, endereço do servidor, porta, e o nome do recurso (WebModule) que será utilizado.</p>
+<p>Atualmente, o projeto já implementou suporte para Free Pascal - LCL, JavaScript e HTML dinâmico, enquanto as implementações para Vue.js, AngularJS e ReactJS estão previstas para futuras versões, dependendo da demanda dos usuários. A arquitetura do sistema foi projetada para ser extensível, permitindo que novos frameworks sejam adicionados conforme necessário.</p>
+<p>Além disso, o projeto inclui um módulo de gerenciamento de dados que facilita a criação e edição de formulários, bem como o mapeamento de campos de banco de dados. Com um foco na usabilidade e na eficiência, o sistema é capaz de gerar automaticamente a estrutura de diretórios e arquivos necessários para cada tipo de aplicação cliente, garantindo que os desenvolvedores possam se concentrar na lógica de negócios e na experiência do usuário.</p>
+<p>Em resumo, o projeto //\ar/\carai representa uma solução inovadora para o desenvolvimento de aplicações clientes, promovendo a integração entre diferentes tecnologias e simplificando o processo de criação de interfaces de usuário dinâmicas e responsivas.</p>
+<h2 id="objetivo"><strong>Objetivo</strong>.</h2>
+<ul>
+<li>Desenvolver aplicativos clientes <code>http</code> ou <code>https</code> para as seguintes estruturas de framework:
+<ul>
+<li><code>FreePascal - LCL</code>
+<ul>
+<li>Implementado.</li>
+</ul>
+</li>
+<li><code>JavaScript</code>.
+<ul>
+<li>Implementado parcialmente.</li>
+</ul>
+</li>
+<li><code>HTML dinâmico</code>.
+<ul>
+<li>Implementado.</li>
+</ul>
+</li>
+<li><code>VueJs</code>.
+<ul>
+<li>Não implementado.</li>
+</ul>
+</li>
+<li><code>Angularjs</code>.
+<ul>
+<li>Não implementado.</li>
+</ul>
+</li>
+<li><code>Reactjs</code>.
+<ul>
+<li>Não implementado.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Notas:
+<ul>
+<li>Os frameworks para web browser não implementados na versão de lançamentos serão implementados caso exista demanda por parte dos usuários, visto que a aplicação cliente <code>HTML dinâmico</code> atenda as necessidades até o momento.</li>
+<li>Internamente, o projeto já calcula as pastas nas quais as mesmas devem ser criadas.</li>
+</ul>
+</li>
+</ul>
+<h2 id="diagrama-do-projeto">Diagrama do projeto.</h2>
+<p>Esse diagrama representa a arquitetura do sistema, destacando a interação entre o usuário, a aplicação cliente, o servidor, o banco de dados e o módulo de gerenciamento de dados, além de incluir os componentes específicos da aplicação cliente (FreePascal - LCL e HTML Dinâmico).</p>
+<pre><code class="language-mermaid"><div class="mermaid">
+
+graph TD;
+    A[Usuário/Cliente] --> B[Aplicação Cliente]
+    B --> C[Servidor]
+    C --> D[Banco de Dados]
+    B --> E[Módulo de Gerenciamento de Dados]
+
+    subgraph Aplicação_Cliente
+        B1[FreePascal - LCL]
+        B3[HTML Dinâmico]
+    end
+
+    B --> B1
+    B --> B3
+    C --> F[API RESTful]
+    C --> G[WebModule]
+
+</pre>
+<h2 id="unit-datamodules">Unit DataModules</h2>
+<ul>
+<li>
+<p>Objetivo.</p>
+<ul>
+<li>Unit usada para criar as regras na aplicação e definir o layout do formulário de entrada, bem como mapear o banco de dados usado pelo formulário.
+<ul>
+<li>Nota:
+<ul>
+<li>A tabela usada neste projeto é um arquivo json com o nome da aplicação cliente, no qual armazena todos os parâmetros usados para criar os formulários gerados.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>TCreateClientes</strong></p>
+<ul>
+<li>
+<p><strong>Objetivo</strong>.</p>
+<ul>
+<li>Contêm os parâmetros necessários para criar as aplicações clientes, bem como a definição da tela e do banco de dados usados para salvar os parâmetros para cada aplicação configurada.</li>
+</ul>
+</li>
+<li>
+<p><strong>Definição do formulário</strong>:</p>
+<ul>
+<li>
+<p><strong>Objetivo.</strong></p>
+<ul>
+<li>Formulário usado para edição dos recursos usados para criar os formulários, bem como mapeamento dos campos do banco de dados.
+<ul>
+<li>Nota:
+<ul>
+<li>Os dados deste template serão armazenados no arquivo com nome do DataModule com a extensão (.json).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Descrição do formulário.</strong></p>
+<ul>
+<li>
+<p>Número sequencial:</p>
+<ul>
+<li><code>id</code> : Nome do campo;</li>
+<li>Tags:
+<ul>
+<li><code>ChFN</code>:
+<ul>
+<li>Indica que a próxima sequência é o nome do campo;</li>
+</ul>
+</li>
+<li><code>CharAccSkip</code>:
+<ul>
+<li>Ao pressionar a tecla tab, o campo não é selecionado.</li>
+</ul>
+</li>
+<li><code>CharAccReadOnly</code>:
+<ul>
+<li>Indica que o campo é somente para leitura.</li>
+</ul>
+</li>
+<li><code>CharPfInKeyPrimary</code>:
+<ul>
+<li>Indica que o campo é um campo de chave primária. É usado na cláusula WHERE de uma instrução de atualização.</li>
+</ul>
+</li>
+<li><code>CharPfInKeyPrimaryAutoIncrement</code>:
+<ul>
+<li>Indica que o campo é um campo autoincremental. É usado em uma instrução de atualização.</li>
+</ul>
+</li>
+<li><code>ChH</code>:
+<ul>
+<li>É usado para documentar o campo. Indica que todo o texto até o próximo caractere de controle será o conteúdo do campo HelpCtx_Hint.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Dados de acesso ao serviço</strong>:</p>
+<ul>
+<li>
+<p>Protocolo do serviço no servidor:</p>
+<ul>
+<li><code>protocol</code>: Nome do campo.
+<ul>
+<li>Valores Possíveis
+1. http.
+2. https.</li>
+</ul>
+</li>
+<li>Eventos.
+<ul>
+<li><code>OnCalcFields</code>.
+<ul>
+<li>Calcula a URL do serviço.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Endereço IP ou Nome do Host:</p>
+<ul>
+<li><code>Host</code> : Nome do campo.</li>
+<li>Eventos.
+<ul>
+<li><code>OnCalcFields</code>.
+<ul>
+<li>Calcula a URL do serviço.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Número da porta do serviço no servidor.</p>
+<ul>
+<li><code>Port</code> : Nome do campo.</li>
+<li>Eventos.
+<ul>
+<li><code>OnCalcFields</code>.
+<ul>
+<li>Calcula a URL do serviço.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Nome do recurso (<code>WebModule</code>) do servidor:</p>
+<ul>
+<li><code>WebModule</code> : Nome do campo.</li>
+<li>Eventos.
+<ul>
+<li><code>OnCalcFields</code>.
+<ul>
+<li>Calcula a URL do serviço.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Notas:
+<ul>
+<li>O nome do <code>webModule</code> deve ser passado como parâmetro ao executar o formulário <code>TCreateclientesForm</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Nome da pasta root onde se criarão as aplicações clientes:</p>
+<ul>
+<li><code>PathRoot</code>: Nome do Campo.</li>
+<li><code>CmLocatePathRoot</code> : Botão de ação para selecionar pasta.</li>
+<li>Tags:
+<ul>
+<li><code>ChEA</code> : A sequência a seguir é o nome da ação. A mesma deve ser implementada no formulário LCL.
+<ul>
+<li>Exemplo de uso:
+<ul>
+<li><code>ChEA</code>+<code>CmLocatePathRoot</code>+🔍.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eventos.
+<ul>
+<li><code>OnEnterField</code>.
+<ul>
+<li>Seleciona a pasta root onde a aplicação será criada.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Obs.: O padrão da pasta root é a pasta do executável da aplicação servidora.</li>
+</ul>
+</li>
+<li>
+<p>Tipo de aplicação.</p>
+<ul>
+<li><code>typApp</code> : Nome do campo.
+<ul>
+<li>
+<p>Valores possíveis.</p>
+<ol>
+<li>App LCL : sim.</li>
+<li>App Javascript: não.</li>
+<li>App Dynamic_html:sim.</li>
+<li>App VueJS: não.</li>
+<li>App AngularJS: não.</li>
+<li>App ReactJS: não.</li>
+</ol>
+</li>
+<li>
+<p>Eventos:</p>
+<ul>
+<li><code>OnCalcFields</code>
+<ul>
+<li>Calcular o nome da pasta destino da aplicação.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Nome da subpasta da aplicação cliente usada para gerar a aplicação.</p>
+<ul>
+<li>
+<p><code>PathClient</code>: Nome do Campo</p>
+</li>
+<li>
+<p>Tags :</p>
+<ul>
+<li><code>CharAccReadOnly</code>:
+<ul>
+<li>Indica que o campo é somente para leitura.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Exemplo de árvore gerada</strong>:</p>
+<pre><code class="hljs language-txt">  .                  
+  ├── lcl  
+  │   └── templates  
+  │        ├── mi.rtl.web.module.dfm
+  │        ├── mi.rtl.web.module.pas                        
+  │        ├── mi.rtl.web.module.form.dfm                        
+  │        └── mi.rtl.web.module.form.pas
+  ├── dynamic_html
+  │   ├── css  
+  │   │   ├── color_tons_amarelo.css  
+  │   │   ├── color_tons_dark.css  
+  │   │   ├── color_tons_de_azul_ceu.css  
+  │   │   ├── color_tons_de_cinza.css  
+  │   │   ├── color_tons_de_dark_claro.css  
+  │   │   ├── color_tons_de_lilas_claro.css  
+  │   │   ├── color_tons_de_verde_claro.css                  
+  │   │   ├── MiEditForm.css                                                  
+  │   │   └── MiUiDmxScroller.css  
+  │   ├── js  
+  │   │   ├── MiMessageBox.js  
+  │   │   ├── MiThemeDialog.js  
+  │   │   ├── MiConsts.js  
+  │   │   │   └── MiMethods.js                  
+  │   │   │       ├── MiUiDmxScroller.js                 
+  │   │   │       │   ├── MiUiDmxScrollerForm.js  
+  │   │   │       │   ├── MiUiDmxScrollerForm.MiAbstractDialogs.js                  
+  │   │   │       │   └── MiUiDmxScrollerForm.MiDialogs.js                  
+  │   │   │       ├── MiDates.js  
+  │   │   │       ├── MiMaskEdit.js  
+  │   │   │       └── MiEditForm.js 
+  │   ├── templates  
+  │   │   └──  MiEditForm.html  
+  │   └── Tmi_rtl_web_module.form.html  
+  
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Nome do arquivo destino do código gerado.</p>
+<ul>
+<li>
+<p><code>fileNameResult</code> : Nome do campo.</p>
+</li>
+<li>
+<p>Tags :</p>
+<ul>
+<li><code>CharAccReadOnly</code>:
+<ul>
+<li>Indica que o campo é somente para leitura.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Notas:</p>
+<ul>
+<li>O nome do arquivo destino será o mesmo nome do WebModule server com a extensão compatível com a aplicação destino.
+<ul>
+<li>Exemplo:<br>
+- Módulo servidor:<br>
+- Classe <strong>Tmi_rtl_web_module</strong> representa um serviço do servidor.
+- O arquivo cliente a ser gerado para o módulo servidor <strong>Tmi_rtl_web_module</strong> é:<br>
+- <strong>Tmi_rtl_web_module.pas</strong> se app FreePascal - LCL.
+- <strong>Tmi_rtl_web_module.js</strong> se app javascript.
+- <strong>Tmi_rtl_web_module.html</strong> se app HTML dinâmico.<br>
+- <strong>Tmi_rtl_web_module.vue</strong> se App VueJS.<br>
+- <strong>Tmi_rtl_web_module</strong> App AngularJS.
+- Tmi_rtl_web_module.module.ts: Configuração do módulo principal da aplicação.
+- Tmi_rtl_web_module.component.ts: Componente raiz da aplicação.
+- Tmi_rtl_web_module.component.html: Template do componente raiz.
+- Tmi_rtl_web_module.component.js: O transpilador Ângula gera o javascript a partir do Typescript
+- Tmi_rtl_web_module.service.ts: Serviço para fazer chamadas HTTP para a API RESTful.
+- <strong>Tmi_rtl_web_module.jsx</strong> App ReactJS.</li>
+</ul>
+</li>
+<li>A versão de lançamento do projeto maricarai vai gerar aplicações clientes somente para LCL e HTML dinâmico, visto que as mesmas atendem todas as necessidades, porém preparei o projeto para que no futuro alguém interessado queira implementar destinos para os frameworks acima.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Painel dos botões.</strong></p>
+<ul>
+<li>
+<p><strong>Botões de ações.</strong></p>
+<ul>
+<li>
+<p>Novo.</p>
+<ul>
+<li><code>CmNewRecord</code> : Botão de ação coloca o registro no modo de edição para adicionar registro.</li>
+<li>Tags:
+<ul>
+<li><code>ChEA</code> : A sequência a seguir é o nome da ação.
+<ul>
+<li>Exemplo de uso:
+<ul>
+<li><code>ChEA</code>+<code>CmNewRecord</code>+➕.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eventos:
+<ul>
+<li><code>DmxScroller_Form1.DoOnNewRecord</code>;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Gravar.</p>
+<ul>
+<li><code>CmUpdateRecord</code> : Botão de ação coloca o registro no modo de edição para adicionar registro.</li>
+<li>Tags:
+<ul>
+<li><code>ChEA</code> : A sequência a seguir é o nome da ação.
+<ul>
+<li>Exemplo de uso:
+<ul>
+<li><code>ChEA</code>+<code>CmUpdateRecord</code>+✔️.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eventos:
+<ul>
+<li><code>CmUpdateRecordExecute</code>.
+<ul>
+<li><code>DmxScroller_Form1.UpdateRec</code>;</li>
+</ul>
+</li>
+<li><code>DmxScroller_Form1BeforeInsert</code>
+<ul>
+<li>Neste momento, o sistema deve executar o módulo para criar a aplicação cliente.</li>
+<li>Notas:
+<ul>
+<li>Caso ocorra exceção, este evento deve retornar false.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Localizar.</p>
+<ul>
+<li><code>CmLocate</code> : Botão de ação localiza o registro para edição.</li>
+<li>Tags:
+<ul>
+<li><code>ChEA</code> : A sequência a seguir é o nome da ação.
+<ul>
+<li>Exemplo de uso:
+<ul>
+<li><code>ChEA</code>+<code>CmLocate</code>+🔍.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eventos:
+<ul>
+<li><code>CmLocateExecute</code>.
+<ul>
+<li><code>if Locate()= mrNo Then TMi_rtl.ShowMessage('Registro não localizado');</code>;</li>
+</ul>
+</li>
+<li>Notas:
+<ul>
+<li>Pesquisa na lista de todos os <code>WebModules</code> gerados por tipo de cliente.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Excluir.</p>
+<ul>
+<li><code>CmDeleteRecord</code> : Botão de ação coloca o registro no modo de edição para adicionar registro.</li>
+<li>Tags:
+<ul>
+<li><code>ChEA</code> : A sequência a seguir é o nome da ação.
+<ul>
+<li>Exemplo de uso:
+<ul>
+<li><code>ChEA</code>+<code>CmDeleteRecord</code>+➖.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eventos:
+<ul>
+<li><code>CmDeleteRecordExecute</code></li>
+<li><code>DmxScroller_Form1BeforeInsert</code>
+<ul>
+<li>Neste momento, o sistema deve deletar o módulo cliente gerado antes de excluir o registro.</li>
+<li>Notas:
+<ul>
+<li>Caso ocorra exceção, este evento deve retornar false.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Cancelar.</p>
+<ul>
+<li><code>Cancelar</code> : Botão de ação coloca o registro no modo de edição para adicionar registro.</li>
+<li>Tags:
+<ul>
+<li><code>ChEA</code> : A sequência a seguir é o nome da ação.
+<ul>
+<li>Exemplo de uso:
+<ul>
+<li><code>ChEA</code>+<code>Cancelar</code>+❌.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eventos:
+<ul>
+<li><code>CmCancelExecute</code>
+<ul>
+<li><code>DmxScroller_Form1.Cancel;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Botões de navegação.</strong></p>
+<ul>
+<li>
+<p>Primeiro registro.</p>
+<ul>
+<li><code>CmGoBofExecute</code> : Botão de ação para posicionar o dataset no primeiro registro.</li>
+<li>Tags:
+<ul>
+<li><code>ChEA</code> : A sequência a seguir é o nome da ação.
+<ul>
+<li>Exemplo de uso:
+<ul>
+<li><code>ChEA</code>+<code>CmGoBofExecute</code>+⬅️ .</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eventos:
+<ul>
+<li><code>DmxScroller_Form1.FirstRec;</code>;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Próximo registro.</p>
+<ul>
+<li><code>CmNextRecord</code> : Botão de ação coloca o registro no modo de edição para adicionar registro.</li>
+<li>Tags:
+<ul>
+<li><code>ChEA</code> : A sequência a seguir é o nome da ação.
+<ul>
+<li>Exemplo de uso:
+<ul>
+<li><code>ChEA</code>+<code>CmNextRecord</code>+➡️.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eventos:
+<ul>
+<li><code>CmNextRecordExecute</code>.
+<ul>
+<li><code>DmxScroller_Form1.NextRec;</code>;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Registro anterior.</p>
+<ul>
+<li><code>CmPrevRecord</code> : Botão de ação para posicionar no registro anterior.</li>
+<li>Tags:
+<ul>
+<li><code>ChEA</code> : A sequência a seguir é o nome da ação.
+<ul>
+<li>Exemplo de uso:
+<ul>
+<li><code>ChEA</code>+<code>CmPrevRecord</code>+⬅️.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eventos:
+<ul>
+<li><code>CmPrevRecordExecute</code>.
+<ul>
+<li><code>DmxScroller_Form1.PrevRec;</code>;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Último Registro</p>
+<ul>
+<li><code>CmGoEof</code> : Botão de ação coloca o registro no modo de edição para adicionar registro.</li>
+<li>Tags:
+<ul>
+<li><code>ChEA</code> : A sequência a seguir é o nome da ação.
+<ul>
+<li>Exemplo de uso:
+<ul>
+<li><code>ChEA</code>+<code>CmGoEof~</code>+🔄.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eventos:
+<ul>
+<li><code>CmGoEofExecute</code>
+<ul>
+<li><code>DmxScroller_Form1.LastRec; </code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Cancelar.</p>
+<ul>
+<li><code>Cancelar</code> : Botão de ação coloca o registro no modo de edição para adicionar registro.</li>
+<li>Tags:
+<ul>
+<li><code>ChEA</code> : A sequência a seguir é o nome da ação.
+<ul>
+<li>Exemplo de uso:
+<ul>
+<li><code>ChEA</code>+<code>Cancelar</code>+➕.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eventos:
+<ul>
+<li><code>CmCancelExecute</code>
+<ul>
+<li><code>DmxScroller_Form1.Cancel;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>DESENHO DO FORMULÁRIO</strong></p>
+<ul>
+<li>
+<p><strong>Evento: DmxScroller_Form1AddTemplate</strong>.</p>
+<pre><code class="hljs language-text">
+  ~➕ &amp;Novo     ~^TCmNewRecord~✔️ &amp;Gravar   ~^TCmUpdateRecord~🔍 &amp;Pesquisar~^TCmLocate~➖ &amp;Excluir  ~^TCmDeleteRecord~❌ &amp;Cancelar ~^TcmCancel
+  ~⬅️ P&amp;rimeiro ~^TCmGoBof~➡️ Pró&amp;ximo  ~^TCmNextRecord~⬅️ &amp;Anterior ~^TCmPrevRecord~➡️ Ú&amp;ltimo   ~^TCmGoEof~🔄 A&amp;tualizar~^TCmRefresh
+
+  ~               ID: ~\LLLL+CharAccSkip+CharAccReadOnly+CharPfInKeyPrimary+CharPfInKeyPrimaryAutoIncrement+ChH+'Número sequencial gerado automaticamente.'
+
+  ~Tipo de aplicação: ~\'+CreateEnumField(TRUE, accNormal, 0, //Valor padrão é 0 indicando Aplicação LCL.
+                                           NSI('app LCL : sim',
+                                           NSI('app javascript : não',
+                                           NSI('app dynamic_html : sim',
+                                           NSI('app vuejs : não',
+                                           NSI('app angularjs : não',
+                                           NSI('app reactjs : não',
+                                           nil)))))))+ChFN+'typAppClient'+ChH+'Tipo de aplicação cliente a ser gerada.
+
+
+
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>d</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- markdownlint-disable-next-line -->
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+            
+            
+        </body>
+        </html>
