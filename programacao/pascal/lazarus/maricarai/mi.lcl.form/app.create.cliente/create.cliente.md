@@ -389,10 +389,12 @@ graph TD;
                                                         NewSItem('app angularjs : não',
                                                         NewSItem('app reactjs : não',
                                                         nil)))))))+ChFN+'typAppClient'+ChH+'Tipo de aplicação cliente a ser gerada.
-          "       Pasta raiz:"\ssssssssssssssssssssssssssssssssssssssssssssssssssssssss'+
+
+          "       Pasta raiz dos clientes:"\ssssssssssssssssssssssssssssssssssssssssssssssssssssssss'+
                   ChFN+'pathRoot'+ChDfC+'./clientes'+ChH+'Pasta raiz do projeto cliente a ser gerado. O padrão é ./clientes.
-          "       Nome do arquivo destino:"\ssssssssssssssssssssssssssssssssssssssssssssssssssssssss'+
-                  ChFN+'fileNameResult'+ChDfV+'fileNameResult=WebModule'+ChH+'No do arquivo de cliente a ser gerado '
+
+          "       Nome do arquivo destino:"\sssssssssssssssssssssssssssss'+
+                  ChFN+'fileNameResult'+ChDfV+'WebModule'+ChH+'Nome do arquivo de cliente a ser gerado na pasta da aplicação cliente. '
 
 
 
