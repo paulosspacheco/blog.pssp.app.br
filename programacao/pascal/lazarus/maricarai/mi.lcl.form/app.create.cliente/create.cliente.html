@@ -18,6 +18,7 @@
         <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
         <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
 
+
         </head>
         <body class="vscode-body vscode-light">
             <div class="header" id="myHeader">
@@ -28,11 +29,16 @@
 <!-- markdownlint-disable-next-line -->
 <span id="topo"><span>
 <script type="application/x-javascript" src="/js/mermaid.min.js"></script>
+
+<ul>
+<li><a href="#projeto-para-criar-aplica%C3%A7%C3%B5es-clientes-dentro-de-um-formul%C3%A1rio-lcl-do-servidor">Projeto para criar aplicações clientes dentro de um formulário LCL do servidor.</a>
 <ul>
 <li><a href="#introdu%C3%A7%C3%A3o">Introdução</a></li>
 <li><a href="#objetivo"><strong>Objetivo</strong>.</a></li>
-<li><a href="#diagrama-do-projeto">Diagrama do projeto</a></li>
+<li><a href="#diagrama-do-projeto">Diagrama do projeto.</a></li>
 <li><a href="#unit-datamodules">Unit DataModules</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="introdução">Introdução</h2>
 <ul>
@@ -179,7 +185,7 @@ graph TD;
 <ul>
 <li>Formulário usado para edição dos recursos usados para criar os formulários, bem como mapeamento dos campos do banco de dados.
 <ul>
-<li>Nota:
+<li>Nota:06:28
 <ul>
 <li>Os dados deste template serão armazenados no arquivo com nome do DataModule com a extensão (.json).</li>
 </ul>
@@ -550,36 +556,18 @@ graph TD;
 <p>Endereço IP ou Nome do Host:</p>
 <ul>
 <li><em>Host</em> : Nome do campo.</li>
-<li>Eventos.
-<ul>
-<li><em>OnCalcFields</em>.
-<ul>
-<li>Calcula a URL do serviço.</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 <li>
 <p>Número da porta do serviço no servidor.</p>
 <ul>
 <li><em>Port</em> : Nome do campo.</li>
-<li>Eventos.
-<ul>
-<li><em>OnCalcFields</em>.
-<ul>
-<li>Calcula a URL do serviço.</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 <li>
-<p>Nome do recurso (<em>WebModule</em>) do servidor:</p>
+<p>Nome do recurso (<em>TMi_rtl_web_module</em>) do servidor:</p>
 <ul>
-<li><em>WebModule</em> : Nome do campo.</li>
+<li><em>TMi_rtl_web_module</em> : Nome do campo.</li>
 <li>Eventos.
 <ul>
 <li><em>OnCalcFields</em>.
@@ -592,6 +580,17 @@ graph TD;
 <li>Notas:
 <ul>
 <li>O nome do <em>webModule</em> deve ser passado como parâmetro ao executar o formulário <em>TCreateclientesForm</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Nome da URL do serviço</p>
+<ul>
+<li><em>URL</em> : Nome do campo.</li>
+<li>Tag
+<ul>
+<li>CharDefaultExpression+'protocol'+<code>://</code>+'Host'+<code>/</code>+'TMi_rtl_web_module'.</li>
 </ul>
 </li>
 </ul>
@@ -807,34 +806,49 @@ graph TD;
 </ul>
 </li>
 <li>
-<p><strong>DESENHO DO FORMULÁRIO</strong></p>
+<p><strong>Desenho do formulário</strong></p>
 <ul>
 <li>
 <p><strong>Evento: DmxScroller_Form1AddTemplate</strong>.</p>
 <pre><code class="hljs language-text">
-  &quot;➕ &amp;Novo     &quot;^TCmNewRecord&quot;✔️ &amp;Gravar   &quot;^TCmUpdateRecord&quot;🔍 &amp;Pesquisar&quot;^TCmLocate&quot;➖ &amp;Excluir  &quot;^TCmDeleteRecord&quot;❌ &amp;Cancelar &quot;^TcmCancel
-  &quot;⬅️ P&amp;rimeiro &quot;^TCmGoBof&quot;➡️ Pró&amp;ximo  &quot;^TCmNextRecord&quot;⬅️ &amp;Anterior &quot;^TCmPrevRecord&quot;➡️ Ú&amp;ltimo   &quot;^TCmGoEof&quot;🔄 A&amp;tualizar&quot;^TCmRefresh
+  ~➕ &amp;Novo     ~^TCmNewRecord~✔️ &amp;Gravar   ~^TCmUpdateRecord~🔍 &amp;Pesquisar~^TCmLocate~➖ &amp;Excluir  ~^TCmDeleteRecord~❌ &amp;Cancelar ~^TcmCancel
+  ~⬅️ P&amp;rimeiro ~^TCmGoBof~➡️ Pró&amp;ximo  ~^TCmNextRecord~⬅️ &amp;Anterior ~^TCmPrevRecord~➡️ Ú&amp;ltimo   ~^TCmGoEof~🔄 A&amp;tualizar~^TCmRefresh
 
-  &quot; DADOS DE ACESSO AO SERVIÇO&quot;
-  &quot; Protocolo:&quot;\sssssssssss'+ChFN+'protocol'+ChDf+'http'+CreateOptions(NewSItem('http',
-                                                                            NewSItem('https',
-                                                                            nil)))+chH+'Nome do recurso (_WebModule_) do servidor
-  &quot;      Host:&quot;\ssssssssssssssssssssssssssssss'+ChFN+'host'+ChDf+'localhost'+chH+'Endereço IP ou Nome do Host'+
-      '&quot; Porta:&quot;\####'+ChFN+'port'+chH+'Número da porta do serviço no servidor'+
-      '&quot; WebModule:&quot;\ssssssssssssssssssssssssssssss'+chFN+'WebModule'+chH+'Nome do recurso (_WebModule_) do servidor
+  '~~'
+  '~  DADOS DE ACESSO AO SERVIÇO~'
+  '~ Protocolo:~\sssssssssss'+ChFN+'protocol'+ChDfC+'http'+CreateOptions(NewSitem('http',
+                                                                         NewSItem('https',
+                                                                         nil)))+chH+'Procolo do servidor'
+  '~      Host:~\ssssssssssssssssssssssssssssss'+ChFN+'host'+ChDfC+'localhost'+chH+'Endereço IP ou Nome do Host'+
+      '~ Porta:~\####'+ChFN+'port'+chH+'Número da porta do serviço no servidor~ TMi_rtl_web_module: ~\ssssssssssssssssssssssssssssss'+chFN+'TMi_rtl_web_module'+ChDfC+'TMi_rtl_web_module'//+chH+'Nome do recurso no servidor.', comentei o help pq a linha não pode ser mais de 255 char
 
-  &quot; PARÂMETROS PARA CRIAR APLICAÇÕES CLIENTES&quot;
-  &quot;               ID:&quot;\LLLLLL'+ChFN+'id'+CharAccSkip+CharAccReadOnly+CharPfInKeyPrimary+CharPfInKeyPrimaryAutoIncrement+ChH+'Numero sequêncial
-  &quot;      App destino:&quot;\'+CreateEnumField(TRUE, accNormal, 0,
-                                                NewSItem('app LCL : sim',
-                                                NewSItem('app javascript : não',
-                                                NewSItem('app dynamic_html : sim',
-                                                NewSItem('app vuejs : não',
-                                                NewSItem('app angularjs : não',
-                                                NewSItem('app reactjs : não',
-                                                nil)))))))+ChFN+'typAppClient'+ChH+'Tipo de aplicação cliente a ser gerada.
-  &quot;       Pasta raiz:&quot;\ssssssssssssssssssssssssssssssssssssssssssssssssssssssss'+
-          ChFN+'pathRoot'+ChDf+'./clientes'+ChH+'Pasta raiz do projeto cliente a ser gerado. O padrão é ./clientes.
+  '~      URL: ~\sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss`sssssssssssssssssssssssssssssssssssssssssssss'+
+      ChFN+'url'+ChDfE+'protocol + ''://'' + host + '':'' + Port + ''/'' + TMi_rtl_web_module'//+ChH+'Endereço usado pelo cliente para comunicar-se com o servidor.'
+
+  '~    PARÂMETROS PARA CRIAR APLICAÇÕES CLIENTES~'
+  '~               ID:                    ~\LLLLLL'+ChFN+'id'+ChAS+ChARO+CharPfInKeyPrimary+CharPfInKeyPrimaryAutoIncrement+ChH+'Número sequêncial'
+  '~      Selecione a aplicação destino:  ~\'+CreateEnumField(TRUE, accNormal, 0,
+                                                  NewSItem('app LCL : sim',
+                                                  NewSItem('app javascript : não',
+                                                  NewSItem('app dynamic_html : sim',
+                                                  NewSItem('app vuejs : não',
+                                                  NewSItem('app angularjs : não',
+                                                  NewSItem('app reactjs : não',
+                                                  nil)))))))+
+                                                  ChFN+
+                                                  'typAppClient'+
+                                                  ChH+
+                                                  'Tipo de aplicação cliente a ser gerada.'
+
+
+  '~      Nome da pasta raiz dos clientes:~\sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss`sssssssssssssssssssssssssssssssssssssssssssss'+
+      ChFN+'pathRoot'+ChDfC+'./clientes'+ChH+'Usado como raiz da pasta cliente.'+commandIcon('pathRoot','cmSelectDirectoryDialog')
+
+  '~       Nome do arquivo destino:       ~\sssssssssssssssssssssssssssss'+
+      ChFN+'fileNameResult'+ChARO+ChDfE+'TMi_rtl_web_module'+ChH+'Nome do arquivo de cliente a ser gerado na pasta da aplicação cliente. '
+  '~~'
+  command('    ~Gerar formulário~    ','cmBuildCustomerFormFromTemplate')
+  '~~'
 
 
 
@@ -844,7 +858,79 @@ graph TD;
 </ul>
 </li>
 <li>
-<p>d</p>
+<p><strong>TCreateClientes.BuildCustomerFormFromTemplate(aEnClientsApplication:TEnClientsApplication);</strong></p>
+<ul>
+<li>
+<p><em>Objetivo:</em></p>
+<ul>
+<li>Método usado para criar aplicações clientes do formulário passado pelo método TCreateClientes.SetFormServer.</li>
+</ul>
+</li>
+<li>
+<p><em>Parâmetros passados para o gerador de aplicação cliente:</em></p>
+<ul>
+<li>
+<p>Formulário com as coordenadas dos controles.</p>
+<ul>
+<li>_FormServer: TForm;
+<ul>
+<li>_Mi_lcl_ui_ds_Form: TMi_lcl_ui_ds_Form;</li>
+<li>_Mi_rtl_web_module: TMi_rtl_WebModule_base;</li>
+<li>Obs.:
+<ul>
+<li>Necessários para criar HTML dinâmico, visto que o mesmo usa valor absoluto dos controles da visão no caso de aplicação do tipo <em>en_app_dynamic_html</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>PathRoot</em>: Nome do Campo.</p>
+<ul>
+<li>Usado para identificar a pasta html que o servidor está servindo.</li>
+</ul>
+</li>
+<li>
+<p><em>typApp</em> : Nome do campo.</p>
+<ul>
+<li>Usado para selecionar o tipo de aplicação.</li>
+</ul>
+</li>
+<li>
+<p><em>PathClient</em>: Nome do Campo</p>
+<ul>
+<li>Pasta da aplicação cliente.</li>
+</ul>
+</li>
+<li>
+<p><em>fileNameResult</em> : Nome do campo.</p>
+<ul>
+<li>Nome do arquivo a ser gerado, onde a extensão é obtida pelo parâmetro <em>typApp</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>Procedimentos que executam a classe que gera os formulários clientes</em>.</p>
+<ul>
+<li><em>Procedure Create_app_cliente_lcl()</em>;
+<ul>
+<li>....</li>
+</ul>
+</li>
+<li><em>Procedure Create_app_dynamic_html()</em>;
+<ul>
+<li>Classe usada para criar a aplicação:
+<ul>
+<li>TMi_web_js_Form.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 </li>
