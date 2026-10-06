@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f4d8; Documenta&ccedil;&atilde;o do Script CopyToGDriver&lowbar;Config&period;sh</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-documentação-do-script-copytogdriver_configsh">📘 Documentação do Script CopyToGDriver_Config.sh</h1>
+<h2 id="-visão-geral">🧩 Visão Geral</h2>
+<p>O módulo <strong>CopyToGDriver_Config.sh</strong> é responsável por <strong>definir as variáveis globais e padrões de configuração</strong> utilizados em todos os módulos do projeto <strong>CopyToGDriver</strong>.<br>
+Ele detecta automaticamente a <strong>plataforma</strong> (Linux, macOS ou Windows), ajusta os <strong>caminhos de diretórios</strong> e inicializa o <strong>ambiente de sincronização</strong>.</p>
+<hr>
+<h2 id="️-função-principal">⚙️ Função Principal</h2>
+<p>Este script estabelece a base de configuração que os outros módulos (como Sync, Checks e Cache) utilizam para funcionar corretamente.<br>
+Ele é carregado automaticamente no início da execução do <strong><a href="http://CopyToGDriver.sh">CopyToGDriver.sh</a></strong> e não requer execução manual.</p>
+<hr>
+<h2 id="-detecção-de-plataforma">🌍 Detecção de Plataforma</h2>
+<h3 id="detect_platform"><code>detect_platform()</code></h3>
+<p>Função responsável por identificar o sistema operacional atual, retornando um dos valores abaixo:</p>
+<table>
+<thead>
+<tr>
+<th>Sistema</th>
+<th>Valor retornado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td><code>linux</code></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td><code>macos</code></td>
+</tr>
+<tr>
+<td>Windows (Git Bash, Cygwin ou MSYS)</td>
+<td><code>windows</code></td>
+</tr>
+<tr>
+<td>Outro</td>
+<td><code>unknown</code></td>
+</tr>
+</tbody>
+</table>
+<p>O resultado é armazenado na variável global <code>PLATFORM</code> e usado em diversos pontos para definir caminhos e comportamento.</p>
+<hr>
+<h2 id="-diretórios-base-por-plataforma">🏠 Diretórios Base (por Plataforma)</h2>
+<p>Após detectar o sistema operacional, o script define automaticamente os diretórios principais utilizados pela aplicação.</p>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Linux</th>
+<th>macOS</th>
+<th>Windows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SYNC_ROOT</code></td>
+<td><code>$HOME/.rclone-sync</code></td>
+<td><code>$HOME/Library/Application Support/CopyToGDriver/rclone-sync</code></td>
+<td><code>/c/Users/&lt;user&gt;/.rclone-sync</code></td>
+</tr>
+<tr>
+<td><code>RCLONE_CONFIG_FILE</code></td>
+<td><code>$HOME/.config/rclone/rclone.conf</code></td>
+<td><code>$HOME/.config/rclone/rclone.conf</code></td>
+<td><code>/c/Users/&lt;user&gt;/AppData/Roaming/rclone/rclone.conf</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-variáveis-globais-do-sistema">📦 Variáveis Globais do Sistema</h2>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+<th>Valor Padrão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SCRIPT_NAME</code></td>
+<td>Nome base do projeto/script principal.</td>
+<td><code>CopyToGDriver</code></td>
+</tr>
+<tr>
+<td><code>SCRIPT_VERSION</code></td>
+<td>Versão atual do módulo de configuração.</td>
+<td><code>0.1.0</code></td>
+</tr>
+<tr>
+<td><code>LOG_DIR</code></td>
+<td>Diretório onde os logs serão armazenados.</td>
+<td><code>$SYNC_ROOT/logs</code></td>
+</tr>
+<tr>
+<td><code>TMP_DIR</code></td>
+<td>Diretório temporário para operações intermediárias.</td>
+<td><code>$SYNC_ROOT/tmp</code></td>
+</tr>
+<tr>
+<td><code>CACHE_DIR</code></td>
+<td>Diretório de cache do rclone.</td>
+<td><code>$SYNC_ROOT/cache</code></td>
+</tr>
+<tr>
+<td><code>HISTORY_FILE</code></td>
+<td>Caminho do arquivo CSV com histórico de sincronizações.</td>
+<td><code>$LOG_DIR/SyncHistory.csv</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-localização-no-google-drive">🌐 Localização no Google Drive</h2>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+<th>Valor Padrão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BASE_REMOTE_FOLDER</code></td>
+<td>Pasta base usada para sincronizações no Google Drive.</td>
+<td><code>rclone</code></td>
+</tr>
+<tr>
+<td><code>DELETED_BASE_FOLDER</code></td>
+<td>Pasta de backup para itens excluídos.</td>
+<td><code>rclone.deleted</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="️-parâmetros-padrão-de-funcionamento">⚙️ Parâmetros Padrão de Funcionamento</h2>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+<th>Valor Padrão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DEFAULT_REMOTE_NAME</code></td>
+<td>Nome do remoto configurado no rclone.</td>
+<td><code>gdriver</code></td>
+</tr>
+<tr>
+<td><code>DEFAULT_EXCLUDE_FILE</code></td>
+<td>Caminho do arquivo que contém padrões de exclusão.</td>
+<td><code>./CopyToGDriver_ignore.txt</code></td>
+</tr>
+<tr>
+<td><code>DEFAULT_LOCAL_FOLDER</code></td>
+<td>Pasta local padrão usada para sincronização.</td>
+<td><code>./</code></td>
+</tr>
+<tr>
+<td><code>DEFAULT_REMOTE_FOLDER</code></td>
+<td>Nome padrão da pasta remota.</td>
+<td>Nome da pasta atual (<code>basename &quot;$(pwd)&quot;</code>)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-logs-e-histórico">🧾 Logs e Histórico</h2>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LOG_RETENTION_DAYS</code></td>
+<td>Dias de retenção dos logs antes da exclusão.</td>
+<td><code>30</code></td>
+</tr>
+<tr>
+<td><code>ZIP_AFTER_DAYS</code></td>
+<td>Dias após os quais os logs são compactados.</td>
+<td><code>7</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-armazenamento-e-cache">💾 Armazenamento e Cache</h2>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+<th>Caminho</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RCLONE_CACHE_DIR</code></td>
+<td>Diretório de cache do rclone.</td>
+<td><code>$CACHE_DIR/rclone</code></td>
+</tr>
+<tr>
+<td><code>RCLONE_TEMP_DIR</code></td>
+<td>Diretório temporário usado pelo rclone.</td>
+<td><code>$TMP_DIR/rclone</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-flags-de-modo">🧩 Flags de Modo</h2>
+<p>Estas flags são definidas como <code>&quot;false&quot;</code> por padrão e podem ser alteradas dinamicamente por parâmetros de linha de comando ou módulos superiores.</p>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DRY_RUN</code></td>
+<td>Modo simulação (sem alterações reais).</td>
+</tr>
+<tr>
+<td><code>VERBOSE</code></td>
+<td>Exibe logs detalhados.</td>
+</tr>
+<tr>
+<td><code>AUTO_CREATE</code></td>
+<td>Cria automaticamente pastas remotas inexistentes.</td>
+</tr>
+<tr>
+<td><code>CLEAN_CACHE</code></td>
+<td>Executa limpeza do cache antes da sincronização.</td>
+</tr>
+<tr>
+<td><code>RESYNC</code></td>
+<td>Força uma resincronização completa.</td>
+</tr>
+<tr>
+<td><code>SHOW_HELP</code></td>
+<td>Exibe ajuda e encerra o programa.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-cores-do-terminal">🎨 Cores do Terminal</h2>
+<p>O módulo define variáveis ANSI para cores, usadas em todas as mensagens exibidas pelos scripts.</p>
+<table>
+<thead>
+<tr>
+<th>Cor</th>
+<th>Variável</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vermelho</td>
+<td><code>COLOR_RED</code></td>
+<td>Erros críticos</td>
+</tr>
+<tr>
+<td>Verde</td>
+<td><code>COLOR_GREEN</code></td>
+<td>Operações bem-sucedidas</td>
+</tr>
+<tr>
+<td>Amarelo</td>
+<td><code>COLOR_YELLOW</code></td>
+<td>Avisos e alertas</td>
+</tr>
+<tr>
+<td>Azul</td>
+<td><code>COLOR_BLUE</code></td>
+<td>Informações neutras</td>
+</tr>
+<tr>
+<td>Ciano</td>
+<td><code>COLOR_CYAN</code></td>
+<td>Mensagens de status</td>
+</tr>
+<tr>
+<td>Magenta</td>
+<td><code>COLOR_MAGENTA</code></td>
+<td>Destaques visuais</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td><code>COLOR_RESET</code></td>
+<td>Finaliza formatação</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 No Windows, as cores são desabilitadas automaticamente se o terminal não oferecer suporte ANSI.</p>
+</blockquote>
+<hr>
+<h2 id="-função-de-inicialização">🧰 Função de Inicialização</h2>
+<h3 id="initialize_environment"><code>initialize_environment()</code></h3>
+<p>Responsável por criar as pastas e arquivos essenciais para o funcionamento do sistema.</p>
+<p>Passos realizados:</p>
+<ol>
+<li>Cria diretórios <code>logs</code>, <code>tmp</code> e <code>cache</code> dentro do <code>SYNC_ROOT</code>.</li>
+<li>Garante que o arquivo de histórico (<code>SyncHistory.csv</code>) exista.</li>
+</ol>
+<pre><code class="language-bash">initialize_environment
+</code></pre>
+<hr>
+<h2 id="-diagnóstico">🔍 Diagnóstico</h2>
+<p>O script pode ser executado manualmente com a flag <code>--diag</code> para exibir informações sobre o ambiente atual.</p>
+<p>Exemplo de saída:</p>
+<pre><code>======================================================
+🔧 CopyToGDriver Configuração (Diagnóstico)
+======================================================
+🖥️  Plataforma ........: linux
+🏠 Diretório base .....: /home/usuario/.rclone-sync
+📂 Logs ...............: /home/usuario/.rclone-sync/logs
+🗂️  Cache ..............: /home/usuario/.rclone-sync/cache
+⚙️  Configuração Rclone : /home/usuario/.config/rclone/rclone.conf
+======================================================
+</code></pre>
+<hr>
+<h2 id="-versão-e-autores">📜 Versão e Autores</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Script</strong></td>
+<td>CopyToGDriver_Config.sh</td>
+</tr>
+<tr>
+<td><strong>Versão</strong></td>
+<td>0.1.0</td>
+</tr>
+<tr>
+<td><strong>Autores</strong></td>
+<td>Paulo SSPacheco + ChatGPT (GPT-5)</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>01/11/2025</td>
+</tr>
+<tr>
+<td><strong>Licença</strong></td>
+<td>Uso pessoal / interno</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>© 2025 Paulo SSPacheco + ChatGPT (GPT-5) — Todos os direitos reservados.</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f4d8; Documenta&ccedil;&atilde;o do Script CopyToGDriver&lowbar;Cache&period;sh</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-documentação-do-script-copytogdriver_cachesh">📘 Documentação do Script CopyToGDriver_Cache.sh</h1>
+<h2 id="-visão-geral">🧩 Visão Geral</h2>
+<p>O módulo <strong>CopyToGDriver_Cache.sh</strong> faz parte do projeto <strong>CopyToGDriver</strong> e é responsável por <strong>gerenciar o cache do Rclone</strong> e <strong>verificar o espaço em disco disponível</strong> antes das sincronizações.<br>
+Esta versão é totalmente <strong>autônoma</strong>, <strong>multiplataforma</strong> e <strong>corrigida</strong>, garantindo compatibilidade com <strong>Linux, macOS e Windows (Git Bash)</strong>.</p>
+<hr>
+<h2 id="️-objetivos-principais">⚙️ Objetivos Principais</h2>
+<ul>
+<li>🧹 Limpar diretórios de cache do Rclone.</li>
+<li>🔍 Detectar e encerrar processos ativos do Rclone.</li>
+<li>💽 Verificar espaço livre no disco antes da sincronização.</li>
+<li>🧠 Fornecer informações diagnósticas sobre o cache.</li>
+</ul>
+<hr>
+<h2 id="-variáveis-e-configurações">🔧 Variáveis e Configurações</h2>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DRY_RUN</code></td>
+<td>Indica se a execução está em modo de simulação (sem excluir arquivos).</td>
+</tr>
+<tr>
+<td><code>USERNAME</code></td>
+<td>Nome de usuário (usado para detectar cache no Windows).</td>
+</tr>
+<tr>
+<td><code>HOME</code></td>
+<td>Diretório principal do usuário (usado para localizar caches).</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-funções-principais">🧠 Funções Principais</h2>
+<h3 id="write_color_outputmessage-color"><code>write_color_output(message, color)</code></h3>
+<p>Exibe mensagens coloridas no terminal para facilitar a leitura.<br>
+Cores suportadas: <code>Red</code>, <code>Green</code>, <code>Yellow</code>, <code>Blue</code>, <code>Cyan</code>.</p>
+<p>Exemplo:</p>
+<pre><code class="language-bash">write_color_output <span class="hljs-string">&quot;Limpando cache...&quot;</span> <span class="hljs-string">&quot;Yellow&quot;</span>
+</code></pre>
+<hr>
+<h3 id="check_rclone_processes"><code>check_rclone_processes()</code></h3>
+<p>Verifica se existem processos <strong>rclone</strong> em execução no sistema.<br>
+Funciona em múltiplas plataformas:</p>
+<ul>
+<li>🐧 Linux/macOS → via <code>pgrep</code></li>
+<li>🪟 Windows (Git Bash) → via <code>tasklist</code></li>
+</ul>
+<p>Retorna <code>0</code> se nenhum processo estiver ativo, <code>1</code> caso contrário.</p>
+<hr>
+<h3 id="stop_rclone_processes"><code>stop_rclone_processes()</code></h3>
+<p>Finaliza todos os processos <strong>rclone</strong> ativos.<br>
+Métodos de parada:</p>
+<ul>
+<li><code>pkill -f &quot;rclone&quot;</code> (Linux/macOS)</li>
+<li><code>taskkill //F //IM &quot;rclone.exe&quot;</code> (Windows)</li>
+</ul>
+<hr>
+<h3 id="cleanup_rclone_cache"><code>cleanup_rclone_cache()</code></h3>
+<p>Função principal de <strong>limpeza do cache Rclone</strong>.<br>
+Executa as seguintes ações:</p>
+<ol>
+<li>Verifica se há processos rclone ativos e os finaliza.</li>
+<li>Localiza diretórios de cache em diferentes sistemas:
+<ul>
+<li><code>~/.cache/rclone</code></li>
+<li><code>/c/Users/&lt;username&gt;/AppData/Local/rclone/cache</code></li>
+<li><code>$HOME/AppData/Local/rclone/cache</code></li>
+</ul>
+</li>
+<li>Calcula tamanho aproximado do cache antes da exclusão.</li>
+<li>Remove arquivos temporários (exceto em modo <code>DRY_RUN</code>).</li>
+<li>Exibe mensagens de progresso e resultado.</li>
+</ol>
+<p>Exemplo:</p>
+<pre><code class="language-bash">cleanup_rclone_cache
+</code></pre>
+<hr>
+<h3 id="check_disk_space_for_synclocal_folder"><code>check_disk_space_for_sync(local_folder)</code></h3>
+<p>Verifica se há espaço suficiente em disco no diretório local antes da sincronização.</p>
+<ul>
+<li>Mostra o espaço livre em gigabytes (usando <code>df -BG</code>).</li>
+<li>Exibe aviso se o diretório não existir.</li>
+</ul>
+<p>Exemplo:</p>
+<pre><code class="language-bash">check_disk_space_for_sync <span class="hljs-string">&quot;/mnt/data/projetos&quot;</span>
+</code></pre>
+<hr>
+<h3 id="get_cache_info"><code>get_cache_info()</code></h3>
+<p>Exibe informações básicas de diagnóstico sobre o cache do Rclone.</p>
+<hr>
+<h3 id="validate_cache_module"><code>validate_cache_module()</code></h3>
+<p>Valida se o módulo de cache foi carregado corretamente.<br>
+Usado em scripts principais para garantir integridade do ambiente.</p>
+<hr>
+<h2 id="-compatibilidade">💻 Compatibilidade</h2>
+<table>
+<thead>
+<tr>
+<th>Sistema</th>
+<th>Suporte</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Linux</strong></td>
+<td>✅ Total</td>
+<td>Suporte a <code>pgrep</code>, <code>pkill</code>, <code>df</code>, <code>du</code></td>
+</tr>
+<tr>
+<td><strong>macOS</strong></td>
+<td>✅ Total</td>
+<td>Compatível com comandos POSIX</td>
+</tr>
+<tr>
+<td><strong>Windows (Git Bash)</strong></td>
+<td>✅ Total</td>
+<td>Usa <code>tasklist</code> e <code>taskkill</code></td>
+</tr>
+<tr>
+<td><strong>Outros ambientes</strong></td>
+<td>⚠️ Parcial</td>
+<td>Pode exigir ajustes manuais</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-estrutura-de-execução">🧾 Estrutura de Execução</h2>
+<pre><code>CopyToGDriver_Cache.sh
+ ├── write_color_output()          # Exibe mensagens coloridas
+ ├── check_rclone_processes()      # Detecta processos rclone
+ ├── stop_rclone_processes()       # Encerra processos rclone
+ ├── cleanup_rclone_cache()        # Limpa diretórios de cache
+ ├── check_disk_space_for_sync()   # Verifica espaço em disco
+ ├── get_cache_info()              # Exibe informações do cache
+ ├── validate_cache_module()       # Confirma carregamento do módulo
+ └── Execução direta (diagnóstico)
+</code></pre>
+<hr>
+<h2 id="-exemplo-de-saída">🧰 Exemplo de Saída</h2>
+<pre><code>✅ [CACHE] Versão corrigida carregada (2025-11-07 15:20:33)
+[LIMPEZA DE CACHE RCLONE]
+  🔍 Verificando processos Rclone...
+  ✅ Nenhum processo Rclone ativo
+  📁 Cache encontrado: /home/usuario/.cache/rclone
+     Tamanho: 25MB
+     ✅ Cache limpo
+  ✅ Verificação de cache concluída
+</code></pre>
+<hr>
+<h2 id="-execução-direta">🧪 Execução Direta</h2>
+<p>Quando executado diretamente no terminal, o script exibe as funções disponíveis:</p>
+<pre><code class="language-bash">=== MÓDULO DE CACHE ===
+✅ Carregado com sucesso
+🔍 Funções disponíveis:
+<span class="hljs-built_in">declare</span> -F | grep -E <span class="hljs-string">&quot;(cleanup_rclone_cache|check_disk_space_for_sync)&quot;</span>
+</code></pre>
+<hr>
+<h2 id="-versão-e-autores">📜 Versão e Autores</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Script</strong></td>
+<td>CopyToGDriver_Cache.sh</td>
+</tr>
+<tr>
+<td><strong>Versão</strong></td>
+<td>0.2.3</td>
+</tr>
+<tr>
+<td><strong>Autores</strong></td>
+<td>Paulo S. Pacheco + ChatGPT (GPT-5)</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>01/11/2025</td>
+</tr>
+<tr>
+<td><strong>Licença</strong></td>
+<td>Uso pessoal / interno</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>© 2025 Paulo S. Pacheco + ChatGPT (GPT-5) — Todos os direitos reservados.</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

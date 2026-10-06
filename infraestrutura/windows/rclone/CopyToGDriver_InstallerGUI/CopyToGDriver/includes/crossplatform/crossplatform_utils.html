@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>CrossPlatform Utils - Turbo Utilities for Cross-Platform Projects</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="crossplatform-utils---turbo-utilities-for-cross-platform-projects">CrossPlatform Utils - Turbo Utilities for Cross-Platform Projects</h1>
+<h2 id="-informações-do-script">📋 Informações do Script</h2>
+<ul>
+<li><strong>Arquivo:</strong> <code>crossplatform_utils.sh</code></li>
+<li><strong>Versão:</strong> 2.2.0</li>
+<li><strong>Compatibilidade:</strong> Linux, macOS, Windows (Git Bash/WSL)</li>
+<li><strong>Projeto:</strong> CopyToGDriver</li>
+<li><strong>Função:</strong> Biblioteca definitiva para projetos multiplataforma</li>
+</ul>
+<h2 id="-descrição-turbo">🚀 Descrição Turbo</h2>
+<p>Biblioteca completa que oferece funções para auto-correção de CRLF, detecção de SO, normalização de caminhos e validação de ambiente. Garante que seus scripts funcionem em qualquer sistema operacional!</p>
+<h2 id="-funcionalidades-turbo">⚡ Funcionalidades Turbo</h2>
+<ul>
+<li>✅ Auto-detecção e correção de CRLF</li>
+<li>✅ Normalização inteligente de caminhos</li>
+<li>✅ Validação de dependências cross-platform</li>
+<li>✅ Logging colorido e informativo</li>
+<li>✅ Backup automático de arquivos</li>
+<li>✅ Resolução de caminhos absolutos</li>
+</ul>
+<h2 id="-como-usar">🎯 Como Usar</h2>
+<pre><code class="language-bash"><span class="hljs-built_in">source</span> ./crossplatform_utils.sh
+auto_fix_current_script <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>  <span class="hljs-comment"># ← ADICIONE ESTA LINHA no topo dos seus scripts</span>
+</code></pre>
+<hr>
+<h2 id="️-proteção-crlf-automática">🛡️ Proteção CRLF Automática</h2>
+<p>O script inclui proteção embutida contra problemas de CRLF:</p>
+<pre><code class="language-bash"><span class="hljs-comment"># 🛡️ Proteção CRLF (5 linhas mágicas)</span>
+<span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-subst">$(uname -s)</span>&quot;</span> =~ (Linux|Darwin) ]] &amp;&amp; grep -q $<span class="hljs-string">&#x27;\r&#x27;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span>; <span class="hljs-keyword">then</span>
+    sed -i <span class="hljs-string">&#x27;s/\r$//&#x27;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span>
+    <span class="hljs-built_in">exec</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>
+    <span class="hljs-built_in">exit</span> $?
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<hr>
+<h2 id="-funções-core-turbo">🧠 Funções Core Turbo</h2>
+<h3 id="detect_os_type---detecção-avançada-de-so"><code>detect_os_type</code> - Detecção avançada de SO</h3>
+<p>Detecta o sistema operacional de forma inteligente, incluindo WSL.</p>
+<p><strong>Saídas possíveis:</strong> <code>Linux</code>, <code>macOS</code>, <code>Windows</code>, <code>WSL</code>, <code>BSD</code>, <code>Unknown</code></p>
+<pre><code class="language-bash">os_type=$(detect_os_type)
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Sistema: <span class="hljs-variable">$os_type</span>&quot;</span>
+</code></pre>
+<h3 id="turbo_log---logging-colorido-turbo"><code>turbo_log</code> - Logging colorido turbo</h3>
+<p>Exibe mensagens coloridas com timestamp e níveis de log.</p>
+<p><strong>Níveis:</strong> <code>ERROR</code>, <code>SUCCESS</code>, <code>WARNING</code>, <code>INFO</code>, <code>DEBUG</code>, <code>TURBO</code></p>
+<pre><code class="language-bash">turbo_log <span class="hljs-string">&quot;SUCCESS&quot;</span> <span class="hljs-string">&quot;Operação concluída com sucesso&quot;</span>
+turbo_log <span class="hljs-string">&quot;ERROR&quot;</span> <span class="hljs-string">&quot;Falha na execução&quot;</span>
+</code></pre>
+<h3 id="normalize_path---normalização-inteligente-de-caminhos"><code>normalize_path</code> - Normalização inteligente de caminhos</h3>
+<p>Converte caminhos entre formatos Windows ↔ Unix.</p>
+<pre><code class="language-bash">normalize_path <span class="hljs-string">&quot;C:\Users\Documentos&quot;</span>
+<span class="hljs-comment"># → /c/Users/Documentos</span>
+
+normalize_path <span class="hljs-string">&quot;C:/Windows/System32&quot;</span>  
+<span class="hljs-comment"># → /c/Windows/System32</span>
+</code></pre>
+<hr>
+<h2 id="️-funções-de-proteção-crlf-turbo">🛡️ Funções de Proteção CRLF Turbo</h2>
+<h3 id="check_and_fix_crlf---verificação-e-correção-turbo-de-crlf"><code>check_and_fix_crlf</code> - Verificação e correção turbo de CRLF</h3>
+<p>Verifica e corrige arquivos com CRLF usando múltiplos métodos de detecção.</p>
+<pre><code class="language-bash">check_and_fix_crlf <span class="hljs-string">&quot;./meuscript.sh&quot;</span>
+<span class="hljs-comment"># [WARNING] CRLF detectado (file command) em: meuscript.sh</span>
+<span class="hljs-comment"># [INFO] Backup criado: meuscript.sh.crlf.bak</span>
+<span class="hljs-comment"># [SUCCESS] Conversão LF concluída: meuscript.sh</span>
+</code></pre>
+<p><strong>Métodos de detecção:</strong></p>
+<ul>
+<li><code>file command</code> - Mais preciso</li>
+<li><code>grep</code> - Fallback básico</li>
+<li><code>hexdump</code> - Ultra preciso</li>
+</ul>
+<h3 id="auto_fix_current_script---auto-correção-turbo-do-script-atual"><code>auto_fix_current_script</code> - Auto-correção turbo do script atual</h3>
+<p>Corrige o script em execução automaticamente se necessário.</p>
+<pre><code class="language-bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-built_in">source</span> ./crossplatform_utils.sh
+auto_fix_current_script <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>  <span class="hljs-comment"># ← PRIMEIRA instrução</span>
+
+<span class="hljs-comment"># Seu código abaixo...</span>
+</code></pre>
+<h3 id="fix_project_scripts---correção-em-lote-turbo"><code>fix_project_scripts</code> - Correção em lote turbo</h3>
+<p>Corrige todos os scripts <code>.sh</code> de um projeto.</p>
+<pre><code class="language-bash">fix_project_scripts <span class="hljs-string">&quot;./meu_projeto&quot;</span>
+<span class="hljs-comment"># [SUCCESS] Concluído! Verificados: 15 | Corrigidos: 3</span>
+</code></pre>
+<hr>
+<h2 id="-funções-de-validação-turbo">🔍 Funções de Validação Turbo</h2>
+<h3 id="validate_dependencies---valida-dependências-cross-platform"><code>validate_dependencies</code> - Valida dependências cross-platform</h3>
+<p>Verifica comandos essenciais e sugere instalação específica por SO.</p>
+<pre><code class="language-bash">validate_dependencies <span class="hljs-string">&quot;curl&quot;</span> <span class="hljs-string">&quot;git&quot;</span> <span class="hljs-string">&quot;python3&quot;</span> <span class="hljs-string">&quot;docker&quot;</span>
+</code></pre>
+<p><strong>Saída exemplo:</strong></p>
+<pre><code>[INFO] Validando dependências para: Linux
+[DEBUG] ✅ curl
+[WARNING] Dependência não encontrada: docker
+[INFO] No Debian/Ubuntu tente: sudo apt install docker
+</code></pre>
+<h3 id="get_script_directory---diretório-do-script-cross-platform"><code>get_script_directory</code> - Diretório do script (cross-platform)</h3>
+<p>Retorna o caminho absoluto do diretório do script atual.</p>
+<pre><code class="language-bash">script_dir=$(get_script_directory)
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Executando de: <span class="hljs-variable">$script_dir</span>&quot;</span>
+</code></pre>
+<hr>
+<h2 id="-função-adicional-resolve_path">📍 Função Adicional: <code>resolve_path</code></h2>
+<h3 id="resolução-de-caminhos-absolutos-cross-platform">Resolução de caminhos absolutos cross-platform</h3>
+<p>Converte caminhos relativos em absolutos, compatível com Linux, macOS e WSL.</p>
+<pre><code class="language-bash">resolve_path <span class="hljs-string">&quot;./docs&quot;</span>
+<span class="hljs-comment"># → /home/paulo/docs</span>
+
+resolve_path <span class="hljs-string">&quot;../CopyToGDriver&quot;</span>  
+<span class="hljs-comment"># → /v/LazarusProjects/CopyToGDriver_InstallerGUI/CopyToGDriver</span>
+</code></pre>
+<p><strong>Métodos utilizados:</strong></p>
+<ul>
+<li><code>readlink -f</code> - Linux/WSL</li>
+<li><code>perl -MCwd</code> - macOS (fallback)</li>
+<li>Fallback padrão se necessário</li>
+</ul>
+<pre><code class="language-bash"><span class="hljs-built_in">local</span> abs_path
+abs_path=$(resolve_path <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span>)
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Caminho absoluto: <span class="hljs-variable">$abs_path</span>&quot;</span>
+</code></pre>
+<hr>
+<h2 id="-demonstração-e-ajuda">🎪 Demonstração e Ajuda</h2>
+<h3 id="demo_crossplatform---demonstração-interativa"><code>demo_crossplatform</code> - Demonstração interativa</h3>
+<p>Mostra todas as capacidades da biblioteca de forma prática.</p>
+<pre><code class="language-bash">./crossplatform_utils.sh
+<span class="hljs-comment"># Pergunta: &quot;Executar demonstração interativa? (s/N)&quot;</span>
+</code></pre>
+<h3 id="show_usage---ajuda-integrada"><code>show_usage</code> - Ajuda integrada</h3>
+<p>Exibe instruções resumidas de uso.</p>
+<pre><code class="language-bash"><span class="hljs-built_in">source</span> ./crossplatform_utils.sh
+show_usage
+</code></pre>
+<p><strong>Modo CLI disponível:</strong></p>
+<pre><code class="language-bash">./crossplatform_utils.sh --<span class="hljs-built_in">help</span>      <span class="hljs-comment"># Mostra ajuda</span>
+./crossplatform_utils.sh             <span class="hljs-comment"># Mostra ajuda e pergunta sobre demo</span>
+</code></pre>
+<hr>
+<h2 id="-dicas-turbo-para-desenvolvimento-multiplataforma">💡 Dicas Turbo para Desenvolvimento Multiplataforma</h2>
+<h3 id="-melhores-práticas">🚀 Melhores Práticas:</h3>
+<ol>
+<li><strong>Sempre use</strong> <code>#!/bin/bash</code> (não <code>#!/bin/sh</code>)</li>
+<li><strong>Use</strong> <code>source</code> em vez de <code>.</code> para melhor compatibilidade</li>
+<li><strong>Teste</strong> caminhos com espaços e caracteres especiais</li>
+<li><strong>Use</strong> <code>[[ ]]</code> em vez de <code>[ ]</code> para condicionais</li>
+<li><strong>Sempre normalize</strong> caminhos de entrada</li>
+</ol>
+<h3 id="-problemas-comuns">🐛 Problemas Comuns:</h3>
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Solução</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRLF no Linux</td>
+<td><code>auto_fix_current_script</code></td>
+</tr>
+<tr>
+<td>Caminhos Windows</td>
+<td><code>normalize_path</code></td>
+</tr>
+<tr>
+<td>Permissões de execução</td>
+<td><code>chmod +x seus_scripts</code></td>
+</tr>
+<tr>
+<td>Encoding</td>
+<td>Use UTF-8 sem BOM</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-comandos-úteis">🔧 Comandos Úteis:</h3>
+<ul>
+<li><code>file meuscript.sh</code> - Verifica encoding</li>
+<li><code>dos2unix</code> - Conversão manual (se disponível)</li>
+<li><code>hexdump -C</code> - Análise hexadecimal</li>
+</ul>
+<hr>
+<h2 id="-exemplo-de-uso-prático">🧪 Exemplo de Uso Prático</h2>
+<pre><code class="language-bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-comment"># meu_script_turbo.sh</span>
+
+<span class="hljs-built_in">source</span> ./crossplatform_utils.sh
+auto_fix_current_script <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;🧩 CrossPlatform Utils carregado!&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;📋 Sistema: <span class="hljs-subst">$(detect_os_type)</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;📁 Diretório: <span class="hljs-subst">$(get_script_directory)</span>&quot;</span>
+
+<span class="hljs-comment"># Normalizar caminho de entrada</span>
+input_path=$(normalize_path <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span>)
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;🔧 Caminho normalizado: <span class="hljs-variable">$input_path</span>&quot;</span>
+
+<span class="hljs-comment"># Validar dependências</span>
+validate_dependencies <span class="hljs-string">&quot;curl&quot;</span> <span class="hljs-string">&quot;git&quot;</span> <span class="hljs-string">&quot;jq&quot;</span>
+
+<span class="hljs-comment"># Verificar espaço em disco</span>
+available_gb=$(get_disk_space_gb <span class="hljs-string">&quot;<span class="hljs-variable">$input_path</span>&quot;</span>)
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;💾 Espaço livre: <span class="hljs-variable">${available_gb}</span>GB&quot;</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;✅ Script turbo funcionando em qualquer plataforma! 🎉&quot;</span>
+</code></pre>
+<hr>
+<h2 id="-conclusão">🎉 Conclusão</h2>
+<p>Com <strong>CrossPlatform Utils v2.2.0</strong>, seus scripts Bash tornam-se:</p>
+<ul>
+<li>✅ <strong>Auto-corretivos</strong> - Protegidos contra CRLF</li>
+<li>✅ <strong>Multiplataforma</strong> - Funcionam em Windows, Linux, macOS</li>
+<li>✅ <strong>Robustos</strong> - Validação completa de ambiente</li>
+<li>✅ <strong>Profissionais</strong> - Logging e tratamento de erros</li>
+<li>✅ <strong>Manuteníveis</strong> - Código organizado e documentado</li>
+</ul>
+<p><strong>🎯 Escreva uma vez, execute em qualquer sistema!</strong></p>
+<blockquote>
+<p><em>&quot;Seu projeto agora é Turbo Multiplataforma!&quot;</em> 🚀</p>
+</blockquote>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

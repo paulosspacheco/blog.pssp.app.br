@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="12"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <Title Value="CopyToGDriver_InstallerGUI"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <BuildModes>
+      <Item Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+    </RunParams>
+    <RequiredPackages>
+      <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+    </RequiredPackages>
+    <Units>
+      <Unit>
+        <Filename Value="CopyToGDriver_InstallerGUI.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CopyToGDriver_Setup"/>
+      </Unit>
+      <Unit>
+        <Filename Value="listtree.ps1"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tree.txt"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\setupform_u.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SetupForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SetupForm_u"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToDriver_Group.lpg"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver.lpi"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver.lps"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_AliasSetup.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Checks.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Config.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_ConfigFunctions v0.0.1.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_CopyCurrent.v.0.0.1.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_ignore.txt"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Installer.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Restore.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Setup.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Sync.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_UnInstaller.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Utils.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\include_loader.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\junte_Scripts.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\listtree.bat"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\listtree.ps1"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\pack.ps1"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\platform_detector.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\rclone_browser_x_CopyToDriver.md"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\scripts.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\test_copy.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\tree.txt"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\7z.sfx"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\7z2501-x64.exe"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\build.bat"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\BUILD_README.md"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\CopyToGDriver_7zSFX_Config.md"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\CopyToGDriver_7zSFX_Config.txt"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\CopyToGDriver_PlatformInstaller.ps1"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\CopyToGDriver_Setup.exe"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\install.bat"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\includes.html"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\includes.md"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\common\common_functions.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\common\config.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\common\logging.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_7zSFX_Config.txt"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_Installer.bat"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_Installer.md"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.v2.1.3.ps1"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_UnInstaller.bat"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_UnInstaller.ps1"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\disk_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\path_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\process_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\Run_Installer.bat"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\Run_Uninstaller.bat"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\linux\CopyToGDriver_Installer.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\linux\CopyToGDriver_UnInstaller.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\linux\disk_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\linux\path_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\linux\process_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\linux\Remove_Rclone.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\macos\CopyToGDriver_Installer.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\macos\CopyToGDriver_UnInstaller.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\macos\disk_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\macos\path_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\macos\process_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="dist\x86_64-win64\CopyToGDriver.zip"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="dist\x86_64-win64\CopyToGDriver_InstallerGUI.exe"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installerv2.2.3.ps1"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_Installer.deepseek.ps1"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.v2.2.3.ps1"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.v2.2.4.ps1"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.ps1"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_CopyCurrent.sh"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="dist\$(TargetCPU)-$(TargetOS)\CopyToGDriver_InstallerGUI"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="units"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf3"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions>
+      <Item>
+        <Name Value="EAbort"/>
+      </Item>
+      <Item>
+        <Name Value="ECodetoolError"/>
+      </Item>
+      <Item>
+        <Name Value="EFOpenError"/>
+      </Item>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

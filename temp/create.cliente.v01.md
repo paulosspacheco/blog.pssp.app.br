@@ -1,4 +1,4 @@
-# Projeto para criar aplicações clientes do servidor /\/\ar/\carai
+# Projeto para criar aplicações clientes do servidor MarIcarai
 
 ## **Objetivo**.
 

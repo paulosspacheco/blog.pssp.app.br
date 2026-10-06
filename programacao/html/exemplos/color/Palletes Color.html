@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console Virtual Gráfico - Múltiplas Paletas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Console Virtual Gráfico</h1>
+            <p class="description">Simulador de API Windows Console com Múltiplas Paletas de Cores</p>
+        </header>
+        
+        <div class="console" id="console">
+            <div class="console-line">Console inicializado. Digite 'help' para ver os comandos disponíveis.</div>
+            <div class="console-line">>> Bem-vindo ao Console Virtual Gráfico</div>
+            <div class="console-line">>> Este console suporta múltiplas paletas de cores</div>
+            <div class="console-line">>> Use os botões abaixo para alternar entre as paletas</div>
+            <div class="console-line">>> Paleta atual: Windows Console (padrão)</div>
+            <div class="console-line">>> <span class="cmd-text">help</span></div>
+            <div class="console-line">Comandos disponíveis:</div>
+            <div class="console-line">- clear: Limpa o console</div>
+            <div class="console-line">- info: Exibe informações do sistema</div>
+            <div class="console-line">- theme [nome]: Altera o tema de cores</div>
+            <div class="console-line">- help: Exibe esta ajuda</div>
+        </div>
+        
+        <div class="palette-selector" id="palette-selector">
+            <!-- Os botões serão gerados via JavaScript -->
+        </div>
+        
+        <div class="palette-display" id="palette-display">
+            <!-- As cores serão geradas via JavaScript -->
+        </div>
+        
+        <div class="instructions">
+            <h2>Instruções de Uso</h2>
+            <ul>
+                <li>Selecione uma paleta de cores clicando em um dos botões acima</li>
+                <li>Cada paleta contém 16 cores que combinam entre si</li>
+                <li>As cores de 0 a 7 são tons escuros (ideais para fundo)</li>
+                <li>As cores de 8 a 15 são tons claros (ideais para texto em temas escuros)</li>
+                <li>Use as paletas para personalizar a aparência do seu console virtual</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>Console Virtual Gráfico &copy; 2023 - Simulador de API Windows Console</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

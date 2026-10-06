@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabela ASCII / CP850 / CP1252</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #fff;
+            padding: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 4px;
+            text-align: center;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .non-printable {
+            color: #aaa;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tabela de Caracteres (0–255)</h2>
+    <p><strong>Colunas:</strong> Decimal | Hex | CP850 | CP1252 | Unicode (UTF-8)</p>
+    <table id="ascii-table">
+        <thead>
+            <tr>
+                <th>DEC</th>
+                <th>HEX</th>
+                <th>CP850</th>
+                <th>CP1252</th>
+                <th>Unicode</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        const cp850 = [
+            ...Array(128).fill(null).map((_, i) => String.fromCharCode(i)),
+            'Ç', 'ü', 'é', 'â', 'ä', 'à', 'å', 'ç', 'ê', 'ë', 'è', 'ï', 'î', 'ì', 'Ä', 'Å',
+            'É', 'æ', 'Æ', 'ô', 'ö', 'ò', 'û', 'ù', 'ÿ', 'Ö', 'Ü', '¢', '£', '¥', '₧', 'ƒ',
+            'á', 'í', 'ó', 'ú', 'ñ', 'Ñ', 'ª', 'º', '¿', '⌐', '¬', '½', '¼', '¡', '«', '»',
+            '░', '▒', '▓', '│', '┤', 'Á', 'Â', 'À', '©', '╣', '║', '╗', '╝', '¢', '¥', '┐',
+            '└', '┴', '┬', '├', '─', '┼', 'ã', 'Ã', '╚', '╔', '╩', '╦', '╠', '═', '╬', '¤',
+            'ð', 'Ð', 'Ê', 'Ë', 'È', 'ı', 'Í', 'Î', 'Ï', '┘', '┌', '█', '▄', '¦', 'Ì', '▀',
+            'Ó', 'ß', 'Ô', 'Ò', 'õ', 'Õ', 'µ', 'þ', 'Þ', 'Ú', 'Û', 'Ù', 'ý', 'Ý', '¯', '´',
+            '≡', '±', '‗', '¾', '¶', '§', '÷', '¸', '°', '¨', '·', '¹', '³', '²', '■', ' '
+        ];
+
+        const cp1252 = [
+            ...Array(128).fill(null).map((_, i) => String.fromCharCode(i)),
+            '€', '', '‚', 'ƒ', '„', '…', '†', '‡', 'ˆ', '‰', 'Š', '‹', 'Œ', '', 'Ž', '',
+            '', '‘', '’', '“', '”', '•', '–', '—', '˜', '™', 'š', '›', 'œ', '', 'ž', 'Ÿ',
+            ' ', '¡', '¢', '£', '¤', '¥', '¦', '§', '¨', '©', 'ª', '«', '¬', '­', '®', '¯',
+            '°', '±', '²', '³', '´', 'µ', '¶', '·', '¸', '¹', 'º', '»', '¼', '½', '¾', '¿',
+            'À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'Æ', 'Ç', 'È', 'É', 'Ê', 'Ë', 'Ì', 'Í', 'Î', 'Ï',
+            'Ð', 'Ñ', 'Ò', 'Ó', 'Ô', 'Õ', 'Ö', '×', 'Ø', 'Ù', 'Ú', 'Û', 'Ü', 'Ý', 'Þ', 'ß',
+            'à', 'á', 'â', 'ã', 'ä', 'å', 'æ', 'ç', 'è', 'é', 'ê', 'ë', 'ì', 'í', 'î', 'ï',
+            'ð', 'ñ', 'ò', 'ó', 'ô', 'õ', 'ö', '÷', 'ø', 'ù', 'ú', 'û', 'ü', 'ý', 'þ', 'ÿ'
+        ];
+
+        const tbody = document.querySelector("#ascii-table tbody");
+
+        for (let i = 0; i < 256; i++) {
+            const row = document.createElement("tr");
+
+            const tdDec = document.createElement("td");
+            tdDec.textContent = i;
+            row.appendChild(tdDec);
+
+            const tdHex = document.createElement("td");
+            tdHex.textContent = i.toString(16).toUpperCase().padStart(2, '0');
+            row.appendChild(tdHex);
+
+            const cp850Char = cp850[i] || '';
+            const cp1252Char = cp1252[i] || '';
+            const unicodeChar = (i < 32 || i === 127) ? '␀' : String.fromCharCode(i);
+
+            const tdCp850 = document.createElement("td");
+            tdCp850.innerHTML = isPrintable(cp850Char) ? cp850Char : `<span class="non-printable">NP</span>`;
+            row.appendChild(tdCp850);
+
+            const tdCp1252 = document.createElement("td");
+            tdCp1252.innerHTML = isPrintable(cp1252Char) ? cp1252Char : `<span class="non-printable">NP</span>`;
+            row.appendChild(tdCp1252);
+
+            const tdUni = document.createElement("td");
+            tdUni.innerHTML = isPrintable(unicodeChar) ? unicodeChar : `<span class="non-printable">NP</span>`;
+            row.appendChild(tdUni);
+
+            tbody.appendChild(row);
+        }
+
+        function isPrintable(char) {
+            return char && char.length === 1 && char.charCodeAt(0) >= 32 && char.charCodeAt(0) !== 127;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f496; As 5 Linguagens do Amor &mdash; Gary Chapman</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-as-5-linguagens-do-amor--gary-chapman">💖 As 5 Linguagens do Amor — Gary Chapman</h1>
+<blockquote>
+<p>“O amor não morre; ele apenas muda de idioma.”<br>
+— Gary Chapman</p>
+</blockquote>
+<hr>
+<h2 id="-introdução">🌹 Introdução</h2>
+<p>Gary Chapman, pastor e conselheiro matrimonial, descobriu que os casais muitas vezes <strong>se amam, mas não se entendem emocionalmente</strong>.<br>
+O segredo está em aprender <strong>a linguagem do amor do outro</strong> — a forma específica como ele ou ela sente-se amado(a).</p>
+<blockquote>
+<p>“Amar é escolher falar o idioma emocional de quem amamos.”</p>
+</blockquote>
+<p>Gary e sua esposa <strong>Karolyn Chapman</strong> estão casados desde <strong>1962</strong>, e as cinco linguagens nasceram <strong>das dificuldades e aprendizados do próprio casamento deles</strong>.</p>
+<hr>
+<h2 id="️-1-palavras-de-afirmação">❤️ 1. Palavras de Afirmação</h2>
+<p><strong>O que é:</strong><br>
+Expressar amor por meio de elogios, encorajamento e reconhecimento verbal.</p>
+<p><strong>Como aplicar:</strong></p>
+<ul>
+<li>Dizer “Você é importante para mim.”</li>
+<li>Elogiar com sinceridade.</li>
+<li>Escrever bilhetes carinhosos.</li>
+</ul>
+<p><strong>Frase de Gary:</strong></p>
+<blockquote>
+<p>“Palavras amáveis são pequenas sementes que geram grandes colheitas de amor.”</p>
+</blockquote>
+<p><strong>Exemplo:</strong><br>
+Gary elogia Karolyn por sua paciência e sabedoria — e ela sente que ele a vê e a valoriza.</p>
+<hr>
+<h2 id="-2-tempo-de-qualidade">⏰ 2. Tempo de Qualidade</h2>
+<p><strong>O que é:</strong><br>
+Dar atenção plena — estar presente de corpo e mente.</p>
+<p><strong>Como aplicar:</strong></p>
+<ul>
+<li>Desligar o celular e conversar olhando nos olhos.</li>
+<li>Caminhar juntos.</li>
+<li>Reservar tempo para ouvir sem pressa.</li>
+</ul>
+<p><strong>Frase de Gary:</strong></p>
+<blockquote>
+<p>“O presente mais precioso que podemos dar é o nosso tempo, pois é algo que nunca podemos recuperar.”</p>
+</blockquote>
+<p><strong>Exemplo:</strong><br>
+Gary e Karolyn fazem caminhadas diárias para conversar sobre o dia, sem interrupções.</p>
+<hr>
+<h2 id="-3-presentes">🎁 3. Presentes</h2>
+<p><strong>O que é:</strong><br>
+Símbolos tangíveis de amor — não pelo valor, mas pelo significado.</p>
+<p><strong>Como aplicar:</strong></p>
+<ul>
+<li>Oferecer lembranças simbólicas.</li>
+<li>Presentear em datas importantes (ou fora delas).</li>
+<li>Escrever cartões com mensagens pessoais.</li>
+</ul>
+<p><strong>Frase de Gary:</strong></p>
+<blockquote>
+<p>“Um presente diz: ‘Eu estava pensando em você enquanto estávamos separados.’”</p>
+</blockquote>
+<p><strong>Exemplo:</strong><br>
+Gary leva uma flor do jardim para Karolyn, simbolizando que ela esteve presente em seu pensamento.</p>
+<hr>
+<h2 id="-4-atos-de-serviço">🧺 4. Atos de Serviço</h2>
+<p><strong>O que é:</strong><br>
+Ajudar o outro em ações práticas — demonstrar amor com atitudes.</p>
+<p><strong>Como aplicar:</strong></p>
+<ul>
+<li>Preparar o café da manhã.</li>
+<li>Ajudar nas tarefas da casa.</li>
+<li>Cumprir promessas simples.</li>
+</ul>
+<p><strong>Frase de Gary:</strong></p>
+<blockquote>
+<p>“O amor é um verbo. Não se trata apenas do que sentimos, mas do que fazemos.”</p>
+</blockquote>
+<p><strong>Exemplo:</strong><br>
+Gary prepara o café da manhã para Karolyn — um pequeno gesto que diz “eu te amo” sem palavras.</p>
+<hr>
+<h2 id="-5-toque-físico">🤗 5. Toque Físico</h2>
+<p><strong>O que é:</strong><br>
+Expressar amor através do contato físico — desde um abraço até um simples toque no ombro.</p>
+<p><strong>Como aplicar:</strong></p>
+<ul>
+<li>Abraçar, segurar as mãos, acariciar.</li>
+<li>Oferecer um toque de conforto em momentos difíceis.</li>
+<li>Demonstrar carinho ao se despedir ou reencontrar.</li>
+</ul>
+<p><strong>Frase de Gary:</strong></p>
+<blockquote>
+<p>“Para alguns, o toque físico é a linguagem mais profunda — é o modo como o coração fala sem palavras.”</p>
+</blockquote>
+<p><strong>Exemplo:</strong><br>
+Gary e Karolyn se abraçam antes de dormir, mantendo viva a conexão emocional e espiritual.</p>
+<hr>
+<h2 id="️-conclusão">🕊️ Conclusão</h2>
+<p>O amor é uma <strong>escolha diária</strong>.<br>
+Falar a linguagem do outro é um ato de humildade, empatia e compromisso.</p>
+<blockquote>
+<p>“O amor é a decisão de buscar o bem do outro, mesmo quando não sentimos vontade.”<br>
+— Gary Chapman</p>
+</blockquote>
+<p><strong>Lições de Gary e Karolyn:</strong></p>
+<ol>
+<li>O amor amadurece com o tempo, mas não precisa esfriar.</li>
+<li>A linguagem do amor é aprendida pela prática, não pela teoria.</li>
+<li>Amar é servir, ouvir e compreender.</li>
+</ol>
+<hr>
+<p><strong>Resumo final:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Linguagem</th>
+<th>Expressa por</th>
+<th>Sente-se amado quando...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Palavras de Afirmação</td>
+<td>Elogios, gratidão</td>
+<td>Ouve palavras positivas</td>
+</tr>
+<tr>
+<td>Tempo de Qualidade</td>
+<td>Atenção e presença</td>
+<td>Recebe atenção total</td>
+</tr>
+<tr>
+<td>Presentes</td>
+<td>Gestos simbólicos</td>
+<td>Ganha lembranças com significado</td>
+</tr>
+<tr>
+<td>Atos de Serviço</td>
+<td>Ações práticas</td>
+<td>Vê ajuda e cuidado concreto</td>
+</tr>
+<tr>
+<td>Toque Físico</td>
+<td>Contato físico</td>
+<td>Recebe gestos de carinho</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote>
+<p>“O verdadeiro amor começa quando paramos de esperar e começamos a oferecer.”<br>
+— Gary Chapman</p>
+</blockquote>
+<h2 id="refeências">Refeências</h2>
+<ol>
+<li><a href="https://youtu.be/Ty_gE2jfwaI?si=D0BvwBOAnrlECxN-">As 5 linguagens do amor Gary Chapman Audiobook Completo</a></li>
+<li>.</li>
+</ol>
+
+            
+            
+        </body>
+        </html>

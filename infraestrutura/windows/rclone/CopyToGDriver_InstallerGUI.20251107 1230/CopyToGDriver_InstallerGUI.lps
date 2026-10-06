@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="CopyToGDriver_InstallerGUI.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="28" Y="20"/>
+        <UsageCount Value="26"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\setupform_u.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SetupForm"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SetupForm_u"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="33"/>
+        <CursorPos X="49" Y="41"/>
+        <UsageCount Value="26"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unit1.pas"/>
+        <ComponentName Value="Form1"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="19"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_CopyCurrent.sh"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="243"/>
+        <CursorPos X="71" Y="269"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Sync.sh"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="490"/>
+        <CursorPos X="3" Y="532"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_AliasSetup.sh"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver.sh"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_Installer.deepseek.ps1"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="27" Y="14"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.ps1"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_Installer.md"/>
+        <EditorIndex Value="3"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\includes.md"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="60" Y="20"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\includes.html"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="156"/>
+        <CursorPos X="60" Y="192"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="HTML"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_UnInstaller.ps1"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="160"/>
+        <CursorPos X="67" Y="173"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\disk_utils.sh"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="12" Y="12"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="9">
+      <Position>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.ps1"/>
+        <Caret Line="29" Column="59"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_Installer.md"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\includes\includes.md"/>
+        <Caret Line="20" Column="71"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\includes\includes.html"/>
+        <Caret Line="192" Column="71" TopLine="156"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.ps1"/>
+        <Caret Line="24" Column="22"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_UnInstaller.ps1"/>
+        <Caret Line="16" Column="16" TopLine="8"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.ps1"/>
+        <Caret Line="8" Column="14"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.ps1"/>
+        <Caret Line="499" Column="84" TopLine="473"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.ps1"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.ps1"/>
+        <Caret Line="489" Column="22" TopLine="473"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

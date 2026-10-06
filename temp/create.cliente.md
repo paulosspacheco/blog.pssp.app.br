@@ -1,4 +1,4 @@
-# Projeto para criar aplicações clientes das aplicações servidoras geradas pelo framework /\/\ar/\carai
+# Projeto para criar aplicações clientes das aplicações servidoras geradas pelo framework MarIcarai
 
 ## Introdução
 

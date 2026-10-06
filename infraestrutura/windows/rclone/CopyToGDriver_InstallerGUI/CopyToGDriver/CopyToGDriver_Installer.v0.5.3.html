@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f4d8; Documenta&ccedil;&atilde;o do Script CopyToGDriver&lowbar;Installer&period;sh</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-documentação-do-script-copytogdriver_installersh">📘 Documentação do Script CopyToGDriver_Installer.sh</h1>
+<h2 id="-visão-geral">🧩 Visão Geral</h2>
+<p>O módulo <strong>CopyToGDriver_Installer.sh</strong> é o <strong>instalador oficial do sistema CopyToGDriver</strong>, responsável por preparar o ambiente, configurar o <strong>Rclone</strong>, registrar discos, instalar os módulos e criar aliases globais.</p>
+<p>Ele garante que o sistema esteja totalmente funcional após a instalação, em qualquer plataforma compatível (Linux, macOS ou Windows via Git Bash).</p>
+<hr>
+<h2 id="️-função-principal">⚙️ Função Principal</h2>
+<p>O objetivo deste script é <strong>automatizar a instalação completa</strong> do CopyToGDriver, incluindo:</p>
+<ol>
+<li>Instalação e configuração do <strong>Rclone</strong>.</li>
+<li>Criação automática do remote <strong>gdriver</strong>.</li>
+<li>Registro de discos do sistema.</li>
+<li>Cópia de todos os scripts do projeto para o diretório padrão.</li>
+<li>Criação de <strong>aliases globais</strong> (copydrive, copycheck, copyrestore).</li>
+<li>Exibição de informações de finalização.</li>
+</ol>
+<hr>
+<h2 id="-estrutura-de-instalação">📦 Estrutura de Instalação</h2>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Caminho padrão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diretório de instalação</td>
+<td><code>$HOME/scripts/CopyToGDriver</code></td>
+</tr>
+<tr>
+<td>Logs do sistema</td>
+<td><code>$HOME/CopyToGDriver_Log/system</code></td>
+</tr>
+<tr>
+<td>Configuração do Rclone</td>
+<td><code>$HOME/.config/rclone/rclone.conf</code></td>
+</tr>
+<tr>
+<td>Registro de discos</td>
+<td><code>$HOME/.config/CopyToGDriver/disks_registry.conf</code></td>
+</tr>
+<tr>
+<td>Flag de instalação</td>
+<td><code>$HOME/CopyToGDriver_Log/system/.rclone_installed_by_copytogdriver</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-etapas-da-instalação">🔧 Etapas da Instalação</h2>
+<h3 id="1-verificação-e-instalação-do-rclone"><strong>1. Verificação e Instalação do Rclone</strong></h3>
+<p>O script verifica se o Rclone está instalado com:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">command</span> -v rclone
+</code></pre>
+<p>Se não estiver disponível, ele executa automaticamente:</p>
+<pre><code class="language-bash">curl -fsSL https://rclone.org/install.sh | sudo bash
+</code></pre>
+<p>Após a instalação, cria uma flag indicando que o Rclone foi instalado pelo próprio CopyToGDriver em:</p>
+<pre><code>~/.CopyToGDriver_Log/system/.rclone_installed_by_copytogdriver
+</code></pre>
+<p>Se o Rclone já estiver presente, apenas exibe sua versão.</p>
+<hr>
+<h3 id="2-criação-e-verificação-do-remote-gdriver"><strong>2. Criação e Verificação do Remote <code>gdriver</code></strong></h3>
+<p>A segunda etapa garante que o <strong>remote do Google Drive (<code>gdriver</code>)</strong> esteja configurado.</p>
+<ul>
+<li>Verifica o arquivo <code>rclone.conf</code>:<pre><code class="language-bash">grep <span class="hljs-string">&quot;^\[gdriver\]&quot;</span> ~/.config/rclone/rclone.conf
+</code></pre>
+</li>
+<li>Se não existir, cria automaticamente o remote:<pre><code class="language-bash">rclone config create gdriver drive scope=drive
+</code></pre>
+</li>
+<li>Solicita autenticação via navegador Google e executa:<pre><code class="language-bash">rclone config reconnect gdriver:
+</code></pre>
+</li>
+</ul>
+<p>✅ Ao final, o remote “gdriver” fica disponível para uso em todos os módulos CopyToGDriver.</p>
+<hr>
+<h3 id="3-registro-de-discos-do-sistema"><strong>3. Registro de Discos do Sistema</strong></h3>
+<p>O script cria ou atualiza o arquivo de registro de discos, usado para detectar automaticamente o disco base durante sincronizações.</p>
+<p>Arquivo:</p>
+<pre><code>~/.config/CopyToGDriver/disks_registry.conf
+</code></pre>
+<p><strong>Funcionamento:</strong></p>
+<ul>
+<li>Captura todos os pontos de montagem ativos (<code>mount</code>).</li>
+<li>Filtra apenas sistemas de arquivos válidos (<code>ext4</code>, <code>xfs</code>, <code>btrfs</code>, <code>ntfs</code>).</li>
+<li>Salva entradas no formato:<pre><code>/mnt/data=ACTIVE
+/=ACTIVE
+</code></pre>
+</li>
+<li>Se nenhum disco for encontrado, adiciona <code>/mnt=DEFAULT</code> como fallback.</li>
+</ul>
+<hr>
+<h3 id="4-instalação-dos-scripts-principais"><strong>4. Instalação dos Scripts Principais</strong></h3>
+<p>Todos os arquivos que começam com <code>CopyToGDriver</code> (incluindo o script principal sem sufixo) são copiados para:</p>
+<pre><code>~/scripts/CopyToGDriver/
+</code></pre>
+<p>O script executa:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">cp</span> -r ./CopyToGDriver* <span class="hljs-string">&quot;<span class="hljs-variable">$INSTALL_DIR</span>&quot;</span>
+<span class="hljs-built_in">chmod</span> +x <span class="hljs-string">&quot;<span class="hljs-variable">$INSTALL_DIR</span>&quot;</span>/*.sh
+</code></pre>
+<p>✅ Garante que todos os módulos estejam prontos para execução com permissão total.</p>
+<hr>
+<h3 id="5-criação-de-aliases-globais"><strong>5. Criação de Aliases Globais</strong></h3>
+<p>O instalador adiciona automaticamente três <strong>aliases globais</strong> no arquivo <code>~/.bashrc</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Comando</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>copydrive</code></td>
+<td><code>bash ~/scripts/CopyToGDriver/CopyToGDriver_CopyCurrent.sh</code></td>
+<td>Sincroniza a pasta atual</td>
+</tr>
+<tr>
+<td><code>copycheck</code></td>
+<td><code>bash ~/scripts/CopyToGDriver/CopyToGDriver.sh --check-only</code></td>
+<td>Verifica ambiente e dependências</td>
+</tr>
+<tr>
+<td><code>copyrestore</code></td>
+<td><code>bash ~/scripts/CopyToGDriver/CopyToGDriver_Restore.sh</code></td>
+<td>Restaura backup mais recente</td>
+</tr>
+</tbody>
+</table>
+<p>Após a instalação, recomenda-se recarregar o bash:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">source</span> ~/.bashrc
+</code></pre>
+<hr>
+<h3 id="6-finalização-e-resumo"><strong>6. Finalização e Resumo</strong></h3>
+<p>Ao concluir, o script exibe um resumo completo da instalação:</p>
+<pre><code>======================================================
+✅ Instalação concluída com sucesso!
+======================================================
+📂 Scripts instalados em: /home/user/scripts/CopyToGDriver
+📜 Logs armazenados em:   /home/user/CopyToGDriver_Log/system
+💽 Registro de discos:    /home/user/.config/CopyToGDriver/disks_registry.conf
+</code></pre>
+<p>Ele também indica se o Rclone foi instalado pelo próprio instalador ou se já existia.</p>
+<hr>
+<h2 id="️-variáveis-internas">⚙️ Variáveis Internas</h2>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>INSTALL_DIR</code></td>
+<td>Caminho de instalação dos scripts CopyToGDriver</td>
+</tr>
+<tr>
+<td><code>LOG_ROOT</code></td>
+<td>Diretório raiz de logs do sistema</td>
+</tr>
+<tr>
+<td><code>RCLONE_CONFIG</code></td>
+<td>Caminho do arquivo de configuração do Rclone</td>
+</tr>
+<tr>
+<td><code>FLAG_FILE</code></td>
+<td>Marca que o Rclone foi instalado pelo CopyToGDriver</td>
+</tr>
+<tr>
+<td><code>REMOTE_NAME</code></td>
+<td>Nome do remote padrão criado (<code>gdriver</code>)</td>
+</tr>
+<tr>
+<td><code>DISK_REGISTRY</code></td>
+<td>Caminho do arquivo que lista discos e montagens</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-comandos-pós-instalação">🧰 Comandos Pós-Instalação</h2>
+<p>Após finalizar a instalação, execute:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">source</span> ~/.bashrc
+</code></pre>
+<p>E utilize os comandos:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Ação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>copydrive</code></td>
+<td>Sincroniza a pasta atual</td>
+</tr>
+<tr>
+<td><code>copycheck</code></td>
+<td>Verifica dependências e ambiente</td>
+</tr>
+<tr>
+<td><code>copyrestore</code></td>
+<td>Restaura backup da pasta atual</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-requisitos">🧠 Requisitos</h2>
+<table>
+<thead>
+<tr>
+<th>Requisito</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sistema</strong></td>
+<td>Linux, macOS ou Windows com Git Bash</td>
+</tr>
+<tr>
+<td><strong>Permissões</strong></td>
+<td>Acesso <code>sudo</code> para instalar o Rclone</td>
+</tr>
+<tr>
+<td><strong>Internet</strong></td>
+<td>Necessária para baixar o Rclone e autenticar com o Google</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-mensagens-importantes">🧩 Mensagens Importantes</h2>
+<ul>
+<li>Caso o Rclone já esteja instalado, nenhuma reinstalação é feita.</li>
+<li>Se o remote <code>gdriver</code> já existir, o instalador pula a criação.</li>
+<li>Se nenhum disco montado for detectado, <code>/mnt</code> é registrado por padrão.</li>
+<li>Todos os scripts recebem permissão automática de execução (<code>chmod +x</code>).</li>
+</ul>
+<hr>
+<h2 id="-versão-e-autores">📜 Versão e Autores</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Script</strong></td>
+<td>CopyToGDriver_Installer.sh</td>
+</tr>
+<tr>
+<td><strong>Versão</strong></td>
+<td>0.5.3</td>
+</tr>
+<tr>
+<td><strong>Autores</strong></td>
+<td>Paulo SSPacheco + ChatGPT (GPT-5)</td>
+</tr>
+<tr>
+<td><strong>Função</strong></td>
+<td>Instala o sistema CopyToGDriver e configura o Rclone</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>01/11/2025</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>© 2025 Paulo SSPacheco + ChatGPT (GPT-5) — Todos os direitos reservados.</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

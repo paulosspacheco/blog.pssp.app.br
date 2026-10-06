@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&ast;&ast;Programa&colon; TUTOR02A&period;PAS - Personalizando a Linha de Status&ast;&ast;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+
+        </head>
+        <body class="vscode-body vscode-light">
+            <p>Com certeza! O segundo passo no tutorial do Turbo Vision, documentado na seção &quot;Step 2: Customizing menus and status lines&quot;, concentra-se em <strong>personalizar os elementos visuais principais da sua aplicação: a linha de status e a barra de menu</strong>. Ele é apresentado em várias iterações (TUTOR02A.PAS, TUTOR02B.PAS, TUTOR02C.PAS) para ilustrar as diferentes personalizações.</p>
+<p>O objetivo geral é demonstrar como o Turbo Vision permite que você defina a interface do usuário e como esses elementos da interface geram comandos que sua aplicação pode então responder.</p>
+<p>Para este passo, o guia utiliza o programa <strong><code>TUTOR02.PAS</code></strong> (e suas variações) para ilustrar essas personalizações.</p>
+<hr>
+<h3 id="programa-tutor02apas---personalizando-a-linha-de-status"><strong>Programa: TUTOR02A.PAS - Personalizando a Linha de Status</strong></h3>
+<p>O <code>TUTOR02A.PAS</code> (Listing 1.5) mostra como redefinir a linha de status para exibir diferentes teclas de atalho (hot keys) e informações dependendo do contexto de ajuda da aplicação.</p>
+<p>Aqui está o código principal e a explicação:</p>
+<pre><code class="hljs language-pascal">  <span class="hljs-keyword">program</span> Tutor02a;
+  <span class="hljs-keyword">uses</span> App, Objects, Menus, Drivers, Views, TutConst;
+
+  <span class="hljs-keyword">type</span> TTutorApp = <span class="hljs-keyword">object</span> (TApplication)
+    <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">InitStatusLine</span>;</span> <span class="hljs-keyword">virtual</span>; <span class="hljs-comment">// declara o novo método</span>
+  <span class="hljs-keyword">end</span>;
+
+  <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">TTutorApp</span>.<span class="hljs-title">InitStatusLine</span>;</span>
+  <span class="hljs-keyword">var</span> R: TRect;
+  <span class="hljs-keyword">begin</span>
+    GetExtent (R) ;           <span class="hljs-comment">// Obtém os limites da aplicação</span>
+    R.A.Y := R.B.Y - <span class="hljs-number">1</span>;      <span class="hljs-comment">// Define o topo para uma linha acima da base (a última linha da tela)</span>
+    New(StatusLine, Init(R, <span class="hljs-comment">// Constrói a linha de status com os limites R e as definições de status:</span>
+      NewStatusDef(<span class="hljs-number">0</span>, $EFFF, <span class="hljs-comment">// Primeira definição para contextos de ajuda de 0 a $EFFF ("normal")</span>
+        NewStatusKey(<span class="hljs-string">'-F3- Open'</span>, kbF3, cmOpen,              <span class="hljs-comment">// Vincula F3 ao comando cmOpen</span>
+        NewStatusKey(<span class="hljs-string">'-F4- New'</span>, kbF4, cmNew,                <span class="hljs-comment">// Vincula F4 ao comando cmNew</span>
+        NewStatusKey(<span class="hljs-string">'-Alt+F3- Close'</span>, kbAltF3, cmClose,     <span class="hljs-comment">// Vincula Alt+F3 ao comando cmClose</span>
+        StdStatusKeys(<span class="hljs-keyword">nil</span>)))),                              <span class="hljs-comment">// Adiciona as teclas de status padrão (Alt+X, F10, etc.)</span>
+      NewStatusDef($F000, $FFFF, <span class="hljs-comment">// Segunda definição para contextos de ajuda de $F000 a $FFFF</span>
+        NewStatusKey(<span class="hljs-string">'-F6- Next'</span>, kbF6, cmOrderNext,         <span class="hljs-comment">// Vincula F6 ao comando cmOrderNext</span>
+        NewStatusKey(<span class="hljs-string">'-Shift+F6- Prev'</span>, kbShiftF6, cmOrderPrev, <span class="hljs-comment">// Vincula Shift+F6 ao comando cmOrderPrev</span>
+        StdStatusKeys(<span class="hljs-keyword">nil</span>))), <span class="hljs-keyword">nil</span>)))); <span class="hljs-comment">// Adiciona as teclas de status padrão para este range e encerra as definições</span>
+  <span class="hljs-keyword">end</span>;
+
+  <span class="hljs-keyword">var</span> TutorApp: TTutorApp;
+
+  <span class="hljs-keyword">begin</span>
+    TutorApp.Init ;
+    TutorApp.Run;
+    TutorApp.Done;
+  <span class="hljs-keyword">end</span>.
+</code></pre>
+<ul>
+<li><strong><code>uses App, Objects, Menus, Drivers, Views, TutConst;</code></strong>: Além de <code>App</code>, várias outras unidades são incluídas, como <code>Menus</code> (para definições de status), <code>Drivers</code> (para códigos de teclado como <code>kbF3</code>, <code>kbAltF3</code>), <code>Views</code> e <code>Objects</code>. A unidade <strong><code>TutConst</code></strong> (Listing 1.3) é uma unidade separada que define constantes de comando (como <code>cmOpen</code>, <code>cmNew</code>, <code>cmClose</code>) em um local central, promovendo flexibilidade e extensibilidade.</li>
+<li><strong><code>type TTutorApp = object(TApplication) procedure InitStatusLine; virtual; end;</code></strong>: A aplicação <code>TTutorApp</code> (derivada de <code>TApplication</code>, como visto em <code>TUTOR01.PAS</code>) <strong>sobrescreve o método virtual <code>InitStatusLine</code></strong> para personalizar a linha de status.</li>
+<li><strong><code>GetExtent(R); R.A.Y := R.B.Y - 1;</code></strong>: Estas linhas obtêm as dimensões da área da aplicação e definem a variável <code>R</code> para representar a última linha da tela, onde a linha de status será exibida.</li>
+<li><strong><code>New(StatusLine, Init(R, ...))</code></strong>: Cria e inicializa o objeto <code>StatusLine</code>.</li>
+<li><strong><code>NewStatusDef(0, $EFFF, ...)</code> e <code>NewStatusDef($F000, $FFFF, ...)</code></strong>: São criadas <strong>duas definições de status</strong>. Cada <code>TStatusDef</code> cobre uma faixa de contextos de ajuda (HelpCtx). Isso permite que a linha de status mude dinamicamente as teclas exibidas com base no que o usuário está vendo na tela. Por exemplo, <code>$F000</code> e valores mais altos são usados para janelas de entrada de dados personalizadas no tutorial.</li>
+<li><strong><code>NewStatusKey(...)</code></strong>: Esta função define uma nova chave de status na linha de status, ligando um texto (como '-F3- Open'), um código de teclado (<code>kbF3</code>) e um comando (<code>cmOpen</code>).</li>
+<li><strong><code>StdStatusKeys(nil)</code></strong>: Inclui um conjunto padrão de teclas de atalho (Alt+X para sair, F10 para menu, etc.) sem que você precise defini-las individualmente.</li>
+</ul>
+<p><strong>Resultado:</strong> Ao executar este programa, a linha de status exibirá as novas teclas de atalho definidas. O item &quot;Alt+F3 Close&quot; não estará destacado (habilitado) por padrão, pois o comando <code>cmClose</code> está desabilitado até que haja algo para fechar.</p>
+<hr>
+<h3 id="programa-tutor02bpas---construindo-uma-barra-de-menu-simples"><strong>Programa: TUTOR02B.PAS - Construindo uma Barra de Menu Simples</strong></h3>
+<p>O <code>TUTOR02B.PAS</code> (Listing 1.6) ilustra a construção de uma barra de menu básica.</p>
+<p>Aqui está o código principal:</p>
+<pre><code class="hljs language-pascal">  <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">TTutorApp</span>.<span class="hljs-title">InitMenuBar</span>;</span>
+  <span class="hljs-keyword">var</span> R: TRect;
+  <span class="hljs-keyword">begin</span>
+    GetExtent(R);                <span class="hljs-comment">// Obtém os limites da aplicação</span>
+    R.B.Y := R.A.Y + <span class="hljs-number">1</span>;          <span class="hljs-comment">// Define a altura da barra de menu (uma linha no topo)</span>
+    MenuBar := New (PMenuBar, Init(R, NewMenu( <span class="hljs-comment">// Cria a barra de menu com os limites R e um novo menu:</span>
+      NewItem(<span class="hljs-string">'-N-ew'</span>, "", kbNoKey, cmNew, hcNew,                                <span class="hljs-comment">// Item 'New'</span>
+      NewItem(<span class="hljs-string">'-O-pen...'</span>, <span class="hljs-string">'F3'</span>, kbF3, cmOpen, hcOpen,                           <span class="hljs-comment">// Item 'Open'</span>
+      NewItem(<span class="hljs-string">'-S-ave'</span>, <span class="hljs-string">'F2'</span>, kbF2, cmSave, hcSave,                              <span class="hljs-comment">// Item 'Save'</span>
+      NewItem(<span class="hljs-string">'Sav;e -a-s...'</span>, "", kbNoKey, cmSaveAs, hcSaveAs,                  <span class="hljs-comment">// Item 'Save As'</span>
+      NewLine (                                                                 <span class="hljs-comment">// Adiciona uma linha divisória</span>
+      NewItem(<span class="hljs-string">'E-x-it'</span>, <span class="hljs-string">'Alt+X'</span>, kbAltX, cmQuit, hcExit, <span class="hljs-keyword">nil</span>))))))))) ;          <span class="hljs-comment">// Item 'Exit'</span>
+  <span class="hljs-keyword">end</span>;
+</code></pre>
+<ul>
+<li><strong><code>procedure TTutorApp.InitMenuBar;</code></strong>: A aplicação sobrescreve o método virtual <code>InitMenuBar</code> para criar sua barra de menu.</li>
+<li><strong><code>GetExtent(R); R.B.Y := R.A.Y + 1;</code></strong>: Define a variável <code>R</code> para representar a primeira linha da tela, onde a barra de menu será exibida.</li>
+<li><strong><code>MenuBar := New(PMenuBar, Init(R, NewMenu(...)))</code></strong>: Cria e inicializa o objeto <code>MenuBar</code>, que é uma <code>TMenuBar</code>. O <code>NewMenu</code> cria a lista de itens do menu.</li>
+<li><strong><code>NewItem(...)</code></strong>: Cada <code>NewItem</code> define um item individual no menu. Cada item possui seis partes:
+<ol>
+<li><strong>Texto do rótulo</strong>: A string exibida (ex: <code>'-N-ew'</code>). O til (<code>~</code>) indica uma tecla de atalho.</li>
+<li><strong>Rótulo da hot key</strong>: Texto para a hot key (ex: <code>'F3'</code>).</li>
+<li><strong>Scan code da hot key</strong>: O código de teclado (ex: <code>kbF3</code>).</li>
+<li><strong>Comando</strong>: O comando inteiro associado (ex: <code>cmNew</code>).</li>
+<li><strong>Contexto de ajuda</strong>: Um número de contexto de ajuda (ex: <code>hcNew</code>).</li>
+<li><strong>Ponteiro para o próximo item</strong>: <code>nil</code> se for o último item, ou outro <code>NewItem</code>.</li>
+</ol>
+</li>
+<li><strong><code>NewLine</code></strong>: Insere uma linha divisória no menu para agrupar itens.</li>
+</ul>
+<p><strong>Resultado:</strong> Uma barra de menu simples aparece no topo da tela com as opções &quot;New&quot;, &quot;Open...&quot;, &quot;Save&quot;, &quot;Save As...&quot; e &quot;Exit&quot;.</p>
+<hr>
+<h3 id="programa-tutor02cpas---definindo-um-menu-complexo"><strong>Programa: TUTOR02C.PAS - Definindo um Menu Complexo</strong></h3>
+<p>O <code>TUTOR02C.PAS</code> (Listing 1.8) expande a barra de menu para incluir submenus e utiliza funções auxiliares para simplificar a declaração de menus complexos.</p>
+<p>Aqui está um trecho do código para ilustrar o uso de funções padrão:</p>
+<pre><code class="hljs language-pascal"><span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">TTutorApp</span>.<span class="hljs-title">InitMenuBar</span>;</span>
+<span class="hljs-keyword">var</span> R: TRect;
+<span class="hljs-keyword">begin</span>
+  GetExtent (R) ;
+  R.B.Y := R.A.Y + <span class="hljs-number">1</span>;
+  MenuBar := New (PMenuBar, Init(R, NewMenu(
+    NewSubMenu ( <span class="hljs-string">'-F-ile'</span>, hcNoContext, NewMenu (
+      StdFileMenuItems(<span class="hljs-keyword">nil</span>)) ), <span class="hljs-comment">// Utiliza função padrão para o menu 'File'</span>
+    NewSubMenu(<span class="hljs-string">'-E-dit'</span>, hcNoContext, NewMenu(
+      StdEditMenuItems( NewLine ( NewItem(<span class="hljs-string">'-S-how clipboard'</span>,
+        hcNoContext, kbNoKey, cmClipShow, <span class="hljs-keyword">nil</span>))))), <span class="hljs-comment">// Utiliza função padrão e adiciona um item customizado</span>
+    NewSubMenu(<span class="hljs-string">'-O-rders'</span>, hcNoContext, NewMenu(
+      NewItem ( <span class="hljs-string">'-N-ew'</span>, <span class="hljs-string">'F9'</span>, kbF9, cmOrderNew, hcNoContext,
+      NewItem(<span class="hljs-string">'-S-ave'</span>, "", kbNoKey, cmOrderSave, hcNoContext,
+      NewLine (
+      NewItem(<span class="hljs-string">'Next'</span>, <span class="hljs-string">'PgDn'</span>, kbPgDn, cmOrderNext, hcNoContext,
+      NewItem(<span class="hljs-string">'Prev'</span>, <span class="hljs-string">'PgUp'</span>, kbPgUp, cmOrderPrev, hcNoContext, <span class="hljs-keyword">nil</span>))))))),
+    NewSubMenu(<span class="hljs-string">'O-p-tions'</span>, hcNoContext, NewMenu(
+      NewItem(<span class="hljs-string">'-T-oggle video'</span>, kbNoKey, cmOptionsVideo, hcNoContext,
+      NewItem(<span class="hljs-string">'-S-ave desktop'</span>, hcNoContext, kbNoKey, cmOptionsSave,
+      NewItem(<span class="hljs-string">'-L-oad desktop'</span>, hcNoContext, kbNoKey, cmOptionsLoad,
+      <span class="hljs-keyword">nil</span>)))) ),
+    NewSubMenu(<span class="hljs-string">'-W-indow'</span>, hcNoContext, NewMenu(
+      NewItem(<span class="hljs-string">'Orders'</span>, "", kbNoKey, cmOrderWin, hcNoContext,
+      NewItem(<span class="hljs-string">'Stock items'</span>, "", kbNoKey, cmStockWin, hcNoContext,
+      NewItem(<span class="hljs-string">'Suppliers'</span>, "", kbNoKey, cmSupplierWin, hcNoContext,
+      NewLine ( StdWindowMenuItems(<span class="hljs-keyword">nil</span>)))))), <span class="hljs-comment">// Utiliza função padrão para o menu 'Window'</span>
+    NewSubMenu(<span class="hljs-string">'-H-elp'</span>, hcNoContext, NewMenu(
+      NewItem(<span class="hljs-string">'-A-bout...'</span>, "", kbNoKey, cmAbout, hcNoContext, <span class="hljs-keyword">nil</span>) ), <span class="hljs-keyword">nil</span>)))))))));
+<span class="hljs-keyword">end</span>;
+</code></pre>
+<ul>
+<li><strong><code>NewSubMenu(...)</code></strong>: Esta função cria um submenu, recebendo um rótulo de texto (ex: <code>'-F-ile'</code>), um contexto de ajuda, e um ponteiro para outro <code>TMenu</code> que representa os itens dentro desse submenu.</li>
+<li><strong>Funções de Menu Padrão</strong>: Em vez de definir cada item manualmente, o Turbo Vision fornece funções como <strong><code>StdFileMenuItems</code></strong>, <strong><code>StdEditMenuItems</code></strong> e <strong><code>StdWindowMenuItems</code></strong>. Essas funções retornam listas de <code>PMenuItem</code> para menus comuns, simplificando a declaração de menus complexos.</li>
+<li><strong>Submenus Customizados</strong>: Além dos menus padrão, são adicionados submenus customizados como &quot;Orders&quot; e &quot;Options&quot;, que contêm seus próprios itens e comandos. Por exemplo, <code>cmClipShow</code> para mostrar a janela da área de transferência e <code>cmOptionsVideo</code> para alternar o modo de vídeo.</li>
+</ul>
+<p><strong>Resultado:</strong> Uma aplicação com uma barra de menu rica, incluindo submenus &quot;File&quot;, &quot;Edit&quot;, &quot;Orders&quot;, &quot;Options&quot;, &quot;Window&quot; e &quot;Help&quot;, onde cada um pode ter seus próprios itens e hot keys.</p>
+<hr>
+<h3 id="principais-conclusões-do-segundo-exemplo-tutor02pas-e-suas-variações"><strong>Principais Conclusões do &quot;Segundo Exemplo&quot; (<code>TUTOR02.PAS</code> e suas variações)</strong></h3>
+<ul>
+<li><strong>Personalização da Interface do Usuário</strong>: Demonstra como personalizar os elementos essenciais da interface gráfica (barra de menu e linha de status) para se adequarem às necessidades da sua aplicação.</li>
+<li><strong>Extensibilidade e Programação Orientada a Objetos</strong>: Através da sobrescrita de métodos virtuais como <code>InitStatusLine</code> e <code>InitMenuBar</code>, o Turbo Vision promove a extensão da funcionalidade padrão sem modificar o código-fonte original do <em>framework</em>. Isso garante uma base sólida e reutilizável.</li>
+<li><strong>Contexto-sensibilidade</strong>: A linha de status pode exibir informações diferentes dependendo do &quot;contexto de ajuda&quot; atual da aplicação (<code>HelpCtx</code>), permitindo <em>feedback</em> dinâmico ao usuário.</li>
+<li><strong>Definição de Comandos</strong>: O exemplo solidifica o conceito de comandos como constantes inteiras (<code>cmNew</code>, <code>cmOpen</code>, etc.) que são vinculadas a itens de menu e teclas de atalho. Isso estabelece a base para o modelo de programação orientada a eventos, onde a aplicação responde a esses comandos, independentemente de como foram gerados.</li>
+<li><strong>Separação da Lógica da UI</strong>: Uma das vantagens mais importantes é que você define como os comandos são gerados (através de menus ou teclas de atalho) separadamente de como a aplicação responde a esses comandos. Isso torna o código mais flexível e fácil de manter.</li>
+<li><strong>Reutilização de Código</strong>: O uso de funções padrão como <code>StdStatusKeys</code> e <code>StdFileMenuItems</code> ilustra a reutilização de componentes de interface comuns, reduzindo a duplicação de código e o esforço de desenvolvimento.</li>
+</ul>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

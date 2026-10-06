@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="EmbeddedTerminal.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="18"/>
+        <UsageCount Value="45"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="EmbeddedTerminalUnit"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="661"/>
+        <CursorPos Y="695"/>
+        <UsageCount Value="45"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/home/admininistrador/lazarus/fpcsrc/rtl/unix/unix.pp"/>
+        <UnitName Value="Unix"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="86"/>
+        <CursorPos X="88" Y="110"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/home/admininistrador/lazarus/fpcsrc/rtl/linux/termio.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="46" Y="26"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/home/admininistrador/lazarus/fpcsrc/rtl/linux/unxconst.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="41"/>
+        <CursorPos X="43" Y="86"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/home/admininistrador/lazarus/fpcsrc/rtl/linux/sysos.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="118"/>
+        <CursorPos X="43" Y="154"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/home/admininistrador/lazarus/fpcsrc/rtl/netwlibc/libc.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="538"/>
+        <CursorPos X="10" Y="562"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/home/admininistrador/lazarus/lazarus/components/buildintf/ideexterntoolintf.pas"/>
+        <UnitName Value="IDEExternToolIntf"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="470"/>
+        <CursorPos X="15" Y="492"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/home/admininistrador/lazarus/lazarus/lcl/include/customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="369"/>
+        <CursorPos Y="386"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/home/admininistrador/lazarus/fpcsrc/rtl/win/wininc/ascdef.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="30"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/home/admininistrador/lazarus/fpcsrc/rtl/win/sysos.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="33"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/home/admininistrador/lazarus/fpcsrc/rtl/win/sysdir.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="35"/>
+        <CursorPos X="37" Y="35"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/home/admininistrador/lazarus/fpcsrc/rtl/win/wininc/ascfun.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="35"/>
+        <CursorPos X="41" Y="35"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/home/admininistrador/lazarus/fpcsrc/packages/winunits-jedi/src/jwanative.pas"/>
+        <UnitName Value="JwaNative"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="160"/>
+        <CursorPos X="28" Y="174"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/home/admininistrador/lazarus/fpcsrc/packages/winunits-jedi/src/jwawinbase.pas"/>
+        <UnitName Value="JwaWinBase"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="35"/>
+        <CursorPos X="18" Y="35"/>
+        <UsageCount Value="10"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="24">
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="16" Column="52"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="24" Column="25"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="387" Column="5" TopLine="340"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="115" Column="34" TopLine="100"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="358" Column="3" TopLine="356"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="370" Column="12" TopLine="356"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="10" Column="28"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="319" Column="24" TopLine="300"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="438" Column="5" TopLine="404"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="372" Column="20" TopLine="344"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="364" Column="16" TopLine="344"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Column="33"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="106" Column="31" TopLine="86"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="488" TopLine="454"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="487" TopLine="453"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Column="22"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="231" Column="5" TopLine="214"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="15" Column="8"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="231" Column="5" TopLine="214"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="234" Column="5" TopLine="217"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="6083" TopLine="6049"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="233" Column="5" TopLine="217"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="9" Column="20"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Column="10"/>
+      </Position>
+      <Position>
+        <Filename Value="units/embeddedterminalunit.pas"/>
+        <Caret Line="7" Column="14"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

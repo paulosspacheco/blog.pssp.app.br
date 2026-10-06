@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>linguagem qu&iacute;mica no Unicode &eacute; constru&iacute;da &quot;combinando diferentes blocos j&aacute; existentes&quot;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:true,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<h1 id="linguagem-química-no-unicode-é-construída-combinando-diferentes-blocos-já-existentes">linguagem química no Unicode é construída &quot;combinando diferentes blocos já existentes&quot;</h1>
+<p>A química, ao contrário da matemática, não possui um bloco Unicode chamado exclusivamente de <em>&quot;Chemical Symbols&quot;</em>. Em vez disso, a linguagem química no Unicode é construída <strong>combinando diferentes blocos já existentes</strong> — como caracteres alfanuméricos, subscritos/sobrescritos, setas de reação e elementos de teoria das estruturas.</p>
+<p>Abaixo estão as principais categorias de Unicodes utilizados para compor equações, fórmulas e estruturas químicas:</p>
+<hr>
+<h2 id="1-subscritos-e-sobrescritos-fórmulas-e-íons">1. Subscritos e Sobrescritos (Fórmulas e Íons)</h2>
+<p>Essenciais para indicar a quantidade de átomos (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>2</mn></msub><mi>O</mi></mrow><annotation encoding="application/x-tex">H_2O</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span></span></span></span>) e a carga elétrica dos íons (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><msubsup><mi>O</mi><mn>4</mn><mrow><mn>2</mn><mo>−</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">SO_4^{2-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1205em;vertical-align:-0.2663em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8542em;"><span style="top:-2.4337em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span><span style="top:-3.1031em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2663em;"><span></span></span></span></span></span></span></span></span></span>).</p>
+<ul>
+<li><strong>Bloco Principal:</strong> <em>Superscripts and Subscripts</em> (<code>U+2070</code> a <code>U+209F</code>)</li>
+<li><strong>Subscritos Numéricos (<code>U+2080</code> a <code>U+2089</code>):</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th>Nome Unicode</th>
+<th>Code Point (Hex)</th>
+<th>Exemplo de Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>₀</strong></td>
+<td><code>SUBSCRIPT ZERO</code></td>
+<td><code>U+2080</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>₁</strong></td>
+<td><code>SUBSCRIPT ONE</code></td>
+<td><code>U+2081</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>₂</strong></td>
+<td><code>SUBSCRIPT TWO</code></td>
+<td><code>U+2082</code></td>
+<td>H₂O (Água)</td>
+</tr>
+<tr>
+<td><strong>₃</strong></td>
+<td><code>SUBSCRIPT THREE</code></td>
+<td><code>U+2083</code></td>
+<td>NH₃ (Amônia)</td>
+</tr>
+<tr>
+<td><strong>₄</strong></td>
+<td><code>SUBSCRIPT FOUR</code></td>
+<td><code>U+2084</code></td>
+<td>CH₄ (Metano)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Sobrescritos para Cargas e Isótopos:</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th>Nome Unicode</th>
+<th>Code Point (Hex)</th>
+<th>Exemplo de Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>⁺</strong></td>
+<td><code>SUPERSCRIPT PLUS SIGN</code></td>
+<td><code>U+207A</code></td>
+<td>Na⁺ (Cátion Sódio)</td>
+</tr>
+<tr>
+<td><strong>⁻</strong></td>
+<td><code>SUPERSCRIPT MINUS SIGN</code></td>
+<td><code>U+207B</code></td>
+<td>Cl⁻ (Ânion Cloreto)</td>
+</tr>
+<tr>
+<td><strong>²</strong></td>
+<td><code>SUPERSCRIPT TWO</code></td>
+<td><code>U+00B2</code></td>
+<td>Ca²⁺ (Cátion Cálcio)</td>
+</tr>
+<tr>
+<td><strong>³</strong></td>
+<td><code>SUPERSCRIPT THREE</code></td>
+<td><code>U+00B3</code></td>
+<td>Fe³⁺ (Cátion Ferro III)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="2-setas-de-reação-química-e-equilíbrio">2. Setas de Reação Química e Equilíbrio</h2>
+<p>Representam os sentidos das reações, estados de transição e equilíbrio químico.</p>
+<ul>
+<li><strong>Blocos:</strong> <em>Arrows</em> (<code>U+2190</code>–<code>U+21FF</code>) e <em>Supplemental Arrows-A/B</em></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th>Nome Unicode</th>
+<th>Code Point (Hex)</th>
+<th>Função / Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>→</strong></td>
+<td><code>RIGHTWARDS ARROW</code></td>
+<td><code>U+2192</code></td>
+<td>Reação irreversível (Sentido direto)</td>
+</tr>
+<tr>
+<td><strong>⇄</strong></td>
+<td><code>RIGHTWARDS ARROW OVER LEFTWARDS ARROW</code></td>
+<td><code>U+21C4</code></td>
+<td>Reação reversível / Equilíbrio</td>
+</tr>
+<tr>
+<td><strong>⇌</strong></td>
+<td><code>RIGHT HARPOON WITH BARB UP OVER LEFT HARPOON WITH BARB DOWN</code></td>
+<td><code>U+21CC</code></td>
+<td>Equilíbrio químico (harpinhas clássicas)</td>
+</tr>
+<tr>
+<td><strong>↔</strong></td>
+<td><code>LEFT RIGHT ARROW</code></td>
+<td><code>U+2194</code></td>
+<td>Ressonância de estruturas</td>
+</tr>
+<tr>
+<td><strong>↑</strong></td>
+<td><code>UPWARDS ARROW</code></td>
+<td><code>U+2191</code></td>
+<td>Liberação de gás</td>
+</tr>
+<tr>
+<td><strong>↓</strong></td>
+<td><code>DOWNWARDS ARROW</code></td>
+<td><code>U+2193</code></td>
+<td>Formação de precipitado (sólido)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="3-símbolos-de-estado-fases-e-condições-reacionais">3. Símbolos de Estado, Fases e Condições Reacionais</h2>
+<p>Usados para indicar calor, luz, catalisadores ou características físicas das substâncias.</p>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th>Nome Unicode</th>
+<th>Code Point (Hex)</th>
+<th>Significado Química</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Δ</strong></td>
+<td><code>GREEK CAPITAL LETTER DELTA</code></td>
+<td><code>U+0391</code></td>
+<td>Aquecimento / Variação de energia</td>
+</tr>
+<tr>
+<td><strong>hν</strong></td>
+<td><code>LATIN SMALL LETTER H</code> + <code>GREEK SMALL LETTER CHI/NU</code></td>
+<td><code>U+0068</code> + <code>U+03BD</code></td>
+<td>Luz / Radiação ultravioleta</td>
+</tr>
+<tr>
+<td><strong>°</strong></td>
+<td><code>DEGREE SIGN</code></td>
+<td><code>U+00B0</code></td>
+<td>Condição padrão (ex: E°, ΔH°)</td>
+</tr>
+<tr>
+<td><strong>⦵</strong></td>
+<td><code>CIRCLED WHITE BULLET</code></td>
+<td><code>U+29B5</code></td>
+<td>Notação IUPAC alternativa para estado padrão</td>
+</tr>
+<tr>
+<td><strong>⚡</strong></td>
+<td><code>HIGH VOLTAGE SIGN</code></td>
+<td><code>U+26A1</code></td>
+<td>Eletrólise</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="4-ligações-químicas-e-estruturas-desenhadas-em-texto">4. Ligações Químicas e Estruturas Desenhadas em Texto</h2>
+<p>Símbolos usados para representar ligações covalentes simples, duplas, triplas e elétrons livres.</p>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th>Nome Unicode</th>
+<th>Code Point (Hex)</th>
+<th>Notação Química</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-</strong></td>
+<td><code>HYPHEN-MINUS</code> / <code>MINUS SIGN</code></td>
+<td><code>U+002D</code> / <code>U+2212</code></td>
+<td>Ligação simples (ex: C-C)</td>
+</tr>
+<tr>
+<td><strong>=</strong></td>
+<td><code>EQUALS SIGN</code></td>
+<td><code>U+003D</code></td>
+<td>Ligação dupla (ex: C=C)</td>
+</tr>
+<tr>
+<td><strong>≡</strong></td>
+<td><code>IDENTICAL TO</code></td>
+<td><code>U+2261</code></td>
+<td>Ligação tripla (ex: N≡N)</td>
+</tr>
+<tr>
+<td><strong>∷</strong></td>
+<td><code>PROPORTION</code></td>
+<td><code>U+2237</code></td>
+<td>Par de elétrons livres (Estrutura de Lewis)</td>
+</tr>
+<tr>
+<td><strong>⋅</strong></td>
+<td><code>DOT OPERATOR</code></td>
+<td><code>U+22C5</code></td>
+<td>Ligação de radical livre / Hidratos (ex: CuSO₄·5H₂O)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="5-elementos-e-símbolos-especiais-de-gabinete--emojis">5. Elementos e Símbolos Especiais de Gabinete / Emojis</h2>
+<p>Para representação visual e interfaces modernas de software de laboratório.</p>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th>Nome Unicode</th>
+<th>Code Point (Hex)</th>
+<th>Categoria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>⚗</strong></td>
+<td><code>ALEMBIC</code></td>
+<td><code>U+2697</code></td>
+<td>Símbolo clássico de destilação / química</td>
+</tr>
+<tr>
+<td><strong>🧪</strong></td>
+<td><code>TEST TUBE</code></td>
+<td><code>U+1F9EA</code></td>
+<td>Tubo de ensaio (Emoji)</td>
+</tr>
+<tr>
+<td><strong>🧫</strong></td>
+<td><code>PETRI DISH</code></td>
+<td><code>U+1F9EB</code></td>
+<td>Placa de Petri (Emoji)</td>
+</tr>
+<tr>
+<td><strong>🧬</strong></td>
+<td><code>DNA</code></td>
+<td><code>U+1F9EC</code></td>
+<td>Molécula de DNA / Bioquímica</td>
+</tr>
+<tr>
+<td><strong>⚛</strong></td>
+<td><code>ATOM SYMBOL</code></td>
+<td><code>U+269B</code></td>
+<td>Átomo / Química nuclear</td>
+</tr>
+<tr>
+<td><strong>☢</strong></td>
+<td><code>RADIOACTIVE SIGN</code></td>
+<td><code>U+2622</code></td>
+<td>Radiação / Radioquímica</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-exemplo-de-equação-química-usando-apenas-unicode-puro">💡 Exemplo de Equação Química usando apenas Unicode Puro:</h3>
+<blockquote>
+<p><strong>Reação de combustão do Metano:</strong>
+<code>CH₄ + 2 O₂ → CO₂ + 2 H₂O + Δ</code>
+<strong>Equilíbrio da Amônia:</strong>
+<code>N₂ + 3 H₂ ⇌ 2 NH₃</code></p>
+</blockquote>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

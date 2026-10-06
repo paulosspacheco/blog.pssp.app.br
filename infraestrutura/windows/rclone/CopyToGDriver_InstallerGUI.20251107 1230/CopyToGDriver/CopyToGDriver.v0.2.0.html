@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f4d8; Documenta&ccedil;&atilde;o do Script CopyToGDriver&period;v0&period;2&period;0&period;sh</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-documentação-do-script-copytogdriverv020sh">📘 Documentação do Script <a href="http://CopyToGDriver.v0.2.0.sh">CopyToGDriver.v0.2.0.sh</a></h1>
+<h2 id="-visão-geral">🧩 Visão Geral</h2>
+<p>O script <strong><a href="http://CopyToGDriver.sh">CopyToGDriver.sh</a></strong> é o <strong>módulo orquestrador principal</strong> do projeto <strong>CopyToGDriver</strong>.<br>
+Ele é responsável por detectar o sistema operacional, carregar os módulos auxiliares e executar o processo de sincronização completo entre pastas locais e o Google Drive (via <code>rclone</code>).</p>
+<hr>
+<h2 id="️-estrutura-e-fluxo-geral">⚙️ Estrutura e Fluxo Geral</h2>
+<p>O fluxo principal do script é dividido nas seguintes etapas:</p>
+<ol>
+<li><strong>Detectar o diretório base</strong> do script.</li>
+<li><strong>Identificar a plataforma</strong> (Linux, macOS ou Windows).</li>
+<li><strong>Normalizar caminhos</strong> para compatibilidade entre sistemas.</li>
+<li><strong>Carregar scripts auxiliares</strong> (<code>platform_detector.sh</code>, <code>include_loader.sh</code>).</li>
+<li><strong>Inicializar e verificar módulos</strong> do sistema (<code>Utils</code>, <code>Config</code>, <code>Sync</code>, etc.).</li>
+<li><strong>Executar o módulo principal de sincronização</strong> (<code>main()</code> em <code>CopyToGDriver_Sync.sh</code>).</li>
+</ol>
+<hr>
+<h2 id="-variáveis-principais">🔧 Variáveis Principais</h2>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+<th>Valor / Origem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SCRIPT_DIR</code></td>
+<td>Diretório onde o script está localizado.</td>
+<td>Detectado automaticamente</td>
+</tr>
+<tr>
+<td><code>PLATFORM</code></td>
+<td>Plataforma atual (linux, macos, windows).</td>
+<td>Detectada via <code>uname -s</code></td>
+</tr>
+<tr>
+<td><code>mod_file</code></td>
+<td>Caminho de cada módulo carregado.</td>
+<td><code>${SCRIPT_DIR}/CopyToGDriver_&lt;mod&gt;.sh</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-funções-internas">🧠 Funções Internas</h2>
+<h3 id="detect_platform"><code>detect_platform()</code></h3>
+<p>Detecta automaticamente o sistema operacional e define a variável <code>PLATFORM</code>.<br>
+Retornos possíveis:</p>
+<ul>
+<li><code>linux</code></li>
+<li><code>macos</code></li>
+<li><code>windows</code></li>
+<li><code>unknown</code></li>
+</ul>
+<p>Exemplo de uso:</p>
+<pre><code class="language-bash">PLATFORM=$(detect_platform)
+</code></pre>
+<hr>
+<h3 id="normalize_pathpath"><code>normalize_path(path)</code></h3>
+<p>Normaliza um caminho de arquivo de acordo com o sistema operacional.</p>
+<ul>
+<li>Em <strong>Windows</strong>, converte caminhos do formato <code>/c/Users/...</code> para <code>C:\Users\...</code></li>
+<li>Em <strong>Linux/macOS</strong>, mantém o formato original.</li>
+</ul>
+<p>Exemplo:</p>
+<pre><code class="language-bash">normalize_path <span class="hljs-string">&quot;/c/Users/Paulo/docs&quot;</span>
+<span class="hljs-comment"># Saída: C:\Users\Paulo\docs</span>
+</code></pre>
+<hr>
+<h3 id="verify_dependencies"><code>verify_dependencies()</code></h3>
+<p>Verifica a existência de todos os módulos obrigatórios do CopyToGDriver.<br>
+Caso algum esteja ausente, exibe um erro e encerra a execução.</p>
+<p>Módulos obrigatórios:</p>
+<ul>
+<li><code>CopyToGDriver_Utils.sh</code></li>
+<li><code>CopyToGDriver_Config.sh</code></li>
+<li><code>CopyToGDriver_ConfigFunctions.sh</code></li>
+<li><code>CopyToGDriver_Checks.sh</code></li>
+<li><code>CopyToGDriver_Cache.sh</code></li>
+<li><code>CopyToGDriver_Setup.sh</code></li>
+<li><code>CopyToGDriver_Sync.sh</code></li>
+</ul>
+<p>Exemplo de uso isolado:</p>
+<pre><code class="language-bash">./CopyToGDriver.sh --check-only
+</code></pre>
+<hr>
+<h3 id="carregamento-de-módulos">Carregamento de Módulos</h3>
+<p>Os módulos são carregados dinamicamente com base em seus nomes.<br>
+O script utiliza <code>source</code> para incluir cada módulo, permitindo reutilização e modularidade.</p>
+<pre><code class="language-bash"><span class="hljs-keyword">for</span> mod <span class="hljs-keyword">in</span> Utils Config ConfigFunctions Checks Cache Setup Sync; <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">source</span> <span class="hljs-string">&quot;<span class="hljs-variable">$SCRIPT_DIR</span>/CopyToGDriver_<span class="hljs-variable">${mod}</span>.sh&quot;</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<p>Caso um módulo não seja encontrado, é exibido um aviso, mas o processo continua se possível.</p>
+<hr>
+<h3 id="execução-principal">Execução Principal</h3>
+<p>A execução principal é delegada à função <code>main()</code>, definida no módulo <code>CopyToGDriver_Sync.sh</code>.<br>
+O script verifica se a função <code>main</code> está disponível antes de chamá-la:</p>
+<pre><code class="language-bash"><span class="hljs-keyword">if</span> <span class="hljs-built_in">declare</span> -f main &gt;/dev/null; <span class="hljs-keyword">then</span>
+    main <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;❌ ERRO: Função &#x27;main&#x27; não encontrada.&quot;</span>
+    <span class="hljs-built_in">exit</span> 1
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<hr>
+<h2 id="-parâmetros-suportados">🧰 Parâmetros Suportados</h2>
+<table>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--check-only</code></td>
+<td>Apenas verifica os módulos e dependências, sem executar sincronização.</td>
+</tr>
+<tr>
+<td><em>(demais parâmetros)</em></td>
+<td>São repassados ao módulo principal (<code>CopyToGDriver_Sync.sh</code>).</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-estrutura-modular-do-projeto">🧾 Estrutura Modular do Projeto</h2>
+<pre><code>CopyToGDriver/
+├── CopyToGDriver.sh                # Script principal (orquestrador)
+├── platform_detector.sh            # Detector de plataforma
+├── include_loader.sh               # Carregador de módulos
+├── CopyToGDriver_Utils.sh          # Funções utilitárias
+├── CopyToGDriver_Config.sh         # Configurações base
+├── CopyToGDriver_ConfigFunctions.sh# Parser de parâmetros
+├── CopyToGDriver_Checks.sh         # Verificações de ambiente
+├── CopyToGDriver_Cache.sh          # Gerenciamento de cache
+├── CopyToGDriver_Setup.sh          # Instalação e inicialização
+└── CopyToGDriver_Sync.sh           # Execução da sincronização principal
+</code></pre>
+<hr>
+<h2 id="-funcionalidades-de-segurança-e-robustez">💡 Funcionalidades de Segurança e Robustez</h2>
+<ul>
+<li>✅ Detecção automática de plataforma</li>
+<li>✅ Execução multiplataforma (Windows/Linux/macOS)</li>
+<li>✅ Verificação de dependências antes da execução</li>
+<li>✅ Carregamento modular dinâmico</li>
+<li>✅ Modo de verificação sem execução (<code>--check-only</code>)</li>
+<li>✅ Logs centralizados via <code>log_info()</code></li>
+</ul>
+<hr>
+<h2 id="-exemplo-de-uso">🧰 Exemplo de Uso</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># Verificar módulos e dependências apenas</span>
+./CopyToGDriver.sh --check-only
+
+<span class="hljs-comment"># Executar sincronização completa</span>
+./CopyToGDriver.sh --local-folder ./docs --remote-folder backups/docs
+</code></pre>
+<hr>
+<h2 id="-versão-e-autores">📜 Versão e Autores</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Script</strong></td>
+<td><a href="http://CopyToGDriver.sh">CopyToGDriver.sh</a></td>
+</tr>
+<tr>
+<td><strong>Versão</strong></td>
+<td>0.2.0</td>
+</tr>
+<tr>
+<td><strong>Autores</strong></td>
+<td>Paulo SSPacheco + ChatGPT (GPT-5)</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>01/11/2025</td>
+</tr>
+<tr>
+<td><strong>Licença</strong></td>
+<td>Uso pessoal / interno</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>© 2025 Paulo SSPacheco + ChatGPT (GPT-5) — Todos os direitos reservados.</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

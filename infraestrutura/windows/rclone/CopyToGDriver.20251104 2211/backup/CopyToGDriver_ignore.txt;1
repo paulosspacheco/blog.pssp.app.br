@@ -1,0 +1,32 @@
+# ===========================================================
+# CopyToGDriver_ignore.txt
+# Ignora arquivos e pastas temporárias ou de backup
+# ===========================================================
+
+# 🗑️ Pastas de sistema
+.Trash-1000/**
+lost+found/**
+
+# 🧰 Diretórios temporários
+tmp/**
+backup/**
+**/backup/**
+**/tmp/**
+
+# 🧱 Arquivos do Lazarus (não sincronizar)
+*.lpi
+*.lps
+*.lpr
+
+# 🧩 Backups do Lazarus (nomes com ponto e vírgula)
+*;1
+*;2
+*;3
+*;*
+
+# ⚙️ Logs e temporários
+*.log
+*.bak
+*.tmp
+
+

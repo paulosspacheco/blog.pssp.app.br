@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f4d8; Documenta&ccedil;&atilde;o &ndash; platform&lowbar;loader&period;sh &lpar;v1&period;2&period;0&rpar;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-documentação--platform_loadersh-v120">📘 Documentação – platform_loader.sh (v1.2.0)</h1>
+<h2 id="-visão-geral">🧭 Visão Geral</h2>
+<p>O script <strong><code>platform_loader.sh</code></strong> é o <strong>carregador inteligente de módulos</strong> do projeto <strong>CopyToGDriver</strong>.<br>
+Ele detecta automaticamente o sistema operacional e inclui apenas os módulos necessários, garantindo total compatibilidade entre <strong>Linux</strong>, <strong>macOS</strong> e <strong>Windows (Git Bash / WSL / Cygwin)</strong>.</p>
+<hr>
+<h2 id="️-função-principal">⚙️ Função Principal</h2>
+<p>O script executa a função:</p>
+<pre><code class="language-bash">load_platform_modules
+</code></pre>
+<p>Essa função:</p>
+<ul>
+<li>Identifica o sistema operacional atual (<code>Linux</code>, <code>macOS</code>, <code>Windows</code>, <code>WSL</code>);</li>
+<li>Carrega <strong>módulos universais</strong> sempre presentes na pasta <code>includes/crossplatform</code>;</li>
+<li>Inclui <strong>módulos específicos</strong> somente se existirem (ex: <code>path_utils.sh</code> no Windows).</li>
+</ul>
+<hr>
+<h2 id="-estrutura-esperada">📁 Estrutura Esperada</h2>
+<p>A organização de diretórios recomendada é a seguinte:</p>
+<pre><code>CopyToGDriver/
+├── CopyToGDriver.sh
+├── includes/
+│   ├── crossplatform/
+│   │   ├── crossplatform_utils.sh
+│   │   ├── crlf_protect.sh
+│   │   ├── disk_utils.sh
+│   │   ├── platform_loader.sh   ← ✅ ESTE SCRIPT
+│   │   └── (outros utilitários universais)
+│   ├── windows/
+│   │   └── path_utils.sh
+│   ├── linux/
+│   │   └── (opcional)
+│   ├── macos/
+│   │   └── (opcional)
+│   └── docs/
+│       └── platform_loader.md
+</code></pre>
+<hr>
+<h2 id="-módulos-carregados">🧩 Módulos Carregados</h2>
+<h3 id="-módulos-universais-sempre-carregados">🔹 Módulos Universais (sempre carregados)</h3>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th>Função</th>
+<th>Local</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>crlf_protect.sh</code></td>
+<td>Corrige automaticamente problemas de CRLF em ambientes Unix</td>
+<td><code>includes/crossplatform/</code></td>
+</tr>
+<tr>
+<td><code>crossplatform_utils.sh</code></td>
+<td>Ferramentas gerais: logging, normalização e validação</td>
+<td><code>includes/crossplatform/</code></td>
+</tr>
+<tr>
+<td><code>disk_utils.sh</code></td>
+<td>Utilitários de disco universais (Linux/macOS/Windows)</td>
+<td><code>includes/crossplatform/</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="-módulos-específicos-carregados-apenas-se-existirem">🔹 Módulos Específicos (carregados apenas se existirem)</h3>
+<table>
+<thead>
+<tr>
+<th>Sistema</th>
+<th>Módulo</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🪟 Windows / WSL</td>
+<td><code>path_utils.sh</code></td>
+<td>Conversão entre caminhos Windows e Git Bash</td>
+</tr>
+<tr>
+<td>🐧 Linux</td>
+<td><em>(nenhum específico por padrão)</em></td>
+<td>Usa apenas os universais</td>
+</tr>
+<tr>
+<td>🍎 macOS</td>
+<td><em>(nenhum específico por padrão)</em></td>
+<td>Usa apenas os universais</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-lógica-de-detecção-de-plataforma">🧠 Lógica de Detecção de Plataforma</h2>
+<p>A função <code>detect_os_type</code> usa <code>uname -s</code> e padrões simples para identificar o ambiente:</p>
+<pre><code class="language-bash">Linux*     → Linux ou WSL
+Darwin*    → macOS
+CYGWIN*|MINGW*|MSYS* → Windows (Git Bash/Cygwin)
+</code></pre>
+<p>No caso do WSL, a detecção adicional é feita com:</p>
+<pre><code class="language-bash">grep -qi microsoft /proc/version
+</code></pre>
+<hr>
+<h2 id="-exemplo-de-uso-no-script-principal">🚀 Exemplo de Uso no Script Principal</h2>
+<p>Dentro do <code>CopyToGDriver.sh</code>, adicione o seguinte bloco logo após definir <code>SCRIPT_DIR</code>:</p>
+<pre><code class="language-bash"><span class="hljs-comment"># -----------------------------------------------------------</span>
+<span class="hljs-comment"># 🔧 Inicialização de módulos universais</span>
+<span class="hljs-comment"># -----------------------------------------------------------</span>
+<span class="hljs-keyword">if</span> [[ -f <span class="hljs-string">&quot;<span class="hljs-variable">$SCRIPT_DIR</span>/includes/crossplatform/platform_loader.sh&quot;</span> ]]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">source</span> <span class="hljs-string">&quot;<span class="hljs-variable">$SCRIPT_DIR</span>/includes/crossplatform/platform_loader.sh&quot;</span>
+    load_platform_modules
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;❌ ERRO: platform_loader.sh não encontrado!&quot;</span>
+    <span class="hljs-built_in">exit</span> 1
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<hr>
+<h2 id="-teste-autônomo">🧪 Teste Autônomo</h2>
+<p>O script pode ser executado sozinho para teste:</p>
+<pre><code class="language-bash">$ bash includes/crossplatform/platform_loader.sh
+=====================================================
+🔧 Iniciando carregamento de módulos (plataforma: Linux)
+=====================================================
+✅ Módulo carregado: crlf_protect.sh
+✅ Módulo carregado: crossplatform_utils.sh
+✅ Módulo carregado: disk_utils.sh
+=====================================================
+✅ Carregamento de módulos concluí<span class="hljs-keyword">do</span>.
+=====================================================
+</code></pre>
+<hr>
+<h2 id="-fluxo-de-carregamento-interno">🧩 Fluxo de Carregamento Interno</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[CopyToGDriver.sh] --&gt; B[platform_loader.sh]
+    B --&gt; C[detect_os_type]
+    C --&gt; D[Carrega módulos universais]
+    C --&gt; E{Plataforma específica?}
+    E --&gt;|Windows| F[path_utils.sh]
+    E --&gt;|Linux/macOS| G[Somente módulos universais]
+    F --&gt; H[Execução do CopyToGDriver]
+    G --&gt; H
+</code></pre>
+<hr>
+<h2 id="-funções-internas">🧰 Funções Internas</h2>
+<table>
+<thead>
+<tr>
+<th>Função</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detect_os_type</code></td>
+<td>Identifica o sistema operacional (Linux, macOS, Windows, WSL)</td>
+</tr>
+<tr>
+<td><code>load_module &lt;arquivo&gt;</code></td>
+<td>Carrega um módulo se o arquivo existir</td>
+</tr>
+<tr>
+<td><code>load_platform_modules</code></td>
+<td>Função principal que executa todo o carregamento automático</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="️-requisitos">⚙️ Requisitos</h2>
+<ul>
+<li><code>bash</code> ≥ 4.0</li>
+<li>Utilitários padrão (<code>uname</code>, <code>grep</code>, <code>awk</code>, <code>sed</code>, <code>df</code>, <code>du</code>)</li>
+<li>Permissões de leitura nas pastas <code>includes/*</code></li>
+</ul>
+<hr>
+<h2 id="-histórico-de-versões">🧩 Histórico de Versões</h2>
+<table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Data</th>
+<th>Alterações Principais</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1.0.0</strong></td>
+<td>Inicial</td>
+<td>Primeira versão básica de carregamento</td>
+</tr>
+<tr>
+<td><strong>1.1.0</strong></td>
+<td>+ OS Detection</td>
+<td>Adicionada detecção WSL + modularização</td>
+</tr>
+<tr>
+<td><strong>1.2.0</strong></td>
+<td>Atual</td>
+<td>Versão universal: usa <code>crossplatform/disk_utils.sh</code> fixo e só carrega módulos específicos quando necessário</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-créditos">🧩 Créditos</h2>
+<p><strong>Autores:</strong></p>
+<ul>
+<li>👤 Paulo SSPacheco</li>
+<li>🤖 ChatGPT (GPT-5)</li>
+</ul>
+<p><strong>Licença:</strong> MIT – Uso livre com atribuição.</p>
+<hr>
+<blockquote>
+<p>💡 <em>“Carregue apenas o que for necessário — e carregue bem.”</em></p>
+<p>— <em>CopyToGDriver Philosophy, 2025</em></p>
+</blockquote>
+<pre><code>
+---
+
+</code></pre>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

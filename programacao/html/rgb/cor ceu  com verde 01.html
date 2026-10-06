@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gradiente Céu Nordeste - Letras em Verde</title>
+  <style>
+    :root{
+      --manha: #6EC6FF;
+      --meio-dia: #3AAAF0;
+      --sertao: #4DB8FF;
+      --tarde: #87CEEB;
+      --bg: linear-gradient(180deg, var(--manha) 0%, var(--meio-dia) 40%, var(--sertao) 70%, var(--tarde) 100%);
+      --text-color: #3B6B42;
+      --panel-bg: rgba(245,245,245,0.8);
+      --glass-2: rgba(255,255,255,0.06);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+
+    .stage{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      background: var(--bg);
+      transition:background 600ms ease;
+    }
+
+    .card{
+      width:980px;max-width:100%;background:var(--panel-bg);
+      border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,0.12);
+      display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start;color:var(--text-color);
+    }
+
+    h1{margin:0 0 6px 0;font-size:22px}
+    p{margin:0 0 12px 0;color:var(--text-color)}
+
+    .sky{
+      border-radius:12px;overflow:hidden;height:360px;display:flex;flex-direction:column;
+      box-shadow:inset 0 -40px 80px rgba(0,0,0,0.06);
+      border:1px solid rgba(0,0,0,0.06);
+    }
+
+    .sky .view{
+      flex:1;background:var(--bg);display:flex;align-items:center;justify-content:center;color:var(--text-color);font-weight:600;font-size:18px
+    }
+
+    .sky .horizon{height:88px;background:linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0));display:flex;align-items:center;justify-content:center;color:var(--text-color);font-size:13px}
+
+    .panel{background:var(--panel-bg);padding:14px;border-radius:12px}
+    .swatches{display:flex;gap:10px;margin-bottom:12px}
+    .swatch{flex:1;border-radius:8px;padding:10px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+    .swatch .chip{width:100%;height:48px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)}
+    .swatch small{display:block;color:var(--text-color)}
+
+    pre{background:var(--glass-2);padding:10px;border-radius:8px;overflow:auto;font-family:monospace;font-size:13px}
+    button{background:#3AAAF0;color:white;border:0;padding:8px 10px;border-radius:8px;cursor:pointer}
+
+    .controls{display:flex;gap:8px;align-items:center}
+    .options{display:flex;gap:6px}
+    .option{background:transparent;border:1px solid rgba(59,107,66,0.5);padding:6px 8px;border-radius:8px;cursor:pointer;color:var(--text-color)}
+    .option.active{background:#3B6B42;color:white}
+
+    @media (max-width:900px){
+      .card{grid-template-columns:1fr;}
+      .sky{height:300px}
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="card">
+      <div>
+        <h1>Céu em azul — texto em verde</h1>
+        <p>Fundo azul do céu com texto em tons de verde da vegetação do nordeste no inverno.</p>
+
+        <div class="sky">
+          <div id="skyView" class="view">Visualização do fundo</div>
+          <div class="horizon">Gradiente aplicado verticalmente</div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:8px;align-items:center;justify-content:flex-start">
+          <div class="options">
+            <button class="option active" data-preset="full">Gradiente fundo</button>
+            <button class="option" data-preset="manha">Manhã</button>
+            <button class="option" data-preset="meio-dia">Meio‑dia</button>
+            <button class="option" data-preset="sertao">Sertão</button>
+            <button class="option" data-preset="tarde">Fim da tarde</button>
+          </div>
+
+          <div style="flex:1"></div>
+
+          <div class="controls">
+            <button id="copyCss">Copiar CSS do fundo</button>
+            <button id="copyHex">Copiar HEXs das cores</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <h2 style="margin:0 0 8px 0;font-size:16px">Swatches</h2>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="chip" style="background:var(--manha)"></div>
+            <small>Manhã · <strong>#6EC6FF</strong> · rgb(110,198,255)</small>
+          </div>
+          <div class="swatch">
+            <div class="chip" style="background:var(--meio-dia)"></div>
+            <small>Meio‑dia · <strong>#3AAAF0</strong> · rgb(58,170,240)</small>
+          </div>
+          <div class="swatch">
+            <div class="chip" style="background:var(--sertao)"></div>
+            <small>Sertão · <strong>#4DB8FF</strong> · rgb(77,184,255)</small>
+          </div>
+          <div class="swatch">
+            <div class="chip" style="background:var(--tarde)"></div>
+            <small>Tarde · <strong>#87CEEB</strong> · rgb(135,206,235)</small>
+          </div>
+        </div>
+
+        <h3 style="margin:8px 0">CSS do fundo</h3>
+        <pre id="cssBlock">background: linear-gradient(180deg, #6EC6FF 0%, #3AAAF0 40%, #4DB8FF 70%, #87CEEB 100%);</pre>
+
+        <h3 style="margin:8px 0">HEXs (texto em verde)</h3>
+        <pre id="hexBlock">#3B6B42</pre>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    const presets = {
+      'full': 'linear-gradient(180deg, #6EC6FF 0%, #3AAAF0 40%, #4DB8FF 70%, #87CEEB 100%)',
+      'manha': 'linear-gradient(180deg, #6EC6FF 0%, #9FE3FF 100%)',
+      'meio-dia': 'linear-gradient(180deg, #3AAAF0 0%, #6EC6FF 100%)',
+      'sertao': 'linear-gradient(180deg, #4DB8FF 0%, #6EC6FF 100%)',
+      'tarde': 'linear-gradient(180deg, #87CEEB 0%, #BEE8FF 100%)'
+    };
+
+    const stage = document.querySelector('.stage');
+    const skyView = document.getElementById('skyView');
+    const cssBlock = document.getElementById('cssBlock');
+
+    function applyPreset(name){
+      const g = presets[name] || presets['full'];
+      stage.style.background = g;
+      skyView.style.background = g;
+      document.querySelectorAll('.option').forEach(b=>b.classList.remove('active'));
+      const btn = document.querySelector('.option[data-preset="'+name+'"]');
+      if(btn) btn.classList.add('active');
+      cssBlock.textContent = 'background: ' + g + ';';
+    }
+
+    document.querySelectorAll('.option').forEach(btn=>{
+      btn.addEventListener('click', ()=> applyPreset(btn.dataset.preset));
+    });
+
+    applyPreset('full');
+  </script>
+
+
+  
+</body>
+</html>

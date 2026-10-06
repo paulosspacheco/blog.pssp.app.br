@@ -1,0 +1,11 @@
+;!@Install@!UTF-8!
+; ===========================================================
+; CONFIGURAÇÃO 7-ZIP SFX - COPYTOGDRIVER
+; Localização: include/packagers/windows/config.txt
+; Plataforma: Windows
+; Versão: 1.1.0
+; ===========================================================
+
+Title="CopyToGDriver - Instalador Multiplataforma"
+RunProgram="powershell -ExecutionPolicy Bypass -File CopyToGDriver_PlatformInstaller.ps1"
+;!@InstallEnd@!

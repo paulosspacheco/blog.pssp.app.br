@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cores do Visual Studio Code</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #252526;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            border: 1px solid #3e3e42;
+        }
+        
+        h1 {
+            color: #569cd6;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .description {
+            color: #9cdcfe;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        
+        .color-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .category {
+            background: #252526;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            border: 1px solid #3e3e42;
+        }
+        
+        .category h2 {
+            color: #569cd6;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3e3e42;
+        }
+        
+        .color-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            background: #2d2d30;
+            transition: transform 0.2s;
+        }
+        
+        .color-item:hover {
+            transform: translateX(5px);
+            background: #323234;
+        }
+        
+        .color-sample {
+            width: 50px;
+            height: 50px;
+            border-radius: 6px;
+            margin-right: 15px;
+            border: 2px solid #3e3e42;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .color-info {
+            flex: 1;
+        }
+        
+        .color-name {
+            font-weight: bold;
+            color: #d4d4d4;
+            margin-bottom: 4px;
+        }
+        
+        .color-hex {
+            color: #9cdcfe;
+            font-size: 0.9em;
+        }
+        
+        .color-usage {
+            color: #ce9178;
+            font-size: 0.9em;
+            margin-top: 4px;
+        }
+        
+        .stats {
+            background: #252526;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            border: 1px solid #3e3e42;
+        }
+        
+        .stats h2 {
+            color: #569cd6;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3e3e42;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-item {
+            background: #2d2d30;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #569cd6;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #d4d4d4;
+            font-size: 1.1em;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #808080;
+            font-size: 0.9em;
+            padding: 20px;
+            border-top: 1px solid #3e3e42;
+        }
+        
+        .keyword {
+            color: #569cd6;
+        }
+        
+        .string {
+            color: #ce9178;
+        }
+        
+        .comment {
+            color: #6a9955;
+        }
+        
+        .function {
+            color: #dcdcaa;
+        }
+        
+        @media (max-width: 768px) {
+            .color-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cores do Visual Studio Code</h1>
+            <p class="description">Análise completa da paleta de cores e temas do editor</p>
+        </header>
+        
+        <div class="stats">
+            <h2>Estatísticas de Cores</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">30+</div>
+                    <div class="stat-label">Cores de sintaxe principais</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">50+</div>
+                    <div class="stat-label">Cores da interface (UI)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">10</div>
+                    <div class="stat-label">Temas escuros padrão</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">1000+</div>
+                    <div class="stat-label">Temas disponíveis no marketplace</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="color-categories">
+            <div class="category">
+                <h2>Cores de Sintaxe</h2>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #569cd6;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Palavras-chave</div>
+                        <div class="color-hex">#569cd6</div>
+                        <div class="color-usage">if, else, for, function</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #4ec9b0;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Tipos e Classes</div>
+                        <div class="color-hex">#4ec9b0</div>
+                        <div class="color-usage">class, interface, type</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #ce9178;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Strings</div>
+                        <div class="color-hex">#ce9178</div>
+                        <div class="color-usage">"texto", 'string'</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #d7ba7d;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Funções e Métodos</div>
+                        <div class="color-hex">#d7ba7d</div>
+                        <div class="color-usage">myFunction(), console.log()</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #9cdcfe;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Variáveis e Parâmetros</div>
+                        <div class="color-hex">#9cdcfe</div>
+                        <div class="color-usage">let x = 10, function(param)</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #6a9955;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Comentários</div>
+                        <div class="color-hex">#6a9955</div>
+                        <div class="color-usage">// comentário, /* bloco */</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <h2>Cores da Interface (UI)</h2>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #1e1e1e;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Fundo do Editor</div>
+                        <div class="color-hex">#1e1e1e</div>
+                        <div class="color-usage">Área principal de código</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #252526;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Fundo da Sidebar</div>
+                        <div class="color-hex">#252526</div>
+                        <div class="color-usage">Explorer, extensões, etc.</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #2d2d30;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Fundo de Painéis</div>
+                        <div class="color-hex">#2d2d30</div>
+                        <div class="color-usage">Terminal, problemas, etc.</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #3e3e42;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Bordas e Separadores</div>
+                        <div class="color-hex">#3e3e42</div>
+                        <div class="color-usage">Divisórias entre painéis</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #007acc;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Destaque e Foco</div>
+                        <div class="color-hex">#007acc</div>
+                        <div class="color-usage">Elementos selecionados</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #0e639c;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Botões e Ações</div>
+                        <div class="color-hex">#0e639c</div>
+                        <div class="color-usage">Botões, highlights</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <h2>Estados e Interações</h2>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #4e94ce;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Links e Navegação</div>
+                        <div class="color-hex">#4e94ce</div>
+                        <div class="color-usage">Hiperlinks, atalhos</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #f44747;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Erros</div>
+                        <div class="color-hex">#f44747</div>
+                        <div class="color-usage">Sublinhado de erro</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #ffcc00;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Avisos</div>
+                        <div class="color-hex">#ffcc00</div>
+                        <div class="color-usage">Sublinhado de aviso</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #3794ff;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Informações</div>
+                        <div class="color-hex">#3794ff</div>
+                        <div class="color-usage">Sublinhado de informação</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #264f78;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Seleção de Texto</div>
+                        <div class="color-hex">#264f78</div>
+                        <div class="color-usage">Texto selecionado</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-sample" style="background-color: #43a6ff;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Destaque de Busca</div>
+                        <div class="color-hex">#43a6ff</div>
+                        <div class="color-usage">Resultados de busca</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <h2>Resumo Técnico</h2>
+            <p>O Visual Studio Code utiliza um sistema de cores complexo com dezenas de cores diferentes, organizadas em categorias:</p>
+            <ul style="padding-left: 30px; margin-top: 15px;">
+                <li><span class="keyword">Cores de sintaxe</span> - Para colorização de código (30+ cores)</li>
+                <li><span class="string">Cores da interface</span> - Para a UI do editor (50+ cores)</li>
+                <li><span class="function">Cores de estado</span> - Para feedback e interações (20+ cores)</li>
+            </ul>
+            <p style="margin-top: 15px;">Além disso, o VS Code suporta temas personalizados com centenas de opções disponíveis no marketplace, cada um com suas próprias variações de cores.</p>
+        </div>
+        
+        <div class="footer">
+            <p>Análise de Cores do Visual Studio Code &copy; 2023</p>
+        </div>
+    </div>
+</body>
+</html>

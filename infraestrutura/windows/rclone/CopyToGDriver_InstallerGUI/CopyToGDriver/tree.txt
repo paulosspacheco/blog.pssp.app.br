@@ -1,0 +1,87 @@
+﻿Listagem de caminhos de pasta para o volume hd100gb
+O número de série do volume é 0287-3E11
+V:.
+│   CopyToDriver_Group.lpg
+│   CopyToGDriver.lpi
+│   CopyToGDriver.lpr
+│   CopyToGDriver.lps
+│   CopyToGDriver.sh
+│   includes/crossplatform/alias_manager.sh
+│   CopyToGDriver_Cache.sh
+│   CopyToGDriver_Checks.sh
+│   CopyToGDriver_Config.sh
+│   CopyToGDriver_ConfigFunctions.sh
+│   CopyToGDriver_CopyCurrent.sh
+│   CopyToGDriver_ignore.txt
+│   CopyToGDriver_Installer.sh
+│   CopyToGDriver_Restore.sh
+│   CopyToGDriver_Setup.sh
+│   CopyToGDriver_Sync.sh
+│   CopyToGDriver_UnInstaller.sh
+│   CopyToGDriver_Utils.sh
+│   include_loader.sh
+│   junte_Scripts.sh
+│   listtree.bat
+│   listtree.ps1
+│   pack.ps1
+│   platform_detector.sh
+│   rclone_browser_x_CopyToDriver.md
+│   scripts.sh
+│   temp.txt
+│   test_copy.sh
+│   tree.txt
+│   
+├───dist
+├───includes
+│   │   includes.html
+│   │   includes.md
+│   │   
+│   ├───common
+│   │       common_functions.sh
+│   │       config.sh
+│   │       logging.sh
+│   │       
+│   ├───linux
+│   │       CopyToGDriver_Installer.sh
+│   │       CopyToGDriver_UnInstaller.sh
+│   │       disk_utils.sh
+│   │       path_utils.sh
+│   │       process_utils.sh
+│   │       Remove_Rclone.sh
+│   │       
+│   ├───macos
+│   │       CopyToGDriver_Installer.sh
+│   │       CopyToGDriver_UnInstaller.sh
+│   │       disk_utils.sh
+│   │       path_utils.sh
+│   │       process_utils.sh
+│   │       
+│   └───windows
+│           CopyToGDriver_7zSFX_Config.txt
+│           CopyToGDriver_Installer.bat
+│           CopyToGDriver_Installer.md
+│           CopyToGDriver_Installer.ps1
+│           CopyToGDriver_UnInstaller.bat
+│           CopyToGDriver_UnInstaller.ps1
+│           disk_utils.sh
+│           path_utils.sh
+│           process_utils.sh
+│           Run_Installer.bat
+│           Run_Uninstaller.bat
+│           
+└───packagers
+    └───windows
+        │   7z.sfx
+        │   7z2501-x64.exe
+        │   build.bat
+        │   BUILD_README.md
+        │   CopyToGDriver_7zSFX_Config.md
+        │   CopyToGDriver_7zSFX_Config.txt
+        │   CopyToGDriver_PlatformInstaller.ps1
+        │   CopyToGDriver_Setup.exe
+        │   install.bat
+        │   
+        └───instalador
+                7z.SFX.Builder.Setup-2.1.exe
+                
+

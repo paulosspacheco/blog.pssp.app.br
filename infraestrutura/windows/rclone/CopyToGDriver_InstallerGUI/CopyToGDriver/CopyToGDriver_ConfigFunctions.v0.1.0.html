@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f4d8; Documenta&ccedil;&atilde;o do Script CopyToGDriver&lowbar;ConfigFunctions&period;sh</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-documentação-do-script-copytogdriver_configfunctionssh">📘 Documentação do Script CopyToGDriver_ConfigFunctions.sh</h1>
+<h2 id="-visão-geral">🧩 Visão Geral</h2>
+<p>O módulo <strong>CopyToGDriver_ConfigFunctions.sh</strong> é responsável por implementar as <strong>funções de configuração e parsing de parâmetros</strong> do projeto <strong>CopyToGDriver</strong>.<br>
+Ele centraliza toda a lógica relacionada à leitura de argumentos de linha de comando, confirmação de execução, detecção de ambiente e exibição de ajuda.</p>
+<hr>
+<h2 id="️-funções-principais">⚙️ Funções Principais</h2>
+<h3 id="1-detect_platform">1. <code>detect_platform()</code></h3>
+<p>Detecta automaticamente o sistema operacional e retorna um dos seguintes valores:</p>
+<table>
+<thead>
+<tr>
+<th>Sistema</th>
+<th>Valor retornado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td><code>linux</code></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td><code>macos</code></td>
+</tr>
+<tr>
+<td>Windows (Git Bash, Cygwin, MSYS)</td>
+<td><code>windows</code></td>
+</tr>
+<tr>
+<td>Outros</td>
+<td><code>unknown</code></td>
+</tr>
+</tbody>
+</table>
+<p>O resultado é armazenado na variável global <code>PLATFORM</code> e utilizado em várias funções para ajustar o comportamento do script.</p>
+<hr>
+<h3 id="2-write_color_output">2. <code>write_color_output()</code></h3>
+<p>Função utilitária para exibir mensagens coloridas no terminal, compatível com múltiplas plataformas.</p>
+<p><strong>Parâmetros:</strong></p>
+<ul>
+<li><code>$1</code>: mensagem a ser exibida.</li>
+<li><code>$2</code>: cor desejada (<code>Red</code>, <code>Green</code>, <code>Yellow</code>, <code>Blue</code>, <code>Magenta</code>, <code>Cyan</code>).</li>
+</ul>
+<p>No Windows, o suporte a cores ANSI é automaticamente desativado se o terminal não for compatível.</p>
+<p><strong>Exemplo de uso:</strong></p>
+<pre><code class="language-bash">write_color_output <span class="hljs-string">&quot;Sincronização concluída com sucesso!&quot;</span> <span class="hljs-string">&quot;Green&quot;</span>
+</code></pre>
+<hr>
+<h3 id="3-confirm_sync">3. <code>confirm_sync()</code></h3>
+<p>Solicita confirmação interativa do usuário antes de iniciar a sincronização, exibindo as informações detectadas.</p>
+<p><strong>Fluxo de execução:</strong></p>
+<ol>
+<li>Exibe a pasta local e remota detectadas.</li>
+<li>Solicita confirmação (<code>s</code> ou <code>S</code> para continuar).</li>
+<li>Cancela a execução se o usuário responder qualquer outra coisa.</li>
+</ol>
+<p><strong>Exemplo:</strong></p>
+<pre><code>Deseja sincronizar a pasta corrente '/home/user/docs'? (s/N): s
+Prosseguindo com a sincronização...
+</code></pre>
+<blockquote>
+<p>⚠️ No modo automático, a confirmação é pulada e o processo continua sem interação.</p>
+</blockquote>
+<hr>
+<h3 id="4-calculate_defaults">4. <code>calculate_defaults()</code></h3>
+<p>Define valores padrão caso não tenham sido informados pelo usuário:</p>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+<th>Valor Padrão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DEFAULT_LOCAL_FOLDER</code></td>
+<td>Pasta local usada para sincronização.</td>
+<td>Diretório atual (<code>pwd</code>)</td>
+</tr>
+<tr>
+<td><code>DEFAULT_REMOTE_FOLDER</code></td>
+<td>Caminho remoto de destino no Drive.</td>
+<td><code>rclone/&lt;nome_da_pasta_atual&gt;</code></td>
+</tr>
+<tr>
+<td><code>DEFAULT_REMOTE_FOLDER</code> (fallback)</td>
+<td>Caso o nome não possa ser determinado.</td>
+<td><code>rclone/sync-&lt;data&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Essa função é executada automaticamente durante o parsing de parâmetros.</p>
+<hr>
+<h3 id="5-is_effectively_empty">5. <code>is_effectively_empty()</code></h3>
+<p>Verifica se a pasta local está <strong>efetivamente vazia</strong>, ignorando scripts e arquivos internos do sistema CopyToGDriver.</p>
+<p><strong>Critérios ignorados:</strong></p>
+<ul>
+<li><code>CopyToGDriver_*.sh</code></li>
+<li><code>CopyToGDriver_CopyCurrent.sh</code></li>
+<li><code>CopyToGDriver_Restore.sh</code></li>
+<li><code>CopyToGDriver_ignore.txt</code></li>
+</ul>
+<p>Se não encontrar arquivos úteis, retorna <code>0</code> (verdadeiro).</p>
+<p><strong>Uso típico:</strong></p>
+<pre><code class="language-bash"><span class="hljs-keyword">if</span> is_effectively_empty <span class="hljs-string">&quot;<span class="hljs-variable">$LOCAL_FOLDER</span>&quot;</span>; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Pasta está vazia — restauração necessária.&quot;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<hr>
+<h3 id="6-show_help">6. <code>show_help()</code></h3>
+<p>Exibe a ajuda completa e estruturada com exemplos de uso.</p>
+<p><strong>Exemplo de saída resumida:</strong></p>
+<pre><code>🧭  CopyToGDriver - Ajuda de Uso
+Uso: CopyToGDriver.sh [OPÇÕES]
+
+OPÇÕES DISPONÍVEIS:
+  -l, --local-folder DIR      Define pasta local
+  -r, --remote-name NAME      Define remote (padrão: gdriver)
+  -f, --remote-folder PATH    Define pasta remota
+  -a, --auto-create           Cria pastas automaticamente
+  -c, --clean-cache           Limpa cache antes da sincronização
+  -n, --dry-run               Simula execução (sem enviar nada)
+  -v, --verbose               Ativa logs detalhados
+  -R, --resync                Força resincronização completa
+  -h, --help                  Exibe esta ajuda
+</code></pre>
+<hr>
+<h3 id="7-parse_parameters">7. <code>parse_parameters()</code></h3>
+<p>Função central de leitura e interpretação dos parâmetros passados ao script.</p>
+<p><strong>Função:</strong> lê e interpreta as opções da linha de comando, aplicando valores padrão quando necessário.</p>
+<h4 id="parâmetros-aceitos">Parâmetros aceitos:</h4>
+<table>
+<thead>
+<tr>
+<th>Opção</th>
+<th>Nome longo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-l</code></td>
+<td><code>--local-folder</code></td>
+<td>Define a pasta local a ser sincronizada</td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td><code>--remote-name</code></td>
+<td>Define o nome do remoto do rclone</td>
+</tr>
+<tr>
+<td><code>-f</code></td>
+<td><code>--remote-folder</code></td>
+<td>Define a pasta remota de destino</td>
+</tr>
+<tr>
+<td><code>-n</code></td>
+<td><code>--dry-run</code></td>
+<td>Ativa modo simulação</td>
+</tr>
+<tr>
+<td><code>-v</code></td>
+<td><code>--verbose</code></td>
+<td>Ativa logs detalhados</td>
+</tr>
+<tr>
+<td><code>-R</code></td>
+<td><code>--resync</code></td>
+<td>Força resincronização completa</td>
+</tr>
+<tr>
+<td><code>-a</code></td>
+<td><code>--auto-create</code></td>
+<td>Cria pastas ausentes no destino</td>
+</tr>
+<tr>
+<td><code>-c</code></td>
+<td><code>--clean-cache</code></td>
+<td>Limpa cache antes da sincronização</td>
+</tr>
+<tr>
+<td><code>-h</code></td>
+<td><code>--help</code></td>
+<td>Exibe ajuda e encerra o programa</td>
+</tr>
+</tbody>
+</table>
+<h4 id="regras-internas">Regras internas:</h4>
+<ol>
+<li>Se nenhum parâmetro for informado, chama <code>confirm_sync()</code> para confirmação interativa.</li>
+<li>Se a pasta local estiver “vazia”, tenta <strong>restaurar automaticamente</strong> seu conteúdo a partir do Google Drive usando <code>CopyToGDriver_Restore.sh</code>.</li>
+<li>Exibe mensagens de depuração sobre o caminho remoto usado (padrão ou definido manualmente).</li>
+</ol>
+<hr>
+<h3 id="-restauração-automática">🧠 Restauração Automática</h3>
+<p>Ao detectar que a pasta local contém apenas arquivos do sistema, o script tenta restaurar o conteúdo original automaticamente:</p>
+<ol>
+<li>Localiza <code>CopyToGDriver_Restore.sh</code> no mesmo diretório.</li>
+<li>Executa-o com o parâmetro <code>--remote-folder &quot;&lt;nome_da_pasta&gt;&quot;</code>.</li>
+<li>Interpreta o código de retorno e age conforme o resultado:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Ação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>11</code></td>
+<td>Restauração concluída, sincronização abortada para evitar sobrescrita.</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>Restauração completa, sincronização encerrada normalmente.</td>
+</tr>
+<tr>
+<td>Outro</td>
+<td>Erro na restauração — execução interrompida.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-variáveis-globais-importantes">🧩 Variáveis Globais Importantes</h2>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+<th>Origem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LOCAL_FOLDER</code></td>
+<td>Caminho local da pasta a sincronizar</td>
+<td>Parâmetro <code>-l</code> ou padrão</td>
+</tr>
+<tr>
+<td><code>REMOTE_NAME</code></td>
+<td>Nome do remoto do rclone</td>
+<td>Parâmetro <code>-r</code> ou padrão</td>
+</tr>
+<tr>
+<td><code>REMOTE_FOLDER</code></td>
+<td>Caminho remoto no Drive</td>
+<td>Parâmetro <code>-f</code> ou padrão</td>
+</tr>
+<tr>
+<td><code>DRY_RUN</code></td>
+<td>Define modo simulação</td>
+<td>Flag <code>-n</code></td>
+</tr>
+<tr>
+<td><code>VERBOSE</code></td>
+<td>Exibe logs detalhados</td>
+<td>Flag <code>-v</code></td>
+</tr>
+<tr>
+<td><code>AUTO_CREATE</code></td>
+<td>Cria pastas automaticamente</td>
+<td>Flag <code>-a</code></td>
+</tr>
+<tr>
+<td><code>CLEAN_CACHE</code></td>
+<td>Limpa cache antes de sincronizar</td>
+<td>Flag <code>-c</code></td>
+</tr>
+<tr>
+<td><code>RESYNC</code></td>
+<td>Força resincronização completa</td>
+<td>Flag <code>-R</code></td>
+</tr>
+<tr>
+<td><code>SHOW_HELP</code></td>
+<td>Exibe ajuda e encerra o script</td>
+<td>Flag <code>-h</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-compatibilidade">💻 Compatibilidade</h2>
+<table>
+<thead>
+<tr>
+<th>Sistema</th>
+<th>Suporte</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Linux</strong></td>
+<td>✅ Completo</td>
+<td>Suporte nativo a cores ANSI e paths POSIX</td>
+</tr>
+<tr>
+<td><strong>macOS</strong></td>
+<td>✅ Completo</td>
+<td>Comportamento idêntico ao Linux</td>
+</tr>
+<tr>
+<td><strong>Windows (Git Bash)</strong></td>
+<td>✅ Parcial</td>
+<td>Cores ANSI podem não funcionar em todos os terminais</td>
+</tr>
+<tr>
+<td><strong>Outros</strong></td>
+<td>⚠️ Parcial</td>
+<td>Detectado como “unknown”; comportamento básico</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-versão-e-autores">📜 Versão e Autores</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Script</strong></td>
+<td>CopyToGDriver_ConfigFunctions.sh</td>
+</tr>
+<tr>
+<td><strong>Versão</strong></td>
+<td>0.1.0</td>
+</tr>
+<tr>
+<td><strong>Autores</strong></td>
+<td>Paulo SSPacheco + ChatGPT (GPT-5)</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>01/11/2025</td>
+</tr>
+<tr>
+<td><strong>Licença</strong></td>
+<td>Uso pessoal / interno</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>© 2025 Paulo SSPacheco + ChatGPT (GPT-5) — Todos os direitos reservados.</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

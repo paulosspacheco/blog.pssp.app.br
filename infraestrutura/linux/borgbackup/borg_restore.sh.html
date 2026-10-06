@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x267b;&#xfe0f; Manual do Script &DiacriticalGrave;borg&lowbar;restore&period;sh&DiacriticalGrave;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="️-manual-do-script-borg_restoresh">♻️ Manual do Script <code>borg_restore.sh</code></h1>
+<h2 id="-descrição-geral">📘 Descrição Geral</h2>
+<p>O script <strong><code>borg_restore.sh</code></strong> tem como objetivo <strong>restaurar backups criados com o BorgBackup</strong>, de forma simples, segura e compatível com o formato de repositórios criados pelo script <code>borg_backup.sh</code>.</p>
+<p>Ele permite listar snapshots disponíveis, executar <strong>simulações de restauração</strong> (modo <em>dry-run</em>) e recuperar os arquivos com estrutura limpa — sem incluir caminhos absolutos desnecessários.</p>
+<hr>
+<h2 id="-objetivo">🧠 Objetivo</h2>
+<ul>
+<li>Restaurar backups criados pelo <strong>BorgBackup</strong>.</li>
+<li>Listar snapshots existentes antes da restauração.</li>
+<li>Permitir uma <strong>simulação prévia (dry-run)</strong>.</li>
+<li>Suportar <strong>criptografia opcional</strong>.</li>
+<li>Garantir compatibilidade com o <strong>Borg 1.x (Debian/Ubuntu padrão)</strong>.</li>
+<li>Restaurar conteúdo direto, removendo hierarquia absoluta (<code>--strip-components 3</code>).</li>
+</ul>
+<hr>
+<h2 id="️-parâmetros-de-execução">⚙️ Parâmetros de Execução</h2>
+<table>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>REPO</code></td>
+<td>✅</td>
+<td>Caminho completo do repositório Borg (ex: <code>/media/paulo/hd/borg_backup/scripts/borg-repo</code>)</td>
+</tr>
+<tr>
+<td><code>DESTINO</code></td>
+<td>✅</td>
+<td>Diretório onde os arquivos serão restaurados</td>
+</tr>
+<tr>
+<td><code>SNAPSHOT</code></td>
+<td>❌</td>
+<td>Nome do snapshot (ex: <code>backup-2025-10-30</code>)</td>
+</tr>
+<tr>
+<td><code>ENCRYPTION</code></td>
+<td>❌</td>
+<td>Tipo de criptografia (<code>none</code>, <code>repokey</code>, etc). Padrão: <code>none</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-exemplo-de-uso">🧰 Exemplo de Uso</h2>
+<h3 id="-exemplo-1--restauração-simples">🔹 Exemplo 1 — Restauração simples</h3>
+<pre><code class="language-bash">./borg_restore.sh /media/paulo/borg_backup/scripts/borg-repo /home/paulo/scripts/restaurado
+</code></pre>
+<h3 id="-exemplo-2--restaurar-snapshot-específico">🔹 Exemplo 2 — Restaurar snapshot específico</h3>
+<pre><code class="language-bash">./borg_restore.sh /media/paulo/borg_backup/scripts/borg-repo /home/paulo/scripts/restaurado backup-2025-10-30
+</code></pre>
+<h3 id="-exemplo-3--restauração-automatizada-sem-perguntas">🔹 Exemplo 3 — Restauração automatizada (sem perguntas)</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;s&quot;</span> | ./borg_restore.sh /media/paulo/borg_backup/scripts/borg-repo /home/paulo/scripts/restaurado backup-2025-10-30
+</code></pre>
+<hr>
+<h2 id="-estrutura-do-script">🧱 Estrutura do Script</h2>
+<pre><code class="language-bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-comment"># ======================================================</span>
+<span class="hljs-comment"># Script: borg_restore.sh</span>
+<span class="hljs-comment"># Objetivo: Restaurar backups feitos com BorgBackup</span>
+<span class="hljs-comment"># Autor: Paulo SSPacheco</span>
+<span class="hljs-comment"># Compatível com Borg 1.x</span>
+<span class="hljs-comment"># ======================================================</span>
+</code></pre>
+<hr>
+<h2 id="-principais-funções">🧩 Principais Funções</h2>
+<h3 id="1️⃣-check_dependencies">1️⃣ <code>check_dependencies()</code></h3>
+<p>Garante que o <strong>BorgBackup</strong> está instalado.
+Caso não esteja, o script realiza a instalação automaticamente:</p>
+<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install -y borgbackup
+</code></pre>
+<hr>
+<h3 id="2️⃣-listar_snapshots">2️⃣ <code>listar_snapshots()</code></h3>
+<p>Lista todos os snapshots (backups) disponíveis no repositório informado:</p>
+<pre><code class="language-bash">borg list <span class="hljs-string">&quot;<span class="hljs-variable">$REPO</span>&quot;</span>
+</code></pre>
+<p>Saída típica:</p>
+<pre><code>backup-2025-10-30    Thu, 2025-10-30 09:31:12 [c5d00a1cc5b...]
+backup-2025-10-31    Fri, 2025-10-31 09:35:01 [a1f00e9e3cd...]
+</code></pre>
+<hr>
+<h3 id="3️⃣-escolher_snapshot">3️⃣ <code>escolher_snapshot()</code></h3>
+<p>Se o usuário não especificar um snapshot, o script lista todos e pede que o operador escolha um manualmente.</p>
+<p>Exemplo de prompt:</p>
+<pre><code>🔍 Nenhum snapshot especificado.
+Abaixo estão os backups disponíveis:
+📜 Listando backups disponíveis em: /media/paulo/borg_backup/scripts/borg-repo
+backup-2025-10-30  Thu, 2025-10-30 09:31:12
+Digite o nome do snapshot a restaurar (ex: backup-2025-10-30):
+</code></pre>
+<hr>
+<h3 id="4️⃣-dry_run_restore">4️⃣ <code>dry_run_restore()</code></h3>
+<p>Executa uma <strong>simulação</strong> de restauração sem alterar nada no disco.
+Permite revisar o que será restaurado antes da execução real.</p>
+<pre><code class="language-bash">borg extract --dry-run --list --strip-components 3 <span class="hljs-string">&quot;<span class="hljs-variable">$REPO</span>::<span class="hljs-variable">$SNAPSHOT</span>&quot;</span>
+</code></pre>
+<p>Se tudo estiver correto, o usuário confirma:</p>
+<pre><code>Deseja continuar com a restauração real? (s/n):
+</code></pre>
+<hr>
+<h3 id="5️⃣-real_restore">5️⃣ <code>real_restore()</code></h3>
+<p>Executa a restauração real no diretório de destino.
+Os arquivos são extraídos <strong>sem incluir o caminho completo original</strong>,
+graças à opção <code>--strip-components 3</code>.</p>
+<pre><code class="language-bash">borg extract --progress --list --strip-components 3 <span class="hljs-string">&quot;<span class="hljs-variable">$REPO</span>::<span class="hljs-variable">$SNAPSHOT</span>&quot;</span>
+</code></pre>
+<p>✅ Ao final, o script exibe:</p>
+<pre><code>✅ Restauração concluída com sucesso!
+Arquivos restaurados em: /home/paulo/scripts/restaurado
+</code></pre>
+<hr>
+<h2 id="-organização-dos-arquivos-restaurados">🧩 Organização dos Arquivos Restaurados</h2>
+<p>Durante o backup, o Borg grava caminhos absolutos como:</p>
+<pre><code>home/paulosspacheco/scripts/arquivo1.sh
+</code></pre>
+<p>A opção <code>--strip-components 3</code> remove os três primeiros diretórios (<code>home</code>, <code>usuario</code>, <code>scripts</code>)
+para restaurar apenas os arquivos desejados diretamente no destino.</p>
+<p>Exemplo final:</p>
+<pre><code>/home/paulo/scripts/restaurado/
+ ├── borg_backup.sh
+ ├── borg_restore.sh
+ └── outros_arquivos.sh
+</code></pre>
+<hr>
+<h2 id="-estrutura-do-repositório-de-backup">🧱 Estrutura do Repositório de Backup</h2>
+<p>O repositório é criado automaticamente pelo <code>borg_backup.sh</code> e segue o formato:</p>
+<pre><code>/media/paulo/Novo volume/borg_backup/
+ └── scripts/
+     └── borg-repo/
+         ├── config
+         ├── index.1234567890
+         ├── data/
+         └── integrity/
+</code></pre>
+<p>Cada execução de backup cria um snapshot incremental:</p>
+<pre><code>backup-2025-10-30
+backup-2025-10-31
+backup-2025-11-01
+</code></pre>
+<hr>
+<h2 id="️-compatibilidade-e-requisitos">⚙️ Compatibilidade e Requisitos</h2>
+<table>
+<thead>
+<tr>
+<th>Requisito</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sistema Operacional</strong></td>
+<td>Debian, Ubuntu, Mint, Pop!_OS</td>
+</tr>
+<tr>
+<td><strong>Versão BorgBackup</strong></td>
+<td>1.1.x / 1.2.x</td>
+</tr>
+<tr>
+<td><strong>Shell</strong></td>
+<td>Bash 5.x</td>
+</tr>
+<tr>
+<td><strong>Dependências</strong></td>
+<td><code>borgbackup</code>, <code>sudo</code></td>
+</tr>
+<tr>
+<td><strong>Compatibilidade</strong></td>
+<td>Total com script <code>borg_backup.sh</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="️-cuidados-importantes">⚠️ Cuidados Importantes</h2>
+<ul>
+<li><strong>Verifique o ponto de montagem do disco externo</strong> antes da restauração.</li>
+<li><strong>Evite restaurar sobre diretórios já existentes</strong> (pode sobrescrever arquivos).</li>
+<li>Sempre revise o conteúdo da simulação (<code>--dry-run</code>) antes da restauração real.</li>
+<li>Caso use criptografia, mantenha as <strong>chaves e senhas</strong> seguras.</li>
+</ul>
+<hr>
+<h2 id="-fluxo-completo-de-execução">🧾 Fluxo Completo de Execução</h2>
+<pre><code class="language-bash">check_dependencies   <span class="hljs-comment"># Verifica Borg instalado</span>
+escolher_snapshot    <span class="hljs-comment"># Seleciona snapshot (ou usa argumento)</span>
+dry_run_restore      <span class="hljs-comment"># Simulação (dry-run)</span>
+real_restore         <span class="hljs-comment"># Restauração real dos arquivos</span>
+</code></pre>
+<hr>
+<h2 id="-exemplo-de-execução-real">🧩 Exemplo de Execução Real</h2>
+<pre><code>======================================================
+♻️  Restaurador genérico de backups BorgBackup
+======================================================
+Repositório ....: /media/paulo/Novo volume/borg_backup/scripts/borg-repo
+Destino ........: /home/paulo/scripts/restaurado
+Snapshot .......: backup-2025-10-30
+Criptografia ...: none
+======================================================
+
+🧪 Etapa 1: Simulação (dry-run)
+borg_backup.sh
+borg_restore.sh
+borg_backup_pasta_corrente.sh
+Deseja continuar com a restauração real? (s/n): s
+
+⚙️  Etapa 2: Iniciando restauração real...
+✅ Restauração concluída com sucesso!
+Arquivos restaurados em: /home/paulo/scripts/restaurado
+</code></pre>
+<hr>
+<h2 id="-teste-seguro-dry-run-manual">🧩 Teste Seguro (Dry Run Manual)</h2>
+<p>Você também pode testar manualmente, sem alterar nada:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> /home/paulo/scripts/restaurado
+borg extract --dry-run --list /media/paulo/borg_backup/scripts/borg-repo::backup-2025-10-30
+</code></pre>
+<hr>
+<h2 id="-referências">🔗 Referências</h2>
+<ul>
+<li>
+<p>📘 <strong>Site oficial do BorgBackup:</strong>
+<a href="https://www.borgbackup.org/">https://www.borgbackup.org/</a></p>
+</li>
+<li>
+<p>📖 <strong>Documentação detalhada:</strong>
+<a href="https://borgbackup.readthedocs.io/en/stable/">https://borgbackup.readthedocs.io/en/stable/</a></p>
+</li>
+<li>
+<p>💡 <strong>Guia de comandos Borg (CLI):</strong></p>
+<pre><code class="language-bash">man borg
+</code></pre>
+</li>
+<li>
+<p>💬 <strong>Comunidade e suporte:</strong>
+<a href="https://github.com/borgbackup/borg/discussions">https://github.com/borgbackup/borg/discussions</a></p>
+</li>
+</ul>
+<hr>
+<h2 id="-histórico-de-versões">🧾 Histórico de Versões</h2>
+<table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Data</th>
+<th>Alterações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>2025-10-30</td>
+<td>Versão inicial baseada no modelo genérico</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>2025-10-31</td>
+<td>Compatibilidade Borg 1.x, limpeza de caminhos e simulação dry-run</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-autor">✅ Autor</h2>
+<p><strong>Paulo SSPacheco</strong>
+💻 Automação e Infraestrutura Linux
+📅 Outubro de 2025</p>
+<hr>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

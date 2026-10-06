@@ -1,0 +1,4 @@
+VirtualBoxVMs
+.Trash-1000
+tmp
+lost+found

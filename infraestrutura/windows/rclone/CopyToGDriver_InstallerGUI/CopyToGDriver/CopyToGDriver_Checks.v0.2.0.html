@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f4d8; Documenta&ccedil;&atilde;o do Script CopyToGDriver&lowbar;Checks&period;sh</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-documentação-do-script-copytogdriver_checkssh">📘 Documentação do Script CopyToGDriver_Checks.sh</h1>
+<h2 id="-visão-geral">🧩 Visão Geral</h2>
+<p>O módulo <strong>CopyToGDriver_Checks.sh</strong> faz parte do projeto <strong>CopyToGDriver</strong> e é responsável por <strong>validar o ambiente e os pré-requisitos</strong> antes de qualquer operação de sincronização com o Google Drive (via rclone).</p>
+<p>Ele verifica:</p>
+<ul>
+<li>Instalação e versão do <strong>rclone</strong></li>
+<li><strong>Conectividade com a internet</strong></li>
+<li><strong>Pasta local</strong> usada na sincronização</li>
+<li><strong>Remote</strong> configurado no rclone</li>
+<li><strong>Espaço livre em disco</strong></li>
+<li>Se o diretório alvo não está em um <strong>local sensível/perigoso</strong></li>
+</ul>
+<hr>
+<h2 id="️-dependências-e-módulos-carregados">⚙️ Dependências e Módulos Carregados</h2>
+<p>Logo no início, o script:</p>
+<ol>
+<li>Descobre o diretório onde está localizado (<code>SCRIPT_DIR</code>).</li>
+<li>Carrega o <code>include_loader.sh</code> e executa <code>load_all_modules</code>.</li>
+<li>Importa módulos principais:
+<ul>
+<li><code>CopyToGDriver_Utils.sh</code></li>
+<li><code>CopyToGDriver_Config.sh</code></li>
+</ul>
+</li>
+</ol>
+<p>Esses módulos fornecem funções auxiliares como <code>write_color_output</code>, <code>resolve_path</code>, <code>file_count</code>, <code>get_disk_usage_gb</code> e <code>get_disk_space_gb</code>, além de variáveis de configuração como <code>LOCAL_FOLDER</code> e <code>REMOTE_NAME</code>.</p>
+<hr>
+<h2 id="-detecção-de-plataforma">🌍 Detecção de Plataforma</h2>
+<h3 id="detect_platform"><code>detect_platform()</code></h3>
+<p>Detecta o sistema operacional atual, retornando um dos valores:</p>
+<ul>
+<li><code>linux</code></li>
+<li><code>macos</code></li>
+<li><code>windows</code></li>
+<li><code>unknown</code></li>
+</ul>
+<p>O resultado é armazenado em <code>PLATFORM</code> e utilizado para ajustar caminhos, mensagens e comandos sugeridos.</p>
+<hr>
+<h2 id="-funções-de-verificação">🔧 Funções de Verificação</h2>
+<h3 id="1-check_rclone_installed">1. <code>check_rclone_installed()</code></h3>
+<p>Verifica se o <strong>rclone</strong> está instalado e disponível no <code>PATH</code>.</p>
+<ul>
+<li>Se <strong>não</strong> estiver instalado:
+<ul>
+<li>Exibe mensagem de erro.</li>
+<li>Sugere comandos de instalação conforme a plataforma:
+<ul>
+<li>Linux → <code>sudo apt install rclone</code></li>
+<li>macOS → <code>brew install rclone</code></li>
+<li>Windows → <code>choco install rclone</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Se estiver instalado:
+<ul>
+<li>Mostra a versão detectada, por exemplo: <code>v1.67.0</code>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-check_internet_connection">2. <code>check_internet_connection()</code></h3>
+<p>Verifica se há <strong>conexão ativa com a internet</strong>, tentando acessar alguns endpoints conhecidos:</p>
+<ul>
+<li><code>https://www.google.com</code></li>
+<li><code>https://www.cloudflare.com</code></li>
+<li><code>https://rclone.org</code></li>
+</ul>
+<p>Utiliza <code>curl</code> em modo silencioso, com timeout de 10 segundos.<br>
+Se todos falharem, exibe mensagens de alerta sobre falta de conexão, DNS ou proxy.</p>
+<hr>
+<h3 id="3-check_local_folder">3. <code>check_local_folder()</code></h3>
+<p>Valida a pasta local que será usada na sincronização (<code>LOCAL_FOLDER</code>).</p>
+<p>Passos executados:</p>
+<ol>
+<li>Verifica se <code>LOCAL_FOLDER</code> está definida (não vazia).</li>
+<li>Resolve o caminho para um formato absoluto usando <code>resolve_path</code>.</li>
+<li>Se a pasta <strong>não existir</strong>, tenta criá-la automaticamente com <code>mkdir -p</code>.</li>
+<li>Verifica se há <strong>permissão de escrita</strong>.</li>
+<li>Calcula:
+<ul>
+<li>Quantidade de arquivos (<code>file_count</code>).</li>
+<li>Tamanho estimado em MB (<code>get_disk_usage_gb</code>, convertido para MB na mensagem).</li>
+</ul>
+</li>
+</ol>
+<p>Se alguma etapa falhar (por exemplo, sem permissão), a função retorna erro (<code>1</code>).</p>
+<hr>
+<h3 id="4-check_rclone_remote">4. <code>check_rclone_remote()</code></h3>
+<p>Verifica se o <strong>remote do rclone</strong> configurado em <code>REMOTE_NAME</code> está disponível e funcional.</p>
+<p>Passos:</p>
+<ol>
+<li>Determina o arquivo de configuração do rclone:
+<ul>
+<li>Windows → <code>/c/Users/$USERNAME/AppData/Roaming/rclone/rclone.conf</code></li>
+<li>Linux/macOS → <code>$HOME/.config/rclone/rclone.conf</code></li>
+</ul>
+</li>
+<li>Verifica se o arquivo existe.</li>
+<li>Confere se há uma seção <code>[REMOTE_NAME]</code> definida no <code>rclone.conf</code>.</li>
+<li>Testa o acesso ao remote com:<pre><code class="language-bash">rclone lsd <span class="hljs-string">&quot;<span class="hljs-variable">$REMOTE_NAME</span>:&quot;</span> --max-depth 1
+</code></pre>
+</li>
+<li>Exibe erro e lista remotes (<code>rclone listremotes</code>) se algo estiver errado.</li>
+</ol>
+<hr>
+<h3 id="5-check_disk_space">5. <code>check_disk_space()</code></h3>
+<p>Verifica o <strong>espaço livre em disco</strong> na unidade onde está a pasta local.</p>
+<ul>
+<li>Usa <code>get_disk_space_gb &quot;$LOCAL_FOLDER&quot;</code> (função utilitária) para obter o valor.</li>
+<li>Regras de aviso:
+<ul>
+<li><code>&lt; 2GB</code> → ❌ Espaço insuficiente</li>
+<li><code>2GB a &lt; 5GB</code> → ⚠️ Espaço limitado</li>
+<li><code>≥ 5GB</code> → ✅ Espaço suficiente</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="6-check_sensitive_location">6. <code>check_sensitive_location()</code></h3>
+<p>Garante que a sincronização <strong>não seja executada em locais sensíveis</strong> do sistema.</p>
+<ul>
+<li>Em <strong>Windows</strong>, verifica caminhos como:
+<ul>
+<li><code>/c/Windows</code></li>
+<li><code>/c/Program Files</code></li>
+<li><code>/c/Users/Public</code></li>
+</ul>
+</li>
+<li>Em <strong>Linux/macOS</strong>, verifica caminhos como:
+<ul>
+<li><code>/</code></li>
+<li><code>/usr</code></li>
+<li><code>/var</code></li>
+<li><code>/etc</code></li>
+<li><code>/home</code> (raiz geral, não diretórios específicos do usuário)</li>
+</ul>
+</li>
+</ul>
+<p>Se o <code>LOCAL_FOLDER</code> for igual ou estiver contido em um desses caminhos, é emitido alerta e a função retorna erro.</p>
+<hr>
+<h2 id="-função-principal-check_prerequisites">✅ Função Principal: <code>check_prerequisites()</code></h2>
+<p>Esta é a função que consolida todas as verificações.<br>
+Ela é pensada para ser chamada por outros módulos (como o de sincronização), antes de qualquer operação crítica.</p>
+<p>Ordem de execução:</p>
+<ol>
+<li><code>check_rclone_installed</code></li>
+<li><code>check_internet_connection</code></li>
+<li><code>check_local_folder</code></li>
+<li><code>check_rclone_remote</code></li>
+<li><code>check_disk_space</code></li>
+<li><code>check_sensitive_location</code></li>
+</ol>
+<p>Se qualquer uma delas falhar (retornar diferente de <code>0</code>), a função interrompe o fluxo e retorna <code>1</code>.<br>
+Caso todas passem, exibe:</p>
+<pre><code class="language-text">✅ Todos os pré-requisitos atendidos.
+</code></pre>
+<p>E retorna <code>0</code>.</p>
+<hr>
+<h2 id="-variáveis-importantes">🔧 Variáveis Importantes</h2>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Origem</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SCRIPT_DIR</code></td>
+<td>Detectado no início do módulo</td>
+<td>Caminho absoluto do diretório onde o script está.</td>
+</tr>
+<tr>
+<td><code>PLATFORM</code></td>
+<td><code>detect_platform()</code></td>
+<td>Plataforma atual (<code>linux</code>, <code>macos</code>, <code>windows</code>, <code>unknown</code>).</td>
+</tr>
+<tr>
+<td><code>LOCAL_FOLDER</code></td>
+<td>Configuração externa (Config)</td>
+<td>Pasta local alvo da sincronização.</td>
+</tr>
+<tr>
+<td><code>REMOTE_NAME</code></td>
+<td>Configuração externa (Config)</td>
+<td>Nome do remote configurado no rclone.</td>
+</tr>
+<tr>
+<td><code>USERNAME</code></td>
+<td>Ambiente do sistema</td>
+<td>Usado para montar caminhos no Windows.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-compatibilidade">💻 Compatibilidade</h2>
+<table>
+<thead>
+<tr>
+<th>Sistema</th>
+<th>Suporte</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Linux</strong></td>
+<td>✅ Total</td>
+<td>Testes com <code>curl</code>, <code>df</code>, <code>rclone</code> e caminhos em <code>$HOME</code>.</td>
+</tr>
+<tr>
+<td><strong>macOS</strong></td>
+<td>✅ Total</td>
+<td>Usa mesmas funções POSIX de Linux.</td>
+</tr>
+<tr>
+<td><strong>Windows (Git Bash/WSL)</strong></td>
+<td>✅ Total</td>
+<td>Caminhos especiais para <code>rclone.conf</code> e comandos ilustrativos (<code>choco</code>).</td>
+</tr>
+<tr>
+<td><strong>Outros</strong></td>
+<td>⚠️ Parcial</td>
+<td><code>PLATFORM=unknown</code>, algumas mensagens podem não ser específicas.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-exemplo-de-integração">🧰 Exemplo de Integração</h2>
+<p>Trecho típico em outro script (como o de sincronização):</p>
+<pre><code class="language-bash"><span class="hljs-keyword">if</span> check_prerequisites; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Ambiente OK, prosseguindo com a sincronização...&quot;</span>
+    <span class="hljs-comment"># chama função de sync aqui</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Erro nos pré-requisitos. Verifique as mensagens acima.&quot;</span>
+    <span class="hljs-built_in">exit</span> 1
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<hr>
+<h2 id="-versão-e-autores">📜 Versão e Autores</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Script</strong></td>
+<td>CopyToGDriver_Checks.sh</td>
+</tr>
+<tr>
+<td><strong>Versão</strong></td>
+<td>0.2.0</td>
+</tr>
+<tr>
+<td><strong>Autores</strong></td>
+<td>Paulo SSPacheco + ChatGPT (GPT-5)</td>
+</tr>
+<tr>
+<td><strong>Função</strong></td>
+<td>Verificação de pré-requisitos e ambiente</td>
+</tr>
+<tr>
+<td><strong>Módulo</strong></td>
+<td>Checks (multiplataforma)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>© 2025 Paulo SSPacheco + ChatGPT (GPT-5) — Todos os direitos reservados.</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

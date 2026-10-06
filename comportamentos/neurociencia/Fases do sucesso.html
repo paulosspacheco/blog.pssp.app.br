@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Fase do Sucesso</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension davidmwhynot.markdown-higlightjs */
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="fase-do-sucesso">Fase do Sucesso</h1>
+<p>Perfeito — aqui vai <strong>o ciclo em modo texto</strong> + explicações práticas e um checklist pronto para você usar.</p>
+<h1 id="ciclo-das-fases-do-sucesso-texto--ascii">Ciclo das Fases do Sucesso (texto / ASCII)</h1>
+<pre><code class="hljs">       <span class="hljs-selector-attr">[🌟 Entusiasmo]</span>
+            ↓
+       <span class="hljs-selector-attr">[😐 Tédio / Rotina]</span>
+            ↓
+       <span class="hljs-selector-attr">[😓 Desânimo]</span>
+            ↓
+       <span class="hljs-selector-attr">[💪 Resiliência]</span>
+            ↓
+       <span class="hljs-selector-attr">[🏆 Sucesso / Maestria]</span>
+            ↺ (novo ciclo / novo nível)
+</code></pre>
+<hr>
+<h2 id="cada-fase--o-que-é-sinais-e-como-agir-3-ações-práticas">Cada fase — o que é, sinais e como agir (3 ações práticas)</h2>
+<p><strong>🌟 Entusiasmo (Início)</strong></p>
+<ul>
+<li>
+<p>O que: energia alta, ideias, vontade de fazer.</p>
+</li>
+<li>
+<p>Sinais: começa rápido, planeja muito, pula etapas.</p>
+</li>
+<li>
+<p>Como agir:</p>
+<ol>
+<li><em>Defina 1 próxima ação concreta</em> (ex.: “escrever 15 minutos”).</li>
+<li><em>Timebox</em> (marcar tempo curto para começar).</li>
+<li><em>Registrar o progresso</em> (uma linha: “o que fiz hoje”).</li>
+</ol>
+</li>
+</ul>
+<p><strong>😐 Tédio / Rotina</strong></p>
+<ul>
+<li>
+<p>O que: a novidade passa, tarefa vira repetição.</p>
+</li>
+<li>
+<p>Sinais: procrastinação leve, perda de prazer.</p>
+</li>
+<li>
+<p>Como agir:</p>
+<ol>
+<li><em>Quebre em micro-tarefas</em> (15–30 min).</li>
+<li><em>Varie a rotina</em> (mude local, ordem ou formato).</li>
+<li><em>Automatize/templatize</em> passos repetitivos.</li>
+</ol>
+</li>
+</ul>
+<p><strong>😓 Desânimo (Prova de Fogo)</strong></p>
+<ul>
+<li>
+<p>O que: aparecem erros, resultados lentos, crítica.</p>
+</li>
+<li>
+<p>Sinais: dúvida, pensar em desistir, falta de energia.</p>
+</li>
+<li>
+<p>Como agir:</p>
+<ol>
+<li><em>Recolha dados</em> — o que deu certo/errado (pequenas métricas).</li>
+<li><em>Ajuste a estratégia</em> (não é só força de vontade).</li>
+<li><em>Micro-vitórias</em> — celebre algo pequeno hoje.</li>
+</ol>
+</li>
+</ul>
+<p><strong>💪 Resiliência (Virada)</strong></p>
+<ul>
+<li>
+<p>O que: hábito e ajustes começam a render.</p>
+</li>
+<li>
+<p>Sinais: consistência, pequenas vitórias frequentes.</p>
+</li>
+<li>
+<p>Como agir:</p>
+<ol>
+<li><em>Padronize o que funciona</em> (checklist/processo).</li>
+<li><em>Peça feedback</em> (um amigo, usuário, mentor).</li>
+<li><em>Proteja o ritmo</em> (rituais para começar/parar).</li>
+</ol>
+</li>
+</ul>
+<p><strong>🏆 Sucesso / Maestria</strong></p>
+<ul>
+<li>
+<p>O que: resultados concretos, confiança e escala.</p>
+</li>
+<li>
+<p>Sinais: reconhecimento, velocidade crescente.</p>
+</li>
+<li>
+<p>Como agir:</p>
+<ol>
+<li><em>Consolide</em> (documente processsos).</li>
+<li><em>Escale/automatize</em> ou delegue.</li>
+<li><em>Defina o próximo objetivo</em> (novo ciclo).</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="checklist-rápido--use-sempre-que-estiver-empacado">Checklist rápido — use sempre que estiver empacado</h2>
+<ol>
+<li>Divida a tarefa em passos de 15–30 minutos.</li>
+<li>Marque no dia: <code>Início — Término — 1 linha de progresso</code>.</li>
+<li>Se passou 7 dias sem progresso, faça uma revisão de 20 minutos: o objetivo é válido? o método?</li>
+<li>Tenha 1 ritual para começar (café, música, cronômetro).</li>
+<li>Recompense-se por cada 3 micro-vitórias (mesmo que pequenas).</li>
+</ol>
+<hr>
+<h2 id="3-perguntas-curtas-para-decidir-continuar">3 perguntas curtas para decidir continuar</h2>
+<ol>
+<li>Isto contribui visivelmente para o meu objetivo principal?</li>
+<li>Posso dividir em um passo de 15–30 minutos que eu consigo fazer agora?</li>
+<li>O que posso ajustar imediatamente para medir progresso amanhã?</li>
+</ol>
+<hr>
+<h2 id="mini-plano-prático-aplicável-já--3-semanas">Mini-plano prático (aplicável já — 3 semanas)</h2>
+<ul>
+<li><strong>Semana 1 — Estabelecer</strong>: 10–15 min por dia, definir 3 micro-tarefas.</li>
+<li><strong>Semana 2 — Consolidar</strong>: aumentar para 20–30 min, aplicar variação/ritual.</li>
+<li><strong>Semana 3 — Ajustar</strong>: revisar métricas, remover passos que não funcionam, celebrar.</li>
+</ul>
+<hr>
+<h2 id="exemplo-rápido-aplicando-ao-seu-objetivo">Exemplo rápido (aplicando ao seu objetivo)</h2>
+<p>Objetivo: “Terminar 1 capítulo do livro técnico em 2 semanas.”</p>
+<ul>
+<li>Entusiasmo: anote partes interessantes + prossiga 20 min hoje.</li>
+<li>Tédio: divida capítulo em subseções, faça 25 min por subseção.</li>
+<li>Desânimo: se não entendeu, troque técnica (resumo em voz alta).</li>
+<li>Resiliência: rotina de leitura às 9h, revisar notas semanal.</li>
+<li>Sucesso: capítulo pronto → compartilhe resumo + comece o próximo.</li>
+</ul>
+<hr>
+
+            
+            
+        </body>
+        </html>

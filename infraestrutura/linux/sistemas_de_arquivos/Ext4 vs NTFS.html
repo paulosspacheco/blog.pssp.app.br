@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação: Ext4 vs NTFS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparação: Ext4 vs NTFS</h1>
+    <table>
+        <tr>
+            <th>Aspecto</th>
+            <th>Ext4</th>
+            <th>NTFS</th>
+        </tr>
+        <tr>
+            <td><strong>Sistema Principal</strong></td>
+            <td>Linux</td>
+            <td>Windows</td>
+        </tr>
+        <tr>
+            <td><strong>Origem</strong></td>
+            <td>Evolução do ext2/ext3, open-source</td>
+            <td>Criado pela Microsoft, proprietário</td>
+        </tr>
+        <tr>
+            <td><strong>Journaling</strong></td>
+            <td>Sim (JBD2)</td>
+            <td>Sim ($LogFile)</td>
+        </tr>
+        <tr>
+            <td><strong>Tamanho Máximo do Volume</strong></td>
+            <td>1 EB (10¹⁸ bytes)</td>
+            <td>16 EB</td>
+        </tr>
+        <tr>
+            <td><strong>Tamanho Máximo do Arquivo</strong></td>
+            <td>16 TB (com blocos de 4 KB)</td>
+            <td>16 EB</td>
+        </tr>
+        <tr>
+            <td><strong>Permissões</strong></td>
+            <td>POSIX (usuário, grupo, outros)</td>
+            <td>ACLs (Access Control Lists)</td>
+        </tr>
+        <tr>
+            <td><strong>Compressão</strong></td>
+            <td>Não</td>
+            <td>Sim</td>
+        </tr>
+        <tr>
+            <td><strong>Criptografia</strong></td>
+            <td>Não (via LUKS)</td>
+            <td>Sim (EFS)</td>
+        </tr>
+        <tr>
+            <td><strong>Estrutura de Dados</strong></td>
+            <td>Inodes e extents</td>
+            <td>MFT (Master File Table)</td>
+        </tr>
+        <tr>
+            <td><strong>Gerenciamento de Diretórios</strong></td>
+            <td>HTree (buscas logarítmicas)</td>
+            <td>MFT (eficiente para poucos arquivos)</td>
+        </tr>
+        <tr>
+            <td><strong>Desempenho</strong></td>
+            <td>Leve, otimizado para Linux</td>
+            <td>Pesado, otimizado para Windows</td>
+        </tr>
+        <tr>
+            <td><strong>Velocidade de Leitura</strong></td>
+            <td>Rápido no Linux com extents</td>
+            <td>Rápido no Windows, mais lento via NTFS-3G</td>
+        </tr>
+        <tr>
+            <td><strong>Velocidade de Escrita</strong></td>
+            <td>Mais eficiente com alocação atrasada</td>
+            <td>Mais lento devido ao overhead da MFT</td>
+        </tr>
+        <tr>
+            <td><strong>Compatibilidade</strong></td>
+            <td>Linux nativo, limitada fora</td>
+            <td>Ampla (Windows nativo, NTFS-3G)</td>
+        </tr>
+        <tr>
+            <td><strong>Casos de Uso</strong></td>
+            <td>Servidores Linux, discos internos</td>
+            <td>Discos externos, sistemas Windows</td>
+        </tr>
+        <tr>
+            <td><strong>Vantagem em SSDs</strong></td>
+            <td>Ligeiramente mais rápido em gravações</td>
+            <td>Competitivo no Windows</td>
+        </tr>
+        <tr>
+            <td><strong>Vantagem em HDDs</strong></td>
+            <td>Mais rápido em gravações sequenciais</td>
+            <td>Menos propenso à fragmentação inicial</td>
+        </tr>
+    </table>
+</body>
+</html>

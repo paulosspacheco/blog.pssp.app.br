@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gradientes: Floresta Amazônica</title>
+  <style>
+    :root{
+      --folhagem-clara: #7FBF4D; /* verde claro das copas ao sol */
+      --folhagem-media: #4B8B3B; /* verde médio das folhas */
+      --folhagem-escura: #2E5939; /* verde escuro da sombra da mata */
+      --musgo: #1F3B2C; /* verde musgo úmido do solo */
+      --bg: linear-gradient(180deg, var(--folhagem-clara) 0%, var(--folhagem-media) 35%, var(--folhagem-escura) 70%, var(--musgo) 100%);
+      --glass: rgba(255,255,255,0.12);
+      --glass-2: rgba(255,255,255,0.06);
+      --text: #0f1e12;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+
+    .stage{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      background: var(--bg);
+      transition:background 600ms ease;
+    }
+
+    .card{
+      width:980px;max-width:100%;background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.78));
+      border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,0.12);
+      display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start;color:var(--text);
+    }
+
+    h1{margin:0 0 6px 0;font-size:20px}
+    p{margin:0 0 12px 0;color:#1d3b20}
+
+    .sky{
+      border-radius:12px;overflow:hidden;height:360px;display:flex;flex-direction:column;
+      box-shadow:inset 0 -40px 80px rgba(0,0,0,0.06);
+    }
+
+    .sky .view{
+      flex:1;background:linear-gradient(180deg,var(--folhagem-clara),var(--folhagem-media));display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:18px
+    }
+
+    .sky .horizon{height:88px;background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0));display:flex;align-items:center;justify-content:center;color:rgba(0,0,0,0.55);font-size:13px}
+
+    .panel{background:rgba(255,255,255,0.6);padding:14px;border-radius:12px}
+    .swatches{display:flex;gap:10px;margin-bottom:12px}
+    .swatch{flex:1;border-radius:8px;padding:10px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+    .swatch .chip{width:100%;height:48px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)}
+    .swatch small{display:block;color:#0e2715}
+
+    pre{background:var(--glass-2);padding:10px;border-radius:8px;overflow:auto;font-family:monospace;font-size:13px}
+    button{background:#1f3b2c;color:white;border:0;padding:8px 10px;border-radius:8px;cursor:pointer}
+
+    .controls{display:flex;gap:8px;align-items:center}
+
+    .options{display:flex;gap:6px}
+    .option{background:transparent;border:1px solid rgba(31,59,44,0.2);padding:6px 8px;border-radius:8px;cursor:pointer}
+    .option.active{background:#1f3b2c;color:white}
+
+    @media (max-width:900px){
+      .card{grid-template-columns:1fr;}
+      .sky{height:300px}
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="card">
+      <div>
+        <h1>Gradiente: Floresta Amazônica</h1>
+        <p>Quatro paradas inspiradas na floresta: luz solar, copa média, sombra densa e solo úmido.</p>
+
+        <div class="sky">
+          <div id="skyView" class="view">Floresta Amazônica — visualização</div>
+          <div class="horizon">Horizon — gradiente aplicado verticalmente</div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:8px;align-items:center;justify-content:flex-start">
+          <div class="options">
+            <button class="option active" data-preset="full">Gradiente padrão</button>
+            <button class="option" data-preset="claro">Topo iluminado</button>
+            <button class="option" data-preset="meio">Copa média</button>
+            <button class="option" data-preset="sombra">Sombra da mata</button>
+            <button class="option" data-preset="solo">Solo úmido</button>
+          </div>
+
+          <div style="flex:1"></div>
+
+          <div class="controls">
+            <button id="copyCss">Copiar CSS</button>
+            <button id="copyHex">Copiar HEXs</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <h2 style="margin:0 0 8px 0;font-size:16px">Swatches</h2>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="chip" style="background:var(--folhagem-clara)"></div>
+            <small>Luz solar · <strong>#7FBF4D</strong> · rgb(127,191,77)</small>
+          </div>
+
+          <div class="swatch">
+            <div class="chip" style="background:var(--folhagem-media)"></div>
+            <small>Copa média · <strong>#4B8B3B</strong> · rgb(75,139,59)</small>
+          </div>
+
+          <div class="swatch">
+            <div class="chip" style="background:var(--folhagem-escura)"></div>
+            <small>Sombra densa · <strong>#2E5939</strong> · rgb(46,89,57)</small>
+          </div>
+
+          <div class="swatch">
+            <div class="chip" style="background:var(--musgo)"></div>
+            <small>Solo úmido · <strong>#1F3B2C</strong> · rgb(31,59,44)</small>
+          </div>
+        </div>
+
+        <h3 style="margin:8px 0">CSS pronto</h3>
+        <pre id="cssBlock">background: linear-gradient(180deg, #7FBF4D 0%, #4B8B3B 35%, #2E5939 70%, #1F3B2C 100%);</pre>
+
+        <h3 style="margin:8px 0">HEXs</h3>
+        <pre id="hexBlock">#7FBF4D, #4B8B3B, #2E5939, #1F3B2C</pre>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    const presets = {
+      'full': 'linear-gradient(180deg, #7FBF4D 0%, #4B8B3B 35%, #2E5939 70%, #1F3B2C 100%)',
+      'claro': 'linear-gradient(180deg, #A4D96F 0%, #7FBF4D 100%)',
+      'meio': 'linear-gradient(180deg, #4B8B3B 0%, #2E5939 100%)',
+      'sombra': 'linear-gradient(180deg, #2E5939 0%, #1F3B2C 100%)',
+      'solo': 'linear-gradient(180deg, #1F3B2C 0%, #14261B 100%)'
+    };
+
+    const stage = document.querySelector('.stage');
+    const skyView = document.getElementById('skyView');
+    const cssBlock = document.getElementById('cssBlock');
+    const hexBlock = document.getElementById('hexBlock');
+
+    function applyPreset(name){
+      const g = presets[name] || presets['full'];
+      stage.style.background = g;
+      skyView.style.background = g;
+      document.querySelectorAll('.option').forEach(b=>b.classList.remove('active'));
+      const btn = document.querySelector('.option[data-preset="'+name+'"]');
+      if(btn) btn.classList.add('active');
+      cssBlock.textContent = 'background: ' + g + ';';
+    }
+
+    document.querySelectorAll('.option').forEach(btn=>{
+      btn.addEventListener('click', ()=> applyPreset(btn.dataset.preset));
+    });
+
+    document.getElementById('copyCss').addEventListener('click', async ()=>{
+      try{ await navigator.clipboard.writeText(cssBlock.textContent); alert('CSS copiado para a área de transferência!'); }
+      catch(e){ prompt('Copie o CSS abaixo:', cssBlock.textContent); }
+    });
+
+    document.getElementById('copyHex').addEventListener('click', async ()=>{
+      try{ await navigator.clipboard.writeText(hexBlock.textContent); alert('HEXs copiados!'); }
+      catch(e){ prompt('Copie os HEXs:', hexBlock.textContent); }
+    });
+
+    applyPreset('full');
+  </script>
+</body>
+</html>

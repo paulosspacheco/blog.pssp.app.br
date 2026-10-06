@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console Virtual - Tema VsCode UI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Consolas', 'Courier New', monospace;
+        }
+        
+        body {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #252526;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            border: 1px solid #3e3e42;
+        }
+        
+        h1 {
+            color: #569cd6;
+            margin-bottom: 10px;
+            font-size: 2.2em;
+        }
+        
+        .description {
+            color: #9cdcfe;
+            margin-bottom: 20px;
+        }
+        
+        .console {
+            background: #1e1e1e;
+            border: 2px solid #3e3e42;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            height: 350px;
+            overflow-y: auto;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+        
+        .console-line {
+            margin-bottom: 8px;
+            white-space: pre-wrap;
+        }
+        
+        .palette-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        
+        .palette-option {
+            padding: 12px 20px;
+            border: 2px solid #3e3e42;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            min-width: 150px;
+            font-weight: bold;
+            background: #252526;
+            color: #cccccc;
+        }
+        
+        .palette-option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-color: #569cd6;
+        }
+        
+        .palette-option.active {
+            border-color: #569cd6;
+            border-width: 3px;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background: #2d2d30;
+            color: #ffffff;
+        }
+        
+        .palette-display {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .color-item {
+            height: 60px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s;
+            border: 1px solid #3e3e42;
+        }
+        
+        .color-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .instructions {
+            background: #252526;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #3e3e42;
+        }
+        
+        .instructions h2 {
+            color: #569cd6;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+            color: #d4d4d4;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #808080;
+            font-size: 0.9em;
+        }
+        
+        .cmd-text {
+            color: #d7ba7d;
+        }
+        
+        .keyword {
+            color: #569cd6;
+        }
+        
+        .string {
+            color: #ce9178;
+        }
+        
+        .comment {
+            color: #6a9955;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Console Virtual Gráfico</h1>
+            <p class="description">Tema VsCode UI - Baseado na interface do Visual Studio Code</p>
+        </header>
+        
+        <div class="console" id="console">
+            <div class="console-line">Console inicializado. Digite 'help' para ver os comandos disponíveis.</div>
+            <div class="console-line">>> <span class="keyword">const</span> <span class="cmd-text">theme</span> = <span class="string">"VsCodeUI"</span>; <span class="comment">// Tema baseado na UI do VS Code</span></div>
+            <div class="console-line">>> <span class="keyword">function</span> <span class="cmd-text">setTheme</span>(palette) {</div>
+            <div class="console-line">>>     <span class="keyword">this</span>.backgroundColor = palette[0];</div>
+            <div class="console-line">>>     <span class="keyword">this</span>.foregroundColor = palette[15];</div>
+            <div class="console-line">>> }</div>
+            <div class="console-line">>> <span class="comment">// Use os botões abaixo para alternar entre as paletas</span></div>
+            <div class="console-line">>> Paleta atual: <span class="string">"VsCode UI"</span></div>
+            <div class="console-line">>> <span class="cmd-text">help</span></div>
+            <div class="console-line">Comandos disponíveis:</div>
+            <div class="console-line">- clear: Limpa o console</div>
+            <div class="console-line">- info: Exibe informações do sistema</div>
+            <div class="console-line">- theme [nome]: Altera o tema de cores</div>
+            <div class="console-line">- help: Exibe esta ajuda</div>
+        </div>
+        
+        <div class="palette-selector" id="palette-selector">
+            <!-- Os botões serão gerados via JavaScript -->
+        </div>
+        
+        <div class="palette-display" id="palette-display">
+            <!-- As cores serão geradas via JavaScript -->
+        </div>
+        
+        <div class="instructions">
+            <h2>Instruções de Uso</h2>
+            <ul>
+                <li>Selecione uma paleta de cores clicando em um dos botões acima</li>
+                <li>Cada paleta contém 16 cores que combinam entre si</li>
+                <li>As cores de 0 a 7 são tons escuros (ideais para fundo)</li>
+                <li>As cores de 8 a 15 são tons claros (ideais para texto em temas escuros)</li>
+                <li>Use as paletas para personalizar a aparência do seu console virtual</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>Console Virtual Gráfico &copy; 2023 - Tema VsCode UI</p>
+        </footer>
+    </div>
+
+    <script>
+        // Definição das paletas de cores
+        const palettes = [
+            {
+                name: "Windows Console (Padrão)",
+                colors: [
+                    { name: "Preto", rgb: [0, 0, 0] },
+                    { name: "Azul Escuro", rgb: [0, 0, 128] },
+                    { name: "Verde Escuro", rgb: [0, 128, 0] },
+                    { name: "Ciano Escuro", rgb: [0, 128, 128] },
+                    { name: "Vermelho Escuro", rgb: [128, 0, 0] },
+                    { name: "Magenta Escuro", rgb: [128, 0, 128] },
+                    { name: "Amarelo Escuro", rgb: [128, 128, 0] },
+                    { name: "Cinza Claro", rgb: [192, 192, 192] },
+                    { name: "Cinza Escuro", rgb: [128, 128, 128] },
+                    { name: "Azul Claro", rgb: [0, 0, 255] },
+                    { name: "Verde Claro", rgb: [0, 255, 0] },
+                    { name: "Ciano Claro", rgb: [0, 255, 255] },
+                    { name: "Vermelho Claro", rgb: [255, 0, 0] },
+                    { name: "Magenta Claro", rgb: [255, 0, 255] },
+                    { name: "Amarelo Claro", rgb: [255, 255, 0] },
+                    { name: "Branco", rgb: [255, 255, 255] }
+                ]
+            },
+            {
+                name: "Tema Escuro Suave",
+                colors: [
+                    { name: "Preto Suave", rgb: [10, 10, 10] },
+                    { name: "Azul Escuro Suave", rgb: [0, 0, 120] },
+                    { name: "Verde Escuro Suave", rgb: [0, 120, 0] },
+                    { name: "Ciano Escuro Suave", rgb: [0, 120, 120] },
+                    { name: "Vermelho Escuro Suave", rgb: [120, 0, 0] },
+                    { name: "Magenta Escuro Suave", rgb: [120, 0, 120] },
+                    { name: "Amarelo Escuro Suave", rgb: [120, 120, 0] },
+                    { name: "Cinza Claro Suave", rgb: [180, 180, 180] },
+                    { name: "Cinza Médio", rgb: [100, 100, 100] },
+                    { name: "Azul Claro Suave", rgb: [0, 0, 230] },
+                    { name: "Verde Claro Suave", rgb: [0, 230, 0] },
+                    { name: "Ciano Claro Suave", rgb: [0, 230, 230] },
+                    { name: "Vermelho Claro Suave", rgb: [230, 0, 0] },
+                    { name: "Magenta Claro Suave", rgb: [230, 0, 230] },
+                    { name: "Amarelo Claro Suave", rgb: [230, 230, 0] },
+                    { name: "Branco Suave", rgb: [255, 255, 255] }
+                ]
+            },
+            {
+                name: "Tema Claro Suave",
+                colors: [
+                    { name: "Preto", rgb: [0, 0, 0] },
+                    { name: "Azul Claro", rgb: [0, 0, 160] },
+                    { name: "Verde Claro", rgb: [0, 160, 0] },
+                    { name: "Ciano Claro", rgb: [0, 160, 160] },
+                    { name: "Vermelho Claro", rgb: [160, 0, 0] },
+                    { name: "Magenta Claro", rgb: [160, 0, 160] },
+                    { name: "Amarelo Claro", rgb: [160, 160, 0] },
+                    { name: "Cinza Escuro", rgb: [100, 100, 100] },
+                    { name: "Cinza Claro", rgb: [220, 220, 220] },
+                    { name: "Azul Pastel", rgb: [100, 100, 255] },
+                    { name: "Verde Pastel", rgb: [100, 255, 100] },
+                    { name: "Ciano Pastel", rgb: [100, 255, 255] },
+                    { name: "Vermelho Pastel", rgb: [255, 100, 100] },
+                    { name: "Magenta Pastel", rgb: [255, 100, 255] },
+                    { name: "Amarelo Pastel", rgb: [255, 255, 100] },
+                    { name: "Branco", rgb: [255, 255, 255] }
+                ]
+            },
+            {
+                name: "Tema Azul (Frio)",
+                colors: [
+                    { name: "Preto Azulado", rgb: [10, 10, 20] },
+                    { name: "Azul Profundo", rgb: [0, 0, 150] },
+                    { name: "Verde Azulado", rgb: [0, 100, 0] },
+                    { name: "Ciano Azulado", rgb: [0, 120, 150] },
+                    { name: "Vermelho Azulado", rgb: [100, 0, 0] },
+                    { name: "Magenta Azulado", rgb: [120, 0, 150] },
+                    { name: "Amarelo Azulado", rgb: [120, 120, 0] },
+                    { name: "Cinza Azulado", rgb: [180, 180, 200] },
+                    { name: "Cinza Médio Azulado", rgb: [80, 80, 100] },
+                    { name: "Azul Vibrante", rgb: [0, 0, 255] },
+                    { name: "Verde Água", rgb: [0, 200, 100] },
+                    { name: "Ciano Vibrante", rgb: [0, 200, 255] },
+                    { name: "Rosa", rgb: [200, 0, 100] },
+                    { name: "Magenta Vibrante", rgb: [200, 0, 255] },
+                    { name: "Amarelo Esverdeado", rgb: [200, 200, 100] },
+                    { name: "Branco Azulado", rgb: [230, 230, 255] }
+                ]
+            },
+            {
+                name: "Tema Verde (Natureza)",
+                colors: [
+                    { name: "Preto Esverdeado", rgb: [10, 20, 10] },
+                    { name: "Azul Esverdeado", rgb: [0, 80, 100] },
+                    { name: "Verde Floresta", rgb: [0, 120, 0] },
+                    { name: "Ciano Esverdeado", rgb: [0, 120, 100] },
+                    { name: "Marrom", rgb: [100, 80, 0] },
+                    { name: "Magenta Escuro", rgb: [100, 0, 100] },
+                    { name: "Oliva", rgb: [100, 120, 0] },
+                    { name: "Cinza Esverdeado", rgb: [180, 200, 180] },
+                    { name: "Cinza Médio Esverdeado", rgb: [80, 100, 80] },
+                    { name: "Azul Claro", rgb: [0, 100, 200] },
+                    { name: "Verde Limão", rgb: [0, 255, 0] },
+                    { name: "Ciano Claro", rgb: [0, 255, 200] },
+                    { name: "Laranja", rgb: [200, 100, 0] },
+                    { name: "Roxo", rgb: [150, 0, 150] },
+                    { name: "Amarelo Esverdeado", rgb: [200, 255, 0] },
+                    { name: "Branco Esverdeado", rgb: [230, 255, 230] }
+                ]
+            },
+            {
+                name: "Alto Contraste",
+                colors: [
+                    { name: "Preto", rgb: [0, 0, 0] },
+                    { name: "Preto", rgb: [0, 0, 0] },
+                    { name: "Preto", rgb: [0, 0, 0] },
+                    { name: "Preto", rgb: [0, 0, 0] },
+                    { name: "Preto", rgb: [0, 0, 0] },
+                    { name: "Preto", rgb: [0, 0, 0] },
+                    { name: "Preto", rgb: [0, 0, 0] },
+                    { name: "Preto", rgb: [0, 0, 0] },
+                    { name: "Amarelo", rgb: [255, 255, 0] },
+                    { name: "Ciano", rgb: [0, 255, 255] },
+                    { name: "Verde", rgb: [0, 255, 0] },
+                    { name: "Magenta Claro", rgb: [255, 128, 255] },
+                    { name: "Vermelho Claro", rgb: [255, 128, 128] },
+                    { name: "Azul Claro", rgb: [173, 216, 230] },
+                    { name: "Branco", rgb: [255, 255, 255] },
+                    { name: "Branco", rgb: [255, 255, 255] }
+                ]
+            },
+            {
+                name: "VsCode UI",
+                colors: [
+                    { name: "Fundo do Editor", rgb: [30, 30, 30] },
+                    { name: "Fundo de Barras", rgb: [37, 37, 38] },
+                    { name: "Fundo de Painéis", rgb: [45, 45, 48] },
+                    { name: "Bordas e Separadores", rgb: [62, 62, 66] },
+                    { name: "Texto Primário", rgb: [212, 212, 212] },
+                    { name: "Texto Secundário", rgb: [180, 180, 180] },
+                    { name: "Destaque 1", rgb: [14, 99, 156] },
+                    { name: "Destaque 2", rgb: [86, 156, 214] },
+                    { name: "Elementos Interativos", rgb: [0, 122, 204] },
+                    { name: "Foco Primário", rgb: [0, 122, 204] },
+                    { name: "Seleção", rgb: [38, 79, 120] },
+                    { name: "Hover", rgb: [42, 45, 46] },
+                    { name: "Botões", rgb: [14, 99, 156] },
+                    { name: "Inputs", rgb: [43, 43, 43] },
+                    { name: "Guias Ativas", rgb: [0, 122, 204] },
+                    { name: "Texto sobre Destaque", rgb: [255, 255, 255] }
+                ]
+            }
+        ];
+
+        let currentPalette = 0;
+
+        // Função para gerar os botões de seleção de paleta
+        function generatePaletteSelector() {
+            const selector = document.getElementById('palette-selector');
+            selector.innerHTML = '';
+            
+            palettes.forEach((palette, index) => {
+                const button = document.createElement('div');
+                button.className = `palette-option ${index === currentPalette ? 'active' : ''}`;
+                button.textContent = palette.name;
+                button.style.background = `rgb(${palette.colors[1].rgb.join(',')})`;
+                button.style.color = `rgb(${palette.colors[15].rgb.join(',')})`;
+                button.style.borderColor = `rgb(${palette.colors[9].rgb.join(',')})`;
+                
+                button.addEventListener('click', () => {
+                    selectPalette(index);
+                });
+                
+                selector.appendChild(button);
+            });
+        }
+
+        // Função para gerar a exibição da paleta
+        function generatePaletteDisplay() {
+            const display = document.getElementById('palette-display');
+            display.innerHTML = '';
+            
+            palettes[currentPalette].colors.forEach((color, index) => {
+                const colorElement = document.createElement('div');
+                colorElement.className = 'color-item';
+                colorElement.textContent = index;
+                colorElement.style.background = `rgb(${color.rgb.join(',')})`;
+                
+                // Escolher cor do texto com base no brilho do fundo
+                const brightness = (color.rgb[0] * 299 + color.rgb[1] * 587 + color.rgb[2] * 114) / 1000;
+                colorElement.style.color = brightness > 125 ? '#000' : '#fff';
+                
+                colorElement.title = `${color.name} (RGB: ${color.rgb.join(', ')})`;
+                
+                display.appendChild(colorElement);
+            });
+        }
+
+        // Função para selecionar uma paleta
+        function selectPalette(index) {
+            currentPalette = index;
+            
+            // Atualizar botões
+            document.querySelectorAll('.palette-option').forEach((button, i) => {
+                button.classList.toggle('active', i === index);
+                button.style.background = `rgb(${palettes[i].colors[1].rgb.join(',')})`;
+                button.style.color = `rgb(${palettes[i].colors[15].rgb.join(',')})`;
+                button.style.borderColor = `rgb(${palettes[i].colors[9].rgb.join(',')})`;
+            });
+            
+            // Atualizar exibição da paleta
+            generatePaletteDisplay();
+            
+            // Atualizar console
+            updateConsoleTheme();
+        }
+
+        // Função para atualizar o tema do console
+        function updateConsoleTheme() {
+            const consoleElement = document.getElementById('console');
+            const palette = palettes[currentPalette];
+            
+            consoleElement.style.background = `rgb(${palette.colors[0].rgb.join(',')})`;
+            consoleElement.style.color = `rgb(${palette.colors[15].rgb.join(',')})`;
+            consoleElement.style.borderColor = `rgb(${palette.colors[8].rgb.join(',')})`;
+            
+            // Atualizar texto de comando
+            document.querySelectorAll('.cmd-text').forEach(el => {
+                el.style.color = `rgb(${palette.colors[10].rgb.join(',')})`;
+            });
+            
+            // Atualizar a linha que mostra a paleta atual
+            const lines = consoleElement.querySelectorAll('.console-line');
+            if (lines.length > 5) {
+                lines[5].innerHTML = `>> Paleta atual: <span class="string">"${palette.name}"</span>`;
+            }
+        }
+
+        // Inicializar a aplicação
+        function init() {
+            generatePaletteSelector();
+            generatePaletteDisplay();
+            updateConsoleTheme();
+        }
+
+        // Executar quando a página carregar
+        window.addEventListener('load', init);
+    </script>
+</body>
+</html>

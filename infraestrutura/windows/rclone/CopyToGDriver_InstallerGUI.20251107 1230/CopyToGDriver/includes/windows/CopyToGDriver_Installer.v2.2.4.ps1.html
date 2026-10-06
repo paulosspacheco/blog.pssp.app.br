@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f680; Guia do Usu&aacute;rio &mdash; CopyToGDriver Installer v2&period;2&period;4</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-guia-do-usuário--copytogdriver-installer-v224">🚀 Guia do Usuário — CopyToGDriver Installer v2.2.4</h1>
+<hr>
+<h2 id="-o-que-é-o-copytogdriver">📘 O que é o CopyToGDriver?</h2>
+<p>O <strong>CopyToGDriver</strong> é um conjunto de scripts que facilita o envio automático de arquivos e pastas do seu computador para o <strong>Google Drive</strong>.<br>
+Este instalador (<code>CopyToGDriver_Installer.ps1</code>) prepara tudo para você no <strong>Windows</strong>, incluindo:</p>
+<ul>
+<li>Instalar e configurar o <strong>Rclone</strong> (ferramenta que faz o envio ao Google Drive)</li>
+<li>Instalar o <strong>Git Bash</strong> (necessário para rodar os scripts em modo Linux no Windows)</li>
+<li>Criar atalhos e comandos práticos no terminal</li>
+<li>Adicionar a opção <strong>“Send to Google Drive”</strong> ao menu do clique direito no <strong>Windows Explorer</strong></li>
+</ul>
+<p>Depois de instalado, você poderá usar comandos simples como <code>copydrive</code> para enviar arquivos ao seu Google Drive.</p>
+<hr>
+<h2 id="-como-usar-este-instalador">🧩 Como usar este instalador</h2>
+<ol>
+<li>
+<p><strong>Baixe o instalador <code>CopyToGDriver_Installer.ps1</code></strong><br>
+Coloque o arquivo em qualquer pasta do seu computador.</p>
+</li>
+<li>
+<p><strong>Clique com o botão direito → Executar com PowerShell</strong><br>
+Ou abra o PowerShell e rode o comando:</p>
+<pre><code class="language-powershell">powershell <span class="hljs-literal">-ExecutionPolicy</span> Bypass <span class="hljs-operator">-File</span> CopyToGDriver_Installer.ps1
+</code></pre>
+</li>
+<li>
+<p>O instalador mostrará o progresso passo a passo e criará o ambiente automaticamente.</p>
+</li>
+<li>
+<p>Após a instalação, reinicie o <strong>Git Bash</strong> para ativar os novos comandos.</p>
+</li>
+</ol>
+<hr>
+<h2 id="️-parâmetros-disponíveis">⚙️ Parâmetros disponíveis</h2>
+<p>Você pode personalizar a instalação com <strong>parâmetros opcionais</strong>.<br>
+Esses parâmetros são digitados <strong>após o nome do instalador</strong> e começam com <code>--</code>.</p>
+<h3 id="-lista-de-parâmetros">🔹 Lista de parâmetros</h3>
+<table>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th>Tipo</th>
+<th>O que faz</th>
+<th>Quando usar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--auto-install-rclone</code></td>
+<td>Flag (sem valor)</td>
+<td>Baixa e instala automaticamente o <strong>Rclone</strong> se ele não estiver instalado.</td>
+<td>Use na primeira instalação.</td>
+</tr>
+<tr>
+<td><code>--auto-config-remote</code></td>
+<td>Flag (sem valor)</td>
+<td>Cria e autentica automaticamente o <strong>Google Drive</strong> no Rclone (chamado de <em>remote gdriver</em>).</td>
+<td>Use se quiser configurar o acesso ao Google Drive automaticamente.</td>
+</tr>
+<tr>
+<td><code>--auto-install-gitbash</code></td>
+<td>Flag (sem valor)</td>
+<td>Instala o <strong>Git Bash</strong> automaticamente se ele não estiver presente.</td>
+<td>Use se você nunca instalou o Git Bash.</td>
+</tr>
+<tr>
+<td><code>--path=&lt;caminho&gt;</code></td>
+<td>Texto</td>
+<td>Define uma pasta personalizada onde o CopyToGDriver será instalado.</td>
+<td>Use se não quiser instalar em <code>~/scripts/CopyToGDriver</code>.</td>
+</tr>
+<tr>
+<td><code>--silent</code></td>
+<td>Flag (sem valor)</td>
+<td>Executa toda a instalação sem perguntar nada ao usuário.</td>
+<td>Ideal para automação ou instalação corporativa.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-exemplos-de-uso">💡 Exemplos de uso</h2>
+<h3 id="1️⃣-instalação-simples-modo-padrão">1️⃣ Instalação simples (modo padrão)</h3>
+<pre><code class="language-powershell">powershell <span class="hljs-literal">-ExecutionPolicy</span> Bypass <span class="hljs-operator">-File</span> CopyToGDriver_Installer.ps1
+</code></pre>
+<p>👉 O script instalará o CopyToGDriver no caminho padrão <code>C:\Users\&lt;usuário&gt;\scripts\CopyToGDriver</code><br>
+Se o Rclone e o Git Bash já estiverem instalados, ele apenas configurará o sistema.</p>
+<hr>
+<h3 id="2️⃣-instalação-automática-completa">2️⃣ Instalação automática completa</h3>
+<pre><code class="language-powershell">powershell <span class="hljs-literal">-ExecutionPolicy</span> Bypass <span class="hljs-operator">-File</span> CopyToGDriver_Installer.ps1 <span class="hljs-literal">--auto-install-rclone</span> <span class="hljs-literal">--auto-install-gitbash</span> <span class="hljs-literal">--auto-config-remote</span>
+</code></pre>
+<p>👉 Essa opção:</p>
+<ul>
+<li>Instala o <strong>Rclone</strong></li>
+<li>Instala o <strong>Git Bash</strong> (se não houver)</li>
+<li>Configura automaticamente o acesso ao <strong>Google Drive</strong></li>
+</ul>
+<p>Sem necessidade de interação manual.</p>
+<hr>
+<h3 id="3️⃣-instalação-em-um-local-personalizado">3️⃣ Instalação em um local personalizado</h3>
+<pre><code class="language-powershell">powershell <span class="hljs-literal">-ExecutionPolicy</span> Bypass <span class="hljs-operator">-File</span> CopyToGDriver_Installer.ps1 <span class="hljs-literal">--path</span>=<span class="hljs-string">&quot;D:\Projetos\CopyToGDriver&quot;</span>
+</code></pre>
+<p>👉 Instala o sistema no diretório <code>D:\Projetos\CopyToGDriver</code> em vez do caminho padrão.</p>
+<hr>
+<h3 id="4️⃣-instalação-silenciosa-sem-prompts">4️⃣ Instalação silenciosa (sem prompts)</h3>
+<pre><code class="language-powershell">powershell <span class="hljs-literal">-ExecutionPolicy</span> Bypass <span class="hljs-operator">-File</span> CopyToGDriver_Installer.ps1 <span class="hljs-literal">--silent</span> <span class="hljs-literal">--auto-install-rclone</span> <span class="hljs-literal">--auto-config-remote</span>
+</code></pre>
+<p>👉 Ideal para uso em ambientes corporativos ou automação.<br>
+Nenhum prompt será exibido; tudo é feito automaticamente.</p>
+<hr>
+<h2 id="-após-a-instalação">🧠 Após a instalação</h2>
+<p>Depois que a instalação terminar, você poderá usar os seguintes comandos no <strong>Git Bash</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>copydrive</code></td>
+<td>Envia os arquivos da pasta atual para o Google Drive.</td>
+</tr>
+<tr>
+<td><code>copycheck</code></td>
+<td>Faz uma verificação dos arquivos que seriam enviados (sem enviar).</td>
+</tr>
+<tr>
+<td><code>copyrestore</code></td>
+<td>Recupera arquivos do Google Drive para a pasta local.</td>
+</tr>
+</tbody>
+</table>
+<p>Esses comandos são criados automaticamente no seu arquivo <code>~/.bashrc</code>.</p>
+<hr>
+<h2 id="️-opção-no-menu-do-windows">🖱️ Opção no menu do Windows</h2>
+<p>O instalador também cria um atalho no menu do <strong>clique direito</strong> no Windows Explorer:<br>
+🖱️ <strong>Send to Google Drive</strong> → envia o arquivo ou pasta clicado direto para seu Drive!</p>
+<hr>
+<h2 id="-onde-ficam-os-arquivos-de-instalação">📄 Onde ficam os arquivos de instalação?</h2>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Caminho</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pasta principal</td>
+<td><code>C:\Users\&lt;usuário&gt;\scripts\CopyToGDriver</code></td>
+</tr>
+<tr>
+<td>Configuração</td>
+<td><code>C:\Users\&lt;usuário&gt;\.copytogdriver</code></td>
+</tr>
+<tr>
+<td>Log de instalação</td>
+<td><code>install_log.txt</code></td>
+</tr>
+<tr>
+<td>Registro da instalação</td>
+<td><code>install_record.json</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-como-remover-o-copytogdriver">🔚 Como remover o CopyToGDriver</h2>
+<p>Para desinstalar completamente, execute o script:<br>
+<code>CopyToGDriver_UnInstaller.ps1</code><br>
+Ele removerá todos os arquivos, variáveis e atalhos criados.</p>
+<hr>
+<h2 id="-conclusão">✅ Conclusão</h2>
+<p>O <strong>CopyToGDriver Installer v2.2.4</strong> foi feito para ser simples, seguro e automático.<br>
+Mesmo sem conhecimento técnico, você pode configurar seu ambiente para enviar arquivos ao <strong>Google Drive</strong> em minutos.</p>
+<hr>
+<p><strong>Autor:</strong> Paulo SSPacheco + ChatGPT (GPT-5)<br>
+<strong>Versão documentada:</strong> 2.2.4<br>
+<strong>Compatibilidade:</strong> Windows 10+, PowerShell 5+, Git Bash 2.4+<br>
+<strong>Requisitos:</strong> Conexão com a Internet e uma conta Google válida.</p>
+
+            
+            
+        </body>
+        </html>

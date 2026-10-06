@@ -1,0 +1,36 @@
+.
+├── CopyToGDriver_AliasSetup.sh
+├── CopyToGDriver_Cache.sh
+├── CopyToGDriver_Checks.sh
+├── CopyToGDriver_ConfigFunctions.sh
+├── CopyToGDriver_Config.sh
+├── CopyToGDriver_CopyCurrent.sh
+├── CopyToGDriver_ignore.txt
+├── CopyToGDriver_Installer.sh
+├── CopyToGDriver_Restore.sh
+├── CopyToGDriver_Setup.sh
+├── CopyToGDriver.sh
+├── CopyToGDriver_Sync.sh
+├── CopyToGDriver_UnInstaller.sh
+├── CopyToGDriver_Utils.sh
+├── Guia_para_Executar_Scripts_CopyToGDriv.md
+├── includes
+│   ├── common
+│   │   ├── common_functions.sh
+│   │   ├── config.sh
+│   │   └── logging.sh
+│   ├── linux
+│   │   ├── disk_utils.sh
+│   │   ├── path_utils.sh
+│   │   └── process_utils.sh
+│   └── windows
+│       ├── disk_utils.sh
+│       ├── path_utils.sh
+│       └── process_utils.sh
+├── junte_Scripts.sh
+├── rclone_browser_x_CopyToDriver.md
+├── Remove_Rclone.sh
+├── scripts.sh
+└── tree.txt
+
+5 directories, 29 files

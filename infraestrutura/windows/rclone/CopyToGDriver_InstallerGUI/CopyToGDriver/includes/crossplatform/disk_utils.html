@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f4d8; Documenta&ccedil;&atilde;o T&eacute;cnica &ndash; &DiacriticalGrave;disk&lowbar;utils&period;sh &lpar;v0&period;0&period;01&rpar;&DiacriticalGrave;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p>Perfeito ✅ — aqui está a documentação <strong>completa e padronizada</strong> para o seu script <strong><code>disk_utils.sh (v0.0.01)</code></strong>, no mesmo estilo técnico e elegante das versões anteriores que você adotou:</p>
+<hr>
+<h1 id="-documentação-técnica--disk_utilssh-v0001">📘 Documentação Técnica – <code>disk_utils.sh (v0.0.01)</code></h1>
+<h2 id="-descrição">🧭 Descrição</h2>
+<p>O script <strong><code>disk_utils.sh</code></strong> fornece um conjunto de <strong>utilitários universais de gerenciamento de disco</strong>, compatíveis com <strong>Linux</strong>, <strong>macOS</strong> e <strong>Windows</strong> (via <strong>Git Bash</strong>, <strong>WSL</strong> ou <strong>Cygwin</strong>).</p>
+<p>Ele permite:</p>
+<ul>
+<li>Listar discos e partições disponíveis;</li>
+<li>Consultar espaço livre de diretórios e volumes;</li>
+<li>Calcular o uso de um diretório;</li>
+<li>Verificar se há espaço disponível suficiente para operações críticas;</li>
+<li>Exibir informações detalhadas sobre o sistema de arquivos atual.</li>
+</ul>
+<hr>
+<h2 id="️-informações-gerais">⚙️ Informações Gerais</h2>
+<p><strong>Projeto:</strong> CopyToGDriver
+<strong>Script:</strong> <code>disk_utils.sh</code>
+<strong>Versão:</strong> <code>v0.0.01</code>
+<strong>Autor:</strong> Paulo SSPacheco + ChatGPT (GPT-5)
+<strong>Compatibilidade:</strong></p>
+<ul>
+<li>✅ Linux</li>
+<li>✅ macOS</li>
+<li>✅ Windows (Git Bash / WSL / Cygwin)</li>
+</ul>
+<hr>
+<h2 id="️-proteção-crlf-automática">🛡️ Proteção CRLF Automática</h2>
+<p>O script inclui uma <strong>autocorreção de CRLF</strong>, evitando falhas de execução quando o arquivo é copiado do Windows para Linux/macOS.
+Esse trecho é executado <strong>antes de qualquer função</strong>:</p>
+<pre><code class="language-bash"><span class="hljs-comment"># 🛡️ Proteção CRLF (5 linhas mágicas)</span>
+<span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-subst">$(uname -s)</span>&quot;</span> =~ (Linux|Darwin) ]] &amp;&amp; grep -q $<span class="hljs-string">&#x27;\r&#x27;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span>; <span class="hljs-keyword">then</span>
+    sed -i <span class="hljs-string">&#x27;s/\r$//&#x27;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span>
+    <span class="hljs-built_in">exec</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>
+    <span class="hljs-built_in">exit</span> $?
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<p><strong>Função:</strong></p>
+<ul>
+<li>Detecta se o sistema é Unix-like;</li>
+<li>Corrige automaticamente quebras de linha <code>CRLF</code>;</li>
+<li>Reexecuta o script limpo sem intervenção manual.</li>
+</ul>
+<hr>
+<h2 id="-dependências">🔧 Dependências</h2>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descrição</th>
+<th>Disponibilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>df</code></td>
+<td>Relatório de uso do sistema de arquivos</td>
+<td>Unix</td>
+</tr>
+<tr>
+<td><code>du</code></td>
+<td>Calcula uso de diretórios</td>
+<td>Unix</td>
+</tr>
+<tr>
+<td><code>awk</code></td>
+<td>Processamento de texto e formatação</td>
+<td>Unix</td>
+</tr>
+<tr>
+<td><code>sed</code></td>
+<td>Manipulação de strings e substituições</td>
+<td>Unix</td>
+</tr>
+<tr>
+<td><code>wmic</code></td>
+<td>Consulta de informações de disco (opcional)</td>
+<td>Windows</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-funções-principais">🧩 Funções Principais</h2>
+<h3 id="-detect_os">🔹 <code>detect_os()</code></h3>
+<p>Detecta automaticamente o sistema operacional em execução.</p>
+<p><strong>Retornos possíveis:</strong></p>
+<ul>
+<li><code>Linux</code></li>
+<li><code>macOS</code></li>
+<li><code>Windows</code></li>
+<li><code>Unknown</code></li>
+</ul>
+<hr>
+<h3 id="-list_disks">🔹 <code>list_disks()</code></h3>
+<p>Lista todos os discos ou volumes disponíveis no sistema.
+Em Windows, tenta usar <code>wmic</code>; caso indisponível, recorre ao <code>df</code>.</p>
+<p><strong>Saída Exemplo (Linux):</strong></p>
+<pre><code>📀 Listando discos disponíveis...
+Device     Mountpoint           Size       Available  Use%
+/dev/sda1  /                   100G       74G        26%
+</code></pre>
+<p><strong>Saída Exemplo (Windows Git Bash):</strong></p>
+<pre><code>📀 Listando discos disponíveis...
+C:   106GB  Livre: 79GB  Volume: VBOX_C
+D:   10GB   Livre: 0GB   Volume: VBox_GAs
+</code></pre>
+<hr>
+<h3 id="-disk_free_space-caminho">🔹 <code>disk_free_space &lt;caminho&gt;</code></h3>
+<p>Mostra o espaço livre (human readable) de um ponto de montagem.</p>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-bash">disk_free_space <span class="hljs-string">&quot;/home&quot;</span>
+</code></pre>
+<p>➡️ Exibe o resultado formatado pelo <code>df -h</code>.</p>
+<hr>
+<h3 id="-get_disk_space_gb-caminho">🔹 <code>get_disk_space_gb &lt;caminho&gt;</code></h3>
+<p>Retorna o espaço livre em <strong>GB (número inteiro)</strong>, ideal para validações automáticas.</p>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-bash">get_disk_space_gb <span class="hljs-string">&quot;/&quot;</span>
+<span class="hljs-comment"># Saída: 78</span>
+</code></pre>
+<hr>
+<h3 id="-get_disk_usage_gb-caminho">🔹 <code>get_disk_usage_gb &lt;caminho&gt;</code></h3>
+<p>Retorna o <strong>uso total de um diretório</strong> em GB.</p>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-bash">get_disk_usage_gb <span class="hljs-string">&quot;/home/user&quot;</span>
+<span class="hljs-comment"># Saída: 2</span>
+</code></pre>
+<hr>
+<h3 id="-check_available_space-caminho-gb_necessários">🔹 <code>check_available_space &lt;caminho&gt; &lt;gb_necessários&gt;</code></h3>
+<p>Verifica se há espaço suficiente em determinado diretório.</p>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-bash">check_available_space <span class="hljs-string">&quot;/tmp&quot;</span> 5
+<span class="hljs-comment"># ✅ Espaço suficiente: 74GB disponíveis em /tmp</span>
+</code></pre>
+<p><strong>Códigos de retorno:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td>Espaço suficiente</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>Espaço insuficiente</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>Erro ao consultar</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-disk_info-caminho">🔹 <code>disk_info &lt;caminho&gt;</code></h3>
+<p>Exibe informações detalhadas de um caminho, incluindo sistema, espaço livre e uso.</p>
+<p><strong>Exemplo:</strong></p>
+<pre><code class="language-bash">disk_info <span class="hljs-string">&quot;/home&quot;</span>
+</code></pre>
+<p><strong>Saída:</strong></p>
+<pre><code>=== Informações do Disco ===
+Sistema: Linux
+Caminho: /home
+
+Espaço livre: 74GB
+Uso do diretório: 2GB
+
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       100G  26G   74G  26% /
+</code></pre>
+<hr>
+<h2 id="️-execução-via-cli">⚙️ Execução via CLI</h2>
+<p>O script pode ser chamado diretamente no terminal:</p>
+<pre><code class="language-bash">./disk_utils.sh [comando] [caminho] [gb_necessários]
+</code></pre>
+<h3 id="-comandos-disponíveis">📜 Comandos disponíveis</h3>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list</code></td>
+<td>Lista discos montados</td>
+</tr>
+<tr>
+<td><code>free [caminho]</code></td>
+<td>Mostra espaço livre em formato legível</td>
+</tr>
+<tr>
+<td><code>space [caminho]</code></td>
+<td>Retorna espaço livre (GB)</td>
+</tr>
+<tr>
+<td><code>usage [caminho]</code></td>
+<td>Retorna uso do diretório (GB)</td>
+</tr>
+<tr>
+<td><code>check [caminho] [gb]</code></td>
+<td>Verifica espaço disponível</td>
+</tr>
+<tr>
+<td><code>info [caminho]</code></td>
+<td>Mostra informações detalhadas</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-exemplos-de-uso-prático">🧪 Exemplos de uso prático</h3>
+<pre><code class="language-bash"><span class="hljs-comment"># 1️⃣ Listar discos</span>
+./disk_utils.sh list
+
+<span class="hljs-comment"># 2️⃣ Espaço livre no diretório atual</span>
+./disk_utils.sh space <span class="hljs-string">&quot;<span class="hljs-subst">$(pwd)</span>&quot;</span>
+
+<span class="hljs-comment"># 3️⃣ Verificar se há pelo menos 5GB disponíveis</span>
+./disk_utils.sh check /tmp 5
+
+<span class="hljs-comment"># 4️⃣ Exibir informações completas</span>
+./disk_utils.sh info /home
+</code></pre>
+<hr>
+<h2 id="-exemplo-com-source">🧩 Exemplo com <code>source</code></h2>
+<p>Para importar as funções em outro script:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">source</span> ./disk_utils.sh
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;📀 Discos disponíveis:&quot;</span>
+list_disks
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;💾 Espaço livre no diretório atual: <span class="hljs-subst">$(get_disk_space_gb <span class="hljs-string">&quot;<span class="hljs-subst">$(pwd)</span>&quot;</span>)</span> GB&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;📂 Uso do diretório atual: <span class="hljs-subst">$(get_disk_usage_gb <span class="hljs-string">&quot;<span class="hljs-subst">$(pwd)</span>&quot;</span>)</span> GB&quot;</span>
+check_available_space <span class="hljs-string">&quot;<span class="hljs-subst">$(pwd)</span>&quot;</span> 1
+disk_info <span class="hljs-string">&quot;<span class="hljs-subst">$(pwd)</span>&quot;</span>
+</code></pre>
+<hr>
+<h2 id="-estrutura-interna">🧱 Estrutura Interna</h2>
+<table>
+<thead>
+<tr>
+<th>Seção</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>detect_os</code></td>
+<td>Identifica o sistema operacional</td>
+</tr>
+<tr>
+<td><code>list_disks</code></td>
+<td>Lista discos e volumes</td>
+</tr>
+<tr>
+<td><code>disk_free_space</code></td>
+<td>Mostra espaço livre legível</td>
+</tr>
+<tr>
+<td><code>get_disk_space_gb</code></td>
+<td>Espaço livre numérico</td>
+</tr>
+<tr>
+<td><code>get_disk_usage_gb</code></td>
+<td>Uso do diretório em GB</td>
+</tr>
+<tr>
+<td><code>check_available_space</code></td>
+<td>Verifica se há espaço suficiente</td>
+</tr>
+<tr>
+<td><code>disk_info</code></td>
+<td>Exibe relatório completo</td>
+</tr>
+<tr>
+<td><code>main()</code></td>
+<td>Interface CLI principal</td>
+</tr>
+<tr>
+<td>Proteção CRLF</td>
+<td>Corrige automaticamente quebras de linha</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-integração-com-outros-módulos">🧩 Integração com outros módulos</h2>
+<p>Pode ser combinado com:</p>
+<ul>
+<li><code>crossplatform_utils.sh</code> — para logging colorido e detecção de ambiente;</li>
+<li><code>crlf_protect.sh</code> — para proteção global de scripts em projetos grandes.</li>
+</ul>
+<hr>
+<h2 id="-conclusão">✅ Conclusão</h2>
+<p>O <strong><code>disk_utils.sh</code> (v0.0.01)</strong> é uma ferramenta <strong>universal, autônoma e segura</strong>, desenhada para funcionar de forma consistente em <strong>qualquer sistema operacional</strong>.
+A proteção CRLF integrada elimina erros comuns ao copiar scripts entre Windows e Linux.</p>
+<p>Ele é a <strong>versão definitiva</strong> para o gerenciamento de espaço de disco no projeto <strong>CopyToGDriver</strong>.</p>
+<hr>
+<p>Quer que eu gere agora o arquivo <code>.md</code> pronto (<code>disk_utils.md</code>) e o <code>.sh</code> correspondente juntos no mesmo pacote (prontos para salvar na pasta <code>includes/linux/</code>)?</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

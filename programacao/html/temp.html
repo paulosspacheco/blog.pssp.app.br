@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormApp - Sistema de Cadastros</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            height: 85vh;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .app-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .datetime {
+            font-size: 0.9rem;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        .main-content {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        .sidebar {
+            width: 200px;
+            background: #f5f5f5;
+            padding: 20px 0;
+            border-right: 1px solid #ddd;
+        }
+        
+        .menu-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .menu-item:hover {
+            background-color: #e9ecef;
+        }
+        
+        .menu-item.active {
+            background-color: #4ca1af;
+            color: white;
+        }
+        
+        .menu-item i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+        }
+        
+        .content-section {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #4ca1af;
+        }
+        
+        .file-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #4ca1af;
+            margin-bottom: 20px;
+        }
+        
+        .about-content {
+            line-height: 1.6;
+        }
+        
+        .help-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+        
+        .shortcuts span {
+            margin-right: 15px;
+            background: #e9ecef;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .status-bar {
+            color: #6c757d;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+            
+            .container {
+                height: 95vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="app-title">FormApp - Sistema de Cadastros</div>
+            <div class="datetime">15.12.2023 11:47 GMT+1</div>
+        </header>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="menu-item active">
+                    <i>📁</i> Arquivo
+                </div>
+                <div class="menu-item">
+                    <i>📝</i> Cadastros
+                </div>
+                <div class="menu-item">
+                    <i>ℹ️</i> Sobre
+                </div>
+                <div class="menu-item">
+                    <i>❓</i> Ajuda
+                </div>
+                <div class="menu-item">
+                    <i>⚙️</i> Configurações
+                </div>
+                <div class="menu-item">
+                    <i>🚪</i> Sair
+                </div>
+            </div>
+            
+            <div class="content">
+                <div class="content-section">
+                    <h2>Arquivo Cadastros</h2>
+                    <div class="file-info">
+                        <p>Arquivo: <strong>cadastros_2023.dbf</strong></p>
+                        <p>Registros: <strong>1.247</strong></p>
+                        <p>Tamanho: <strong>2.4 MB</strong></p>
+                        <p>Última atualização: <strong>14/12/2023 16:32</strong></p>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <h2>Sobre</h2>
+                    <div class="about-content">
+                        <p>FormApp é um sistema de gerenciamento de cadastros desenvolvido para facilitar o controle de informações de clientes, produtos e fornecedores.</p>
+                        <p>Versão: 3.2.1</p>
+                        <p>Desenvolvido por: Sua Empresa</p>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <h2>Ajuda</h2>
+                    <div class="help-content">
+                        <p>Para utilizar o sistema, selecione uma opção no menu à esquerda.</p>
+                        <p>Use as teclas de atalho para agilizar a navegação:</p>
+                        <p>- F10: Acessar o menu principal</p>
+                        <p>- Alt+X: Sair do sistema</p>
+                        <p>- F1: Exibir ajuda contextual</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="shortcuts">
+                <span>Alt+X Sair</span>
+                <span>F10 Menu</span>
+            </div>
+            <div class="status-bar">
+                Sistema pronto para uso | 15.12.2023 11:47 GMT+1
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simulação de funcionalidades de teclas de atalho
+        document.addEventListener('keydown', function(e) {
+            if (e.altKey && e.key.toLowerCase() === 'x') {
+                alert('Saindo do sistema...');
+            } else if (e.key === 'F10') {
+                alert('Abrindo menu principal...');
+                // Na implementação real, aqui viria o código para abrir o menu
+            }
+        });
+        
+        // Alternância de itens do menu
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                menuItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

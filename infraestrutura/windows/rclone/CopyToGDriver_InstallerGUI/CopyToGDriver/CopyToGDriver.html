@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f4d8; Documenta&ccedil;&atilde;o &ndash; &DiacriticalGrave;CopyToGDriver&period;sh&DiacriticalGrave; &lpar;v0&period;2&period;1&rpar;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-documentação--copytogdriversh-v021">📘 Documentação – <code>CopyToGDriver.sh</code> (v0.2.1)</h1>
+<h2 id="-descrição-geral">🧭 Descrição geral</h2>
+<p>O script <strong><code>CopyToGDriver.sh</code></strong> é o <strong>núcleo orquestrador</strong> do projeto <strong>CopyToGDriver</strong>.
+Ele é responsável por <strong>detectar automaticamente o sistema operacional</strong>, <strong>carregar os módulos corretos</strong> (crossplatform, Windows, Linux ou macOS), e <strong>executar a rotina principal</strong> de sincronização de arquivos.</p>
+<p>Essa arquitetura modular e multiplataforma garante que o projeto funcione de forma consistente em <strong>Windows (via Git Bash/WSL)</strong>, <strong>Linux</strong> e <strong>macOS</strong>, sem precisar editar o código para cada ambiente.</p>
+<hr>
+<h2 id="️-função-principal">⚙️ Função principal</h2>
+<blockquote>
+<p>“Carregar dinamicamente o ambiente correto e orquestrar os módulos essenciais do CopyToGDriver.”</p>
+</blockquote>
+<p>O script:</p>
+<ol>
+<li><strong>Corrige CRLF automaticamente</strong> em ambientes Unix (evitando falhas de execução);</li>
+<li><strong>Detecta a plataforma</strong> (Linux, macOS, Windows);</li>
+<li><strong>Carrega bibliotecas crossplatform e específicas da plataforma</strong>;</li>
+<li><strong>Verifica a integridade dos módulos obrigatórios</strong>;</li>
+<li><strong>Executa o fluxo principal (<code>main</code>)</strong> definido nos módulos;</li>
+<li><strong>Oferece modo de diagnóstico (--check-only)</strong>.</li>
+</ol>
+<hr>
+<h2 id="-estrutura-funcional">🧩 Estrutura funcional</h2>
+<h3 id="1-cabeçalho-e-metadados">1. Cabeçalho e metadados</h3>
+<p>Contém informações sobre:</p>
+<ul>
+<li>Projeto, módulo e função;</li>
+<li>Autor, versão e descrição;</li>
+<li>Indica que é <strong>multiplataforma</strong>.</li>
+</ul>
+<h3 id="2-proteção-crlf">2. Proteção CRLF</h3>
+<p>Bloco de 5 linhas que garante execução correta em Linux/macOS mesmo que o script tenha sido salvo com quebras de linha do Windows (<code>\r\n</code>).</p>
+<pre><code class="language-bash"><span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-subst">$(uname -s)</span>&quot;</span> =~ (Linux|Darwin) ]] &amp;&amp; grep -q $<span class="hljs-string">&#x27;\r&#x27;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span>; <span class="hljs-keyword">then</span>
+    sed -i <span class="hljs-string">&#x27;s/\r$//&#x27;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span>
+    <span class="hljs-built_in">exec</span> <span class="hljs-string">&quot;<span class="hljs-variable">$0</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>
+    <span class="hljs-built_in">exit</span> $?
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<hr>
+<h3 id="3-detecção-da-plataforma">3. Detecção da plataforma</h3>
+<p>Detecta automaticamente o ambiente e armazena o resultado em <code>$PLATFORM</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Sistema</th>
+<th>Valor atribuído</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td><code>linux</code></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td><code>macos</code></td>
+</tr>
+<tr>
+<td>Git Bash / WSL / Cygwin</td>
+<td><code>windows</code></td>
+</tr>
+<tr>
+<td>Outro</td>
+<td><code>unknown</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="4-normalização-de-caminhos-normalize_path">4. Normalização de caminhos (<code>normalize_path</code>)</h3>
+<p>Ajusta caminhos automaticamente entre sistemas:</p>
+<ul>
+<li>Converte <code>/c/Users/...</code> para <code>C:\Users\...</code> em Windows;</li>
+<li>Retorna o caminho inalterado em Linux/macOS.</li>
+</ul>
+<hr>
+<h3 id="5-includes-principais">5. Includes principais</h3>
+<p>O script carrega <strong>módulos universais e específicos da plataforma</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Include</th>
+<th>Caminho</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🧠 <code>crossplatform_utils.sh</code></td>
+<td><code>includes/crossplatform/</code></td>
+<td>Funções de detecção, logging, path e dependências</td>
+</tr>
+<tr>
+<td>🛡️ <code>crlf_protect.sh</code></td>
+<td><code>includes/crossplatform/</code></td>
+<td>Corrige CRLF e reinicia execução</td>
+</tr>
+<tr>
+<td>🌍 <code>platform_loader.sh</code></td>
+<td><code>includes/crossplatform/</code></td>
+<td>Carrega módulos corretos por sistema operacional</td>
+</tr>
+<tr>
+<td>💽 <code>disk_utils.sh</code></td>
+<td><code>includes/crossplatform/</code></td>
+<td>Gerencia espaço e uso de disco</td>
+</tr>
+<tr>
+<td>🪟 <code>path_utils.sh</code></td>
+<td><code>includes/windows/</code></td>
+<td>Conversão de caminhos Windows ↔ Git Bash</td>
+</tr>
+<tr>
+<td>⚙️ <code>platform_detector.sh</code></td>
+<td>Raiz do projeto</td>
+<td>Detecta e define variáveis do ambiente</td>
+</tr>
+<tr>
+<td>🔗 <code>include_loader.sh</code></td>
+<td>Raiz do projeto</td>
+<td>Responsável por inicializar todos os includes principais</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="6-verificação-de-dependências">6. Verificação de dependências</h3>
+<p>A função <code>verify_dependencies</code> confirma se todos os módulos obrigatórios do projeto estão presentes:</p>
+<table>
+<thead>
+<tr>
+<th>Módulo</th>
+<th>Nome do arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Utils</td>
+<td><code>CopyToGDriver_Utils.sh</code></td>
+</tr>
+<tr>
+<td>Config</td>
+<td><code>CopyToGDriver_Config.sh</code></td>
+</tr>
+<tr>
+<td>ConfigFunctions</td>
+<td><code>CopyToGDriver_ConfigFunctions.sh</code></td>
+</tr>
+<tr>
+<td>Checks</td>
+<td><code>CopyToGDriver_Checks.sh</code></td>
+</tr>
+<tr>
+<td>Cache</td>
+<td><code>CopyToGDriver_Cache.sh</code></td>
+</tr>
+<tr>
+<td>Setup</td>
+<td><code>CopyToGDriver_Setup.sh</code></td>
+</tr>
+<tr>
+<td>Sync</td>
+<td><code>CopyToGDriver_Sync.sh</code></td>
+</tr>
+</tbody>
+</table>
+<p>Caso algum módulo esteja ausente, o script exibe uma mensagem de erro e finaliza a execução.</p>
+<hr>
+<h3 id="7-modo-de-verificação---check-only">7. Modo de verificação (<code>--check-only</code>)</h3>
+<p>Permite testar a integridade da instalação sem executar sincronização:</p>
+<pre><code class="language-bash">./CopyToGDriver.sh --check-only
+</code></pre>
+<p>Saída esperada:</p>
+<pre><code>🔍 Verificando módulos do CopyToGDriver...
+✅ Todas as dependências foram verificadas com sucesso!
+✅ Verificação concluída. Nenhuma sincronização executada.
+</code></pre>
+<hr>
+<h3 id="8-execução-principal">8. Execução principal</h3>
+<p>Após carregar todos os módulos, o script:</p>
+<ul>
+<li>Localiza a função <code>main</code>;</li>
+<li>Executa <code>main &quot;$@&quot;</code> com os parâmetros originais.</li>
+</ul>
+<p>Se <code>main</code> não for encontrada, exibe um erro informando para verificar <code>CopyToGDriver_Sync.sh</code>.</p>
+<hr>
+<h3 id="9-debug-opcional">9. Debug opcional</h3>
+<p>O script inclui variáveis de debug comentadas, que podem ser ativadas para diagnóstico rápido:</p>
+<pre><code class="language-bash"><span class="hljs-comment"># echo &quot;DE<span class="hljs-doctag">BUG:</span> PLATFORM=$PLATFORM&quot;</span>
+<span class="hljs-comment"># echo &quot;DE<span class="hljs-doctag">BUG:</span> SCRIPT_DIR=$SCRIPT_DIR&quot;</span>
+<span class="hljs-comment"># echo &quot;DE<span class="hljs-doctag">BUG:</span> Includes carregados com sucesso.&quot;</span>
+</code></pre>
+<hr>
+<h2 id="-exemplo-de-uso">🧪 Exemplo de uso</h2>
+<h3 id="execução-normal">Execução normal:</h3>
+<pre><code class="language-bash">./CopyToGDriver.sh
+</code></pre>
+<h3 id="verificação-de-módulos">Verificação de módulos:</h3>
+<pre><code class="language-bash">./CopyToGDriver.sh --check-only
+</code></pre>
+<h3 id="execução-forçada-em-windows-git-bash">Execução forçada em Windows (Git Bash):</h3>
+<pre><code class="language-bash">bash CopyToGDriver.sh
+</code></pre>
+<hr>
+<h2 id="-requisitos-e-compatibilidade">💡 Requisitos e compatibilidade</h2>
+<table>
+<thead>
+<tr>
+<th>Requisito</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bash &gt;= 4.0</code></td>
+<td>Shell mínimo suportado</td>
+</tr>
+<tr>
+<td><code>df</code>, <code>du</code>, <code>awk</code>, <code>sed</code></td>
+<td>Utilitários nativos de Unix</td>
+</tr>
+<tr>
+<td><code>wmic</code> (opcional)</td>
+<td>Para leitura de discos no Windows</td>
+</tr>
+<tr>
+<td><code>Git Bash</code> / <code>WSL</code></td>
+<td>Para execução no Windows</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-estrutura-recomendada-do-projeto">🧱 Estrutura recomendada do projeto</h2>
+<pre><code>CopyToGDriver/
+├── CopyToGDriver.sh               ← Script principal (este)
+├── CopyToGDriver_Utils.sh
+├── CopyToGDriver_Config.sh
+├── CopyToGDriver_Sync.sh
+├── includes/
+│   ├── crossplatform/
+│   │   ├── crossplatform_utils.sh
+│   │   ├── crlf_protect.sh
+│   │   ├── platform_loader.sh
+│   │   ├── disk_utils.sh
+│   ├── windows/
+│   │   ├── path_utils.sh
+│   ├── linux/
+│   │   ├── (opcional)
+│   ├── macos/
+│   │   ├── (opcional)
+</code></pre>
+<hr>
+<h2 id="-histórico-de-versões">🧩 Histórico de versões</h2>
+<table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Data</th>
+<th>Alterações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1.0</td>
+<td>Inicial</td>
+<td>Estrutura básica e verificação de módulos</td>
+</tr>
+<tr>
+<td>0.2.0</td>
+<td>Prévia multiplataforma</td>
+<td>Adicionada detecção automática e <code>normalize_path</code></td>
+</tr>
+<tr>
+<td><strong>0.2.1</strong></td>
+<td>Atual</td>
+<td>Inclusões automáticas, proteção CRLF e crossplatform completo</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-próximos-passos-recomendados">🧠 Próximos passos recomendados</h2>
+<ol>
+<li>
+<p>Criar o arquivo <code>includes/crossplatform/platform_loader.sh</code> (v1.0.0)
+→ Responsável por escolher automaticamente os módulos corretos de cada SO.</p>
+</li>
+<li>
+<p>Padronizar a função <code>main</code> dentro de <code>CopyToGDriver_Sync.sh</code>.</p>
+</li>
+<li>
+<p>Criar <code>CopyToGDriver_Installer.sh</code> com integração automática e autodetecção de plataforma (baseado neste mesmo modelo).</p>
+</li>
+</ol>
+<hr>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

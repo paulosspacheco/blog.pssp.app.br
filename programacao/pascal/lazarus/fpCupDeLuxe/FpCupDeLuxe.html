@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Configura&ccedil;&otilde;es Avan&ccedil;adas do FPCupDeluxe</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+
+<p>Este documento descreve cada opção disponível na janela de configurações avançadas do FPCupDeluxe, com base na tradução fornecida. Para cada opção (campos de texto, caixas de seleção, botões de rádio, etc.), explico o que ela faz e quando é recomendado marcá-la ou usá-la. As explicações são baseadas no funcionamento típico da ferramenta, que é um instalador para o Free Pascal Compiler (FPC) e o Lazarus IDE, permitindo instalações personalizadas, incluindo cross-compilers. Algumas opções são autoexplicativas, mas forneço contextos práticos de uso.</p>
+<h2 id="configurações-de-proxy">Configurações de Proxy</h2>
+<p>Essas são campos de texto para configurar um proxy HTTP, útil em redes corporativas ou restritas.</p>
+<ul>
+<li>
+<p><strong>URL do proxy HTTP</strong>: Endereço URL do servidor proxy.<br>
+Quando usar: Se sua conexão à internet requer um proxy para downloads (ex.: repositórios Git/SVN). Deixe vazio se não precisar.</p>
+</li>
+<li>
+<p><strong>Porta do proxy HTTP</strong>: Número da porta do proxy (ex.: 8080).<br>
+Quando usar: Sempre que definir uma URL de proxy; use a porta padrão ou especificada pela sua rede.</p>
+</li>
+<li>
+<p><strong>Nome de usuário do proxy HTTP</strong>: Nome de usuário para autenticação no proxy.<br>
+Quando usar: Se o proxy exigir autenticação básica.</p>
+</li>
+<li>
+<p><strong>Senha do proxy HTTP</strong>: Senha para autenticação no proxy.<br>
+Quando usar: Junto com o nome de usuário, para proxies autenticados.</p>
+</li>
+</ul>
+<h2 id="substituição-de-opções">Substituição de Opções</h2>
+<ul>
+<li><strong>Campo de texto</strong>: Permite sobrescrever opções padrão do compilador ou make (ex.: -O3 para otimização).<br>
+Quando usar: Quando você precisa adicionar flags personalizadas ao processo de build, como opções de depuração ou otimização específicas. Útil para experimentos avançados.</li>
+</ul>
+<h2 id="branch-e-revisão">Branch e Revisão</h2>
+<p>Esses campos permitem especificar versões exatas do FPC e Lazarus a partir de repositórios (Git/SVN).</p>
+<ul>
+<li>
+<p><strong>Branch do FPC</strong>: Nome do branch do FPC (ex.: &quot;trunk&quot; para desenvolvimento, &quot;fixes&quot; para estável).<br>
+Quando usar: Para instalar uma versão não padrão; marque/use se quiser a última versão de desenvolvimento ou uma branch específica em vez da default.</p>
+</li>
+<li>
+<p><strong>Hashtag/Tag do FPC</strong>: Hash ou tag específico de commit/versão do FPC.<br>
+Quando usar: Para fixar uma revisão exata, útil em testes reproduzíveis ou para evitar bugs recentes.</p>
+</li>
+<li>
+<p><strong>Branch do Laz.</strong>: Nome do branch do Lazarus (similar ao FPC).<br>
+Quando usar: Mesmo que acima, para alinhar com o FPC ou testar branches específicas do Lazarus.</p>
+</li>
+<li>
+<p><strong>Hashtag/Tag do Laz.</strong>: Hash ou tag do Lazarus.<br>
+Quando usar: Para fixar uma versão exata do Lazarus.</p>
+</li>
+</ul>
+<h2 id="opções-do-laz">Opções do Laz.</h2>
+<ul>
+<li>
+<p><strong>Campo de texto</strong>: Opções personalizadas para o Lazarus.<br>
+Quando usar: Para adicionar flags específicas ao build do Lazarus, como opções de depuração.</p>
+</li>
+<li>
+<p><strong>Depurar (caixa de seleção)</strong>: Ativa modo de depuração para o Lazarus.<br>
+Quando marcar: Se você quiser compilar o Lazarus com símbolos de depuração para troubleshooting.</p>
+</li>
+</ul>
+<h2 id="configurações-diversas-miscellaneous-settings">Configurações Diversas (Miscellaneous Settings)</h2>
+<p>Essas são principalmente caixas de seleção para personalizar o processo de instalação e build.</p>
+<ul>
+<li>
+<p><strong>Get FPC/Laz repositories</strong>: Baixa os repositórios Git/SVN do FPC e Lazarus.<br>
+Quando marcar: Sempre que quiser construir a partir das fontes mais recentes; desmarque se preferir usar fontes locais ou pré-compiladas.</p>
+</li>
+<li>
+<p><strong>Include LCL with cross-compiler</strong>: Inclui a Lazarus Component Library (LCL) no cross-compiler.<br>
+Quando marcar: Se você planeja desenvolver aplicativos GUI cross-platform; essencial para cross-compilation de apps Lazarus.</p>
+</li>
+<li>
+<p><strong>FPC/Laz rebuild only</strong>: Apenas reconstrói o FPC/Lazarus, sem baixar fontes novas.<br>
+Quando marcar: Se as fontes já estiverem baixadas e você quiser apenas recompilar (ex.: após edições locais).</p>
+</li>
+<li>
+<p><strong>Include Help</strong>: Inclui arquivos de ajuda e documentação.<br>
+Quando marcar: Se você quiser acesso à ajuda integrada no IDE Lazarus.</p>
+</li>
+<li>
+<p><strong>Split FPC source and bins</strong>: Separa fontes e binários do FPC em diretórios diferentes.<br>
+Quando marcar: Para melhor organização de arquivos, especialmente em instalações múltiplas.</p>
+</li>
+<li>
+<p><strong>Split Lazarus source and bins</strong>: Separa fontes e binários do Lazarus.<br>
+Quando marcar: Mesmo que acima, para manter o Lazarus organizado.</p>
+</li>
+<li>
+<p><strong>Docked Lazarus IDE</strong>: Instala o Lazarus com interface docked (usando pacotes como AnchorDocking).<br>
+Quando marcar: Se você prefere um IDE com janelas dockáveis, similar a outros IDEs modernos.</p>
+</li>
+<li>
+<p><strong>Force linking against lowest @GLIBC-version</strong>: Força linkagem contra a versão mais baixa do GLIBC (para Linux).<br>
+Quando marcar: Para garantir compatibilidade de binários com sistemas Linux mais antigos.</p>
+</li>
+<li>
+<p><strong>Use jobs for GNU make</strong>: Ativa compilação paralela (-j) usando múltiplos núcleos.<br>
+Quando marcar: Em máquinas com múltiplos cores para acelerar o build; desmarque se houver problemas de estabilidade.</p>
+</li>
+<li>
+<p><strong>Be extra verbose</strong>: Aumenta o nível de logs e saídas detalhadas.<br>
+Quando marcar: Para depuração durante a instalação, quando precisar ver todos os passos.</p>
+</li>
+<li>
+<p><strong>Send location and install info</strong>: Envia dados anônimos de localização e instalação ao desenvolvedor.<br>
+Quando marcar: Se você quiser contribuir com estatísticas para melhorar a ferramenta.</p>
+</li>
+<li>
+<p><strong>Use local repo-client</strong>: Usa cliente Git/SVN local em vez do embutido.<br>
+Quando marcar: Se você tem Git/SVN instalado no sistema e o embutido falhar.</p>
+</li>
+<li>
+<p><strong>Check for fpcupdeluxe updates</strong>: Verifica atualizações do FPCupDeluxe automaticamente.<br>
+Quando marcar: Para manter a ferramenta atualizada; desmarque se preferir atualizações manuais.</p>
+</li>
+<li>
+<p><strong>Enable software emulation of 80 bit floats</strong>: Ativa emulação de software para floats de 80 bits.<br>
+Quando marcar: Em plataformas sem suporte hardware para tipos extended float.</p>
+</li>
+<li>
+<p><strong>Enable Delphi RTTI</strong>: Ativa Runtime Type Information (RTTI) compatível com Delphi.<br>
+Quando marcar: Para código que usa RTTI avançado, como em migrações de Delphi.</p>
+</li>
+<li>
+<p><strong>Allow patching of sources by online patches</strong>: Permite aplicar patches online às fontes.<br>
+Quando marcar: Para correções automáticas de bugs conhecidos via repositório.</p>
+</li>
+<li>
+<p><strong>Re-apply local changes when updating</strong>: Reaplica modificações locais ao atualizar fontes.<br>
+Quando marcar: Se você editou fontes localmente e quer preservá-las em atualizações.</p>
+</li>
+<li>
+<p><strong>Always ask for confirmation</strong>: Sempre pede confirmação antes de ações.<br>
+Quando marcar: Para controle manual, evitando operações automáticas acidentais.</p>
+</li>
+<li>
+<p><strong>Save settings in fpcup-script</strong>: Salva configurações em um script fpcup.<br>
+Quando marcar: Para automatizar instalações futuras via script.</p>
+</li>
+<li>
+<p><strong>Get package repositories</strong>: Baixa repositórios de pacotes adicionais.<br>
+Quando marcar: Se você precisar instalar pacotes extras via Online Package Manager (OPM).</p>
+</li>
+<li>
+<p><strong>Build FPC Unicode</strong>: Constrói o FPC com suporte Unicode completo.<br>
+Quando marcar: Para aplicativos que requerem manipulação avançada de Unicode.</p>
+</li>
+<li>
+<p><strong>Build dotted RTL</strong>: Constrói a Runtime Library (RTL) com nomes &quot;pontilhados&quot; (possivelmente para namespaces ou compatibilidade).<br>
+Quando marcar: Em cenários específicos de compatibilidade ou módulos personalizados.</p>
+</li>
+<li>
+<p><strong>Use system FPC for Lazarus</strong>: Usa o FPC instalado no sistema para o Lazarus.<br>
+Quando marcar: Se você já tem um FPC no sistema e quer integrá-lo ao Lazarus instalado.</p>
+</li>
+<li>
+<p><strong>Use wget/libcurl as downloader</strong>: Usa wget ou libcurl para downloads em vez do padrão.<br>
+Quando marcar: Se o downloader embutido falhar (ex.: problemas de SSL ou rede).</p>
+</li>
+<li>
+<p><strong>Add context for FPC and Lazarus files</strong>: Adiciona opções de contexto (menu direito) para arquivos FPC/Lazarus no explorador de arquivos.<br>
+Quando marcar: Para integração com o sistema operacional, facilitando abertura de arquivos.</p>
+</li>
+</ul>
+<h2 id="cpuos-subarch">CPU/OS (Subarch)</h2>
+<ul>
+<li>
+<p><strong>Select CPU</strong>: Seleciona a CPU alvo para cross-compilation (dropdown).<br>
+Quando usar: Ao configurar um cross-compiler para outra arquitetura (ex.: ARM, x86).</p>
+</li>
+<li>
+<p><strong>Select OS</strong>: Seleciona o SO alvo (dropdown).<br>
+Quando usar: Para builds cross-platform (ex.: Windows para Linux).</p>
+</li>
+<li>
+<p><strong>List All</strong>: Lista todas as opções disponíveis.<br>
+Quando usar: Para ver todas as combinações possíveis de CPU/OS.</p>
+</li>
+</ul>
+<h2 id="opções-de-pesquisa">Opções de Pesquisa</h2>
+<ul>
+<li>
+<p><strong>fpcup (botão de rádio)</strong>: Modo de busca padrão via fpcup.<br>
+Quando selecionar: Para buscas automáticas de dependências.</p>
+</li>
+<li>
+<p><strong>full auto</strong>: Modo totalmente automático.<br>
+Quando selecionar: Para instalações sem intervenção, deixando o tool resolver tudo.</p>
+</li>
+<li>
+<p><strong>custom</strong>: Modo personalizado.<br>
+Quando selecionar: Quando precisar definir caminhos manuais para bibliotecas ou ferramentas.</p>
+</li>
+<li>
+<p><strong>Bibliotecas</strong>: Campo para paths de bibliotecas.<br>
+Quando usar: No modo custom, para especificar locais de libs externas.</p>
+</li>
+<li>
+<p><strong>Ferramentas</strong>: Campo para paths de ferramentas.<br>
+Quando usar: Similar, para ferramentas como make ou binutils.</p>
+</li>
+</ul>
+<h2 id="substituição-de-opções-de-construção-cruzada-ie--cfsoft">Substituição de Opções de Construção Cruzada (i.e. -CfSoft)</h2>
+<ul>
+<li><strong>Campo de texto</strong>: Sobrescreve opções para builds cross (ex.: -CfSoft para soft float).<br>
+Quando usar: Para flags específicas de cross-compilation, como emulações ou otimizações por alvo.</li>
+</ul>
+<h2 id="substituição-de-compilador">Substituição de Compilador</h2>
+<ul>
+<li>
+<p><strong>Campo de texto</strong>: Especifica um compilador alternativo.<br>
+Quando usar: Se quiser usar um compilador diferente do padrão (ex.: bootstrap com outro FPC).</p>
+</li>
+<li>
+<p><strong>Compilar (botão)</strong>: Compila com as substituições.<br>
+Quando usar: Após definir o override, para testar.</p>
+</li>
+</ul>
+<h2 id="alvo-arm">Alvo ARM</h2>
+<ul>
+<li>
+<p><strong>none (botão de rádio)</strong>: Sem alvo ARM específico.<br>
+Quando selecionar: Para builds não-ARM.</p>
+</li>
+<li>
+<p><strong>armel</strong>: ARM little-endian softfloat.<br>
+Quando selecionar: Para dispositivos ARM antigos ou que não suportam hardfloat.</p>
+</li>
+<li>
+<p><strong>armeb</strong>: ARM big-endian.<br>
+Quando selecionar: Para sistemas ARM big-endian (raro).</p>
+</li>
+<li>
+<p><strong>armhf</strong>: ARM hardfloat (floating point hardware).<br>
+Quando selecionar: Para dispositivos modernos como Raspberry Pi, para melhor performance.</p>
+</li>
+</ul>
+<h2 id="patching-de-fonte">Patching de Fonte</h2>
+<ul>
+<li>
+<p><strong>Add FPC patch</strong>: Adiciona um patch às fontes do FPC.<br>
+Quando usar: Para aplicar correções personalizadas ou experimentais ao FPC.</p>
+</li>
+<li>
+<p><strong>Add Laz patch</strong>: Adiciona um patch às fontes do Lazarus.<br>
+Quando usar: Similar, para o Lazarus.</p>
+</li>
+<li>
+<p><strong>Rem. FPC patch</strong>: Remove um patch do FPC.<br>
+Quando usar: Para reverter um patch aplicado.</p>
+</li>
+<li>
+<p><strong>Rem. Laz patch</strong>: Remove um patch do Lazarus.<br>
+Quando usar: Para reverter.</p>
+</li>
+</ul>
+<h2 id="scripts-de-pré-e-pós-instalação">Scripts de Pré e Pós-Instalação</h2>
+<ul>
+<li>
+<p><strong>FPC pré</strong>: Script a executar antes da instalação do FPC.<br>
+Quando usar: Para preparações personalizadas, como definir variáveis de ambiente.</p>
+</li>
+<li>
+<p><strong>FPC pós</strong>: Script após a instalação do FPC.<br>
+Quando usar: Para configurações pós-instalação, como copiar arquivos.</p>
+</li>
+<li>
+<p><strong>Lazarus pré</strong>: Script antes do Lazarus.<br>
+Quando usar: Similar, para o Lazarus.</p>
+</li>
+<li>
+<p><strong>Lazarus pós</strong>: Script após o Lazarus.<br>
+Quando usar: Para finalizações, como registrar componentes.</p>
+</li>
+</ul>
+<p>Essas opções permitem uma instalação altamente personalizada. Consulte o fórum do Lazarus (<a href="http://forum.lazarus.freepascal.org">forum.lazarus.freepascal.org</a>) para exemplos específicos ou problemas.</p>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+            
+            
+        </body>
+        </html>

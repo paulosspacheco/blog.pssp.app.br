@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f4d8; Documenta&ccedil;&atilde;o do Script CopyToGDriver&lowbar;AliasSetup&period;sh</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-documentação-do-script-copytogdriver_aliassetupsh">📘 Documentação do Script CopyToGDriver_AliasSetup.sh</h1>
+<h2 id="-visão-geral">🧩 Visão Geral</h2>
+<p>O script <strong>CopyToGDriver_AliasSetup.sh</strong> faz parte do projeto <strong>CopyToGDriver</strong> e tem como objetivo <strong>instalar aliases globais</strong> no shell do usuário para simplificar o uso diário das ferramentas de sincronização.<br>
+Ele cria comandos curtos como <code>copydrive</code> e <code>copycheck</code>, tornando o uso do sistema mais prático e intuitivo.</p>
+<hr>
+<h2 id="️-funcionalidade-principal">⚙️ Funcionalidade Principal</h2>
+<p>O script detecta automaticamente o sistema operacional e adiciona aliases aos arquivos de inicialização do shell, como <code>~/.bashrc</code>, <code>~/.bash_profile</code> ou <code>~/.zshrc</code>, conforme disponíveis.<br>
+Esses aliases permitem executar as principais funções do CopyToGDriver com comandos simples.</p>
+<hr>
+<h2 id="-variáveis-e-caminhos">🔧 Variáveis e Caminhos</h2>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+<th>Valor Padrão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PLATFORM</code></td>
+<td>Plataforma atual detectada.</td>
+<td>Detectada via <code>uname -s</code></td>
+</tr>
+<tr>
+<td><code>BASE_DIR</code></td>
+<td>Diretório base onde o CopyToGDriver está instalado.</td>
+<td><code>/c/scripts/CopyToGDriver</code> (Windows) / <code>$HOME/scripts/CopyToGDriver</code> (Linux/macOS)</td>
+</tr>
+<tr>
+<td><code>ALIAS_LINE_DRIVE</code></td>
+<td>Linha do alias principal para sincronização.</td>
+<td><code>alias copydrive='bash &quot;$BASE_DIR/CopyToGDriver_CopyCurrent.sh&quot;'</code></td>
+</tr>
+<tr>
+<td><code>ALIAS_LINE_CHECK</code></td>
+<td>Linha do alias de verificação.</td>
+<td><code>alias copycheck='bash &quot;$BASE_DIR/CopyToGDriver.sh&quot; --check-only'</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-funções-internas">🧠 Funções Internas</h2>
+<h3 id="detect_platform"><code>detect_platform()</code></h3>
+<p>Detecta o sistema operacional atual.<br>
+Retorna um dos seguintes valores:</p>
+<ul>
+<li><code>linux</code></li>
+<li><code>macos</code></li>
+<li><code>windows</code></li>
+<li><code>unknown</code></li>
+</ul>
+<p>Exemplo:</p>
+<pre><code class="language-bash">PLATFORM=$(detect_platform)
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Rodando em: <span class="hljs-variable">$PLATFORM</span>&quot;</span>
+</code></pre>
+<hr>
+<h3 id="add_aliasalias_line-rc_file"><code>add_alias(alias_line, rc_file)</code></h3>
+<p>Adiciona um alias a um arquivo de inicialização do shell, se ele ainda não existir.</p>
+<ul>
+<li><strong>Parâmetros:</strong>
+<ul>
+<li><code>alias_line</code>: linha de alias a ser adicionada.</li>
+<li><code>rc_file</code>: caminho do arquivo (<code>~/.bashrc</code>, <code>~/.bash_profile</code>, <code>~/.zshrc</code>).</li>
+</ul>
+</li>
+</ul>
+<p>Exemplo:</p>
+<pre><code class="language-bash">add_alias <span class="hljs-string">&quot;alias copydrive=&#x27;bash ~/scripts/CopyToGDriver/CopyToGDriver_CopyCurrent.sh&#x27;&quot;</span> ~/.bashrc
+</code></pre>
+<hr>
+<h3 id="install_aliases"><code>install_aliases()</code></h3>
+<p>Função principal do script.<br>
+Executa os seguintes passos:</p>
+<ol>
+<li>Detecta o sistema operacional.</li>
+<li>Determina os arquivos de inicialização disponíveis (<code>.bashrc</code>, <code>.bash_profile</code>, <code>.zshrc</code>).</li>
+<li>Adiciona os aliases <code>copydrive</code> e <code>copycheck</code> em cada arquivo existente.</li>
+<li>Exibe instruções de pós-instalação.</li>
+</ol>
+<hr>
+<h2 id="-aliases-criados">🧰 Aliases Criados</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Função</th>
+<th>Comando Executado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>copydrive</code></td>
+<td>Sincroniza a pasta atual com o Google Drive.</td>
+<td><code>bash &quot;$BASE_DIR/CopyToGDriver_CopyCurrent.sh&quot;</code></td>
+</tr>
+<tr>
+<td><code>copycheck</code></td>
+<td>Executa verificação de dependências e ambiente.</td>
+<td><code>bash &quot;$BASE_DIR/CopyToGDriver.sh&quot; --check-only</code></td>
+</tr>
+</tbody>
+</table>
+<p>Após a instalação, basta digitar os comandos abaixo em qualquer terminal:</p>
+<pre><code class="language-bash">copydrive   <span class="hljs-comment"># Sincroniza a pasta corrente</span>
+copycheck   <span class="hljs-comment"># Verifica o ambiente e dependências</span>
+</code></pre>
+<hr>
+<h2 id="-compatibilidade">💻 Compatibilidade</h2>
+<table>
+<thead>
+<tr>
+<th>Sistema</th>
+<th>Suporte</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Linux</strong></td>
+<td>✅ Total</td>
+<td>Adiciona aliases em <code>~/.bashrc</code></td>
+</tr>
+<tr>
+<td><strong>macOS</strong></td>
+<td>✅ Total</td>
+<td>Adiciona aliases em <code>~/.bash_profile</code></td>
+</tr>
+<tr>
+<td><strong>Windows (Git Bash / WSL)</strong></td>
+<td>✅ Total</td>
+<td>Adiciona aliases em <code>~/.bashrc</code></td>
+</tr>
+<tr>
+<td><strong>Outros</strong></td>
+<td>⚠️ Parcial</td>
+<td>Pode exigir configuração manual</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-estrutura-de-execução">🧾 Estrutura de Execução</h2>
+<pre><code>CopyToGDriver_AliasSetup.sh
+ ├── detect_platform()     # Identifica o sistema operacional
+ ├── add_alias()           # Adiciona linha ao rc file
+ ├── install_aliases()     # Executa instalação dos aliases
+ └── Execução direta       # Chama install_aliases() ao rodar o script
+</code></pre>
+<hr>
+<h2 id="-exemplo-de-saída">🧠 Exemplo de Saída</h2>
+<p>Ao executar o script, você verá algo como:</p>
+<pre><code>======================================================
+🔗 Instalando aliases globais do CopyToGDriver
+======================================================
+🔗 Alias adicionado em: /home/usuario/.bashrc
+✅ Alias já existe em: /home/usuario/.zshrc
+
+✅ Aliases adicionados com sucesso!
+📦 Comandos disponíveis:
+   • copydrive → sincroniza a pasta atual
+   • copycheck → verifica o ambiente CopyToGDriver
+
+💡 Dica: execute 'source ~/.bashrc' ou reinicie o terminal.
+</code></pre>
+<hr>
+<h2 id="-exemplo-de-uso">🧰 Exemplo de Uso</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># Executar instalação dos aliases</span>
+bash CopyToGDriver_AliasSetup.sh
+
+<span class="hljs-comment"># Recarregar shell atual (necessário após instalação)</span>
+<span class="hljs-built_in">source</span> ~/.bashrc
+
+<span class="hljs-comment"># Usar os comandos</span>
+copydrive    <span class="hljs-comment"># Inicia sincronização</span>
+copycheck    <span class="hljs-comment"># Verifica módulos</span>
+</code></pre>
+<hr>
+<h2 id="-versão-e-autores">📜 Versão e Autores</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Script</strong></td>
+<td>CopyToGDriver_AliasSetup.sh</td>
+</tr>
+<tr>
+<td><strong>Versão</strong></td>
+<td>1.1.0</td>
+</tr>
+<tr>
+<td><strong>Autores</strong></td>
+<td>Paulo SSPacheco + ChatGPT (GPT-5)</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>01/11/2025</td>
+</tr>
+<tr>
+<td><strong>Licença</strong></td>
+<td>Uso pessoal / interno</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>© 2025 Paulo SSPacheco + ChatGPT (GPT-5) — Todos os direitos reservados.</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

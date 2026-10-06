@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&ast;&ast;Passo 4&colon; Adicionando uma Janela&ast;&ast;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+
+        </head>
+        <body class="vscode-body vscode-light">
+            <p>Com certeza! O &quot;Exemplo 04 do manual&quot; refere-se à seção &quot;Chapter 3 ·Adding windows&quot; do <em>Guia de Programação do Turbo Vision</em>, que aborda os &quot;Step 4: Adding a window&quot; e &quot;Step 5: Adding a clipboard window&quot; do tutorial.</p>
+<p>Nesta seção, você aprende a adicionar e gerenciar janelas na sua aplicação Turbo Vision. O processo envolve a interação com o objeto <code>Desktop</code>, que é fundamental para organizar as janelas na tela.</p>
+<p>Aqui estão os principais pontos e passos para &quot;Adicionar Janelas&quot;, conforme o manual:</p>
+<h3 id="passo-4-adicionando-uma-janela"><strong>Passo 4: Adicionando uma Janela</strong></h3>
+<ol>
+<li>
+<p><strong>Visão Geral</strong>:</p>
+<ul>
+<li>Um dos grandes benefícios do Turbo Vision é a facilidade de criar e gerenciar janelas múltiplas, redimensionáveis e sobrepostas.</li>
+<li>O objeto <code>Desktop</code> é a chave para gerenciar janelas, rastreando-as e lidando com operações como cascata e mosaico.</li>
+</ul>
+</li>
+<li>
+<p><strong>Três Passos para Adicionar uma Janela</strong>:</p>
+<ul>
+<li><strong>Atribuir os Limites da Janela</strong>: Define a posição e o tamanho retangular da janela. Isso é feito usando o método <code>Assign</code> em uma variável do tipo <code>TRect</code> para definir coordenadas absolutas, por exemplo, <code>R.Assign(0, 0, 60, 20)</code>.</li>
+<li><strong>Construir o Objeto da Janela</strong>: Cria uma instância dinâmica do tipo de objeto de janela desejado. Para uma janela genérica, usa-se <code>New(PWindow, Init(R, 'Um título', wnNoNumber))</code>. O construtor <code>Init</code> requer os limites (<code>R</code>), uma <em>string</em> para o título e um número para a janela (<code>wnNoNumber</code> indica que não há número). Se um número entre 1 e 9 for atribuído, o usuário pode ativar a janela pressionando Alt + o número correspondente.</li>
+<li><strong>Inserir a Janela no Desktop</strong>: O método <code>Insert</code> é comum a todos os grupos do Turbo Vision e dá ao grupo controle sobre seus objetos. Ao inserir uma janela no <code>Desktop</code>, você instrui o <code>Desktop</code> a gerenciá-la. O método <code>InsertWindow</code> do objeto <code>Application</code> é uma maneira mais segura de fazer isso, pois verifica a validade da janela antes de inseri-la.</li>
+</ul>
+</li>
+<li>
+<p><strong>Mosaico (Tiling) e Cascata (Cascading)</strong>:</p>
+<ul>
+<li>O <code>Desktop</code> tem a capacidade de organizar janelas em mosaico ou cascata. O manipulador de eventos padrão em <code>TApplication</code> responde aos comandos <code>cmTile</code> e <code>cmCascade</code> (do menu Janela) chamando os métodos <code>Tile</code> e <code>Cascade</code> do <code>TApplication</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adicionando uma Janela Editora (File Editor Window)</strong>:</p>
+<ul>
+<li><strong>Buffers do Editor de Arquivos</strong>: Se sua aplicação usar editores de arquivos (incluindo a área de transferência), você precisa inicializar a variável global <code>MaxHeapSize</code> (do módulo <code>Memory</code>) <em>antes</em> de construir o objeto <code>Application</code>. Isso reserva uma parte da memória (acima do <em>heap</em> regular) para os buffers do editor de arquivos.</li>
+<li><strong>Caixas de Diálogo do Editor</strong>: A variável procedural <code>EditorDialog</code> (do módulo <code>Editors</code>) lida com todas as caixas de diálogo para objetos editor. Por padrão, ela não faz nada. Você deve atribuir a função <code>StdEditorDialog</code> a ela para usar as caixas de diálogo padrão do editor (por exemplo, <code>EditorDialog := StdEditorDialog;</code>).</li>
+<li><strong>Construindo a Janela Editora</strong>: Você constrói uma instância de <code>PEditWindow</code> (em vez de <code>PWindow</code>). O construtor é similar, mas passar uma <em>string</em> de título vazia resultará em &quot;Untitled&quot; para a janela.</li>
+</ul>
+</li>
+<li>
+<p><strong>Usando Caixas de Diálogo Padrão (Standard Dialog Boxes)</strong>:</p>
+<ul>
+<li>Para editar arquivos existentes, é melhor usar uma caixa de diálogo que mostre os arquivos disponíveis. O módulo <code>StdDlgs</code> do Turbo Vision fornece o objeto <code>TFileDialog</code> para isso.</li>
+<li><strong>Caixas de Diálogo Modais</strong>: O método <code>ExecuteDialog</code> (do objeto <code>Application</code>) não apenas insere a caixa de diálogo no <code>Desktop</code>, mas também a torna <em>modal</em>. Isso significa que a caixa de diálogo é a única parte ativa da aplicação até ser fechada.</li>
+<li><strong>Construindo uma <code>TFileDialog</code></strong>: O construtor da <code>TFileDialog</code> aceita cinco parâmetros: uma máscara inicial de nome de arquivo (ex: <code>*.*</code>), um título, um rótulo para a linha de entrada, <em>flags</em> de opção (ex: <code>fdOKButton</code>, <code>fdOpenButton</code>) e o número de uma lista de histórico.</li>
+<li><strong>Executando a <code>TFileDialog</code></strong>: <code>ExecuteDialog</code> retorna o valor do comando que fechou a caixa (ex: <code>cmOK</code>, <code>cmCancel</code>), permitindo que seu programa saiba se o usuário aceitou ou cancelou a ação. Ele também pode inicializar os controles da caixa de diálogo com um registro de dados e ler os valores dos controles após a execução.</li>
+<li><strong>Construindo a Janela Editora de Arquivos</strong>: Se a caixa de diálogo de arquivo não for cancelada, você usa o nome do arquivo selecionado para construir uma <code>PEditWindow</code>.</li>
+</ul>
+</li>
+</ol>
+<h3 id="passo-5-adicionando-uma-janela-da-área-de-transferência-clipboard-window"><strong>Passo 5: Adicionando uma Janela da Área de Transferência (Clipboard Window)</strong></h3>
+<ol>
+<li><strong>O que é o Clipboard</strong>: A área de transferência é um objeto editor que está sempre presente na aplicação e permite recortar, copiar e colar texto entre janelas.</li>
+<li><strong>Construindo a Janela da Área de Transferência</strong>:
+<ul>
+<li>Cria-se uma <code>PEditWindow</code> da mesma forma que uma janela editora de arquivos, mas ela é inicialmente <strong>oculta</strong> usando o método <code>Hide</code>.</li>
+<li>A variável global <code>Clipboard</code> (do módulo <code>Editors</code>) deve ser definida para apontar para o editor dentro da janela da área de transferência (<code>Clipboard := ClipboardWindowA.Editor;</code>).</li>
+<li>A capacidade de &quot;desfazer&quot; (<code>CanUndo</code>) da área de transferência deve ser desabilitada (<code>ClipboardA.CanUndo := False</code>), pois ela não suporta essa funcionalidade.</li>
+</ul>
+</li>
+<li><strong>Exibindo a Janela da Área de Transferência</strong>:
+<ul>
+<li>Em resposta ao comando <code>cmClipShow</code> (gerado pelo item &quot;Show clipboard&quot; do menu Editar), a janela da área de transferência é exibida usando <code>ClipboardWindowA.Show</code>.</li>
+<li>Para garantir que a janela da área de transferência apareça à frente das outras janelas (a ordem Z), você deve chamar <code>Select</code> nela (<code>ClipboardWindowA.Select;</code>), antes de <code>Show</code>. O método <code>Select</code> torna o objeto a subview selecionada e, se o <em>flag</em> <code>ofTopSelect</code> estiver definido, move-o para a frente.</li>
+</ul>
+</li>
+</ol>
+<p>Esses passos detalham o processo para integrar janelas e suas funcionalidades avançadas, como edição de arquivos e área de transferência, em uma aplicação Turbo Vision.</p>
+<p>Com certeza! Continuaremos com a documentação do &quot;Exemplo 04 do manual&quot;, focando nos exemplos de uso práticos (listagens de código) para adicionar e gerenciar janelas.</p>
+<h3 id="passo-4-adicionando-uma-janela-1"><strong>Passo 4: Adicionando uma Janela</strong></h3>
+<p>Como mencionado anteriormente, o <code>Desktop</code> é fundamental para gerenciar janelas múltiplas e redimensionáveis. O manual apresenta os seguintes exemplos de código para demonstrar a adição de janelas:</p>
+<ul>
+<li>
+<p><strong>Adicionando uma Janela Simples de Forma Segura (Listing 3.1)</strong>:</p>
+<ul>
+<li>Este exemplo, parte do <code>TUTOR04A.PAS</code>, mostra como criar e inserir uma janela básica no <em>desktop</em> de forma segura.</li>
+<li>O método <code>NewWindow</code> da aplicação <code>TTutorApp</code> é redefinido para criar uma <code>PWindow</code> (uma janela genérica).</li>
+<li>As <strong>coordenadas da janela</strong> são definidas usando <code>R.Assign(0, 0, 60, 20)</code> para um retângulo de 60 colunas por 20 linhas.</li>
+<li>A janela é então construída com <code>New(TheWindow, Init(R, 'A window', wnNoNumber))</code>. O parâmetro <code>wnNoNumber</code> indica que a janela não terá um número associado, mas se um número de 1 a 9 for atribuído, o usuário pode ativá-la com Alt + número.</li>
+<li>A <strong>inserção da janela no <em>desktop</em></strong> é feita com <code>InsertWindow(TheWindow)</code>. O método <code>InsertWindow</code> da aplicação é recomendado por ser mais seguro, verificando se a janela foi construída com sucesso e se há memória suficiente.</li>
+</ul>
+<pre><code class="hljs language-pascal"><span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">TTutorApp</span>.<span class="hljs-title">NewWindow</span>;</span>
+<span class="hljs-keyword">var</span>
+  R: TRect;
+  TheWindow: PWindow;
+<span class="hljs-keyword">begin</span>
+  R.Assign(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">60</span>, <span class="hljs-number">20</span>);
+  New(TheWindow, Init(R, <span class="hljs-string">'A window'</span>, wnNoNumber));
+  InsertWindow(TheWindow); <span class="hljs-comment">{ insere a janela no desktop }</span>
+<span class="hljs-keyword">end</span>;
+</code></pre>
+<ul>
+<li>O <code>HandleEvent</code> da <code>TTutorApp</code> é modificado para chamar <code>NewWindow</code> quando o comando <code>cmNew</code> (gerado pelo menu &quot;File | New&quot;) é recebido.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adicionando uma Janela Editora de Arquivos (Listing 3.2)</strong>:</p>
+<ul>
+<li>Este exemplo, que completa o <code>TUTOR04B.PAS</code>, demonstra a configuração necessária e a criação de uma janela para edição de arquivos.</li>
+<li><strong>Antes de construir o objeto da aplicação</strong>, é necessário <strong>inicializar <code>MaxHeapSize := 8192</code></strong> (do módulo <code>Memory</code>). Isso reserva 128KB de memória acima do <em>heap</em> regular para <em>buffers</em> do editor de arquivos.</li>
+<li>A <strong>variável procedural <code>EditorDialog</code></strong> (do módulo <code>Editors</code>) deve ser definida para <code>StdEditorDialog</code> (<code>EditorDialog := StdEditorDialog;</code>). Isso garante que as caixas de diálogo padrão do editor (como &quot;salvar alterações&quot;) sejam usadas.</li>
+<li>O método <code>NewWindow</code> é alterado para construir uma <code>PEditWindow</code> (janela editora) em vez de uma <code>PWindow</code>. Uma <em>string</em> vazia para o título resulta no título &quot;Untitled&quot;.</li>
+</ul>
+<pre><code class="hljs language-pascal">
+<span class="hljs-function"><span class="hljs-keyword">constructor</span> <span class="hljs-title">TTutorApp</span>.<span class="hljs-title">Init</span>;</span>
+<span class="hljs-keyword">begin</span>
+  MaxHeapSize := <span class="hljs-number">8192</span>; <span class="hljs-comment">{ configura a área de buffer do editor de arquivos acima do heap }</span>
+  EditorDialog := StdEditorDialog; <span class="hljs-comment">{ usa diálogos do editor padrão }</span>
+  <span class="hljs-keyword">inherited</span> Init;
+  DisableCommands([cmOrderWin, cmStockWin, cmSupplierWin]);
+<span class="hljs-keyword">end</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">TTutorApp</span>.<span class="hljs-title">NewWindow</span>;</span>
+<span class="hljs-keyword">var</span>
+  R: TRect;
+  TheWindow: PEditWindow; <span class="hljs-comment">{ nota a mudança de tipo aqui }</span>
+<span class="hljs-keyword">begin</span>
+  R.Assign(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">60</span>, <span class="hljs-number">20</span>);
+  New(TheWindow, Init(R, <span class="hljs-string">''</span>, wnNoNumber)); <span class="hljs-comment">{ constrói a janela editora }</span>
+  InsertWindow(TheWindow);
+<span class="hljs-keyword">end</span>;
+</code></pre>
+</li>
+<li>
+<p><strong>Abrindo um Arquivo para Edição Usando uma Caixa de Diálogo Padrão (Listing 3.3)</strong>:</p>
+<ul>
+<li>Este exemplo, que compõe o <code>TUTOR04C.PAS</code>, mostra como usar uma caixa de diálogo <code>TFileDialog</code> para selecionar um arquivo e abri-lo em um <code>PEditWindow</code>.</li>
+<li>O método <code>OpenWindow</code> é introduzido em <code>TTutorApp</code> e é chamado em resposta ao comando <code>cmOpen</code> (do menu &quot;File | Open&quot;).</li>
+<li>Uma instância de <code>TFileDialog</code> é criada com uma máscara inicial de arquivo (<code>'*.*'</code>), um título (&quot;Open file&quot;), um rótulo para a entrada (&quot;-F-ile name&quot;), <em>flags</em> de opção (<code>fdOKButton or fdOpenButton</code>) e um número para a lista de histórico (1).</li>
+<li>A <strong>caixa de diálogo é executada de forma modal</strong> usando <code>ExecuteDialog(FileDialog, @TheFile)</code>. <code>ExecuteDialog</code> retorna o comando que a fechou (por exemplo, <code>cmOK</code>, <code>cmCancel</code>).</li>
+<li>Se o usuário não cancelar (<code>&lt;&gt; cmCancel</code>), uma nova <code>PEditWindow</code> é criada e inserida, usando o nome do arquivo selecionado (<code>TheFile</code>) como título.</li>
+</ul>
+<pre><code class="hljs language-pascal"><span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">TTutorApp</span>.<span class="hljs-title">OpenWindow</span>;</span>
+<span class="hljs-keyword">var</span>
+  R: TRect;
+  FileDialog: PFileDialog;
+  TheFile: FNameStr;
+<span class="hljs-keyword">const</span>
+  FDOptions: Word = fdOKButton <span class="hljs-keyword">or</span> fdOpenButton;
+<span class="hljs-keyword">begin</span>
+  TheFile := <span class="hljs-string">'*.*'</span>; <span class="hljs-comment">{ máscara inicial para nomes de arquivos }</span>
+  New(FileDialog, Init(TheFile, <span class="hljs-string">'Open file'</span>, <span class="hljs-string">'-F-ile name'</span>, FDOptions, <span class="hljs-number">1</span>));
+  <span class="hljs-keyword">if</span> ExecuteDialog(FileDialog, @TheFile) &lt;&gt; cmCancel <span class="hljs-keyword">then</span>
+  <span class="hljs-keyword">begin</span>
+    R.Assign(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">75</span>, <span class="hljs-number">20</span>);
+    InsertWindow(New(PEditWindow, Init(R, TheFile, wnNoNumber)));
+  <span class="hljs-keyword">end</span>;
+<span class="hljs-keyword">end</span>;
+</code></pre>
+</li>
+</ul>
+<h3 id="passo-5-adicionando-uma-janela-da-área-de-transferência-clipboard-window-1"><strong>Passo 5: Adicionando uma Janela da Área de Transferência (Clipboard Window)</strong></h3>
+<p>Este passo detalha como adicionar e gerenciar a janela da área de transferência (clipboard) na aplicação.</p>
+<ul>
+<li>
+<p><strong>Criando a Janela da Área de Transferência (Listing 3.4)</strong>:</p>
+<ul>
+<li>Uma nova <code>PEditWindow</code> é criada para atuar como a janela da área de transferência (<code>ClipboardWindow</code>).</li>
+<li>A janela é inicializada de forma similar a outras janelas editoras, mas é <strong>escondida (<code>SetState(sfVisible, False)</code>)</strong> antes de ser inserida para evitar que &quot;pisque&quot; na tela.</li>
+<li>A <strong>variável global <code>Clipboard</code></strong> (do módulo <code>Editors</code>) é configurada para apontar para o editor dentro desta janela (<code>Clipboard := ClipboardWindowA.Editor;</code>).</li>
+<li>A funcionalidade de &quot;desfazer&quot; (<code>CanUndo</code>) é desabilitada para o clipboard (<code>ClipboardA.CanUndo := False</code>).</li>
+</ul>
+<pre><code class="hljs language-pascal"><span class="hljs-function"><span class="hljs-keyword">constructor</span> <span class="hljs-title">TTutorApp</span>.<span class="hljs-title">Init</span>;</span>
+<span class="hljs-keyword">var</span> R: TRect;
+<span class="hljs-keyword">begin</span>
+  MaxHeapSize := <span class="hljs-number">8192</span>;
+  EditorDialog := StdEditorDialog;
+  StreamError := @TutorStreamError;
+  RegisterObjects; RegisterViews; RegisterEditors; RegisterApp;
+  <span class="hljs-keyword">inherited</span> Init;
+  DesktopA.GetExtent(R);
+  ClipboardWindow := New (PEditWindow, Init(R, <span class="hljs-string">''</span>, <span class="hljs-number">0</span>));
+  <span class="hljs-keyword">if</span> ValidView(ClipboardWindow) &lt;&gt; <span class="hljs-keyword">nil</span> <span class="hljs-keyword">then</span>
+  <span class="hljs-keyword">begin</span>
+    ClipboardWindowA.SetState(sfVisible, False); <span class="hljs-comment">{ a janela é inicialmente oculta }</span>
+    InsertWindow(ClipboardWindow);
+    Clipboard := ClipboardWindowA.Editor;
+    ClipboardA.CanUndo := False;
+  <span class="hljs-keyword">end</span>;
+<span class="hljs-keyword">end</span>;
+</code></pre>
+</li>
+<li>
+<p><strong>Mostrando a Janela da Área de Transferência na Frente (Listing 3.6)</strong>:</p>
+<ul>
+<li>Para exibir a janela da área de transferência em resposta ao comando <code>cmClipShow</code> (gerado pelo item &quot;Show clipboard&quot; do menu Editar), é necessário adicioná-la à frente das outras janelas.</li>
+<li>O método <code>HandleEvent</code> da <code>TTutorApp</code> é modificado para responder a <code>cmClipShow</code>.</li>
+<li>Para garantir que a janela apareça no topo (corrigindo a ordem Z), o método <strong><code>Select</code></strong> é chamado antes de <code>Show</code> (<code>ClipboardWindowA.Select; ClipboardWindowA.Show;</code>). <code>Select</code> torna o objeto a <em>subview</em> selecionada e o move para a frente, se o <em>flag</em> <code>ofTopSelect</code> estiver definido.</li>
+</ul>
+<pre><code class="hljs language-pascal"><span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">TTutorApp</span>.<span class="hljs-title">HandleEvent</span><span class="hljs-params">(<span class="hljs-keyword">var</span> Event: TEvent)</span>;</span>
+<span class="hljs-keyword">begin</span>
+  <span class="hljs-comment">// ... outro código de tratamento de eventos ...</span>
+  <span class="hljs-keyword">if</span> Event.What = evCommand <span class="hljs-keyword">then</span>
+  <span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">case</span> Event.Command <span class="hljs-keyword">of</span>
+      cmClipShow:
+        <span class="hljs-keyword">with</span> ClipboardWindowA <span class="hljs-keyword">do</span>
+        <span class="hljs-keyword">begin</span>
+          Select; <span class="hljs-comment">{ move a janela para a frente }</span>
+          Show;   <span class="hljs-comment">{ exibe a janela }</span>
+          ClearEvent(Event);
+        <span class="hljs-keyword">end</span>;
+      <span class="hljs-comment">// ... outros comandos ...</span>
+    <span class="hljs-keyword">end</span>;
+  <span class="hljs-keyword">end</span>;
+  <span class="hljs-keyword">inherited</span> HandleEvent(Event); <span class="hljs-comment">// Chamar o inherited HandleEvent é geralmente recomendado por último</span>
+<span class="hljs-keyword">end</span>;
+</code></pre>
+</li>
+</ul>
+
+            
+            
+        </body>
+        </html>

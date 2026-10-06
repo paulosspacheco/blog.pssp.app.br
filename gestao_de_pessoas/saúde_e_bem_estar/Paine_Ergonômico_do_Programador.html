@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Ergonômico do Programador</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f7fa;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #205375;
+    }
+    section {
+      background: #ffffff;
+      padding: 15px;
+      margin-bottom: 25px;
+      border-left: 5px solid #205375;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    button {
+      background: #205375;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #1a435e;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+    }
+    .timer {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    .exercise {
+      margin-top: 10px;
+      padding-left: 10px;
+    }
+    #logList {
+      margin-top: 10px;
+      background: #eef6f9;
+      padding: 10px;
+      border-left: 3px solid #888;
+    }
+    #alertModal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    }
+    #alertModalContent {
+      background-color: #fff;
+      margin: 20% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0px 0px 10px #000;
+    }
+    #timeInput, #intervalInput {
+      width: 60px;
+      padding: 5px;
+      margin-left: 10px;
+    }
+  </style>
+  <link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+</head>
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+
+  <audio id="alertSound">
+    <source src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" type="audio/ogg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <div id="alertModal">
+    <div id="alertModalContent">
+      <p id="alertMessage"></p>
+      <button onclick="closeAlertModal()">OK</button>
+    </div>
+  </div>
+
+  <section>
+    <h2>⏱️ Temporizador para Pausa (a cada <span id="tempoLabel">90</span> min)</h2>
+    <p>
+      Informe o tempo desejado (em minutos): <input type="number" id="timeInput" value="90" min="1" onchange="updateTempoLabel(); updateMainTimerDisplay();">
+    </p>
+    <p>
+      Informe a duração do exercício (em minutos): <input type="number" id="intervalInput" value="1" min="1" onchange="updateIntervaloLabels()">
+    </p>
+    <p>Clique para iniciar o cronômetro. Ao final, você será alertado para alongar.</p>
+    <button onclick="startMainTimer()">Iniciar Pausa Programada</button>
+    <div class="timer" id="mainTimerDisplay">Tempo restante: 90:00</div>
+  </section>
+
+  <section>
+    <h2>🧘 Alongamentos Rápidos (<span id="exerciseDurationLabel">1</span> min cada)</h2>
+    <div class="exercise">
+      <strong>Pescoço lateral:</strong> Incline a cabeça para o lado, segure por 30s cada lado.
+      <br>
+      <button onclick="startExerciseTimer('ex1')">Iniciar <span class="durationLabel">1</span> min</button>
+      <div class="timer" id="timer-ex1">Tempo restante: 01:00</div>
+    </div>
+    <div class="exercise">
+      <strong>Giro cervical:</strong> Vire a cabeça para os lados lentamente (5x).
+      <br>
+      <button onclick="startExerciseTimer('ex2')">Iniciar <span class="durationLabel">1</span> min</button>
+      <div class="timer" id="timer-ex2">Tempo restante: 01:00</div>
+    </div>
+    <div class="exercise">
+      <strong>Ombros:</strong> Suba e rode os ombros 10x.
+      <br>
+      <button onclick="startExerciseTimer('ex3')">Iniciar <span class="durationLabel">1</span> min</button>
+      <div class="timer" id="timer-ex3">Tempo restante: 01:00</div>
+    </div>
+    <div class="exercise">
+      <strong>Liberação de tensão:</strong> Inspire, contraia tudo, segure 5s e solte.
+      <br>
+      <button onclick="startExerciseTimer('ex4')">Iniciar <span class="durationLabel">1</span> min</button>
+      <div class="timer" id="timer-ex4">Tempo restante: 01:00</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>📝 Registro de Tensão ou Dor</h2>
+    <p>Registre onde está sentindo tensão ou dor para acompanhamento.</p>
+    <textarea id="painLog" placeholder="Ex: tensão no pescoço, dor lombar, ombro esquerdo..."></textarea>
+    <button onclick="saveLog()">Salvar Registro</button>
+    <p id="saveStatus"></p>
+    <div id="logList"></div>
+  </section>
+
+  <script>
+    function getIntervalo() {
+      const input = document.getElementById("intervalInput");
+      let intervalo = parseInt(input.value);
+      if (isNaN(intervalo) || intervalo <= 0) intervalo = 1;
+      return intervalo;
+    }
+
+    function getTempoDeTrabalho() {
+      const input = document.getElementById("timeInput");
+      let tempo = parseInt(input.value);
+      if (isNaN(tempo) || tempo <= 0) tempo = 90;
+      return tempo;
+    }
+
+    function updateTempoLabel() {
+      const tempo = getTempoDeTrabalho();
+      document.getElementById("tempoLabel").textContent = tempo;
+    }
+
+    function updateIntervaloLabels() {
+      const intervalo = getIntervalo();
+      document.querySelectorAll(".durationLabel").forEach(el => el.textContent = intervalo);
+      document.getElementById("exerciseDurationLabel").textContent = intervalo;
+    }
+
+    let mainTimer;
+    let mainTimeLeft = 90 * 60;
+
+    function playSound() {
+      const sound = document.getElementById("alertSound");
+      if (sound) {
+        sound.loop = true;
+        sound.volume = 1.0;
+        sound.play().catch(() => {});
+      }
+    }
+
+    function stopSound() {
+      const sound = document.getElementById("alertSound");
+      if (sound) {
+        sound.pause();
+        sound.currentTime = 0;
+        sound.loop = false;
+      }
+    }
+
+    function alertWithSound(message) {
+      document.getElementById("alertMessage").innerText = message;
+      document.getElementById("alertModal").style.display = "block";
+      playSound();
+    }
+
+    function closeAlertModal() {
+      stopSound();
+      document.getElementById("alertModal").style.display = "none";
+    }
+
+    function startMainTimer() {
+      clearInterval(mainTimer);
+      const tempoDeTrabalho = getTempoDeTrabalho();
+      mainTimeLeft = tempoDeTrabalho * 60;
+      updateMainTimerDisplay();
+      mainTimer = setInterval(() => {
+        mainTimeLeft--;
+        updateMainTimerDisplay();
+        if (mainTimeLeft <= 0) {
+          clearInterval(mainTimer);
+          alertWithSound("Hora da pausa e alongamento! 🧐");
+        }
+      }, 1000);
+    }
+
+    function updateMainTimerDisplay() {
+      const tempoDeTrabalho = getTempoDeTrabalho();
+      if (!mainTimer) {
+        mainTimeLeft = tempoDeTrabalho * 60;
+      }
+      const minutes = String(Math.floor(mainTimeLeft / 60)).padStart(2, '0');
+      const seconds = String(mainTimeLeft % 60).padStart(2, '0');
+      document.getElementById("mainTimerDisplay").textContent = `Tempo restante: ${minutes}:${seconds}`;
+    }
+
+    function startExerciseTimer(id) {
+      const intervalo = getIntervalo();
+      let seconds = intervalo * 60;
+      const display = document.getElementById("timer-" + id);
+      display.textContent = `Tempo restante: ${String(intervalo).padStart(2, '0')}:00`;
+      const interval = setInterval(() => {
+        seconds--;
+        const min = String(Math.floor(seconds / 60)).padStart(2, '0');
+        const sec = String(seconds % 60).padStart(2, '0');
+        display.textContent = `Tempo restante: ${min}:${sec}`;
+        if (seconds <= 0) {
+          clearInterval(interval);
+          alertWithSound("Tempo finalizado para o exercício!");
+        }
+      }, 1000);
+    }
+
+    function saveLog() {
+      const descricao = document.getElementById("painLog").value.trim();
+      if (descricao !== "") {
+        const dataHora = new Date();
+        const registro = {
+          data: dataHora.toLocaleDateString(),
+          hora: dataHora.toLocaleTimeString(),
+          descricao: descricao
+        };
+
+        let registros = JSON.parse(localStorage.getItem("registrosErgonomia") || "[]");
+        registros.push(registro);
+        localStorage.setItem("registrosErgonomia", JSON.stringify(registros));
+
+        document.getElementById("painLog").value = "";
+        document.getElementById("saveStatus").textContent = "Registro salvo com sucesso.";
+        renderLogs();
+      } else {
+        document.getElementById("saveStatus").textContent = "Digite algo antes de salvar.";
+      }
+    }
+
+    function renderLogs() {
+      const logList = document.getElementById("logList");
+      const registros = JSON.parse(localStorage.getItem("registrosErgonomia") || "[]");
+      logList.innerHTML = "<h3>Histórico de Registros</h3>";
+      registros.forEach(r => {
+        logList.innerHTML += `<p><strong>${r.data} ${r.hora}</strong>: ${r.descricao}</p>`;
+      });
+    }
+
+    window.onload = function () {
+      updateIntervaloLabels();
+      updateTempoLabel();
+      updateMainTimerDisplay();
+      renderLogs();
+    };
+  </script>
+  </main>
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+</body>
+</html>

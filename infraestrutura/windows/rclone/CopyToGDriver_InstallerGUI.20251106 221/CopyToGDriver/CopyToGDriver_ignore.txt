@@ -1,0 +1,44 @@
+# ===========================================================
+# CopyToGDriver_ignore.txt — multiplataforma (Git Bash)
+# ===========================================================
+
+# 🗑️ Pastas de sistema
+.Trash-1000/**
+$RECYCLE.BIN/**
+System Volume Information/**
+lost+found/**
+
+# 🧰 Diretórios temporários e backups
+tmp/**
+backup/**
+**/backup/**
+**/tmp/**
+**/backup*/**
+**/tmp*/**
+
+# 🧱 Arquivos Lazarus / Pascal
+*.lpi
+*.lps
+*.lpr
+
+# 🧩 Arquivos de backup do Lazarus
+*;1
+*;2
+*;3
+*;*
+
+# ⚙️ Logs e temporários
+*.log
+*.bak
+*.tmp
+*.swp
+*.old
+~$*
+
+# 🚫 Arquivos do sistema CopyToGDriver
+CopyToGDriver_ignore.txt
+pack.ps1
+tree.txt
+t.txt
+
+

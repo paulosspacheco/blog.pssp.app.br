@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Projeto Unit Terminal embutido em TForm &lt;a href&equals;&quot;EmbeddedTerminalUnit&period;html&quot; target&equals;&quot;&lowbar;blank&quot; title&equals;&quot;Pressione aqui para expandir este documento em nova aba&period;&quot; &gt;  &#x279a; &lt;&sol;a&gt;</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+
+        </head>
+        <body class="vscode-body vscode-light">
+            <div class="header" id="myHeader">
+  <div class="navbar" w3-include-html="/menu.inc"> </div>
+</div>
+<div class="title"><script> document.write(document.title);</script></div>  
+<main>
+<!-- markdownlint-disable-next-line -->
+<span id="topo"><span>
+<h1 id="projeto-unit-terminal-embutido-em-tform----">Projeto Unit Terminal embutido em TForm <a href="EmbeddedTerminalUnit.html" target="_blank" title="Pressione aqui para expandir este documento em nova aba." >  ➚ </a></h1>
+<h2 id="descrição">Descrição</h2>
+<p>O <code>EmbeddedTerminalUnit</code> é um componente para Lazarus/Free Pascal que implementa um terminal embutido em um formulário gráfico. Ele foi projetado para ser integrado à IDE do Lazarus, funcionando de forma similar ao terminal do Visual Studio Code (VSCode), com suporte a navegação por histórico de comandos, rolagem automática, e interação com shells Linux como <code>/bin/bash</code> e <code>/bin/sh</code>.</p>
+<p>Este projeto foi desenvolvido com o objetivo de ser doado à comunidade Free Pascal/Lazarus, para que possa ser incluído como uma opção nativa na IDE, permitindo que os usuários executem comandos diretamente dentro do ambiente de desenvolvimento.</p>
+<h2 id="funcionalidades">Funcionalidades</h2>
+<ul>
+<li>Terminal embutido com suporte a shells POSIX (<code>/bin/bash</code>, <code>/bin/sh</code>).</li>
+<li>Histórico de comandos salvo em <code>EmbeddedTerminalUnit.json</code> com navegação por setas (cima/baixo).</li>
+<li>Suporte a <code>Ctrl+C</code> para interromper comandos em execução.</li>
+<li>Roloagem automática para a última linha ao exibir saídas.</li>
+<li>Proteção do prompt contra edição acidental.</li>
+<li>Filtragem de mensagens de erro comuns (como &quot;not found&quot;).</li>
+<li>Prompt personalizado que mostra o nome da pasta atual (como <code>root$</code>).</li>
+</ul>
+<h2 id="requisitos">Requisitos</h2>
+<ul>
+<li><strong>Lazarus/Free Pascal</strong>: Versão compatível com POSIX (Linux).</li>
+<li><strong>Units necessárias</strong>: <code>Classes</code>, <code>SysUtils</code>, <code>Forms</code>, <code>Controls</code>, <code>Graphics</code>, <code>Dialogs</code>, <code>StdCtrls</code>, <code>ExtCtrls</code>, <code>Unix</code>, <code>BaseUnix</code>, <code>unixtype</code>, <code>ctypes</code>, <code>termio</code>, <code>LCLType</code>, <code>fpjson</code>, <code>jsonparser</code>.</li>
+<li><strong>Pacote necessário</strong>: <code>fcl-json</code> para manipulação de JSON (geralmente incluído no Lazarus).</li>
+<li><strong>Sistema operacional</strong>: Linux (devido ao uso de PTYs e shells POSIX). Suporte a outras plataformas (como Windows) pode ser adicionado com contribuições da comunidade.</li>
+</ul>
+<h2 id="instalação">Instalação</h2>
+<ol>
+<li>Copie o arquivo <code>embeddedterminalunit.pas</code> para o diretório do seu projeto.</li>
+<li>Adicione a unit ao seu projeto no Lazarus:
+<ul>
+<li>No menu, vá para <code>Project</code> &gt; <code>Add Editor Files</code>.</li>
+<li>Selecione o arquivo <code>embeddedterminalunit.pas</code>.</li>
+</ul>
+</li>
+<li>Certifique-se de que o pacote <code>fcl-json</code> está instalado:
+<ul>
+<li>No Lazarus, vá para <code>Package</code> &gt; <code>Install/Uninstall Packages</code>.</li>
+<li>Verifique se o pacote <code>fcl-json</code> está listado e instalado. Caso contrário, instale-o.</li>
+</ul>
+</li>
+<li>Compile e execute o projeto:
+<ul>
+<li>Pressione <code>Ctrl+F9</code> para compilar.</li>
+<li>Pressione <code>F9</code> para executar.</li>
+</ul>
+</li>
+</ol>
+<h2 id="uso">Uso</h2>
+<ul>
+<li>O terminal é exibido em um formulário gráfico com um <code>TMemo</code> para saída e um <code>TEdit</code> para entrada de comandos.</li>
+<li>Digite comandos no <code>TEdit</code> (como <code>ls -l</code>, <code>pwd</code>, etc.) e pressione Enter ou clique no botão &quot;Enviar&quot; para executá-los.</li>
+<li>Use as setas para cima (<code>↑</code>) e para baixo (<code>↓</code>) para navegar pelo histórico de comandos.</li>
+<li>Pressione <code>Ctrl+C</code> para interromper um comando em execução (como <code>sleep 10</code>).</li>
+<li>O histórico de comandos é salvo automaticamente no arquivo <code>EmbeddedTerminalUnit.json</code> no mesmo diretório do executável.</li>
+</ul>
+<h2 id="exemplo-de-saída">Exemplo de saída</h2>
+<p>Após executar o comando <code>ls -lR</code>, o terminal exibe uma saída similar a:</p>
+<pre><code class="language-sh">.:
+&lt;spacheco/LazarusProjects/console/EmbeddedTerminal$ 
+<span class="hljs-built_in">ls</span> -lR
+.:
+total 27736
+drwxr-xr-x 2 admininistrador administrador     4096 abr 19 19:24 backup
+drwxr-xr-x 2 admininistrador administrador     4096 abr 19 19:09 docs
+-rwxr-xr-x 1 admininistrador administrador 28086448 abr 19 19:24 EmbeddedTerminal
+-rw-r--r-- 1 admininistrador administrador   133345 abr 18 20:50 EmbeddedTerminal.ico
+-rw-r--r-- 1 admininistrador administrador     2314 abr 19 18:45 EmbeddedTerminal.lpi
+-rw-r--r-- 1 admininistrador administrador      425 abr 19 18:45 EmbeddedTerminal.lpr
+-rw-r--r-- 1 admininistrador administrador     7870 abr 19 19:24 EmbeddedTerminal.lps
+-rw-r--r-- 1 admininistrador administrador   136112 abr 19 19:30 EmbeddedTerminal.res
+-rw-r--r-- 1 admininistrador administrador      124 abr 19 18:15 EmbeddedTerminalUnit.json
+drwxr-xr-x 3 admininistrador administrador     4096 abr 18 20:47 lib
+drwxr-xr-x 3 admininistrador administrador     4096 abr 19 19:24 units
+
+./backup:
+total 16
+-rw-r--r-- 1 admininistrador administrador 2314 abr 19 18:31 EmbeddedTerminal.l
+pi
+-rw-r--r-- 1 admininistrador administrador  425 abr 19 12:38 EmbeddedTerminal.lpr
+-rw-r--r-- 1 admininistrador administrador 7863 abr 19 18:45 EmbeddedTerminal.lps
+
+./docs:
+total 8
+-rw-r--r-- 1 admininistrador administrador 6815 abr 19 19:09 README.md
+
+./lib:
+total 4
+drwxr-xr-x 2 admininistrador administrador 4096 abr 19 19:24 x86_64-linux
+
+./lib/x86_64-linux:
+total 836
+-rw-r--r-- 1 admininistrador administrador   1349 abr 19 19:24 EmbeddedTerminal.compiled
+-rw-r--r-- 1 admininistrador administrador  43312 abr 19 19:24 EmbeddedTerminal.o
+-rw-r--r-- 1 admininistrador administrador 230136 abr 19 19:24 EmbeddedTerminal.or
+-rw-r--r-- 1 admininistrador administrador 136112 abr 19 19:24 EmbeddedTerminal.res
+-rw-r--r-- 1 admininistrador administrador   1031 abr 19 19:24 embeddedterminalunit.lfm
+-rw-r--r-- 1 admininistrador administrador 311672 abr 19 19:24 embeddedterminalunit.o
+-rw-r--r-- 1 admininistrador administrador 112821 abr 19 19:24 embeddedterminalunit.ppu
+
+./units:
+total 352
+drw
+xr-xr-x 2 admininistrador administrador   4096 abr 19 19:24 backup
+-rw-r--r-- 1 admininistrador administrador   1031 abr 19 19:24 embeddedterminalunit.lfm
+-rw-r--r-- 1 admininistrador administrador 351474 abr 19 19:24 embeddedterminalunit.pas
+
+./units/backup:
+total 336
+-rw-r--r-- 1 admininistrador administrador   1031 abr 19 18:45 embeddedterminalunit.lfm.bak
+-rw-r--r-- 1 admininistrador administrador 329565 abr 19 18:45 embeddedterminalunit.pas
+-rw-r--r-- 1 admininistrador administrador    124 abr 18 20:51 unit1.lfm.bak
+-rw-r--r-- 1 admininistrador administrador    222 abr 18 20:51 unit1.pas
+&lt;spacheco/LazarusProjects/console/EmbeddedTerminal$ 
+
+</code></pre>
+<h2 id="objetivo">Objetivo</h2>
+<p>Este projeto foi desenvolvido com o objetivo de ser integrado à IDE do Lazarus como uma opção nativa de terminal embutido, similar ao terminal do Visual Studio Code. Ele pode ser usado como um componente independente ou incorporado ao ambiente de desenvolvimento para facilitar a execução de comandos diretamente na IDE.</p>
+<h2 id="última-atualização">Última Atualização</h2>
+<ul>
+<li><strong>Data</strong>: 19/04/2025</li>
+<li><strong>Hora</strong>: 18:46:00 hs (Horário de Brasília)</li>
+</ul>
+<h2 id="licença">Licença</h2>
+<p>Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.</p>
+<h2 id="contribuições">Contribuições</h2>
+<p>Contribuições são bem-vindas! Se você deseja melhorar o <code>EmbeddedTerminalUnit</code>, considere as seguintes áreas:</p>
+<ul>
+<li><strong>Suporte multiplataforma</strong>: Adicionar suporte para Windows (usando <code>cmd.exe</code> ou PowerShell) e macOS.</li>
+<li><strong>Integração à IDE</strong>: Transformar o terminal em uma janela acoplável na IDE do Lazarus, similar ao terminal do VSCode.</li>
+<li><strong>Personalização</strong>: Adicionar opções para configurar o shell, o prompt, ou o comportamento do terminal.</li>
+<li><strong>Melhorias no histórico</strong>: Remover duplicatas no histórico de comandos ou adicionar um limite de tamanho.</li>
+</ul>
+<p>Para contribuir:</p>
+<ol>
+<li>Faça um fork do repositório no GitHub.</li>
+<li>Crie uma branch para sua feature (<code>git checkout -b feature/nova-funcionalidade</code>).</li>
+<li>Faça suas alterações e commit (<code>git commit -m &quot;Adiciona nova funcionalidade&quot;</code>).</li>
+<li>Envie um pull request para o repositório principal.</li>
+</ol>
+<h2 id="agradecimentos">Agradecimentos</h2>
+<ul>
+<li>Desenvolvido por Grok, com análise de Paulo Pacheco.</li>
+<li>Inspirado na necessidade de um terminal embutido na IDE do Lazarus, similar ao do Visual Studio Code.</li>
+</ul>
+</main>
+<p><a href="#topo" title="Retorna ao topo">🔝🔝</a></p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

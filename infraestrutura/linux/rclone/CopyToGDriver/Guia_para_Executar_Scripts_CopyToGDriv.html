@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Guia para Executar Scripts CopyToGDriver no Windows</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="guia-para-executar-scripts-copytogdriver-no-windows">Guia para Executar Scripts CopyToGDriver no Windows</h1>
+<h2 id="-pré-requisitos">📋 Pré-requisitos</h2>
+<h3 id="opção-1-git-bash-recomendado---mais-simples">Opção 1: Git Bash (Recomendado - Mais Simples)</h3>
+<ol>
+<li><strong>Baixe e instale o Git Bash</strong>:
+<ul>
+<li>Acesse: <a href="https://git-scm.com/downloads/win">https://git-scm.com/downloads/win</a></li>
+<li>Instale com todas as opções padrão</li>
+<li><strong>Importante</strong>: Marque &quot;Add Git Bash to PATH&quot;</li>
+</ul>
+</li>
+</ol>
+<h3 id="opção-2-wsl-alternativa---100-compatível">Opção 2: WSL (Alternativa - 100% Compatível)</h3>
+<pre><code class="language-bash"><span class="hljs-comment"># No PowerShell como Administrador:</span>
+wsl --install -d Ubuntu
+</code></pre>
+<h2 id="-instalação-das-dependências">🔧 Instalação das Dependências</h2>
+<h3 id="1-instalar-rclone-no-windows">1. Instalar rclone no Windows</h3>
+<pre><code class="language-bash"><span class="hljs-comment"># Abra o Git Bash como Administrador (Botão direito → &quot;Run as Administrator&quot;)</span>
+
+<span class="hljs-comment"># Método 1: Via script oficial</span>
+curl https://rclone.org/install.sh | bash
+
+<span class="hljs-comment"># Método 2: Manual</span>
+<span class="hljs-comment"># Baixe de https://rclone.org/downloads/</span>
+<span class="hljs-comment"># Extraia rclone.exe para C:\Windows\System32\</span>
+</code></pre>
+<h3 id="2-verificar-instalação">2. Verificar instalação</h3>
+<pre><code class="language-bash">rclone version
+</code></pre>
+<h2 id="-configuração-dos-scripts">📁 Configuração dos Scripts</h2>
+<h3 id="1-preparar-estrutura-de-diretórios">1. Preparar estrutura de diretórios</h3>
+<pre><code class="language-bash"><span class="hljs-comment"># No Git Bash:</span>
+<span class="hljs-built_in">mkdir</span> -p /c/scripts/CopyToGDriver
+<span class="hljs-built_in">cd</span> /c/scripts/CopyToGDriver
+</code></pre>
+<h3 id="2-copiar-os-scripts">2. Copiar os scripts</h3>
+<ul>
+<li>Cole todos os arquivos <code>.sh</code> na pasta <code>C:\scripts\CopyToGDriver\</code></li>
+</ul>
+<h3 id="3-dar-permissões-de-execução">3. Dar permissões de execução</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">chmod</span> +x *.sh
+</code></pre>
+<h2 id="️-adaptações-necessárias">⚙️ Adaptações Necessárias</h2>
+<h3 id="1-corrigir-paths-linux--windows">1. Corrigir paths Linux → Windows</h3>
+<p>Edite os scripts substituindo:</p>
+<p><strong>Antes (Linux):</strong></p>
+<pre><code class="language-bash">/home/usuario/
+/mnt/
+/media/
+</code></pre>
+<p><strong>Depois (Windows):</strong></p>
+<pre><code class="language-bash">/c/Users/SeuUsuario/
+/c/
+/d/
+</code></pre>
+<h3 id="2-adaptar-comandos-específicos">2. Adaptar comandos específicos</h3>
+<p><strong>No arquivo <code>CopyToGDriver_Cache.sh</code> (linhas com pgrep/pkill):</strong></p>
+<pre><code class="language-bash"><span class="hljs-comment"># Substituir:</span>
+pkill rclone
+pgrep rclone
+
+<span class="hljs-comment"># Por:</span>
+taskkill /f /im rclone.exe 2&gt;/dev/null
+tasklist | grep rclone.exe
+</code></pre>
+<p><strong>No arquivo <code>CopyToGDriver_Checks.sh</code> (detecção de discos):</strong></p>
+<pre><code class="language-bash"><span class="hljs-comment"># Adicionar no início:</span>
+<span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-variable">$OSTYPE</span>&quot;</span> == <span class="hljs-string">&quot;msys&quot;</span> ]]; <span class="hljs-keyword">then</span>
+    <span class="hljs-comment"># Windows: usar wmic para detectar discos</span>
+    mounted_disks=$(wmic logicaldisk <span class="hljs-built_in">where</span> <span class="hljs-string">&quot;drivetype=3&quot;</span> get deviceid | grep :)
+<span class="hljs-keyword">else</span>
+    <span class="hljs-comment"># Linux: comando original</span>
+    mounted_disks=$(mount | grep -E <span class="hljs-string">&#x27;/dev/sd|/dev/nvme&#x27;</span> | awk <span class="hljs-string">&#x27;{print $1}&#x27;</span>)
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<h2 id="-execução">🚀 Execução</h2>
+<h3 id="1-primeira-configuração">1. Primeira configuração</h3>
+<pre><code class="language-bash"><span class="hljs-comment"># No Git Bash como Administrador:</span>
+./CopyToGDriver_Installer.sh
+
+<span class="hljs-comment"># Pule qualquer comando com sudo</span>
+</code></pre>
+<h3 id="2-configurar-rclone">2. Configurar rclone</h3>
+<pre><code class="language-bash">rclone config
+</code></pre>
+<p>Siga o assistente para conectar com Google Drive.</p>
+<h3 id="3-testar-sincronização">3. Testar sincronização</h3>
+<pre><code class="language-bash">./CopyToGDriver_Sync.sh
+</code></pre>
+<h2 id="️-solução-de-problemas-comuns">🛠️ Solução de Problemas Comuns</h2>
+<h3 id="erro-sudo-command-not-found">Erro: &quot;sudo: command not found&quot;</h3>
+<p><strong>Solução</strong>: Execute o Git Bash como Administrador e remova <code>sudo</code> dos comandos.</p>
+<h3 id="erro-pgrep-command-not-found">Erro: &quot;pgrep: command not found&quot;</h3>
+<p><strong>Solução</strong>: Use as adaptações acima com <code>taskkill</code> e <code>tasklist</code>.</p>
+<h3 id="erro-paths-não-encontrados">Erro: Paths não encontrados</h3>
+<p><strong>Solução</strong>: Verifique se os paths estão no formato Windows (<code>/c/Users/...</code>).</p>
+<h3 id="erro-permissão-negada">Erro: Permissão negada</h3>
+<p><strong>Solução</strong>: Execute como Administrador ou ajuste permissões:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">chmod</span> 755 *.sh
+</code></pre>
+<h2 id="-configuração-de-alias-opcional">📝 Configuração de Alias (Opcional)</h2>
+<p>Adicione ao <code>~/.bashrc</code> no Git Bash:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">alias</span> copydrive=<span class="hljs-string">&#x27;/c/scripts/CopyToGDriver/CopyToGDriver_Sync.sh&#x27;</span>
+<span class="hljs-built_in">alias</span> drive-config=<span class="hljs-string">&#x27;rclone config&#x27;</span>
+</code></pre>
+<p>Recarregue:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">source</span> ~/.bashrc
+</code></pre>
+<h2 id="-script-de-adaptação-automática">🔄 Script de Adaptação Automática</h2>
+<p>Crie <code>fix_windows.sh</code>:</p>
+<pre><code class="language-bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Aplicando adaptações para Windows...&quot;</span>
+
+<span class="hljs-comment"># Backup dos scripts originais</span>
+<span class="hljs-built_in">cp</span> CopyToGDriver_Cache.sh CopyToGDriver_Cache.sh.backup
+<span class="hljs-built_in">cp</span> CopyToGDriver_Checks.sh CopyToGDriver_Checks.sh.backup
+
+<span class="hljs-comment"># Substituir pgrep/pkill</span>
+sed -i <span class="hljs-string">&#x27;s/pkill rclone/taskkill \/f \/im rclone.exe 2&gt;\/dev\/null/g&#x27;</span> CopyToGDriver_Cache.sh
+sed -i <span class="hljs-string">&#x27;s/pgrep rclone/tasklist | grep rclone.exe/g&#x27;</span> CopyToGDriver_Cache.sh
+
+<span class="hljs-comment"># Corrigir paths</span>
+sed -i <span class="hljs-string">&#x27;s/\/home\/usuario/\/c\/Users\/%USERNAME%/g&#x27;</span> *.sh
+sed -i <span class="hljs-string">&#x27;s/\/mnt\//\/c\//g&#x27;</span> *.sh
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Adaptações aplicadas! Backup criado.&quot;</span>
+</code></pre>
+<p>Execute:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">chmod</span> +x fix_windows.sh
+./fix_windows.sh
+</code></pre>
+<h2 id="-verificação-final">✅ Verificação Final</h2>
+<p>Teste cada componente:</p>
+<pre><code class="language-bash"><span class="hljs-comment"># 1. rclone</span>
+rclone about drive:
+
+<span class="hljs-comment"># 2. Scripts básicos</span>
+./CopyToGDriver_Checks.sh
+./CopyToGDriver_Config.sh
+
+<span class="hljs-comment"># 3. Sincronização completa</span>
+./CopyToGDriver_Sync.sh
+</code></pre>
+<h2 id="-suporte">📞 Suporte</h2>
+<p>Se encontrar problemas:</p>
+<ol>
+<li>Execute com debug: <code>bash -x CopyToGDriver_Sync.sh</code></li>
+<li>Verifique logs em <code>~/.copytogdriver/logs/</code></li>
+<li>Teste no WSL como alternativa</li>
+</ol>
+<p><strong>Pronto! Seu sistema deve funcionar igual ao Debian no Windows.</strong></p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

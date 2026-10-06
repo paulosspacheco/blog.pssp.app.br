@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="CopyToGDriver_InstallerGUI.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="CopyToGDriver_Setup"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="35"/>
+        <UsageCount Value="35"/>
+      </Unit>
+      <Unit>
+        <Filename Value="listtree.ps1"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="35"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tree.txt"/>
+        <IsPartOfProject Value="True"/>
+        <TopLine Value="7"/>
+        <CursorPos X="43" Y="13"/>
+        <UsageCount Value="35"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Text"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\setupform_u.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SetupForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SetupForm_u"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="440"/>
+        <CursorPos X="16" Y="460"/>
+        <UsageCount Value="31"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToDriver_Group.lpg"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver.lpi"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="XML"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver.lps"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="XML"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_AliasSetup.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.v0.0.1.sh"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="14" Y="7"/>
+        <UsageCount Value="28"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Checks.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Config.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_ConfigFunctions v0.0.1.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="11" Y="4"/>
+        <UsageCount Value="31"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_CopyCurrent.v.0.0.1.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="215"/>
+        <CursorPos X="3" Y="257"/>
+        <UsageCount Value="31"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_ignore.txt"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Text"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Installer.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Restore.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Setup.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Sync.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_UnInstaller.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Utils.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="77"/>
+        <CursorPos X="33" Y="77"/>
+        <UsageCount Value="31"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\include_loader.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\junte_Scripts.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\listtree.bat"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bat"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\listtree.ps1"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\pack.ps1"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\platform_detector.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\rclone_browser_x_CopyToDriver.md"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\scripts.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\test_copy.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\tree.txt"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Text"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\7z.sfx"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\7z2501-x64.exe"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\build.bat"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bat"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\BUILD_README.md"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\CopyToGDriver_7zSFX_Config.md"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\CopyToGDriver_7zSFX_Config.txt"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Text"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\CopyToGDriver_PlatformInstaller.ps1"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\CopyToGDriver_Setup.exe"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\packagers\windows\install.bat"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bat"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\includes.html"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="HTML"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\includes.md"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\common\common_functions.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\common\config.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\common\logging.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_7zSFX_Config.txt"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Text"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_Installer.bat"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bat"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_Installer.md"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.v2.1.3.ps1"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_UnInstaller.bat"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bat"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_UnInstaller.ps1"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\disk_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\path_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\process_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\Run_Installer.bat"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bat"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\Run_Uninstaller.bat"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bat"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\linux\CopyToGDriver_Installer.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\linux\CopyToGDriver_UnInstaller.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\linux\disk_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\linux\path_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\linux\process_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\linux\Remove_Rclone.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\macos\CopyToGDriver_Installer.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\macos\CopyToGDriver_UnInstaller.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\macos\disk_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\macos\path_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\macos\process_utils.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="dist\x86_64-win64\CopyToGDriver.zip"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="dist\x86_64-win64\CopyToGDriver_InstallerGUI.exe"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installerv2.2.3.ps1"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="477"/>
+        <CursorPos Y="519"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\CopyToGDriver_Installer.deepseek.ps1"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="33" Y="17"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.v2.2.3.ps1"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="921"/>
+        <CursorPos Y="963"/>
+        <UsageCount Value="31"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\mainform_u.pas"/>
+        <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="mainForm_u"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="429"/>
+        <CursorPos X="33" Y="444"/>
+        <UsageCount Value="22"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\mainform_u.lfm"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="17"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="E:\Documentos\temp\tem.txt"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="307"/>
+        <CursorPos X="5" Y="349"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Text"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\setupform_u.lfm"/>
+        <HasResources Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="59" Y="25"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="V:\Lazarus.4.ORC3\fpcsrc\rtl\objpas\sysutils\osutilsh.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="10" Y="37"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.v2.2.4.ps1"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="40" Y="3"/>
+        <UsageCount Value="27"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\includes\windows\copytogdriver_installer.ps1"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="443"/>
+        <CursorPos Y="476"/>
+        <UsageCount Value="27"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="32" Y="28"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+      <Unit>
+        <Filename Value="CopyToGDriver\CopyToGDriver_CopyCurrent.sh"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="125"/>
+        <CursorPos Y="125"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Bash"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_CopyCurrent.v.0.0.1.sh"/>
+        <Caret Line="140" Column="21" TopLine="105"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_CopyCurrent.v.0.0.1.sh"/>
+        <Caret Line="129" Column="62" TopLine="111"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_CopyCurrent.v.0.0.1.sh"/>
+        <Caret Line="130" Column="13" TopLine="111"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_CopyCurrent.v.0.0.1.sh"/>
+        <Caret Line="132" Column="13" TopLine="111"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_CopyCurrent.sh"/>
+        <Caret Line="15" Column="26"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="67" Column="15" TopLine="61"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="50" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="138" Column="44" TopLine="128"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="30" Column="60" TopLine="22"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="115" Column="42" TopLine="106"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="30"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="26" Column="24"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="195" TopLine="153"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="40" Column="42" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="194" TopLine="153"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="180" Column="39" TopLine="153"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="195" TopLine="153"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="125" Column="67" TopLine="113"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="17" Column="29"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="129" Column="16" TopLine="112"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="35" Column="41" TopLine="18"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="164" Column="42" TopLine="144"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="186" TopLine="144"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Utils.sh"/>
+        <Caret Line="7" Column="38"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Utils.sh"/>
+        <Caret Line="97" Column="48" TopLine="77"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Utils.sh"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="356" Column="3" TopLine="314"/>
+      </Position>
+      <Position>
+        <Filename Value="CopyToGDriver\CopyToGDriver_Cache.sh"/>
+        <Caret Line="315" Column="19" TopLine="307"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="E:\Documentos\temp\tem.txt"/>
+        <Line Value="147"/>
+      </Item>
+    </BreakPoints>
+  </Debugging>
+</CONFIG>

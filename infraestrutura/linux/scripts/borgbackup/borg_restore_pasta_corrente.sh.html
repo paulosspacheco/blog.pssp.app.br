@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x267b;&#xfe0f; Manual do Script &DiacriticalGrave;borg&lowbar;restore&lowbar;pasta&lowbar;corrente&period;sh&DiacriticalGrave;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="️-manual-do-script-borg_restore_pasta_correntesh">♻️ Manual do Script <code>borg_restore_pasta_corrente.sh</code></h1>
+<h2 id="-descrição-geral">📘 Descrição Geral</h2>
+<p>O script <strong><code>borg_restore_pasta_corrente.sh</code></strong> automatiza a <strong>restauração de backups</strong> da pasta corrente (diretório atual) criados com o <strong>BorgBackup</strong>, utilizando o script base <a href="./borg_restore.sh"><code>borg_restore.sh</code></a>.</p>
+<p>Ele identifica automaticamente o repositório Borg correspondente à pasta em questão e restaura os arquivos de backup diretamente dentro de uma subpasta chamada <code>restaurado</code>.</p>
+<p>Este script é ideal para <strong>usuários domésticos ou técnicos</strong> que desejam restaurar uma pasta de backup de forma rápida, interativa e segura — sem precisar digitar comandos longos do Borg manualmente.</p>
+<hr>
+<h2 id="-objetivo">🧠 Objetivo</h2>
+<ul>
+<li>Restaurar backups criados com o <strong>BorgBackup</strong> para a pasta corrente.</li>
+<li>Localizar automaticamente o repositório Borg correto com base no nome da pasta.</li>
+<li>Automatizar o processo via script base <strong><code>borg_restore.sh</code></strong>.</li>
+<li>Garantir uma experiência interativa e validada (com confirmações).</li>
+<li>Criar a pasta de destino <code>restaurado/</code> para armazenar os arquivos restaurados.</li>
+</ul>
+<hr>
+<h2 id="️-parâmetros-e-variáveis-internas">⚙️ Parâmetros e Variáveis Internas</h2>
+<p>O script <strong>não requer parâmetros externos</strong>.<br>
+Todas as variáveis são configuradas automaticamente com base no diretório atual.</p>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SCRIPT_BASE</code></td>
+<td>Caminho absoluto para o script base de restauração</td>
+<td><code>/home/paulosspacheco/scripts/borg_restore.sh</code></td>
+</tr>
+<tr>
+<td><code>DESTINO_BASE</code></td>
+<td>Caminho base onde os repositórios Borg estão armazenados</td>
+<td><code>/media/paulosspacheco/Novo volume/borg_backup</code></td>
+</tr>
+<tr>
+<td><code>CRIPTO</code></td>
+<td>Tipo de criptografia (padrão: <code>none</code>)</td>
+<td><code>none</code></td>
+</tr>
+<tr>
+<td><code>ORIGEM</code></td>
+<td>Diretório atual (<code>pwd</code>)</td>
+<td><code>/home/paulosspacheco/scripts</code></td>
+</tr>
+<tr>
+<td><code>NOME</code></td>
+<td>Nome da pasta corrente (basename)</td>
+<td><code>scripts</code></td>
+</tr>
+<tr>
+<td><code>REPO</code></td>
+<td>Caminho completo para o repositório Borg correspondente</td>
+<td><code>/media/paulosspacheco/Novo volume/borg_backup/scripts/borg-repo</code></td>
+</tr>
+<tr>
+<td><code>DESTINO_RESTAURACAO</code></td>
+<td>Caminho de destino onde os arquivos serão restaurados</td>
+<td><code>/home/paulosspacheco/scripts/restaurado</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-exemplo-de-uso">🧰 Exemplo de Uso</h2>
+<h3 id="-exemplo-1--restaurar-o-backup-da-pasta-atual">🔹 Exemplo 1 — Restaurar o backup da pasta atual</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> ~/scripts
+./borg_restore_pasta_corrente.sh
+</code></pre>
+<p>Saída esperada:</p>
+<pre><code>======================================================
+♻️  Restauração da pasta corrente com BorgBackup
+======================================================
+Nome ...........: scripts
+Repositório ....: /media/paulosspacheco/Novo volume/borg_backup/scripts/borg-repo
+Destino final ..: /home/paulosspacheco/scripts/restaurado
+Script base ....: /home/paulosspacheco/scripts/borg_restore.sh
+Criptografia ...: none
+======================================================
+
+Deseja restaurar a pasta 'scripts' para '/home/paulosspacheco/scripts/restaurado'? (s/n): s
+</code></pre>
+<hr>
+<h2 id="-estrutura-do-script">🧩 Estrutura do Script</h2>
+<h3 id="1️⃣-exibição-inicial">1️⃣ Exibição Inicial</h3>
+<p>Apresenta um resumo das configurações detectadas automaticamente:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Nome ...........: <span class="hljs-variable">$NOME</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Repositório ....: <span class="hljs-variable">$REPO</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Destino final ..: <span class="hljs-variable">$DESTINO_RESTAURACAO</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Script base ....: <span class="hljs-variable">$SCRIPT_BASE</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Criptografia ...: <span class="hljs-variable">$CRIPTO</span>&quot;</span>
+</code></pre>
+<hr>
+<h3 id="2️⃣-validações-iniciais">2️⃣ Validações Iniciais</h3>
+<p>Antes da execução, o script garante que tudo está correto:</p>
+<ul>
+<li>
+<p><strong>Verifica se o script base existe e é executável:</strong></p>
+<pre><code class="language-bash"><span class="hljs-keyword">if</span> [ ! -x <span class="hljs-string">&quot;<span class="hljs-variable">$SCRIPT_BASE</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;❌ O script base &#x27;<span class="hljs-variable">$SCRIPT_BASE</span>&#x27; não foi encontrado ou não tem permissão de execução.&quot;</span>
+    <span class="hljs-built_in">exit</span> 1
+<span class="hljs-keyword">fi</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Verifica se o repositório Borg existe:</strong></p>
+<pre><code class="language-bash"><span class="hljs-keyword">if</span> [ ! -d <span class="hljs-string">&quot;<span class="hljs-variable">$REPO</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;❌ O repositório &#x27;<span class="hljs-variable">$REPO</span>&#x27; não foi encontrado!&quot;</span>
+    <span class="hljs-built_in">exit</span> 1
+<span class="hljs-keyword">fi</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Cria o diretório de restauração caso não exista:</strong></p>
+<pre><code class="language-bash"><span class="hljs-built_in">mkdir</span> -p <span class="hljs-string">&quot;<span class="hljs-variable">$DESTINO_RESTAURACAO</span>&quot;</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="3️⃣-confirmação-do-usuário">3️⃣ Confirmação do Usuário</h3>
+<p>Antes de prosseguir, o script confirma a intenção de restauração:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">read</span> -p <span class="hljs-string">&quot;Deseja restaurar a pasta &#x27;<span class="hljs-variable">$NOME</span>&#x27; para &#x27;<span class="hljs-variable">$DESTINO_RESTAURACAO</span>&#x27;? (s/n): &quot;</span> CONFIRMA
+</code></pre>
+<p>Se o usuário responder <code>n</code>, a operação é cancelada imediatamente.</p>
+<hr>
+<h3 id="4️⃣-execução-da-restauração">4️⃣ Execução da Restauração</h3>
+<p>A restauração é feita chamando o script base (<code>borg_restore.sh</code>) com os parâmetros adequados:</p>
+<pre><code class="language-bash"><span class="hljs-string">&quot;<span class="hljs-variable">$SCRIPT_BASE</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$REPO</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$DESTINO_RESTAURACAO</span>&quot;</span> <span class="hljs-string">&quot;&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$CRIPTO</span>&quot;</span>
+</code></pre>
+<p>Isso inicia o fluxo completo de restauração, incluindo:</p>
+<ul>
+<li>Verificação de snapshots disponíveis,</li>
+<li>Simulação (<em>dry-run</em>),</li>
+<li>Execução real da restauração.</li>
+</ul>
+<hr>
+<h3 id="5️⃣-resultado-final">5️⃣ Resultado Final</h3>
+<p>Após a execução, o script exibe o status final com base no código de retorno:</p>
+<pre><code class="language-bash"><span class="hljs-keyword">if</span> [ $? -eq 0 ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;✅ Restauração da pasta &#x27;<span class="hljs-variable">$NOME</span>&#x27; concluída com sucesso!&quot;</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Arquivos restaurados em: <span class="hljs-variable">$DESTINO_RESTAURACAO</span>&quot;</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;❌ Ocorreu um erro durante a restauração.&quot;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<hr>
+<h2 id="-estrutura-de-arquivos-após-a-restauração">📂 Estrutura de Arquivos Após a Restauração</h2>
+<p>Após a execução bem-sucedida, a estrutura final será semelhante a:</p>
+<pre><code>/home/paulosspacheco/scripts/
+ ├── borg_restore_pasta_corrente.sh
+ ├── borg_restore.sh
+ ├── borg_backup.sh
+ ├── ...
+ └── restaurado/
+      ├── borg_backup_pasta_corrente.sh
+      ├── borg_backup.sh
+      ├── borg_restore.sh
+      └── outros arquivos do backup
+</code></pre>
+<hr>
+<h2 id="️-dependências">⚙️ Dependências</h2>
+<table>
+<thead>
+<tr>
+<th>Dependência</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>borgbackup</strong></td>
+<td>Ferramenta principal de backup e restauração</td>
+</tr>
+<tr>
+<td><strong>bash (5.x)</strong></td>
+<td>Shell de execução</td>
+</tr>
+<tr>
+<td><strong>borg_restore.sh</strong></td>
+<td>Script base obrigatório</td>
+</tr>
+<tr>
+<td><strong>Acesso ao repositório</strong></td>
+<td>O caminho <code>/media/paulosspacheco/Novo volume/borg_backup</code> deve estar montado</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-exemplo-completo-de-execução">🧪 Exemplo Completo de Execução</h2>
+<pre><code>======================================================
+♻️  Restauração da pasta corrente com BorgBackup
+======================================================
+Nome ...........: scripts
+Repositório ....: /media/paulosspacheco/Novo volume/borg_backup/scripts/borg-repo
+Destino final ..: /home/paulosspacheco/scripts/restaurado
+Script base ....: /home/paulosspacheco/scripts/borg_restore.sh
+Criptografia ...: none
+======================================================
+
+Deseja restaurar a pasta 'scripts' para '/home/paulosspacheco/scripts/restaurado'? (s/n): s
+
+======================================================
+🚀 Iniciando restauração com borg_restore.sh ...
+======================================================
+======================================================
+♻️  Restaurador genérico de backups BorgBackup
+======================================================
+Repositório ....: /media/paulosspacheco/Novo volume/borg_backup/scripts/borg-repo
+Destino ........: /home/paulosspacheco/scripts/restaurado
+Snapshot .......: backup-2025-10-30
+Criptografia ...: none
+======================================================
+
+🧪 Etapa 1: Simulação (dry-run)
+borg_backup.sh
+borg_restore.sh
+...
+✅ Restauração concluída com sucesso!
+Arquivos restaurados em: /home/paulosspacheco/scripts/restaurado
+</code></pre>
+<hr>
+<h2 id="️-cuidados-e-boas-práticas">⚠️ Cuidados e Boas Práticas</h2>
+<ol>
+<li>
+<p><strong>Monte o disco externo</strong> antes da restauração:</p>
+<pre><code class="language-bash">mount | grep <span class="hljs-string">&quot;Novo volume&quot;</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Não execute dentro da pasta <code>restaurado/</code></strong>, para evitar sobrescrita.</p>
+</li>
+<li>
+<p><strong>Confirme o snapshot</strong> correto durante o processo.</p>
+</li>
+<li>
+<p><strong>Evite restaurar diretamente sobre o diretório original</strong> sem revisar a simulação (<code>dry-run</code>).</p>
+</li>
+<li>
+<p><strong>Mantenha o script base sincronizado</strong> com a versão testada (<code>borg_restore.sh</code>).</p>
+</li>
+</ol>
+<hr>
+<h2 id="-referências">🔗 Referências</h2>
+<ul>
+<li>
+<p>📘 <strong>Site oficial do BorgBackup:</strong>
+<a href="https://www.borgbackup.org/">https://www.borgbackup.org/</a></p>
+</li>
+<li>
+<p>📖 <strong>Documentação completa:</strong>
+<a href="https://borgbackup.readthedocs.io/en/stable/">https://borgbackup.readthedocs.io/en/stable/</a></p>
+</li>
+<li>
+<p>💬 <strong>Comunidade e suporte:</strong>
+<a href="https://github.com/borgbackup/borg/discussions">https://github.com/borgbackup/borg/discussions</a></p>
+</li>
+</ul>
+<hr>
+<h2 id="-histórico-de-versões">🧾 Histórico de Versões</h2>
+<table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Data</th>
+<th>Alterações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>2025-10-30</td>
+<td>Versão inicial funcional</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>2025-10-31</td>
+<td>Integração com script base e criação automática da pasta de restauração</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-autor">✅ Autor</h2>
+<p><strong>Paulo SSPacheco</strong>
+💻 Automação e Infraestrutura Linux
+📅 Outubro de 2025</p>
+<hr>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

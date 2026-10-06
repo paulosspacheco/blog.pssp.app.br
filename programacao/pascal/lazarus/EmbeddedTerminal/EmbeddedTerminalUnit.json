@@ -1,0 +1,14 @@
+[
+  "ls",
+  "ls -l",
+  "ls",
+  "ls -l",
+  "ls",
+  "ls / -l",
+  "ls",
+  "ls -l",
+  "ls",
+  "ls -l",
+  "ls -lr",
+  "ls -lR"
+]

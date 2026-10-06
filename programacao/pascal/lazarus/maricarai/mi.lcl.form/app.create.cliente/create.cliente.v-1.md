@@ -8,7 +8,7 @@
 
 <script type="application/x-javascript" src="/js/mermaid.min.js"></script>
 
-# Projeto para criar aplicações clientes das aplicações servidoras geradas pelo framework /\/\ar/\carai
+# Projeto para criar aplicações clientes das aplicações servidoras geradas pelo framework MarIcarai
 
 - [Projeto para criar aplicações clientes das aplicações servidoras geradas pelo framework //\\ar/\\carai](#projeto-para-criar-aplicações-clientes-das-aplicações-servidoras-geradas-pelo-framework-arcarai)
   - [Introdução](#introdução)

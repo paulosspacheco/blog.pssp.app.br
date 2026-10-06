@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Teste de Perfil: Pragmático, Idealista ou Emocional</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f0f0f0;
+    }
+    h1 {
+      color: #333;
+    }
+    .question {
+      margin-bottom: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .result {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #dff0d8;
+      border-left: 5px solid #3c763d;
+      border-radius: 8px;
+      font-size: 1.2em;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+<link type="text/css" href="/css/topnav.css" rel="stylesheet" />
+  <link type="text/css" href="/css/defaultthemeMarkdown.css" rel="stylesheet" />
+
+  <script type="application/x-javascript" src="/js/generic.js"></script>
+  <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      toggleTree();
+    });
+  </script>
+
+
+</head>
+<body class="vscode-body vscode-dark">
+  <div class="header" id="myHeader">
+    <div class="navbar" w3-include-html="/menu.inc"> </div>
+  </div>
+  <div class="title">
+    <script>
+      document.write(document.title);
+    </script>
+  </div>
+  <main>
+
+  <form id="quizForm">
+    <!-- Perguntas serão geradas pelo JavaScript -->
+  </form>
+
+  <button onclick="calcularResultado()">Ver resultado</button>
+
+  <div id="resultado" class="result" style="display: none;"></div>
+
+  <script>
+    const perguntas = [
+      "Ao iniciar um novo projeto, você costuma pensar primeiro em:",
+      "Quando alguém erra com você, sua reação mais comum é:",
+      "Ao tomar uma decisão difícil, você prefere:",
+      "Em uma reunião demorada e confusa, você costuma:",
+      "Se alguém propõe uma ideia nova, você pensa primeiro:",
+      "Um colega de trabalho está passando por dificuldades. Você tende a:",
+      "Ao liderar um grupo, você se preocupa mais com:",
+      "Quando algo não sai como esperado, sua reação é:",
+      "Para você, sucesso é:"
+    ];
+
+    const opcoes = {
+      A: "Pragmático",
+      B: "Idealista",
+      C: "Emocional"
+    };
+
+    const respostas = {
+      A: 0,
+      B: 0,
+      C: 0
+    };
+
+    function criarFormulario() {
+      const form = document.getElementById('quizForm');
+      perguntas.forEach((pergunta, index) => {
+        const div = document.createElement('div');
+        div.classList.add('question');
+        div.innerHTML = `
+          <p><strong>${index + 1}. ${pergunta}</strong></p>
+          <label><input type="radio" name="q${index}" value="A" required> A) ${opcoes.A}</label><br>
+          <label><input type="radio" name="q${index}" value="B"> B) ${opcoes.B}</label><br>
+          <label><input type="radio" name="q${index}" value="C"> C) ${opcoes.C}</label>
+        `;
+        form.appendChild(div);
+      });
+    }
+
+    function calcularResultado() {
+      respostas.A = 0;
+      respostas.B = 0;
+      respostas.C = 0;
+
+      const form = document.getElementById('quizForm');
+      const data = new FormData(form);
+      if (data.keys().length < perguntas.length) {
+        alert("Responda todas as perguntas!");
+        return;
+      }
+
+      for (let [key, value] of data.entries()) {
+        respostas[value]++;
+      }
+
+      const resultadoDiv = document.getElementById("resultado");
+      resultadoDiv.style.display = "block";
+
+      let perfil = "";
+      if (respostas.A >= respostas.B && respostas.A >= respostas.C) {
+        perfil = "Pragmático";
+      } else if (respostas.B >= respostas.A && respostas.B >= respostas.C) {
+        perfil = "Idealista";
+      } else {
+        perfil = "Emocional";
+      }
+
+      resultadoDiv.innerHTML = `
+        <strong>Seu perfil dominante é: ${perfil}</strong><br><br>
+        <ul>
+          <li>Respostas A (Pragmático): ${respostas.A}</li>
+          <li>Respostas B (Idealista): ${respostas.B}</li>
+          <li>Respostas C (Emocional): ${respostas.C}</li>
+        </ul>
+      `;
+    }
+
+    criarFormulario();
+  </script>
+
+  </main>
+  <!-- markdownlint-disable-next-line -->
+  <script>
+    includeHTML();
+    FixHeader(window, "myHeader");
+  </script>
+
+</body>
+</html>

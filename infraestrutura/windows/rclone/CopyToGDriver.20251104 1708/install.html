@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f680; Guia de Instala&ccedil;&atilde;o do CopyToGDriver &lpar;Windows&rpar;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-guia-de-instalação-do-copytogdriver-windows">🚀 Guia de Instalação do CopyToGDriver (Windows)</h1>
+<h2 id="-visão-geral">📘 Visão Geral</h2>
+<p>O <strong>CopyToGDriver</strong> é um conjunto de scripts Bash que automatizam a sincronização de pastas locais com o <strong>Google Drive</strong>, utilizando o <strong>Rclone</strong>.</p>
+<p>Este documento explica <strong>como instalar, testar e remover</strong> o CopyToGDriver em um ambiente <strong>Windows</strong> utilizando o script <code>install.ps1</code> (versão 1.3).</p>
+<hr>
+<h2 id="️-pré-requisitos">⚙️ Pré-requisitos</h2>
+<h3 id="-requisitos-mínimos">🧩 Requisitos mínimos</h3>
+<ul>
+<li><strong>Windows 10/11</strong> (ou Windows Server 2019+)</li>
+<li><strong>Permissão de Administrador</strong> (para instalar o <code>rclone</code>)</li>
+<li><strong>PowerShell 5.1+</strong> (ou PowerShell Core)</li>
+<li><strong>Conexão com a Internet</strong></li>
+<li>(Opcional, mas recomendado) <strong>Git Bash</strong>
+<ul>
+<li><a href="https://git-scm.com/downloads/win">Download Git Bash</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-estrutura-recomendada">📁 Estrutura recomendada</h2>
+<p>Por padrão, o instalador copia os arquivos para:</p>
+<pre><code>
+C:\scripts\CopyToGDriver
+
+</code></pre>
+<p>Caso prefira outro local, use o parâmetro <code>--path</code>.</p>
+<hr>
+<h2 id="-passo-a-passo-de-instalação">🔧 Passo a passo de instalação</h2>
+<h3 id="1️⃣-abrir-o-powershell">1️⃣ Abrir o PowerShell</h3>
+<ul>
+<li>Clique em <strong>Iniciar → PowerShell</strong></li>
+<li>Clique com o botão direito e escolha <strong>&quot;Executar como Administrador&quot;</strong></li>
+</ul>
+<h3 id="2️⃣-permitir-execução-de-scripts-temporariamente">2️⃣ Permitir execução de scripts temporariamente</h3>
+<pre><code class="language-powershell"><span class="hljs-built_in">Set-ExecutionPolicy</span> Bypass <span class="hljs-literal">-Scope</span> <span class="hljs-keyword">Process</span> <span class="hljs-literal">-Force</span>
+</code></pre>
+<h3 id="3️⃣-acessar-a-pasta-onde-estão-os-arquivos">3️⃣ Acessar a pasta onde estão os arquivos</h3>
+<pre><code class="language-powershell"><span class="hljs-built_in">cd</span> C:\Downloads\CopyToGDriver
+</code></pre>
+<h3 id="4️⃣-executar-o-instalador">4️⃣ Executar o instalador</h3>
+<h4 id="instalação-padrão">Instalação padrão</h4>
+<pre><code class="language-powershell">.\install.ps1
+</code></pre>
+<h4 id="instalação-personalizada">Instalação personalizada</h4>
+<pre><code class="language-powershell">.\install.ps1 <span class="hljs-literal">--path</span> <span class="hljs-string">&quot;D:\Ferramentas\CopyToGDriver&quot;</span>
+</code></pre>
+<hr>
+<h2 id="-o-que-o-instalador-faz">🧰 O que o instalador faz</h2>
+<table>
+<thead>
+<tr>
+<th>Etapa</th>
+<th>Ação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Cria a pasta <code>C:\scripts\CopyToGDriver</code> (ou caminho definido por <code>--path</code>)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Copia todos os scripts <code>.sh</code> e subpastas (<code>includes/</code>, etc.)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Verifica se o <code>rclone</code> está instalado</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Se não estiver, baixa e instala o <code>rclone.exe</code> em <code>C:\Windows\System32</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Cria o arquivo de registro <code>~\.copytogdriver\install_record.json</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Executa um teste rápido (<code>--check-only</code>)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Mostra o resultado e o caminho final da instalação</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-verificação-pós-instalação">✅ Verificação pós-instalação</h2>
+<p>Após a execução, abra o <strong>Git Bash</strong> (como Administrador) e teste:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> /c/scripts/CopyToGDriver
+bash CopyToGDriver.sh --check-only
+</code></pre>
+<p>Se tudo estiver correto, você verá:</p>
+<pre><code>✅ Todas as dependências verificadas com sucesso!
+TODOS OS PRÉ-REQUISITOS ATENDIDOS
+</code></pre>
+<hr>
+<h2 id="-registro-de-instalação">🧾 Registro de Instalação</h2>
+<p>O instalador cria o arquivo:</p>
+<pre><code>%USERPROFILE%\.copytogdriver\install_record.json
+</code></pre>
+<p>Exemplo de conteúdo:</p>
+<pre><code class="language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;install_path&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;C:\\scripts\\CopyToGDriver&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;rclone_installed_by_script&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<p>Esse registro é usado pelo <strong><code>uninstall.ps1</code></strong> para remover apenas o que foi instalado pelo script.</p>
+<hr>
+<h2 id="-desinstalação">🧹 Desinstalação</h2>
+<p>Para remover completamente o CopyToGDriver:</p>
+<pre><code class="language-powershell"><span class="hljs-built_in">cd</span> C:\Downloads\CopyToGDriver
+.\uninstall.ps1
+</code></pre>
+<h3 id="desinstalação-silenciosa">Desinstalação silenciosa</h3>
+<pre><code class="language-powershell">.\uninstall.ps1 <span class="hljs-literal">--silent</span>
+</code></pre>
+<p>🔹 O desinstalador:</p>
+<ul>
+<li>Lê o <code>install_record.json</code></li>
+<li>Remove a pasta do projeto</li>
+<li><strong>Remove o rclone.exe apenas se ele foi instalado pelo script</strong></li>
+</ul>
+<hr>
+<h2 id="-testes-adicionais">🧪 Testes adicionais</h2>
+<p>Após instalar, você pode rodar:</p>
+<pre><code class="language-bash">bash /c/scripts/CopyToGDriver/CopyToGDriver.sh --check-only
+bash /c/scripts/CopyToGDriver/CopyToGDriver.sh
+</code></pre>
+<hr>
+<h2 id="-dicas-úteis">🧠 Dicas úteis</h2>
+<h3 id="adicionar-ao-path-opcional">Adicionar ao PATH (opcional)</h3>
+<p>Para poder executar <code>CopyToGDriver.sh</code> de qualquer lugar:</p>
+<ol>
+<li>
+<p>No <strong>Painel de Controle → Sistema → Variáveis de ambiente</strong></p>
+</li>
+<li>
+<p>Edite <strong>PATH</strong> e adicione:</p>
+<pre><code>C:\scripts\CopyToGDriver
+</code></pre>
+</li>
+<li>
+<p>Reinicie o terminal.</p>
+</li>
+</ol>
+<hr>
+<h2 id="-solução-de-problemas">🛠 Solução de Problemas</h2>
+<table>
+<thead>
+<tr>
+<th>Erro</th>
+<th>Solução</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bash: command not found</code></td>
+<td>Instale o Git Bash</td>
+</tr>
+<tr>
+<td><code>rclone not found</code></td>
+<td>Reexecute o <code>install.ps1</code> como Administrador</td>
+</tr>
+<tr>
+<td><code>Permissão negada</code></td>
+<td>Execute PowerShell como <strong>Administrador</strong></td>
+</tr>
+<tr>
+<td><code>O script não pode ser executado</code></td>
+<td>Execute <code>Set-ExecutionPolicy Bypass -Scope Process -Force</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-estrutura-final-esperada">📦 Estrutura final esperada</h2>
+<p>Após a instalação, o sistema deve estar assim:</p>
+<pre><code>C:\scripts\CopyToGDriver\
+├── CopyToGDriver.sh
+├── CopyToGDriver_Cache.sh
+├── CopyToGDriver_Checks.sh
+├── CopyToGDriver_Config.sh
+├── includes\
+│   ├── common\
+│   ├── linux\
+│   └── windows\
+└── install_record.json
+</code></pre>
+<hr>
+<h2 id="-atualizações-futuras">🔄 Atualizações futuras</h2>
+<p>Para atualizar apenas os scripts (sem reinstalar rclone):</p>
+<pre><code class="language-powershell">.\install.ps1 <span class="hljs-literal">--path</span> <span class="hljs-string">&quot;C:\scripts\CopyToGDriver&quot;</span>
+</code></pre>
+<p>ou, em breve:</p>
+<pre><code class="language-powershell">.\install.ps1 <span class="hljs-literal">--update</span>
+</code></pre>
+<hr>
+<h2 id="-arquivos-relacionados">🧩 Arquivos relacionados</h2>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>install.ps1</code></td>
+<td>Instala o CopyToGDriver</td>
+</tr>
+<tr>
+<td><code>uninstall.ps1</code></td>
+<td>Remove o CopyToGDriver</td>
+</tr>
+<tr>
+<td><code>pack.ps1</code></td>
+<td>Gera o pacote <code>.zip</code> para distribuição</td>
+</tr>
+<tr>
+<td><code>install_record.json</code></td>
+<td>Registro interno de instalação</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-autor">👨‍💻 Autor</h2>
+<p><strong>Paulo SSPacheco + ChatGPT (GPT-5)</strong>
+Versão da documentação: <strong>v1.3.0</strong></p>
+<hr>
+
+            
+            
+        </body>
+        </html>

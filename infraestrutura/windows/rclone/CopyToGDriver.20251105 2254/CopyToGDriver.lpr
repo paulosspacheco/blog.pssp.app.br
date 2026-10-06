@@ -1,0 +1,7 @@
+program CopyToGDriver;
+
+
+begin
+
+end.
+

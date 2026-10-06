@@ -1,4 +1,5 @@
-{: Está unit contém o algorítimo de arvore b+ balanceada criada pelo projeto chatgpt.
+{: Esta unit implementa uma árvore B+ balanceada para indexação e manipulação de registros em arquivos.
+  Inclui operações de criação, indexação, busca, inserção e listagem de dados.
 }
 
 unit Unit1;
@@ -14,13 +15,21 @@ type
 
   { TForm1 }
 
+  {: Form principal que gerencia a interface e as operações da árvore B+ balanceada. }
   TForm1 = class(TForm)
+    {: Botão para criar o arquivo de dados exemplo. }
     Button1_CreateDataFile: TButton;
+    {: Botão para criar o índice do arquivo de dados. }
     Button2_Index_DataFile: TButton;
+    {: Botão para listar os dados indexados. }
     Button3_Lista_DataFile: TButton;
+    {: ListBox para exibir os registros listados. }
     ListBox1: TListBox;
+    {: Evento do botão para criar arquivo de dados. }
     procedure Button1_CreateDataFileClick(Sender: TObject);
+    {: Evento do botão para indexar arquivo de dados. }
     procedure Button2_Index_DataFileClick(Sender: TObject);
+    {: Evento do botão para listar dados. }
     procedure Button3_Lista_DataFileClick(Sender: TObject);
 
   private
@@ -31,18 +40,20 @@ type
       MaxNr      = 5;
 
     type
+      {: Estrutura de chave usada na árvore B+. }
       TKey = Record
         NumberRecord : Longint;
         chave : ShortString;
       end;
 
     const
+      {: Chave especial para indicar fim ou ausência de chave. }
       SpecialKey : TKey = (NumberRecord:-1;chave : '-1') ;
 
     Type
+      {: Estrutura de registro armazenado no arquivo de dados. }
       TRecord = record
         NumberRecord : Longint;
-        // Defina aqui a estrutura do seu registro
         Nome     : TKey;
         Endereco : String[80];
       end;
@@ -51,43 +62,68 @@ type
       //  // Defina aqui a estrutura do nó de índice da árvore B+
       //end;
 
+      {: Estrutura de nó da árvore B+ para indexação. }
       TIndexNode = record
-        Keys: array [1..M] of TKey;  // Array de chaves no nó
-        NumberRecords: array [0..M] of LongInt;  // Array de ponteiros para os filhos ou registros
-        NumKeys: Integer;  // Número de chaves atualmente no nó
-        IsLeaf: Boolean;  // Indica se o nó é uma folha
+        Keys: array [1..M] of TKey;  ///< Chaves armazenadas no nó
+        NumberRecords: array [0..M] of LongInt; ///< Ponteiros para filhos ou registros
+        NumKeys: Integer; ///< Número de chaves no nó
+        IsLeaf: Boolean; ///< Indica se o nó é folha
       end;
 
-      TIndexFile = file of TIndexNode;
-      TDataFile  = file of TRecord;
+  {: Tipo de arquivo de índice (nós da árvore B+). }
+  TIndexFile = file of TIndexNode;
+  {: Tipo de arquivo de dados (registros). }
+  TDataFile  = file of TRecord;
 
     var
+      {: Arquivo de dados principal. }
       DataFile  : file of TRecord;
+      {: Arquivo de índice principal. }
       IndexFile : TIndexFile;
     var
+      {: Nó atual em uso na árvore B+. }
       currentNode: TIndexNode;
     var
+      {: Número de registro auxiliar. }
       Nr  : Longint;
+      {: Registro auxiliar para operações. }
       Rec : TRecord;
 
   public
-   procedure SplitNode(splitPosition: Integer; var parentNode, newNode: TIndexNode);
+  {: Divide um nó da árvore B+ durante inserção. }
+  procedure SplitNode(splitPosition: Integer; var parentNode, newNode: TIndexNode);
    //procedure InsertInNode(nodePosition: LongInt; recordToInsert: TRecord ; var acurrentNode: TIndexNode {; var IndexFile: TIndexFile});
-     procedure InsertInNode(nodePosition: LongInt; recordToInsert: TRecord ; var acurrentNode: TIndexNode {var IndexFile: TIndexFile});
+  {: Insere um registro em um nó da árvore B+. }
+  procedure InsertInNode(nodePosition: LongInt; recordToInsert: TRecord ; var acurrentNode: TIndexNode {var IndexFile: TIndexFile});
 
-   procedure InsertRecord({var DataFile: TDataFile; var IndexFile: TIndexFile;} var recordToInsert: TRecord);
-   Procedure CreateDataFile;
-   Function OpenDataFile:Boolean;
-   Procedure CloseDataFile;
-   procedure BuildIndex;
-   function SearchKey(key: TKey{; var currentNode: TIndexNode}{; var IndexFile: TIndexFile}): LongInt;
-   function ReadFirstKey({var IndexFile: TIndexFile}): TKey;
-   function GoToLastKey({var IndexFile: TIndexFile}): TKey;
-   procedure DeleteKey(key: TKey{; var currentNode: TIndexNode; var IndexFile: TIndexFile});
-   function GoToNextKey(key: TKey {; var currentNode: TIndexNode; var IndexFile: TIndexFile}): TKey;
-   Function EofIndexFile(var CurrentKey : TKey):Boolean;
-   procedure Lista_DataFile;
-
+  {: Insere um registro na árvore B+ e no arquivo de dados. }
+  procedure InsertRecord({var DataFile: TDataFile; var IndexFile: TIndexFile;} var recordToInsert: TRecord);
+  {: Cria o arquivo de dados e insere registros de exemplo. }
+  Procedure CreateDataFile;
+  {: Abre o arquivo de dados e índice. }
+  Function OpenDataFile:Boolean;
+  {: Fecha o arquivo de dados e índice. }
+  Procedure CloseDataFile;
+  {: Constrói o índice (árvore B+) a partir do arquivo de dados. }
+  procedure BuildIndex;
+  {: Busca uma chave na árvore B+. }
+  function SearchKey(key: TKey{; var currentNode: TIndexNode}{; var IndexFile: TIndexFile}): LongInt;
+  {: Lê a primeira chave da árvore B+. }
+  function ReadFirstKey({var IndexFile: TIndexFile}): TKey;
+  {: Vai para a última chave da árvore B+. }
+  function GoToLastKey({var IndexFile: TIndexFile}): TKey;
+  {: Remove uma chave da árvore B+. }
+  procedure DeleteKey(key: TKey{; var currentNode: TIndexNode; var IndexFile: TIndexFile});
+  {: Vai para a próxima chave na ordem da árvore B+. }
+  function GoToNextKey(key: TKey {; var currentNode: TIndexNode; var IndexFile: TIndexFile}): TKey;
+  {: Verifica se chegou ao fim do arquivo de índice. }
+  Function EofIndexFile(var CurrentKey : TKey):Boolean;
+  {: Lista todos os registros do arquivo de dados em ordem de chave. }
+  procedure Lista_DataFile;
+  {: Calcula e retorna a altura da árvore B+.
+    @return Altura da árvore B+ (número de níveis da raiz até as folhas).
+  }
+  function GetBPlusTreeHeight: Integer;
   end;
 
 var
@@ -96,6 +132,31 @@ var
 implementation
 
 {$R *.lfm}
+
+function TForm1.GetBPlusTreeHeight: Integer;
+var
+  node: TIndexNode;
+  height: Integer;
+begin
+  height := 0;
+  if not FileExists('index.dat') then
+  begin
+    Result := 0;
+    Exit;
+  end;
+  AssignFile(IndexFile, 'index.dat');
+  Reset(IndexFile, SizeOf(TIndexNode));
+  Seek(IndexFile, 0);
+  Read(IndexFile, node);
+  while not node.IsLeaf do
+  begin
+    Inc(height);
+    Seek(IndexFile, node.NumberRecords[0]);
+    Read(IndexFile, node);
+  end;
+  CloseFile(IndexFile);
+  Result := height + 1; // +1 para contar o nível da folha
+end;
 
 
 procedure TForm1.SplitNode(splitPosition: Integer; var parentNode, newNode: TIndexNode);

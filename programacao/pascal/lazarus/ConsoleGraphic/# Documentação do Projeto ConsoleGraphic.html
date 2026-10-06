@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Documenta&ccedil;&atilde;o do Projeto ConsoleGraphic</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="documentação-do-projeto-consolegraphic">Documentação do Projeto ConsoleGraphic</h1>
+<h2 id="visão-geral-do-projeto">Visão Geral do Projeto</h2>
+<p>O projeto <strong>ConsoleGraphic</strong> é uma implementação de um console gráfico multiplataforma baseado no framework Turbo Vision, integrado ao Lazarus Component Library (LCL/Free Pascal). Ele simula um console texto em modo gráfico, suportando buffer de vídeo, cursor piscante, eventos de teclado/mouse, seleção de texto, clipboard (copiar/colar), e rolagem. O foco é compatibilidade com Turbo Vision (ex.: <code>TEvent</code>, <code>TSysKeyEvent</code>), com conversões CP850/UTF8 para caracteres ASCII/Unicode.</p>
+<p><strong>Objetivo</strong>: Emular console DOS-like em apps LCL, para apps Turbo Vision em GUI moderna.</p>
+<p><strong>Versão Geral</strong>: 0.0.22.0 (Alpha/Funcional, com suporte a hooks para teclado/mouse).</p>
+<p><strong>Problema em Debug</strong>: Perda de foco após ativação de menu (F10) ou comandos, fazendo teclado (setas) falhar até clique do mouse re-ativar <code>DoEnter</code> e hook.</p>
+<p><strong>Arquitetura</strong>: Herança linear: Types → Abstract → Buffer → Cursor → KeyEvent → Mouse → ScreenCapture → Video (final LCL integration). Hooks (Keyboard/Mouse) são opcionais (desabilitados por padrão).</p>
+<p>Abaixo, descrição detalhada de cada unit fornecida, com features chave, dependências, e relação com o problema de foco/teclado.</p>
+<h2 id="units-principais">Units Principais</h2>
+<h3 id="1-consolegraphictypespas">1. ConsoleGraphicTypes.pas</h3>
+<p><strong>Descrição</strong>: Define tipos, constantes e estruturas base para o projeto (cores RGB, eventos CTRL_*, buffers TScreen, manipuladores TCtrlBreakHandler).<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li>Paletas de 16 cores (DOS, VS Code, WhatsApp, etc.) com <code>TPalette</code>.</li>
+<li>Constantes VK_* (LCL) e kb* (Turbo Vision) para mapeamento.</li>
+<li>Estruturas: <code>WordRec</code> (char+attr), <code>TSysKeyEvent</code>, <code>TPartialRectangle</code> (para frames).</li>
+<li>Funções: <code>UTF8ToCP850</code>, <code>MixColors</code> para encoding/cores.<br>
+<strong>Dependências</strong>: Classes, SysUtils, Graphics, LCLType.<br>
+<strong>Relação com Problema</strong>: Fornece constantes kbF10/kbLeft para mapeamento em <code>GetKeyEvent</code>. Sem foco, mapeamento falha (KeyCode inválido).</li>
+</ul>
+<h3 id="2-consolegraphicabstractpas">2. ConsoleGraphicAbstract.pas</h3>
+<p><strong>Descrição</strong>: Classe abstrata base (<code>TConsoleGraphicAbstract</code>) para console gráfico, definindo métodos virtuais para buffer, cursor, eventos, e painting.<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li>Métodos abstratos: <code>GetCharAt</code>, <code>WriteChar</code>, <code>SysGotoXY</code>, <code>SysTVGetKeyEvent</code>, <code>SysTVDetectMouse</code>.</li>
+<li>Funções auxiliares: <code>DrawCellRect</code>, <code>MixColors</code>, <code>UnicodeToCP850</code>.</li>
+<li>Propriedades: <code>MinSize/MaxSize</code>, <code>TextAttr</code>.<br>
+<strong>Dependências</strong>: ConsoleGraphicTypes, Controls, Graphics.<br>
+<strong>Relação com Problema</strong>: Define <code>GetKeyEvent</code> abstrato — implementações dependem de foco LCL. Sem foco, eventos não chegam.</li>
+</ul>
+<h3 id="3-consolegraphicbufferpas">3. ConsoleGraphicBuffer.pas</h3>
+<p><strong>Descrição</strong>: Gerencia buffer de vídeo (<code>TConsoleGraphicBuffer</code>), alocando <code>FBuffer/FOldBuffer</code>, redimensionamento (<code>UpdateDimensions</code>), e escrita (<code>WriteStr</code>).<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li>Alocação dinâmica (<code>AllocateBuffers</code>), comparação para repaint parcial (<code>UpdateConsoleScreen</code>).</li>
+<li>Redimensionamento (<code>Resize</code>, <code>AdjustFontToFit</code> para fonte auto-ajuste).</li>
+<li>Roteamento (<code>SysTVShowBuf</code> com blocos de atributo).<br>
+<strong>Dependências</strong>: ConsoleGraphicAbstract, LCLIntf.<br>
+<strong>Relação com Problema</strong>: Buffer é atualizado em <code>UpdateConsoleScreen</code>, mas sem foco, eventos de teclado não escrevem nele (<code>WriteChar</code> falha em posições inválidas).</li>
+</ul>
+<h3 id="4-consolegraphiccursorpas">4. ConsoleGraphicCursor.pas</h3>
+<p><strong>Descrição</strong>: Gerencia cursor piscante (<code>TConsoleGraphicCursor</code>), com posicionamento (<code>SysGotoXY</code>), tipos (<code>crUnderline</code>), e timer implícito.<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li>Piscagem (<code>ShouldDrawCursor</code> via <code>GetSystemTickCount</code>).</li>
+<li>Validação de limites (<code>SetCursorX/Y</code> clamp a Cols/Rows).</li>
+<li>Tipos: crHidden, crUnderline, crHalfBlock, crBlock.<br>
+<strong>Dependências</strong>: ConsoleGraphicBuffer.<br>
+<strong>Relação com Problema</strong>: Cursor pisca em <code>DoEnter</code> (ativa timer/foco), mas sem foco, não pisca após F10 — visual confirma perda de foco.</li>
+</ul>
+<h3 id="5-consolegraphickeyeventconstspas">5. ConsoleGraphicKeyEvent.Consts.pas</h3>
+<p><strong>Descrição</strong>: Constantes para eventos de teclado (<code>TConsoleGraphicKeyEventConsts</code>), mapeando VK_* (LCL) para kb* (TV) e máscaras kbShift.<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li>Constantes kbF10, kbLeft, kbCtrlC, etc.</li>
+<li>Tabelas AltCodes para Alt+letra/número.</li>
+<li>KeyTranslateTable para combinações (ex.: Ctrl+Ins = kbCtrlIns).<br>
+<strong>Dependências</strong>: ConsoleGraphicCursor, LCLType.<br>
+<strong>Relação com Problema</strong>: kbF10 = $4400 usado em <code>GetKeyEvent</code> — sem foco, LCL não envia VK_F10, mapeamento falha.</li>
+</ul>
+<h3 id="6-consolegraphickeyeventpas">6. ConsoleGraphicKeyEvent.pas</h3>
+<p><strong>Descrição</strong>: Implementa processamento de teclado (<code>TConsoleGraphicKeyEvent</code>), com fila <code>FKeyEvents</code>, conversão LCL→TV (<code>LCLKeyToTurboVision</code>), e handlers (<code>DoKeyHandler</code>).<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li><code>KeyDown</code>/<code>UTF8KeyPress</code> adicionam a fila se hook off.</li>
+<li><code>ProcessKeyEvent</code> processa fila, movendo cursor/rolando tela.</li>
+<li><code>GetKeyEvent</code> preenche <code>TEvent</code> de buffer/hook, filtrando repetições.</li>
+<li>Hook opcional (<code>fEnableKeyBordHook = False</code> por padrão).<br>
+<strong>Dependências</strong>: ConsoleGraphicKeyEvent.Consts, KeyboardEventBuffer*, KeyboardHookManager*.<br>
+<strong>Relação com Problema</strong>: Hook off faz depender de LCL KeyDown (falha sem foco). <code>DoEnter</code> re-anexa hook, mas F10 não chama DoEnter — mouse sim.</li>
+</ul>
+<h3 id="7-keyboardeventbufferpas">7. KeyboardEventBuffer.pas</h3>
+<p><strong>Descrição</strong>: Buffer circular thread-safe (<code>TKeyboardEventBuffer</code>) para eventos ketDown (teclas pressionadas), ignorando ketUp.<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li>Push/Pop/Peek com <code>TCriticalSection</code>.</li>
+<li>Grow automático se cheio.<br>
+<strong>Dependências</strong>: SyncObjs.<br>
+<strong>Relação com Problema</strong>: Buffer armazena eventos do hook — se hook não captura (sem foco), buffer vazio, <code>GetKeyEvent</code> falha.</li>
+</ul>
+<h3 id="8-keyboardeventbufferhookhelperpas">8. KeyboardEventBufferHookHelper.pas</h3>
+<p><strong>Descrição</strong>: Helper (<code>TKeyboardHookHelper</code>) para substituir WindowProc e rotear LM_KEY* para gerenciador.<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li><code>HookWindowProc</code> intercepta LM_KEYFIRST..LM_KEYLAST.</li>
+<li>Singleton <code>TKeyboardHookManager</code> gerencia helpers e buffer.</li>
+<li>Filtragem em <code>AddToBuffer</code> (ignora repetições, modificadores puros).<br>
+<strong>Dependências</strong>: KeyboardEventBuffer.<br>
+<strong>Relação com Problema</strong>: Hook anexado em <code>CreateWnd</code> se ativado, mas desanexado em <code>DestroyWnd</code>. Sem foco, mensagens não chegam ao WindowProc.</li>
+</ul>
+<h3 id="9-keyboardhookmanagercp850_upas">9. KeyboardHookManagerCp850_u.pas</h3>
+<p><strong>Descrição</strong>: Gerenciador singleton (<code>TKeyboardHookManagerCp850</code>) com conversão Unicode→CP850 para Turbo Vision.<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li><code>ConvertToCP850</code> converte CharCode para CP850.</li>
+<li>Singleton garante uma instância.<br>
+<strong>Dependências</strong>: KeyboardEventBufferHookHelper, ConsoleGraphicAbstract.<br>
+<strong>Relação com Problema</strong>: Conversão em <code>ConvertEvent</code> — sem eventos (foco perdido), conversão não ocorre.</li>
+</ul>
+<h3 id="10-keyboardhookmanagercp850tv_upas">10. KeyboardHookManagerCp850Tv_u.pas</h3>
+<p><strong>Descrição</strong>: Especializado para TV (<code>TKeyboardHookManagerCp850Tv</code>), com mapeamento LCL→TV (<code>LCLKeyToTV</code>) e tradução (<code>TranslateKeyEvent</code>).<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li><code>GetNextEvent</code> pop do buffer e traduz para <code>TEvent</code>.</li>
+<li><code>LCLKeyToTV</code> mapeia VK_F10→kbF10, com Shift/Ctrl/Alt.<br>
+<strong>Dependências</strong>: KeyboardHookManagerCp850_u, ConsoleGraphicKeyEvent.Consts.<br>
+<strong>Relação com Problema</strong>: <code>GetKeyEvent</code> usa isso — sem buffer cheio (foco perdido), retorna evNothing.</li>
+</ul>
+<h3 id="11-mouseeventbufferpas">11. MouseEventBuffer.pas</h3>
+<p><strong>Descrição</strong>: Buffer circular (<code>TMouseEventBuffer</code>) para eventos metDown/Up/Move/Wheel, com detecção double-click por tempo/distância.<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li>Push com double-click check.</li>
+<li>Grow automático.<br>
+<strong>Dependências</strong>: SyncObjs.<br>
+<strong>Relação com Problema</strong>: Paralelo a keyboard buffer — mouse ativa foco em <code>MouseDown</code>, &quot;consertando&quot; teclado.</li>
+</ul>
+<h3 id="12-mouseeventbufferhookhelperpas">12. MouseEventBufferHookHelper.pas</h3>
+<p><strong>Descrição</strong>: Helper (<code>TMouseHookHelper</code>) para WindowProc hook de LM_MOUSE*.<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li><code>HookWindowProc</code> roteia para gerenciador.</li>
+<li>Singleton <code>TMouseHookManager</code> gerencia buffer.<br>
+<strong>Dependências</strong>: MouseEventBuffer.<br>
+<strong>Relação com Problema</strong>: Hook anexado em <code>CreateWnd</code> se ativado, mas desabilitado por padrão.</li>
+</ul>
+<h3 id="13-mouseeventbufferhookhelperexpas">13. MouseEventBufferHookHelperEx.pas</h3>
+<p><strong>Descrição</strong>: Estendido (<code>TMouseHookManagerEx</code>) com char position (<code>GetCharPosition</code>) e filtragem moves (só se posição mudou).<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li><code>HandleMouseEvent</code> filtra LM_MOUSE* e adiciona a buffer.</li>
+<li><code>FLastMouseMoveCharPos</code> evita spam de moves.<br>
+<strong>Dependências</strong>: MouseEventBufferHookHelper.<br>
+<strong>Relação com Problema</strong>: Filtragem otimiza, mas mouse events ativam <code>SetFocus</code> em <code>MouseDown</code>, despertando teclado.</li>
+</ul>
+<h3 id="14-consolegraphicscreencapturepas">14. ConsoleGraphicScreenCapture.pas</h3>
+<p><strong>Descrição</strong>: Suporte a seleção/copiar/colar (<code>TConsoleGraphicScreenCapture</code>), com menu popup.<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li>Seleção com mouse (<code>MouseDown/Move/Up</code> para FSel*).</li>
+<li><code>CopyToClipboard</code> constrói string do buffer, converte UTF8/CP850.<br>
+<strong>Dependências</strong>: ConsoleGraphicMouse, Clipbrd.<br>
+<strong>Relação com Problema</strong>: <code>MouseDown</code> herda <code>SetFocus</code>, ativando foco/teclado.</li>
+</ul>
+<h3 id="15-consolegraphicmousepas">15. ConsoleGraphicMouse.pas</h3>
+<p><strong>Descrição</strong>: Gerencia eventos de mouse (<code>TConsoleGraphicMouse</code>), com buffer <code>FMouseEvents</code> e simulação (<code>SimulateMouseDown</code>).<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li><code>GetMouseEvent</code> desinfileira e converte para <code>TEvent</code> (evMouseDown/Move).</li>
+<li>Hook opcional (<code>EnableMouseHook = false</code>).</li>
+<li><code>MouseDown</code> chama <code>SetFocus</code>.<br>
+<strong>Dependências</strong>: ConsoleGraphicKeyEvent, MouseEventBuffer*.<br>
+<strong>Relação com Problema</strong>: <code>SetFocus</code> em <code>MouseDown</code> &quot;conserta&quot; teclado. F10 não chama isso.</li>
+</ul>
+<h3 id="16-consolegraphicvideopas">16. ConsoleGraphicVideo.pas</h3>
+<p><strong>Descrição</strong>: Classe final (<code>TConsoleGraphicVideo</code>), integra tudo com LCL painting (<code>Paint</code>), timer cursor (<code>TimerHandler</code>), e hooks (<code>CreateWnd</code>).<br>
+<strong>Features Chave</strong>:</p>
+<ul>
+<li><code>Paint</code> renderiza buffer centralizado, com cursor.</li>
+<li><code>DoEnter</code> re-anexa hook de teclado, ativa timer.</li>
+<li><code>Select</code> chama <code>SetFocus</code> se TabStop/CanFocus.<br>
+<strong>Dependências</strong>: Todas as anteriores + ExtCtrls, Clipbrd.<br>
+<strong>Relação com Problema</strong>: <code>DoEnter</code> re-anexa hook, mas só chamado por mouse/foco LCL. F10 ativa menu sem DoEnter, perdendo hook.</li>
+</ul>
+<h2 id="arquitetura-geral">Arquitetura Geral</h2>
+<ul>
+<li><strong>Herança</strong>: Types → Abstract → Buffer → Cursor → KeyEvent → Mouse → ScreenCapture → Video.</li>
+<li><strong>Hooks</strong>: Opcionais (desabilitados por padrão) — teclado/mouse anexados em <code>CreateWnd</code> se ativados, re-anexados em <code>DoEnter</code>.</li>
+<li><strong>Problema Central</strong>: Hooks desabilitados + falta de <code>SetFocus</code> em ativação de menu (F10) = perda de captura de teclado até mouse.</li>
+<li><strong>Solução Recomendada</strong>: Ativar hooks no construtor, adicionar <code>SetFocus</code> em TvMenus.HandleEvent para cmMenu, e <code>ProcessMessages</code> após comandos.</li>
+</ul>
+<p><strong>Próximo Passo</strong>: Teste as sugestões acima. Se precisar de mais units ou log, envie! O projeto é robusto para console gráfico.</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

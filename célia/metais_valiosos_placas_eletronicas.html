@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Metais Valiosos em Placas Eletr&ocirc;nicas</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="metais-valiosos-em-placas-eletrônicas">Metais Valiosos em Placas Eletrônicas</h1>
+<p>Este documento apresenta uma visão geral dos principais metais valiosos encontrados em placas eletrônicas (como placas-mãe, celulares e outros dispositivos), incluindo suas quantidades médias e onde estão localizados.</p>
+<blockquote>
+<p><strong>Nota metodológica:</strong> Os valores abaixo foram revisados com base em literatura científica (ScienceDirect, ONU/UNU, EPA). As quantidades variam amplamente conforme o tipo de equipamento. Onde aplicável, são indicados intervalos separados para <strong>placas comuns</strong> (placas-mãe de desktop, TVs, eletrodomésticos) e <strong>placas de alto valor</strong> (smartphones, servidores, telecomunicações).</p>
+</blockquote>
+<hr>
+<h2 id="tabela-de-metais-e-quantidades">Tabela de Metais e Quantidades</h2>
+<table>
+<thead>
+<tr>
+<th>Metal</th>
+<th>Placas comuns (g ou kg/ton)</th>
+<th>Placas de alto valor (g ou kg/ton)</th>
+<th>Onde é encontrado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ouro (Au)</td>
+<td><strong>30 a 100 g</strong></td>
+<td><strong>200 a 350 g</strong></td>
+<td>Conectores, contatos de memória, CPUs, bordas douradas</td>
+</tr>
+<tr>
+<td>Prata (Ag)</td>
+<td><strong>1 a 2 kg</strong></td>
+<td><strong>2 a 4 kg</strong></td>
+<td>Soldas, contatos, trilhas e relés</td>
+</tr>
+<tr>
+<td>Paládio (Pd)</td>
+<td><strong>80 a 130 g</strong></td>
+<td><strong>130 a 250 g</strong></td>
+<td>Capacitores cerâmicos SMD (MLCC)</td>
+</tr>
+<tr>
+<td>Platina (Pt)</td>
+<td><strong>traços a 5 g</strong> ¹</td>
+<td><strong>5 a 20 g</strong></td>
+<td>Pequenas quantidades em componentes específicos</td>
+</tr>
+<tr>
+<td>Cobre (Cu)</td>
+<td><strong>150 a 300 kg</strong> ²</td>
+<td><strong>100 a 200 kg</strong></td>
+<td>Trilhas da placa, bobinas, fios</td>
+</tr>
+<tr>
+<td>Estanho (Sn)</td>
+<td><strong>20 a 50 kg</strong></td>
+<td><strong>20 a 50 kg</strong></td>
+<td>Solda eletrônica</td>
+</tr>
+<tr>
+<td>Chumbo (Pb)</td>
+<td><strong>10 a 30 kg</strong> (placas pré-2006) ³</td>
+<td>—</td>
+<td>Solda antiga (RoHS proibiu o uso)</td>
+</tr>
+<tr>
+<td>Níquel (Ni)</td>
+<td><strong>10 a 20 kg</strong></td>
+<td><strong>10 a 20 kg</strong></td>
+<td>Revestimentos metálicos, conectores</td>
+</tr>
+<tr>
+<td>Tântalo (Ta)</td>
+<td><strong>200 a 500 g</strong></td>
+<td><strong>200 a 500 g</strong></td>
+<td>Capacitores de tântalo</td>
+</tr>
+<tr>
+<td>Cobalto (Co)</td>
+<td><strong>não significativo na placa</strong> ⁴</td>
+<td><strong>não significativo na placa</strong> ⁴</td>
+<td>Principalmente em baterias (não na placa em si)</td>
+</tr>
+<tr>
+<td>Terras raras</td>
+<td><strong>traços (&lt; 10 g)</strong></td>
+<td><strong>traços (&lt; 10 g)</strong></td>
+<td>Ímãs, chips e alguns componentes especiais</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="notas-de-revisão">Notas de Revisão</h2>
+<p><strong>¹ Platina (Pt):</strong> Em grande parte das PCBs comuns, a platina é detectada abaixo do limite de quantificação analítica. Sua presença significativa restringe-se a equipamentos especializados (discos rígidos de alta performance, células de combustível, termopares). O valor original de &quot;5 a 20 g&quot; aplica-se apenas a placas de alto valor.</p>
+<p><strong>² Cobre (Cu):</strong> O valor original (100–200 kg/ton) subestima as placas comuns. Estudos indicam teores de 20% a 36% em peso em PCBs de desktop e equipamentos de TV, equivalentes a 200–360 kg/ton. O intervalo corrigido para placas comuns reflete essa realidade. Para celulares, o teor de cobre é menor (~130 kg/ton), aproximando-se do valor original.</p>
+<p><strong>³ Chumbo (Pb):</strong> Aplicável somente a placas fabricadas antes de 2006, quando a diretiva RoHS (Europa) e normas equivalentes restringiram o uso de chumbo na solda. Placas modernas utilizam ligas livres de chumbo (ex: Sn-Ag-Cu).</p>
+<p><strong>⁴ Cobalto (Co):</strong> Não está presente em quantidades relevantes na placa de circuito impresso em si. Ocorre principalmente nas células de baterias de íon-lítio (LiCoO₂). Incluí-lo na tabela de metais de PCBs, sem essa distinção, é tecnicamente impreciso.</p>
+<hr>
+<h2 id="correção-do-dado-de-ouro--destaque">Correção do Dado de Ouro — Destaque</h2>
+<p>O valor original de <strong>&quot;200 a 350 g/ton&quot;</strong> foi apresentado como média geral, o que é enganoso. A literatura científica mostra variação de uma ordem de grandeza conforme o tipo de equipamento:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de equipamento</th>
+<th>Ouro estimado por tonelada</th>
+<th>Fonte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Placas-mãe de desktop (usadas)</td>
+<td>~39 g</td>
+<td>ScienceDirect (2021)</td>
+</tr>
+<tr>
+<td>PCBs gerais (mistura)</td>
+<td>30 a 100 g</td>
+<td>Harare Institute of Technology</td>
+</tr>
+<tr>
+<td>Celulares</td>
+<td>~340 g</td>
+<td>Universidade das Nações Unidas (2009)</td>
+</tr>
+<tr>
+<td>Smartphones / servidores</td>
+<td>200 a 400 g</td>
+<td>Literatura diversa</td>
+</tr>
+</tbody>
+</table>
+<p>O intervalo 200–350 g é <strong>realista para celulares e servidores</strong>, mas representa um valor entre 3× e 10× maior do que o encontrado em placas-mãe comuns de desktop.</p>
+<hr>
+<h2 id="observações-importantes">Observações Importantes</h2>
+<ul>
+<li>As quantidades variam conforme o tipo de placa:
+<ul>
+<li>Placas de celular e servidores possuem maior concentração de ouro e paládio.</li>
+<li>Placas de TV e eletrodomésticos possuem mais cobre e menos metais nobres.</li>
+<li>Processadores antigos (ex: Pentium) são mais ricos em ouro que os modernos.</li>
+</ul>
+</li>
+<li>A concentração de metais preciosos em PCBs é <strong>muito superior</strong> à encontrada em minérios naturais (ex: minérios de ouro contêm &lt; 10 g/ton; PCBs de celular contêm ~340 g/ton).</li>
+</ul>
+<hr>
+<h2 id="considerações-sobre-reciclagem">Considerações sobre Reciclagem</h2>
+<p>A extração desses metais:</p>
+<ul>
+<li>Exige processos químicos e industriais complexos (hidrometalurgia, pirometalurgia).</li>
+<li>Pode envolver substâncias perigosas (ácido nítrico, água régia, cianeto de sódio).</li>
+<li>Deve ser realizada por empresas especializadas e certificadas.</li>
+<li>Tem impacto ambiental significativamente menor do que a mineração primária.</li>
+</ul>
+<hr>
+<h2 id="sugestão-para-uso-educacional">Sugestão para Uso Educacional</h2>
+<p>Para aulas ou oficinas, é possível demonstrar na prática:</p>
+<ul>
+<li><strong>Memórias RAM</strong> → contatos dourados (bordas dos pentes)</li>
+<li><strong>Placas-mãe</strong> → trilhas de cobre (visíveis na face inferior)</li>
+<li><strong>Capacitores SMD cerâmicos</strong> → presença de paládio</li>
+<li><strong>Processadores antigos (Pentium, 486)</strong> → maior teor de ouro que os modernos</li>
+</ul>
+<p>Este material pode ser utilizado como apoio didático em cursos e oficinas sobre lixo eletrônico e reciclagem, desde que os intervalos quantitativos sejam apresentados com a distinção entre tipos de equipamento.</p>
+<hr>
+<p><em>Revisado com base em: ScienceDirect (2015, 2021), MDPI Sustainability (2024), Universidade das Nações Unidas / UNU (2009), EPA (EUA), Instituto de Tecnologia de Harare.</em></p>
+
+            
+            
+        </body>
+        </html>

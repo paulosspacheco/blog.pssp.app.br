@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Projeto Console Virtual escrito em pascal</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="projeto-console-virtual-escrito-em-pascal">Projeto Console Virtual escrito em pascal</h1>
+<h2 id="objetivo">Objetivo</h2>
+<ul>
+<li>Tenho um sistema ERP que construiu no transcorre dos meus 40 anos de programação na linguagem pascal,  como o mesmo foi escrito inicialmente em turbo pascal usando a interface Turbo Vision, o mesmo hoje tem uma dependência do console do sistema operacional, por isso o mesmo é complicado de manter, visto que depende da API console do windows.</li>
+<li>Neste fim de semana me surgiu o insight de criar a api do windows no Lazarus para que a revitalização do projeto possa renascer ja que o mesmo tem muita coisa boa que pode ajudar muita a gerente a criar contabilidade integrada em tempo real com os sistemas de faturamento, compras e financeiro.</li>
+<li>Preciso implementar as seguintes funções que hoje dependem do windows.</li>
+<li>A Unit VpSysLow.pas contém a api do windows e as constantes necessárias.</li>
+<li>O Turbo Vision contem duas Units que dependem do VpSysLow. Segue nas cessões abaixo:</li>
+</ul>
+<h2 id="unit-driverspas">Unit Drivers.pas</h2>
+<h3 id="constantes-e-tipos-que-estão-em-vpsyslowpas">Constantes e tipos que estão em VpSysLow.pas</h3>
+<ul>
+<li>
+<p><em>VpSysLow.FontCuston</em></p>
+<ul>
+<li>Modo de Vídeo customizado;</li>
+</ul>
+</li>
+<li>
+<p><em>VpSysLow.Max_X_TSysScrBuf</em></p>
+<ul>
+<li>Largura máxima do buffer do console usada para calcular Sizeof_TSysScrBuf que a dimensão da matriz do buffer do console;</li>
+<li><em>Max_Y_TSysScrBuf</em>
+<ul>
+<li>Altura máxima do buffer do console.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>Sizeof_TSysScrBuf</em></p>
+<ul>
+<li>Contém a dimensão das matrizes usadas no buffer da tela do console:
+<ul>
+<li>TSysWordScrBuf   = array[0.. (Sizeof_TSysScrBuf div sizeof(ord))  ]  of Word;</li>
+<li>TSysInt64ScrBuf  = array[0.. (Sizeof_TSysScrBuf div sizeof(Int64))] of Int64;</li>
+<li>TSysScrBuf       = array[0..Sizeof_TSysScrBuf] of AnsiChar;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>SysScrBuf</em></p>
+<ul>
+<li>
+<p>Ponteiro para o buffer do console;</p>
+<p>```pascal`
+SysScrBuf    : ^TSysScrBuf = nil;</p>
+<pre><code></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><em>Max_X_menos = 1</em> ;</p>
+<ul>
+<li>Número de colunas que deve subtrair do Máximo de colunas da tela.</li>
+</ul>
+</li>
+<li>
+<p><em>Max_Y_menos = 1</em>;</p>
+<ul>
+<li>Número de Linhas que deve subtrair do Máximo de linhas da tela.</li>
+</ul>
+</li>
+<li>
+<p><em>TSysMouseEvent</em></p>
+<ul>
+<li>
+<p>Estrutura que captura os eventos do mouse:</p>
+<pre><code class="language-pascal">
+  <span class="hljs-keyword">type</span>
+    TSysPointMouse = <span class="hljs-keyword">packed</span> <span class="hljs-keyword">record</span>
+      X,Y  : SmallWord;  <span class="hljs-comment">//Obs: X,Y para o mouse não pode ter mais de bytes.</span>
+    <span class="hljs-keyword">end</span>;
+
+    TSysMouseEvent = <span class="hljs-keyword">packed</span> <span class="hljs-keyword">record</span>
+      smeTime    : Longint;
+      smePos     : TSysPointMouse;
+      smeButtons : Byte;
+    <span class="hljs-keyword">end</span>;
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><em>TSysKeyEvent</em></p>
+<ul>
+<li>Tipo usado na captura dos eventos do teclado<pre><code class="language-pascal">
+  TSysKeyEvent = <span class="hljs-keyword">packed</span> <span class="hljs-keyword">record</span>
+    skeKeyCode:    SmallWord;
+    skeShiftState: Byte;
+  <span class="hljs-keyword">end</span>;
+            
+``
+-  
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><em>TSysKeyQueue</em></p>
+<ul>
+<li>Usado para buffer do teclado do console<pre><code class="language-pascal">  TSysKeyQueue = <span class="hljs-keyword">array</span> [<span class="hljs-number">0</span> .. <span class="hljs-number">15</span>] <span class="hljs-keyword">of</span> TSysKeyEvent;
+</code></pre>
+</li>
+<li>l</li>
+</ul>
+</li>
+<li>
+<p><em>CheckBreak</em> : Boolean = false;   // False = Disable Ctrl-Break</p>
+<ul>
+<li>Habilita e desabilita Ctrl-Break</li>
+</ul>
+</li>
+<li>
+<p><em>TSysPoint</em></p>
+<ul>
+<li>Posição do cursor na tela<pre><code class="language-pascal">  <span class="hljs-keyword">type</span>
+    TSysPoint = <span class="hljs-keyword">packed</span> <span class="hljs-keyword">record</span>
+      X,Y  : Integer;
+    <span class="hljs-keyword">end</span>;
+    
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>BW40          = 0;            { 40x25 B/W on Color Adapter }</p>
+</li>
+<li>
+<p>CO40          = 1;            { 40x25 Color on Color Adapter }</p>
+</li>
+<li>
+<p>BW80          = 2;            { 80x25 B/W on Color Adapter }</p>
+</li>
+<li>
+<p>CO80          = 3;            { 80x25 Color on Color Adapter }</p>
+</li>
+<li>
+<p>Mono          = 7;            { 80x25 on Monochrome Adapter }</p>
+</li>
+<li>
+<p>FontCuston    = 8;            { Usa as coordenas Max_X e Max_Y}</p>
+</li>
+<li>
+<p>Font8x8       = 256;          { Add-in for ROM font }</p>
+</li>
+<li>
+<p>FontMaxXY     = $00FF;        { Indica o modo máximo de xy informado por SysGetLargestConsoleWindowSize}</p>
+</li>
+<li>
+<p>SysAttachConsole_ATTACH_PARENT_PROCESS = DWORD(-1);</p>
+<ul>
+<li>Constante usada para informar a SysAttachConsole que o console a se executado não tem dono.</li>
+</ul>
+</li>
+<li>
+<p>TType_Font_Console</p>
+<ul>
+<li>Tipo de fonte do console<pre><code class="language-pascal">
+  <span class="hljs-keyword">Type</span>
+      TType_Font_Console = (
+        Font_Terminal,  <span class="hljs-comment">// =  0; //não altera o tamanho da fonte do console</span>
+        Font_TrueType); <span class="hljs-comment">// =  1; //Fonte tipo true type lucida console.</span>
+    <span class="hljs-keyword">Const</span>
+      Type_Font_Console : TType_Font_Console = Font_Terminal;         
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><em>TNumber_font_Console</em></p>
+<ul>
+<li>Tipo de fontes<pre><code class="language-pascal">    <span class="hljs-keyword">Type</span>
+    TNumber_font_Console = (
+      Font_Padrao, <span class="hljs-comment">//=  0; //não altera o tamanho da fonte do console</span>
+      Font_4x6   , <span class="hljs-comment">//=  1; //  1 = 4 x 6   //Muito pequena. Inviavel.</span>
+      Font_6x8   , <span class="hljs-comment">//=  2;</span>
+      Font_8x8   , <span class="hljs-comment">//=  3;  //Inviavel fica atropelando uma as outras letras</span>
+      Font_5x12  , <span class="hljs-comment">//=  4; //Viavel</span>
+      Font_7x12  , <span class="hljs-comment">//=  5; //Viavel</span>
+      Font_8x12  , <span class="hljs-comment">//=  6; //Viavel</span>
+      Font_16x12 , <span class="hljs-comment">//=  7;</span>
+      Font_16x8  , <span class="hljs-comment">//=  8;  //inviável letrar feia</span>
+      Font_12x16 , <span class="hljs-comment">//=  9; //Viavel</span>
+      Font_10x18 ); <span class="hljs-comment">// = 10;  //Viavel</span>
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><em>Cm_CTRL = 65000</em>;</p>
+<ul>
+<li>Número dos comandos de controle</li>
+</ul>
+</li>
+<li>
+<p><em>Cm_CTRL_BREAK_EVENT	   = Cm_CTRL+ 00</em>;</p>
+<ul>
+<li>A CTRL+BREAK signal was received, either from keyboard input or from a signal generated by GenerateConsoleCtrlEvent.</li>
+</ul>
+</li>
+<li>
+<p><em>Cm_CTRL_CLOSE_EVENT	   = Cm_CTRL+ 01</em>;</p>
+<ul>
+<li>A signal that the system sends to all processes attached to a console when the user closes the console (either by choosing the Close command from the console window's System menu, or by choosing the End Task command from the Task List).</li>
+</ul>
+</li>
+<li>
+<p><em>Cm_CTRL_LOGOFF_EVENT	   = Cm_CTRL+ 02</em>;</p>
+<ul>
+<li>A signal that the system sends to all console processes when a user is logging off. This signal does not indicate which user is logging off, so no assumptions can be made.</li>
+</ul>
+</li>
+<li>
+<p><em>Cm_CTRL_SHUTDOWN_EVENT   = Cm_CTRL+ 03</em>;</p>
+<ul>
+<li>A signal that the system sends to all console processes when the system is shutting down.</li>
+</ul>
+</li>
+</ul>
+<h3 id="funções-que-estão-em-vpsyslowpas">Funções que estão em VpSysLow.pas</h3>
+<ul>
+<li>
+<p><em>function SysGetVideoModeInfo( Var Cols, Rows: Integer; Var Colours : SmallWord ): Integer;</em></p>
+<ul>
+<li>Retorna as coordenas do modo de vídeo;</li>
+</ul>
+</li>
+<li>
+<p><em>Function Max_X : word;</em></p>
+<ul>
+<li>Result := _Max_X -  Max_X_menos;
+<ul>
+<li>Determina o número de colunas visível do console;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>Function Max_Y : word;</em></p>
+<ul>
+<li>Result := _Max_Y -  Max_Y_menos;
+<ul>
+<li>Determina o número de linhas visível do console;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>function  SysTVDetectMouse: Longint;</em></p>
+<ul>
+<li>Result := 2;
+<ul>
+<li>Não sei porque essa função retorna uma constante; penso que é porque vpSysLow não é <strong>DOS</strong> e sim <strong>win32</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>procedure SysTVShowMouse</em>; // No control over mouse pointer in Win32</p>
+<ul>
+<li>No win32 esta função não faz nada;</li>
+</ul>
+</li>
+<li>
+<p><em>procedure SysTVHideMouse;</em> // No control over mouse pointer in Win32</p>
+<ul>
+<li>No win32 está procedure não faz nada.</li>
+</ul>
+</li>
+<li>
+<p><em>procedure SysTVCreateMouse(var X, Y: Integer);</em></p>
+<ul>
+<li>Retorna 0 em x e y</li>
+</ul>
+</li>
+<li>
+<p><em>procedure SysTVDestroyMouse(Close: Boolean);</em></p>
+<ul>
+<li>No win32 esta procedure não faz nada;</li>
+</ul>
+</li>
+<li>
+<p><em>procedure SysCtrlSleep(Const Delay: Cardinal);</em></p>
+<ul>
+<li>
+<p>Se permite que o processador realize outras tarefas e quando entregado a vcl executa o laço de mensagem.</p>
+<pre><code class="language-pascal">   <span class="hljs-keyword">If</span> SysCtrlSleep_Enable <span class="hljs-keyword">Then</span>
+   <span class="hljs-keyword">begin</span>
+     <span class="hljs-keyword">If</span> FORMS_Application_ProcessMessages <span class="hljs-keyword">and</span> (Application &lt;&gt; <span class="hljs-keyword">nil</span>) <span class="hljs-keyword">Then</span>
+       Application.ProcessMessages;
+
+     Sleep(Delay);
+   <span class="hljs-keyword">end</span>;  
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><em>function SysTVGetMouseEvent(var Event: TSysMouseEvent): Boolean;</em></p>
+<ul>
+<li>Captura o evento do mouse</li>
+</ul>
+</li>
+<li>
+<p><em>function SysSysMsCount: DWORD;</em></p>
+<ul>
+<li>Result := GetTickCount;</li>
+</ul>
+</li>
+<li>
+<p><em>procedure SysTVKbdCreate;</em></p>
+<ul>
+<li>Informa a API Console o modo dos eventos do teclado<pre><code class="language-pascal">      SetConsoleMode(SysConIn, ENABLE_MOUSE_INPUT);
+      SetConsoleCP(Const_CodePage);                     
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><em>procedure SysTVUpdateMouseWhere(var X, Y: Integer)</em></p>
+<ul>
+<li>Esse procedimento não faz nada acho que é porque quando era DOS precisava e agora existe para manter compatibilidade com o passado.</li>
+</ul>
+</li>
+<li>
+<p><em>function SysTVGetKeyEvent(var Event: TSysKeyEvent): Boolean;</em></p>
+<ul>
+<li>Captura eventos do teclado</li>
+</ul>
+</li>
+<li>
+<p><em>CtrlBreakHandler</em></p>
+<ul>
+<li>Ponteiro para função para captura a teclara Crtl Break (^C)<pre><code class="language-Pascal">
+  
+   <span class="hljs-keyword">var</span>
+     PrevXcptProc: Pointer;
+
+   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SignalHandler</span><span class="hljs-params">(Report: PExceptionRecord; Registration: Pointer;
+     Context: PContext; P: Pointer)</span>:</span> Longint; <span class="hljs-keyword">stdcall</span>;
+   <span class="hljs-keyword">begin</span>
+     <span class="hljs-keyword">if</span> (Report^.ExceptionCode = status_Control_C_Exit) <span class="hljs-keyword">and</span>
+       assigned(CtrlBreakHandler) <span class="hljs-keyword">and</span> CtrlBreakHandler <span class="hljs-keyword">then</span>
+       Result := <span class="hljs-number">1</span>
+     <span class="hljs-keyword">else</span>
+       Result := <span class="hljs-number">0</span>;
+   <span class="hljs-keyword">end</span>;   
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">CrtCtrlBreakHandler</span>:</span> Boolean;
+  <span class="hljs-keyword">begin</span>
+     result := <span class="hljs-keyword">not</span> CheckBreak;
+  <span class="hljs-keyword">end</span>; 
+
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><em>function SysTVGetShiftState: Byte;</em></p>
+<ul>
+<li>Retorna o estado das teclas aciono por shift</li>
+</ul>
+</li>
+<li>
+<p><em>function SysTVGetScrMode(Size: PSysPoint): Integer;</em></p>
+<ul>
+<li>Retorna o modo CRT que pode ser:<pre><code class="language-pascal">
+ <span class="hljs-keyword">const</span>
+    BW40          = <span class="hljs-number">0</span>;            <span class="hljs-comment">{ 40x25 B/W on Color Adapter }</span>
+    CO40          = <span class="hljs-number">1</span>;            <span class="hljs-comment">{ 40x25 Color on Color Adapter }</span>
+    BW80          = <span class="hljs-number">2</span>;            <span class="hljs-comment">{ 80x25 B/W on Color Adapter }</span>
+    CO80          = <span class="hljs-number">3</span>;            <span class="hljs-comment">{ 80x25 Color on Color Adapter }</span>
+    Mono          = <span class="hljs-number">7</span>;            <span class="hljs-comment">{ 80x25 on Monochrome Adapter }</span>
+    FontCuston    = <span class="hljs-number">8</span>;            <span class="hljs-comment">{ Usa as coordenas Max_X e Max_Y}</span>
+    Font8x8       = <span class="hljs-number">256</span>;          <span class="hljs-comment">{ Add-in for ROM font }</span>
+    FontMaxXY     = <span class="hljs-number">$00FF</span>;        <span class="hljs-comment">{ Indica o modo maximo de xy informado por SysGetLargestConsoleWindowSize}</span>
+  
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><em>Function SysTVSetScrMode(Mode: Integer):Integer;</em>{Retorna o código do error}</p>
+<ul>
+<li>Informa a API console o modo de vídeo</li>
+</ul>
+</li>
+<li>
+<p><em>function SysTVGetSrcBuf: Pointer;</em></p>
+<ul>
+<li>Retorna o buffer do console
+<ul>
+<li>result := SysScrBuf;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>procedure SysTVGetCurType(var Y1, Y2: Integer; var Visible: Boolean);</em></p>
+<ul>
+<li>Retorna o tipo do cursor
+<ul>
+<li>Executa a API :  GetConsoleCursorInfo(SysConOut, ConsoleCursorInfo);</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><em>procedure SysTVSetCurType(Y1, Y2: Integer; Show: Boolean);</em></p>
+<ul>
+<li>Seta o tipo do cursor</li>
+<li>Executa a API SetConsoleCursorInfo(SysConOut, Info);</li>
+</ul>
+</li>
+<li>
+<p><em>function SysAllocConsole(dwATTACH_PARENT_PROCESS: DWORD): Bool;</em></p>
+<ul>
+<li>Aloca um console quando o sistema estiver no modo GUI</li>
+</ul>
+</li>
+<li>
+<p><em>SysSetConsoleInfo</em></p>
+<ul>
+<li>
+<p>Seleciona a fonte do Console.</p>
+<pre><code class="language-pascal">  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysSetConsoleInfo</span><span class="hljs-params">(aType_Font_Console:TType_Font_Console;aNumber_font_Console:TNumber_font_Console;apalettes_Console:<span class="hljs-keyword">String</span>)</span>:</span>Integer;<span class="hljs-keyword">Overload</span>;
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><em>procedure UpdateScreen(Force: Boolean);</em></p>
+<ul>
+<li>Atualiza o buffer do Console<pre><code class="language-pascal">
+<span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">UpdateScreen</span><span class="hljs-params">(Force: Boolean)</span>;</span>
+<span class="hljs-keyword">Begin</span>
+  SysScrBufSize := SysBufInfo.dwMaximumWindowSize.X <span class="hljs-comment">// dwSize</span>
+    * SysBufInfo.dwMaximumWindowSize.Y <span class="hljs-comment">// DwSize</span>
+    * <span class="hljs-number">2</span>;
+  <span class="hljs-comment">// force := true;  {Teste do menu????}</span>
+
+  <span class="hljs-keyword">if</span> Force <span class="hljs-keyword">then</span>
+  <span class="hljs-keyword">Begin</span>
+    <span class="hljs-comment">{ smallforce :=true; }</span>
+    I := <span class="hljs-number">0</span>;
+    j := SysScrBufSize;
+    SysTVShowBuf(I, j);
+    Move(SysScrBuf[I], SysOldScrBuf[I], j - I);
+  <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">else</span>
+  <span class="hljs-keyword">begin</span>
+    <span class="hljs-comment">// *** Encontra a poisicao inicial auterada da tela ***</span>
+    aSysScrBufSize := SysScrBufSize <span class="hljs-keyword">div</span> SizeOf(Word);
+    I := <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">While</span> (I &lt; aSysScrBufSize) <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">Begin</span>
+      <span class="hljs-keyword">if</span> SysWordScrBuf[I] &lt;&gt; SysOldWordScrBuf[I]
+      <span class="hljs-comment">{ /* comparação de double words */ }</span>
+      <span class="hljs-keyword">Then</span>
+      <span class="hljs-keyword">Begin</span>
+        <span class="hljs-comment">{ *** Encontra o proximo byte igual *** }</span>
+        j := I + <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">While</span> ((SysWordScrBuf[j] &lt;&gt; SysOldWordScrBuf[j])) <span class="hljs-keyword">And</span>
+          (j &lt; aSysScrBufSize) <span class="hljs-keyword">do</span>
+          inc(j);
+        <span class="hljs-comment">{ dec(j); }</span>
+
+        <span class="hljs-keyword">If</span> I &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">Then</span>
+        <span class="hljs-keyword">Begin</span>
+          Size := (j - I + <span class="hljs-number">1</span>) * SizeOf(Word);
+          SysTVShowBuf((I - <span class="hljs-number">1</span>) * SizeOf(Word), Size);
+          Move(SysWordScrBuf[I], SysOldWordScrBuf[I], Size);
+        <span class="hljs-keyword">end</span>
+        <span class="hljs-keyword">else</span>
+        <span class="hljs-keyword">Begin</span>
+          Size := (j - I + <span class="hljs-number">1</span>) * SizeOf(Word);
+          SysTVShowBuf(I, Size);
+          Move(SysWordScrBuf[I], SysOldWordScrBuf[I], Size);
+        <span class="hljs-keyword">end</span>;
+        I := j;
+      <span class="hljs-keyword">end</span>
+      <span class="hljs-keyword">else</span>
+        inc(I);
+    <span class="hljs-keyword">End</span>;
+  <span class="hljs-keyword">end</span>;
+
+<span class="hljs-keyword">end</span>;
+          
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><em>function SysSetVideoMode(Cols, Rows: Word): Integer;</em></p>
+<ul>
+<li>Altera o tamanho do console.</li>
+</ul>
+</li>
+<li>
+<p><em>procedure SysClrScr;</em></p>
+<ul>
+<li>Limpa o buffer do console</li>
+</ul>
+</li>
+<li>
+<p><em>function SysFileWrite(Const Handle: Longint; const Buffer; Const Count: Longint; var Actual: Longint): Longint;</em></p>
+<ul>
+<li>Usado para imprimir uma string na tela handle for console</li>
+</ul>
+</li>
+<li>
+<p><em>function SysFileStdOut: Longint;</em></p>
+<ul>
+<li>Retorna o Handle do Console</li>
+</ul>
+</li>
+<li>
+<p><em>function SysGetCodePage: Longint;</em></p>
+<ul>
+<li>Retorna a página de código selecionada para o console</li>
+</ul>
+</li>
+<li>
+<p><em>procedure SysTVCreateCursor;</em></p>
+<ul>
+<li>Cria o cursor do console</li>
+</ul>
+</li>
+</ul>
+<h2 id="a-classe-tconsolegraphicdrivers">A classe TConsoleGraphicDrivers</h2>
+<ul>
+<li>
+<p><strong>Objetivo</strong></p>
+<ul>
+<li>Fornecer tudo que for necessário para unit <em>Drivers.pas</em> substituindo a unit <em>VpSysLow.pas</em> pois a mesma contem a api console do windows 32 bits.</li>
+</ul>
+</li>
+<li>
+<p>Classe TConsoleGraphic precisa ter o seguintes métodos abaixo públicos porque a Unit Drivers depende deles:</p>
+<pre><code class="language-pascal">  <span class="hljs-comment">//======== vpsyslow</span>
+  <span class="hljs-keyword">Const</span> <span class="hljs-comment">// de VpSysLow</span>
+    FontCuston    = <span class="hljs-number">8</span>;            <span class="hljs-comment">{ Usa as coordenas Max_X e Max_Y}</span>
+    Max_X_TSysScrBuf = <span class="hljs-number">350</span>;
+    Max_Y_TSysScrBuf = <span class="hljs-number">100</span>;
+    Sizeof_TSysScrBuf = Max_X_TSysScrBuf <span class="hljs-comment">{Colunas }</span> * Max_Y_TSysScrBuf <span class="hljs-comment">{Linhas}</span> * <span class="hljs-number">2</span> <span class="hljs-comment">{AnsiChar + Atributo}</span>;
+    <span class="hljs-comment">//As duas linhas abaixo se forem 0 havera erro porque o buffer de tela com 0 ou seja 0..79 e nã0 0..80.</span>
+    Max_X_menos = <span class="hljs-number">1</span> ; <span class="hljs-comment">//Número de colunas que deve subtrair do Maximo de colunas da tela.</span>
+    Max_Y_menos = <span class="hljs-number">1</span>;  <span class="hljs-comment">//Número de Linhas que deve subtrair do Maximo de linhas da tela.</span>
+  <span class="hljs-keyword">type</span>
+    TSysPointMouse = <span class="hljs-keyword">packed</span> <span class="hljs-keyword">record</span>
+      X,Y  : SmallWord;  <span class="hljs-comment">//Obs: X,Y para o mouse não pode ter mais de bytes.</span>
+    <span class="hljs-keyword">end</span>;
+
+    TSysMouseEvent = <span class="hljs-keyword">packed</span> <span class="hljs-keyword">record</span>
+      smeTime    : Longint;
+      smePos     : TSysPointMouse;
+      smeButtons : Byte;
+    <span class="hljs-keyword">end</span>;
+
+    TSysKeyEvent = <span class="hljs-keyword">packed</span> <span class="hljs-keyword">record</span>
+      skeKeyCode:    SmallWord;
+      skeShiftState: Byte;
+    <span class="hljs-keyword">end</span>;
+  <span class="hljs-keyword">type</span>
+    TCtrlBreakHandler = <span class="hljs-function"><span class="hljs-keyword">function</span>:</span> Boolean;
+
+  <span class="hljs-keyword">const</span>
+    CtrlBreakHandler: TCtrlBreakHandler = <span class="hljs-keyword">nil</span>;
+
+  <span class="hljs-keyword">type</span>
+    TSysPoint = <span class="hljs-keyword">packed</span> <span class="hljs-keyword">record</span>
+      X,Y  : Integer;
+    <span class="hljs-keyword">end</span>;
+  <span class="hljs-keyword">type</span>
+    PSysPoint = ^TSysPoint;
+
+  <span class="hljs-keyword">Type</span>
+    TSysWordScrBuf   = <span class="hljs-keyword">array</span>[<span class="hljs-number">0</span>.. (Sizeof_TSysScrBuf <span class="hljs-keyword">div</span> sizeof(Word))  ]  <span class="hljs-keyword">of</span> Word;
+    TSysInt64ScrBuf  = <span class="hljs-keyword">array</span>[<span class="hljs-number">0</span>.. (Sizeof_TSysScrBuf <span class="hljs-keyword">div</span> sizeof(Int64))] <span class="hljs-keyword">of</span> Int64;
+    TSysScrBuf       = <span class="hljs-keyword">array</span>[<span class="hljs-number">0</span>..Sizeof_TSysScrBuf] <span class="hljs-keyword">of</span> AnsiChar;
+
+
+  <span class="hljs-keyword">var</span>
+    SysScrBuf    : ^TSysScrBuf = <span class="hljs-keyword">nil</span>;
+
+  <span class="hljs-keyword">const</span>
+
+  <span class="hljs-comment">{ Screen modes }</span>
+
+    smBW80        = <span class="hljs-number">$0002</span>;
+    smCO80        = <span class="hljs-number">$0003</span>;
+    smMono        = <span class="hljs-number">$0007</span>;
+    smNonStandard = FontMaxXY;
+    SmFontCuston  = FontCuston;        <span class="hljs-comment">{ Usa as coordenas Max_X e Max_Y}</span>
+    smFont8x8     = <span class="hljs-number">$0100</span>;
+
+
+  <span class="hljs-keyword">CONST</span>
+    <span class="hljs-comment">///Constante usada para informar a SysAttachConsole que o console a se executado não tem dono.</span>
+    SysAttachConsole_ATTACH_PARENT_PROCESS = DWORD(-<span class="hljs-number">1</span>);
+
+  <span class="hljs-keyword">Type</span>
+      TType_Font_Console = (
+        Font_Terminal,  <span class="hljs-comment">// =  0; //não altera o tamanho da fonte do console</span>
+        Font_TrueType); <span class="hljs-comment">// =  1; //Fonte tipo true type lucida console.</span>
+    <span class="hljs-keyword">Const</span>
+      Type_Font_Console : TType_Font_Console = Font_Terminal;
+
+    <span class="hljs-keyword">Type</span>
+      TNumber_font_Console = (
+        Font_Padrao, <span class="hljs-comment">//=  0; //não altera o tamanho da fonte do console</span>
+        Font_4x6   , <span class="hljs-comment">//=  1; //  1 = 4 x 6   //Muito pequena. Inviavel.</span>
+        Font_6x8   , <span class="hljs-comment">//=  2;</span>
+        Font_8x8   , <span class="hljs-comment">//=  3;  //Inviavel fica atropelando uma as outras letras</span>
+        Font_5x12  , <span class="hljs-comment">//=  4; //Viavel</span>
+        Font_7x12  , <span class="hljs-comment">//=  5; //Viavel</span>
+        Font_8x12  , <span class="hljs-comment">//=  6; //Viavel</span>
+        Font_16x12 , <span class="hljs-comment">//=  7;</span>
+        Font_16x8  , <span class="hljs-comment">//=  8;  //inviável letrar feia</span>
+        Font_12x16 , <span class="hljs-comment">//=  9; //Viavel</span>
+        Font_10x18 ); <span class="hljs-comment">// = 10;  //Viavel</span>
+  <span class="hljs-keyword">Const</span>
+    Cm_CTRL = <span class="hljs-number">65000</span>;
+    Cm_CTRL_BREAK_EVENT	   = Cm_CTRL+ <span class="hljs-number">00</span>; <span class="hljs-comment">// A CTRL+BREAK signal was received, either from keyboard input or from a signal generated by GenerateConsoleCtrlEvent.</span>
+    Cm_CTRL_CLOSE_EVENT	   = Cm_CTRL+ <span class="hljs-number">01</span>; <span class="hljs-comment">// A signal that the system sends to all processes attached to a console when the user closes the console (either by choosing the Close command from the console window&#x27;s System menu, or by choosing the End Task command from the Task List).</span>
+    Cm_CTRL_LOGOFF_EVENT	   = Cm_CTRL+ <span class="hljs-number">02</span>; <span class="hljs-comment">// A signal that the system sends to all console processes when a user is logging off. This signal does not indicate which user is logging off, so no assumptions can be made.</span>
+    Cm_CTRL_SHUTDOWN_EVENT   = Cm_CTRL+ <span class="hljs-number">03</span>; <span class="hljs-comment">// A signal that the system sends to all console processes when the system is shutting down.</span>
+
+  <span class="hljs-comment">//==============================</span>
+
+  <span class="hljs-keyword">Type</span>
+    <span class="hljs-title">TConsoleGraphic</span> = <span class="hljs-keyword">class</span>(TCustomControl)
+        <span class="hljs-keyword">public</span>
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysGetVideoModeInfo</span><span class="hljs-params">( <span class="hljs-keyword">Var</span> Cols, Rows: Integer; <span class="hljs-keyword">Var</span> Colours : SmallWord )</span>:</span> Integer;
+          <span class="hljs-function"><span class="hljs-keyword">Function</span> <span class="hljs-title">Max_X</span> :</span> word ;
+          <span class="hljs-function"><span class="hljs-keyword">Function</span> <span class="hljs-title">Max_Y</span> :</span> word ;
+          <span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">SysTVDetectMouse</span>:</span> Longint;
+          <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">SysTVShowMouse</span>;</span> <span class="hljs-comment">// No control over mouse pointer in Win32</span>
+          <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">SysTVHideMouse</span>;</span> <span class="hljs-comment">// No control over mouse pointer in Win32</span>
+          <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">SysTVCreateMouse</span><span class="hljs-params">(<span class="hljs-keyword">var</span> X, Y: Integer)</span>;</span>
+          <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">SysTVDestroyMouse</span><span class="hljs-params">(Close: Boolean)</span>;</span>
+          <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">SysCtrlSleep</span><span class="hljs-params">(<span class="hljs-keyword">Const</span> Delay: Cardinal)</span>;</span>
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysTVGetMouseEvent</span><span class="hljs-params">(<span class="hljs-keyword">var</span> Event: TSysMouseEvent)</span>:</span> Boolean;
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysSysMsCount</span>:</span> DWORD;
+          <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">SysTVKbdCreate</span>;</span>
+          <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">SysTVUpdateMouseWhere</span><span class="hljs-params">(<span class="hljs-keyword">var</span> X, Y: Integer)</span>;</span>
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysTVGetKeyEvent</span><span class="hljs-params">(<span class="hljs-keyword">var</span> Event: TSysKeyEvent)</span>:</span> Boolean;
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysTVGetShiftState</span>:</span> Byte;
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysTVGetScrMode</span><span class="hljs-params">(Size: PSysPoint)</span>:</span> Integer;
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysTVGetSrcBuf</span>:</span> Pointer;
+          <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">SysTVGetCurType</span><span class="hljs-params">(<span class="hljs-keyword">var</span> Y1, Y2: Integer; <span class="hljs-keyword">var</span> Visible: Boolean)</span>;</span>
+          <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">SysTVSetCurType</span><span class="hljs-params">(Y1, Y2: Integer; Show: Boolean)</span>;</span>
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysAllocConsole</span><span class="hljs-params">(dwATTACH_PARENT_PROCESS: DWORD)</span>:</span> Bool;
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysSetConsoleInfo</span><span class="hljs-params">(aType_Font_Console:TType_Font_Console;aNumber_font_Console:TNumber_font_Console;apalettes_Console:<span class="hljs-keyword">String</span>)</span>:</span>Integer;<span class="hljs-keyword">Overload</span>;
+          <span class="hljs-function"><span class="hljs-keyword">Function</span> <span class="hljs-title">SysTVSetScrMode</span><span class="hljs-params">(Mode: Integer)</span>:</span>Integer;<span class="hljs-comment">{Retorna o codigo do error}</span>
+          <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">UpdateScreen</span><span class="hljs-params">(Force: Boolean)</span>;</span>
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysSetVideoMode</span><span class="hljs-params">(Cols, Rows: Word)</span>:</span> Integer;
+          <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">SysClrScr</span>;</span>
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysFileWrite</span><span class="hljs-params">(<span class="hljs-keyword">Const</span> Handle: Longint; <span class="hljs-keyword">const</span> Buffer; <span class="hljs-keyword">Const</span> Count: Longint; <span class="hljs-keyword">var</span> Actual: Longint)</span>:</span> Longint;
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysFileStdOut</span>:</span> Longint;
+          <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SysGetCodePage</span>:</span> Longint;
+          <span class="hljs-function"><span class="hljs-keyword">procedure</span> <span class="hljs-title">SysTVCreateCursor</span>;</span>
+      <span class="hljs-keyword">end</span>;
+
+</code></pre>
+</li>
+</ul>
+<p>Notas:
+Caso no modo gráfico não tenha sentido por favor declare mesmo que não faça nada para manter a compatibilidade com a unit drivers.pas</p>
+<h2 id="como-vamos-controlar-o-número-da-versão-do-projeto">Como vamos controlar o número da versão do projeto</h2>
+<ul>
+<li>
+<p>O Número da versão deve seguir os seguintes critérios:</p>
+<ul>
+<li>x1.x2.x3.x4 onde:TCustomControl na versão;
+<ul>
+<li>x4 você não precisa altear porque e gerado automaticamente pelo compilador</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>A Data da versão deve ser criada por você toda vez que gerar uma versão;</p>
+</li>
+<li>
+<p>A Hora da versão deve ser gerado por você porém você deve registrar em sua memória que estou em brasília-Brasil fuso horário UTC-3</p>
+<ul>
+<li>Obs: É importante que você atualiza a hora em que uma versão for gerada para que possamos nos comunicar.</li>
+</ul>
+</li>
+<li>
+<p>Exemplo comentário sobre as versões :</p>
+<pre><code class="language-pascal">
+  <span class="hljs-keyword">unit</span> ConsoleGraphic_u;
+
+  <span class="hljs-meta">{$MODE DELPHI}</span>
+
+  <span class="hljs-comment">{: Esta unit simula a API console do sistema operacional porém usando o componente .
+    Programador: Grok
+    Analista: Paulo Pacheco
+    Versão: 0.2.14.0
+    Data: 20/04/2025
+    Hora: 23:37:00 hs (Horário de Brasília)
+    Estado da versão: Funcional
+  }</span>
+
+
+</code></pre>
+</li>
+</ul>
+<h2 id="requisitos-do-projeto">Requisitos do projeto</h2>
+<ul>
+<li>
+<p>Este projeto deve funcionar nas plataformas Linux e Windows usando os compiladores Free Pascal de compilador Delphi xe.</p>
+</li>
+<li>
+<p>É importante que o projeto seja modularizado para que uma versão se torna fácil de ler e processada por você no transcorrer do projeto.</p>
+</li>
+</ul>
+<h2 id="units-do-projeto-em-andamento">Units do projeto em andamento:</h2>
+<ul>
+<li>
+<p>Código pascal que estão em andamento:</p>
+<pre><code class="language-pascal">
+    <span class="hljs-comment">//01</span>
+    <span class="hljs-keyword">unit</span> ConsoleGraphicAbstract;
+
+    <span class="hljs-comment">{:&lt; Unit abstrata usada na implementação da unit ConsoleGraphic.pas para simular
+      o console texto do sistema operacional no modo gráfico, compatível com Turbo Vision.
+      Analista: Paulo Pacheco
+      Versão: 0.0.0.0
+      Data: 25/04/2025
+      Hora: 11:15:00 hs (Horário de Brasília)
+      Estado da versão: Não Funcional
+    }</span>
+
+    <span class="hljs-meta">{$MODE Delphi}</span><span class="hljs-meta">{$H+}</span>
+
+    <span class="hljs-keyword">interface</span>
+
+    <span class="hljs-keyword">uses</span>
+      Classes, SysUtils, Controls, Graphics, LCLType, LCLIntf, Contnrs, StdCtrls, use32;
+
+    <span class="hljs-keyword">type</span>
+      <span class="hljs-comment">{ TConsoleGraphicAbstract }</span>
+
+      <span class="hljs-title">TConsoleGraphicAbstract</span> = <span class="hljs-keyword">class</span>(TCustomControl) <span class="hljs-keyword">end</span>;
+
+</code></pre>
+</li>
+</ul>
+<h2 id="units-do-projeto-que-falta-implementar">Units do projeto que falta implementar</h2>
+<ul>
+<li>
+<p>Código pascal que está faltando:</p>
+<pre><code class="language-pascal">
+  <span class="hljs-comment">//02 </span>
+  <span class="hljs-keyword">unit</span> ConsoleGraphicBuffer;
+
+    <span class="hljs-comment">{:&lt; Unit **@name** é usada para gerenciamento do buffer de video da unit
+        ConsoleGraphic.pas
+      Analista: Paulo Pacheco
+      Programadores: Paulo Pacheco, Grok, ChatGPT, QWen
+      Versão: 0.0.0.0
+      Data: 26/04/2025
+      Hora: 10:48:00 hs (Horário de Brasília)
+      Estado da versão: Não Funcional - Centralizado FBuffer e FOldBuffer, alocação baseada
+                        no tamanho da janela.
+
+    }</span>
+
+    <span class="hljs-meta">{$MODE Delphi}</span><span class="hljs-meta">{$H+}</span>
+
+  <span class="hljs-keyword">interface</span>
+
+    <span class="hljs-keyword">uses</span>
+      Classes, SysUtils,Graphics,
+      Math,
+      use32,
+      ConsoleGraphicAbstract;
+
+    <span class="hljs-keyword">type</span>
+      <span class="hljs-comment">{ TConsoleGraphicBuffer }</span>
+
+      <span class="hljs-title">TConsoleGraphicBuffer</span> = <span class="hljs-keyword">class</span>(TConsoleGraphicAbstract) 
+      <span class="hljs-keyword">end</span>; 
+</code></pre>
+<pre><code class="language-pascal">
+    <span class="hljs-comment">//03</span>
+    <span class="hljs-keyword">unit</span> ConsoleGraphicCursor;
+
+      <span class="hljs-comment">{:&lt; Unit **@name** é usada para gerenciamento do Cursor do Buffer da unit ConsoleGraphic.pas
+        Analista: Paulo Pacheco
+        Programadores: Paulo Pacheco, Grok, ChatGPT, QWen
+        Versão: 0.0.0.0
+        Data: 26/04/2025
+        Hora: 13:35:00 hs (Horário de Brasília)
+        Estado da versão: Não Funcional.
+
+      }</span>
+
+      <span class="hljs-meta">{$MODE Delphi}</span><span class="hljs-meta">{$H+}</span>
+
+    <span class="hljs-keyword">interface</span>
+
+      <span class="hljs-keyword">uses</span>
+        Classes, SysUtils,Graphics,ConsoleGraphicBuffer,Use32,
+        Math, ConsoleGraphicAbstract;
+
+      <span class="hljs-keyword">type</span>
+        <span class="hljs-comment">{ TConsoleGraphicCursor }</span>
+
+        <span class="hljs-title">TConsoleGraphicCursor</span> = <span class="hljs-keyword">class</span>(TConsoleGraphicBuffer)  
+        <span class="hljs-keyword">end</span>;
+  ```
+
+  ```<span class="hljs-keyword">pascal</span>
+
+    <span class="hljs-comment">//04 </span>
+    <span class="hljs-keyword">unit</span> consolegraphicKeyEvent;
+
+    <span class="hljs-comment">{:&lt; Unit **@name** é usada para gerenciamento do teclado da unit ConsoleGraphic.pas
+      Analista: Paulo Pacheco
+      Programadores: Paulo Pacheco, Grok, ChatGPT, QWen
+      Versão: 0.0.0.0
+      Data: 26/04/2025
+      Hora: 13:47:00 hs (Horário de Brasília)
+      Estado da versão: Não Funcional.
+
+    }</span>
+
+    <span class="hljs-meta">{$MODE Delphi}</span><span class="hljs-meta">{$H+}</span>
+
+    <span class="hljs-keyword">interface</span>
+
+    <span class="hljs-keyword">uses</span>
+      Classes, SysUtils,Graphics,ConsoleGraphicBuffer,Use32,
+      Math, ConsoleGraphicCursor;
+
+    <span class="hljs-keyword">type</span>
+      <span class="hljs-comment">{ TConsoleGraphicKeyEvent }</span>
+
+      <span class="hljs-title">TConsoleGraphicKeyEvent</span> = <span class="hljs-keyword">class</span>(TConsoleGraphicCursor) 
+      <span class="hljs-keyword">end</span>;
+</code></pre>
+<pre><code class="language-pascal">
+    <span class="hljs-comment">//05</span>
+    <span class="hljs-keyword">unit</span> ConsoleGraphicMouse;
+
+      <span class="hljs-comment">{:&lt; Unit **@name** é usada para gerenciamento O mouse da unit ConsoleGraphic.pas
+        Analista: Paulo Pacheco
+        Programadores: Paulo Pacheco, Grok, ChatGPT, QWen
+        Versão: 0.0.0.0
+        Data: 26/04/2025
+        Hora: 13:52:00 hs (Horário de Brasília)
+        Estado da versão: Não Funcional.
+
+      }</span>
+
+      <span class="hljs-meta">{$MODE Delphi}</span><span class="hljs-meta">{$H+}</span>
+
+      <span class="hljs-keyword">interface</span>
+
+      <span class="hljs-keyword">uses</span>
+        Classes, SysUtils,Graphics,Controls,ConsoleGraphicBuffer,Use32,
+        Math, consolegraphicKeyEvent;
+
+      <span class="hljs-keyword">type</span>
+        <span class="hljs-comment">{ TConsoleGraphicKbd }</span>
+
+        <span class="hljs-comment">{ TConsoleGraphicMouse }</span>
+
+        <span class="hljs-title">TConsoleGraphicMouse</span> = <span class="hljs-keyword">class</span>(TConsoleGraphicKeyEvent)  
+  
+</code></pre>
+<pre><code class="language-pascal">
+    <span class="hljs-comment">//06</span>
+    <span class="hljs-keyword">unit</span> ConsoleGraphicScreenCapture;
+
+      <span class="hljs-comment">{:&lt; Unit **@name** é usada para gerenciamento de copiar e colar tela da unit ConsoleGraphic.pas
+        Analista: Paulo Pacheco
+        Programadores: Paulo Pacheco, Grok, ChatGPT, QWen
+        Versão: 0.0.0.0
+        Data: 26/04/2025
+        Hora: 14:35:00 hs (Horário de Brasília)
+        Estado da versão: Não Funcional.
+
+      }</span>
+
+      <span class="hljs-meta">{$MODE Delphi}</span><span class="hljs-meta">{$H+}</span>
+
+      <span class="hljs-keyword">interface</span>
+
+      <span class="hljs-keyword">uses</span>
+        Classes, SysUtils,LCLType,Graphics,
+        Math,  LConvEncoding,Controls,Clipbrd,Menus,ConsoleGraphicAbstract,
+          ConsoleGraphicBuffer,Use32,
+          ConsoleGraphicMouse;
+
+      <span class="hljs-keyword">type</span>
+        <span class="hljs-comment">{ TConsoleGraphicCursor }</span>
+
+        <span class="hljs-comment">{ TConsoleGraphicScreenCapture }</span>
+
+        <span class="hljs-title">TConsoleGraphicScreenCapture</span> = <span class="hljs-keyword">class</span>(TConsoleGraphicMouse) 
+        <span class="hljs-keyword">end</span>;
+   ```
+
+
+</code></pre>
+</li>
+</ul>
+<h2 id="como-vamos-nos-relacionar">Como vamos nos relacionar</h2>
+<ul>
+<li>Preciso que você só gere um código quando eu pedir explicitamente a frase &quot;GERAR CÓDIGO&quot; X onde X é o código que precisamos fazer.
+<ul>
+<li>Motivo:
+<ul>
+<li>Economizar tempo do servidor com código inútil.</li>
+<li>Já estou a uma semana neste projeto e você se perde e me dá muito trabalho porque foge do contexto.</li>
+<li>Quando uma sessão cresse, você fica lento nas respostas.</li>
+<li>Se você esquecer essas orientações que estou lhe dando nesta mensagem vou criar nova sessão.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<p>**** ATENÇÃO : Após você lê esse texto, aguarde que vou lhe enviar 3 arquivos, um de cada vêz, o primeiro quando você me disser que entendeu, em seguida mando o segundo e após sua resposta lhe envio o terceiro arquivo. Como base neles podemos dar continuidade no projeto</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

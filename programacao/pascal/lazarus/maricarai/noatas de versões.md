@@ -1,4 +1,4 @@
-# Notas de versões do projeto /\/\ar/\carai
+# Notas de versões do projeto MarIcarai
 
 ## Versão v1.10-Alpha
 

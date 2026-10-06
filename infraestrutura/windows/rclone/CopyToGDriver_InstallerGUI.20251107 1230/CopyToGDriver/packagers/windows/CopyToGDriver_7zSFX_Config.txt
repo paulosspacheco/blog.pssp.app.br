@@ -1,0 +1,20 @@
+;!@Install@!UTF-8!
+; ===========================================================
+; CONFIGURAÇÃO 7-ZIP SFX - COPYTOGDRIVER
+; Localização: packagers/windows/CopyToGDriver_7zSFX_Config.txt
+; Plataforma: Windows
+; Versão: 2.1.0
+; ===========================================================
+
+Title="CopyToGDriver - Instalador Multiplataforma"
+BeginPrompt="Deseja instalar o CopyToGDriver agora?"
+RunProgram="install.bat"
+ExtractTitle="Extraindo arquivos do instalador CopyToGDriver..."
+ExtractDialogText="Aguarde enquanto os arquivos são extraídos..."
+GUIMode="2"
+ExecuteFile="install.bat"
+ExecuteParameters=""
+; Espera a execução terminar
+Wait="yes"
+;!@InstallEnd@!
+

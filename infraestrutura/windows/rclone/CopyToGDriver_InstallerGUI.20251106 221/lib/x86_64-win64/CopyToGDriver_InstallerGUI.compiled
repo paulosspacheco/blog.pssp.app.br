@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="V:\Lazarus.4.ORC3\fpc\bin\x86_64-win64\fpc.exe" Date="1529057019"/>
+  <Params Value="-MObjFPC -Scghi -O1 -gw3 -gl -WG -l -vewnhibq -FiV:\LazarusProjects\CopyToGDriver_InstallerGUI\lib\x86_64-win64 -FuV:\LazarusProjects\CopyToGDriver_InstallerGUI\ -FuV:\LazarusProjects\CopyToGDriver_InstallerGUI\units -FuV:\Lazarus.4.ORC3\lazarus\lcl\units\x86_64-win64\win32 -FuV:\Lazarus.4.ORC3\lazarus\lcl\units\x86_64-win64 -FuV:\Lazarus.4.ORC3\lazarus\components\freetype\lib\x86_64-win64 -FuV:\Lazarus.4.ORC3\lazarus\components\lazutils\lib\x86_64-win64 -FuV:\Lazarus.4.ORC3\lazarus\packager\units\x86_64-win64 -FUV:\LazarusProjects\CopyToGDriver_InstallerGUI\lib\x86_64-win64\ -FEV:\LazarusProjects\CopyToGDriver_InstallerGUI\dist\x86_64-win64\ -oV:\LazarusProjects\CopyToGDriver_InstallerGUI\dist\x86_64-win64\CopyToGDriver_InstallerGUI.exe -dLCL -dLCLwin32 CopyToGDriver_InstallerGUI.lpr"/>
+</CONFIG>

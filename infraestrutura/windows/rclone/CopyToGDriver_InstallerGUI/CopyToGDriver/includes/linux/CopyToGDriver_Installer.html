@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f9e9; CopyToGDriver&lowbar;Installer v0&period;6&period;0 &mdash; Documenta&ccedil;&atilde;o T&eacute;cnica</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-copytogdriver_installer-v060--documentação-técnica">🧩 CopyToGDriver_Installer v0.6.0 — Documentação Técnica</h1>
+<h2 id="-sumário">📘 Sumário</h2>
+<p>Script instalador do sistema <strong>CopyToGDriver</strong>, responsável por configurar o ambiente de sincronização local com o <strong>Google Drive</strong> via <strong>Rclone</strong>.</p>
+<p>Compatível com:</p>
+<ul>
+<li>Execução <strong>manual via terminal (CLI)</strong></li>
+<li>Execução <strong>automatizada via GUI Free Pascal/Lazarus</strong></li>
+</ul>
+<hr>
+<h2 id="-estrutura-do-script">🧱 Estrutura do Script</h2>
+<table>
+<thead>
+<tr>
+<th>Seção</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🛡️ Proteção CRLF</td>
+<td>Remove quebras de linha do Windows (garante portabilidade Linux/macOS).</td>
+</tr>
+<tr>
+<td>🧭 Parser de Parâmetros</td>
+<td>Interpreta os argumentos enviados pelo instalador Lazarus ou linha de comando.</td>
+</tr>
+<tr>
+<td>📦 Instalação Rclone</td>
+<td>Instala o Rclone caso não esteja presente.</td>
+</tr>
+<tr>
+<td>⚙️ Configuração do Remote</td>
+<td>Cria/configura o remote <code>gdriver</code> para acesso ao Google Drive.</td>
+</tr>
+<tr>
+<td>💽 Registro de Discos</td>
+<td>Detecta e registra volumes montados (ext4, ntfs, btrfs, etc.).</td>
+</tr>
+<tr>
+<td>📁 Instalação de Scripts</td>
+<td>Copia todos os módulos CopyToGDriver e define permissões de execução.</td>
+</tr>
+<tr>
+<td>🔗 Aliases Globais</td>
+<td>Cria atalhos <code>copydrive</code>, <code>copycheck</code> e <code>copyrestore</code> no <code>.bashrc</code>.</td>
+</tr>
+<tr>
+<td>🧩 Finalização</td>
+<td>Exibe resumo e instruções pós-instalação.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="️-execução">⚙️ Execução</h2>
+<h3 id="️-modo-automático-via-lazarus">▶️ <strong>Modo Automático (via Lazarus)</strong></h3>
+<p>O instalador GUI monta automaticamente os parâmetros e executa:</p>
+<pre><code class="language-bash">bash CopyToGDriver_Installer.sh [opções]
+</code></pre>
+<h3 id="️-modo-manual-terminal">▶️ <strong>Modo Manual (terminal)</strong></h3>
+<p>Exemplo de instalação completa:</p>
+<pre><code class="language-bash">./CopyToGDriver_Installer.sh \
+  --auto-install-rclone \
+  --auto-config-remote \
+  --transfers=4 \
+  --retries=3 \
+  --exclude=<span class="hljs-string">&quot;*.tmp,*.log&quot;</span> \
+  --verbose
+</code></pre>
+<hr>
+<h2 id="-parâmetros-disponíveis">🧩 Parâmetros Disponíveis</h2>
+<table>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+<th>Geração (GUI Lazarus)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--help</code>, <code>-h</code></td>
+<td>Exibe ajuda e sai</td>
+<td><code>--help</code></td>
+<td>n/a</td>
+</tr>
+<tr>
+<td><code>--check</code></td>
+<td>Apenas verifica o ambiente atual</td>
+<td><code>--check</code></td>
+<td>(copycheck)</td>
+</tr>
+<tr>
+<td><code>--dry-run</code></td>
+<td>Simula a instalação sem alterações</td>
+<td><code>--dry-run</code></td>
+<td><code>cbDryRun</code></td>
+</tr>
+<tr>
+<td><code>--reinstall</code></td>
+<td>Força reinstalação limpa</td>
+<td><code>--reinstall</code></td>
+<td>n/a</td>
+</tr>
+<tr>
+<td><code>--auto-install-rclone</code></td>
+<td>Instala Rclone automaticamente</td>
+<td><code>--auto-install-rclone</code></td>
+<td><code>cbAutoInstallRclone</code></td>
+</tr>
+<tr>
+<td><code>--auto-config-remote</code></td>
+<td>Cria e autentica o remote <code>gdriver</code></td>
+<td><code>--auto-config-remote</code></td>
+<td><code>cbAutoConfigRemote</code></td>
+</tr>
+<tr>
+<td><code>--force</code></td>
+<td>Força sincronização mesmo com dados existentes</td>
+<td><code>--force</code></td>
+<td><code>cbForceSync</code></td>
+</tr>
+<tr>
+<td><code>--verbose</code></td>
+<td>Habilita logs detalhados</td>
+<td><code>--verbose</code></td>
+<td><code>cbVerboseMode</code></td>
+</tr>
+<tr>
+<td><code>--skip-existing</code></td>
+<td>Ignora arquivos já existentes</td>
+<td><code>--skip-existing</code></td>
+<td><code>cbSkipExisting</code></td>
+</tr>
+<tr>
+<td><code>--transfers=&lt;N&gt;</code></td>
+<td>Define número de transferências simultâneas</td>
+<td><code>--transfers=5</code></td>
+<td><code>seMaxTransfers</code></td>
+</tr>
+<tr>
+<td><code>--retries=&lt;N&gt;</code></td>
+<td>Define número de tentativas de reconexão</td>
+<td><code>--retries=3</code></td>
+<td><code>seRetryCount</code></td>
+</tr>
+<tr>
+<td><code>--exclude=&lt;padrões&gt;</code></td>
+<td>Exclui padrões (ex: logs, temporários)</td>
+<td><code>--exclude=&quot;*.tmp,*.log&quot;</code></td>
+<td><code>edtExcludePatterns</code></td>
+</tr>
+<tr>
+<td><code>--include=&lt;padrões&gt;</code></td>
+<td>Inclui apenas arquivos que combinem com o padrão</td>
+<td><code>--include=&quot;*.cfg,*.sh&quot;</code></td>
+<td><code>edtIncludePatterns</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-modos-especiais">🧪 Modos Especiais</h2>
+<h3 id="-check-mode">🔍 <strong>Check Mode</strong></h3>
+<p>Apenas valida o ambiente (sem alterar nada):</p>
+<pre><code class="language-bash">./CopyToGDriver_Installer.sh --check
+</code></pre>
+<p><strong>Saída esperada:</strong></p>
+<pre><code>🔍 Verificação de ambiente CopyToGDriver
+✅ Rclone instalado
+✅ Diretório de scripts: /home/user/scripts/CopyToGDriver
+✅ Configuração Rclone: ~/.config/rclone/rclone.conf
+✅ Registro de discos detectado
+</code></pre>
+<hr>
+<h3 id="-dry-run">🧪 <strong>Dry Run</strong></h3>
+<p>Executa a instalação de forma simulada:</p>
+<pre><code class="language-bash">./CopyToGDriver_Installer.sh --dry-run
+</code></pre>
+<p>Exibe todas as ações, mas <strong>não altera o sistema</strong>.</p>
+<hr>
+<h3 id="️-reinstalação-completa">♻️ <strong>Reinstalação Completa</strong></h3>
+<p>Remove instalações antigas e reinstala tudo:</p>
+<pre><code class="language-bash">./CopyToGDriver_Installer.sh --reinstall --auto-install-rclone
+</code></pre>
+<hr>
+<h2 id="-integração-com-lazarus-gui">💻 Integração com Lazarus GUI</h2>
+<p>O formulário <code>SetupForm_u.pas</code> monta os parâmetros automaticamente com:</p>
+<pre><code class="language-pascal">ExecuteProcess(<span class="hljs-string">&#x27;bash&#x27;</span>, [InstallScript, Parameters]);
+</code></pre>
+<p>onde <code>Parameters</code> é construído pela função <code>BuildScriptParameters</code>.</p>
+<p>Exemplo de chamada gerada:</p>
+<pre><code class="language-bash">bash CopyToGDriver_Installer.sh \
+  --auto-install-rclone \
+  --auto-config-remote \
+  --transfers=4 \
+  --retries=3 \
+  --verbose \
+  --exclude=<span class="hljs-string">&quot;*.tmp,*.log&quot;</span>
+</code></pre>
+<hr>
+<h2 id="-estrutura-de-instalação">📂 Estrutura de Instalação</h2>
+<p>Após a execução, os arquivos serão organizados da seguinte forma:</p>
+<pre><code>~/scripts/CopyToGDriver/
+ ├─ CopyToGDriver.sh
+ ├─ CopyToGDriver_CopyCurrent.sh
+ ├─ CopyToGDriver_Restore.sh
+ └─ includes/
+     ├─ crossplatform/
+     └─ linux/
+</code></pre>
+<p>Logs:</p>
+<pre><code>~/CopyToGDriver_Log/system/
+</code></pre>
+<p>Registro de discos:</p>
+<pre><code>~/.config/CopyToGDriver/disks_registry.conf
+</code></pre>
+<hr>
+<h2 id="-aliases-criados">🔗 Aliases Criados</h2>
+<p>Adicionados automaticamente ao <code>~/.bashrc</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Comando</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>copydrive</code></td>
+<td><code>CopyToGDriver_CopyCurrent.sh</code></td>
+<td>Sincroniza a pasta atual</td>
+</tr>
+<tr>
+<td><code>copycheck</code></td>
+<td><code>CopyToGDriver.sh --check-only</code></td>
+<td>Verifica ambiente e dependências</td>
+</tr>
+<tr>
+<td><code>copyrestore</code></td>
+<td><code>CopyToGDriver_Restore.sh</code></td>
+<td>Restaura último backup da pasta</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-dicas-e-observações">🧠 Dicas e Observações</h2>
+<ul>
+<li>Execute com privilégios de <strong>sudo</strong> se for instalar o Rclone.</li>
+<li>O <code>--auto-config-remote</code> abrirá o navegador para autenticação Google.</li>
+<li>Pode ser invocado por <strong>outros programas</strong>, <strong>scripts CI/CD</strong> ou <strong>instaladores gráficos</strong>.</li>
+<li>Suporta <strong>Linux</strong> e <strong>macOS</strong> nativamente (Windows via Git Bash).</li>
+</ul>
+<hr>
+<h2 id="-licença">📜 Licença</h2>
+<p>Este script é fornecido sob a licença MIT, de uso livre e modificação mediante atribuição de crédito ao autor original.</p>
+<hr>
+<h2 id="️-autor">✍️ Autor</h2>
+<p><strong>Paulo S. S. Pacheco</strong> + <strong>ChatGPT (GPT-5)</strong>
+📦 Versão 0.6.0 — Atualizado em novembro/2025
+💬 “Feito para funcionar igual no terminal e no clique.”</p>
+<hr>
+
+            
+            
+        </body>
+        </html>

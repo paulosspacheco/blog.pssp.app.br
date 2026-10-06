@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f4be; Manual do Script &DiacriticalGrave;borg&lowbar;backup&lowbar;pasta&lowbar;corrente&period;sh&DiacriticalGrave;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-manual-do-script-borg_backup_pasta_correntesh">💾 Manual do Script <code>borg_backup_pasta_corrente.sh</code></h1>
+<h2 id="-descrição-geral">📘 Descrição Geral</h2>
+<p>O script <strong><code>borg_backup_pasta_corrente.sh</code></strong> automatiza o backup incremental da <strong>pasta corrente</strong> (diretório onde é executado)<br>
+utilizando o script principal <a href="./borg_backup.sh"><code>borg_backup.sh</code></a>.</p>
+<p>Ele identifica automaticamente:</p>
+<ul>
+<li>O nome da pasta atual (como identificador do backup),</li>
+<li>O caminho completo de origem,</li>
+<li>O destino padrão (<code>/media/paulosspacheco/Novo volume/borg_backup</code>),</li>
+<li>E executa o backup de forma segura e validada.</li>
+</ul>
+<p>Este script é ideal para quem deseja <strong>realizar backups rápidos e consistentes</strong> sem precisar digitar longos comandos.</p>
+<hr>
+<h2 id="-objetivo">🧠 Objetivo</h2>
+<ul>
+<li>Criar backups incrementais da <strong>pasta corrente</strong> usando o BorgBackup.</li>
+<li>Garantir que o <strong>disco de backup esteja montado</strong> antes da execução.</li>
+<li>Integrar com o script base <strong><code>borg_backup.sh</code></strong> para padronizar a execução.</li>
+<li>Automatizar o processo com <strong>verificações e confirmações interativas</strong>.</li>
+</ul>
+<hr>
+<h2 id="️-parâmetros-e-variáveis">⚙️ Parâmetros e Variáveis</h2>
+<p>O script não recebe parâmetros externos — ele trabalha automaticamente com a pasta onde é executado.</p>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SCRIPT_BASE</code></td>
+<td>Caminho absoluto para o script <code>borg_backup.sh</code></td>
+<td><code>/home/paulosspacheco/scripts/borg_backup.sh</code></td>
+</tr>
+<tr>
+<td><code>DESTINO</code></td>
+<td>Caminho base onde os backups são armazenados</td>
+<td><code>/media/paulosspacheco/Novo volume/borg_backup</code></td>
+</tr>
+<tr>
+<td><code>MONTAGEM</code></td>
+<td>Ponto de montagem do disco de backup</td>
+<td><code>/media/paulosspacheco/Novo volume</code></td>
+</tr>
+<tr>
+<td><code>ORIGEM</code></td>
+<td>Diretório atual (<code>pwd</code>)</td>
+<td><code>/home/paulosspacheco/scripts</code></td>
+</tr>
+<tr>
+<td><code>NOME</code></td>
+<td>Nome lógico do backup (basename da pasta atual)</td>
+<td><code>scripts</code></td>
+</tr>
+<tr>
+<td><code>CRIPTO</code></td>
+<td>Tipo de criptografia (padrão: <code>none</code>)</td>
+<td><code>none</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-exemplo-de-uso">🧰 Exemplo de Uso</h2>
+<h3 id="-exemplo-1--executar-backup-da-pasta-corrente">🔹 Exemplo 1 — Executar backup da pasta corrente</h3>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> ~/scripts
+./borg_backup_pasta_corrente.sh
+</code></pre>
+<p>Resultado:</p>
+<pre><code>======================================================
+💾 Backup da pasta corrente com BorgBackup
+======================================================
+Nome ...........: scripts
+Origem .........: /home/paulosspacheco/scripts
+Destino ........: /media/paulosspacheco/Novo volume/borg_backup
+Ponto de montagem: /media/paulosspacheco/Novo volume
+Script base ....: /home/paulosspacheco/scripts/borg_backup.sh
+Criptografia ...: none
+======================================================
+
+Deseja iniciar o backup da pasta corrente '/home/paulosspacheco/scripts'? (s/n): s
+</code></pre>
+<hr>
+<h2 id="-estrutura-do-script">🧩 Estrutura do Script</h2>
+<h3 id="1️⃣-exibição-inicial">1️⃣ Exibição Inicial</h3>
+<p>Exibe um resumo amigável dos parâmetros detectados:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Nome ...........: <span class="hljs-variable">$NOME</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Origem .........: <span class="hljs-variable">$ORIGEM</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Destino ........: <span class="hljs-variable">$DESTINO</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Ponto de montagem: <span class="hljs-variable">$MONTAGEM</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Script base ....: <span class="hljs-variable">$SCRIPT_BASE</span>&quot;</span>
+</code></pre>
+<hr>
+<h3 id="2️⃣-validações-iniciais">2️⃣ Validações Iniciais</h3>
+<p>Antes de executar o backup, o script valida:</p>
+<ul>
+<li>
+<p><strong>Se o script base existe e é executável:</strong></p>
+<pre><code class="language-bash"><span class="hljs-keyword">if</span> [ ! -x <span class="hljs-string">&quot;<span class="hljs-variable">$SCRIPT_BASE</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;❌ O script base &#x27;<span class="hljs-variable">$SCRIPT_BASE</span>&#x27; não foi encontrado ou não tem permissão de execução.&quot;</span>
+    <span class="hljs-built_in">exit</span> 1
+<span class="hljs-keyword">fi</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Se o ponto de montagem está ativo:</strong></p>
+<pre><code class="language-bash"><span class="hljs-keyword">if</span> ! mountpoint -q <span class="hljs-string">&quot;<span class="hljs-variable">$MONTAGEM</span>&quot;</span>; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;⚠️ O destino &#x27;<span class="hljs-variable">$MONTAGEM</span>&#x27; não está montado!&quot;</span>
+    <span class="hljs-built_in">exit</span> 1
+<span class="hljs-keyword">fi</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Se o diretório de destino existe:</strong></p>
+<pre><code class="language-bash"><span class="hljs-keyword">if</span> [ ! -d <span class="hljs-string">&quot;<span class="hljs-variable">$DESTINO</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">mkdir</span> -p <span class="hljs-string">&quot;<span class="hljs-variable">$DESTINO</span>&quot;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+</li>
+</ul>
+<p>Essas verificações evitam falhas como backup em disco não montado ou caminho incorreto.</p>
+<hr>
+<h3 id="3️⃣-confirmação-do-usuário">3️⃣ Confirmação do Usuário</h3>
+<p>Antes de iniciar o processo, há uma confirmação interativa:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">read</span> -p <span class="hljs-string">&quot;Deseja iniciar o backup da pasta corrente &#x27;<span class="hljs-variable">$ORIGEM</span>&#x27;? (s/n): &quot;</span> CONFIRMA
+</code></pre>
+<p>Se o usuário responder “n”, a operação é cancelada com segurança.</p>
+<hr>
+<h3 id="4️⃣-execução-do-backup">4️⃣ Execução do Backup</h3>
+<p>Após a confirmação, o script executa o backup chamando diretamente o script base:</p>
+<pre><code class="language-bash"><span class="hljs-string">&quot;<span class="hljs-variable">$SCRIPT_BASE</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$NOME</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$ORIGEM</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$DESTINO</span>&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$CRIPTO</span>&quot;</span>
+</code></pre>
+<p>Isso garante que o backup use exatamente a mesma lógica padronizada definida em <code>borg_backup.sh</code>.</p>
+<hr>
+<h3 id="5️⃣-resultado-final">5️⃣ Resultado Final</h3>
+<p>Ao concluir, o script valida o retorno da execução (<code>$?</code>) e exibe a mensagem apropriada:</p>
+<pre><code class="language-bash"><span class="hljs-keyword">if</span> [ $? -eq 0 ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;✅ Backup da pasta &#x27;<span class="hljs-variable">$ORIGEM</span>&#x27; concluído com sucesso!&quot;</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;❌ Ocorreu um erro durante o backup.&quot;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<hr>
+<h2 id="-estrutura-de-destino-do-backup">📂 Estrutura de Destino do Backup</h2>
+<p>Após a execução bem-sucedida, o backup é salvo dentro do destino configurado:</p>
+<pre><code>/media/paulosspacheco/Novo volume/borg_backup/
+ └── scripts/
+     └── borg-repo/
+         ├── config
+         ├── data/
+         ├── index.123456
+         └── backups:
+             ├── backup-2025-10-30
+             ├── backup-2025-10-31
+             └── backup-2025-11-01
+</code></pre>
+<p>Cada backup incremental é nomeado automaticamente com a data do dia.</p>
+<hr>
+<h2 id="️-dependências">⚙️ Dependências</h2>
+<table>
+<thead>
+<tr>
+<th>Dependência</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>borgbackup</strong></td>
+<td>Ferramenta principal para backups incrementais</td>
+</tr>
+<tr>
+<td><strong>bash (5.x)</strong></td>
+<td>Shell de execução</td>
+</tr>
+<tr>
+<td><strong>mountpoint</strong></td>
+<td>Verifica se o disco está montado</td>
+</tr>
+<tr>
+<td><strong>borg_backup.sh</strong></td>
+<td>Script base obrigatório</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-exemplo-de-saída-completa">🧪 Exemplo de Saída Completa</h2>
+<pre><code>======================================================
+💾 Backup da pasta corrente com BorgBackup
+======================================================
+Nome ...........: scripts
+Origem .........: /home/paulosspacheco/scripts
+Destino ........: /media/paulosspacheco/Novo volume/borg_backup
+Ponto de montagem: /media/paulosspacheco/Novo volume
+Script base ....: /home/paulosspacheco/scripts/borg_backup.sh
+Criptografia ...: none
+======================================================
+
+Deseja iniciar o backup da pasta corrente '/home/paulosspacheco/scripts'? (s/n): s
+======================================================
+🚀 Iniciando backup com borg_backup.sh ...
+======================================================
+======================================================
+💾 Backup genérico com BorgBackup
+======================================================
+Nome ...........: scripts
+Origem .........: /home/paulosspacheco/scripts
+Destino ........: /media/paulosspacheco/Novo volume/borg_backup
+Repositório ....: /media/paulosspacheco/Novo volume/borg_backup/scripts/borg-repo
+Criptografia ...: none
+======================================================
+
+📦 Criando repositório Borg...
+💾 Iniciando backup incremental (modo relativo)...
+🧹 Limpando backups antigos...
+✅ Backup concluído com sucesso!
+
+✅ Backup da pasta '/home/paulosspacheco/scripts' concluído com sucesso!
+Arquivos armazenados em: /media/paulosspacheco/Novo volume/borg_backup
+</code></pre>
+<hr>
+<h2 id="️-cuidados-e-boas-práticas">⚠️ Cuidados e Boas Práticas</h2>
+<ol>
+<li>
+<p><strong>Monte o disco de backup</strong> antes da execução:</p>
+<pre><code class="language-bash">mount | grep <span class="hljs-string">&quot;Novo volume&quot;</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Mantenha o script base atualizado</strong> (<code>borg_backup.sh</code>).</p>
+</li>
+<li>
+<p><strong>Evite nomes de pasta com espaços</strong> (ou use aspas <code>&quot; &quot;</code>).</p>
+</li>
+<li>
+<p><strong>Execute como o usuário correto</strong> (sem <code>sudo</code>, salvo se necessário).</p>
+</li>
+<li>
+<p><strong>Verifique o log de backup</strong> para acompanhar execuções automáticas (crontab).</p>
+</li>
+</ol>
+<hr>
+<h2 id="-referências">🔗 Referências</h2>
+<ul>
+<li>
+<p>📘 <strong>Site oficial do BorgBackup:</strong>
+<a href="https://www.borgbackup.org/">https://www.borgbackup.org/</a></p>
+</li>
+<li>
+<p>📖 <strong>Documentação completa:</strong>
+<a href="https://borgbackup.readthedocs.io/en/stable/">https://borgbackup.readthedocs.io/en/stable/</a></p>
+</li>
+<li>
+<p>💬 <strong>Comunidade Borg:</strong>
+<a href="https://github.com/borgbackup/borg/discussions">https://github.com/borgbackup/borg/discussions</a></p>
+</li>
+</ul>
+<hr>
+<h2 id="-histórico-de-versões">🧾 Histórico de Versões</h2>
+<table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Data</th>
+<th>Alterações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>2025-10-30</td>
+<td>Versão inicial funcional</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>2025-10-31</td>
+<td>Adicionadas verificações de montagem e criação automática de diretórios</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-autor">✅ Autor</h2>
+<p><strong>Paulo SSPacheco</strong>
+💻 Automação e Infraestrutura Linux
+📅 Outubro de 2025</p>
+<hr>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

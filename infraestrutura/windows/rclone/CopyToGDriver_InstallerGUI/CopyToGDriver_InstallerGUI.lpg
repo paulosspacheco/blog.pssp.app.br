@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectGroup FileVersion="2">
+    <Targets>
+      <Target FileName="CopyToGDriver_InstallerGUI.lpi">
+        <BuildModes>
+          <Mode Name="Default"/>
+        </BuildModes>
+      </Target>
+      <Target FileName="CopyToGDriver\CopyToDriver_Group.lpg"/>
+    </Targets>
+  </ProjectGroup>
+</CONFIG>

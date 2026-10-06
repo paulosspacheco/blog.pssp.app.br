@@ -1,0 +1,30 @@
+# ===========================================================
+# CopyToGDriver_ignore.txt
+# Arquivo de exclusões globais para sincronização via Rclone
+# ===========================================================
+
+# 🗑️ Lixeira e sistema
+.Trash-1000/**
+lost+found/**
+
+# 🧰 Diretórios temporários e backups automáticos
+tmp/**
+backup/**
+
+# 🧱 Arquivos de projeto Lazarus (não sincronizar)
+*.lpi
+*.lps
+*.lpr
+
+# ⚙️ Backups criados pelo Lazarus
+*;1
+*;2
+*;3
+*;*
+
+# ⚙️ Logs e arquivos temporários
+*.log
+*.bak
+*.tmp
+
+

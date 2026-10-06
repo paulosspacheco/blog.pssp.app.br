@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x2601;&#xfe0f; CopyToGDriver &mdash; Sincroniza&ccedil;&atilde;o Inteligente e Segura com Google Drive</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description"   content="" />
+        <meta name="keywords" content="" />
+           
+        <link type="text/css" href="/css/topnav.css" rel="stylesheet"/>        
+        <link type="text/css" href="/css/defaultthemeMarkdown.css"  rel="stylesheet"/>
+
+        <script type="application/x-javascript" src="/js/generic.js"></script>
+        <script type="application/x-javascript" src="/js/tgeneric.js"></script>
+
+        <script>document.addEventListener("DOMContentLoaded", function() {includeHTML();}                );</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {FixHeader(window, "myHeader");});</script>
+        <script>document.addEventListener("DOMContentLoaded", function() {toggleTree();}                 );</script>   
+
+   
+</style>
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="️-copytogdriver--sincronização-inteligente-e-segura-com-google-drive">☁️ CopyToGDriver — Sincronização Inteligente e Segura com Google Drive</h1>
+<blockquote>
+<p><strong>Versão:</strong> 0.3.1<br>
+<strong>Autor:</strong> Paulo SSPacheco + ChatGPT (GPT-5)<br>
+<strong>Data:</strong> 31/10/2025</p>
+</blockquote>
+<hr>
+<h2 id="-visão-geral">🧭 Visão Geral</h2>
+<p>O <strong>CopyToGDriver</strong> é um sistema modular de sincronização inteligente entre pastas locais e o <strong>Google Drive</strong>, utilizando o <strong>Rclone</strong>.<br>
+Seu diferencial é a <strong>segurança contra perda de dados</strong>, graças ao mecanismo automático de <strong>restauração de backups</strong> e <strong>abortamento preventivo</strong> em situações de risco.</p>
+<hr>
+<h2 id="-arquitetura-modular">🧩 Arquitetura Modular</h2>
+<p>O sistema é composto por três módulos principais:</p>
+<table>
+<thead>
+<tr>
+<th>Módulo</th>
+<th>Versão</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CopyToGDriver_CopyCurrent.sh</code></td>
+<td>0.3.1</td>
+<td>Orquestrador — controla todo o ciclo de sincronização</td>
+</tr>
+<tr>
+<td><code>CopyToGDriver_ConfigFunctions.sh</code></td>
+<td>0.0.22</td>
+<td>Parser e gerenciamento dinâmico de parâmetros</td>
+</tr>
+<tr>
+<td><code>CopyToGDriver_Restore.sh</code></td>
+<td>0.0.3</td>
+<td>Restauração automática e segura do backup mais recente</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="️-estrutura-de-pastas-no-google-drive">⚙️ Estrutura de Pastas no Google Drive</h2>
+<pre><code>gdriver:
+├── rclone/              ← Pasta principal de sincronização
+│   └── MeuProjeto/
+│       └── (arquivos ativos)
+└── rclone.deleted/      ← Pasta de backups automáticos
+    └── MeuProjeto/
+        ├── 2025-10-30/
+        └── 2025-10-31/
+</code></pre>
+<hr>
+<h2 id="-fluxo-de-execução">🚀 Fluxo de Execução</h2>
+<p>1️⃣ <strong>Início</strong> — O script <code>CopyToGDriver_CopyCurrent.sh</code> é executado.<br>
+2️⃣ <strong>Simulação</strong> — O sistema faz um <em>dry-run</em> (sem alterações reais).<br>
+3️⃣ <strong>Detecção</strong> — Se a pasta local estiver “efetivamente vazia” (apenas scripts), aciona o módulo de restauração.<br>
+4️⃣ <strong>Restauração</strong> — O backup mais recente é recuperado automaticamente de <code>rclone.deleted</code>.<br>
+5️⃣ <strong>Abortamento</strong> — A sincronização é interrompida para evitar sobrescrita.<br>
+6️⃣ <strong>Revisão</strong> — O usuário verifica os arquivos restaurados.<br>
+7️⃣ <strong>Sincronização real</strong> — Após confirmação, o processo é relançado com segurança.</p>
+<hr>
+<h2 id="-estrutura-local-do-sistema">🧱 Estrutura Local do Sistema</h2>
+<pre><code>CopyToGDriver/
+├── CopyToGDriver.sh                ← Script principal
+├── CopyToGDriver_CopyCurrent.sh    ← Orquestrador (execução corrente)
+├── CopyToGDriver_ConfigFunctions.sh← Configuração e parsing
+├── CopyToGDriver_Restore.sh        ← Restauração automática
+├── CopyToGDriver_Utils.sh          ← Funções utilitárias
+└── .rclone-sync/
+    └── logs/
+        ├── sync-&lt;pasta&gt;-&lt;data&gt;.log
+        ├── restore-&lt;pasta&gt;-&lt;data&gt;.log
+        └── ...
+</code></pre>
+<hr>
+<h2 id="-mecanismos-de-proteção">🔒 Mecanismos de Proteção</h2>
+<table>
+<thead>
+<tr>
+<th>Situação</th>
+<th>Ação Automática</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pasta local vazia ou apenas scripts</td>
+<td>Inicia restauração do backup mais recente</td>
+</tr>
+<tr>
+<td>Falha de restauração</td>
+<td>Aborta sincronização imediatamente</td>
+</tr>
+<tr>
+<td>Restauração concluída</td>
+<td>Cria marcador <code>.restore_aborted</code> e encerra</td>
+</tr>
+<tr>
+<td>Script principal ausente</td>
+<td>Exibe aviso e cancela execução</td>
+</tr>
+<tr>
+<td>Execução em modo teste</td>
+<td>Nenhuma modificação feita (<code>--dry-run</code>)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-filosofia-do-design">🧠 Filosofia do Design</h2>
+<blockquote>
+<p>“Falhar em restaurar é aceitável.<br>
+Sincronizar uma pasta vazia e apagar o backup, nunca.”</p>
+</blockquote>
+<p>O sistema prioriza <strong>integridade e segurança</strong> dos dados acima da performance, garantindo que nenhuma sincronização destrutiva ocorra sem validação.</p>
+<hr>
+<h2 id="-logs-unificados">📜 Logs Unificados</h2>
+<p>Todos os logs ficam centralizados em:</p>
+<pre><code>~/.rclone-sync/logs/
+</code></pre>
+<ul>
+<li><code>sync-&lt;pasta&gt;-&lt;data&gt;.log</code> — logs de sincronização</li>
+<li><code>restore-&lt;pasta&gt;-&lt;data&gt;.log</code> — logs de restauração</li>
+<li><code>.restore_aborted</code> — marcador de segurança (apagado após detecção)</li>
+</ul>
+<hr>
+<h2 id="-comandos-de-uso">⚡ Comandos de Uso</h2>
+<h3 id="-sincronizar-pasta-atual-modo-interativo">🔹 Sincronizar pasta atual (modo interativo)</h3>
+<pre><code class="language-bash">./CopyToGDriver_CopyCurrent.sh
+</code></pre>
+<h3 id="-sincronizar-automaticamente-sem-confirmação">🔹 Sincronizar automaticamente (sem confirmação)</h3>
+<pre><code class="language-bash">./CopyToGDriver_CopyCurrent.sh --auto
+</code></pre>
+<h3 id="-restaurar-manualmente-backup-mais-recente">🔹 Restaurar manualmente backup mais recente</h3>
+<pre><code class="language-bash">./CopyToGDriver_Restore.sh --remote-folder MeuProjeto
+</code></pre>
+<h3 id="-ver-ajuda-detalhada">🔹 Ver ajuda detalhada</h3>
+<pre><code class="language-bash">./CopyToGDriver_Restore.sh --<span class="hljs-built_in">help</span>
+</code></pre>
+<hr>
+<h2 id="-variáveis-padrão">🧩 Variáveis Padrão</h2>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th>Valor</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>REMOTE_NAME</code></td>
+<td>gdriver</td>
+<td>Remote configurado no Rclone</td>
+</tr>
+<tr>
+<td><code>BASE_REMOTE_FOLDER</code></td>
+<td>rclone</td>
+<td>Pasta base principal no Google Drive</td>
+</tr>
+<tr>
+<td><code>DELETED_BASE_FOLDER</code></td>
+<td>rclone.deleted</td>
+<td>Pasta de backups automáticos</td>
+</tr>
+<tr>
+<td><code>LOG_DIR</code></td>
+<td>~/.rclone-sync/logs</td>
+<td>Diretório dos logs</td>
+</tr>
+<tr>
+<td><code>SCRIPT_NAME</code></td>
+<td>/home/paulosspacheco/scripts/CopyToGDriver/CopyToGDriver.sh</td>
+<td>Script principal</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-recursos-implementados">✅ Recursos Implementados</h2>
+<p>✔️ Simulação automática antes da sincronização<br>
+✔️ Detecção de pastas “vazias de conteúdo”<br>
+✔️ Restauração automatizada com logs<br>
+✔️ Abortamento preventivo após restore<br>
+✔️ Compatibilidade total com Rclone<br>
+✔️ Arquitetura modular e expansível<br>
+✔️ Segurança de dados em primeiro lugar</p>
+<hr>
+<h2 id="-dependências">🧩 Dependências</h2>
+<ul>
+<li>
+<p><strong>Rclone ≥ v1.60.0</strong><br>
+Instalação recomendada:</p>
+<pre><code class="language-bash">curl https://rclone.org/install.sh | sudo bash
+</code></pre>
+</li>
+<li>
+<p><strong>Bash ≥ 5.0</strong></p>
+</li>
+</ul>
+<hr>
+<h2 id="-testado-em">🧪 Testado em</h2>
+<table>
+<thead>
+<tr>
+<th>Sistema</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ubuntu 22.04 LTS</td>
+<td>✅ Aprovado</td>
+</tr>
+<tr>
+<td>Debian 12</td>
+<td>✅ Aprovado</td>
+</tr>
+<tr>
+<td>WSL2 (Ubuntu)</td>
+<td>✅ Aprovado</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-planejado-para-futuras-versões">📦 Planejado para Futuras Versões</h2>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Suporte a múltiplos remotes (ex: gdrive, onedrive)</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Modo de verificação de integridade pós-sync</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Relatórios em JSON para integração com monitoramento</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Interface CLI com cores e progresso</li>
+</ul>
+<hr>
+<h2 id="-autor">👨‍💻 Autor</h2>
+<p><strong>Paulo SSPacheco</strong><br>
+Desenvolvido em colaboração com <strong>ChatGPT (GPT-5)</strong></p>
+<blockquote>
+<p><em>“Automação é útil. Segurança é essencial.”</em></p>
+</blockquote>
+<hr>
+<h2 id="-licença">📄 Licença</h2>
+<p>Este projeto é de uso pessoal e educacional.<br>
+Distribuição ou modificação permitida mediante atribuição de crédito ao autor original.</p>
+<hr>
+
+            
+            
+        </body>
+        </html>
