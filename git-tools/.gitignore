@@ -1,0 +1,28 @@
+# Binários e compilados do free pascal
+*.o
+*.a
+*.so
+*.exe
+*.out
+
+# Lazarus / FPC
+*.compiled
+*.bak
+*.lps
+*.ppu
+*.or
+lib/
+
+# Temporários
+*.tmp
+*.log
+*~
+
+# Segredos
+.env
+*.key
+*.pem
+tree.txt
+CHANGELOG.html
+
+semuso/

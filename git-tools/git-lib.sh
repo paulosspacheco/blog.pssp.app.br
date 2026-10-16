@@ -1,0 +1,172 @@
+#!/bin/bash
+# =============================================================================
+# git-lib.sh — Biblioteca utilitária para scripts Git
+# =============================================================================
+# Fornece funções auxiliares para:
+#   - Leitura de parâmetros obrigatórios com fallback interativo
+#   - Confirmação interativa padronizada (terminal ou zenity)
+#   - Exibição de notificações e arquivos
+#   - Seleção interativa de opções
+#   - Carregamento seguro de configurações por projeto (.gitproject)
+#
+# Uso: source git-lib.sh
+#
+# Versão: 1.4.0
+# =============================================================================
+
+_has_display() {
+  # Tenta recuperar DISPLAY/WAYLAND_DISPLAY se não estiver definido.
+  # Necessário quando executado via gerenciador de arquivos gráfico
+  # (Nemo, Nautilus, Dolphin), que frequentemente não propagam essas variáveis.
+  if [ -z "$DISPLAY" ] && [ -z "$WAYLAND_DISPLAY" ]; then
+    local xauth_display
+    xauth_display=$(who | awk '{print $5}' | tr -d '()' | grep -E ':[0-9]' | head -1)
+    [ -n "$xauth_display" ] && export DISPLAY="$xauth_display"
+
+    local wayland_sock
+    wayland_sock=$(ls /run/user/$(id -u)/wayland-* 2>/dev/null | head -1)
+    [ -n "$wayland_sock" ] && export WAYLAND_DISPLAY="$(basename "$wayland_sock")"
+  fi
+
+  [ -n "$DISPLAY" ] || [ -n "$WAYLAND_DISPLAY" ]
+}
+
+ask_required() {
+  local -n _out=$1
+  local prompt="$2"
+  local value="$3"
+
+  if [ -z "$value" ]; then
+    if _has_display && command -v zenity >/dev/null; then
+      value=$(zenity --entry --title="Git Tools" --text="$prompt:" --width=400) || return 1
+    else
+      read -rp "$prompt: " value
+    fi
+  fi
+
+  if [ -z "$value" ]; then
+    echo "❌ Valor obrigatório" >&2
+    return 1
+  fi
+
+  _out="$value"
+}
+
+ask_optional() {
+  local -n _out=$1
+  local prompt="$2"
+  local value="$3"
+
+  if [ -z "$value" ]; then
+    if _has_display && command -v zenity >/dev/null; then
+      value=$(zenity --entry --title="Git Tools" --text="$prompt:" --width=400) || return 1
+    else
+      read -rp "$prompt: " value
+    fi
+  fi
+
+  # Ao contrário da ask_required, NÃO exige valor não vazio
+  _out="$value"
+  return 0
+}
+
+ask_confirm() {
+  local -n _out=$1
+  local prompt="$2"
+  local default="${3:-s}"
+
+  if _has_display && command -v zenity >/dev/null; then
+    if zenity --question \
+              --title="Git Tools" \
+              --text="$prompt" \
+              --ok-label="Sim" \
+              --cancel-label="Não" \
+              --width=380 2>/dev/null; then
+      _out="s"
+    else
+      _out="n"
+    fi
+  else
+    read -rp "$prompt [S/n]: " _out
+    _out="${_out:-$default}"
+  fi
+}
+
+notify_info() {
+  local msg="$1"
+
+  if _has_display && command -v zenity >/dev/null; then
+    zenity --info \
+           --title="Git Tools" \
+           --text="$msg" \
+           --width=400 2>/dev/null
+  else
+    echo -e "$msg"
+  fi
+}
+
+view_file() {
+  local file="$1"
+
+  if _has_display && command -v zenity >/dev/null; then
+    zenity --text-info \
+           --title="$file" \
+           --filename="$file" \
+           --width=700 \
+           --height=500 2>/dev/null
+  else
+    less "$file"
+  fi
+}
+
+ask_select() {
+  local -n _out=$1
+  local title="$2"
+  shift 2
+  local options=("$@")
+
+  if _has_display && command -v zenity >/dev/null; then
+    _out=$(zenity --list \
+      --title="Git Tools" \
+      --text="$title" \
+      --column="Opção" \
+      "${options[@]}" \
+      --height=300 --width=400 2>/dev/null) || return 1
+  else
+    echo "$title"
+    select opt in "${options[@]}"; do
+      if [ -n "$opt" ]; then
+        _out="$opt"
+        break
+      fi
+    done
+  fi
+}
+
+load_config() {
+  [ -f ".gitproject" ] || return 0
+  while IFS='=' read -r key value; do
+    [[ "$key" =~ ^[A-Z_]+$ ]] && export "$key=$value"
+  done < .gitproject
+}
+
+# Lê o arquivo /usr/local/bin/git-tools.conf e executa uma função para cada linha não comentada
+# Uso: parse_config "campo_para_verificar" "função_callback"
+parse_config() {
+    local filter="$1"
+    local callback="$2"
+    local config_file="${3:-/usr/local/bin/git-tools.conf}"
+    [[ ! -f "$config_file" ]] && { echo "❌ Config não encontrado: $config_file" >&2; return 1; }
+    while IFS='|' read -r script title_menu title_laz params; do
+        script=$(echo "$script" | xargs)
+        title_menu=$(echo "$title_menu" | xargs)
+        title_laz=$(echo "$title_laz" | xargs)
+        params=$(echo "$params" | xargs)
+        [[ -z "$script" || "$script" == \#* ]] && continue
+        case "$filter" in
+            menu)     [[ -n "$title_menu" ]] && $callback "$script" "$title_menu" "$title_laz" "$params" ;;
+            lazarus)  [[ -n "$title_laz" ]] && $callback "$script" "$title_menu" "$title_laz" "$params" ;;
+            all)      $callback "$script" "$title_menu" "$title_laz" "$params" ;;
+        esac
+    done < "$config_file"
+}
